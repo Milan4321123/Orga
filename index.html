@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" data-theme="light">
+<html lang="de" data-lang="de" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NPJOE — Nepalesische Progressive Jugendorganisation e.V.</title>
 <meta name="description" content="Gemeinnütziger Verein in Darmstadt (VR 84826): Wir verbinden die nepalesische Jugend in Deutschland und tragen mit One Day for Nation, der Erste-Hilfe-Kampagne und One Euro for Nation zur Entwicklung Nepals bei.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0d1117">
 <meta name="author" content="Nepalesische Progressive Jugendorganisation e.V.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="NPJOE — Nepalesische Progressive Jugendorganisation e.V.">
@@ -18,8 +18,8 @@
 <script>
   (function () {
     try {
-      var t = localStorage.getItem("npjoe.theme");
-      if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      /* Dark is the default; a saved choice always wins. */
+      var t = localStorage.getItem("npjoe.theme") || "dark";
       document.documentElement.setAttribute("data-theme", t);
       var l = localStorage.getItem("npjoe.lang");
       if (!l) l = (navigator.language || "de").toLowerCase().indexOf("de") === 0 ? "de" : "en";

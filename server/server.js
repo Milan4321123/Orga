@@ -17,7 +17,6 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
-const url = require("url");
 
 const ROOT = path.resolve(__dirname, "..");
 const DATA_DIR = process.env.NPJOE_DATA_DIR || path.join(__dirname, "data");
@@ -757,8 +756,11 @@ function serveStatic(req, res, pathname) {
 
 /* ------------------------------------------------------------------ boot */
 const server = http.createServer((req, res) => {
-  const parsed = url.parse(req.url, true);
+  /* WHATWG URL rather than the deprecated url.parse(). The base is only
+     needed because req.url is a path, not an absolute address. */
+  const parsed = new URL(req.url, "http://localhost");
   const pathname = parsed.pathname || "/";
+  const query = Object.fromEntries(parsed.searchParams);
 
   /* Render pings this to decide whether the instance is healthy. It must stay
      cheap and must not touch the data directory. */
@@ -772,7 +774,7 @@ const server = http.createServer((req, res) => {
   }
 
   if (pathname.startsWith("/api")) {
-    handleApi(req, res, pathname, parsed.query || {}).catch((err) => {
+    handleApi(req, res, pathname, query).catch((err) => {
       console.error("API error:", err.message);
       json(res, 500, { error: "server_error" });
     });

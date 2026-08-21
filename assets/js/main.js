@@ -47,18 +47,23 @@
   /* ------------------------------------------------------------------ Theme */
   var THEME_KEY = "npjoe.theme";
 
-  function applyTheme(theme) {
+  /* persist = only when the visitor actually chose. Writing the default on a
+     first visit would store a preference nobody expressed and would freeze
+     that default for everyone who ever loaded the page. */
+  function applyTheme(theme, persist) {
     document.documentElement.setAttribute("data-theme", theme);
-    LS.set(THEME_KEY, theme);
+    if (persist) LS.set(THEME_KEY, theme);
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", theme === "dark" ? "#0d1117" : "#ffffff");
   }
 
+  /* The site is dark by default. A visitor's own choice is remembered and
+     always wins; the toggle in the header switches and stores it. */
+  var DEFAULT_THEME = "dark";
+
   function initTheme() {
     var saved = LS.get(THEME_KEY, "");
-    if (saved === "dark" || saved === "light") return applyTheme(saved);
-    var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(prefersDark ? "dark" : "light");
+    applyTheme(saved === "dark" || saved === "light" ? saved : DEFAULT_THEME);
   }
 
   /* -------------------------------------------------------------- Toast API */
@@ -86,27 +91,51 @@
     if (!toggle || !links) return;
 
     function setOpen(open) {
+      if (open) {
+        /* Measure before anything else changes. The top bar scrolls away with
+           the page, so the header's bottom edge is not a constant — and
+           locking body scroll would break its sticky position and move it. */
+        var header = document.getElementById("siteHeader");
+        var bottom = header ? Math.max(0, Math.round(header.getBoundingClientRect().bottom)) : 76;
+        document.documentElement.style.setProperty("--drawer-top", bottom + "px");
+      }
       links.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       if (scrim) { scrim.classList.toggle("is-open", open); scrim.hidden = !open; }
-      document.body.style.overflow = open ? "hidden" : "";
+      /* The drawer contains its own scrolling (overscroll-behavior in the
+         stylesheet), so the page behind needs no overflow lock — one would
+         knock the sticky header out of place and hide the close button. */
     }
     toggle.addEventListener("click", function () { setOpen(!links.classList.contains("is-open")); });
     if (scrim) scrim.addEventListener("click", function () { setOpen(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
 
-    /* Mobile: first tap on a dropdown parent opens the submenu */
-    links.querySelectorAll(".has-dropdown > .nav-link").forEach(function (a) {
-      a.addEventListener("click", function (e) {
-        if (window.matchMedia("(max-width: 1080px)").matches) {
-          var li = a.parentElement;
-          if (!li.classList.contains("is-open")) {
-            e.preventDefault();
-            links.querySelectorAll(".has-dropdown.is-open").forEach(function (o) { if (o !== li) o.classList.remove("is-open"); });
-            li.classList.add("is-open");
-            a.setAttribute("aria-expanded", "true");
-          }
+    /* On a phone every section is already expanded, so the heading is a label
+       rather than a control. On a wider screen it stays a normal link with a
+       hover dropdown. */
+    function syncDropdownRoles() {
+      var isPhone = window.matchMedia("(max-width: 1080px)").matches;
+      links.querySelectorAll(".has-dropdown > .nav-link").forEach(function (a) {
+        if (isPhone) {
+          a.setAttribute("aria-hidden", "true");
+          a.setAttribute("tabindex", "-1");
+          a.removeAttribute("aria-haspopup");
+          a.removeAttribute("aria-expanded");
+        } else {
+          a.removeAttribute("aria-hidden");
+          a.removeAttribute("tabindex");
+          a.setAttribute("aria-haspopup", "true");
+          a.setAttribute("aria-expanded", "false");
         }
+      });
+    }
+    syncDropdownRoles();
+    window.addEventListener("resize", syncDropdownRoles);
+
+    /* Following a link should close the drawer behind you. */
+    links.querySelectorAll("a[href]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        if (window.matchMedia("(max-width: 1080px)").matches) setOpen(false);
       });
     });
 
@@ -453,7 +482,7 @@
     });
     var themeBtn = document.getElementById("themeToggle");
     if (themeBtn) themeBtn.addEventListener("click", function () {
-      applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
     });
     initNav();
     initReveal();

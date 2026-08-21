@@ -142,7 +142,13 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* clip, not hidden: `overflow-x: hidden` makes the body a scroll container,
+     which silently stops `position: sticky` from engaging anywhere on the
+     page — the header and the section sub-navigation both scrolled away. */
+  overflow-x: clip;
+}
+@supports not (overflow: clip) {
+  body { overflow-x: hidden; }
 }
 
 img, svg, video { display: block; max-width: 100%; height: auto; }
@@ -378,6 +384,13 @@ html[data-theme="dark"] .badge-saffron { color: var(--saffron); }
 .topbar .flex-between { gap: 0.75rem; row-gap: 0.25rem; }
 @media (max-width: 720px) { .topbar-extra { display: none; } }
 
+/* The header is injected into a wrapper div. A sticky element only travels
+   within its containing block, and that wrapper is exactly as tall as the
+   header — so the header slid away on the first scroll instead of sticking.
+   `display: contents` removes the wrapper's box so the header sticks against
+   the page itself. */
+#siteHeaderMount { display: contents; }
+
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -457,23 +470,56 @@ html[data-theme="dark"] .badge-saffron { color: var(--saffron); }
 @media (max-width: 1080px) {
   .nav-toggle { display: grid; }
   .nav-mobile-cta { display: block; }
+
+  /* backdrop-filter turns an element into the containing block for any
+     position:fixed descendant. With it on the header, the drawer was sized
+     against the header instead of the screen — 84px tall, one item visible.
+     The blur is a desktop nicety; the menu working is not optional. */
+  .site-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--bg);
+  }
   .nav-links {
-    position: fixed; inset: var(--header-h) 0 0 auto; width: min(360px, 88vw);
+    /* --drawer-top is set when opening, from the header's real bottom edge:
+       the top bar scrolls away, so the offset is not a constant. */
+    position: fixed; inset: var(--drawer-top, var(--header-h)) 0 0 auto; width: min(360px, 88vw);
     flex-direction: column; align-items: stretch; gap: 0.1rem;
     background: var(--bg-elev); border-left: 1px solid var(--line);
-    padding: 1.25rem 1rem 4rem; overflow-y: auto;
+    padding: 1.25rem 1rem 4rem;
+    overflow-y: auto;
+    /* scrolling the menu must not scroll the page behind it */
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     translate: 100% 0; transition: translate 0.28s var(--ease);
     box-shadow: var(--shadow-xl);
   }
   .nav-links.is-open { translate: 0 0; }
+  .nav-links { width: min(400px, 92vw); }
   .nav-link { padding: 0.8rem 0.85rem; font-size: 1.02rem; justify-content: space-between; }
+
+  /* On a phone the whole site is listed at once. Hiding sub-pages behind a
+     second tap made two thirds of the site unreachable in practice — nothing
+     signalled that the section headings could be opened. */
   .dropdown {
     position: static; opacity: 1; visibility: visible; translate: 0;
-    box-shadow: none; border: 0; border-left: 2px solid var(--line);
-    border-radius: 0; margin: 0.1rem 0 0.5rem 1rem; padding: 0; min-width: 0;
-    display: none;
+    box-shadow: none; border: 0; border-radius: 0;
+    margin: 0 0 0.9rem; padding: 0; min-width: 0;
+    display: block;
   }
-  .has-dropdown.is-open .dropdown { display: block; }
+  .has-dropdown > .nav-link {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-weight: 700;
+    color: var(--ink-3);
+    padding: 1rem 0.85rem 0.3rem;
+    pointer-events: none;          /* the section's own page is the first entry below */
+  }
+  .has-dropdown > .nav-link .caret { display: none; }
+  .dropdown a { padding: 0.72rem 0.85rem; font-size: 1.02rem; font-weight: 560; border-radius: var(--radius-sm); }
+  .dropdown a small { display: none; }   /* keep the list scannable */
+  .nav-links > li + li.has-dropdown { border-top: 1px solid var(--line); }
   .nav-scrim {
     position: fixed; inset: 0; background: rgba(16, 24, 40, 0.45);
     backdrop-filter: blur(2px); z-index: 90; opacity: 0; visibility: hidden;
