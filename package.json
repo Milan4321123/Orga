@@ -1,0 +1,16 @@
+{
+  "name": "npjoe-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website und Mitgliederverwaltung der Nepalesischen Progressiven Jugendorganisation e.V.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node test/run.js",
+    "preflight": "node server/preflight.js"
+  },
+  "dependencies": {}
+}

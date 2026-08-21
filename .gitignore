@@ -1,0 +1,11 @@
+# Eingegangene Formulardaten — personenbezogen, gehört nicht ins Repository
+server/data/*.jsonl
+
+# Vom Vorstand gepflegte Inhalte und deren Sicherungen (Laufzeitdaten)
+server/data/content.json
+server/data/content-backups/
+
+# System
+.DS_Store
+node_modules/
+*.log

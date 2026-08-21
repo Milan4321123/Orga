@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veranstaltungen | NPJOE</title>
+<meta name="description" content="Termine der NPJOE: Volunteer-Briefings, Erste-Hilfe-Schulungen, Kulturfeste, Sportturniere, Online-Seminare und die jährliche Mitgliederversammlung.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/content.js" defer></script>
+</head>
+<body data-page="news">
+<div id="siteHeaderMount"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span></li>
+      </ol>
+      <span class="eyebrow"><span data-lang="de">Termine</span><span data-lang="en">Dates</span></span>
+      <h1><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span></h1>
+      <p class="lead">
+        <span data-lang="de">Briefings, Schulungen, Kulturfeste, Turniere und Versammlungen — vor Ort in Hessen und online. Anmeldung über das Kontaktformular, Termine als .ics für Ihren Kalender.</span>
+        <span data-lang="en">Briefings, training sessions, cultural festivals, tournaments and meetings — on site in Hesse and online. Register via the contact form, add dates to your calendar as .ics.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="flex-between mb-4">
+        <div class="flex" data-filter-group data-filter-target="#eventsAll .event-row" data-filter-empty="#eventsEmpty">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span></button>
+          <button class="chip" type="button" data-filter="volunteer" aria-pressed="false">Volunteer</button>
+          <button class="chip" type="button" data-filter="erste-hilfe" aria-pressed="false"><span data-lang="de">Erste Hilfe</span><span data-lang="en">First aid</span></button>
+          <button class="chip" type="button" data-filter="bildung" aria-pressed="false"><span data-lang="de">Bildung</span><span data-lang="en">Education</span></button>
+          <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span></button>
+          <button class="chip" type="button" data-filter="sport" aria-pressed="false">Sport</button>
+          <button class="chip" type="button" data-filter="online" aria-pressed="false">Online</button>
+          <button class="chip" type="button" data-filter="mitglieder" aria-pressed="false"><span data-lang="de">Mitglieder</span><span data-lang="en">Members</span></button>
+        </div>
+        <input class="input" type="search" style="max-width:260px" data-search-target="#eventsAll .event-row" data-search-empty="#eventsEmpty"
+               data-de-placeholder="Termine durchsuchen …" data-en-placeholder="Search events …" aria-label="Suche / Search">
+      </div>
+
+      <div class="stack" id="eventsAll"></div>
+      <p class="center text-muted mt-4 hide" id="eventsEmpty">
+        <span data-lang="de">Keine Termine gefunden. Andere Filter probieren?</span>
+        <span data-lang="en">No events found. Try different filters?</span>
+      </p>
+
+      <div class="callout callout-navy mt-6">
+        <strong><span data-lang="de">Mitgliederversammlung:</span><span data-lang="en">General meeting:</span></strong>
+        <span data-lang="de"> Nach § 9 der Satzung findet mindestens einmal jährlich eine ordentliche Mitgliederversammlung statt. Die Einladung erfolgt schriftlich mit zwei Wochen Frist und Tagesordnung. Anträge müssen eine Woche vor Beginn schriftlich beim Vorstand eingegangen sein.</span>
+        <span data-lang="en"> Under § 9 of the statutes, an ordinary general meeting is held at least once a year. Invitations are sent in writing with two weeks' notice and an agenda. Motions must reach the board in writing one week before it begins.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid grid-2" style="gap:2.5rem;align-items:center">
+        <div>
+          <h2><span data-lang="de">Eigene Veranstaltung vorschlagen</span><span data-lang="en">Propose your own event</span></h2>
+          <p class="lead mt-2">
+            <span data-lang="de">Sie möchten in Ihrer Stadt ein Kulturfest, ein Sportturnier oder ein Informationsseminar organisieren? Wir unterstützen mit Erfahrung, Reichweite und Vernetzung.</span>
+            <span data-lang="en">Would you like to organise a cultural festival, a sports tournament or an information seminar in your city? We support with experience, reach and networking.</span>
+          </p>
+          <p class="mt-3"><a class="btn" href="kontakt.html?thema=veranstaltung"><span data-lang="de">Veranstaltung vorschlagen</span><span data-lang="en">Propose an event</span></a></p>
+        </div>
+        <div class="card card-pad-lg">
+          <h3 class="t-h4"><span data-lang="de">Was wir typischerweise veranstalten</span><span data-lang="en">What we typically host</span></h3>
+          <ul class="feature-list mt-3 text-sm">
+            <li><span class="tick">✓</span><span data-lang="de">Interkulturelle Feste, offen für die gesamte Öffentlichkeit (§ 3c)</span><span data-lang="en">Intercultural festivals, open to the general public (§ 3c)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Fußball- und Cricketturniere für Jugendteams (§ 3a, § 3g)</span><span data-lang="en">Football and cricket tournaments for youth teams (§ 3a, § 3g)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Seminare zu Visum, Ausbildung, Studium und Integration (§ 3b)</span><span data-lang="en">Seminars on visas, training, study and integration (§ 3b)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Erste-Hilfe-Trainer:innen-Schulungen (§ 3e)</span><span data-lang="en">First aid train-the-trainer sessions (§ 3e)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Spendenabende für One Euro for Nation (§ 3i)</span><span data-lang="en">Fundraising evenings for One Euro for Nation (§ 3i)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooterMount"></div>
+
+<script>
+  document.addEventListener("npjoe:layout-ready", function () {
+    if (window.NPJOEContent) window.NPJOEContent.renderEvents("#eventsAll");
+  });
+</script>
+</body>
+</html>

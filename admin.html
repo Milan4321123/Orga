@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vorstandsbereich | NPJOE</title>
+<meta name="description" content="Interner Bereich für den Vorstand: eingegangene Beitrittserklärungen, Volunteer-Registrierungen, Spendenzusagen und Kontaktanfragen verwalten.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/content.js" defer></script>
+<script src="assets/js/documents.js" defer></script>
+<script src="assets/js/admin-content.js" defer></script>
+<script src="assets/js/admin-docs.js" defer></script>
+<script src="assets/js/correspondence.js" defer></script>
+<script src="assets/js/admin-dsgvo.js" defer></script>
+</head>
+<body data-page="">
+<div id="siteHeaderMount"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><span data-lang="de">Vorstandsbereich</span><span data-lang="en">Board area</span></li>
+      </ol>
+      <span class="eyebrow"><span data-lang="de">Intern</span><span data-lang="en">Internal</span></span>
+      <h1><span data-lang="de">Vorstandsbereich</span><span data-lang="en">Board area</span></h1>
+      <p class="lead">
+        <span data-lang="de">Eingegangene Beitrittserklärungen, Volunteer-Registrierungen, Spendenzusagen und Anfragen — mit Statusverwaltung und CSV-Export für die Mitgliederliste nach § 8 der Satzung.</span>
+        <span data-lang="en">Incoming membership applications, volunteer registrations, donation pledges and enquiries — with status management and CSV export for the membership list under § 8 of the statutes.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Login -->
+  <section class="section" id="loginSection">
+    <div class="container" style="max-width:460px">
+      <div class="form-card">
+        <div class="card-icon">🔐</div>
+        <h2 style="font-size:var(--fs-xl)"><span data-lang="de">Anmelden</span><span data-lang="en">Sign in</span></h2>
+        <p class="text-sm text-muted mt-2 mb-3">
+          <span data-lang="de">Nur für Vorstandsmitglieder. Das Passwort wird beim Serverstart über die Umgebungsvariable <code>NPJOE_ADMIN_PASSWORD</code> gesetzt.</span>
+          <span data-lang="en">For board members only. The password is set at server start via the environment variable <code>NPJOE_ADMIN_PASSWORD</code>.</span>
+        </p>
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="adminPw"><span data-lang="de">Passwort</span><span data-lang="en">Password</span></label>
+            <input class="input" id="adminPw" type="password" autocomplete="current-password" required>
+          </div>
+          <p class="error-msg mt-2" id="loginError"></p>
+          <button class="btn btn-block mt-3" type="submit"><span data-lang="de">Anmelden</span><span data-lang="en">Sign in</span></button>
+        </form>
+        <div class="callout callout-navy mt-4 text-sm">
+          <span data-lang="de">Läuft der Server nicht, arbeitet die Website im Offline-Modus: Formulare werden dann als Datei heruntergeladen und per E-Mail versendet, nicht hier gespeichert.</span>
+          <span data-lang="en">If the server is not running, the website works in offline mode: forms are downloaded as a file and sent by e-mail instead of being stored here.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section class="section hide" id="dashboard">
+    <div class="container admin-shell">
+
+      <div class="flex-between">
+        <div class="tabs" data-tabs style="margin-bottom:0;border-bottom:0">
+          <button class="tab" type="button" data-tab="submissions" aria-selected="true"><span data-lang="de">Eingänge</span><span data-lang="en">Submissions</span></button>
+          <button class="tab" type="button" data-tab="content" aria-selected="false"><span data-lang="de">Inhalte pflegen</span><span data-lang="en">Edit content</span></button>
+          <button class="tab" type="button" data-tab="docs" aria-selected="false"><span data-lang="de">Dokumente</span><span data-lang="en">Documents</span></button>
+          <button class="tab" type="button" data-tab="dsgvo" aria-selected="false"><span data-lang="de">Auskunft &amp; Löschung</span><span data-lang="en">Access &amp; erasure</span></button>
+        </div>
+        <div class="flex">
+          <a class="btn btn-sm btn-ghost" href="index.html" target="_blank" rel="noopener"><span data-lang="de">Website ansehen</span><span data-lang="en">View site</span></a>
+          <button class="btn btn-sm btn-ghost" type="button" id="logoutBtn"><span data-lang="de">Abmelden</span><span data-lang="en">Sign out</span></button>
+        </div>
+      </div>
+
+      <div id="preflightBanner"></div>
+
+      <div class="tab-panel is-active" data-panel="submissions">
+      <div class="flex-between">
+        <h2 style="font-size:var(--fs-2xl)"><span data-lang="de">Übersicht</span><span data-lang="en">Overview</span></h2>
+        <button class="btn btn-sm btn-ghost" type="button" id="refreshBtn"><span data-lang="de">Aktualisieren</span><span data-lang="en">Refresh</span></button>
+      </div>
+
+      <div class="admin-metrics" id="metrics"></div>
+
+      <div class="card">
+        <div class="admin-toolbar mb-3">
+          <label class="sr-only" for="typeSelect">Formularart</label>
+          <select class="select" id="typeSelect">
+            <option value="membership" data-de="Beitrittserklärungen" data-en="Membership applications">Beitrittserklärungen</option>
+            <option value="volunteer" data-de="Volunteer-Registrierungen" data-en="Volunteer registrations">Volunteer-Registrierungen</option>
+            <option value="donation" data-de="Spendenzusagen" data-en="Donation pledges">Spendenzusagen</option>
+            <option value="contact" data-de="Kontaktanfragen" data-en="Contact enquiries">Kontaktanfragen</option>
+            <option value="partner" data-de="Kooperationsanfragen" data-en="Cooperation enquiries">Kooperationsanfragen</option>
+            <option value="newsletter" data-de="Newsletter-Anmeldungen" data-en="Newsletter sign-ups">Newsletter-Anmeldungen</option>
+          </select>
+          <label class="sr-only" for="statusSelect">Status</label>
+          <select class="select" id="statusSelect">
+            <option value="" data-de="Alle Status" data-en="All statuses">Alle Status</option>
+            <option value="new" data-de="Neu" data-en="New">Neu</option>
+            <option value="in-pruefung" data-de="In Prüfung" data-en="Under review">In Prüfung</option>
+            <option value="angenommen" data-de="Angenommen" data-en="Accepted">Angenommen</option>
+            <option value="abgelehnt" data-de="Abgelehnt" data-en="Rejected">Abgelehnt</option>
+            <option value="erledigt" data-de="Erledigt" data-en="Done">Erledigt</option>
+          </select>
+          <input class="input" type="search" id="searchInput" data-de-placeholder="Suchen (Name, E-Mail, Referenz) …" data-en-placeholder="Search (name, e-mail, reference) …" aria-label="Suche">
+          <button class="btn btn-sm" type="button" id="exportBtn"><span data-lang="de">CSV exportieren</span><span data-lang="en">Export CSV</span></button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data" id="rowsTable">
+            <thead>
+              <tr>
+                <th><span data-lang="de">Eingang</span><span data-lang="en">Received</span></th>
+                <th><span data-lang="de">Referenz</span><span data-lang="en">Reference</span></th>
+                <th><span data-lang="de">Name / E-Mail</span><span data-lang="en">Name / e-mail</span></th>
+                <th><span data-lang="de">Kurzinfo</span><span data-lang="en">Summary</span></th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="rowsBody"></tbody>
+          </table>
+        </div>
+        <p class="text-sm text-muted mt-3" id="rowsInfo"></p>
+      </div>
+
+      <!-- notification status -->
+      <div class="card">
+        <div class="flex-between mb-2">
+          <div>
+            <h3 style="font-size:var(--fs-lg)"><span data-lang="de">Benachrichtigungen</span><span data-lang="en">Alerts</span></h3>
+            <p class="text-sm text-muted" id="notifyState"></p>
+          </div>
+          <button class="btn btn-sm btn-ghost" type="button" id="notifyTest"><span data-lang="de">Testnachricht senden</span><span data-lang="en">Send a test alert</span></button>
+        </div>
+        <div id="notifyLog"></div>
+        <p class="text-xs text-muted mt-2">
+          <span data-lang="de">Die Benachrichtigung enthält bewusst nur Formularart und Referenz — keine Namen, Adressen oder Nachrichten. Alles Weitere steht hier im geschützten Bereich.</span>
+          <span data-lang="en">The alert deliberately carries only the form type and reference — no names, addresses or messages. Everything else stays here in the protected area.</span>
+        </p>
+      </div>
+
+      <div class="callout">
+        <strong><span data-lang="de">Datenschutz-Hinweis:</span><span data-lang="en">Privacy note:</span></strong>
+        <span data-lang="de"> Diese Daten sind personenbezogen. Nutzen Sie sie ausschließlich für Vereinszwecke, geben Sie sie nicht weiter und löschen Sie Einträge, sobald der Zweck erfüllt ist und keine steuerlichen Aufbewahrungsfristen entgegenstehen.</span>
+        <span data-lang="en"> This data is personal data. Use it exclusively for association purposes, do not pass it on, and delete entries once the purpose is fulfilled and no tax retention periods apply.</span>
+      </div>
+      </div><!-- /submissions panel -->
+
+      <!-- ============ CONTENT EDITOR ============ -->
+      <div class="tab-panel" data-panel="content" id="contentPanel">
+        <div class="flex-between mb-3">
+          <div>
+            <h2 style="font-size:var(--fs-2xl)"><span data-lang="de">Inhalte pflegen</span><span data-lang="en">Edit content</span></h2>
+            <p class="text-sm text-muted" id="contentStamp"></p>
+          </div>
+          <div class="flex">
+            <span class="badge badge-warn hide" id="contentDirty"><span data-lang="de">Ungespeicherte Änderungen</span><span data-lang="en">Unsaved changes</span></span>
+            <button class="btn btn-sm btn-ghost" type="button" id="contentReload"><span data-lang="de">Verwerfen</span><span data-lang="en">Discard</span></button>
+            <button class="btn btn-sm" type="button" id="contentSave" disabled><span data-lang="de">Speichern</span><span data-lang="en">Save</span></button>
+          </div>
+        </div>
+
+        <div class="callout callout-navy">
+          <strong><span data-lang="de">Was hier bearbeitet werden kann:</span><span data-lang="en">What can be edited here:</span></strong>
+          <span data-lang="de"> Termine, News, FAQ, die Wirkungszahlen und die Kontakt- und Bankdaten. Änderungen sind sofort auf der Website sichtbar. Satzung, Impressum, Datenschutzerklärung sowie Aufbau und Gestaltung der Seiten bleiben bewusst im Code — sie ändern sich selten und haben rechtliches Gewicht.</span>
+          <span data-lang="en"> Events, news, FAQ, the impact figures and the contact and bank details. Changes are visible on the website immediately. The statutes, imprint, privacy policy and the structure and design of the pages deliberately stay in code — they change rarely and carry legal weight.</span>
+        </div>
+
+        <div class="field mt-3" style="max-width:320px">
+          <label for="contentEditorName"><span data-lang="de">Wer bearbeitet? (für das Protokoll)</span><span data-lang="en">Who is editing? (for the log)</span></label>
+          <input class="input" id="contentEditorName" type="text" data-de-placeholder="z. B. Durga (Schriftführung)" data-en-placeholder="e.g. Durga (secretary)">
+        </div>
+
+        <!-- Events -->
+        <section class="card card-pad-lg mt-4">
+          <div class="flex-between mb-2">
+            <div>
+              <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span></h3>
+              <p class="text-sm text-muted"><span data-lang="de">Erscheinen auf der Startseite und unter „Veranstaltungen“ — inklusive Kalender-Download.</span><span data-lang="en">Appear on the home page and under 'Events' — including calendar download.</span></p>
+            </div>
+            <button class="btn btn-sm" type="button" data-add="events">+ <span data-lang="de">Termin</span><span data-lang="en">Event</span></button>
+          </div>
+          <div class="accordion" id="ce-events"></div>
+        </section>
+
+        <!-- News -->
+        <section class="card card-pad-lg mt-4">
+          <div class="flex-between mb-2">
+            <div>
+              <h3 style="font-size:var(--fs-xl)">News</h3>
+              <p class="text-sm text-muted"><span data-lang="de">Erscheinen im Feed; der Volltext klappt in der Karte auf.</span><span data-lang="en">Appear in the feed; the full text expands inside the card.</span></p>
+            </div>
+            <button class="btn btn-sm" type="button" data-add="news">+ <span data-lang="de">Beitrag</span><span data-lang="en">Post</span></button>
+          </div>
+          <div class="accordion" id="ce-news"></div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="card card-pad-lg mt-4">
+          <div class="flex-between mb-2">
+            <div>
+              <h3 style="font-size:var(--fs-xl)">FAQ</h3>
+              <p class="text-sm text-muted"><span data-lang="de">Fragen und Antworten, nach Kategorie filterbar.</span><span data-lang="en">Questions and answers, filterable by category.</span></p>
+            </div>
+            <button class="btn btn-sm" type="button" data-add="faq">+ <span data-lang="de">Frage</span><span data-lang="en">Question</span></button>
+          </div>
+          <div class="accordion" id="ce-faq"></div>
+        </section>
+
+        <!-- Figures -->
+        <section class="card card-pad-lg mt-4">
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Wirkungszahlen</span><span data-lang="en">Impact figures</span></h3>
+          <p class="text-sm text-muted mb-3">
+            <span data-lang="de">Diese Zahlen erscheinen auf Startseite, Wirkung, Erste-Hilfe-Kampagne, Spenden und Transparenz. Bitte nur belegbare Werte eintragen — sie stehen im Transparenzbericht.</span>
+            <span data-lang="en">These figures appear on the home page, impact, First Aid Campaign, donations and transparency pages. Please enter only evidenced values — they belong in the transparency report.</span>
+          </p>
+          <div id="ce-figures"></div>
+        </section>
+
+        <!-- Organisation -->
+        <section class="card card-pad-lg mt-4">
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Kontakt- und Bankdaten</span><span data-lang="en">Contact and bank details</span></h3>
+          <p class="text-sm text-muted mb-3">
+            <span data-lang="de">Erscheinen in Kopf- und Fußzeile, auf der Kontaktseite und im Spendenformular. Die IBAN wird auch Spender:innen angezeigt — bitte besonders sorgfältig prüfen.</span>
+            <span data-lang="en">Appear in the header and footer, on the contact page and in the donation form. The IBAN is also shown to donors — please check it especially carefully.</span>
+          </p>
+          <div id="ce-org"></div>
+        </section>
+
+        <div class="flex-between mt-4">
+          <p class="text-sm text-muted">
+            <span data-lang="de">Bei jedem Speichern wird die vorherige Fassung gesichert (die letzten 20 bleiben erhalten).</span>
+            <span data-lang="en">Every save keeps a backup of the previous version (the last 20 are retained).</span>
+          </p>
+          <button class="btn" type="button" id="contentSave2" onclick="document.getElementById('contentSave').click()">
+            <span data-lang="de">Speichern</span><span data-lang="en">Save</span>
+          </button>
+        </div>
+      </div><!-- /content panel -->
+
+      <!-- ============ DOCUMENTS ============ -->
+      <div class="tab-panel" data-panel="docs" id="docsPanel">
+        <div class="flex-between mb-3">
+          <div>
+            <h2 style="font-size:var(--fs-2xl)"><span data-lang="de">Dokumente</span><span data-lang="en">Documents</span></h2>
+            <p class="text-sm text-muted">
+              <span data-lang="de">Zertifikate, Bestätigungen und Zuwendungsbestätigungen ausstellen — druckfertig auf A4.</span>
+              <span data-lang="en">Issue certificates, confirmations and donation receipts — print-ready on A4.</span>
+            </p>
+          </div>
+          <button class="btn" type="button" id="docPrint">
+            <span data-lang="de">Drucken / als PDF speichern</span><span data-lang="en">Print / save as PDF</span>
+          </button>
+        </div>
+
+        <div class="card card-pad-lg mb-3">
+          <div class="form-grid">
+            <div class="field">
+              <label for="docType"><span data-lang="de">Dokumentart</span><span data-lang="en">Document type</span></label>
+              <select class="select" id="docType"></select>
+            </div>
+            <div class="field">
+              <label for="docSource"><span data-lang="de">Daten übernehmen aus</span><span data-lang="en">Prefill from</span></label>
+              <select class="select" id="docSource"></select>
+              <span class="hint"><span data-lang="de">Übernimmt Name, Nummer und Datum aus einem Eingang.</span><span data-lang="en">Takes name, number and date from a submission.</span></span>
+            </div>
+          </div>
+          <div id="docFields" class="mt-3"></div>
+        </div>
+
+        <div id="docWarn"></div>
+
+        <div class="doc-stage doc-print-root">
+          <div class="doc-sheet" id="docSheet"></div>
+        </div>
+
+        <p class="text-sm text-muted mt-3">
+          <span data-lang="de">Tipp: Im Druckdialog „Als PDF sichern“ wählen. Ränder auf „Standard“ lassen — das Layout ist bereits auf A4 gesetzt.</span>
+          <span data-lang="en">Tip: choose 'Save as PDF' in the print dialogue. Leave margins at default — the layout is already set for A4.</span>
+        </p>
+      </div><!-- /documents panel -->
+
+      <!-- ============ DATA-SUBJECT REQUESTS ============ -->
+      <div class="tab-panel" data-panel="dsgvo" id="dsgvoPanel">
+        <div class="mb-3">
+          <h2 style="font-size:var(--fs-2xl)"><span data-lang="de">Auskunft &amp; Löschung</span><span data-lang="en">Access &amp; erasure</span></h2>
+          <p class="text-sm text-muted">
+            <span data-lang="de">Unsere Datenschutzerklärung sagt zu, Anfragen nach Art. 15 und Art. 17 DSGVO innerhalb eines Monats zu beantworten. Hier finden Sie alles, was zu einer Person gespeichert ist, können es ihr als Datei aushändigen und es anschließend löschen.</span>
+            <span data-lang="en">Our privacy policy promises to answer requests under Art. 15 and Art. 17 GDPR within one month. Here you find everything stored about a person, can hand it over as a file, and then erase it.</span>
+          </p>
+        </div>
+
+        <div class="card card-pad-lg">
+          <div class="form-grid">
+            <div class="field span-2">
+              <label for="dsQuery"><span data-lang="de">E-Mail-Adresse oder vollständiger Name</span><span data-lang="en">E-mail address or full name</span></label>
+              <input class="input" id="dsQuery" type="search" data-de-placeholder="z. B. anisha.gurung@example.com" data-en-placeholder="e.g. anisha.gurung@example.com">
+            </div>
+            <div class="field">
+              <label for="dsActor"><span data-lang="de">Bearbeitet von (für das Protokoll)</span><span data-lang="en">Handled by (for the log)</span></label>
+              <input class="input" id="dsActor" type="text" data-de-placeholder="z. B. Durga (Schriftführung)" data-en-placeholder="e.g. Durga (secretary)">
+            </div>
+            <div class="field" style="justify-content:flex-end">
+              <button class="btn" type="button" id="dsSearch"><span data-lang="de">Daten suchen</span><span data-lang="en">Find data</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="dsResult" class="mt-3"></div>
+        <div id="dsPlan" class="mt-3"></div>
+        <div id="dsReceipt" class="mt-3"></div>
+
+        <div class="flex mt-3 hide" id="dsActions">
+          <button class="btn btn-ghost" type="button" id="dsExport">
+            <span data-lang="de">Auskunft als Datei herunterladen</span><span data-lang="en">Download the disclosure file</span>
+          </button>
+          <button class="btn" type="button" id="dsErase" style="background:var(--err)">
+            <span data-lang="de">Daten löschen</span><span data-lang="en">Erase data</span>
+          </button>
+        </div>
+
+        <section class="card card-pad-lg mt-6">
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Protokoll der Löschungen</span><span data-lang="en">Erasure log</span></h3>
+          <p class="text-sm text-muted mb-3">
+            <span data-lang="de">Nachweis nach Art. 5 Abs. 2 DSGVO. Die Person selbst wird dabei nur über eine Einwegkennung erfasst — die E-Mail-Adresse steht nicht im Protokoll.</span>
+            <span data-lang="en">Evidence under Art. 5(2) GDPR. The person is recorded only by a one-way reference — the e-mail address itself is not in the log.</span>
+          </p>
+          <div id="dsLog"></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail drawer -->
+  <div class="detail-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Details">
+    <div class="flex-between mb-3">
+      <h3 style="font-size:var(--fs-xl)" id="drawerTitle">Details</h3>
+      <button class="icon-btn" type="button" id="drawerClose" aria-label="Schließen">✕</button>
+    </div>
+    <dl class="review-list" id="drawerBody"></dl>
+    <div class="field mt-4">
+      <label for="drawerStatus">Status</label>
+      <select class="select" id="drawerStatus">
+        <option value="new" data-de="Neu" data-en="New">Neu</option>
+        <option value="in-pruefung" data-de="In Prüfung" data-en="Under review">In Prüfung</option>
+        <option value="angenommen" data-de="Angenommen" data-en="Accepted">Angenommen</option>
+        <option value="abgelehnt" data-de="Abgelehnt" data-en="Rejected">Abgelehnt</option>
+        <option value="erledigt" data-de="Erledigt" data-en="Done">Erledigt</option>
+      </select>
+    </div>
+    <div class="field mt-2">
+      <label for="drawerNote"><span data-lang="de">Interne Notiz</span><span data-lang="en">Internal note</span></label>
+      <textarea class="textarea" id="drawerNote" rows="3" style="min-height:80px"></textarea>
+    </div>
+    <div class="flex mt-3">
+      <button class="btn btn-sm" type="button" id="drawerSave"><span data-lang="de">Speichern</span><span data-lang="en">Save</span></button>
+    </div>
+
+    <hr>
+    <h3 class="t-h4"><span data-lang="de">Antwort verfassen</span><span data-lang="en">Write a reply</span></h3>
+    <p class="text-sm text-muted mb-2">
+      <span data-lang="de">Die Vorlage füllt Mitgliedsnummer, Beitrag und Bankverbindung selbst ein — in der Sprache, die die Person gewünscht hat.</span>
+      <span data-lang="en">The template fills in the membership number, fee and bank details itself — in the language the person asked for.</span>
+    </p>
+    <div class="field">
+      <label class="sr-only" for="letterPick">Vorlage</label>
+      <select class="select" id="letterPick"></select>
+    </div>
+    <div class="field mt-2">
+      <label class="sr-only" for="letterSubject">Betreff</label>
+      <input class="input" id="letterSubject" type="text">
+    </div>
+    <div class="field mt-2">
+      <label class="sr-only" for="letterBody">Text</label>
+      <textarea class="textarea" id="letterBody" rows="14" style="min-height:260px;font-size:var(--fs-sm)"></textarea>
+    </div>
+    <div class="flex mt-2">
+      <button class="btn btn-sm" type="button" id="letterCopy"><span data-lang="de">Text kopieren</span><span data-lang="en">Copy text</span></button>
+      <a class="btn btn-sm btn-ghost" id="letterMail" href="#"><span data-lang="de">In E-Mail-Programm öffnen</span><span data-lang="en">Open in mail client</span></a>
+    </div>
+    <p class="text-xs text-muted mt-2" id="letterHint"></p>
+  </div>
+
+</main>
+
+<div id="siteFooterMount"></div>
+
+<script>
+document.addEventListener("npjoe:layout-ready", function () {
+  var API = (window.NPJOE && window.NPJOE.forms && window.NPJOE.forms.apiBase) || "/api";
+  var T = window.npjoeT;
+  var state = { type: "membership", rows: [], current: null };
+
+  var el = function (id) { return document.getElementById(id); };
+
+  function api(path, opts) {
+    return fetch(API + path, Object.assign({ credentials: "same-origin" }, opts || {}))
+      .then(function (r) {
+        if (r.status === 401) { showLogin(); throw new Error("unauthorised"); }
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      });
+  }
+
+  function showLogin() {
+    el("loginSection").classList.remove("hide");
+    el("dashboard").classList.add("hide");
+  }
+  var contentReady = false;
+  function showDash() {
+    el("loginSection").classList.add("hide");
+    el("dashboard").classList.remove("hide");
+    loadSummary();
+    loadRows();
+    loadNotifications();
+    loadPreflight();
+    if (!contentReady && window.NPJOEAdminDocs) window.NPJOEAdminDocs.init();
+    if (!contentReady && window.NPJOEAdminDsgvo) window.NPJOEAdminDsgvo.init();
+    if (!contentReady && window.NPJOEAdminContent) {
+      contentReady = true;
+      window.NPJOEAdminContent.init().catch(function () {
+        window.npjoeToast(T("Inhalte konnten nicht geladen werden.", "Content could not be loaded."), "err");
+      });
+    }
+  }
+
+  el("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var pw = el("adminPw").value;
+    el("loginError").textContent = "";
+    fetch(API + "/admin/login", {
+      method: "POST", credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: pw })
+    }).then(function (r) {
+      if (r.status === 429) throw new Error("rate");
+      if (!r.ok) throw new Error("bad");
+      return r.json();
+    }).then(function () {
+      el("adminPw").value = "";
+      showDash();
+    }).catch(function (err) {
+      el("loginError").textContent = err.message === "rate"
+        ? T("Zu viele Versuche. Bitte in einigen Minuten erneut versuchen.", "Too many attempts. Please try again in a few minutes.")
+        : T("Anmeldung fehlgeschlagen. Läuft der Server und stimmt das Passwort?", "Sign-in failed. Is the server running and the password correct?");
+    });
+  });
+
+  el("logoutBtn").addEventListener("click", function () {
+    fetch(API + "/admin/logout", { method: "POST", credentials: "same-origin" }).finally(showLogin);
+  });
+
+  function loadPreflight() {
+    api("/admin/preflight").then(function (p) {
+      var host = el("preflightBanner");
+      if (!p.findings || !p.findings.length) { host.innerHTML = ""; return; }
+      var blockers = p.findings.filter(function (f) { return f.severity === "blocker"; });
+      var others = p.findings.filter(function (f) { return f.severity !== "blocker"; });
+      var badge = { blocker: "badge-err", warning: "badge-warn", note: "badge-outline" };
+      host.innerHTML =
+        '<div class="callout" style="border-color:' + (blockers.length ? "var(--err)" : "var(--warn)") + '">' +
+          "<strong>" + (blockers.length
+            ? T(blockers.length + " Punkte sprechen gegen eine Veröffentlichung",
+                blockers.length + " items block going live")
+            : T("Vor dem Livegang zu klären", "To settle before going live")) + "</strong>" +
+          '<details class="mt-2"><summary class="text-sm" style="cursor:pointer;color:var(--brand)">' +
+            T("Details anzeigen", "Show details") + " (" + p.findings.length + ")</summary>" +
+          '<dl class="review-list mt-2">' +
+          blockers.concat(others).map(function (f) {
+            return '<div class="review-row"><dt><span class="badge ' + badge[f.severity] + '">' +
+              f.severity + "</span></dt><dd><strong>" + f.title + "</strong><br>" +
+              '<span class="text-sm text-muted">' + f.detail + "</span><br>" +
+              '<span class="text-sm">→ ' + f.fix + "</span></dd></div>";
+          }).join("") + "</dl></details></div>";
+    }).catch(function () {});
+  }
+
+  function loadNotifications() {
+    api("/admin/notifications").then(function (n) {
+      var stateEl = el("notifyState");
+      stateEl.innerHTML = n.configured
+        ? T("Aktiv — Meldungen gehen an ", "Active — alerts go to ") + "<code>" + n.host + "</code>"
+        : T("Nicht eingerichtet. Setzen Sie beim Serverstart NPJOE_WEBHOOK_URL, um bei jedem Eingang eine Meldung zu erhalten (Slack, Discord, Telegram-Relay …).",
+            "Not configured. Set NPJOE_WEBHOOK_URL when starting the server to be alerted on every submission (Slack, Discord, a Telegram relay …).");
+      var log = el("notifyLog");
+      if (!n.recent || !n.recent.length) { log.innerHTML = ""; return; }
+      log.innerHTML = '<div class="table-wrap"><table class="data"><thead><tr><th>' +
+        T("Zeitpunkt", "When") + "</th><th>" + T("Art", "Type") + "</th><th>" + T("Referenz", "Reference") +
+        "</th><th>Status</th></tr></thead><tbody>" +
+        n.recent.map(function (r) {
+          return "<tr><td>" + new Date(r.at).toLocaleString(T("de-DE", "en-GB")) + "</td><td>" +
+            r.type + "</td><td><code>" + r.ref + "</code></td><td>" +
+            (r.ok ? '<span class="badge badge-ok">' + T("zugestellt", "delivered") + "</span>"
+                  : '<span class="badge badge-err">' + (r.error || r.status) + "</span>") + "</td></tr>";
+        }).join("") + "</tbody></table></div>";
+    }).catch(function () {});
+  }
+
+  function loadSummary() {
+    api("/admin/summary").then(function (s) {
+      var labels = {
+        membership: [ "Mitglieder", "Members" ], volunteer: [ "Volunteers", "Volunteers" ],
+        donation: [ "Spenden", "Donations" ], contact: [ "Anfragen", "Enquiries" ],
+        partner: [ "Partner", "Partners" ], newsletter: [ "Newsletter", "Newsletter" ]
+      };
+      el("metrics").innerHTML = Object.keys(s).map(function (k) {
+        var lab = labels[k] || [k, k];
+        return '<div class="admin-metric"><div class="n">' + s[k].total + "</div>" +
+          '<div class="l">' + T(lab[0], lab[1]) + "</div>" +
+          '<div class="text-xs mt-1" style="color:var(--brand)">' + s[k]["new"] + " " + T("neu", "new") +
+          " · " + s[k].last7 + " " + T("in 7 Tagen", "in 7 days") + "</div></div>";
+      }).join("");
+    }).catch(function () {});
+  }
+
+  function fieldOf(row, keys) {
+    for (var i = 0; i < keys.length; i++) if (row[keys[i]]) return row[keys[i]];
+    return "";
+  }
+
+  function summaryOf(row) {
+    if (state.type === "membership") return [].concat(row.interessen || []).join(", ") || "—";
+    if (state.type === "volunteer") return (row.beruf || "") + " · " + [].concat(row.bereiche || []).join(", ");
+    if (state.type === "donation") return (row.betrag === "custom" ? row.betragCustom : row.betrag) + " € · " + (row.intervall || "");
+    if (state.type === "contact") return (row.thema || "") + " — " + String(row.nachricht || "").slice(0, 70);
+    if (state.type === "partner") return (row.organisation || "") + " · " + (row.artDerOrganisation || "");
+    return row.email || "";
+  }
+
+  function badgeFor(status) {
+    var map = { "new": "badge", "in-pruefung": "badge badge-warn", angenommen: "badge badge-ok", abgelehnt: "badge badge-err", erledigt: "badge badge-outline" };
+    return '<span class="' + (map[status] || "badge badge-outline") + '">' + (status || "new") + "</span>";
+  }
+
+  function render() {
+    var q = el("searchInput").value.trim().toLowerCase();
+    var st = el("statusSelect").value;
+    var rows = state.rows.filter(function (r) {
+      if (st && (r.status || "new") !== st) return false;
+      if (!q) return true;
+      return JSON.stringify(r).toLowerCase().indexOf(q) !== -1;
+    });
+    el("rowsBody").innerHTML = rows.map(function (r, i) {
+      var date = new Date(r._receivedAt || r._submittedAt || Date.now());
+      var name = fieldOf(r, ["vorname", "name", "organisation"]);
+      var last = r.nachname ? " " + r.nachname : "";
+      return "<tr>" +
+        "<td>" + date.toLocaleDateString(T("de-DE", "en-GB")) + '<br><span class="text-xs text-muted">' + date.toLocaleTimeString(T("de-DE", "en-GB"), { hour: "2-digit", minute: "2-digit" }) + "</span></td>" +
+        "<td><code>" + (r._ref || "—") + "</code>" + (r.membershipNo ? '<br><span class="text-xs">' + r.membershipNo + "</span>" : "") + "</td>" +
+        "<td><strong>" + (name + last || "—") + "</strong><br><span class='text-xs text-muted'>" + (r.email || "") + "</span></td>" +
+        '<td class="text-xs">' + String(summaryOf(r)).slice(0, 90) + "</td>" +
+        "<td>" + badgeFor(r.status) + "</td>" +
+        '<td><button class="btn btn-sm btn-ghost" type="button" data-open="' + i + '">' + T("Öffnen", "Open") + "</button></td>" +
+        "</tr>";
+    }).join("") || '<tr><td colspan="6" class="center text-muted">' + T("Keine Einträge.", "No entries.") + "</td></tr>";
+
+    el("rowsInfo").textContent = rows.length + " " + T("von", "of") + " " + state.rows.length + " " + T("Einträgen", "entries");
+
+    el("rowsBody").querySelectorAll("[data-open]").forEach(function (b) {
+      b.addEventListener("click", function () { openDrawer(rows[parseInt(b.getAttribute("data-open"), 10)]); });
+    });
+  }
+
+  function loadRows() {
+    api("/admin/submissions?type=" + encodeURIComponent(state.type)).then(function (res) {
+      state.rows = res.items || [];
+      render();
+    }).catch(function () {});
+  }
+
+  function openDrawer(row) {
+    if (!row) return;
+    state.current = row;
+    el("drawerTitle").textContent = row._ref || T("Eintrag", "Entry");
+    el("drawerBody").innerHTML = Object.keys(row).map(function (k) {
+      if (k === "signature") {
+        return '<div class="review-row"><dt>' + T("Unterschrift", "Signature") + '</dt><dd><img src="' + row[k] + '" alt="" style="max-width:220px;background:#fff;border-radius:6px"></dd></div>';
+      }
+      var v = row[k];
+      if (Array.isArray(v)) v = v.join(", ");
+      if (typeof v === "boolean") v = v ? T("Ja", "Yes") : T("Nein", "No");
+      if (v === "" || v === undefined || v === null) return "";
+      return '<div class="review-row"><dt>' + k + "</dt><dd>" + String(v).replace(/[<>]/g, "") + "</dd></div>";
+    }).join("");
+    el("drawerStatus").value = row.status || "new";
+    el("drawerNote").value = row.note || "";
+    buildLetters(row);
+    el("drawer").classList.add("is-open");
+  }
+
+  /* ---- reply templates ---- */
+  function renderLetter(row, key) {
+    var L = window.NPJOELetters;
+    var letter = L.build(key, row);
+    if (!letter) return;
+    el("letterSubject").value = letter.subject;
+    el("letterBody").value = letter.body;
+    var link = L.mailtoLink(letter);
+    var mail = el("letterMail");
+    if (link) {
+      mail.href = link;
+      mail.classList.remove("hide");
+      el("letterHint").textContent = T("Sprache: ", "Language: ") + letter.lang.toUpperCase();
+    } else {
+      /* too long for a mailto — copying is the reliable route */
+      mail.href = "mailto:" + (letter.to || "");
+      el("letterHint").textContent = T(
+        "Der Text ist für einen Mail-Link zu lang — bitte kopieren und einfügen. Sprache: ",
+        "Too long for a mail link — please copy and paste. Language: ") + letter.lang.toUpperCase();
+    }
+  }
+
+  function buildLetters(row) {
+    var L = window.NPJOELetters;
+    if (!L) return;
+    var keys = L.forType(state.type);
+    var pick = el("letterPick");
+    pick.innerHTML = keys.map(function (k) {
+      var lab = L.TEMPLATES[k].label;
+      return '<option value="' + k + '">' + T(lab.de, lab.en) + "</option>";
+    }).join("");
+    if (keys.length) renderLetter(row, keys[0]);
+    pick.onchange = function () { renderLetter(row, pick.value); };
+  }
+
+  el("letterCopy").addEventListener("click", function () {
+    var text = el("letterBody").value;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function () {
+        window.npjoeToast(T("Text kopiert.", "Text copied."), "ok");
+      });
+    }
+  });
+
+  el("drawerClose").addEventListener("click", function () { el("drawer").classList.remove("is-open"); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") el("drawer").classList.remove("is-open"); });
+
+  el("drawerSave").addEventListener("click", function () {
+    if (!state.current) return;
+    fetch(API + "/admin/status", {
+      method: "POST", credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: state.type, ref: state.current._ref, status: el("drawerStatus").value, note: el("drawerNote").value })
+    }).then(function (r) {
+      if (!r.ok) throw new Error();
+      window.npjoeToast(T("Gespeichert.", "Saved."), "ok");
+      el("drawer").classList.remove("is-open");
+      loadRows(); loadSummary();
+    }).catch(function () { window.npjoeToast(T("Speichern fehlgeschlagen.", "Saving failed."), "err"); });
+  });
+
+  el("typeSelect").addEventListener("change", function () { state.type = this.value; loadRows(); });
+  el("statusSelect").addEventListener("change", render);
+  el("searchInput").addEventListener("input", render);
+  el("refreshBtn").addEventListener("click", function () { loadSummary(); loadRows(); loadNotifications(); });
+  el("notifyTest").addEventListener("click", function () {
+    fetch(API + "/admin/notify-test", { method: "POST", credentials: "same-origin" })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.skipped) window.npjoeToast(T("Kein Webhook eingerichtet.", "No webhook configured."), "err");
+        else if (res.ok) window.npjoeToast(T("Testnachricht zugestellt.", "Test alert delivered."), "ok");
+        else window.npjoeToast(T("Zustellung fehlgeschlagen: ", "Delivery failed: ") + (res.error || res.status), "err");
+        loadNotifications();
+      }).catch(function () { window.npjoeToast(T("Test fehlgeschlagen.", "Test failed."), "err"); });
+  });
+  el("exportBtn").addEventListener("click", function () {
+    window.location.href = API + "/admin/export?type=" + encodeURIComponent(state.type);
+  });
+
+  /* Auto-resume an existing session */
+  api("/admin/summary").then(showDash).catch(showLogin);
+});
+</script>
+</body>
+</html>

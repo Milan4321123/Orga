@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News &amp; Berichte | NPJOE</title>
+<meta name="description" content="Neuigkeiten aus der Nepalesischen Progressiven Jugendorganisation e.V.: Beschlüsse, Partnerschaften, Fortschritte der Erste-Hilfe-Kampagne und Berichte aus Nepal.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/content.js" defer></script>
+</head>
+<body data-page="news">
+<div id="siteHeaderMount"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li>News</li>
+      </ol>
+      <span class="eyebrow"><span data-lang="de">Aktuelles</span><span data-lang="en">Latest</span></span>
+      <h1><span data-lang="de">News &amp; Berichte</span><span data-lang="en">News &amp; reports</span></h1>
+      <p class="lead">
+        <span data-lang="de">Beschlüsse, Partnerschaften, Fortschritte in Nepal und Neues aus der Diaspora. Jeder Beitrag lässt sich direkt in der Karte aufklappen — vierteljährlich fassen wir alles im Newsletter zusammen.</span>
+        <span data-lang="en">Resolutions, partnerships, progress in Nepal and news from the diaspora. Every post expands right inside its card — and each quarter we summarise everything in the newsletter.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="flex-between mb-4">
+        <div class="flex" data-filter-group data-filter-target="#newsAll article" data-filter-empty="#newsEmpty">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span></button>
+          <button class="chip" type="button" data-filter="verein" aria-pressed="false"><span data-lang="de">Verein</span><span data-lang="en">Association</span></button>
+          <button class="chip" type="button" data-filter="partner" aria-pressed="false">NPYO Nepal</button>
+          <button class="chip" type="button" data-filter="erste-hilfe" aria-pressed="false"><span data-lang="de">Erste Hilfe</span><span data-lang="en">First aid</span></button>
+          <button class="chip" type="button" data-filter="volunteer" aria-pressed="false">Volunteer</button>
+          <button class="chip" type="button" data-filter="spenden" aria-pressed="false"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span></button>
+          <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span></button>
+        </div>
+        <input class="input" type="search" style="max-width:260px" data-search-target="#newsAll article" data-search-empty="#newsEmpty"
+               data-de-placeholder="News durchsuchen …" data-en-placeholder="Search news …" aria-label="Suche / Search">
+      </div>
+
+      <div class="grid grid-3" id="newsAll"></div>
+      <p class="center text-muted mt-4 hide" id="newsEmpty">
+        <span data-lang="de">Keine Beiträge gefunden.</span><span data-lang="en">No posts found.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container container-narrow center">
+      <h2><span data-lang="de">Nichts verpassen</span><span data-lang="en">Don't miss anything</span></h2>
+      <p class="lead mt-2">
+        <span data-lang="de">Ein kurzer Rückblick pro Quartal: Einsätze, Schulen, Zahlen — keine Werbung, jederzeit abbestellbar.</span>
+        <span data-lang="en">One short recap per quarter: deployments, schools, figures — no advertising, unsubscribe anytime.</span>
+      </p>
+      <form class="flex mt-4" style="justify-content:center;max-width:460px;margin-inline:auto" data-form="newsletter" novalidate>
+        <input class="input" type="email" name="email" required style="flex:1 1 240px"
+               data-de-placeholder="ihre@email.de" data-en-placeholder="your@email.com" aria-label="E-Mail">
+        <button class="btn" type="submit"><span data-lang="de">Abonnieren</span><span data-lang="en">Subscribe</span></button>
+      </form>
+      <p class="text-xs text-muted mt-3">
+        <span data-lang="de">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer E-Mail-Adresse zum Versand des Newsletters zu. Siehe <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+        <span data-lang="en">By submitting you consent to the processing of your e-mail address for sending the newsletter. See our <a href="datenschutz.html">privacy policy</a>.</span>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooterMount"></div>
+
+<script>
+  document.addEventListener("npjoe:layout-ready", function () {
+    if (window.NPJOEContent) window.NPJOEContent.renderNews("#newsAll", 0, { featureFirst: true });
+  });
+</script>
+</body>
+</html>

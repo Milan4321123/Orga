@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spenden — One Euro for Nation | NPJOE</title>
+<meta name="description" content="Spenden Sie ab 1 € für Erste-Hilfe-Kits, Schulmaterialien und Hygienekits in Nepal. Verwaltet durch NPJOE e.V. in Deutschland, steuerlich absetzbar, verteilt durch NPYO Nepal.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/content.js" defer></script>
+</head>
+<body data-page="join">
+<div id="siteHeaderMount"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><a href="one-euro-for-nation.html">One Euro for Nation</a></li>
+        <li><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></li>
+      </ol>
+      <span class="eyebrow">One Euro for Nation</span>
+      <h1><span data-lang="de">Kleine Spende. Große Wirkung.</span><span data-lang="en">Small donation. Big impact.</span></h1>
+      <p class="lead">
+        <span data-lang="de">Ab einem Euro finanzieren Sie Erste-Hilfe-Kits, Trainingsmaterialien auf Nepali, Schulmaterialien und Hygienekits. Spenden werden über NPJOE e.V. in Deutschland verwaltet — steuerlich absetzbar — und von NPYO Nepal vor Ort verteilt.</span>
+        <span data-lang="en">From one euro you finance First Aid kits, Nepali training materials, school supplies and hygiene kits. Donations are managed by NPJOE e.V. in Germany — tax-deductible — and distributed on site by NPYO Nepal.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Goal progress -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="card card-pad-lg reveal">
+        <div class="flex-between mb-3">
+          <div>
+            <h2 class="t-h3" style="font-size:var(--fs-xl)"><span data-lang="de">Jahresziel 2026</span><span data-lang="en">2026 annual goal</span></h2>
+            <p class="text-sm text-muted"><span data-lang="de">Finanzierung der Nationalen Erste-Hilfe-Kampagne und des Schulbedarfs</span><span data-lang="en">Financing the National First Aid Campaign and school supplies</span></p>
+          </div>
+          <div class="center">
+            <div class="stat-num">8.420 €</div>
+            <div class="stat-label"><span data-lang="de">von 25.000 €</span><span data-lang="en">of €25,000</span></div>
+          </div>
+        </div>
+        <div class="progress" data-progress="34"><span></span></div>
+        <div class="grid grid-4 mt-4">
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="168"></div><div class="stat-label"><span data-lang="de">Erste-Hilfe-Kits finanziert</span><span data-lang="en">First Aid kits funded</span></div></div>
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="2400"></div><div class="stat-label"><span data-lang="de">Hefte &amp; Stifte verteilt</span><span data-lang="en">Notebooks &amp; pens distributed</span></div></div>
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="12"></div><div class="stat-label"><span data-lang="de">Schulen erreicht</span><span data-lang="en">Schools reached</span></div></div>
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="341"></div><div class="stat-label"><span data-lang="de">Spender:innen weltweit</span><span data-lang="en">Donors worldwide</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-sidebar">
+      <div>
+        <!-- Donation form -->
+        <div class="form-card">
+          <h2><span data-lang="de">Ich möchte spenden</span><span data-lang="en">I want to donate</span></h2>
+          <p class="lead mt-2 mb-4" style="font-size:var(--fs-base)">
+            <span data-lang="de">Wählen Sie einen Betrag — Sie sehen sofort, was daraus in Nepal wird. Anschließend erhalten Sie unsere Bankverbindung mit Ihrem persönlichen Verwendungszweck.</span>
+            <span data-lang="en">Choose an amount — you immediately see what it becomes in Nepal. You then receive our bank details with your personal reference.</span>
+          </p>
+
+          <form data-form="donation" data-ref-prefix="SPE" data-subject="Spendenzusage One Euro for Nation"
+                data-email="spenden@progressive-youth.de" novalidate>
+            <fieldset class="fieldset">
+              <legend><span data-lang="de">Betrag</span><span data-lang="en">Amount</span></legend>
+              <div class="optgrid" id="tierTiles"></div>
+              <div class="form-grid mt-3">
+                <div class="field" id="customWrap" style="display:none">
+                  <label for="s-custom"><span data-lang="de">Eigener Betrag in €</span><span data-lang="en">Custom amount in €</span></label>
+                  <input class="input" id="s-custom" name="betragCustom" type="number" min="1" max="100000" step="1" value="25">
+                </div>
+                <div class="field">
+                  <label for="s-intervall"><span data-lang="de">Häufigkeit</span><span data-lang="en">Frequency</span></label>
+                  <select class="select" id="s-intervall" name="intervall">
+                    <option value="einmalig" data-de="Einmalig" data-en="One-off">Einmalig</option>
+                    <option value="monatlich" data-de="Monatlich (Dauerauftrag)" data-en="Monthly (standing order)">Monatlich (Dauerauftrag)</option>
+                    <option value="jaehrlich" data-de="Jährlich" data-en="Annually">Jährlich</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="s-zweck"><span data-lang="de">Verwendungszweck</span><span data-lang="en">Purpose</span></label>
+                  <select class="select" id="s-zweck" name="zweck">
+                    <option value="wo-am-noetigsten" data-de="Wo es am nötigsten ist" data-en="Where it is needed most">Wo es am nötigsten ist</option>
+                    <option value="erste-hilfe" data-de="Erste-Hilfe-Kampagne" data-en="First Aid Campaign">Erste-Hilfe-Kampagne</option>
+                    <option value="schulmaterial" data-de="Schulmaterialien" data-en="School materials">Schulmaterialien</option>
+                    <option value="hygiene" data-de="Hygienekits" data-en="Hygiene kits">Hygienekits</option>
+                    <option value="transport" data-de="Transport zu abgelegenen Schulen" data-en="Transport to remote schools">Transport zu abgelegenen Schulen</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Impact calculator -->
+              <div class="callout callout-saffron mt-4" id="impactBox">
+                <strong><span data-lang="de">Ihre Wirkung:</span><span data-lang="en">Your impact:</span></strong>
+                <span id="impactText"></span>
+              </div>
+            </fieldset>
+
+            <fieldset class="fieldset">
+              <legend><span data-lang="de">Ihre Angaben</span><span data-lang="en">Your details</span></legend>
+              <p class="fieldset-hint">
+                <span data-lang="de">Für die Zuwendungsbestätigung benötigen wir Name und Anschrift. Möchten Sie anonym spenden, genügt eine E-Mail-Adresse.</span>
+                <span data-lang="en">For the donation receipt we need your name and address. If you prefer to donate anonymously, an e-mail address is enough.</span>
+              </p>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="s-name"><span data-lang="de">Name</span><span data-lang="en">Name</span></label>
+                  <input class="input" id="s-name" name="name" type="text" autocomplete="name">
+                </div>
+                <div class="field">
+                  <label for="s-email">E-Mail <span class="req">*</span></label>
+                  <input class="input" id="s-email" name="email" type="email" required autocomplete="email">
+                </div>
+                <div class="field span-2">
+                  <label for="s-adresse"><span data-lang="de">Anschrift (für die Zuwendungsbestätigung)</span><span data-lang="en">Address (for the donation receipt)</span></label>
+                  <input class="input" id="s-adresse" name="adresse" type="text" autocomplete="street-address">
+                </div>
+                <div class="field">
+                  <label for="s-land"><span data-lang="de">Land</span><span data-lang="en">Country</span></label>
+                  <input class="input" id="s-land" name="land" type="text" value="Deutschland">
+                </div>
+                <div class="field">
+                  <label for="s-widmung"><span data-lang="de">Spende im Namen von (optional)</span><span data-lang="en">Donation in the name of (optional)</span></label>
+                  <input class="input" id="s-widmung" name="widmung" type="text" data-de-placeholder="z. B. als Geschenk oder zum Gedenken" data-en-placeholder="e.g. as a gift or in memory">
+                </div>
+                <div class="field span-2">
+                  <label for="s-nachricht"><span data-lang="de">Nachricht an das Team (optional)</span><span data-lang="en">Message to the team (optional)</span></label>
+                  <textarea class="textarea" id="s-nachricht" name="nachricht" rows="3" style="min-height:90px"></textarea>
+                </div>
+              </div>
+              <div class="stack-sm mt-3">
+                <label class="check"><input type="checkbox" name="zuwendungsbestaetigung" data-track>
+                  <span><strong><span data-lang="de">Ich möchte eine Zuwendungsbestätigung erhalten</span><span data-lang="en">I would like a donation receipt</span></strong>
+                  <span class="hint"><span data-lang="de">Steuerlich absetzbar in Deutschland. Wir senden sie im Folgejahr per E-Mail.</span><span data-lang="en">Tax-deductible in Germany. We send it by e-mail in the following year.</span></span></span></label>
+                <label class="check"><input type="checkbox" name="projektbericht" data-track>
+                  <span><strong><span data-lang="de">Ich möchte einen Projektbericht erhalten</span><span data-lang="en">I would like a project report</span></strong>
+                  <span class="hint"><span data-lang="de">Wie viele Schulen, was wurde gekauft, wie viele Schüler:innen erreicht.</span><span data-lang="en">How many schools, what was purchased, how many students reached.</span></span></span></label>
+                <label class="check"><input type="checkbox" name="dsgvo" required data-track>
+                  <span><strong><span data-lang="de">Datenschutz <span class="req">*</span></span><span data-lang="en">Data protection <span class="req">*</span></span></strong>
+                  <span class="hint"><span data-lang="de">Meine Angaben dürfen zur Abwicklung der Spende gespeichert werden. Siehe <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span><span data-lang="en">My details may be stored to process the donation. See the <a href="datenschutz.html" target="_blank">privacy policy</a>.</span></span></span></label>
+              </div>
+            </fieldset>
+
+            <div class="callout mt-2">
+              <span data-lang="de">Dieses Formular löst keine Zahlung aus. Sie erhalten anschließend die Bankverbindung mit Ihrem persönlichen Verwendungszweck, damit wir Ihre Spende zuordnen können.</span>
+              <span data-lang="en">This form does not trigger a payment. You will then receive our bank details with your personal reference so we can allocate your donation.</span>
+            </div>
+
+            <div class="form-status"></div>
+            <div class="form-nav">
+              <span></span>
+              <button class="btn btn-lg" type="submit"><span data-lang="de">Spendenzusage senden</span><span data-lang="en">Send donation pledge</span></button>
+            </div>
+          </form>
+
+          <div class="hide" data-success>
+            <div class="center" style="padding:1rem 0 2rem">
+              <div class="card-icon mx-auto" style="background:var(--ok-soft);color:var(--ok);font-size:1.8rem">💛</div>
+              <h2><span data-lang="de">Danke — von Herzen!</span><span data-lang="en">Thank you — sincerely!</span></h2>
+              <p class="lead mt-2" data-delivery></p>
+              <p class="mt-3"><span data-lang="de">Ihr Verwendungszweck:</span><span data-lang="en">Your payment reference:</span> <strong data-ref style="font-size:1.15rem"></strong></p>
+              <p class="text-sm text-muted mt-1"><span data-lang="de">Bitte geben Sie diese Referenz bei der Überweisung an.</span><span data-lang="en">Please quote this reference with your transfer.</span></p>
+            </div>
+            <div class="card" style="background:var(--bg-alt)">
+              <h3 class="t-h4"><span data-lang="de">Bankverbindung</span><span data-lang="en">Bank details</span></h3>
+              <div class="stack-sm mt-3">
+                <div class="copy-row"><span><span data-lang="de">Kontoinhaber</span><span data-lang="en">Account holder</span></span><code>Nepalesische Progressive Jugendorganisation e.V.</code></div>
+                <div class="copy-row"><span>IBAN</span><span class="flex" style="gap:.5rem"><code id="ibanText">DE00 0000 0000 0000 0000 00</code><button class="btn btn-sm btn-ghost" type="button" data-copy="DE00 0000 0000 0000 0000 00"><span data-lang="de">Kopieren</span><span data-lang="en">Copy</span></button></span></div>
+                <div class="copy-row"><span>BIC</span><code>XXXXDEXXXXX</code></div>
+              </div>
+              <p class="text-xs text-muted mt-3">
+                <span data-lang="de">Die Bankverbindung wird vom Vorstand aktualisiert. Bitte prüfen Sie die Angaben in Ihrer Bestätigungs-E-Mail.</span>
+                <span data-lang="en">Bank details are maintained by the board. Please verify them in your confirmation e-mail.</span>
+              </p>
+              <div class="flex mt-4">
+                <a class="btn btn-sm" href="transparenz.html"><span data-lang="de">Mittelverwendung ansehen</span><span data-lang="en">See how funds are used</span></a>
+                <button class="btn btn-sm btn-ghost" type="button" data-share><span data-lang="de">Aktion teilen</span><span data-lang="en">Share the campaign</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What donations buy -->
+        <div class="mt-6">
+          <h2><span data-lang="de">Wofür Ihre Spende verwendet wird</span><span data-lang="en">What your donation is used for</span></h2>
+          <p class="lead mt-2 mb-4" style="font-size:var(--fs-base)">
+            <span data-lang="de">Alle Spenden fließen direkt in die folgenden Bereiche — kein Geld verschwindet in Verwaltungsstrukturen.</span>
+            <span data-lang="en">All donations flow directly into the following areas — no money disappears into administrative structures.</span>
+          </p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr>
+                  <th><span data-lang="de">Bereich</span><span data-lang="en">Area</span></th>
+                  <th><span data-lang="de">Was finanziert wird</span><span data-lang="en">What is financed</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong><span data-lang="de">Erste-Hilfe-Kits</span><span data-lang="en">First Aid kits</span></strong></td><td><span data-lang="de">Zertifizierte Kits für jede Schule der Kampagne — Grundausstattung für den Einsatz</span><span data-lang="en">Certified kits for every school in the campaign — basic equipment for deployment</span></td></tr>
+                <tr><td><strong><span data-lang="de">Trainingsmaterialien</span><span data-lang="en">Training materials</span></strong></td><td><span data-lang="de">Handbücher, Poster und Übungsmaterial auf Nepali für Schüler:innen und Lehrkräfte</span><span data-lang="en">Manuals, posters and practice materials in Nepali for students and teachers</span></td></tr>
+                <tr><td><strong><span data-lang="de">Schulmaterialien</span><span data-lang="en">School materials</span></strong></td><td><span data-lang="de">Hefte, Stifte und Bücher für Schüler:innen aus benachteiligten Familien</span><span data-lang="en">Notebooks, pens and books for students from disadvantaged families</span></td></tr>
+                <tr><td><strong><span data-lang="de">Hygienekits</span><span data-lang="en">Hygiene kits</span></strong></td><td><span data-lang="de">Seife, Sanitärbedarf und Handwaschstationen für Schulen</span><span data-lang="en">Soap, sanitary supplies and handwashing stations for schools</span></td></tr>
+                <tr><td><strong><span data-lang="de">Transportkosten</span><span data-lang="en">Transport costs</span></strong></td><td><span data-lang="de">Reisekosten für NPYO-Mitarbeitende zu abgelegenen Schulen</span><span data-lang="en">Travel costs for NPYO staff to reach remote schools</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="legal-basis mt-3">
+            <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span></strong>
+            § 3(i) <span data-lang="de">Spendenaktionen für Schulmaterialien · Hygienekits und medizinische Sachspenden</span><span data-lang="en">donation drives for school materials · hygiene kits and medical in-kind donations</span> ·
+            § 3(e) <span data-lang="de">Förderung des öffentlichen Gesundheitswesens</span><span data-lang="en">promotion of public health</span> ·
+            § 10 <span data-lang="de">Spenden als wirtschaftliche Einnahmequelle</span><span data-lang="en">donations as a source of income</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="stack">
+        <div class="card" style="background:var(--brand-soft);border-color:var(--brand)">
+          <h3 class="t-h4"><span data-lang="de">Lieber direkt überweisen?</span><span data-lang="en">Prefer a direct transfer?</span></h3>
+          <p class="text-sm mt-1"><span data-lang="de">Verwendungszweck: „One Euro for Nation“ plus Ihr Name, wenn Sie eine Bestätigung wünschen.</span><span data-lang="en">Reference: 'One Euro for Nation' plus your name if you want a receipt.</span></p>
+          <div class="stack-sm mt-3 text-sm">
+            <div class="copy-row"><span>IBAN</span><code>DE00 0000 0000 0000 0000 00</code></div>
+            <div class="copy-row"><span>BIC</span><code>XXXXDEXXXXX</code></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="t-h4"><span data-lang="de">Transparenz</span><span data-lang="en">Transparency</span></h3>
+          <ul class="feature-list mt-3 text-sm">
+            <li><span class="tick">✓</span><span data-lang="de">Verwaltung durch NPJOE e.V. in Deutschland</span><span data-lang="en">Managed by NPJOE e.V. in Germany</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Verteilung vor Ort durch NPYO Nepal</span><span data-lang="en">Distributed on site by NPYO Nepal</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Jährlicher öffentlicher Bericht</span><span data-lang="en">Annual public report</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Kassenprüfung durch zwei gewählte Prüfer:innen</span><span data-lang="en">Audited by two elected auditors</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Projektbericht auf Wunsch für jede Spende</span><span data-lang="en">Project report on request for every donation</span></li>
+          </ul>
+          <p class="mt-3"><a class="text-sm" href="transparenz.html"><span data-lang="de">Zum Transparenzbericht →</span><span data-lang="en">To the transparency report →</span></a></p>
+        </div>
+
+        <div class="card">
+          <h3 class="t-h4"><span data-lang="de">Andere Wege zu helfen</span><span data-lang="en">Other ways to help</span></h3>
+          <div class="stack-sm mt-2 text-sm">
+            <p>📦 <strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung</span><span data-lang="en">materials, books, medical equipment</span></p>
+            <p>🎉 <strong><span data-lang="de">Spendenaktion</span><span data-lang="en">Fundraiser</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span></p>
+            <p>🏢 <strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span></p>
+          </div>
+          <p class="mt-3"><a class="btn btn-sm btn-ghost" href="kontakt.html#partner-werden"><span data-lang="de">Anfrage stellen</span><span data-lang="en">Make an enquiry</span></a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooterMount"></div>
+
+<script>
+  document.addEventListener("npjoe:layout-ready", function () {
+    var C = window.NPJOEContent;
+    if (C) C.renderTiers("#tierTiles");
+
+    var custom = document.getElementById("s-custom");
+    var customWrap = document.getElementById("customWrap");
+    var impact = document.getElementById("impactText");
+
+    function amount() {
+      var picked = document.querySelector('input[name="betrag"]:checked');
+      if (!picked) return 0;
+      if (picked.value === "custom") return parseFloat(custom.value) || 0;
+      return parseFloat(picked.value) || 0;
+    }
+
+    function describe(v) {
+      var de = [], en = [];
+      var kits = Math.floor(v / 50);
+      var rest = v - kits * 50;
+      var hyg = Math.floor(rest / 10);
+      var sets = Math.round(rest - hyg * 10);
+      if (kits) { de.push(kits + (kits === 1 ? " Erste-Hilfe-Kit für eine Schule" : " Erste-Hilfe-Kits für Schulen")); en.push(kits + (kits === 1 ? " First Aid kit for a school" : " First Aid kits for schools")); }
+      if (hyg) { de.push(hyg + (hyg === 1 ? " Hygienekit für eine Klasse" : " Hygienekits für Klassen")); en.push(hyg + (hyg === 1 ? " hygiene kit for a class" : " hygiene kits for classes")); }
+      if (sets > 0) { de.push(sets + (sets === 1 ? " Schulmaterialsatz für eine:n Schüler:in" : " Schulmaterialsätze für Schüler:innen")); en.push(sets + (sets === 1 ? " school material set for one student" : " school material sets for students")); }
+      if (!de.length) { de.push("noch nichts — bitte einen Betrag wählen"); en.push("nothing yet — please choose an amount"); }
+      var lang = document.documentElement.getAttribute("data-lang");
+      var list = lang === "en" ? en : de;
+      var joiner = lang === "en" ? " and " : " und ";
+      var text = list.length > 1 ? list.slice(0, -1).join(", ") + joiner + list[list.length - 1] : list[0];
+      return (lang === "en" ? v.toLocaleString("en-GB") + " € becomes " : v.toLocaleString("de-DE") + " € werden zu ") + text + ".";
+    }
+
+    function sync() {
+      var picked = document.querySelector('input[name="betrag"]:checked');
+      if (customWrap) customWrap.style.display = picked && picked.value === "custom" ? "" : "none";
+      if (impact) impact.textContent = " " + describe(amount());
+    }
+
+    document.addEventListener("change", function (e) {
+      if (e.target.name === "betrag" || e.target.id === "s-custom") sync();
+    });
+    if (custom) custom.addEventListener("input", sync);
+    document.addEventListener("npjoe:lang", sync);
+    sync();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# ==========================================================================
+# NPJOE — Blueprint für Render (render.com)
+#
+# Im Render-Dashboard: New → Blueprint → dieses Repository auswählen.
+# Render liest diese Datei und legt den Dienst samt Datenträger an.
+# ==========================================================================
+services:
+  - type: web
+    name: npjoe-website
+    runtime: node
+    plan: starter          # "free" hat KEINEN Datenträger — siehe Hinweis unten
+    region: frankfurt      # innerhalb der EU, passend zur Datenschutzerklärung
+    branch: main
+    buildCommand: npm install
+    startCommand: node server/server.js
+    healthCheckPath: /healthz
+
+    # Ohne diesen Datenträger liegen die Daten im flüchtigen Dateisystem und
+    # sind nach jedem Deploy verloren — samt aller Beitrittserklärungen.
+    disk:
+      name: npjoe-data
+      mountPath: /var/data
+      sizeGB: 1
+
+    envVars:
+      - key: NPJOE_DATA_DIR
+        value: /var/data
+      - key: NPJOE_ADMIN_PASSWORD
+        generateValue: true      # Render würfelt ein sicheres Passwort
+      - key: NPJOE_RATE_LIMIT
+        value: "12"
+      - key: NPJOE_WEBHOOK_URL
+        sync: false              # im Dashboard eintragen, bleibt geheim
+      - key: NODE_ENV
+        value: production

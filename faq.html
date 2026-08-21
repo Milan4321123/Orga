@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Häufige Fragen (FAQ) | NPJOE</title>
+<meta name="description" content="Antworten zu Mitgliedschaft, Beiträgen, Volunteering, Einsätzen in Nepal, Spenden, Zuwendungsbestätigungen, Vereinsstruktur und Datenschutz bei der NPJOE.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/content.js" defer></script>
+</head>
+<body data-page="faq">
+<div id="siteHeaderMount"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li>FAQ</li>
+      </ol>
+      <span class="eyebrow"><span data-lang="de">Häufige Fragen</span><span data-lang="en">Frequently asked</span></span>
+      <h1>FAQ</h1>
+      <p class="lead">
+        <span data-lang="de">39 Antworten zu Mitgliedschaft, Volunteering, Spenden, Programmen und Vereinsstruktur — jeweils mit Verweis auf den passenden Paragrafen der Satzung. Ist Ihre Frage nicht dabei? <a href="kontakt.html">Schreiben Sie uns.</a></span>
+        <span data-lang="en">39 answers on membership, volunteering, donations, programmes and how the association works — each pointing to the relevant section of the statutes. Question not covered? <a href="kontakt.html">Write to us.</a></span>
+      </p>
+      <input class="input mt-4" type="search" style="max-width:440px" data-search-target="#faqAll details"
+             data-de-placeholder="Frage durchsuchen … z. B. Beitrag, Zertifikat, Steuer" data-en-placeholder="Search questions … e.g. fee, certificate, tax" aria-label="Suche / Search">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-sidebar">
+      <div>
+        <div class="flex mb-4" data-filter-group data-filter-target="#faqAll details">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span></button>
+          <button class="chip" type="button" data-filter="mitglied" aria-pressed="false"><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span></button>
+          <button class="chip" type="button" data-filter="volunteer" aria-pressed="false">Volunteering</button>
+          <button class="chip" type="button" data-filter="spenden" aria-pressed="false"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span></button>
+          <button class="chip" type="button" data-filter="programme" aria-pressed="false"><span data-lang="de">Programme</span><span data-lang="en">Programmes</span></button>
+          <button class="chip" type="button" data-filter="verein" aria-pressed="false"><span data-lang="de">Verein</span><span data-lang="en">Association</span></button>
+        </div>
+        <div class="accordion" id="faqAll"></div>
+      </div>
+
+      <aside class="stack">
+        <div class="card">
+          <h2 class="t-h4"><span data-lang="de">Schnellzugriff</span><span data-lang="en">Quick links</span></h2>
+          <ul class="stack-sm mt-2 text-sm" style="list-style:none;padding:0">
+            <li><a href="mitglied-werden.html"><span data-lang="de">Beitrittserklärung ausfüllen</span><span data-lang="en">Fill in the membership form</span></a></li>
+            <li><a href="volunteer.html"><span data-lang="de">Als Volunteer registrieren</span><span data-lang="en">Register as a volunteer</span></a></li>
+            <li><a href="spenden.html"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></a></li>
+            <li><a href="satzung.html"><span data-lang="de">Satzung im Volltext</span><span data-lang="en">Full statutes</span></a></li>
+            <li><a href="transparenz.html"><span data-lang="de">Transparenzbericht</span><span data-lang="en">Transparency report</span></a></li>
+            <li><a href="datenschutz.html"><span data-lang="de">Datenschutzerklärung</span><span data-lang="en">Privacy policy</span></a></li>
+          </ul>
+        </div>
+        <div class="card" style="background:var(--brand-soft);border-color:var(--brand)">
+          <h2 class="t-h4"><span data-lang="de">Frage nicht beantwortet?</span><span data-lang="en">Question unanswered?</span></h2>
+          <p class="text-sm mt-1">
+            <span data-lang="de">Wir antworten auf Deutsch, Englisch und Nepali — meist innerhalb von drei Werktagen.</span>
+            <span data-lang="en">We answer in German, English and Nepali — usually within three working days.</span>
+          </p>
+          <p class="mt-3"><a class="btn btn-sm" href="kontakt.html"><span data-lang="de">Frage stellen</span><span data-lang="en">Ask a question</span></a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooterMount"></div>
+
+<script>
+  document.addEventListener("npjoe:layout-ready", function () {
+    if (window.NPJOEContent) window.NPJOEContent.renderFaq("#faqAll");
+    /* Open the matching category when arriving via #mitglied, #volunteer … */
+    var hash = (location.hash || "").slice(1);
+    if (hash) {
+      var chip = document.querySelector('[data-filter="' + hash.replace(/[^a-z-]/gi, "") + '"]');
+      if (chip) chip.click();
+    }
+  });
+</script>
+</body>
+</html>

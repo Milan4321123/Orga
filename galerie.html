@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galerie | NPJOE</title>
+<meta name="description" content="Eindrücke aus der Arbeit der NPJOE: Erste-Hilfe-Trainings, Gesundheitscamps, Kulturfeste, Sportturniere und die Verteilung von Schulmaterialien in Nepal.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/content.js" defer></script>
+</head>
+<body data-page="news">
+<div id="siteHeaderMount"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><span data-lang="de">Galerie</span><span data-lang="en">Gallery</span></li>
+      </ol>
+      <span class="eyebrow"><span data-lang="de">Eindrücke</span><span data-lang="en">Impressions</span></span>
+      <h1><span data-lang="de">Galerie</span><span data-lang="en">Gallery</span></h1>
+      <p class="lead">
+        <span data-lang="de">Bilder aus unseren Programmen in Nepal und aus dem Vereinsleben in Deutschland. Klicken Sie ein Bild an, um es größer zu sehen.</span>
+        <span data-lang="en">Images from our programmes in Nepal and from association life in Germany. Click an image to view it larger.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="flex mb-4" data-filter-group data-filter-target="#galleryGrid figure">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span></button>
+        <button class="chip" type="button" data-filter="erste-hilfe" aria-pressed="false"><span data-lang="de">Erste Hilfe</span><span data-lang="en">First aid</span></button>
+        <button class="chip" type="button" data-filter="bildung" aria-pressed="false"><span data-lang="de">Bildung</span><span data-lang="en">Education</span></button>
+        <button class="chip" type="button" data-filter="gesundheit" aria-pressed="false"><span data-lang="de">Gesundheit</span><span data-lang="en">Health</span></button>
+        <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span></button>
+        <button class="chip" type="button" data-filter="sport" aria-pressed="false">Sport</button>
+        <button class="chip" type="button" data-filter="spenden" aria-pressed="false"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span></button>
+      </div>
+
+      <div class="gallery" id="galleryGrid"></div>
+
+      <div class="callout mt-6">
+        <strong><span data-lang="de">Hinweis zu den Bildern:</span><span data-lang="en">Note on the images:</span></strong>
+        <span data-lang="de"> Hier stehen derzeit Platzhaltergrafiken. Sobald Fotos aus den Einsätzen vorliegen und die abgebildeten Personen eingewilligt haben, ersetzen wir sie. Fotos von Vereinsveranstaltungen verwenden wir nur mit Einwilligung — siehe <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+        <span data-lang="en"> These are currently placeholder graphics. As soon as photos from deployments are available and the people shown have consented, we will replace them. We only use photos from association events with consent — see our <a href="datenschutz.html">privacy policy</a>.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid grid-2" style="gap:2.5rem;align-items:center">
+        <div>
+          <h2><span data-lang="de">Sie haben Fotos von einem Einsatz?</span><span data-lang="en">Do you have photos from a deployment?</span></h2>
+          <p class="lead mt-2">
+            <span data-lang="de">Volunteers und Partnerschulen können uns Bildmaterial senden. Bitte nur Fotos, für die alle abgebildeten Personen eingewilligt haben — bei Minderjährigen mit Zustimmung der Erziehungsberechtigten.</span>
+            <span data-lang="en">Volunteers and partner schools can send us image material. Please only photos for which everyone shown has consented — for minors, with the consent of their guardians.</span>
+          </p>
+          <p class="mt-3"><a class="btn" href="kontakt.html?thema=presse"><span data-lang="de">Bilder einsenden</span><span data-lang="en">Submit images</span></a></p>
+        </div>
+        <div class="card card-pad-lg">
+          <h3 class="t-h4"><span data-lang="de">Für Presse und Medien</span><span data-lang="en">For press and media</span></h3>
+          <p class="text-sm text-muted mt-2">
+            <span data-lang="de">Journalist:innen erhalten auf Anfrage Bildmaterial in Druckauflösung, Hintergrundinformationen zu den Programmen und Interviewtermine mit dem Vorstand.</span>
+            <span data-lang="en">Journalists can request print-resolution image material, background information on the programmes and interview appointments with the board.</span>
+          </p>
+          <p class="mt-3 text-sm"><a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="siteFooterMount"></div>
+
+<script>
+  document.addEventListener("npjoe:layout-ready", function () {
+    if (window.NPJOEContent) window.NPJOEContent.renderGallery("#galleryGrid");
+  });
+</script>
+</body>
+</html>

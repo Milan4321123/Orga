@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitglied werden — Beitrittserklärung | NPJOE</title>
+<meta name="description" content="Online-Beitrittserklärung der Nepalesischen Progressiven Jugendorganisation e.V. — Mitgliedschaft ab 5 € im Monat, DSGVO-konform, mit digitaler Unterschrift.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/forms.js" defer></script>
+<script src="assets/js/content.js" defer></script>
+</head>
+<body data-page="join">
+<div id="siteHeaderMount"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><span data-lang="de">Mitglied werden</span><span data-lang="en">Become a member</span></li>
+      </ol>
+      <span class="eyebrow"><span data-lang="de">Beitrittserklärung</span><span data-lang="en">Membership application</span></span>
+      <h1><span data-lang="de">Mitglied werden</span><span data-lang="en">Become a member</span></h1>
+      <p class="lead">
+        <span data-lang="de">Nach § 5 unserer Satzung kann jede natürliche Person Mitglied werden. Füllen Sie die Beitrittserklärung online aus — der Vorstand entscheidet über die Aufnahme, und Ihre Mitgliedschaft beginnt mit diesem Beschluss.</span>
+        <span data-lang="en">Under § 5 of our statutes, any natural person may become a member. Complete the application online — the board decides on admission, and your membership begins with that resolution.</span>
+      </p>
+      <div class="flex mt-3">
+        <span class="badge badge-navy">5,00 € / <span data-lang="de">Monat</span><span data-lang="en">month</span></span>
+        <span class="badge badge-ok"><span data-lang="de">DSGVO-konform</span><span data-lang="en">GDPR compliant</span></span>
+        <span class="badge badge-saffron"><span data-lang="de">Kündigung mit 1 Monat Frist</span><span data-lang="en">One month's notice to leave</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-sidebar">
+
+      <!-- ============ FORM ============ -->
+      <div>
+        <div class="form-card">
+          <form data-form="membership" data-ref-prefix="MIT" data-subject="Beitrittserklärung NPJOE"
+                data-email="mitglied@progressive-youth.de" novalidate>
+
+            <div class="stepper">
+              <div class="stepper-item is-active"><div class="stepper-bar"></div><span data-lang="de">1 · Person</span><span data-lang="en">1 · Personal</span></div>
+              <div class="stepper-item"><div class="stepper-bar"></div><span data-lang="de">2 · Interessen</span><span data-lang="en">2 · Interests</span></div>
+              <div class="stepper-item"><div class="stepper-bar"></div><span data-lang="de">3 · Beitrag</span><span data-lang="en">3 · Fee</span></div>
+              <div class="stepper-item"><div class="stepper-bar"></div><span data-lang="de">4 · Prüfen</span><span data-lang="en">4 · Review</span></div>
+            </div>
+
+            <div class="callout callout-navy hide mb-3" data-draft-note>
+              <span data-lang="de">Ein gespeicherter Entwurf wurde wiederhergestellt.</span>
+              <span data-lang="en">A saved draft was restored.</span>
+              <button type="button" class="btn btn-sm btn-ghost" data-draft-discard style="margin-left:.5rem">
+                <span data-lang="de">Verwerfen</span><span data-lang="en">Discard</span>
+              </button>
+            </div>
+
+            <!-- ---- Step 1 ---- -->
+            <div class="form-step is-active">
+              <fieldset class="fieldset">
+                <legend><span data-lang="de">Persönliche Angaben</span><span data-lang="en">Personal information</span></legend>
+                <p class="fieldset-hint">
+                  <span data-lang="de">Diese Angaben benötigen wir für die Mitgliederliste, die die Schriftführung nach § 8 der Satzung verwaltet.</span>
+                  <span data-lang="en">We need these details for the membership list maintained by the secretary under § 8 of the statutes.</span>
+                </p>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="m-vorname"><span data-lang="de">Vorname</span><span data-lang="en">First name</span> <span class="req">*</span></label>
+                    <input class="input" id="m-vorname" name="vorname" type="text" required autocomplete="given-name">
+                  </div>
+                  <div class="field">
+                    <label for="m-nachname"><span data-lang="de">Nachname</span><span data-lang="en">Last name</span> <span class="req">*</span></label>
+                    <input class="input" id="m-nachname" name="nachname" type="text" required autocomplete="family-name">
+                  </div>
+                  <div class="field">
+                    <label for="m-geburt"><span data-lang="de">Geburtsdatum</span><span data-lang="en">Date of birth</span> <span class="req">*</span></label>
+                    <input class="input" id="m-geburt" name="geburtsdatum" type="date" required data-rule="minage" data-minage="14">
+                    <span class="hint"><span data-lang="de">Mindestalter 14 Jahre. Unter 18 Jahren bitte zusätzlich die Einwilligung der Erziehungsberechtigten per E-Mail senden.</span><span data-lang="en">Minimum age 14. Under 18, please also send parental consent by e-mail.</span></span>
+                  </div>
+                  <div class="field">
+                    <label for="m-nation"><span data-lang="de">Nationalität</span><span data-lang="en">Nationality</span></label>
+                    <input class="input" id="m-nation" name="nationalitaet" type="text" data-de-placeholder="z. B. nepalesisch" data-en-placeholder="e.g. Nepali">
+                  </div>
+                  <div class="field span-2">
+                    <label for="m-adresse"><span data-lang="de">Adresse (Straße und Hausnummer)</span><span data-lang="en">Address (street and number)</span> <span class="req">*</span></label>
+                    <input class="input" id="m-adresse" name="adresse" type="text" required autocomplete="street-address">
+                  </div>
+                  <div class="field">
+                    <label for="m-plz"><span data-lang="de">PLZ</span><span data-lang="en">ZIP code</span> <span class="req">*</span></label>
+                    <input class="input" id="m-plz" name="plz" type="text" required data-rule="zip" autocomplete="postal-code">
+                  </div>
+                  <div class="field">
+                    <label for="m-ort"><span data-lang="de">Ort</span><span data-lang="en">City</span> <span class="req">*</span></label>
+                    <input class="input" id="m-ort" name="ort" type="text" required autocomplete="address-level2">
+                  </div>
+                  <div class="field">
+                    <label for="m-land"><span data-lang="de">Land</span><span data-lang="en">Country</span></label>
+                    <input class="input" id="m-land" name="land" type="text" value="Deutschland" autocomplete="country-name">
+                  </div>
+                  <div class="field">
+                    <label for="m-tel"><span data-lang="de">Telefon</span><span data-lang="en">Phone</span></label>
+                    <input class="input" id="m-tel" name="telefon" type="tel" autocomplete="tel">
+                  </div>
+                  <div class="field span-2">
+                    <label for="m-email"><span data-lang="de">E-Mail</span><span data-lang="en">E-mail</span> <span class="req">*</span></label>
+                    <input class="input" id="m-email" name="email" type="email" required autocomplete="email">
+                    <span class="hint"><span data-lang="de">An diese Adresse senden wir die Bestätigung und die Einladungen zur Mitgliederversammlung.</span><span data-lang="en">We send the confirmation and general meeting invitations to this address.</span></span>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-nav">
+                <span></span>
+                <button class="btn" type="button" data-step-next><span data-lang="de">Weiter</span><span data-lang="en">Continue</span> →</button>
+              </div>
+            </div>
+
+            <!-- ---- Step 2 ---- -->
+            <div class="form-step">
+              <fieldset class="fieldset">
+                <legend><span data-lang="de">Interessen</span><span data-lang="en">Areas of interest</span></legend>
+                <p class="fieldset-hint">
+                  <span data-lang="de">Wobei möchten Sie mitwirken? Mehrfachauswahl möglich — wir melden uns, sobald in Ihrem Bereich etwas ansteht.</span>
+                  <span data-lang="en">Where would you like to contribute? Multiple choices possible — we contact you when something comes up in your area.</span>
+                </p>
+                <div class="check-grid-2" data-require-group="1">
+                  <label class="check"><input type="checkbox" name="interessen" value="bildung"><span><strong>🎓 <span data-lang="de">Bildung</span><span data-lang="en">Education</span></strong><span class="hint"><span data-lang="de">Seminare, Nachhilfe, Berufsberatung</span><span data-lang="en">Seminars, tutoring, career guidance</span></span></span></label>
+                  <label class="check"><input type="checkbox" name="interessen" value="kultur"><span><strong>🎭 <span data-lang="de">Kultur</span><span data-lang="en">Culture</span></strong><span class="hint"><span data-lang="de">Feste, Musik, Tanz, Sprache</span><span data-lang="en">Festivals, music, dance, language</span></span></span></label>
+                  <label class="check"><input type="checkbox" name="interessen" value="sport"><span><strong>⚽ <span data-lang="de">Sport</span><span data-lang="en">Sports</span></strong><span class="hint"><span data-lang="de">Fußball, Cricket, Turniere</span><span data-lang="en">Football, cricket, tournaments</span></span></span></label>
+                  <label class="check"><input type="checkbox" name="interessen" value="integration"><span><strong>🤝 Integration</strong><span class="hint"><span data-lang="de">Ankommen, Behörden, Sprache</span><span data-lang="en">Arriving, authorities, language</span></span></span></label>
+                  <label class="check"><input type="checkbox" name="interessen" value="ehrenamt"><span><strong>💪 <span data-lang="de">Ehrenamt</span><span data-lang="en">Volunteering</span></strong><span class="hint"><span data-lang="de">Vereinsarbeit und Organisation</span><span data-lang="en">Association work and organisation</span></span></span></label>
+                  <label class="check"><input type="checkbox" name="interessen" value="gesundheit"><span><strong>🏥 <span data-lang="de">Gesundheitsprojekte</span><span data-lang="en">Health projects</span></strong><span class="hint"><span data-lang="de">Erste Hilfe, Camps, Prävention</span><span data-lang="en">First aid, camps, prevention</span></span></span></label>
+                  <label class="check"><input type="checkbox" name="interessen" value="entwicklung"><span><strong>🌏 <span data-lang="de">Entwicklungszusammenarbeit</span><span data-lang="en">Development cooperation</span></strong><span class="hint"><span data-lang="de">Projekte in Nepal</span><span data-lang="en">Projects in Nepal</span></span></span></label>
+                  <label class="check"><input type="checkbox" name="interessen" value="sonstiges"><span><strong>⭐ <span data-lang="de">Sonstiges</span><span data-lang="en">Other</span></strong><span class="hint"><span data-lang="de">Bitte unten beschreiben</span><span data-lang="en">Please describe below</span></span></span></label>
+                </div>
+                <div class="form-grid mt-3">
+                  <div class="field span-2">
+                    <label for="m-sonstiges"><span data-lang="de">Sonstiges / weitere Angaben</span><span data-lang="en">Other / additional information</span></label>
+                    <input class="input" id="m-sonstiges" name="sonstiges" type="text" data-de-placeholder="z. B. Fotografie, Buchhaltung, Übersetzung Nepali–Deutsch" data-en-placeholder="e.g. photography, accounting, Nepali–German translation">
+                  </div>
+                  <div class="field">
+                    <label for="m-beruf"><span data-lang="de">Beruf / Studienfach</span><span data-lang="en">Profession / field of study</span></label>
+                    <input class="input" id="m-beruf" name="beruf" type="text">
+                  </div>
+                  <div class="field">
+                    <label for="m-region"><span data-lang="de">Region / gewünschte Zweigstelle</span><span data-lang="en">Region / preferred branch</span></label>
+                    <select class="select" id="m-region" name="region">
+                      <option value="">—</option>
+                      <option value="darmstadt">Darmstadt / Südhessen</option>
+                      <option value="frankfurt">Frankfurt / Rhein-Main</option>
+                      <option value="hessen-nord">Kassel / Nordhessen</option>
+                      <option value="nrw">Nordrhein-Westfalen</option>
+                      <option value="bayern">Bayern</option>
+                      <option value="bawue">Baden-Württemberg</option>
+                      <option value="berlin">Berlin / Brandenburg</option>
+                      <option value="nord">Hamburg / Norddeutschland</option>
+                      <option value="ost">Sachsen / Ostdeutschland</option>
+                      <option value="ausland" data-de="— außerhalb Deutschlands" data-en="— outside Germany">— außerhalb Deutschlands</option>
+                    </select>
+                    <span class="hint"><span data-lang="de">§ 11 der Satzung erlaubt Zweigstellen im ganzen Bundesgebiet.</span><span data-lang="en">§ 11 of the statutes allows branches throughout Germany.</span></span>
+                  </div>
+                  <div class="field span-2">
+                    <label for="m-quelle"><span data-lang="de">Wie haben Sie von uns erfahren?</span><span data-lang="en">How did you hear about us?</span></label>
+                    <select class="select" id="m-quelle" name="quelle">
+                      <option value="">—</option>
+                      <option value="freunde" data-de="Freunde / Familie" data-en="Friends / family">Freunde / Familie</option>
+                      <option value="social" data-de="Social Media" data-en="Social media">Social Media</option>
+                      <option value="veranstaltung" data-de="Veranstaltung" data-en="An event">Veranstaltung</option>
+                      <option value="website" data-de="Website / Suchmaschine" data-en="Website / search engine">Website / Suchmaschine</option>
+                      <option value="npyo">NPYO Nepal</option>
+                      <option value="andere" data-de="Andere" data-en="Other">Andere</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-nav">
+                <button class="btn btn-ghost" type="button" data-step-prev>← <span data-lang="de">Zurück</span><span data-lang="en">Back</span></button>
+                <button class="btn" type="button" data-step-next><span data-lang="de">Weiter</span><span data-lang="en">Continue</span> →</button>
+              </div>
+            </div>
+
+            <!-- ---- Step 3 ---- -->
+            <div class="form-step">
+              <fieldset class="fieldset">
+                <legend><span data-lang="de">Mitgliedsbeitrag</span><span data-lang="en">Membership fee</span></legend>
+                <p class="fieldset-hint">
+                  <span data-lang="de">Der monatliche Mitgliedsbeitrag beträgt 5,00 €. Die Höhe wird von der Mitgliederversammlung festgelegt (§ 7 der Satzung).</span>
+                  <span data-lang="en">The monthly membership fee is €5.00. The amount is set by the general meeting (§ 7 of the statutes).</span>
+                </p>
+                <div class="optgrid mb-3">
+                  <label class="opt"><input type="radio" name="zahlungsintervall" value="monatlich" checked>
+                    <span class="opt-body"><span class="opt-amount">5 €</span><span class="opt-desc"><span data-lang="de">monatlich</span><span data-lang="en">monthly</span></span></span></label>
+                  <label class="opt"><input type="radio" name="zahlungsintervall" value="vierteljaehrlich">
+                    <span class="opt-body"><span class="opt-amount">15 €</span><span class="opt-desc"><span data-lang="de">vierteljährlich</span><span data-lang="en">quarterly</span></span></span></label>
+                  <label class="opt"><input type="radio" name="zahlungsintervall" value="jaehrlich">
+                    <span class="opt-body"><span class="opt-amount">60 €</span><span class="opt-desc"><span data-lang="de">jährlich</span><span data-lang="en">annually</span></span></span></label>
+                  <label class="opt"><input type="radio" name="zahlungsintervall" value="foerder">
+                    <span class="opt-body"><span class="opt-amount">60 €+</span><span class="opt-desc"><span data-lang="de">Fördermitglied</span><span data-lang="en">supporting member</span></span></span></label>
+                </div>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="m-zahlweg"><span data-lang="de">Zahlungsweise</span><span data-lang="en">Payment method</span></label>
+                    <select class="select" id="m-zahlweg" name="zahlungsweise">
+                      <option value="ueberweisung" data-de="Überweisung (Dauerauftrag)" data-en="Bank transfer (standing order)">Überweisung (Dauerauftrag)</option>
+                      <option value="sepa" data-de="SEPA-Lastschrift" data-en="SEPA direct debit">SEPA-Lastschrift</option>
+                      <option value="bar" data-de="Bar bei Veranstaltungen" data-en="Cash at events">Bar bei Veranstaltungen</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="m-iban"><span data-lang="de">IBAN (nur bei SEPA-Lastschrift)</span><span data-lang="en">IBAN (only for SEPA direct debit)</span></label>
+                    <input class="input" id="m-iban" name="iban" type="text" data-rule="iban" placeholder="DE00 0000 0000 0000 0000 00" autocomplete="off">
+                    <span class="hint"><span data-lang="de">Optional. Das SEPA-Mandat senden wir Ihnen nach der Aufnahme separat zur Unterschrift zu.</span><span data-lang="en">Optional. We will send the SEPA mandate separately for signature after admission.</span></span>
+                  </div>
+                </div>
+                <div class="callout callout-navy mt-3">
+                  <strong><span data-lang="de">Ermäßigung möglich.</span><span data-lang="en">Reduction possible.</span></strong>
+                  <span data-lang="de"> Für Schüler:innen, Studierende und Personen ohne Einkommen kann der Vorstand den Beitrag reduzieren oder erlassen. Vermerken Sie das bitte unten — es entstehen Ihnen keine Nachteile.</span>
+                  <span data-lang="en"> For pupils, students and people without income the board can reduce or waive the fee. Please note it below — this puts you at no disadvantage.</span>
+                </div>
+                <div class="field mt-3">
+                  <label class="check check-plain"><input type="checkbox" name="ermaessigung" value="ja" data-track>
+                    <span><span data-lang="de">Ich beantrage eine Ermäßigung des Mitgliedsbeitrags.</span><span data-lang="en">I request a reduction of the membership fee.</span></span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="fieldset">
+                <legend><span data-lang="de">Erklärung</span><span data-lang="en">Declaration</span></legend>
+                <div class="stack-sm">
+                  <label class="check"><input type="checkbox" name="satzung" required data-track>
+                    <span><strong><span data-lang="de">Ich erkenne die Satzung an. <span class="req">*</span></span><span data-lang="en">I accept the statutes. <span class="req">*</span></span></strong>
+                    <span class="hint"><span data-lang="de">Hiermit beantrage ich die Mitgliedschaft in der Nepalesischen Progressiven Jugendorganisation e.V. und erkenne die <a href="satzung.html" target="_blank">Satzung</a> an.</span><span data-lang="en">I hereby apply for membership in the Nepalesische Progressive Jugendorganisation e.V. and accept the <a href="satzung.html" target="_blank">statutes</a>.</span></span></span></label>
+
+                  <label class="check"><input type="checkbox" name="beitrag" required data-track>
+                    <span><strong><span data-lang="de">Ich verpflichte mich, den Mitgliedsbeitrag regelmäßig zu zahlen. <span class="req">*</span></span><span data-lang="en">I agree to pay the membership fee regularly. <span class="req">*</span></span></strong></span></label>
+
+                  <label class="check"><input type="checkbox" name="dsgvo" required data-track>
+                    <span><strong><span data-lang="de">Ich stimme der Datenverarbeitung zu. <span class="req">*</span></span><span data-lang="en">I consent to the processing of my data. <span class="req">*</span></span></strong>
+                    <span class="hint"><span data-lang="de">Meine personenbezogenen Daten werden ausschließlich für Vereinszwecke gemäß DSGVO verarbeitet. Siehe <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span><span data-lang="en">My personal data is processed exclusively for association purposes in accordance with the GDPR. See <a href="datenschutz.html" target="_blank">privacy policy</a>.</span></span></span></label>
+
+                  <label class="check"><input type="checkbox" name="foto" data-track>
+                    <span><strong><span data-lang="de">Foto- und Videoeinwilligung (freiwillig)</span><span data-lang="en">Photo and video consent (optional)</span></strong>
+                    <span class="hint"><span data-lang="de">Ich bin damit einverstanden, dass Fotos und Videos von Vereinsveranstaltungen für Vereinsmedien und Öffentlichkeitsarbeit verwendet werden. Diese Einwilligung ist jederzeit widerrufbar.</span><span data-lang="en">I agree that photos and videos from association events may be used in association media and public relations. This consent can be withdrawn at any time.</span></span></span></label>
+
+                  <label class="check"><input type="checkbox" name="newsletter" data-track>
+                    <span><strong><span data-lang="de">Newsletter abonnieren (freiwillig)</span><span data-lang="en">Subscribe to the newsletter (optional)</span></strong></span></label>
+                </div>
+              </fieldset>
+              <div class="form-nav">
+                <button class="btn btn-ghost" type="button" data-step-prev>← <span data-lang="de">Zurück</span><span data-lang="en">Back</span></button>
+                <button class="btn" type="button" data-step-next><span data-lang="de">Angaben prüfen</span><span data-lang="en">Review details</span> →</button>
+              </div>
+            </div>
+
+            <!-- ---- Step 4 ---- -->
+            <div class="form-step">
+              <fieldset class="fieldset">
+                <legend><span data-lang="de">Prüfen &amp; unterschreiben</span><span data-lang="en">Review &amp; sign</span></legend>
+                <p class="fieldset-hint">
+                  <span data-lang="de">Bitte prüfen Sie Ihre Angaben. Mit der Unterschrift bestätigen Sie die Richtigkeit.</span>
+                  <span data-lang="en">Please check your details. Your signature confirms they are correct.</span>
+                </p>
+                <dl class="review-list" data-review></dl>
+
+                <div class="form-grid mt-4">
+                  <div class="field">
+                    <label for="m-signort"><span data-lang="de">Ort</span><span data-lang="en">Place</span> <span class="req">*</span></label>
+                    <input class="input" id="m-signort" name="unterschriftOrt" type="text" required>
+                  </div>
+                  <div class="field">
+                    <label for="m-signdatum"><span data-lang="de">Datum</span><span data-lang="en">Date</span> <span class="req">*</span></label>
+                    <input class="input" id="m-signdatum" name="unterschriftDatum" type="date" required>
+                  </div>
+                  <div class="field span-2">
+                    <span class="label"><span data-lang="de">Unterschrift</span><span data-lang="en">Signature</span></span>
+                    <div class="sig-wrap">
+                      <canvas class="sig-pad" aria-label="Unterschriftsfeld / signature pad"></canvas>
+                      <div class="sig-hint"><span data-lang="de">Mit Maus oder Finger unterschreiben</span><span data-lang="en">Sign with mouse or finger</span></div>
+                    </div>
+                    <input type="hidden" name="signature" data-signature>
+                    <div class="flex mt-1">
+                      <button class="btn btn-sm btn-ghost" type="button" data-sig-clear><span data-lang="de">Löschen</span><span data-lang="en">Clear</span></button>
+                      <span class="hint"><span data-lang="de">Optional — Sie können den Antrag auch ausdrucken und handschriftlich unterschreiben.</span><span data-lang="en">Optional — you can also print the application and sign it by hand.</span></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="callout mt-4">
+                  <span data-lang="de">Nach dem Absenden entscheidet der Vorstand über die Aufnahme (§ 5 der Satzung). Sie erhalten eine Bestätigung mit Ihrer Mitgliedsnummer per E-Mail.</span>
+                  <span data-lang="en">After submission, the board decides on admission (§ 5 of the statutes). You will receive a confirmation with your membership number by e-mail.</span>
+                </div>
+              </fieldset>
+              <div class="form-status"></div>
+              <div class="form-nav">
+                <button class="btn btn-ghost" type="button" data-step-prev>← <span data-lang="de">Zurück</span><span data-lang="en">Back</span></button>
+                <button class="btn btn-lg" type="submit"><span data-lang="de">Beitrittserklärung absenden</span><span data-lang="en">Submit application</span></button>
+              </div>
+            </div>
+          </form>
+
+          <!-- ---- Success ---- -->
+          <div class="hide" data-success>
+            <div class="center" style="padding:1rem 0 2rem">
+              <div class="card-icon mx-auto" style="background:var(--ok-soft);color:var(--ok);font-size:1.8rem">✓</div>
+              <h2><span data-lang="de">Vielen Dank für Ihren Beitritt!</span><span data-lang="en">Thank you for joining!</span></h2>
+              <p class="lead mt-2" data-delivery></p>
+              <p class="mt-3">
+                <span data-lang="de">Ihre Referenznummer:</span><span data-lang="en">Your reference number:</span>
+                <strong data-ref style="font-size:1.15rem"></strong>
+              </p>
+            </div>
+            <div class="card" style="background:var(--bg-alt)">
+              <h3 class="t-h4"><span data-lang="de">Wie es weitergeht</span><span data-lang="en">What happens next</span></h3>
+              <ol class="steps mt-3">
+                <li><h3 class="t-h4"><span data-lang="de">Prüfung durch den Vorstand</span><span data-lang="en">Review by the board</span></h3><p><span data-lang="de">In der Regel innerhalb von zwei Wochen.</span><span data-lang="en">Usually within two weeks.</span></p></li>
+                <li><h3 class="t-h4"><span data-lang="de">Bestätigung &amp; Mitgliedsnummer</span><span data-lang="en">Confirmation &amp; membership number</span></h3><p><span data-lang="de">Per E-Mail, zusammen mit den Zahlungsdaten.</span><span data-lang="en">By e-mail, together with the payment details.</span></p></li>
+                <li><h3 class="t-h4"><span data-lang="de">Willkommen in der Gemeinschaft</span><span data-lang="en">Welcome to the community</span></h3><p><span data-lang="de">Sie erhalten Einladungen zu Veranstaltungen und zur Mitgliederversammlung.</span><span data-lang="en">You will receive invitations to events and the general meeting.</span></p></li>
+              </ol>
+              <div class="flex mt-4">
+                <button class="btn btn-sm btn-ghost" type="button" data-print><span data-lang="de">Antrag drucken</span><span data-lang="en">Print application</span></button>
+                <a class="btn btn-sm btn-ghost" href="volunteer.html"><span data-lang="de">Auch Volunteer werden</span><span data-lang="en">Also volunteer</span></a>
+                <a class="btn btn-sm" href="index.html"><span data-lang="de">Zur Startseite</span><span data-lang="en">Back to home</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="stack">
+        <div class="card">
+          <h3 class="t-h4"><span data-lang="de">Ihre Mitgliedschaft</span><span data-lang="en">Your membership</span></h3>
+          <ul class="feature-list mt-3 text-sm">
+            <li><span class="tick">✓</span><span data-lang="de">Stimmrecht in der Mitgliederversammlung</span><span data-lang="en">Voting rights in the general meeting</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Einladung zu allen Veranstaltungen</span><span data-lang="en">Invitations to all events</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Zugang zu Seminaren zu Visum, Studium und Integration</span><span data-lang="en">Access to seminars on visa, study and integration</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Vorrang bei Volunteer-Einsätzen in Nepal</span><span data-lang="en">Priority for volunteer assignments in Nepal</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Mitgestaltung der Programme und Projekte</span><span data-lang="en">A say in shaping programmes and projects</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="t-h4"><span data-lang="de">Gut zu wissen</span><span data-lang="en">Good to know</span></h3>
+          <div class="stack-sm text-sm mt-2">
+            <p><strong><span data-lang="de">Beitrag:</span><span data-lang="en">Fee:</span></strong> <span data-lang="de">5,00 € monatlich, festgelegt durch die Mitgliederversammlung (§ 7).</span><span data-lang="en">€5.00 per month, set by the general meeting (§ 7).</span></p>
+            <p><strong><span data-lang="de">Beginn:</span><span data-lang="en">Start:</span></strong> <span data-lang="de">mit dem Aufnahmebeschluss des Vorstands (§ 5).</span><span data-lang="en">with the board's admission resolution (§ 5).</span></p>
+            <p><strong><span data-lang="de">Austritt:</span><span data-lang="en">Withdrawal:</span></strong> <span data-lang="de">schriftlich mit einem Monat Frist (§ 6).</span><span data-lang="en">in writing with one month's notice (§ 6).</span></p>
+            <p><strong><span data-lang="de">Daten:</span><span data-lang="en">Data:</span></strong> <span data-lang="de">nur für Vereinszwecke, jederzeit löschbar.</span><span data-lang="en">only for association purposes, deletable at any time.</span></p>
+          </div>
+        </div>
+
+        <div class="card" style="background:var(--brand-soft);border-color:var(--brand)">
+          <h3 class="t-h4"><span data-lang="de">Lieber auf Papier?</span><span data-lang="en">Prefer paper?</span></h3>
+          <p class="text-sm mt-1">
+            <span data-lang="de">Sie können die Beitrittserklärung auch ausdrucken, handschriftlich ausfüllen und uns per Post oder als Scan per E-Mail senden.</span>
+            <span data-lang="en">You can also print the application, complete it by hand and send it to us by post or as a scan by e-mail.</span>
+          </p>
+          <button class="btn btn-sm mt-3" type="button" data-print><span data-lang="de">Formular drucken</span><span data-lang="en">Print the form</span></button>
+        </div>
+
+        <div class="card">
+          <h3 class="t-h4"><span data-lang="de">Fragen zur Mitgliedschaft?</span><span data-lang="en">Questions about membership?</span></h3>
+          <p class="text-sm mt-1">
+            <span data-lang="de">Schreiben Sie uns — wir antworten auf Deutsch, Englisch und Nepali.</span>
+            <span data-lang="en">Write to us — we answer in German, English and Nepali.</span>
+          </p>
+          <p class="mt-2 text-sm"><a href="mailto:mitglied@progressive-youth.de">mitglied@progressive-youth.de</a></p>
+          <p class="mt-2"><a class="text-sm" href="faq.html#mitglied"><span data-lang="de">Häufige Fragen zur Mitgliedschaft →</span><span data-lang="en">Membership FAQ →</span></a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Printable header shown only when printing -->
+  <div class="print-only container" style="margin-top:1rem">
+    <hr>
+    <p class="text-xs">Nepalesische Progressive Jugendorganisation e.V. · VR 84826 — Amtsgericht Darmstadt · info@progressive-youth.de</p>
+    <p class="text-xs">Nur vom Vorstand auszufüllen / For official use only: Mitgliedsnummer ______________ · Antrag eingegangen am ______________ · ☐ Angenommen ☐ Abgelehnt · Vorstandsunterschrift ______________</p>
+  </div>
+
+</main>
+
+<div id="siteFooterMount"></div>
+
+<script>
+  document.addEventListener("npjoe:layout-ready", function () {
+    /* Prefill today's date in the signature block */
+    var d = document.getElementById("m-signdatum");
+    if (d && !d.value) d.value = new Date().toISOString().slice(0, 10);
+    /* Show the IBAN field only for SEPA */
+    var zahlweg = document.getElementById("m-zahlweg");
+    var ibanField = document.getElementById("m-iban");
+    function sync() {
+      if (!zahlweg || !ibanField) return;
+      var wrap = ibanField.closest(".field");
+      wrap.style.display = zahlweg.value === "sepa" ? "" : "none";
+    }
+    if (zahlweg) { zahlweg.addEventListener("change", sync); sync(); }
+  });
+</script>
+</body>
+</html>
