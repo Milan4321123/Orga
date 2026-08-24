@@ -35,8 +35,8 @@ Formulare schalten dann automatisch in den Offline-Modus (siehe unten).
 | --- | --- |
 | `index.html` | Startseite: sieben kurze Tiles — Hero, Flaggschiff, zwei Programme, Berufsfeld-Rail, Mitgliedschaft, News, Wegweiser |
 | `mitmachen.html` | Die vier Wege im Vergleich: Mitgliedschaft, Volunteering, Spenden, Partnerschaft — mit Voraussetzungen, Aufwand, Kosten und den fünf Kernzielen des Beschlusses |
-| `wirkung.html` | Ablauf eines Einsatzes, Aufgabenteilung NPJOE / NPYO, Trainingsinhalte, Zielgruppen, sechs Nachhaltigkeitsmechanismen |
-| `ueber-uns.html` | Wer wir sind, die neun Satzungszwecke, Vorstand & Organe, Partnerschaft NPYO, Zeitstrahl |
+| `wirkung.html` | Ablauf eines Einsatzes, Aufgabenteilung NPJOE / NPYS-N, Trainingsinhalte, Zielgruppen, sechs Nachhaltigkeitsmechanismen |
+| `ueber-uns.html` | Wer wir sind, die neun Satzungszwecke, Vorstand & Organe, Partnerschaft NPYS-N, Zeitstrahl |
 | `satzung.html` | Vollständige Satzung §§ 1–13 mit Sprungnavigation und Druckansicht |
 | `programme.html` | Projektbeschluss NPJOE-2026-001: alle drei Programme, Satzungszuordnung, Beschlüsse 1–5 |
 | `one-day-for-nation.html` | Programm 01 — Volunteering, 12 Berufsfelder mit Filter, Ablauf |

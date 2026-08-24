@@ -72,7 +72,7 @@ module.exports = function run() {
     email: "b@example.com", bereiche: ["health", "education"], land: "Australien"
   });
   ok("it lists the chosen fields", /health, education/.test(vol.body));
-  ok("it names the partner who does the matching", /NPYO Nepal/.test(vol.body));
+  ok("it names the partner who does the matching", /NPYS-N/.test(vol.body));
   ok("it promises the certificate", /Zertifikat/.test(vol.body));
   ok("it says the registration is non-binding", /unverbindlich/.test(vol.body));
 

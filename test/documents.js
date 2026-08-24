@@ -107,7 +107,7 @@ module.exports = function run() {
   const oneDay = D.TEMPLATES.volunteer.render({ name: "A", field: "B", school: "C", from: "2026-10-05", days: 1 });
   ok("a single day reads 'Einsatztag'", /1 Einsatztag(?!e)/.test(oneDay));
   ok("a single day says 'am' not 'vom'", /am 05\.10\.2026/.test(oneDay));
-  ok("credits NPYO Nepal", /Nepalese Progressive Youth Organisation/.test(cert));
+  ok("credits NPYS-N", /Nepalese Progressive Youth Society/.test(cert));
   ok("cites the resolution", /NPJOE-2026-001/.test(cert));
 };
 

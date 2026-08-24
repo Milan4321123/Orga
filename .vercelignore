@@ -1,0 +1,7 @@
+# Vercel serves static files only — it never runs server/server.js.
+# Keeping the server and the test suite out of the deployment means the
+# source is not publicly readable and no runtime data directory is uploaded.
+server/
+test/
+.claude/
+*.md

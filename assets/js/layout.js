@@ -29,8 +29,8 @@
       children: [
         { href: "ueber-uns.html", de: "Wer wir sind", en: "Who we are", subDe: "Vision, Mission, Geschichte", subEn: "Vision, mission, history" },
         { href: "ueber-uns.html#vorstand", de: "Vorstand & Organe", en: "Board & bodies", subDe: "Nach § 2 und § 12 der Satzung", subEn: "Under §§ 2 and 12 of the statutes" },
-        { href: "satzung.html", de: "Satzung", en: "Statutes", subDe: "Vollständiger Text, Stand Mai 2026", subEn: "Full text, as of May 2026" },
-        { href: "ueber-uns.html#partner", de: "Partnerschaft NPYO Nepal", en: "NPYO Nepal partnership", subDe: "Unser Partner vor Ort", subEn: "Our partner on the ground" },
+        { href: "satzung.html", de: "Satzung", en: "Statutes", subDe: "Vollständiger Text, Stand Juni 2026", subEn: "Full text, as of June 2026" },
+        { href: "ueber-uns.html#partner", de: "Partnerschaft NPYS-N", en: "NPYS-N partnership", subDe: "Unser Partner vor Ort", subEn: "Our partner on the ground" },
         { href: "wirkung.html", de: "Wirkung & Ablauf", en: "Impact & process", subDe: "Von der Registrierung bis zum Zertifikat", subEn: "From registration to certificate" },
         { href: "transparenz.html", de: "Transparenz", en: "Transparency", subDe: "Berichte, Zahlen, Mittelverwendung", subEn: "Reports, figures, use of funds" }
       ]
@@ -149,8 +149,8 @@
               '<span class="brand-text"><span class="brand-name">NPJOE</span>' +
               '<span class="brand-sub">e.V. · ' + (ORG.register || "") + "</span></span></div>" +
             "<p style=\"font-size:0.875rem;line-height:1.65\">" + bi(
-              "Wir verbinden die nepalesische Jugend in Deutschland, bewahren unsere Kultur und tragen aktiv zur Entwicklung Nepals bei — gemeinsam mit NPYO Nepal.",
-              "We connect Nepali youth in Germany, preserve our culture and actively contribute to Nepal's development — together with NPYO Nepal."
+              "Wir verbinden die nepalesische Jugend in Deutschland, bewahren unsere Kultur und tragen aktiv zur Entwicklung Nepals bei — gemeinsam mit NPYS-N.",
+              "We connect Nepali youth in Germany, preserve our culture and actively contribute to Nepal's development — together with NPYS-N."
             ) + "</p>" +
             '<div class="social mt-3">' +
               soc(s.facebook, "Facebook", '<path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H16.7V4.6c-.3 0-1.3-.13-2.47-.13-2.44 0-4.11 1.49-4.11 4.23v2.36H7.4V14h2.72v8h3.38z"/>') +

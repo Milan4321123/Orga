@@ -131,7 +131,7 @@
             (fields ? "Your fields: " + fields + "\n" : "") +
             (row.land ? "Country: " + row.land + "\n" : "") + "\n" +
             "What happens next:\n" +
-            "1. NPYO Nepal matches you with a school or project that fits your profile.\n" +
+            "1. NPYS-N matches you with a school or project that fits your profile.\n" +
             "2. You receive a briefing about two weeks before the assignment.\n" +
             "3. After your final report we issue your NPJOE certificate.\n\n" +
             "Registration is free and non-binding — the assignment only goes ahead once you agree to it.\n\n" +
@@ -142,7 +142,7 @@
           (fields ? "Ihre Bereiche: " + fields + "\n" : "") +
           (row.land ? "Wohnland: " + row.land + "\n" : "") + "\n" +
           "Wie es weitergeht:\n" +
-          "1. NPYO Nepal ordnet Sie einer Schule oder einem Projekt zu, das zu Ihrem Profil passt.\n" +
+          "1. NPYS-N ordnet Sie einer Schule oder einem Projekt zu, das zu Ihrem Profil passt.\n" +
           "2. Rund zwei Wochen vor dem Einsatz erhalten Sie ein Briefing.\n" +
           "3. Nach Ihrem Abschlussbericht stellen wir Ihr NPJOE-Zertifikat aus.\n\n" +
           "Die Registrierung ist kostenlos und unverbindlich — ein Einsatz kommt erst zustande, wenn Sie zustimmen.\n\n" +
@@ -158,15 +158,15 @@
         var o = org();
         if (lang === "en") {
           return greeting(row, lang) + "\n\n" +
-            "NPYO Nepal has found an assignment that fits your profile:\n\n" +
+            "NPYS-N has found an assignment that fits your profile:\n\n" +
             "School / project: [name]\nRegion: [region]\nPeriod: [from] to [to]\nWhat is needed: [description]\n\n" +
-            "Please tell us by [date] whether this suits you. Travel, accommodation and insurance remain your own responsibility; NPYO Nepal helps with local planning.\n\n" +
+            "Please tell us by [date] whether this suits you. Travel, accommodation and insurance remain your own responsibility; NPYS-N helps with local planning.\n\n" +
             signoff(lang, o.emailVolunteer);
         }
         return greeting(row, lang) + "\n\n" +
-          "NPYO Nepal hat einen Einsatz gefunden, der zu Ihrem Profil passt:\n\n" +
+          "NPYS-N hat einen Einsatz gefunden, der zu Ihrem Profil passt:\n\n" +
           "Schule / Projekt: [Name]\nRegion: [Region]\nZeitraum: [von] bis [bis]\nWas gebraucht wird: [Beschreibung]\n\n" +
-          "Bitte sagen Sie uns bis [Datum], ob Ihnen das passt. Reise, Unterkunft und Versicherung liegen in Ihrer Verantwortung; NPYO Nepal hilft bei der Planung vor Ort.\n\n" +
+          "Bitte sagen Sie uns bis [Datum], ob Ihnen das passt. Reise, Unterkunft und Versicherung liegen in Ihrer Verantwortung; NPYS-N hilft bei der Planung vor Ort.\n\n" +
           signoff(lang, o.emailVolunteer);
       }
     },

@@ -116,8 +116,8 @@
       de: "Kick-off: One Day for Nation — Volunteer-Briefing", en: "Kick-off: One Day for Nation — volunteer briefing",
       placeDe: "Darmstadt, Hessen + Online", placeEn: "Darmstadt, Hesse + online",
       tags: "volunteer online", type: "volunteer",
-      descDe: "Vorstellung des Programms, Matching-Verfahren mit NPYO Nepal, Fragen und Antworten zu Einsätzen ab einem Tag.",
-      descEn: "Programme introduction, the matching process with NPYO Nepal, and Q&A on assignments from one day upwards."
+      descDe: "Vorstellung des Programms, Matching-Verfahren mit NPYS-N, Fragen und Antworten zu Einsätzen ab einem Tag.",
+      descEn: "Programme introduction, the matching process with NPYS-N, and Q&A on assignments from one day upwards."
     },
     {
       id: "ev-2026-10-erstehilfe", date: "2026-10-11", time: "10:00–16:00",
@@ -173,13 +173,13 @@
       bodyEn: "The resolution serves as the official organisational resolution and forms the basis for all activities, cooperations and funding applications within this initiative. It defines a term from 1 January 2026 to 31 December 2030 and is expressly aimed at all Nepalis worldwide living abroad — not only the community in Germany. In resolution 5 the association additionally commits to annual public reporting on all programme activities."
     },
     {
-      id: "n2", date: "2026-07-12", tag: "partner",
-      de: "Partnerschaft mit NPYO Nepal offiziell bestätigt",
-      en: "Partnership with NPYO Nepal officially confirmed",
-      exDe: "NPYO Nepal übernimmt Schulauswahl, Einsatzkoordination, Materialverteilung und Impactberichte vor Ort — NPJOE mobilisiert die Diaspora weltweit.",
-      exEn: "NPYO Nepal takes on school selection, deployment coordination, material distribution and impact reports on the ground — NPJOE mobilises the diaspora worldwide.",
-      bodyDe: "Die Zusammenarbeit ist ausdrücklich gleichberechtigt: NPJOE mobilisiert und verwaltet, NPYO Nepal koordiniert und liefert vor Ort. Gemeinsam verantwortet werden Programmentwicklung, jährliche Evaluation und öffentliche Berichterstattung. Grundlage ist § 3(f) der Satzung — Kooperation mit lokalen Partnerorganisationen zur Umsetzung von Entwicklungsmaßnahmen.",
-      bodyEn: "The cooperation is expressly on equal terms: NPJOE mobilises and manages, NPYO Nepal coordinates and delivers on site. Programme development, annual evaluation and public reporting are jointly owned. The basis is § 3(f) of the statutes — cooperation with local partner organisations to implement development measures."
+      id: "n2", date: "2026-08-15", tag: "partner",
+      de: "MOU mit NPYS-N für die drei Kernprogramme unterzeichnet",
+      en: "MOU with NPYS-N signed for the three core programmes",
+      exDe: "Beide Vorsitzenden unterzeichneten das Memorandum of Understanding im Online-Meeting. Es gilt vom 15. August 2026 bis 31. Dezember 2030.",
+      exEn: "Both chairpersons signed the Memorandum of Understanding during an online meeting. It runs from 15 August 2026 to 31 December 2030.",
+      bodyDe: "Das MOU regelt die gemeinsame Umsetzung von One Day for Nation, der Erste-Hilfe-Kampagne und One Euro for Nation. NPJOE rekrutiert und zertifiziert Volunteers, stellt Trainer:innen und verwaltet Spenden; NPYS-N koordiniert Einsätze, wählt Schulen und Gemeinschaften aus und legt geprüfte Projektvorschläge sowie Verwendungsnachweise vor. Vereinbart sind unter anderem Quartalsberichte, Einzelbelege innerhalb von 30 Tagen, zehnjährige Aufbewahrung der Finanzunterlagen und mindestens zwei Koordinationstreffen pro Jahr.",
+      bodyEn: "The MOU governs joint delivery of One Day for Nation, the First Aid Campaign and One Euro for Nation. NPJOE recruits and certifies volunteers, provides trainers and manages fundraising; NPYS-N coordinates deployments, identifies schools and communities, and submits verified project proposals and expense reports. The safeguards include quarterly reporting, itemised receipts within 30 days, ten-year retention of financial records and at least two coordination meetings per year."
     },
     {
       id: "n3", date: "2026-06-20", tag: "erste-hilfe",
@@ -189,9 +189,9 @@
       exEn: "Manuals, posters and practice materials are now fully available in Nepali — no language barriers for students and teachers."
     },
     {
-      id: "n4", date: "2026-05-22", tag: "verein",
-      de: "Satzung beschlossen — Eintragung unter VR 84826",
-      en: "Statutes adopted — registered under VR 84826",
+      id: "n4", date: "2026-06-10", tag: "verein",
+      de: "Aktuelle Satzung vom 10. Juni 2026 — Eintragung unter VR 84826",
+      en: "Current statutes dated 10 June 2026 — registered under VR 84826",
       exDe: "Der Verein ist beim Amtsgericht Darmstadt eingetragen und verfolgt ausschließlich gemeinnützige und mildtätige Zwecke nach §§ 52, 53 AO.",
       exEn: "The association is registered at Darmstadt district court and exclusively pursues charitable and benevolent purposes under §§ 52, 53 AO."
     },
@@ -208,8 +208,8 @@
       en: "More than 200 volunteers registered from 17 countries",
       exDe: "Von Ärzt:innen über Softwareentwickler:innen bis zu Yogalehrer:innen — die Diaspora bringt ihre Berufe ein.",
       exEn: "From doctors to software developers to yoga instructors — the diaspora is contributing its professions.",
-      bodyDe: "Nach den ersten Monaten der Registrierung zeigt sich, wie breit die beruflichen Hintergründe der Diaspora sind. Am stärksten vertreten sind Gesundheit und Medizin, Bildung sowie Technologie und IT — genau die Bereiche, in denen NPYO Nepal den größten Bedarf meldet. Registrierungen kommen aus Deutschland, Österreich, der Schweiz, Großbritannien, den USA, Kanada, Australien, Japan, Südkorea und den Golfstaaten. Jede Registrierung ist kostenlos und unverbindlich: Erst beim Matching entscheiden Volunteer und Partnerorganisation gemeinsam, ob ein Einsatz zustande kommt.",
-      bodyEn: "After the first months of registration it is clear how broad the professional backgrounds of the diaspora are. Health and medicine, education, and technology and IT are the strongest fields — exactly where NPYO Nepal reports the greatest need. Registrations come from Germany, Austria, Switzerland, the UK, the USA, Canada, Australia, Japan, South Korea and the Gulf states. Every registration is free and non-binding: only at the matching stage do the volunteer and the partner organisation jointly decide whether an assignment goes ahead."
+      bodyDe: "Nach den ersten Monaten der Registrierung zeigt sich, wie breit die beruflichen Hintergründe der Diaspora sind. Am stärksten vertreten sind Gesundheit und Medizin, Bildung sowie Technologie und IT — genau die Bereiche, in denen NPYS-N den größten Bedarf meldet. Registrierungen kommen aus Deutschland, Österreich, der Schweiz, Großbritannien, den USA, Kanada, Australien, Japan, Südkorea und den Golfstaaten. Jede Registrierung ist kostenlos und unverbindlich: Erst beim Matching entscheiden Volunteer und Partnerorganisation gemeinsam, ob ein Einsatz zustande kommt.",
+      bodyEn: "After the first months of registration it is clear how broad the professional backgrounds of the diaspora are. Health and medicine, education, and technology and IT are the strongest fields — exactly where NPYS-N reports the greatest need. Registrations come from Germany, Austria, Switzerland, the UK, the USA, Canada, Australia, Japan, South Korea and the Gulf states. Every registration is free and non-binding: only at the matching stage do the volunteer and the partner organisation jointly decide whether an assignment goes ahead."
     },
     {
       id: "n7", date: "2026-08-10", tag: "erste-hilfe",
@@ -217,8 +217,8 @@
       en: "Twelfth school admitted to the campaign programme",
       exDe: "Damit sind rund 1.450 Schüler:innen der Klassen 9–12 geschult und 68 Lehrkräfte zu dauerhaften Trainer:innen ausgebildet.",
       exEn: "Around 1,450 students in grades 9–12 have now been trained and 68 teachers certified as permanent trainers.",
-      bodyDe: "Die Auswahl der Schulen trifft NPYO Nepal nach drei Kriterien: Erreichbarkeit für Volunteer-Teams, Bereitschaft der Schulleitung, mindestens eine Lehrkraft dauerhaft als Trainer:in freizustellen, und der Anteil von Schüler:innen aus benachteiligten Familien. Jede aufgenommene Schule erhält ein zertifiziertes Erste-Hilfe-Kit, Handbücher und Übungsmaterial auf Nepali sowie einen jährlichen Auffrischungsbesuch. Ziel des Beschlusses NPJOE-2026-001 sind 100 Schulen bis Ende 2030.",
-      bodyEn: "NPYO Nepal selects schools by three criteria: accessibility for volunteer teams, the school management's willingness to permanently release at least one teacher as a trainer, and the share of students from disadvantaged families. Every admitted school receives a certified First Aid kit, manuals and practice material in Nepali, plus an annual refresher visit. Resolution NPJOE-2026-001 targets 100 schools by the end of 2030."
+      bodyDe: "Die Auswahl der Schulen trifft NPYS-N nach drei Kriterien: Erreichbarkeit für Volunteer-Teams, Bereitschaft der Schulleitung, mindestens eine Lehrkraft dauerhaft als Trainer:in freizustellen, und der Anteil von Schüler:innen aus benachteiligten Familien. Jede aufgenommene Schule erhält ein zertifiziertes Erste-Hilfe-Kit, Handbücher und Übungsmaterial auf Nepali sowie einen jährlichen Auffrischungsbesuch. Ziel des Beschlusses NPJOE-2026-001 sind 100 Schulen bis Ende 2030.",
+      bodyEn: "NPYS-N selects schools by three criteria: accessibility for volunteer teams, the school management's willingness to permanently release at least one teacher as a trainer, and the share of students from disadvantaged families. Every admitted school receives a certified First Aid kit, manuals and practice material in Nepali, plus an annual refresher visit. Resolution NPJOE-2026-001 targets 100 schools by the end of 2030."
     },
     {
       id: "n8", date: "2026-07-28", tag: "verein",
@@ -244,8 +244,8 @@
       en: "First teachers complete the train-the-trainer programme",
       exDe: "Sie führen die Erste-Hilfe-Kurse an ihrer Schule künftig eigenständig durch — das Programm läuft weiter, wenn die Volunteer-Teams abgereist sind.",
       exEn: "They will run the first aid courses at their school independently — the programme continues once the volunteer teams have left.",
-      bodyDe: "Nachhaltigkeit ist kein Zusatz, sondern in das Programm eingebaut. Ausgebildete Lehrkräfte werden zu zertifizierten Trainer:innen, ausgebildete Schüler:innen werden Mentor:innen für die nächste Klasse. Sämtliche Materialien liegen auf Nepali vor, damit keine Sprachbarriere entsteht. NPYO Nepal besucht jede Schule jährlich zur Auffrischung und dokumentiert, wie viele Personen erreicht wurden.",
-      bodyEn: "Sustainability is not an add-on but built into the programme. Trained teachers become certified trainers, trained students become mentors for the next class. All materials are in Nepali so that no language barrier arises. NPYO Nepal visits each school annually for refreshers and documents how many people were reached."
+      bodyDe: "Nachhaltigkeit ist kein Zusatz, sondern in das Programm eingebaut. Ausgebildete Lehrkräfte werden zu zertifizierten Trainer:innen, ausgebildete Schüler:innen werden Mentor:innen für die nächste Klasse. Sämtliche Materialien liegen auf Nepali vor, damit keine Sprachbarriere entsteht. NPYS-N besucht jede Schule jährlich zur Auffrischung und dokumentiert, wie viele Personen erreicht wurden.",
+      bodyEn: "Sustainability is not an add-on but built into the programme. Trained teachers become certified trainers, trained students become mentors for the next class. All materials are in Nepali so that no language barrier arises. NPYS-N visits each school annually for refreshers and documents how many people were reached."
     },
     {
       id: "n11", date: "2026-04-18", tag: "kultur",
@@ -279,8 +279,8 @@
       aDe: "Ja. Die zwölf Bereiche sind Beispiele, keine Grenzen. Kein Beruf ist ausgeschlossen. Wählen Sie im Formular „Sonstiges“ und beschreiben Sie kurz Ihre Qualifikation.",
       aEn: "Yes. The twelve fields are examples, not limits. No profession is excluded. Select 'Other' in the form and briefly describe your qualification." },
     { cat: "volunteer", qDe: "Wer übernimmt Reise- und Unterkunftskosten?", qEn: "Who covers travel and accommodation?",
-      aDe: "Die Registrierung ist kostenlos. Reise und Unterkunft organisieren Volunteers in der Regel selbst; NPYO Nepal unterstützt bei der Planung vor Ort und bei der Auswahl erreichbarer Schulen.",
-      aEn: "Registration is free of charge. Volunteers usually arrange travel and accommodation themselves; NPYO Nepal supports local planning and the selection of accessible schools." },
+      aDe: "Die Registrierung ist kostenlos. Reise und Unterkunft organisieren Volunteers in der Regel selbst; NPYS-N unterstützt bei der Planung vor Ort und bei der Auswahl erreichbarer Schulen.",
+      aEn: "Registration is free of charge. Volunteers usually arrange travel and accommodation themselves; NPYS-N supports local planning and the selection of accessible schools." },
     { cat: "volunteer", qDe: "Bekomme ich einen Nachweis über meinen Einsatz?", qEn: "Do I receive proof of my deployment?",
       aDe: "Ja — nach jedem Einsatz und dem Abschlussbericht erhalten Sie ein offizielles NPJOE-Zertifikat, das Sie auch für Bewerbungen nutzen können.",
       aEn: "Yes — after each assignment and the final report you receive an official NPJOE certificate, which you can also use for job applications." },
@@ -297,8 +297,8 @@
       aDe: "Diese Altersgruppe kann Erste Hilfe verantwortlich anwenden, bleibt mehrere Jahre an der Schule und gibt Wissen an jüngere Jahrgänge weiter. So multipliziert sich die Wirkung in der ganzen Gemeinde.",
       aEn: "This age group can apply first aid responsibly, stays at school for several years and passes knowledge on to younger classes. The impact multiplies across the whole community." },
     { cat: "programme", qDe: "Was passiert nach dem Einsatz an einer Schule?", qEn: "What happens after a deployment at a school?",
-      aDe: "Ausgebildete Lehrkräfte werden zu dauerhaften Trainer:innen, die Schule erhält ein zertifiziertes Erste-Hilfe-Kit und Materialien, und NPYO Nepal besucht die Schule jährlich zur Auffrischung.",
-      aEn: "Trained teachers become permanent trainers, the school receives a certified First Aid kit and materials, and NPYO Nepal visits annually for refreshers." },
+      aDe: "Ausgebildete Lehrkräfte werden zu dauerhaften Trainer:innen, die Schule erhält ein zertifiziertes Erste-Hilfe-Kit und Materialien, und NPYS-N besucht die Schule jährlich zur Auffrischung.",
+      aEn: "Trained teachers become permanent trainers, the school receives a certified First Aid kit and materials, and NPYS-N visits annually for refreshers." },
     { cat: "verein", qDe: "Wie ist der Verein organisiert?", qEn: "How is the association organised?",
       aDe: "Organe sind die Mitgliederversammlung und der Vorstand (§ 12). Der Vorstand besteht aus Vorsitz, stellvertretendem Vorsitz, Schatzmeister:in, Schriftführer:in und drei bis fünf Beisitzer:innen. Vertreten wird der Verein durch zwei Vorstandsmitglieder gemeinsam (§ 26 BGB).",
       aEn: "The bodies are the general meeting and the board (§ 12). The board consists of chair, deputy chair, treasurer, secretary and three to five assessors. Two board members jointly represent the association (§ 26 BGB)." },
@@ -329,14 +329,14 @@
       aDe: "Ja. Wählen Sie bei der Registrierung „Remote-Unterstützung“. Gebraucht werden Übersetzungen, Websites für Partnerorganisationen, Online-Nachhilfe, Grafikdesign, Fördermittelanträge und Lehrerfortbildung per Video.",
       aEn: "Yes. Choose 'remote support' when registering. We need translations, websites for partner organisations, online tutoring, graphic design, grant applications and teacher training by video." },
     { cat: "volunteer", qDe: "Brauche ich Nepali-Kenntnisse?", qEn: "Do I need to speak Nepali?",
-      aDe: "Nicht zwingend. Sämtliche Trainingsmaterialien liegen auf Nepali vor, und NPYO Nepal stellt bei Bedarf Übersetzung vor Ort. Nepali-Kenntnisse erleichtern den direkten Kontakt mit Schüler:innen und Gemeinden aber erheblich.",
-      aEn: "Not necessarily. All training materials exist in Nepali and NPYO Nepal provides translation on site where needed. Nepali does, however, make direct contact with students and communities considerably easier." },
+      aDe: "Nicht zwingend. Sämtliche Trainingsmaterialien liegen auf Nepali vor, und NPYS-N stellt bei Bedarf Übersetzung vor Ort. Nepali-Kenntnisse erleichtern den direkten Kontakt mit Schüler:innen und Gemeinden aber erheblich.",
+      aEn: "Not necessarily. All training materials exist in Nepali and NPYS-N provides translation on site where needed. Nepali does, however, make direct contact with students and communities considerably easier." },
     { cat: "volunteer", qDe: "Wie läuft das Matching konkret ab?", qEn: "How exactly does matching work?",
-      aDe: "Nach Ihrer Registrierung übermitteln wir die für das Matching nötigen Angaben an NPYO Nepal. Der Partner ordnet Sie einer Schule oder einem Projekt zu, das zu Berufsfeld, Qualifikation und Verfügbarkeit passt. Rund zwei Wochen vor dem Einsatz erhalten Sie ein Briefing zu Inhalten, Erwartungen, Material und Sicherheit.",
-      aEn: "After your registration we transmit the details needed for matching to NPYO Nepal. The partner assigns you to a school or project fitting your field, qualification and availability. About two weeks before the assignment you receive a briefing on content, expectations, materials and safety." },
+      aDe: "Nach Ihrer Registrierung übermitteln wir die für das Matching nötigen Angaben an NPYS-N. Der Partner ordnet Sie einer Schule oder einem Projekt zu, das zu Berufsfeld, Qualifikation und Verfügbarkeit passt. Rund zwei Wochen vor dem Einsatz erhalten Sie ein Briefing zu Inhalten, Erwartungen, Material und Sicherheit.",
+      aEn: "After your registration we transmit the details needed for matching to NPYS-N. The partner assigns you to a school or project fitting your field, qualification and availability. About two weeks before the assignment you receive a briefing on content, expectations, materials and safety." },
     { cat: "volunteer", qDe: "Kann ich als Gruppe oder mit meiner Familie kommen?", qEn: "Can we come as a group or as a family?",
-      aDe: "Ja, Gruppeneinsätze sind willkommen und für Schulen oft besonders wirkungsvoll. Melden Sie sich einzeln an und vermerken Sie die Gruppe im Feld „Motivation“, damit NPYO Nepal Sie gemeinsam einplanen kann.",
-      aEn: "Yes, group deployments are welcome and are often particularly effective for schools. Register individually and note the group in the 'motivation' field so NPYO Nepal can plan you together." },
+      aDe: "Ja, Gruppeneinsätze sind willkommen und für Schulen oft besonders wirkungsvoll. Melden Sie sich einzeln an und vermerken Sie die Gruppe im Feld „Motivation“, damit NPYS-N Sie gemeinsam einplanen kann.",
+      aEn: "Yes, group deployments are welcome and are often particularly effective for schools. Register individually and note the group in the 'motivation' field so NPYS-N can plan you together." },
     { cat: "volunteer", qDe: "Welche Berufe werden derzeit am dringendsten gebraucht?", qEn: "Which professions are most urgently needed right now?",
       aDe: "Für die Erste-Hilfe-Kampagne: Sanitäter:innen, Ärzt:innen, Pflegekräfte und zertifizierte Erste-Hilfe-Trainer:innen. Darüber hinaus melden die Partnerschulen besonderen Bedarf bei Lehrkräften für Englisch, Mathematik und Naturwissenschaften sowie bei IT-Fachleuten für Computer-Grundkenntnisse.",
       aEn: "For the First Aid Campaign: paramedics, doctors, nurses and certified first aid trainers. Beyond that, partner schools report particular need for teachers of English, mathematics and science, and for IT specialists to teach basic computer skills." },
@@ -348,8 +348,8 @@
       aDe: "Ja — wählen Sie im Formular monatlich oder jährlich und richten Sie bei Ihrer Bank einen Dauerauftrag ein. Regelmäßige Spenden sind für die Planung der Kampagne besonders wertvoll, weil sie Materialbestellungen im Voraus ermöglichen.",
       aEn: "Yes — choose monthly or annually in the form and set up a standing order with your bank. Regular donations are especially valuable for planning the campaign because they allow materials to be ordered in advance." },
     { cat: "spenden", qDe: "Kann ich Sachspenden statt Geld geben?", qEn: "Can I give goods instead of money?",
-      aDe: "Ja. § 3(i) der Satzung nennt ausdrücklich Beschaffung, Transport und Verteilung von Hilfs- und Unterrichtsmaterialien, Hygienekits und medizinischen Sachspenden. Bitte fragen Sie vorab an, damit wir Transport und Bedarf mit NPYO Nepal abstimmen können.",
-      aEn: "Yes. § 3(i) of the statutes expressly mentions procuring, transporting and distributing aid and teaching materials, hygiene kits and medical in-kind donations. Please ask in advance so we can coordinate transport and need with NPYO Nepal." },
+      aDe: "Ja. § 3(i) der Satzung nennt ausdrücklich Beschaffung, Transport und Verteilung von Hilfs- und Unterrichtsmaterialien, Hygienekits und medizinischen Sachspenden. Bitte fragen Sie vorab an, damit wir Transport und Bedarf mit NPYS-N abstimmen können.",
+      aEn: "Yes. § 3(i) of the statutes expressly mentions procuring, transporting and distributing aid and teaching materials, hygiene kits and medical in-kind donations. Please ask in advance so we can coordinate transport and need with NPYS-N." },
     { cat: "spenden", qDe: "Wie viel meiner Spende kommt tatsächlich an?", qEn: "How much of my donation actually arrives?",
       aDe: "Der Verein ist selbstlos tätig; Mittel dürfen nur für satzungsmäßige Zwecke verwendet werden, und Mitglieder erhalten keine Zuwendungen (§ 4). Verwaltungskosten wie Porto, Kontoführung und Software machen derzeit rund vier Prozent aus, der Rest fließt in Material, Trainingsunterlagen und Transport zu abgelegenen Schulen.",
       aEn: "The association acts selflessly; funds may only be used for statutory purposes and members receive no allocations (§ 4). Administrative costs such as postage, banking and software currently account for around four per cent; the rest goes into materials, training documents and transport to remote schools." },
@@ -358,11 +358,11 @@
       aDe: "Grundversorgung von Wunden und Verbandstechniken, CPR für Erwachsene und Kinder, Reaktion auf Ersticken und Atemwegssicherung, Verbrennungen, Frakturen und Notfallstabilisierung, Verhalten bei Erdbeben und Überschwemmungen sowie psychologische Erste Hilfe — Beruhigung und Krisenunterstützung.",
       aEn: "Basic wound care and bandaging, CPR for adults and children, choking response and airway management, burns, fractures and emergency stabilisation, behaviour during earthquakes and floods, plus psychological first aid — calming and crisis support." },
     { cat: "programme", qDe: "Was erhält eine teilnehmende Schule?", qEn: "What does a participating school receive?",
-      aDe: "Ein zertifiziertes Erste-Hilfe-Kit, Trainingsmaterialien und Handbücher auf Nepali, mindestens eine ausgebildete Lehrkraft als dauerhafte:n Schultrainer:in, einen jährlichen Auffrischungsbesuch durch NPYO Nepal und das offizielle Schulzertifikat „Erste-Hilfe-Schule“.",
-      aEn: "A certified First Aid kit, training materials and manuals in Nepali, at least one trained teacher as permanent school trainer, an annual refresher visit by NPYO Nepal, and the official school certificate 'First Aid School'." },
+      aDe: "Ein zertifiziertes Erste-Hilfe-Kit, Trainingsmaterialien und Handbücher auf Nepali, mindestens eine ausgebildete Lehrkraft als dauerhafte:n Schultrainer:in, einen jährlichen Auffrischungsbesuch durch NPYS-N und das offizielle Schulzertifikat „Erste-Hilfe-Schule“.",
+      aEn: "A certified First Aid kit, training materials and manuals in Nepali, at least one trained teacher as permanent school trainer, an annual refresher visit by NPYS-N, and the official school certificate 'First Aid School'." },
     { cat: "programme", qDe: "Wie werden die Schulen ausgewählt?", qEn: "How are schools selected?",
-      aDe: "Die Auswahl trifft NPYO Nepal als Partner vor Ort — nach Erreichbarkeit für Volunteer-Teams, der Bereitschaft der Schulleitung, eine Lehrkraft dauerhaft als Trainer:in freizustellen, und dem Anteil von Schüler:innen aus benachteiligten Familien. Vorschläge aus der Diaspora sind ausdrücklich willkommen.",
-      aEn: "NPYO Nepal, as partner on the ground, makes the selection — by accessibility for volunteer teams, the school management's willingness to permanently release a teacher as trainer, and the share of students from disadvantaged families. Suggestions from the diaspora are expressly welcome." },
+      aDe: "Die Auswahl trifft NPYS-N als Partner vor Ort — nach Erreichbarkeit für Volunteer-Teams, der Bereitschaft der Schulleitung, eine Lehrkraft dauerhaft als Trainer:in freizustellen, und dem Anteil von Schüler:innen aus benachteiligten Familien. Vorschläge aus der Diaspora sind ausdrücklich willkommen.",
+      aEn: "NPYS-N, as partner on the ground, makes the selection — by accessibility for volunteer teams, the school management's willingness to permanently release a teacher as trainer, and the share of students from disadvantaged families. Suggestions from the diaspora are expressly welcome." },
     { cat: "programme", qDe: "Gibt es auch Gesundheitscamps für die ganze Gemeinde?", qEn: "Are there health camps for the whole community?",
       aDe: "Ja, wenn medizinische Volunteers verfügbar sind. § 3(e) der Satzung sieht kostenfreie Gesundheitscamps sowie Aufklärungs- und Präventionsmaßnahmen in ländlichen Regionen Nepals vor, ergänzt um Unterstützung bedürftiger Personen beim Zugang zu medizinischer Versorgung.",
       aEn: "Yes, when medical volunteers are available. § 3(e) of the statutes provides for free health camps plus awareness and prevention measures in rural regions of Nepal, complemented by support for people in need in accessing medical care." },

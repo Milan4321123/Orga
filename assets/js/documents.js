@@ -89,6 +89,8 @@
       zip: a.zip || "",
       city: a.city || "Darmstadt",
       email: o.email || "",
+      taxNumber: o.taxNumber || "",
+      charitableSinceIso: o.charitableSinceIso || "",
       chair: (o.board && o.board.chair) || "",
       secretary: (o.board && o.board.secretary) || ""
     };
@@ -178,11 +180,11 @@
           (d.days ? " — insgesamt " + esc(d.days) + (Number(d.days) === 1 ? " Einsatztag" : " Einsatztage") : "") +
           ".</p>" +
           '<p class="doc-center doc-small" style="margin-top:14mm">Die Umsetzung vor Ort erfolgte in ' +
-          "Zusammenarbeit mit der Nepalese Progressive Youth Organisation (NPYO) Nepal.<br>" +
+          "Zusammenarbeit mit der Nepalese Progressive Youth Society - Nepal (NPYS-N).<br>" +
           "Wir danken für das ehrenamtliche Engagement.</p>" +
           '<p class="doc-place">' + esc(d.place || "Darmstadt") + ", den " +
             esc(formatDate(d.date || new Date().toISOString().slice(0, 10))) + "</p>" +
-          signatures("Vorsitz, NPJOE e.V.", "Koordination, NPYO Nepal");
+          signatures("Vorsitz, NPJOE e.V.", "Koordination, NPYS-N");
       }
     },
 
@@ -214,10 +216,10 @@
             (d.validUntil ? "<div><dt>Auffrischung vorgesehen bis</dt><dd>" + esc(formatDate(d.validUntil)) + "</dd></div>" : "") +
           "</dl>" +
           "<p>Die ausgebildeten Lehrkräfte führen die Erste-Hilfe-Kurse an dieser Schule eigenständig " +
-          "weiter. NPYO Nepal besucht die Schule jährlich zur Auffrischung.</p>" +
+          "weiter. NPYS-N besucht die Schule jährlich zur Auffrischung.</p>" +
           '<p class="doc-place">' + esc(d.place || "Darmstadt") + ", den " +
             esc(formatDate(d.date || new Date().toISOString().slice(0, 10))) + "</p>" +
-          signatures("Vorsitz, NPJOE e.V.", "Koordination, NPYO Nepal");
+          signatures("Vorsitz, NPJOE e.V.", "Koordination, NPYS-N");
       }
     },
 
@@ -232,8 +234,8 @@
         { key: "amount", label: "Betrag in €", type: "number", required: true },
         { key: "donationDate", label: "Tag der Zuwendung", type: "date", required: true },
         { key: "taxOffice", label: "Finanzamt", value: "Finanzamt Darmstadt" },
-        { key: "taxNumber", label: "Steuernummer" },
-        { key: "noticeDate", label: "Freistellungsbescheid vom", type: "date" },
+        { key: "taxNumber", label: "Steuernummer", value: org().taxNumber },
+        { key: "noticeDate", label: "Freistellungsbescheid vom", type: "date", value: org().charitableSinceIso },
         { key: "purposeYear", label: "Für den Veranlagungszeitraum", value: String(new Date().getFullYear()) },
         { key: "place", label: "Ort", value: "Darmstadt" },
         { key: "date", label: "Datum der Ausstellung", type: "date" }
