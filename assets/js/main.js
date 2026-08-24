@@ -300,26 +300,45 @@
   }
 
   function initLightbox() {
-    var figures = document.querySelectorAll("[data-lightbox]");
-    if (!figures.length) return;
+    if (!document.querySelector(".gallery, [data-lightbox]")) return;
     var box = document.createElement("div");
     box.className = "lightbox";
     box.setAttribute("role", "dialog");
     box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Bildvorschau / Image preview");
     box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Schließen / Close">✕</button><figure><div id="lbBody"></div><figcaption id="lbCap"></figcaption></figure>';
     document.body.appendChild(box);
-    function close() { box.classList.remove("is-open"); document.body.style.overflow = ""; }
+    var lastTrigger = null;
+    function close() {
+      if (!box.classList.contains("is-open")) return;
+      box.classList.remove("is-open");
+      document.body.style.overflow = "";
+      if (lastTrigger) lastTrigger.focus();
+    }
+    function open(fig) {
+      var inner = fig.querySelector("img, svg");
+      var cap = fig.querySelector("figcaption");
+      if (!inner) return;
+      lastTrigger = fig;
+      document.getElementById("lbBody").innerHTML = inner.outerHTML;
+      document.getElementById("lbCap").innerHTML = cap ? cap.innerHTML : "";
+      box.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      box.querySelector(".lightbox-close").focus();
+    }
     box.addEventListener("click", function (e) { if (e.target === box || e.target.classList.contains("lightbox-close")) close(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
-    figures.forEach(function (fig) {
-      fig.addEventListener("click", function () {
-        var inner = fig.querySelector("img, svg");
-        var cap = fig.querySelector("figcaption");
-        document.getElementById("lbBody").innerHTML = inner ? inner.outerHTML : "";
-        document.getElementById("lbCap").innerHTML = cap ? cap.innerHTML : "";
-        box.classList.add("is-open");
-        document.body.style.overflow = "hidden";
-      });
+    document.addEventListener("click", function (e) {
+      var fig = e.target.closest ? e.target.closest("[data-lightbox]") : null;
+      if (fig) open(fig);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var fig = e.target.closest ? e.target.closest("[data-lightbox]") : null;
+      if (fig) {
+        e.preventDefault();
+        open(fig);
+      }
     });
   }
 

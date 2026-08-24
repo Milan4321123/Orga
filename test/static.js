@@ -72,6 +72,29 @@ module.exports = function run() {
   });
   eq("no link points at a missing file", broken, []);
 
+  /* ---------------------------------------------------- Dashain event media */
+  group("Dashain 2024 media set is complete");
+  const dashainDir = path.join(ROOT, "assets/media/dashain-2024");
+  const expectedDashain = [
+    "community-meal-video-poster.jpg", "community-meal-video.mp4", "community-meal.jpg",
+    "dashain-banner.jpg", "evening-welcome-desk.jpg", "event-team.jpg", "festival-food.jpg",
+    "friends-at-meal.jpg", "guest-registration.jpg", "guest-speech.jpg", "honour-presentation.jpg",
+    "opening-address.jpg", "sel-roti-moment.jpg", "stage-programme.jpg", "trophy-and-medals.jpg",
+    "trophy-presentation.jpg", "welcome-address.jpg", "welcome-team.jpg"
+  ];
+  const dashainFiles = fs.existsSync(dashainDir) ? fs.readdirSync(dashainDir).sort() : [];
+  eq("all 16 photographs, the video and its poster are present", dashainFiles, expectedDashain.sort());
+  const contentJs = fs.readFileSync(path.join(ROOT, "assets/js/content.js"), "utf8");
+  const unreferencedPhotos = expectedDashain
+    .filter(f => f.endsWith(".jpg") && f !== "community-meal-video-poster.jpg")
+    .filter(f => !contentJs.includes("assets/media/dashain-2024/" + f));
+  eq("all 16 photographs are represented in the gallery data", unreferencedPhotos, []);
+  const galleryPage = read("galerie.html");
+  ok("the gallery page includes the event video and poster",
+     galleryPage.includes("community-meal-video.mp4") && galleryPage.includes("community-meal-video-poster.jpg"));
+  ok("the server sends MP4 files with the correct MIME type",
+     /"\.mp4":\s*"video\/mp4"/.test(fs.readFileSync(path.join(ROOT, "server/server.js"), "utf8")));
+
   /* ------------------------------------------------- anchors resolve on page */
   const badAnchors = [];
   pages.forEach(f => {

@@ -50,6 +50,7 @@ const MIME = {
   ".webp": "image/webp",
   ".ico": "image/x-icon",
   ".pdf": "application/pdf",
+  ".mp4": "video/mp4",
   ".txt": "text/plain; charset=utf-8",
   ".woff2": "font/woff2",
   ".ics": "text/calendar; charset=utf-8"

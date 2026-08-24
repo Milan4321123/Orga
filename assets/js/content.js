@@ -255,6 +255,19 @@
       exEn: "Music, dance and Nepali cuisine — intercultural encounter under § 3(c) of the statutes, expressly not only for the diaspora.",
       bodyDe: "Unsere Kulturarbeit hat zwei Richtungen: Sie bewahrt die Verbindung der hier aufwachsenden Generation zu ihrer Herkunft, und sie öffnet diese Kultur für Nachbarschaft, Schulen und Vereine vor Ort. Deshalb sind alle Kulturveranstaltungen öffentlich. Der Erlös des Abends fließt vollständig in die Spendeninitiative One Euro for Nation.",
       bodyEn: "Our cultural work runs in two directions: it preserves the connection of the generation growing up here to their origins, and it opens that culture to neighbours, schools and local associations. That is why all cultural events are public. The evening's proceeds go entirely to the One Euro for Nation donation initiative."
+    },
+    {
+      id: "n12", date: "2024-10-05", tag: "kultur",
+      de: "Dashain-Feier 2024: Kultur, Begegnung und Gemeinschaft",
+      en: "Dashain celebration 2024: culture, connection and community",
+      exDe: "Am 5. Oktober 2024 kamen Mitglieder, Freund:innen und Gäste zu einem gemeinsamen Dashain-Fest mit Bühnenprogramm, Ehrungen und nepalesischem Essen zusammen.",
+      exEn: "On 5 October 2024, members, friends and guests came together for a Dashain celebration with a stage programme, presentations and Nepali food.",
+      bodyDe: "Die Fotodokumentation zeigt den Empfang und die Anmeldung, Beiträge auf der Bühne, die Pokal- und Medaillenübergabe sowie viele Begegnungen beim gemeinsamen Essen. Alle 16 Bilder und ein kurzer Videoclip sind in der Galerie zu sehen.",
+      bodyEn: "The photo story covers reception and registration, contributions on stage, the trophy and medal presentation, and community moments over a shared meal. All 16 photographs and a short video clip are available in the gallery.",
+      image: "assets/media/dashain-2024/trophy-presentation.jpg",
+      imageAltDe: "Pokalübergabe bei der Dashain-Feier der NPJOE am 5. Oktober 2024",
+      imageAltEn: "Trophy presentation at the NPJOE Dashain celebration on 5 October 2024",
+      href: "galerie.html#dashain-2024"
     }
   ];
 
@@ -386,15 +399,22 @@
 
   /* -------------------------------------------------------------- Gallery */
   var GALLERY = [
-    { tag: "erste-hilfe", de: "Erste-Hilfe-Training, Klassen 9–12", en: "First Aid training, grades 9–12", c1: "#c8102e", c2: "#123a7a", icon: "🚑" },
-    { tag: "bildung", de: "Unterricht mit Volunteer-Lehrkräften", en: "Lessons with volunteer teachers", c1: "#123a7a", c2: "#0f766e", icon: "🎓" },
-    { tag: "gesundheit", de: "Kostenfreies Gesundheitscamp", en: "Free health camp", c1: "#0f766e", c2: "#123a7a", icon: "🏥" },
-    { tag: "kultur", de: "Interkulturelles Kulturfest in Hessen", en: "Intercultural festival in Hesse", c1: "#e8951a", c2: "#c8102e", icon: "🎭" },
-    { tag: "sport", de: "Fußball- und Cricketturnier der Jugend", en: "Youth football and cricket tournament", c1: "#0f766e", c2: "#e8951a", icon: "⚽" },
-    { tag: "spenden", de: "Verteilung von Schulmaterialien", en: "Distribution of school materials", c1: "#c8102e", c2: "#e8951a", icon: "📚" },
-    { tag: "erste-hilfe", de: "Übergabe zertifizierter Erste-Hilfe-Kits", en: "Handover of certified First Aid kits", c1: "#123a7a", c2: "#c8102e", icon: "🧰" },
-    { tag: "bildung", de: "Coding-Workshop für Jugendliche", en: "Coding workshop for young people", c1: "#123a7a", c2: "#e8951a", icon: "💻" },
-    { tag: "gesundheit", de: "Hygienekits für Schulklassen", en: "Hygiene kits for classrooms", c1: "#0f766e", c2: "#c8102e", icon: "🧼" }
+    { tag: "dashain kultur ehrung", src: "assets/media/dashain-2024/trophy-and-medals.jpg", width: 1920, height: 1280, de: "Pokal und Medaillen vor Beginn der Feier", en: "Trophy and medals before the celebration begins" },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/welcome-team.jpg", width: 1920, height: 1280, de: "Das Empfangsteam bereitet die Anmeldung vor", en: "The welcome team prepares registration" },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/opening-address.jpg", width: 1920, height: 1280, de: "Begrüßung und Eröffnung des Dashain-Programms", en: "Welcome and opening of the Dashain programme" },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/event-team.jpg", width: 1920, height: 1280, de: "Mitglieder des Veranstaltungsteams", en: "Members of the event team" },
+    { tag: "dashain kultur deko", src: "assets/media/dashain-2024/dashain-banner.jpg", width: 1920, height: 1280, de: "Festbanner der NPJOE zur Dashain-Feier", en: "NPJOE celebration banner for Dashain" },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/guest-speech.jpg", width: 1920, height: 1280, de: "Ein Beitrag aus dem Kreis der Gäste", en: "A contribution from one of the guests" },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/community-meal.jpg", width: 1920, height: 1280, de: "Begegnung und Gespräche beim gemeinsamen Essen", en: "Connection and conversation over a shared meal" },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/welcome-address.jpg", width: 1920, height: 1280, de: "Ansprache des Moderationsteams", en: "Address by the hosting team" },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/guest-registration.jpg", width: 1920, height: 1280, de: "Gäste tragen sich am Empfang ein", en: "Guests sign in at reception" },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/friends-at-meal.jpg", width: 1920, height: 1280, de: "Freund:innen und Mitglieder beim Festessen", en: "Friends and members enjoying the festival meal" },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/stage-programme.jpg", width: 1920, height: 1280, de: "Das Bühnenprogramm der Dashain-Feier", en: "The Dashain celebration stage programme" },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/sel-roti-moment.jpg", width: 1920, height: 1280, de: "Gemeinsamer Moment am Buffet mit Sel Roti", en: "A shared moment at the buffet with sel roti" },
+    { tag: "dashain kultur ehrung buehne", src: "assets/media/dashain-2024/honour-presentation.jpg", width: 1920, height: 1280, de: "Ehrung im Rahmen des Festprogramms", en: "A presentation during the festival programme" },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/evening-welcome-desk.jpg", width: 1920, height: 1283, de: "Anmeldung und Organisation am Empfangstisch", en: "Registration and organisation at the welcome desk" },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/festival-food.jpg", width: 1920, height: 1280, de: "Nepalesische Speisen und Sel Roti für die Gäste", en: "Nepali food and sel roti for the guests" },
+    { tag: "dashain kultur ehrung buehne", src: "assets/media/dashain-2024/trophy-presentation.jpg", width: 1920, height: 1280, de: "Übergabe des Pokals zum Abschluss des Programmpunkts", en: "Trophy presentation concluding a programme segment" }
   ];
 
   /* ------------------------------------------------------- Donation tiers */
@@ -503,6 +523,9 @@
 
     host.innerHTML = list.map(function (n, i) {
       var featured = opts.featureFirst && i === 0;
+      var media = n.image
+        ? '<a class="news-media" href="' + esc(n.href || "#") + '"><img src="' + esc(n.image) + '" width="1920" height="1280" loading="lazy" decoding="async" alt="' + esc(lang === "en" ? n.imageAltEn : n.imageAltDe) + '" data-de-alt="' + esc(n.imageAltDe) + '" data-en-alt="' + esc(n.imageAltEn) + '"></a>'
+        : "";
       var body = n.bodyDe
         ? '<details class="news-more mt-3"><summary>' +
             bi("Weiterlesen", "Read more") + "</summary>" +
@@ -510,12 +533,13 @@
         : "";
       return '<article class="card card-hover reveal-scale news-card' + (featured ? " is-featured" : "") +
         '" data-tags="' + n.tag + '">' +
+        media +
         '<div class="flex" style="gap:.5rem;margin-bottom:.75rem">' +
           '<span class="badge badge-outline">' + fmtDate(n.date, lang) + "</span>" + tagBadge(n.tag) +
         "</div>" +
         (featured ? '<h3>' : '<h3 class="t-h4">') + bi(esc(n.de), esc(n.en)) + "</h3>" +
         '<p class="news-lead mt-2">' + bi(esc(n.exDe), esc(n.exEn)) + "</p>" +
-        body + "</article>";
+        body + (n.href ? '<p class="mt-3"><a class="clink clink-sm" href="' + esc(n.href) + '">' + bi("Fotos und Video ansehen", "View photos and video") + "</a></p>" : "") + "</article>";
     }).join("");
   }
 
@@ -549,15 +573,13 @@
   function renderGallery(sel) {
     var host = document.querySelector(sel);
     if (!host) return;
-    host.innerHTML = GALLERY.map(function (g, i) {
-      var svg = '<svg viewBox="0 0 400 300" role="img" aria-label="' + esc(g.de) + '">' +
-        '<defs><linearGradient id="gg' + i + '" x1="0" y1="0" x2="1" y2="1">' +
-        '<stop offset="0%" stop-color="' + g.c1 + '"/><stop offset="100%" stop-color="' + g.c2 + '"/></linearGradient></defs>' +
-        '<rect width="400" height="300" fill="url(#gg' + i + ')"/>' +
-        '<circle cx="330" cy="60" r="34" fill="#ffffff" opacity="0.14"/>' +
-        '<path d="M0 230 L90 150 L150 205 L215 140 L300 230 Z" fill="#ffffff" opacity="0.18"/>' +
-        '<text x="200" y="165" font-size="72" text-anchor="middle" dominant-baseline="middle">' + g.icon + "</text></svg>";
-      return '<figure class="reveal" data-lightbox data-tags="' + g.tag + '">' + svg +
+    var lang = window.npjoeLang ? window.npjoeLang() : "de";
+    host.innerHTML = GALLERY.map(function (g) {
+      var current = lang === "en" ? g.en : g.de;
+      var openDe = "Bild vergrößern: " + g.de;
+      var openEn = "Enlarge image: " + g.en;
+      var img = '<img src="' + esc(g.src) + '" width="' + g.width + '" height="' + g.height + '" loading="lazy" decoding="async" alt="' + esc(current) + '" data-de-alt="' + esc(g.de) + '" data-en-alt="' + esc(g.en) + '">';
+      return '<figure data-lightbox data-tags="' + g.tag + '" role="button" tabindex="0" aria-label="' + esc(lang === "en" ? openEn : openDe) + '" data-de-aria-label="' + esc(openDe) + '" data-en-aria-label="' + esc(openEn) + '">' + img +
         "<figcaption>" + bi(esc(g.de), esc(g.en)) + "</figcaption></figure>";
     }).join("");
   }

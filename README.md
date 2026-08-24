@@ -46,9 +46,9 @@ Formulare schalten dann automatisch in den Offline-Modus (siehe unten).
 | `volunteer.html` | **Volunteer-Registrierung** — 4-stufiges Formular nach Berufsfeld |
 | `spenden.html` | **Spendenformular** mit Wirkungsrechner und Bankverbindung |
 | `kontakt.html` | **Kontaktformular** + Formular für Partner, Schulen und Förderer |
-| `veranstaltungen.html` | Termine mit Filter, Suche und `.ics`-Download |
-| `news.html` | Feed mit 11 Beiträgen, ausklappbaren Volltexten, Filter, Suche und Newsletter |
-| `galerie.html` | Bildergalerie mit Lightbox und Filter |
+| `veranstaltungen.html` | Termine mit Filter, Suche, `.ics`-Download und Dashain-Rückblick 2024 |
+| `news.html` | Feed mit 12 Beiträgen, ausklappbaren Volltexten, Filter, Suche und Newsletter |
+| `galerie.html` | Dashain-Fotogalerie mit 16 Aufnahmen, Video, Lightbox und Filter |
 | `transparenz.html` | Mittelherkunft und -verwendung, Kontrollmechanismen, Berichte |
 | `faq.html` | 39 Fragen und Antworten, nach Kategorie filterbar und durchsuchbar |
 | `impressum.html` | Impressum nach § 5 DDG |
@@ -407,7 +407,8 @@ Dateianfang anpassbar.
 │   ├── js/admin-docs.js         Dokumentenausgabe im Vorstandsbereich
 │   ├── js/admin-dsgvo.js        Auskunft und Löschung im Vorstandsbereich
 │   ├── js/correspondence.js     Antwortvorlagen (DE/EN)
-│   └── img/logo.svg             Logo / Favicon
+│   ├── img/logo.svg             Logo / Favicon
+│   └── media/dashain-2024/      Optimierte Veranstaltungsfotos und Video
 ├── server/
 │   ├── server.js                Webserver + Formular-API + Admin-API + Inhalts-API
 │   ├── preflight.js             Prüfung vor dem Livegang
