@@ -742,16 +742,43 @@ function serveStatic(req, res, pathname) {
       res.writeHead(304, Object.assign(securityHeaders(), { ETag: etag, "Cache-Control": "no-cache" }));
       return res.end();
     }
+    /* Byte ranges. Safari refuses to play a video at all unless the server
+       answers its Range request with a 206, and without ranges every seek in
+       any browser re-fetches the clip from the beginning — which matters when
+       the gallery carries eleven of them. */
+    let start = 0, end = info.size - 1, status = 200;
+    const range = req.method === "GET" ? req.headers.range : undefined;
+    const m = range ? /^bytes=(\d*)-(\d*)$/.exec(String(range).trim()) : null;
+    if (m && (m[1] !== "" || m[2] !== "")) {
+      if (m[1] === "") {
+        /* suffix form — "the last N bytes" */
+        const n = parseInt(m[2], 10);
+        start = n >= info.size ? 0 : info.size - n;
+      } else {
+        start = parseInt(m[1], 10);
+        if (m[2] !== "") end = Math.min(parseInt(m[2], 10), info.size - 1);
+      }
+      if (!(start >= 0) || start > end) {
+        res.writeHead(416, Object.assign(securityHeaders(), {
+          "Content-Range": "bytes */" + info.size, "Accept-Ranges": "bytes"
+        }));
+        return res.end();
+      }
+      status = 206;
+    }
+
     const headers = Object.assign(securityHeaders(), {
       "Content-Type": MIME[ext] || "application/octet-stream",
       "Cache-Control": "no-cache",
       ETag: etag,
       "Last-Modified": info.mtime.toUTCString(),
-      "Content-Length": info.size
+      "Accept-Ranges": "bytes",
+      "Content-Length": end - start + 1
     });
-    res.writeHead(200, headers);
+    if (status === 206) headers["Content-Range"] = "bytes " + start + "-" + end + "/" + info.size;
+    res.writeHead(status, headers);
     if (req.method === "HEAD") return res.end();
-    fs.createReadStream(file).pipe(res);
+    fs.createReadStream(file, { start, end }).pipe(res);
   }
 }
 

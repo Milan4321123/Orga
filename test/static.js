@@ -95,6 +95,73 @@ module.exports = function run() {
   ok("the server sends MP4 files with the correct MIME type",
      /"\.mp4":\s*"video\/mp4"/.test(fs.readFileSync(path.join(ROOT, "server/server.js"), "utf8")));
 
+  /* ----------------------------------------- Naya Barsha 2026 event media */
+  group("Naya Barsha 2026 album is complete and wired up");
+  const nayaDir = path.join(ROOT, "assets/media/naya-barsha-2026");
+  const nayaFiles = fs.existsSync(nayaDir) ? fs.readdirSync(nayaDir).sort() : [];
+  const nayaPhotos = nayaFiles.filter(f => f.endsWith(".jpg") && !f.endsWith("-poster.jpg"));
+  const nayaClips = nayaFiles.filter(f => f.endsWith(".mp4"));
+  eq("all 10 photographs are on disk", nayaPhotos.length, 10);
+  eq("all 11 videos are on disk", nayaClips.length, 11);
+
+  /* A video without its poster shows a black rectangle until it is played —
+     with preload="none" the poster is the only thing the visitor ever sees. */
+  const missingPosters = nayaClips
+    .map(f => f.replace(/\.mp4$/, "-poster.jpg"))
+    .filter(p => !nayaFiles.includes(p));
+  eq("every video has its poster frame", missingPosters, []);
+
+  const unreferencedNaya = nayaPhotos.filter(f => !contentJs.includes("assets/media/naya-barsha-2026/" + f));
+  eq("every photograph is referenced in the album data", unreferencedNaya, []);
+  const unreferencedClips = nayaClips
+    .map(f => f.replace(/\.mp4$/, ""))
+    .filter(b => !contentJs.includes("assets/media/naya-barsha-2026/" + b));
+  eq("every video is referenced in the album data", unreferencedClips, []);
+
+  /* The whole point of the story block: the ceremony is explained, not just shown. */
+  ok("the page explains what Naya Barsha is", /Bikram[- ]Sambat/.test(galleryPage));
+  ok("the page names the date, the venue and the turnout",
+     /10\. April 2026/.test(galleryPage) && /Knabenschule/.test(galleryPage) && /150/.test(galleryPage));
+  ok("both albums are reachable from the jump strip",
+     /href="#naya-barsha-2026"/.test(galleryPage) && /href="#dashain-2024"/.test(galleryPage));
+  ok("the album and its clips are rendered from the shared content module",
+     /renderAlbum\("#nayaBarshaGrid"/.test(galleryPage) && /renderClips\("#nayaBarshaClips"/.test(galleryPage));
+
+  /* 67 MB of clips: nothing may download before the visitor asks for it. */
+  const clipRenderer = contentJs.slice(contentJs.indexOf("function renderClips"));
+  /* Anchored on the emitted markup, not on any mention of the word: an earlier
+     version of this check also matched the explanatory comment above it. */
+  ok("clips never preload — the page costs a visitor nothing until they press play",
+     /<video controls playsinline preload="none"/.test(clipRenderer));
+  const eagerVideo = (galleryPage.match(/<video(?![^>]*preload="none")[^>]*>/g) || []);
+  eq("no video on the page preloads either", eagerVideo, []);
+
+  /* Portrait frames must not be cropped into a landscape box. */
+  const albumCss = fs.readFileSync(path.join(ROOT, "assets/css/main.css"), "utf8");
+  ok("landscape frames get the wide tile, portraits keep their own shape",
+     /g\.width >= g\.height/.test(contentJs) && /\.is-wide \{ aspect-ratio: 3 \/ 2; grid-column: span 2/.test(albumCss));
+  ok("a wide tile stops spanning two columns when only one column is left",
+     /@media \(max-width: 560px\) \{ \.gallery-mosaic \.shot\.is-wide \{ grid-column: auto/.test(albumCss));
+
+  /* ------------------------------------------------------- image preview */
+  group("The image preview actually shows the image");
+  /* Regression: the preview used to set innerHTML to the grid image's
+     outerHTML while the dialog was still display:none. Every grid image is
+     loading="lazy", and a lazy image inserted into a subtree with no layout
+     box is never fetched — so the lightbox opened with a caption and an
+     empty frame, for both albums. */
+  const mainSrc = fs.readFileSync(path.join(ROOT, "assets/js/main.js"), "utf8");
+  const lightboxSrc = mainSrc.slice(mainSrc.indexOf("function initLightbox"),
+                                    mainSrc.indexOf("function initToc"));
+  ok("initLightbox could be located", lightboxSrc.length > 200);
+  ok("the preview no longer re-parses the grid image's markup into a hidden dialog",
+     !/lbBody"\)\.innerHTML = inner\.outerHTML/.test(lightboxSrc));
+  ok("it inserts a cloned node instead", /cloneNode\(true\)/.test(lightboxSrc));
+  ok("and makes that copy eager, so the file is actually fetched",
+     /removeAttribute\("loading"\)/.test(lightboxSrc));
+
+
+
   /* ------------------------------------------------- anchors resolve on page */
   const badAnchors = [];
   pages.forEach(f => {

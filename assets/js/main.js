@@ -320,7 +320,15 @@
       var cap = fig.querySelector("figcaption");
       if (!inner) return;
       lastTrigger = fig;
-      document.getElementById("lbBody").innerHTML = inner.outerHTML;
+      var body = document.getElementById("lbBody");
+      body.innerHTML = "";
+      /* The grid images are loading="lazy". Cloning one into a dialog that is
+         still display:none gives the browser no box to intersect, so it never
+         fetched the file and the preview opened blank. Drop the attribute on
+         the copy — it is being shown right now, by definition. */
+      var copy = inner.cloneNode(true);
+      if (copy.tagName === "IMG") copy.removeAttribute("loading");
+      body.appendChild(copy);
       document.getElementById("lbCap").innerHTML = cap ? cap.innerHTML : "";
       box.classList.add("is-open");
       document.body.style.overflow = "hidden";

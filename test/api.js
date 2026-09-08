@@ -186,6 +186,46 @@ module.exports = async function run(port, password) {
   const c304 = await request("GET", "/assets/css/main.css", undefined, { "If-None-Match": css.headers.etag });
   eq("an unchanged file answers 304", c304.status, 304);
 
+  /* ------------------------------------------------------- byte ranges */
+  group("Video can be streamed and seeked");
+  /* Safari refuses to play a video at all unless its Range request comes back
+     as a 206, and without ranges every seek re-fetches the whole clip. The
+     gallery carries eleven of them, so this is not academic. */
+  const clip = "/assets/media/naya-barsha-2026/finale-dancefloor.mp4";
+  const whole = await request("GET", clip);
+  eq("a plain request still returns the whole file", whole.status, 200);
+  eq("mp4 is served as video, not as a download", whole.headers["content-type"], "video/mp4");
+  eq("the server advertises range support", whole.headers["accept-ranges"], "bytes");
+  const total = Number(whole.headers["content-length"]);
+
+  const part = await request("GET", clip, undefined, { Range: "bytes=100-199" });
+  eq("a byte range answers 206", part.status, 206);
+  eq("with exactly the bytes asked for", Number(part.headers["content-length"]), 100);
+  eq("and says where they sit in the file",
+     part.headers["content-range"], "bytes 100-199/" + total);
+
+  /* This is the exact form Safari opens a video with. */
+  const open = await request("GET", clip, undefined, { Range: "bytes=0-" });
+  eq("an open-ended range answers 206 too", open.status, 206);
+  eq("covering the whole file", open.headers["content-range"], "bytes 0-" + (total - 1) + "/" + total);
+
+  const suffix = await request("GET", clip, undefined, { Range: "bytes=-500" });
+  eq("a suffix range returns the last bytes", suffix.status, 206);
+  eq("counted from the end", suffix.headers["content-range"],
+     "bytes " + (total - 500) + "-" + (total - 1) + "/" + total);
+
+  const past = await request("GET", clip, undefined, { Range: "bytes=" + (total + 10) + "-" });
+  eq("a range beyond the file is refused, not silently truncated", past.status, 416);
+  eq("and reports the real length", past.headers["content-range"], "bytes */" + total);
+
+  const overshoot = await request("GET", clip, undefined, { Range: "bytes=0-" + (total + 999) });
+  eq("an end past the file is clamped rather than refused", overshoot.status, 206);
+  eq("to the last real byte", Number(overshoot.headers["content-length"]), total);
+
+  const notRange = await request("GET", clip, undefined, { Range: "items=0-1" });
+  eq("an unrecognised range unit is ignored, not mishandled", notRange.status, 200);
+
+
   for (const p of ["/server/data/membership.jsonl", "/assets/../server/data/content.json",
                    "/server/server.js", "/.gitignore"]) {
     const r = await request("GET", p);

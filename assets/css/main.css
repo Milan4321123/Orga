@@ -1576,3 +1576,83 @@ h1.t-h2, h2.t-h2, h3.t-h2 { font-size: var(--fs-3xl); letter-spacing: -0.024em; 
 h2.t-h3, h3.t-h3, h4.t-h3 { font-size: var(--fs-2xl); letter-spacing: -0.021em; }
 h2.t-h4, h3.t-h4, h4.t-h4 { font-size: var(--fs-xl); letter-spacing: -0.014em; }
 h3.t-h5, h4.t-h5, h5.t-h5 { font-size: var(--fs-lg); letter-spacing: -0.012em; }
+
+/* ==========================================================================
+   39. Event albums — story block, photo mosaic and video wall
+       The plain .gallery grid crops every frame into one 3:2 box, which is
+       fine for a uniform set. An event album is not uniform: portrait phone
+       shots sit beside wide stage photographs, so this variant lets each
+       frame keep its own shape and gives the landscape ones a double tile.
+   ========================================================================== */
+
+/* --- jump strip: one card per album, at the top of the gallery page ------- */
+.album-index { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.album-card {
+  display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 1rem; align-items: center;
+  padding: 0.8rem; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  background: var(--surface); color: inherit; text-decoration: none;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.album-card:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow); }
+.album-card img { width: 92px; height: 92px; object-fit: cover; border-radius: var(--radius-sm); display: block; }
+.album-card strong { display: block; font-size: var(--fs-base); line-height: 1.3; }
+.album-card span { display: block; font-size: var(--fs-xs); color: var(--ink-3); margin-top: 0.25rem; }
+
+/* --- the account of the ceremony, beside its key facts ------------------- */
+.story { display: grid; gap: clamp(1.6rem, 4vw, 3rem); align-items: start;
+         grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.6fr); }
+.story-body > * + * { margin-top: 1.1rem; }
+.story-aside { display: grid; gap: 1rem; }
+@media (max-width: 900px) { .story { grid-template-columns: 1fr; } }
+
+/* Four items, so an explicit 2x2 rather than auto-fit — at the 806px the story
+   column actually gets, auto-fit lands on three across and leaves one orphan. */
+.highlights { display: grid; gap: 0.8rem; list-style: none; padding: 0; margin: 0;
+              grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 620px) { .highlights { grid-template-columns: 1fr; } }
+.highlight { padding: 1.1rem 1.15rem; border: 1px solid var(--line);
+             border-radius: var(--radius); background: var(--bg-alt); }
+.highlight i { display: block; font-size: 1.45rem; line-height: 1; margin-bottom: 0.55rem; font-style: normal; }
+.highlight b { display: block; font-size: var(--fs-sm); }
+.highlight em { display: block; font-size: var(--fs-xs); color: var(--ink-3);
+                margin-top: 0.3rem; font-style: normal; line-height: 1.45; }
+
+/* --- photo mosaic -------------------------------------------------------- */
+.gallery-mosaic { display: grid; gap: 0.85rem; grid-auto-flow: dense;
+                  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.gallery-mosaic .shot {
+  margin: 0; position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 3 / 4;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-alt);
+}
+.gallery-mosaic .shot.is-wide { aspect-ratio: 3 / 2; grid-column: span 2; }
+/* With a single column left, `span 2` would invent a second track and push
+   the grid off-screen — so wide frames drop back to one column on a phone. */
+@media (max-width: 560px) { .gallery-mosaic .shot.is-wide { grid-column: auto; } }
+.gallery-mosaic .shot img { display: block; width: 100%; height: 100%; object-fit: cover;
+                            transition: scale 0.45s var(--ease); }
+.gallery-mosaic .shot:hover img { scale: 1.05; }
+.gallery-mosaic .shot:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+.gallery-mosaic figcaption {
+  position: absolute; inset: auto 0 0 0; padding: 2.2rem 0.85rem 0.7rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.82));
+  color: #fff; font-size: var(--fs-xs); font-weight: 600; line-height: 1.35;
+}
+
+/* --- video wall ---------------------------------------------------------- */
+.clip-grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+.clip { margin: 0; display: flex; flex-direction: column; overflow: hidden;
+        border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+/* contain, not cover: two of the clips were filmed in portrait and cropping
+   them to the 16:9 card would cut the performers out of frame. */
+.clip video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #050608; }
+.clip figcaption { display: flex; gap: 0.75rem; align-items: baseline; justify-content: space-between;
+                   padding: 0.85rem 1rem 1rem; font-size: var(--fs-sm); line-height: 1.4; }
+.clip-title { font-weight: 600; }
+.clip-len { flex: none; font-size: var(--fs-xs); color: var(--ink-3); font-variant-numeric: tabular-nums;
+            border: 1px solid var(--line); border-radius: var(--radius-full); padding: 0.1rem 0.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .album-card, .gallery-mosaic .shot img { transition: none; }
+  .album-card:hover { transform: none; }
+  .gallery-mosaic .shot:hover img { scale: 1; }
+}

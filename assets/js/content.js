@@ -268,6 +268,19 @@
       imageAltDe: "Pokalübergabe bei der Dashain-Feier der NPJOE am 5. Oktober 2024",
       imageAltEn: "Trophy presentation at the NPJOE Dashain celebration on 5 October 2024",
       href: "galerie.html#dashain-2024"
+    },
+    {
+      id: "n13", date: "2026-04-10", tag: "kultur",
+      de: "Nepalesisches Neujahr 2026: über 150 Gäste feiern Naya Barsha in Darmstadt",
+      en: "Nepali New Year 2026: more than 150 guests celebrate Naya Barsha in Darmstadt",
+      exDe: "Am 10. April 2026 feierte die NPJOE in der Knabenschule Darmstadt das nepalesische Neujahr — mit nepalesischer Küche, Livekonzert, Tanzaufführungen und kulturellen Darbietungen.",
+      exEn: "On 10 April 2026 the NPJOE celebrated the Nepali New Year at the Knabenschule in Darmstadt — with Nepali cuisine, a live concert, dance performances and cultural presentations.",
+      bodyDe: "Das Naya Barsha markiert den Beginn eines neuen Jahres nach dem nepalesischen Kalender und ist ein Fest der Hoffnung, des Neuanfangs und der Gemeinschaft. Mit über 150 Besucherinnen und Besuchern war der Abend eine der größten und lebendigsten Veranstaltungen des Vereins bisher. Interkulturelle Feste, die der gesamten Öffentlichkeit offenstehen, sind nach § 3c der Satzung ausdrücklich Vereinszweck. Zehn Fotos und elf Videoaufnahmen des Abends sind in der Galerie zu sehen.",
+      bodyEn: "Naya Barsha marks the beginning of a new year in the Nepali calendar and is a festival of hope, of new beginnings and of community. With more than 150 visitors, the evening was one of the largest and liveliest events the association has held. Intercultural festivals open to the general public are an express purpose of the association under § 3c of the statutes. Ten photographs and eleven video recordings from the evening are available in the gallery.",
+      image: "assets/media/naya-barsha-2026/live-concert.jpg",
+      imageAltDe: "Livekonzert bei der Neujahrsfeier der NPJOE am 10. April 2026 in Darmstadt",
+      imageAltEn: "Live concert at the NPJOE New Year celebration on 10 April 2026 in Darmstadt",
+      href: "galerie.html#naya-barsha-2026"
     }
   ];
 
@@ -415,6 +428,82 @@
     { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/evening-welcome-desk.jpg", width: 1920, height: 1283, de: "Anmeldung und Organisation am Empfangstisch", en: "Registration and organisation at the welcome desk" },
     { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/festival-food.jpg", width: 1920, height: 1280, de: "Nepalesische Speisen und Sel Roti für die Gäste", en: "Nepali food and sel roti for the guests" },
     { tag: "dashain kultur ehrung buehne", src: "assets/media/dashain-2024/trophy-presentation.jpg", width: 1920, height: 1280, de: "Übergabe des Pokals zum Abschluss des Programmpunkts", en: "Trophy presentation concluding a programme segment" }
+  ];
+
+  /* ------------------------------- Naya Barsha 2026 — Neujahrsfeier album */
+  /* The Nepali New Year celebration of 10 April 2026 in the Knabenschule,
+     Darmstadt. `width`/`height` are the real pixel sizes: the renderer reads
+     them to decide which frames get a wide tile, and the browser reads them
+     to reserve the right box before the file has loaded. */
+  var NAYA_BARSHA = [
+    { tag: "neujahr buehne musik", src: "assets/media/naya-barsha-2026/live-concert.jpg", width: 1600, height: 1200,
+      de: "Livekonzert mit traditionellen und modernen nepalesischen Liedern",
+      en: "Live concert with traditional and modern Nepali songs" },
+    { tag: "neujahr empfang", src: "assets/media/naya-barsha-2026/arriving-guests.jpg", width: 1600, height: 1069,
+      de: "Ankommende Gäste am Eingang der Knabenschule Darmstadt",
+      en: "Arriving guests at the entrance of the Knabenschule in Darmstadt" },
+    { tag: "neujahr empfang", src: "assets/media/naya-barsha-2026/guest-registration.jpg", width: 1600, height: 1069,
+      de: "Gäste tragen sich am Anmeldetisch in die Teilnehmerliste ein",
+      en: "Guests sign the attendance list at the registration desk" },
+    { tag: "neujahr gemeinschaft team", src: "assets/media/naya-barsha-2026/president-with-members.jpg", width: 1200, height: 1600,
+      de: "Der Präsident der NPJOE (rechts) mit Mitgliedern des Vereins",
+      en: "The president of the NPJOE (right) with members of the association" },
+    { tag: "neujahr gemeinschaft", src: "assets/media/naya-barsha-2026/guests-at-table.jpg", width: 1600, height: 1069,
+      de: "Gäste und Familien an den Tischen im Saal",
+      en: "Guests and families at the tables in the hall" },
+    { tag: "neujahr gemeinschaft musik", src: "assets/media/naya-barsha-2026/members-at-concert.jpg", width: 1200, height: 1600,
+      de: "Mitglieder vor der Bühne während des Livekonzerts",
+      en: "Members in front of the stage during the live concert" },
+    { tag: "neujahr buehne musik", src: "assets/media/naya-barsha-2026/band-with-team.jpg", width: 1600, height: 1200,
+      de: "Band und Veranstaltungsteam nach dem Konzert auf der Bühne",
+      en: "Band and event team on stage after the concert" },
+    { tag: "neujahr team buehne", src: "assets/media/naya-barsha-2026/organising-team.jpg", width: 1600, height: 900,
+      de: "Das Organisationsteam der Neujahrsfeier auf der Bühne",
+      en: "The organising team of the New Year celebration on stage" },
+    { tag: "neujahr team buehne", src: "assets/media/naya-barsha-2026/team-portrait-stage.jpg", width: 1600, height: 1130,
+      de: "Mitglieder des Vereins nach dem Programm auf der Bühne",
+      en: "Members of the association on stage after the programme" },
+    { tag: "neujahr empfang team", src: "assets/media/naya-barsha-2026/welcome-desk-team.jpg", width: 900, height: 1600,
+      de: "Das Organisationsteam am Empfangs- und Kassentisch",
+      en: "The organising team at the reception and cash desk" }
+  ];
+
+  /* Eleven clips from the same evening. `secs` is the real running time and is
+     rendered as a badge, so nobody starts a three-minute download by accident;
+     the players themselves load nothing until they are pressed. */
+  var NAYA_BARSHA_CLIPS = [
+    { tag: "musik", base: "assets/media/naya-barsha-2026/live-concert-crowd", secs: 85,
+      de: "Livekonzert vor der Bühne, das Publikum feiert mit",
+      en: "Live concert at the stage, with the audience joining in" },
+    { tag: "musik", base: "assets/media/naya-barsha-2026/vocal-duet", secs: 103,
+      de: "Gesangsduett auf der Bühne", en: "A vocal duet on stage" },
+    { tag: "musik", base: "assets/media/naya-barsha-2026/acoustic-set", secs: 70,
+      de: "Akustisches Set der Band vor sitzendem Publikum",
+      en: "The band's acoustic set in front of a seated audience" },
+    { tag: "tanz", base: "assets/media/naya-barsha-2026/dancefloor-celebration", secs: 110,
+      de: "Tanzfläche: Gäste feiern das neue Jahr",
+      en: "Dance floor: guests celebrate the new year" },
+    { tag: "tanz", base: "assets/media/naya-barsha-2026/finale-dancefloor", secs: 12,
+      de: "Ausgelassenes Finale auf der Tanzfläche",
+      en: "The exuberant finale on the dance floor" },
+    { tag: "buehne", base: "assets/media/naya-barsha-2026/stage-performance", secs: 172,
+      de: "Auftritt auf der Bühne während des Abendprogramms",
+      en: "A performance on stage during the evening programme" },
+    { tag: "buehne", base: "assets/media/naya-barsha-2026/evening-programme", secs: 70,
+      de: "Abendprogramm vor vollem Saal",
+      en: "The evening programme in front of a full hall" },
+    { tag: "buehne", base: "assets/media/naya-barsha-2026/hall-during-programme", secs: 90,
+      de: "Blick in den Saal während des Bühnenprogramms",
+      en: "A view of the hall during the stage programme" },
+    { tag: "buehne", base: "assets/media/naya-barsha-2026/stage-before-programme", secs: 157,
+      de: "Bühne und Technik vor dem Beginn des Abendprogramms",
+      en: "Stage and technical setup before the evening programme begins" },
+    { tag: "essen", base: "assets/media/naya-barsha-2026/shared-meal", secs: 64,
+      de: "Nepalesische Spezialitäten am Tisch der Gäste",
+      en: "Nepali specialities at the guests' table" },
+    { tag: "team", base: "assets/media/naya-barsha-2026/organising-team-desk", secs: 14,
+      de: "Kurzer Gruß des Organisationsteams am Empfangstisch",
+      en: "A short greeting from the organising team at the reception desk" }
   ];
 
   /* ------------------------------------------------------- Donation tiers */
@@ -584,6 +673,49 @@
     }).join("");
   }
 
+  /* Album grid. Landscape frames take a double-width tile and portraits keep
+     their own shape, so nothing is cropped into a uniform 3:2 box the way the
+     plain .gallery grid does. */
+  function renderAlbum(sel, list) {
+    var host = document.querySelector(sel);
+    if (!host) return;
+    var lang = window.npjoeLang ? window.npjoeLang() : "de";
+    host.innerHTML = list.map(function (g) {
+      var current = lang === "en" ? g.en : g.de;
+      var openDe = "Bild vergrößern: " + g.de;
+      var openEn = "Enlarge image: " + g.en;
+      var wide = g.width >= g.height ? " is-wide" : "";
+      return '<figure class="shot' + wide + '" data-lightbox data-tags="' + g.tag + '" role="button" tabindex="0"' +
+        ' aria-label="' + esc(lang === "en" ? openEn : openDe) + '"' +
+        ' data-de-aria-label="' + esc(openDe) + '" data-en-aria-label="' + esc(openEn) + '">' +
+        '<img src="' + esc(g.src) + '" width="' + g.width + '" height="' + g.height + '" loading="lazy" decoding="async"' +
+        ' alt="' + esc(current) + '" data-de-alt="' + esc(g.de) + '" data-en-alt="' + esc(g.en) + '">' +
+        "<figcaption>" + bi(esc(g.de), esc(g.en)) + "</figcaption></figure>";
+    }).join("");
+  }
+
+  /* Video wall. preload="none" is deliberate: eleven clips are 67 MB between
+     them, so a visitor pays for the poster image only and downloads a clip
+     when — and only when — they press play. */
+  function renderClips(sel, list) {
+    var host = document.querySelector(sel);
+    if (!host) return;
+    host.innerHTML = list.map(function (c) {
+      var mp4 = esc(c.base + ".mp4");
+      var len = Math.floor(c.secs / 60) + ":" + (c.secs % 60 < 10 ? "0" : "") + (c.secs % 60);
+      return '<figure class="clip" data-tags="' + c.tag + '">' +
+        '<video controls playsinline preload="none" poster="' + esc(c.base + "-poster.jpg") + '"' +
+        ' aria-label="' + esc(c.de) + '" data-de-aria-label="' + esc(c.de) + '" data-en-aria-label="' + esc(c.en) + '">' +
+        '<source src="' + mp4 + '" type="video/mp4">' +
+        bi('Ihr Browser kann das Video nicht wiedergeben. <a href="' + mp4 + '">Video herunterladen</a>.',
+           'Your browser cannot play this video. <a href="' + mp4 + '">Download the video</a>.') +
+        "</video>" +
+        '<figcaption><span class="clip-title">' + bi(esc(c.de), esc(c.en)) + "</span>" +
+        '<span class="clip-len"><span class="sr-only">' +
+        bi("Laufzeit ", "Running time ") + "</span>" + len + "</span></figcaption></figure>";
+    }).join("");
+  }
+
   function renderTiers(sel) {
     var host = document.querySelector(sel);
     if (!host) return;
@@ -644,6 +776,7 @@
   window.NPJOEContent = {
     ready: ready,
     FIELDS: FIELDS, EVENTS: EVENTS, NEWS: NEWS, FAQ: FAQ, GALLERY: GALLERY, TIERS: TIERS,
+    NAYA_BARSHA: NAYA_BARSHA, NAYA_BARSHA_CLIPS: NAYA_BARSHA_CLIPS,
     renderFields: renderFields,
     renderFieldOptions: renderFieldOptions,
     renderEvents: renderEvents,
@@ -651,6 +784,8 @@
     renderFieldsRail: renderFieldsRail,
     renderFaq: renderFaq,
     renderGallery: renderGallery,
+    renderAlbum: renderAlbum,
+    renderClips: renderClips,
     renderTiers: renderTiers,
     renderTierCards: renderTierCards
   };
