@@ -959,12 +959,15 @@ table.data td strong { color: var(--ink); }
 .gallery figure:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 .gallery figcaption {
   position: absolute; inset: auto 0 0 0; padding: 1.4rem 0.9rem 0.75rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 45%, rgba(0, 0, 0, 0.93) 100%);
   color: #fff; font-size: var(--fs-xs); font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
 }
 
 .lightbox {
-  position: fixed; inset: 0; z-index: 300; background: rgba(8, 10, 16, 0.92);
+  /* above the consent banner (320), below the drawer (340) and modal (350):
+     on a first visit the banner used to float on top of the photo preview */
+  position: fixed; inset: 0; z-index: 330; background: rgba(8, 10, 16, 0.92);
   display: none; place-items: center; padding: 1.5rem;
 }
 .lightbox.is-open { display: grid; }
@@ -1607,10 +1610,10 @@ h3.t-h5, h4.t-h5, h5.t-h5 { font-size: var(--fs-lg); letter-spacing: -0.012em; }
 
 /* Four items, so an explicit 2x2 rather than auto-fit — at the 806px the story
    column actually gets, auto-fit lands on three across and leaves one orphan. */
-.highlights { display: grid; gap: 0.8rem; list-style: none; padding: 0; margin: 0;
+.highlights { display: grid; gap: 0.8rem; list-style: none; padding: 0;
               grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 620px) { .highlights { grid-template-columns: 1fr; } }
-.highlight { padding: 1.1rem 1.15rem; border: 1px solid var(--line);
+.highlight { margin: 0; padding: 1.1rem 1.15rem; border: 1px solid var(--line);
              border-radius: var(--radius); background: var(--bg-alt); }
 .highlight i { display: block; font-size: 1.45rem; line-height: 1; margin-bottom: 0.55rem; font-style: normal; }
 .highlight b { display: block; font-size: var(--fs-sm); }
@@ -1634,8 +1637,12 @@ h3.t-h5, h4.t-h5, h5.t-h5 { font-size: var(--fs-lg); letter-spacing: -0.012em; }
 .gallery-mosaic .shot:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 .gallery-mosaic figcaption {
   position: absolute; inset: auto 0 0 0; padding: 2.2rem 0.85rem 0.7rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.82));
+  /* The glyphs sit in the lower third, so the scrim has to be dark THERE, not
+     only at the very bottom edge — over a brightly lit stage the old ramp left
+     white text at about 2.7:1. */
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 45%, rgba(0, 0, 0, 0.93) 100%);
   color: #fff; font-size: var(--fs-xs); font-weight: 600; line-height: 1.35;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
 }
 
 /* --- video wall ---------------------------------------------------------- */

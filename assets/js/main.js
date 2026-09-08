@@ -309,10 +309,27 @@
     box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Schließen / Close">✕</button><figure><div id="lbBody"></div><figcaption id="lbCap"></figcaption></figure>';
     document.body.appendChild(box);
     var lastTrigger = null;
+    /* The dialog is appended last in <body>, so its ✕ is the final tabbable
+       element on the page. Without this, Tab walked straight out of the
+       dialog onto header links sitting invisible behind a 92%-opaque scrim.
+       inert takes them out of the tab order and off the accessibility tree;
+       aria-hidden covers engines that predate it. */
+    var BEHIND = ["#siteHeaderMount", "#main", "#siteFooterMount"];
+    function setBehindInert(on) {
+      BEHIND.forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (!el) return;
+        if (on) { el.setAttribute("inert", ""); el.setAttribute("aria-hidden", "true"); }
+        else { el.removeAttribute("inert"); el.removeAttribute("aria-hidden"); }
+      });
+    }
     function close() {
       if (!box.classList.contains("is-open")) return;
       box.classList.remove("is-open");
       document.body.style.overflow = "";
+      /* Release the page before restoring focus — focus() is ignored on a
+         node that is still inert. */
+      setBehindInert(false);
       if (lastTrigger) lastTrigger.focus();
     }
     function open(fig) {
@@ -332,6 +349,7 @@
       document.getElementById("lbCap").innerHTML = cap ? cap.innerHTML : "";
       box.classList.add("is-open");
       document.body.style.overflow = "hidden";
+      setBehindInert(true);
       box.querySelector(".lightbox-close").focus();
     }
     box.addEventListener("click", function (e) { if (e.target === box || e.target.classList.contains("lightbox-close")) close(); });

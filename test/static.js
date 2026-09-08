@@ -159,6 +159,40 @@ module.exports = function run() {
   ok("it inserts a cloned node instead", /cloneNode\(true\)/.test(lightboxSrc));
   ok("and makes that copy eager, so the file is actually fetched",
      /removeAttribute\("loading"\)/.test(lightboxSrc));
+  /* The dialog is appended last in <body>, so its ✕ is the final tabbable
+     element on the page. Without containment, Tab walked out of the dialog
+     onto header links sitting invisible behind a 92%-opaque scrim — a
+     WCAG 2.2 SC 2.4.11 (Focus Not Obscured) failure. */
+  /* Assert the call sites, not just the helper: an earlier version of this
+     check passed with the helper defined but never invoked. */
+  const openFn = lightboxSrc.slice(lightboxSrc.indexOf("function open(fig)"),
+                                   lightboxSrc.indexOf("box.addEventListener"));
+  const closeFn = lightboxSrc.slice(lightboxSrc.indexOf("function close()"),
+                                    lightboxSrc.indexOf("function open(fig)"));
+  ok("the page behind the preview is taken out of the tab order while it is open",
+     /setAttribute\("inert", ""\)/.test(lightboxSrc) && /setAttribute\("aria-hidden", "true"\)/.test(lightboxSrc));
+  ok("and containment is actually switched on inside open()", /setBehindInert\(true\)/.test(openFn));
+  ok("and switched off again inside close()", /setBehindInert\(false\)/.test(closeFn));
+  ok("and put back when it closes",
+     /removeAttribute\("inert"\)/.test(lightboxSrc) && /removeAttribute\("aria-hidden"\)/.test(lightboxSrc));
+  ok("the page is released before focus returns — focus() is ignored on an inert node",
+     lightboxSrc.indexOf("setBehindInert(false)") > -1 &&
+     lightboxSrc.indexOf("setBehindInert(false)") < lightboxSrc.indexOf("lastTrigger.focus()"));
+  ok("all three page regions are covered, not just <main>",
+     /"#siteHeaderMount", "#main", "#siteFooterMount"/.test(lightboxSrc));
+  /* The consent banner is z-index 320; at 300 the preview opened underneath it. */
+  const zLightbox = Number((albumCss.match(/\.lightbox \{[\s\S]*?z-index: (\d+)/) || [])[1]);
+  const zConsent = Number((albumCss.match(/\.consent \{[\s\S]*?z-index: (\d+)/) || [])[1]);
+  ok("the preview stacks above the consent banner", zLightbox > zConsent,
+     "lightbox " + zLightbox + " vs consent " + zConsent);
+
+  /* Captions are white on a scrim laid over a photograph. The old ramp was
+     transparent until the very bottom, leaving glyphs at ~2.7:1 over a
+     brightly lit stage. */
+  const capRules = albumCss.match(/figcaption \{[^}]*linear-gradient\([^)]*\)[^}]*\}/g) || [];
+  const weakScrim = capRules.filter(r => !/rgba\(0, 0, 0, 0\.7[0-9]?\) 45%/.test(r));
+  eq("both photo grids darken the scrim where the text actually sits", weakScrim.length, 0);
+
 
 
 
