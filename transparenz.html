@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" data-theme="dark">
+<html lang="de" data-lang="de" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Transparenz &amp; Wirkung | NPJOE</title>
 <meta name="description" content="Transparenzbericht der NPJOE: Mittelherkunft und -verwendung, erreichte Schulen und Schüler:innen, Kontrollmechanismen, Kassenprüfung und jährliche Berichterstattung.">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||"light";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/icons.js" defer></script>
 <script src="assets/js/layout.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/forms.js" defer></script>
@@ -132,17 +133,17 @@
       </div>
       <div class="grid grid-3">
         <div class="card card-hover reveal">
-          <div class="card-icon navy">🔐</div>
+          <div data-icon="lock" class="card-icon navy"></div>
           <h3 class="t-h4"><span data-lang="de">Vier-Augen-Prinzip</span><span data-lang="en">Four-eyes principle</span></h3>
           <p class="text-sm text-muted"><span data-lang="de">Über das Vereinskonto sind Schatzmeister:in und Vorsitz nur gemeinsam verfügungsberechtigt (§ 10). Zweigstellen führen keine eigenen Kassen (§ 11).</span><span data-lang="en">Only the treasurer and chair jointly may dispose of the association account (§ 10). Branches keep no separate accounts (§ 11).</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="80">
-          <div class="card-icon">🧾</div>
+          <div data-icon="receipt" class="card-icon"></div>
           <h3 class="t-h4"><span data-lang="de">Jährliche Kassenprüfung</span><span data-lang="en">Annual audit</span></h3>
           <p class="text-sm text-muted"><span data-lang="de">Zwei von der Mitgliederversammlung gewählte Kassenprüfer:innen prüfen die Kasse und berichten schriftlich. Sie dürfen dem Vorstand nicht angehören (§ 8, § 9).</span><span data-lang="en">Two auditors elected by the general meeting review the accounts and report in writing. They may not belong to the board (§ 8, § 9).</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="160">
-          <div class="card-icon saffron">📅</div>
+          <div data-icon="calendar" class="card-icon saffron"></div>
           <h3 class="t-h4"><span data-lang="de">Rechnungsabschluss bis 1. März</span><span data-lang="en">Accounts by 1 March</span></h3>
           <p class="text-sm text-muted"><span data-lang="de">Die Schatzmeisterei legt dem Vorstand bis zum 1. März den Rechnungsabschluss des Vorjahres vor (§ 8).</span><span data-lang="en">The treasurer presents the previous year's financial statement to the board by 1 March (§ 8).</span></p>
         </div>
@@ -152,7 +153,7 @@
           <p class="text-sm text-muted"><span data-lang="de">NPYS-N dokumentiert jede Verteilung: welche Schule, welches Material, wie viele Schüler:innen. Die Hilfsbedürftigkeit unterstützter Personen wird durch geeignete Nachweise belegt (§ 3i).</span><span data-lang="en">NPYS-N documents every distribution: which school, which materials, how many students. The neediness of supported persons is evidenced by suitable proof (§ 3i).</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="320">
-          <div class="card-icon">📢</div>
+          <div data-icon="megaphone" class="card-icon"></div>
           <h3 class="t-h4"><span data-lang="de">Öffentlicher Jahresbericht</span><span data-lang="en">Public annual report</span></h3>
           <p class="text-sm text-muted"><span data-lang="de">Einmal jährlich veröffentlichen wir: Wie viele Schulen? Was wurde gekauft? Wie viele Schüler:innen erreicht?</span><span data-lang="en">Once a year we publish: how many schools? What was purchased? How many students reached?</span></p>
         </div>
@@ -167,12 +168,12 @@
           <p class="text-sm text-muted"><span data-lang="de">Nach dem MOU fließen Projektmittel erst nach einem schriftlichen Vorschlag, detailliertem Budget und Genehmigung durch den NPJOE-Vorstand.</span><span data-lang="en">Under the MOU, project funds are transferred only after a written proposal, detailed budget and approval by the NPJOE board.</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="560">
-          <div class="card-icon">📋</div>
+          <div data-icon="clipboard" class="card-icon"></div>
           <h3 class="t-h4"><span data-lang="de">30-Tage- und Quartalsberichte</span><span data-lang="en">30-day and quarterly reporting</span></h3>
           <p class="text-sm text-muted"><span data-lang="de">NPYS-N reicht innerhalb von 30 Tagen nach Projektabschluss einen Einzelverwendungsnachweis mit Belegen und nach jedem Quartal einen Fortschrittsbericht ein.</span><span data-lang="en">NPYS-N submits an itemised expense report with receipts within 30 days of project completion and a progress report after every quarter.</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="640">
-          <div class="card-icon navy">🗄️</div>
+          <div data-icon="archive" class="card-icon navy"></div>
           <h3 class="t-h4"><span data-lang="de">Zehn Jahre Nachweisführung</span><span data-lang="en">Ten-year record retention</span></h3>
           <p class="text-sm text-muted"><span data-lang="de">Beide Partner bewahren Finanzunterlagen mindestens zehn Jahre auf. Verwaltungskosten über 15 % des Projektbudgets brauchen eine vorherige schriftliche Genehmigung.</span><span data-lang="en">Both partners retain financial records for at least ten years. Administrative overhead above 15% of a project budget requires prior written approval.</span></p>
         </div>

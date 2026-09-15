@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" data-theme="dark">
+<html lang="de" data-lang="de" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Volunteer werden — One Day for Nation | NPJOE</title>
 <meta name="description" content="Registrieren Sie sich als Volunteer für One Day for Nation: offen für alle Nepalis weltweit ab 18 Jahren, Einsatz nach Berufsfeld, ab einem Tag, kostenlos, mit offiziellem Zertifikat.">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||"light";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/icons.js" defer></script>
 <script src="assets/js/layout.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/forms.js" defer></script>
@@ -175,7 +176,7 @@
                   <label class="opt"><input type="radio" name="dauer" value="laenger">
                     <span class="opt-body"><span class="opt-amount">1&nbsp;M+</span><span class="opt-desc"><span data-lang="de">Monat oder länger</span><span data-lang="en">month or longer</span></span></span></label>
                   <label class="opt"><input type="radio" name="dauer" value="remote">
-                    <span class="opt-body"><span class="opt-amount">💻</span><span class="opt-desc"><span data-lang="de">Remote-Unterstützung</span><span data-lang="en">remote support</span></span></span></label>
+                    <span class="opt-body"><span data-icon="tech" class="opt-amount"></span><span class="opt-desc"><span data-lang="de">Remote-Unterstützung</span><span data-lang="en">remote support</span></span></span></label>
                 </div>
                 <div class="form-grid">
                   <div class="field">
@@ -199,12 +200,12 @@
                   <div class="field span-2">
                     <span class="label"><span data-lang="de">Woran möchten Sie mitwirken?</span><span data-lang="en">What would you like to contribute to?</span></span>
                     <div class="check-grid-2">
-                      <label class="check"><input type="checkbox" name="programme" value="erste-hilfe"><span><strong>🚑 <span data-lang="de">Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign</span></strong></span></label>
-                      <label class="check"><input type="checkbox" name="programme" value="unterricht"><span><strong>🎓 <span data-lang="de">Unterricht &amp; Lehrerfortbildung</span><span data-lang="en">Teaching &amp; teacher training</span></strong></span></label>
-                      <label class="check"><input type="checkbox" name="programme" value="gesundheitscamp"><span><strong>🏥 <span data-lang="de">Gesundheitscamps</span><span data-lang="en">Health camps</span></strong></span></label>
-                      <label class="check"><input type="checkbox" name="programme" value="infrastruktur"><span><strong>🏗️ <span data-lang="de">Schulinfrastruktur</span><span data-lang="en">School infrastructure</span></strong></span></label>
-                      <label class="check"><input type="checkbox" name="programme" value="digital"><span><strong>💻 <span data-lang="de">Digitale Bildung</span><span data-lang="en">Digital education</span></strong></span></label>
-                      <label class="check"><input type="checkbox" name="programme" value="kultur-sport"><span><strong>🎨 <span data-lang="de">Kultur &amp; Sport</span><span data-lang="en">Culture &amp; sport</span></strong></span></label>
+                      <label class="check"><input type="checkbox" name="programme" value="erste-hilfe"><span><strong><span class="field-icon-sm" data-icon="ambulance" aria-hidden="true"></span><span data-lang="de">Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign</span></strong></span></label>
+                      <label class="check"><input type="checkbox" name="programme" value="unterricht"><span><strong><span class="field-icon-sm" data-icon="education" aria-hidden="true"></span><span data-lang="de">Unterricht &amp; Lehrerfortbildung</span><span data-lang="en">Teaching &amp; teacher training</span></strong></span></label>
+                      <label class="check"><input type="checkbox" name="programme" value="gesundheitscamp"><span><strong><span class="field-icon-sm" data-icon="health" aria-hidden="true"></span><span data-lang="de">Gesundheitscamps</span><span data-lang="en">Health camps</span></strong></span></label>
+                      <label class="check"><input type="checkbox" name="programme" value="infrastruktur"><span><strong><span class="field-icon-sm" data-icon="engineering" aria-hidden="true"></span><span data-lang="de">Schulinfrastruktur</span><span data-lang="en">School infrastructure</span></strong></span></label>
+                      <label class="check"><input type="checkbox" name="programme" value="digital"><span><strong><span class="field-icon-sm" data-icon="tech" aria-hidden="true"></span><span data-lang="de">Digitale Bildung</span><span data-lang="en">Digital education</span></strong></span></label>
+                      <label class="check"><input type="checkbox" name="programme" value="kultur-sport"><span><strong><span class="field-icon-sm" data-icon="arts" aria-hidden="true"></span><span data-lang="de">Kultur &amp; Sport</span><span data-lang="en">Culture &amp; sport</span></strong></span></label>
                     </div>
                   </div>
                   <div class="field span-2">

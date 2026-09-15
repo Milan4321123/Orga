@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" data-theme="dark">
+<html lang="de" data-lang="de" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spenden — One Euro for Nation | NPJOE</title>
 <meta name="description" content="Spenden Sie ab 1 € für Erste-Hilfe-Kits, Schulmaterialien und Hygienekits in Nepal. Verwaltet durch NPJOE e.V. in Deutschland, steuerlich absetzbar, verteilt durch NPYS-N.">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||"light";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/icons.js" defer></script>
 <script src="assets/js/layout.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/forms.js" defer></script>
@@ -170,7 +171,7 @@
 
           <div class="hide" data-success>
             <div class="center" style="padding:1rem 0 2rem">
-              <div class="card-icon mx-auto" style="background:var(--ok-soft);color:var(--ok);font-size:1.8rem">💛</div>
+              <div data-icon="heart" class="card-icon mx-auto" style="background:var(--ok-soft);color:var(--ok);font-size:1.8rem"></div>
               <h2><span data-lang="de">Danke — von Herzen!</span><span data-lang="en">Thank you — sincerely!</span></h2>
               <p class="lead mt-2" data-delivery></p>
               <p class="mt-3"><span data-lang="de">Ihr Verwendungszweck:</span><span data-lang="en">Your payment reference:</span> <strong data-ref style="font-size:1.15rem"></strong></p>
@@ -254,9 +255,9 @@
         <div class="card">
           <h3 class="t-h4"><span data-lang="de">Andere Wege zu helfen</span><span data-lang="en">Other ways to help</span></h3>
           <div class="stack-sm mt-2 text-sm">
-            <p>📦 <strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung</span><span data-lang="en">materials, books, medical equipment</span></p>
-            <p>🎉 <strong><span data-lang="de">Spendenaktion</span><span data-lang="en">Fundraiser</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span></p>
-            <p>🏢 <strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span></p>
+            <p><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung</span><span data-lang="en">materials, books, medical equipment</span></p>
+            <p><span class="field-icon-sm" data-icon="party" aria-hidden="true"></span><strong><span data-lang="de">Spendenaktion</span><span data-lang="en">Fundraiser</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span></p>
+            <p><span class="field-icon-sm" data-icon="building" aria-hidden="true"></span><strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span></p>
           </div>
           <p class="mt-3"><a class="btn btn-sm btn-ghost" href="kontakt.html#partner-werden"><span data-lang="de">Anfrage stellen</span><span data-lang="en">Make an enquiry</span></a></p>
         </div>

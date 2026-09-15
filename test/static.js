@@ -166,10 +166,32 @@ module.exports = function run() {
   group("The NRNA Cup medical camp is documented and playable");
   const campDir = path.join(ROOT, "assets/media/erste-hilfe-nrna-cup");
   const campFiles = fs.existsSync(campDir) ? fs.readdirSync(campDir).sort() : [];
-  eq("the clip and its poster are on disk", campFiles, ["medical-camp-poster.jpg", "medical-camp.mp4"]);
+  const campPhotos = ["campaign-shirt.jpg", "pitchside-treatment.jpg",
+                      "stand-wide.jpg", "team-and-stand.jpg"];
+  eq("the clip and its poster are on disk",
+     campFiles.filter(f => /^medical-camp/.test(f)), ["medical-camp-poster.jpg", "medical-camp.mp4"]);
+  /* A caption that describes a photograph nobody can see is worse than no
+     caption, so the files and the entries are checked against each other in
+     both directions. */
+  eq("every photograph the page promises is on disk",
+     campPhotos.filter(f => !campFiles.includes(f)), []);
+  /* The clip and its poster are referenced by base name, without extension —
+     that is how renderClipEssay builds the pair — so they are matched that way. */
+  eq("and every file in the folder is described somewhere",
+     campFiles.filter(f => !contentJs.includes(
+       "assets/media/erste-hilfe-nrna-cup/" + f.replace(/\.(mp4|jpg)$/, "").replace(/-poster$/, ""))), []);
   const campPage = read("erste-hilfe-kampagne.html");
   ok("the first-aid page renders the clip from the shared content module",
      /renderClipEssay\("#medicalCampClips", C\.MEDICAL_CAMP_CLIPS\)/.test(campPage));
+  ok("and renders the photographs from it too",
+     /renderEssay\("#medicalCampPhotos", C\.MEDICAL_CAMP_PHOTOS\)/.test(campPage));
+  ok("every medical-camp photograph carries a caption in both languages",
+     campPhotos.every(f => {
+       const at = contentJs.indexOf("erste-hilfe-nrna-cup/" + f);
+       if (at === -1) return false;
+       const entry = contentJs.slice(at, at + 1400);
+       return /nDe:/.test(entry) && /nEn:/.test(entry) && /de:/.test(entry) && /en:/.test(entry);
+     }));
   ok("it names the tournament, the doctors and the host club",
      /NRNA/.test(campPage) && /Sagar Raju Kharel/.test(campPage) &&
      /Saurav/.test(campPage) && /NFC Stuttgart/.test(campPage));
@@ -366,18 +388,18 @@ module.exports = function run() {
   ok("and stay hidden until then", /\.dropdown \{[^}]*visibility: hidden/.test(outsideMobile));
 
   /* ------------------------------------------------------------- theming */
-  group("Dark is the default, and the choice is the visitor's");
-  const notDark = pages.filter(f => !/<html lang="de" data-lang="de" data-theme="dark">/.test(read(f)));
-  eq("every page starts dark before any script runs", notDark, []);
-  const lightChrome = pages.filter(f => /<meta name="theme-color" content="#ffffff">/.test(read(f)));
-  eq("browser chrome matches the dark default", lightChrome, []);
+  group("Light is the default, and the choice is the visitor's");
+  const notLight = pages.filter(f => !/<html lang="de" data-lang="de" data-theme="light">/.test(read(f)));
+  eq("every page starts light before any script runs", notLight, []);
+  const darkChrome = pages.filter(f => /<meta name="theme-color" content="#0d1117">/.test(read(f)));
+  eq("browser chrome matches the light default", darkChrome, []);
   const osKeyed = pages.filter(f => /prefers-color-scheme: dark\)"\)\.matches/.test(read(f)));
   eq("no page falls back to the operating system setting", osKeyed, []);
   const noSaved = pages.filter(f => !/localStorage\.getItem\("npjoe\.theme"\)/.test(read(f)));
   eq("every page still honours a saved choice", noSaved, []);
 
   const mainJs = fs.readFileSync(path.join(ROOT, "assets/js/main.js"), "utf8");
-  ok("the default is stated once, in one place", /var DEFAULT_THEME = "dark"/.test(mainJs));
+  ok("the default is stated once, in one place", /var DEFAULT_THEME = "light"/.test(mainJs));
   ok("a saved choice overrides the default", /saved === "dark" \|\| saved === "light" \? saved : DEFAULT_THEME/.test(mainJs));
   ok("the toggle writes the choice back",
      /applyTheme\([\s\S]{0,80}"dark" \? "light" : "dark", true\)/.test(mainJs));

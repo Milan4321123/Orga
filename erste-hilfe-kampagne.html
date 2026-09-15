@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" data-theme="dark">
+<html lang="de" data-lang="de" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nationale Erste-Hilfe-Kampagne | NPJOE</title>
 <meta name="description" content="Flaggschiffprogramm der NPJOE: zertifizierte Erste-Hilfe-Ausbildung für Schüler:innen der Klassen 9–12 und Lehrkräfte in Nepal — mit Train-the-Trainer, Kits und jährlicher Auffrischung.">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||"light";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/icons.js" defer></script>
 <script src="assets/js/layout.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/forms.js" defer></script>
@@ -266,7 +267,7 @@
       </div>
       <div class="grid grid-3">
         <div class="stat reveal" style="text-align:left;padding:1.5rem">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">🎓</div>
+          <div data-icon="education" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#fff"><span data-lang="de">Train-the-Trainer</span><span data-lang="en">Train-the-trainer</span></h3>
           <p class="text-sm" style="color:#b9c4dc"><span data-lang="de">Lehrkräfte werden zu zertifizierten Erste-Hilfe-Trainer:innen ausgebildet und führen die Kurse künftig selbst durch.</span><span data-lang="en">Teachers are trained as certified first aid instructors and run the courses themselves in future.</span></p>
         </div>
@@ -276,22 +277,22 @@
           <p class="text-sm" style="color:#b9c4dc"><span data-lang="de">NPYS-N führt die Programme eigenständig weiter und kennt die Gemeinden vor Ort.</span><span data-lang="en">NPYS-N continues the programmes independently and knows the local communities.</span></p>
         </div>
         <div class="stat reveal" data-delay="160" style="text-align:left;padding:1.5rem">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">🔁</div>
+          <div data-icon="cycle" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#fff"><span data-lang="de">Jährliche Auffrischung</span><span data-lang="en">Annual refreshers</span></h3>
           <p class="text-sm" style="color:#b9c4dc"><span data-lang="de">Volunteer-Teams besuchen jede Schule jährlich zur Nachschulung.</span><span data-lang="en">Volunteer teams revisit each school annually for refresher training.</span></p>
         </div>
         <div class="stat reveal" data-delay="240" style="text-align:left;padding:1.5rem">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">📘</div>
+          <div data-icon="book" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#fff"><span data-lang="de">Alles auf Nepali</span><span data-lang="en">Everything in Nepali</span></h3>
           <p class="text-sm" style="color:#b9c4dc"><span data-lang="de">Sämtliche Materialien sind auf Nepali — keine Sprachbarrieren.</span><span data-lang="en">All materials are in Nepali — no language barriers.</span></p>
         </div>
         <div class="stat reveal" data-delay="320" style="text-align:left;padding:1.5rem">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">📊</div>
+          <div data-icon="chart" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#fff"><span data-lang="de">Impact-Berichte</span><span data-lang="en">Impact reports</span></h3>
           <p class="text-sm" style="color:#b9c4dc"><span data-lang="de">Jährliche öffentliche Berichte über Wirkung und Mittelverwendung.</span><span data-lang="en">Annual public reports on outcomes and use of funds.</span></p>
         </div>
         <div class="stat reveal" data-delay="400" style="text-align:left;padding:1.5rem">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">🌱</div>
+          <div data-icon="environment" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#fff"><span data-lang="de">Netzwerk der Mentor:innen</span><span data-lang="en">Mentor network</span></h3>
           <p class="text-sm" style="color:#b9c4dc"><span data-lang="de">Ausgebildete Schüler:innen werden zu Mentor:innen für die nächste Generation.</span><span data-lang="en">Trained students become mentors for the next generation.</span></p>
         </div>
@@ -370,6 +371,13 @@
         </aside>
       </div>
 
+      <h3 class="mt-6"><span data-lang="de">Bilder vom Medical Camp</span><span data-lang="en">Pictures from the medical camp</span></h3>
+      <p class="text-sm text-muted mt-2">
+        <span data-lang="de">Vier Aufnahmen vom Turniertag — die Versorgung am Spielfeldrand und der Stand, an dem das Team über die Erste-Hilfe-Kampagne in Nepal informiert hat.</span>
+        <span data-lang="en">Four pictures from the day of the tournament — treatment at the side of the pitch, and the stand where the team explained the First Aid campaign in Nepal.</span>
+      </p>
+      <div class="photo-essay mt-4" id="medicalCampPhotos"></div>
+
       <h3 class="mt-6"><span data-lang="de">Video vom Medical Camp</span><span data-lang="en">Video from the medical camp</span></h3>
       <p class="text-sm text-muted mt-2">
         <span data-lang="de">Ein Einblick in unser Medical Camp und die Teamarbeit dahinter. Das Video lädt erst, wenn Sie auf Play drücken — die Laufzeit steht vorher dabei.</span>
@@ -400,6 +408,7 @@
   document.addEventListener("npjoe:layout-ready", function () {
     var C = window.NPJOEContent;
     if (!C) return;
+    C.renderEssay("#medicalCampPhotos", C.MEDICAL_CAMP_PHOTOS);
     C.renderClipEssay("#medicalCampClips", C.MEDICAL_CAMP_CLIPS);
   });
 </script>

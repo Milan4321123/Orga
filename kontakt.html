@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" data-theme="dark">
+<html lang="de" data-lang="de" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kontakt | NPJOE</title>
 <meta name="description" content="Kontaktformular der Nepalesischen Progressiven Jugendorganisation e.V. — Fragen zu Mitgliedschaft, Volunteering, Spenden, Presse oder Kooperationen mit Schulen und Organisationen.">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||"light";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/icons.js" defer></script>
 <script src="assets/js/layout.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/forms.js" defer></script>
@@ -42,25 +43,25 @@
     <div class="container">
       <div class="grid grid-4">
         <div class="card card-hover reveal">
-          <div class="card-icon">👥</div>
+          <div data-icon="users" class="card-icon"></div>
           <h2 class="t-h4"><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span></h2>
           <p class="text-sm text-muted"><span data-lang="de">Beitritt, Beiträge, Austritt, Mitgliederversammlung</span><span data-lang="en">Joining, fees, leaving, general meeting</span></p>
           <p class="mt-2 text-sm"><a href="mailto:mitglied@progressive-youth.de">mitglied@progressive-youth.de</a></p>
         </div>
         <div class="card card-hover reveal" data-delay="80">
-          <div class="card-icon navy">🤝</div>
+          <div data-icon="hands" class="card-icon navy"></div>
           <h2 class="t-h4">Volunteering</h2>
           <p class="text-sm text-muted"><span data-lang="de">Einsätze, Matching, Zertifikate, Briefings</span><span data-lang="en">Assignments, matching, certificates, briefings</span></p>
           <p class="mt-2 text-sm"><a href="mailto:volunteer@progressive-youth.de">volunteer@progressive-youth.de</a></p>
         </div>
         <div class="card card-hover reveal" data-delay="160">
-          <div class="card-icon saffron">💛</div>
+          <div data-icon="heart" class="card-icon saffron"></div>
           <h2 class="t-h4"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span></h2>
           <p class="text-sm text-muted"><span data-lang="de">Zuwendungsbestätigungen, Projektberichte, Sachspenden</span><span data-lang="en">Donation receipts, project reports, in-kind gifts</span></p>
           <p class="mt-2 text-sm"><a href="mailto:spenden@progressive-youth.de">spenden@progressive-youth.de</a></p>
         </div>
         <div class="card card-hover reveal" data-delay="240">
-          <div class="card-icon teal">📰</div>
+          <div data-icon="news" class="card-icon teal"></div>
           <h2 class="t-h4"><span data-lang="de">Presse &amp; Allgemeines</span><span data-lang="en">Press &amp; general</span></h2>
           <p class="text-sm text-muted"><span data-lang="de">Interviews, Bildmaterial, alles Weitere</span><span data-lang="en">Interviews, image material, everything else</span></p>
           <p class="mt-2 text-sm"><a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a></p>
@@ -236,12 +237,12 @@
                 <div class="field span-2">
                   <span class="label"><span data-lang="de">Woran haben Sie Interesse?</span><span data-lang="en">What are you interested in?</span></span>
                   <div class="check-grid-2">
-                    <label class="check"><input type="checkbox" name="interesse" value="schule-aufnehmen"><span><strong>🏫 <span data-lang="de">Unsere Schule aufnehmen</span><span data-lang="en">Include our school</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="sachspende"><span><strong>📦 <span data-lang="de">Sachspende / Material</span><span data-lang="en">In-kind donation / material</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="foerderung"><span><strong>💶 <span data-lang="de">Förderung / Finanzierung</span><span data-lang="en">Funding / financing</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="gemeinsames-projekt"><span><strong>🤝 <span data-lang="de">Gemeinsames Projekt</span><span data-lang="en">Joint project</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="raum"><span><strong>📍 <span data-lang="de">Räume / Infrastruktur</span><span data-lang="en">Venue / infrastructure</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="expertise"><span><strong>🎓 <span data-lang="de">Expertise / Referent:innen</span><span data-lang="en">Expertise / speakers</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="schule-aufnehmen"><span><strong><span class="field-icon-sm" data-icon="school" aria-hidden="true"></span><span data-lang="de">Unsere Schule aufnehmen</span><span data-lang="en">Include our school</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="sachspende"><span><strong><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><span data-lang="de">Sachspende / Material</span><span data-lang="en">In-kind donation / material</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="foerderung"><span><strong><span class="field-icon-sm" data-icon="euro" aria-hidden="true"></span><span data-lang="de">Förderung / Finanzierung</span><span data-lang="en">Funding / financing</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="gemeinsames-projekt"><span><strong><span class="field-icon-sm" data-icon="hands" aria-hidden="true"></span><span data-lang="de">Gemeinsames Projekt</span><span data-lang="en">Joint project</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="raum"><span><strong><span class="field-icon-sm" data-icon="pin" aria-hidden="true"></span><span data-lang="de">Räume / Infrastruktur</span><span data-lang="en">Venue / infrastructure</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="expertise"><span><strong><span class="field-icon-sm" data-icon="education" aria-hidden="true"></span><span data-lang="de">Expertise / Referent:innen</span><span data-lang="en">Expertise / speakers</span></strong></span></label>
                   </div>
                 </div>
                 <div class="field span-2">

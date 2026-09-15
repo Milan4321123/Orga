@@ -54,12 +54,12 @@
     document.documentElement.setAttribute("data-theme", theme);
     if (persist) LS.set(THEME_KEY, theme);
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#0d1117" : "#ffffff");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#000000" : "#ffffff");
   }
 
   /* The site is dark by default. A visitor's own choice is remembered and
      always wins; the toggle in the header switches and stores it. */
-  var DEFAULT_THEME = "dark";
+  var DEFAULT_THEME = "light";
 
   function initTheme() {
     var saved = LS.get(THEME_KEY, "");

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" data-theme="dark">
+<html lang="de" data-lang="de" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mitmachen — vier Wege zu helfen | NPJOE</title>
 <meta name="description" content="Mitglied werden, Volunteer werden, spenden oder Partner werden: alle Wege, die NPJOE zu unterstützen — mit Voraussetzungen, Aufwand, Kosten und Ablauf im Vergleich.">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var t=localStorage.getItem("npjoe.theme")||"light";document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/icons.js" defer></script>
 <script src="assets/js/layout.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/forms.js" defer></script>
@@ -180,9 +181,9 @@
         <div class="card card-pad-lg">
           <h4><span data-lang="de">Derzeit besonders gesucht</span><span data-lang="en">Currently most needed</span></h4>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick brand">🚑</span><span data-lang="de">Sanitäter:innen, Ärzt:innen, Pflegekräfte, Erste-Hilfe-Trainer:innen</span><span data-lang="en">Paramedics, doctors, nurses, first aid trainers</span></li>
-            <li><span class="tick brand">🎓</span><span data-lang="de">Lehrkräfte für Englisch, Mathematik und Naturwissenschaften</span><span data-lang="en">Teachers of English, mathematics and science</span></li>
-            <li><span class="tick brand">💻</span><span data-lang="de">IT-Fachleute für Computer-Grundkenntnisse an Schulen</span><span data-lang="en">IT specialists for basic computer skills in schools</span></li>
+            <li><span class="tick brand" data-icon="ambulance"></span><span data-lang="de">Sanitäter:innen, Ärzt:innen, Pflegekräfte, Erste-Hilfe-Trainer:innen</span><span data-lang="en">Paramedics, doctors, nurses, first aid trainers</span></li>
+            <li><span class="tick brand" data-icon="education"></span><span data-lang="de">Lehrkräfte für Englisch, Mathematik und Naturwissenschaften</span><span data-lang="en">Teachers of English, mathematics and science</span></li>
+            <li><span class="tick brand" data-icon="tech"></span><span data-lang="de">IT-Fachleute für Computer-Grundkenntnisse an Schulen</span><span data-lang="en">IT specialists for basic computer skills in schools</span></li>
           </ul>
           <p class="mt-3"><a class="clink clink-sm" href="one-day-for-nation.html#bereiche"><span data-lang="de">Alle zwölf Bereiche</span><span data-lang="en">All twelve fields</span></a></p>
         </div>
@@ -214,9 +215,9 @@
         <div class="card card-pad-lg">
           <h3 class="t-h4"><span data-lang="de">Andere Formen der Unterstützung</span><span data-lang="en">Other forms of support</span></h3>
           <div class="stack-sm mt-2 text-sm">
-            <p>📦 <strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung (§ 3i)</span><span data-lang="en">materials, books, medical equipment (§ 3i)</span></p>
-            <p>🎉 <strong><span data-lang="de">Eigene Spendenaktion</span><span data-lang="en">Your own fundraiser</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span></p>
-            <p>🏢 <strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span></p>
+            <p><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung (§ 3i)</span><span data-lang="en">materials, books, medical equipment (§ 3i)</span></p>
+            <p><span class="field-icon-sm" data-icon="party" aria-hidden="true"></span><strong><span data-lang="de">Eigene Spendenaktion</span><span data-lang="en">Your own fundraiser</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span></p>
+            <p><span class="field-icon-sm" data-icon="building" aria-hidden="true"></span><strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span></p>
           </div>
         </div>
       </div>
@@ -235,24 +236,24 @@
         </p>
       </div>
       <div class="grid grid-3 mt-6">
-        <div class="card reveal" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">🏫</div>
+        <div class="card reveal">
+          <div data-icon="school" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Schulen in Nepal</span><span data-lang="en">Schools in Nepal</span></h3>
           <p class="text-sm" style="color:#a1a1a6">
             <span data-lang="de">Auswahlkriterien sind Erreichbarkeit, die Bereitschaft, eine Lehrkraft dauerhaft als Trainer:in freizustellen, und der Anteil benachteiligter Schüler:innen.</span>
             <span data-lang="en">Selection criteria are accessibility, willingness to permanently release a teacher as trainer, and the share of disadvantaged students.</span>
           </p>
         </div>
-        <div class="card reveal" data-delay="80" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">🤝</div>
+        <div class="card reveal" data-delay="80">
+          <div data-icon="hands" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">NGOs &amp; Vereine</span><span data-lang="en">NGOs &amp; associations</span></h3>
           <p class="text-sm" style="color:#a1a1a6">
             <span data-lang="de">Gemeinsame Projekte, Vermittlung von Ehrenamtlichen und Schulungen — § 3(h) verpflichtet uns zur Förderung des Ehrenamts unabhängig von eigenen Interessen.</span>
             <span data-lang="en">Joint projects, placing volunteers and training — § 3(h) commits us to promoting volunteering independently of our own interests.</span>
           </p>
         </div>
-        <div class="card reveal" data-delay="160" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)">
-          <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">🏢</div>
+        <div class="card reveal" data-delay="160">
+          <div data-icon="building" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
           <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Unternehmen &amp; Stiftungen</span><span data-lang="en">Companies &amp; foundations</span></h3>
           <p class="text-sm" style="color:#a1a1a6">
             <span data-lang="de">Förderung, Sachspenden, Matching-Programme und Expertise. Der Projektbeschluss NPJOE-2026-001 ist die Grundlage für Förderanträge.</span>

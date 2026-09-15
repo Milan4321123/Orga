@@ -614,6 +614,29 @@
   ];
 
   /* ------------------------- Medical camp at the NRNA 9th Football Cup */
+  /* Photographs from the stand and from the pitch. The first one is the whole
+     point of the campaign in a single frame: the treatment happening while the
+     tournament carries on around it. */
+  var MEDICAL_CAMP_PHOTOS = [
+    { tag: "erstehilfe gemeinschaft", src: "assets/media/erste-hilfe-nrna-cup/pitchside-treatment.jpg", width: 1440, height: 1920,
+      de: "Versorgung einer Spielerin am Spielfeldrand", en: "Treating a player at the side of the pitch",
+      nDe: "Ein Knöchel wird direkt am Spielfeldrand getapt, während das Turnier weiterläuft. Genau dafür ist das Medical Camp da: Die Versorgung beginnt dort, wo die Verletzung passiert, und nicht erst eine Autofahrt später.",
+      nEn: "An ankle being strapped at the side of the pitch while the tournament carries on. This is exactly what the medical camp is for: care starts where the injury happens, not a car journey later." },
+    { tag: "erstehilfe gemeinschaft team", src: "assets/media/erste-hilfe-nrna-cup/team-and-stand.jpg", width: 1920, height: 1440,
+      de: "Das Team am Stand des Medical Camps", en: "The team at the medical camp stand",
+      nDe: "Das Team hinter dem Stand. Verbandsmaterial, Kühlspray und zwei Notfallkoffer liegen griffbereit auf der Bank — der Stand ist Anlaufstelle für Erste Hilfe und zugleich Informationsplatz für die Kampagne in Nepal.",
+      nEn: "The team behind the stand. Dressings, cooling spray and two emergency cases lie ready on the bench — the stand is both the place to come for first aid and the information point for the campaign in Nepal." },
+    { tag: "erstehilfe gemeinschaft team", src: "assets/media/erste-hilfe-nrna-cup/campaign-shirt.jpg", width: 1440, height: 1920,
+      de: "Das Kampagnen-Shirt „Stay Strong and Together“", en: "The campaign shirt \u201cStay Strong and Together\u201d",
+      nDe: "Das Shirt der Kampagne wird am Stand gezeigt. „Stay Strong and Together“ ist der Satz, unter dem die Erste-Hilfe-Ausbildung in Nepal läuft — und der Grund, warum an diesem Tag überhaupt ein Stand aufgebaut wurde.",
+      nEn: "The campaign shirt on show at the stand. \u201cStay Strong and Together\u201d is the line the First Aid training in Nepal runs under — and the reason a stand was set up on the day at all." },
+    { tag: "erstehilfe gemeinschaft team", src: "assets/media/erste-hilfe-nrna-cup/stand-wide.jpg", width: 1440, height: 1920,
+      de: "Der Stand des Medical Camps beim Turnier", en: "The medical camp stand at the tournament",
+      nDe: "Der Stand im Ganzen, mit dem Banner der Erste-Hilfe-Kampagne. Wer wegen einer Schürfwunde kam, las im Vorbeigehen, wofür dieselbe Ausrüstung in ländlichen Schulen in Nepal gebraucht wird.",
+      nEn: "The stand as a whole, with the banner of the First Aid campaign. Anyone who came over with a graze read, in passing, what the same equipment is needed for in rural schools in Nepal." }
+  ];
+
+
   /* First-aid cover provided by our medical team at the NRNA football
      tournament in Stuttgart, hosted by NFC Stuttgart. One clip. */
   var MEDICAL_CAMP_CLIPS = [
@@ -633,6 +656,12 @@
   ];
 
   /* ----------------------------------------------------------- Renderers */
+  /* Icons are decorative; if icons.js has not loaded the markup simply has no
+     glyph rather than a broken one, and the label beside it still reads. */
+  function ico(name) {
+    return window.NPJOEIcons ? window.NPJOEIcons.icon(name) : "";
+  }
+
   function fmtDate(iso, lang) {
     var d = new Date(iso + "T00:00:00");
     return d.toLocaleDateString(lang === "en" ? "en-GB" : "de-DE", { day: "2-digit", month: "long", year: "numeric" });
@@ -644,7 +673,7 @@
     opts = opts || {};
     host.innerHTML = FIELDS.map(function (f) {
       return '<article class="field-card reveal" data-tags="' + f.tag + " " + f.key + '">' +
-        '<span class="field-emoji" aria-hidden="true">' + f.emoji + "</span>" +
+        '<span class="field-icon" aria-hidden="true">' + ico(f.key) + "</span>" +
         "<h3>" + bi(f.de, f.en) + "</h3>" +
         '<p class="field-roles">' + bi(esc(f.rolesDe), esc(f.rolesEn)) + "</p>" +
         '<p class="field-examples"><strong>' + bi("Beispiele:", "Examples:") + "</strong> " + bi(esc(f.exDe), esc(f.exEn)) + "</p>" +
@@ -658,7 +687,8 @@
     if (!host) return;
     host.innerHTML = FIELDS.map(function (f) {
       return '<label class="check"><input type="checkbox" name="bereiche" value="' + f.key + '">' +
-        "<span><strong>" + f.emoji + " " + bi(f.de, f.en) + "</strong>" +
+        '<span><span class="field-icon field-icon-sm" aria-hidden="true">' + ico(f.key) + "</span>" +
+        "<strong>" + bi(f.de, f.en) + "</strong>" +
         '<span class="hint">' + bi(esc(f.rolesDe.split(",").slice(0, 3).join(", ")), esc(f.rolesEn.split(",").slice(0, 3).join(", "))) + "</span></span></label>";
     }).join("") +
       '<label class="check"><input type="checkbox" name="bereiche" value="sonstiges">' +
@@ -680,7 +710,8 @@
         '<div class="d">' + String(d.getDate()).padStart(2, "0") + '</div><div class="y">' + d.getFullYear() + "</div></div>" +
         '<div><h3 class="t-h4">' + bi(ev.de, ev.en) + "</h3>" +
         '<p class="text-sm text-muted mt-1">' + bi(ev.descDe, ev.descEn) + "</p>" +
-        '<div class="event-meta"><span>🕒 ' + ev.time + "</span><span>📍 " + bi(ev.placeDe, ev.placeEn) + "</span></div>" +
+        '<div class="event-meta"><span>' + ico("clock") + ev.time + "</span><span>" +
+          ico("pin") + bi(ev.placeDe, ev.placeEn) + "</span></div>" +
         '<div class="flex mt-2" style="gap:.5rem">' +
         '<a class="btn btn-sm btn-ghost" href="kontakt.html?betreff=' + encodeURIComponent(lang === "en" ? ev.en : ev.de) + '">' + bi("Anmelden", "Register") + "</a>" +
         '<button class="btn btn-sm btn-ghost" type="button" data-ics="' + ev.id + '">' + bi("Kalender (.ics)", "Calendar (.ics)") + "</button>" +
@@ -756,7 +787,7 @@
     if (!host) return;
     host.innerHTML = FIELDS.map(function (f) {
       return '<article class="rail-card" data-tags="' + f.tag + " " + f.key + '">' +
-        '<span class="rail-emoji" aria-hidden="true">' + f.emoji + "</span>" +
+        '<span class="rail-icon" aria-hidden="true">' + ico(f.key) + "</span>" +
         "<h3>" + bi(f.de, f.en) + "</h3>" +
         '<p class="rail-roles">' + bi(esc(f.rolesDe), esc(f.rolesEn)) + "</p>" +
         '<p class="rail-ex"><strong>' + bi("Zum Beispiel:", "For example:") + "</strong> " +
@@ -896,6 +927,7 @@
     NAYA_BARSHA: NAYA_BARSHA, NAYA_BARSHA_2025: NAYA_BARSHA_2025,
     NAYA_BARSHA_2025_CLIPS: NAYA_BARSHA_2025_CLIPS, DASHAIN_CLIPS: DASHAIN_CLIPS,
     MEDICAL_CAMP_CLIPS: MEDICAL_CAMP_CLIPS,
+    MEDICAL_CAMP_PHOTOS: MEDICAL_CAMP_PHOTOS,
     renderFields: renderFields,
     renderFieldOptions: renderFieldOptions,
     renderEvents: renderEvents,
