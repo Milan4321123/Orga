@@ -9,6 +9,14 @@
        PORT                  default 4173
        NPJOE_ADMIN_PASSWORD  default "npjoe-admin"  (change before deploying)
        NPJOE_DATA_DIR        default server/data
+       NPJOE_SMTP_HOST       mailbox of info@progressive-youth.de — see below
+       NPJOE_SMTP_PORT       default 587 (465 = TLS from the first byte)
+       NPJOE_SMTP_USER       usually the full address
+       NPJOE_SMTP_PASS       mailbox password
+       NPJOE_MAIL_FROM       default: the SMTP user
+       NPJOE_MAIL_BOARD      where the board copy goes, default: the from address
+       NPJOE_MAIL_ACK        "0" switches the acknowledgements off
+       NPJOE_MAIL_BOARD_COPY "0" switches the board copy off
    ========================================================================== */
 
 "use strict";
@@ -17,6 +25,8 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const smtp = require("./smtp");
+const letters = require("./mail-templates");
 
 const ROOT = path.resolve(__dirname, "..");
 const DATA_DIR = process.env.NPJOE_DATA_DIR || path.join(__dirname, "data");
@@ -35,6 +45,12 @@ const HOST = process.env.HOST || "0.0.0.0";
 const ON_RENDER = !!(process.env.RENDER || process.env.RENDER_SERVICE_NAME);
 const PUBLIC_URL = process.env.RENDER_EXTERNAL_URL || process.env.NPJOE_PUBLIC_URL || "";
 const IS_PRODUCTION = process.env.NODE_ENV === "production" || ON_RENDER;
+/* Outgoing mail. Without NPJOE_SMTP_HOST nothing is sent and every form keeps
+   working exactly as before — the feature is additive, never load-bearing. */
+const MAIL = smtp.config(process.env);
+const MAIL_BOARD = (process.env.NPJOE_MAIL_BOARD || MAIL.from || "").trim();
+const MAIL_ACK = !/^(0|false|no|off)$/i.test(process.env.NPJOE_MAIL_ACK || "1");
+const MAIL_BOARD_COPY = !/^(0|false|no|off)$/i.test(process.env.NPJOE_MAIL_BOARD_COPY || "1");
 
 const FORM_TYPES = ["membership", "volunteer", "contact", "newsletter", "donation", "partner"];
 
@@ -213,6 +229,127 @@ function notify(type, ref, membershipNo) {
     req.write(payload);
     req.end();
   });
+}
+
+/* ------------------------------------------------------------------ mail
+   The website promises an answer in one to three working days. Until the
+   board gets there, the person who filled in the form should at least know
+   that it arrived and under which reference — otherwise a membership
+   application feels like it fell into a hole.
+
+   Two letters go out per submission: an acknowledgement to the visitor and a
+   short copy to the association's own mailbox. Neither may ever affect the
+   submission itself; the record is already on disk before the first byte of
+   SMTP is written. */
+
+const mailLog = [];
+
+function recordMail(entry) {
+  mailLog.unshift(entry);
+  if (mailLog.length > 50) mailLog.length = 50;
+}
+
+/* The address the confirmation link must point at. Behind Render's proxy the
+   request still knows the public host, so a missing NPJOE_PUBLIC_URL is not
+   fatal. */
+function publicBase(req) {
+  if (PUBLIC_URL) return PUBLIC_URL.replace(/\/$/, "");
+  const host = (req && (req.headers["x-forwarded-host"] || req.headers.host)) || "";
+  if (!host) return "";
+  const proto = (req && req.headers["x-forwarded-proto"]) || (IS_PRODUCTION ? "https" : "http");
+  return proto + "://" + host;
+}
+
+function newsletterConfirmUrl(base, record) {
+  if (!base || !record._optInToken) return "";
+  return base + "/newsletter-bestaetigen?ref=" + encodeURIComponent(record._ref) +
+    "&token=" + record._optInToken;
+}
+
+function contentOrg() {
+  try { return readContent().org || null; } catch (e) { return null; }
+}
+
+/* Sends and logs; resolves to a result, never rejects. */
+function deliver(kind, type, ref, mail) {
+  return smtp.sendMail(MAIL, mail).then((result) => {
+    recordMail({
+      at: new Date().toISOString(), kind: kind, type: type, ref: ref,
+      /* The log is read in the board area, so it keeps only the domain of the
+         recipient — enough to debug a bounce, not a second address book. */
+      to: String(mail.to || "").replace(/^[^@]*/, "…"),
+      ok: !!result.ok, error: result.error || null, skipped: result.skipped || null
+    });
+    return result;
+  });
+}
+
+function sendAcknowledgement(type, record, base) {
+  if (!MAIL_ACK || !MAIL.configured) return Promise.resolve({ skipped: "disabled" });
+  const to = String(record.email || "").trim();
+  /* Writing to our own mailbox would start a conversation with ourselves. */
+  if (!to || to.toLowerCase() === String(MAIL.from).toLowerCase() ||
+      to.toLowerCase() === String(MAIL_BOARD).toLowerCase()) {
+    return Promise.resolve({ skipped: "own_address" });
+  }
+  const letter = letters.acknowledgement(type, record, {
+    org: contentOrg(),
+    baseUrl: base,
+    confirmUrl: type === "newsletter" ? newsletterConfirmUrl(base, record) : ""
+  });
+  if (!letter) return Promise.resolve({ skipped: "no_template" });
+  return deliver("ack", type, record._ref, {
+    to: letter.to, subject: letter.subject, text: letter.text, autoReply: true
+  });
+}
+
+function sendBoardCopy(type, record, base) {
+  if (!MAIL_BOARD_COPY || !MAIL.configured || !MAIL_BOARD) return Promise.resolve({ skipped: "disabled" });
+  const notice = letters.boardNotice(type, record, { org: contentOrg(), baseUrl: base });
+  return deliver("board", type, record._ref, {
+    to: MAIL_BOARD, subject: notice.subject, text: notice.text, replyTo: notice.replyTo
+  });
+}
+
+/* ------------------------------------------------ newsletter double opt-in
+   For every other form the person described themselves; a newsletter address
+   can be typed in by anyone. German law (§ 7 UWG) and Art. 7 DSGVO both want
+   proof that the owner of the address agreed, so the entry stays "pending"
+   and receives nothing until the link in the first mail is followed. */
+
+function confirmNewsletter(ref, token) {
+  const rows = readAll("newsletter");
+  const row = rows.find((r) => r._ref === ref);
+  if (!row || !row._optInToken) {
+    /* Already confirmed counts as success — people click the link twice. */
+    if (row && row.status === "confirmed") return { ok: true, already: true };
+    return { ok: false, error: "not_found" };
+  }
+  if (!safeEqual(token, row._optInToken)) return { ok: false, error: "invalid_token" };
+  if (Date.now() - new Date(row._receivedAt || 0).getTime() > 30 * 864e5) {
+    return { ok: false, error: "expired" };
+  }
+  row.status = "confirmed";
+  row._optInConfirmedAt = new Date().toISOString();
+  delete row._optInToken;
+  rewrite("newsletter", rows);
+  console.log("[" + row._optInConfirmedAt + "] newsletter opt-in confirmed · " + ref);
+  return { ok: true, lang: row._lang === "en" ? "en" : "de" };
+}
+
+/* An address that was never confirmed is an address nobody agreed to give
+   us, so keeping it has no purpose (Art. 5(1)(e)). The privacy policy names
+   thirty days; this is what makes that sentence true. */
+function pruneUnconfirmedNewsletter() {
+  const rows = readAll("newsletter");
+  const cutoff = Date.now() - 30 * 864e5;
+  const keep = rows.filter((r) =>
+    !(r.status === "pending" && new Date(r._receivedAt || 0).getTime() < cutoff));
+  if (keep.length === rows.length) return 0;
+  rewrite("newsletter", keep);
+  console.log("[" + new Date().toISOString() + "] " + (rows.length - keep.length) +
+              " unbestätigte Newsletter-Anmeldung(en) nach 30 Tagen gelöscht");
+  return rows.length - keep.length;
 }
 
 /* ------------------------------------------- data-subject requests (DSGVO)
@@ -604,6 +741,38 @@ async function handleApi(req, res, pathname, query) {
       const result = await notify("contact", "TEST-" + Date.now().toString(36).toUpperCase());
       return json(res, 200, result);
     }
+    if (parts[1] === "mail" && req.method === "GET") {
+      return json(res, 200, {
+        configured: MAIL.configured,
+        host: MAIL.host || null,
+        port: MAIL.port,
+        secure: MAIL.secure,
+        from: MAIL.from || null,
+        board: MAIL_BOARD || null,
+        acknowledgements: MAIL_ACK,
+        boardCopy: MAIL_BOARD_COPY,
+        recent: mailLog.slice(0, 20)
+      });
+    }
+    /* Sends one real letter, so a wrong password or a blocked port is found
+       here rather than by a member who never got an answer. */
+    if (parts[1] === "mail-test" && req.method === "POST") {
+      if (!MAIL.configured) return json(res, 400, { error: "smtp_not_configured" });
+      const body = JSON.parse((await readBody(req)) || "{}");
+      const to = String(body.to || MAIL_BOARD || MAIL.from).trim();
+      if (!smtp.EMAIL_RE.test(to)) return json(res, 400, { error: "invalid_recipient" });
+      const ref = "TEST-" + Date.now().toString(36).toUpperCase();
+      const result = await deliver("test", "contact", ref, {
+        to: to,
+        subject: "NPJOE — Testnachricht aus dem Vorstandsbereich (" + ref + ")",
+        text: "Diese Nachricht bestätigt, dass der Versand über " + MAIL.host + " funktioniert.\n\n" +
+              "Absender: " + MAIL.from + "\n" +
+              "Referenz: " + ref + "\n" +
+              "Gesendet: " + new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" }) + "\n\n" +
+              "Kommt diese E-Mail an, erhalten auch Antragstellende ihre Eingangsbestätigung.\n"
+      });
+      return json(res, result.ok ? 200 : 502, result);
+    }
     if (parts[1] === "person" && req.method === "GET") {
       const q = String(query.q || "").trim();
       if (q.length < 3) return json(res, 400, { error: "query_too_short" });
@@ -690,14 +859,28 @@ async function handleApi(req, res, pathname, query) {
   record._ip = crypto.createHash("sha256").update(ip + "npjoe").digest("hex").slice(0, 12); /* pseudonymised */
   record.status = "new";
   if (type === "membership") record.membershipNo = nextMembershipNo();
+  if (type === "newsletter") {
+    /* Nothing is sent to this address until the owner follows the link. */
+    record.status = "pending";
+    record._optInToken = crypto.randomBytes(24).toString("hex");
+  }
 
   append(type, record);
   console.log("[" + new Date().toISOString() + "] " + type + " · " + record._ref + (record.membershipNo ? " · " + record.membershipNo : ""));
 
-  /* Fire and forget: the visitor gets their confirmation either way. */
+  /* Fire and forget: the visitor gets their confirmation either way. A mail
+     server that is slow, full or simply down must not hold up the response. */
+  const base = publicBase(req);
   notify(type, record._ref, record.membershipNo).catch(() => {});
+  sendAcknowledgement(type, record, base).catch(() => {});
+  sendBoardCopy(type, record, base).catch(() => {});
 
-  return json(res, 200, { ok: true, ref: record._ref, membershipNo: record.membershipNo });
+  return json(res, 200, {
+    ok: true, ref: record._ref, membershipNo: record.membershipNo,
+    /* The success banner can say "check your inbox" only if we really wrote. */
+    acknowledged: MAIL.configured && MAIL_ACK,
+    confirmationRequired: type === "newsletter"
+  });
 }
 
 /* ---------------------------------------------------------- static files */
@@ -782,6 +965,53 @@ function serveStatic(req, res, pathname) {
   }
 }
 
+/* ---------------------------------------------- newsletter opt-in landing
+   The confirmation link lands here. It is generated rather than kept as a
+   static file so the result — confirmed, expired, unknown — can be shown on
+   the page itself instead of as a query parameter the person has to read. */
+function newsletterPage(result) {
+  const messages = {
+    ok: {
+      de: ["Anmeldung bestätigt", "Vielen Dank — Ihre E-Mail-Adresse ist jetzt für den Newsletter bestätigt. Sie können ihn in jeder Ausgabe wieder abbestellen."],
+      en: ["Subscription confirmed", "Thank you — your e-mail address is now confirmed for the newsletter. You can cancel it in every issue."]
+    },
+    already: {
+      de: ["Bereits bestätigt", "Diese Anmeldung war schon bestätigt. Sie müssen nichts weiter tun."],
+      en: ["Already confirmed", "This subscription was already confirmed. There is nothing else to do."]
+    },
+    expired: {
+      de: ["Der Link ist abgelaufen", "Bestätigungslinks gelten 30 Tage. Bitte melden Sie sich erneut an — Sie erhalten dann einen neuen Link."],
+      en: ["This link has expired", "Confirmation links are valid for 30 days. Please sign up again to receive a new one."]
+    },
+    error: {
+      de: ["Der Link ist ungültig", "Vielleicht wurde er beim Kopieren abgeschnitten. Bitte melden Sie sich erneut an oder schreiben Sie uns."],
+      en: ["This link is not valid", "It may have been cut short when copying. Please sign up again or write to us."]
+    }
+  };
+  const key = result.ok ? (result.already ? "already" : "ok") : (result.error === "expired" ? "expired" : "error");
+  const m = messages[key];
+  const good = result.ok;
+  return '<!DOCTYPE html>\n<html lang="de" data-lang="de" data-theme="dark">\n<head>\n' +
+    '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+    "<title>" + m.de[0] + " | NPJOE</title>\n" +
+    '<meta name="robots" content="noindex">\n' +
+    '<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">\n' +
+    '<link rel="stylesheet" href="assets/css/main.css">\n' +
+    '<script>(function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);' +
+    'var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");' +
+    'document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();</script>\n' +
+    '<script src="assets/js/site.js" defer></script>\n<script src="assets/js/layout.js" defer></script>\n' +
+    '<script src="assets/js/main.js" defer></script>\n</head>\n<body data-page="">\n' +
+    '<div id="siteHeaderMount"></div>\n<main id="main">\n<section class="section">\n' +
+    '<div class="container container-narrow center" style="padding-block:3rem">\n' +
+    '<div style="font-size:3rem">' + (good ? "✓" : "!") + "</div>\n" +
+    '<h1 class="mt-2"><span data-lang="de">' + m.de[0] + '</span><span data-lang="en">' + m.en[0] + "</span></h1>\n" +
+    '<p class="lead mt-3"><span data-lang="de">' + m.de[1] + '</span><span data-lang="en">' + m.en[1] + "</span></p>\n" +
+    '<p class="mt-4"><a class="btn btn-lg" href="index.html"><span data-lang="de">Zur Startseite</span>' +
+    '<span data-lang="en">Back to the home page</span></a></p>\n' +
+    "</div>\n</section>\n</main>\n<div id=\"siteFooterMount\"></div>\n</body>\n</html>\n";
+}
+
 /* ------------------------------------------------------------------ boot */
 const server = http.createServer((req, res) => {
   /* WHATWG URL rather than the deprecated url.parse(). The base is only
@@ -799,6 +1029,15 @@ const server = http.createServer((req, res) => {
       dataDir: DATA_DIR,
       persistentStorage: !path.resolve(DATA_DIR).startsWith(path.resolve(__dirname))
     }, { "Cache-Control": "no-store" });
+  }
+
+  /* The link in the first newsletter mail. A plain URL without .html, because
+     it is typed into mail clients and read aloud over the phone. */
+  if (pathname === "/newsletter-bestaetigen" || pathname === "/newsletter-confirm") {
+    const result = confirmNewsletter(String(query.ref || ""), String(query.token || ""));
+    return send(res, result.ok ? 200 : 400, newsletterPage(result), {
+      "Content-Type": MIME[".html"], "Cache-Control": "no-store"
+    });
   }
 
   if (pathname.startsWith("/api")) {
@@ -836,6 +1075,11 @@ server.listen(PORT, HOST, () => {
   console.log("  Password  " + (process.env.NPJOE_ADMIN_PASSWORD ? "(from NPJOE_ADMIN_PASSWORD)" : '"npjoe-admin" — change before deploying!'));
   console.log("  Limit     " + RATE_LIMIT + " submissions per IP per 10 minutes");
   console.log("  Alerts    " + (WEBHOOK_URL ? "on → " + (function () { try { return new URL(WEBHOOK_URL).host; } catch (e) { return "invalid URL"; } })() : "off (set NPJOE_WEBHOOK_URL)"));
+  console.log("  E-Mail    " + (MAIL.configured
+    ? MAIL.from + " via " + MAIL.host + ":" + MAIL.port +
+      (MAIL_ACK ? "" : " (Eingangsbestätigungen aus)") +
+      (MAIL_BOARD_COPY ? " · Kopie an " + MAIL_BOARD : " (Vorstandskopie aus)")
+    : "off (set NPJOE_SMTP_HOST) — niemand erhält eine Eingangsbestätigung"));
   /* Say plainly, at every start, if the site is not fit to be public. */
   try {
     const findings = require("./preflight").checks(process.env);
@@ -850,6 +1094,11 @@ server.listen(PORT, HOST, () => {
   } catch (e) {}
   console.log("");
 });
+
+/* Once at start and once a day afterwards — an association server is often
+   restarted more often than it runs for a full day. */
+try { pruneUnconfirmedNewsletter(); } catch (e) {}
+setInterval(() => { try { pruneUnconfirmedNewsletter(); } catch (e) {} }, 24 * 3600 * 1000).unref();
 
 /* Platform hosts send SIGTERM before replacing an instance. Finish what is in
    flight rather than dropping a half-written submission. */

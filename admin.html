@@ -154,6 +154,22 @@
         </p>
       </div>
 
+      <!-- outgoing mail -->
+      <div class="card">
+        <div class="flex-between mb-2">
+          <div>
+            <h3 style="font-size:var(--fs-lg)"><span data-lang="de">E-Mail-Versand</span><span data-lang="en">Outgoing mail</span></h3>
+            <p class="text-sm text-muted" id="mailState"></p>
+          </div>
+          <button class="btn btn-sm btn-ghost" type="button" id="mailTest"><span data-lang="de">Test-E-Mail senden</span><span data-lang="en">Send a test e-mail</span></button>
+        </div>
+        <div id="mailLog"></div>
+        <p class="text-xs text-muted mt-2">
+          <span data-lang="de">Wer ein Formular abschickt, erhält automatisch eine Eingangsbestätigung mit der Referenznummer — und der Vorstand eine kurze Kopie. Newsletter-Anmeldungen gelten erst, wenn der Link in der Bestätigungsmail angeklickt wurde (§ 7 UWG).</span>
+          <span data-lang="en">Anyone who submits a form automatically receives an acknowledgement carrying the reference — and the board a short copy. Newsletter subscriptions only count once the link in the confirmation mail has been followed (§ 7 UWG).</span>
+        </p>
+      </div>
+
       <div class="callout">
         <strong><span data-lang="de">Datenschutz-Hinweis:</span><span data-lang="en">Privacy note:</span></strong>
         <span data-lang="de"> Diese Daten sind personenbezogen. Nutzen Sie sie ausschließlich für Vereinszwecke, geben Sie sie nicht weiter und löschen Sie Einträge, sobald der Zweck erfüllt ist und keine steuerlichen Aufbewahrungsfristen entgegenstehen.</span>
@@ -428,6 +444,7 @@ document.addEventListener("npjoe:layout-ready", function () {
     loadSummary();
     loadRows();
     loadNotifications();
+    loadMail();
     loadPreflight();
     if (!contentReady && window.NPJOEAdminDocs) window.NPJOEAdminDocs.init();
     if (!contentReady && window.NPJOEAdminDsgvo) window.NPJOEAdminDsgvo.init();
@@ -507,6 +524,32 @@ document.addEventListener("npjoe:layout-ready", function () {
             r.type + "</td><td><code>" + r.ref + "</code></td><td>" +
             (r.ok ? '<span class="badge badge-ok">' + T("zugestellt", "delivered") + "</span>"
                   : '<span class="badge badge-err">' + (r.error || r.status) + "</span>") + "</td></tr>";
+        }).join("") + "</tbody></table></div>";
+    }).catch(function () {});
+  }
+
+  function loadMail() {
+    api("/admin/mail").then(function (m) {
+      var stateEl = el("mailState");
+      stateEl.innerHTML = m.configured
+        ? T("Aktiv — Absender ", "Active — sender ") + "<code>" + m.from + "</code>" +
+          T(" über ", " via ") + "<code>" + m.host + ":" + m.port + "</code>" +
+          (m.acknowledgements ? "" : T(" · Eingangsbestätigungen abgeschaltet", " · acknowledgements switched off")) +
+          (m.boardCopy ? T(" · Kopie an ", " · copy to ") + "<code>" + m.board + "</code>" : "")
+        : T("Nicht eingerichtet — es gehen keine Eingangsbestätigungen hinaus. Setzen Sie beim Serverstart NPJOE_SMTP_HOST, NPJOE_SMTP_USER, NPJOE_SMTP_PASS und NPJOE_MAIL_FROM.",
+            "Not configured — no acknowledgements go out. Set NPJOE_SMTP_HOST, NPJOE_SMTP_USER, NPJOE_SMTP_PASS and NPJOE_MAIL_FROM when starting the server.");
+      var log = el("mailLog");
+      if (!m.recent || !m.recent.length) { log.innerHTML = ""; return; }
+      var kinds = { ack: ["Bestätigung", "Acknowledgement"], board: ["Vorstandskopie", "Board copy"], test: ["Test", "Test"] };
+      log.innerHTML = '<div class="table-wrap"><table class="data"><thead><tr><th>' +
+        T("Zeitpunkt", "When") + "</th><th>" + T("Art", "Kind") + "</th><th>" + T("Referenz", "Reference") +
+        "</th><th>" + T("Empfänger", "Recipient") + "</th><th>Status</th></tr></thead><tbody>" +
+        m.recent.map(function (r) {
+          var kind = kinds[r.kind] || [r.kind, r.kind];
+          return "<tr><td>" + new Date(r.at).toLocaleString(T("de-DE", "en-GB")) + "</td><td>" +
+            T(kind[0], kind[1]) + "</td><td><code>" + r.ref + "</code></td><td>" + r.to + "</td><td>" +
+            (r.ok ? '<span class="badge badge-ok">' + T("versendet", "sent") + "</span>"
+                  : '<span class="badge badge-err">' + (r.error || r.skipped) + "</span>") + "</td></tr>";
         }).join("") + "</tbody></table></div>";
     }).catch(function () {});
   }
@@ -667,7 +710,21 @@ document.addEventListener("npjoe:layout-ready", function () {
   el("typeSelect").addEventListener("change", function () { state.type = this.value; loadRows(); });
   el("statusSelect").addEventListener("change", render);
   el("searchInput").addEventListener("input", render);
-  el("refreshBtn").addEventListener("click", function () { loadSummary(); loadRows(); loadNotifications(); });
+  el("refreshBtn").addEventListener("click", function () { loadSummary(); loadRows(); loadNotifications(); loadMail(); });
+  el("mailTest").addEventListener("click", function () {
+    var to = window.prompt(T("An welche Adresse soll die Test-E-Mail gehen?", "Which address should the test e-mail go to?"), "");
+    if (to === null) return;
+    fetch(API + "/admin/mail-test", {
+      method: "POST", credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ to: to.trim() })
+    }).then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res.ok) window.npjoeToast(T("Test-E-Mail versendet.", "Test e-mail sent."), "ok");
+        else window.npjoeToast(T("Versand fehlgeschlagen: ", "Sending failed: ") + (res.error || res.skipped), "err");
+        loadMail();
+      }).catch(function () { window.npjoeToast(T("Test fehlgeschlagen.", "Test failed."), "err"); });
+  });
   el("notifyTest").addEventListener("click", function () {
     fetch(API + "/admin/notify-test", { method: "POST", credentials: "same-origin" })
       .then(function (r) { return r.json(); })

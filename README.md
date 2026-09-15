@@ -78,6 +78,7 @@ Fünf Formulartypen, alle mit derselben Engine (`assets/js/forms.js`):
 - Unterschrift per Maus oder Finger, gespeichert als Bild
 - Spamschutz per Honeypot-Feld und serverseitigem Rate-Limit
 - Referenznummer für jede Einsendung (z. B. `MIT-2026-BAYQ`)
+- Automatische Eingangsbestätigung per E-Mail an die Person (siehe „E-Mail-Bestätigungen“)
 
 **Offline-Modus.** Läuft kein Server (z. B. bei reinem Static-Hosting), wird die Einsendung
 als JSON-Datei heruntergeladen und das E-Mail-Programm mit vorausgefüllter Nachricht
@@ -222,6 +223,64 @@ Formular nichts davon.
 Im Vorstandsbereich zeigt „Eingänge“ den Zustellstatus der letzten Meldungen und erlaubt
 eine Testnachricht.
 
+### E-Mail-Bestätigungen
+
+Wer ein Formular abschickt, bekommt automatisch eine Eingangsbestätigung mit seiner
+Referenznummer — und der Vorstand eine kurze Kopie an das Vereinspostfach. Dafür braucht der
+Server die Zugangsdaten des Postfachs `info@progressive-youth.de`:
+
+```bash
+NPJOE_SMTP_HOST='smtp.ihr-hoster.de' \
+NPJOE_SMTP_USER='info@progressive-youth.de' \
+NPJOE_SMTP_PASS='postfach-passwort' \
+NPJOE_MAIL_FROM='info@progressive-youth.de' \
+NPJOE_PUBLIC_URL='https://www.progressive-youth.de' \
+node server/server.js
+```
+
+Die Zugangsdaten stehen in der Verwaltung Ihres Mail-Hosters unter „SMTP“, „Postausgang“
+oder „E-Mail-Programm einrichten“. Port 587 (STARTTLS) ist voreingestellt; 465 schaltet
+automatisch auf TLS ab dem ersten Byte um. Ein Test aus dem Vorstandsbereich heraus
+(„Eingänge“ → **E-Mail-Versand** → *Test-E-Mail senden*) zeigt sofort, ob Benutzername,
+Passwort und Port stimmen.
+
+| Formular | Was die Person bekommt |
+| --- | --- |
+| `membership` | Eingangsbestätigung mit Referenz und vorläufiger Mitgliedsnummer, ausdrücklich **noch keine Aufnahme** — und die Bitte, noch keinen Dauerauftrag einzurichten |
+| `volunteer` | Bestätigung, Hinweis auf das Matching durch NPYS-N |
+| `donation` | Dank, Kontoverbindung und Verwendungszweck, bei Bedarf Hinweis zur Zuwendungsbestätigung |
+| `contact` / `partner` | Eingangsbestätigung mit Referenz und Antwortfrist |
+| `newsletter` | Bestätigungslink (Double Opt-in) — ohne Klick wird nichts versendet |
+
+Die Briefe stehen in **`server/mail-templates.js`**, zweisprachig, in der Sprache, in der die
+Person die Website gelesen hat. Anschrift, Beitrag und Bankverbindung ziehen sie sich aus
+`assets/js/site.js` und aus den im Vorstandsbereich gepflegten Angaben — sie müssen also
+nicht doppelt gepflegt werden.
+
+**Newsletter: Double Opt-in.** Eine E-Mail-Adresse kann jede:r eintragen, auch eine fremde.
+Die Anmeldung bleibt deshalb `pending`, bis der Link in der ersten E-Mail angeklickt wurde
+(§ 7 UWG, Art. 7 DSGVO). Unbestätigte Einträge löscht der Server nach 30 Tagen von selbst.
+
+**Wenn nichts eingerichtet ist**, versendet der Server keine E-Mail und alle Formulare
+funktionieren unverändert weiter — die Erfolgsmeldung verspricht dann auch keine
+Bestätigung. Fällt der Mailserver aus, merkt die Person am Formular ebenfalls nichts davon:
+Der Eintrag ist gespeichert, bevor die erste Zeile SMTP gesprochen wird.
+
+| Variable | Standard | Bedeutung |
+| --- | --- | --- |
+| `NPJOE_SMTP_HOST` | leer | Postausgangsserver — ohne ihn wird nichts versendet |
+| `NPJOE_SMTP_PORT` | `587` | `587` = STARTTLS, `465` = TLS ab dem ersten Byte |
+| `NPJOE_SMTP_USER` / `NPJOE_SMTP_PASS` | leer | Zugangsdaten des Postfachs |
+| `NPJOE_MAIL_FROM` | Benutzername | Absenderadresse |
+| `NPJOE_MAIL_BOARD` | Absenderadresse | Wohin die Vorstandskopie geht |
+| `NPJOE_MAIL_ACK` | `1` | `0` schaltet die Eingangsbestätigungen ab |
+| `NPJOE_MAIL_BOARD_COPY` | `1` | `0` schaltet die Vorstandskopie ab |
+| `NPJOE_PUBLIC_URL` | leer | Öffentliche Adresse — Grundlage des Bestätigungslinks |
+
+**Landet die Post im Spam?** Dann fehlen meist die DNS-Einträge der Domain: ein SPF-Eintrag,
+der Ihren Mail-Hoster als Absender erlaubt, und DKIM, das Ihr Hoster im Kundenbereich
+anbietet. Beides wird bei der Domain `progressive-youth.de` eingetragen, nicht hier im Code.
+
 ### Anmeldung
 
 Die Anmeldung nutzt ein serverseitiges Passwort, eine HttpOnly-Session (8 Stunden) und ein
@@ -259,6 +318,7 @@ NPJOE_ADMIN_PASSWORD='ein-langes-eigenes-passwort' PORT=8080 node server/server.
 | `NPJOE_ADMIN_PASSWORD` | `npjoe-admin` | Passwort für den Vorstandsbereich |
 | `NPJOE_DATA_DIR` | `server/data` | Ablage der Einsendungen — auf einem Plattform-Host **zwingend** außerhalb des Anwendungsordners |
 | `NPJOE_WEBHOOK_URL` | leer | Meldung bei neuen Eingängen |
+| `NPJOE_SMTP_HOST` u. a. | leer | E-Mail-Versand — siehe „E-Mail-Bestätigungen“ |
 | `NODE_ENV` | leer | `production` schaltet HSTS ein |
 | `HOST` | `0.0.0.0` | Netzwerkschnittstelle |
 
@@ -280,6 +340,9 @@ Diese Stellen sind bewusst als Platzhalter markiert, weil sie amtliche Angaben b
    Planungsstände und sollten durch geprüfte Werte ersetzt werden
 6. **E-Mail-Adressen** — die vier Postfächer (`info@`, `mitglied@`, `volunteer@`, `spenden@`)
    müssen beim Hoster eingerichtet sein
+7. **E-Mail-Versand** — SMTP-Zugangsdaten des Postfachs `info@` setzen, sonst erhält niemand
+   eine Eingangsbestätigung und Newsletter-Anmeldungen bleiben unbestätigt (siehe
+   „E-Mail-Bestätigungen“); dazu SPF- und DKIM-Einträge der Domain setzen
 
 Eine anwaltliche Prüfung von Impressum und Datenschutzerklärung ist empfehlenswert.
 

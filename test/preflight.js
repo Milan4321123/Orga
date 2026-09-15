@@ -74,7 +74,12 @@ module.exports = function run() {
   const cleanCheck = require(path.join(tmp, "server", "preflight.js"));
   const clean = cleanCheck.checks({
     NPJOE_ADMIN_PASSWORD: "ein-langes-eigenes-passwort-2026",
-    NPJOE_WEBHOOK_URL: "https://hooks.example.com/npjoe"
+    NPJOE_WEBHOOK_URL: "https://hooks.example.com/npjoe",
+    NPJOE_SMTP_HOST: "smtp.example.com",
+    NPJOE_SMTP_USER: "vorstand@npjoe-verein.de",
+    NPJOE_SMTP_PASS: "postfach-passwort",
+    NPJOE_MAIL_FROM: "vorstand@npjoe-verein.de",
+    NPJOE_PUBLIC_URL: "https://www.npjoe-verein.de"
   });
   eq("no findings remain on a fully prepared site", clean.map(f => f.id + " (" + f.severity + ")"), []);
 

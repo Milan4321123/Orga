@@ -33,3 +33,21 @@ services:
         sync: false              # im Dashboard eintragen, bleibt geheim
       - key: NODE_ENV
         value: production
+
+      # E-Mail-Versand über das Postfach info@progressive-youth.de.
+      # Ohne diese Angaben verschickt die Website keine Eingangsbestätigungen,
+      # und Newsletter-Anmeldungen lassen sich nicht bestätigen.
+      - key: NPJOE_SMTP_HOST
+        sync: false              # z. B. smtp.ionos.de, smtp.strato.de
+      - key: NPJOE_SMTP_PORT
+        value: "587"             # 587 = STARTTLS, 465 = TLS ab dem ersten Byte
+      - key: NPJOE_SMTP_USER
+        sync: false              # meist die vollständige Adresse
+      - key: NPJOE_SMTP_PASS
+        sync: false              # Postfachpasswort, bleibt geheim
+      - key: NPJOE_MAIL_FROM
+        value: info@progressive-youth.de
+      - key: NPJOE_MAIL_BOARD
+        value: info@progressive-youth.de
+      - key: NPJOE_PUBLIC_URL
+        value: https://www.progressive-youth.de

@@ -134,6 +134,47 @@ function checks(env) {
       "Postfächer einrichten oder die Adressen in assets/js/site.js ändern.");
   }
 
+  /* ---- outgoing mail ---- */
+  if (!env.NPJOE_SMTP_HOST) {
+    add("warning", "no-mail",
+      "Es werden keine Eingangsbestätigungen verschickt",
+      "Wer eine Beitrittserklärung abschickt, bekommt keine E-Mail — weder eine Bestätigung noch " +
+      "die Referenznummer, unter der er nachfragen könnte. Newsletter-Anmeldungen bleiben dauerhaft " +
+      "unbestätigt, weil der Bestätigungslink nicht zugestellt werden kann.",
+      "Zugangsdaten des Postfachs setzen: NPJOE_SMTP_HOST, NPJOE_SMTP_USER, NPJOE_SMTP_PASS " +
+      "und NPJOE_MAIL_FROM=info@progressive-youth.de.");
+  } else {
+    if (!env.NPJOE_SMTP_USER || !env.NPJOE_SMTP_PASS) {
+      add("warning", "mail-credentials",
+        "Für den Mailversand fehlen Zugangsdaten",
+        "Ein Postfach ist eingetragen, aber ohne Benutzer und Passwort weist praktisch jeder " +
+        "Anbieter die Einlieferung ab — der Fehler zeigt sich erst beim ersten Formular.",
+        "NPJOE_SMTP_USER und NPJOE_SMTP_PASS setzen und im Vorstandsbereich eine Testmail senden.");
+    }
+    const from = env.NPJOE_MAIL_FROM || env.NPJOE_SMTP_USER || "";
+    if (from && org && !from.endsWith("@" + String(org[1]).split("@")[1])) {
+      add("warning", "mail-from-domain",
+        "Die Absenderadresse gehört nicht zur Vereinsdomain",
+        "Als Absender ist " + from + " eingetragen, die Website nennt aber " + org[1] + ". " +
+        "Fremde Absenderdomains landen regelmäßig im Spam-Ordner, weil SPF und DKIM nicht passen.",
+        "NPJOE_MAIL_FROM auf eine Adresse der eigenen Domain setzen.");
+    }
+    if (/^(1|true|yes|on)$/i.test(env.NPJOE_SMTP_ALLOW_PLAINTEXT || "")) {
+      add("warning", "mail-plaintext",
+        "Das Mailpasswort darf unverschlüsselt übertragen werden",
+        "NPJOE_SMTP_ALLOW_PLAINTEXT hebt den Schutz auf, der das Postfachpasswort nur über eine " +
+        "verschlüsselte Verbindung zulässt. Im Netz mitlesbar zu sein reicht dann, um es zu übernehmen.",
+        "Einstellung entfernen und Port 587 (STARTTLS) oder 465 verwenden.");
+    }
+    if (!env.NPJOE_PUBLIC_URL && !env.RENDER_EXTERNAL_URL) {
+      add("note", "mail-public-url",
+        "Die öffentliche Adresse der Website ist nicht gesetzt",
+        "Der Bestätigungslink für Newsletter-Anmeldungen wird dann aus dem Host-Header gebildet. " +
+        "Das funktioniert meistens, aber nicht hinter jedem Proxy.",
+        "NPJOE_PUBLIC_URL=https://www.progressive-youth.de setzen.");
+    }
+  }
+
   return found;
 }
 

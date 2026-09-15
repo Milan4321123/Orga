@@ -382,16 +382,24 @@
     });
   }
 
-  function showSuccess(form, ref, viaApi) {
+  function showSuccess(form, ref, viaApi, res) {
     var panel = form.parentElement.querySelector("[data-success]");
     var status = form.querySelector(".form-status");
+    /* The server says whether it really posted a confirmation. Promising an
+       e-mail that was never sent is worse than promising nothing. */
+    var mailed = !!(res && res.acknowledged);
+    var arrived = T("Ihre Angaben sind bei uns eingegangen.", "Your details have reached us.") +
+      (mailed
+        ? " " + T("Eine Eingangsbestätigung mit Ihrer Referenz ist unterwegs an Ihre E-Mail-Adresse — bitte sehen Sie auch im Spam-Ordner nach.",
+                  "A confirmation carrying your reference is on its way to your e-mail address — please also check your spam folder.")
+        : "");
     if (panel) {
       var refSlot = panel.querySelector("[data-ref]");
       if (refSlot) refSlot.textContent = ref;
       var note = panel.querySelector("[data-delivery]");
       if (note) {
         note.innerHTML = viaApi
-          ? T("Ihre Angaben sind bei uns eingegangen.", "Your details have reached us.")
+          ? arrived
           : T("Ihre Angaben wurden als Datei gespeichert und Ihr E-Mail-Programm geöffnet — bitte die E-Mail noch absenden.",
               "Your details were saved as a file and your mail client opened — please still send the e-mail.");
       }
@@ -402,7 +410,8 @@
       try { panel.focus({ preventScroll: true }); } catch (e) {}
     } else if (status) {
       status.className = "form-status ok is-visible";
-      status.textContent = T("Vielen Dank! Ihre Nachricht ist eingegangen. Referenz: ", "Thank you! Your message was received. Reference: ") + ref;
+      status.textContent = T("Vielen Dank! Ihre Nachricht ist eingegangen. Referenz: ", "Thank you! Your message was received. Reference: ") + ref +
+        (mailed ? " · " + T("Eine Bestätigung ist per E-Mail unterwegs.", "A confirmation is on its way by e-mail.") : "");
     }
   }
 
@@ -472,7 +481,7 @@
         clearDraft(form);
         if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = original; }
         if (status) status.classList.remove("is-visible");
-        showSuccess(form, (res && res.ref) || ref, true);
+        showSuccess(form, (res && res.ref) || ref, true, res);
       })
       .catch(function (err) {
         /* The server answered and refused: never pretend this succeeded.
@@ -520,14 +529,26 @@
         window.npjoeToast(T("Bitte eine gültige E-Mail-Adresse eingeben.", "Please enter a valid e-mail address."), "err");
         return;
       }
-      var payload = { email: input.value.trim(), _type: "newsletter", _submittedAt: new Date().toISOString() };
+      var payload = {
+        email: input.value.trim(), _type: "newsletter",
+        _submittedAt: new Date().toISOString(),
+        _lang: window.npjoeLang ? window.npjoeLang() : "de"
+      };
       saveLocal("newsletter", payload);
-      var done = function () {
-        window.npjoeToast(T("Danke! Sie sind für den Newsletter vorgemerkt.", "Thank you! You are signed up for the newsletter."), "ok");
+      /* A newsletter address may be typed in by anyone, so the subscription
+         only counts once the owner follows the link we send. Say so, or the
+         person stops at the toast and never confirms. */
+      var done = function (res) {
+        window.npjoeToast(
+          res && res.acknowledged
+            ? T("Fast geschafft: Bitte bestätigen Sie die Anmeldung über den Link in unserer E-Mail.",
+                "Almost done: please confirm your subscription using the link in our e-mail.")
+            : T("Danke! Sie sind für den Newsletter vorgemerkt.", "Thank you! You are signed up for the newsletter."),
+          "ok");
         form.reset();
       };
       if (CFG.mode === "offline") return done();
-      postJSON((CFG.apiBase || "/api") + "/newsletter", payload).then(done).catch(done);
+      postJSON((CFG.apiBase || "/api") + "/newsletter", payload).then(done).catch(function () { done(); });
     });
   }
 
