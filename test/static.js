@@ -90,8 +90,16 @@ module.exports = function run() {
     .filter(f => !contentJs.includes("assets/media/dashain-2024/" + f));
   eq("all 16 photographs are represented in the gallery data", unreferencedPhotos, []);
   const galleryPage = read("galerie.html");
-  ok("the gallery page includes the event video and poster",
-     galleryPage.includes("community-meal-video.mp4") && galleryPage.includes("community-meal-video-poster.jpg"));
+  const dashainPage = read("dashain-2024.html");
+  const nayaPage = read("naya-barsha-2026.html");
+  /* The album lives on its own page now; the gallery is the index in front of
+     both. The video is rendered from DASHAIN_CLIPS, so the reference to it is
+     in the content module rather than in the page. */
+  ok("the Dashain album page renders its clip from the shared content module",
+     /renderClipEssay\("#dashainClips", C\.DASHAIN_CLIPS\)/.test(dashainPage));
+  ok("the clip data names the video and its poster base",
+     /assets\/media\/dashain-2024\/community-meal-video/.test(
+       fs.readFileSync(path.join(ROOT, "assets/js/content.js"), "utf8")));
   ok("the server sends MP4 files with the correct MIME type",
      /"\.mp4":\s*"video\/mp4"/.test(fs.readFileSync(path.join(ROOT, "server/server.js"), "utf8")));
 
@@ -119,29 +127,79 @@ module.exports = function run() {
   eq("every video is referenced in the album data", unreferencedClips, []);
 
   /* The whole point of the story block: the ceremony is explained, not just shown. */
-  ok("the page explains what Naya Barsha is", /Bikram[- ]Sambat/.test(galleryPage));
-  ok("the page names the date, the venue and the turnout",
-     /10\. April 2026/.test(galleryPage) && /Knabenschule/.test(galleryPage) && /150/.test(galleryPage));
-  ok("both albums are reachable from the jump strip",
-     /href="#naya-barsha-2026"/.test(galleryPage) && /href="#dashain-2024"/.test(galleryPage));
-  ok("the album and its clips are rendered from the shared content module",
-     /renderAlbum\("#nayaBarshaGrid"/.test(galleryPage) && /renderClips\("#nayaBarshaClips"/.test(galleryPage));
+  ok("the album page explains what Naya Barsha is", /Bikram[- ]Sambat/.test(nayaPage));
+  ok("it names the date, the venue and the turnout",
+     /10\. April 2026/.test(nayaPage) && /Knabenschule/.test(nayaPage) && /150/.test(nayaPage));
+  ok("the Dashain page explains what Dashain is",
+     /Vijaya Dashami/.test(dashainPage) && /Durga/.test(dashainPage) && /[Jj]amara/.test(dashainPage));
+  ok("both albums are reachable from the gallery index",
+     /href="naya-barsha-2026\.html"/.test(galleryPage) && /href="dashain-2024\.html"/.test(galleryPage));
+  ok("each album is rendered from the shared content module",
+     /renderEssay\("#nayaPhotos", C\.NAYA_BARSHA\)/.test(nayaPage) &&
+     /renderClipEssay\("#nayaClips", C\.NAYA_BARSHA_CLIPS\)/.test(nayaPage) &&
+     /renderEssay\("#dashainPhotos", C\.GALLERY\)/.test(dashainPage));
+
+  /* --------------------------------------------- one album, one page, explained */
+  group("Each album has its own page, and every frame is explained");
+  const contentSrc = fs.readFileSync(path.join(ROOT, "assets/js/content.js"), "utf8");
+  function album(name) {
+    const from = contentSrc.indexOf("var " + name + " = [");
+    return contentSrc.slice(from, contentSrc.indexOf("\n  ];", from));
+  }
+  [["NAYA_BARSHA", 10], ["GALLERY", 16], ["NAYA_BARSHA_CLIPS", 11], ["DASHAIN_CLIPS", 1]].forEach(([name, count]) => {
+    const block = album(name);
+    eq(name + ": every entry carries a German explanation", (block.match(/nDe:/g) || []).length, count);
+    eq(name + ": and an English one", (block.match(/nEn:/g) || []).length, count);
+  });
+  ok("the plate renderer prints the explanation under the caption",
+     /plate-note/.test(contentSrc) && /g\.nDe \|\| g\.de/.test(contentSrc));
+  ok("the clip renderer prints one too", /clip-note/.test(contentSrc));
+
+  /* Both album pages must stand on their own: hero, facts, in-page rail. */
+  [["naya-barsha-2026.html", nayaPage], ["dashain-2024.html", dashainPage]].forEach(([name, src]) => {
+    ok(name + " opens with its own full-bleed frame", /class="album-hero"/.test(src));
+    ok(name + " states the facts of the evening", /class="album-facts"/.test(src));
+    ok(name + " carries an in-page rail", /class="album-rail no-print" data-toc/.test(src));
+    ok(name + " links back to the gallery index", /href="galerie\.html"/.test(src));
+  });
+  ok("the album pages are in the sitemap",
+     /naya-barsha-2026\.html<\/loc>/.test(fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8")) &&
+     /dashain-2024\.html<\/loc>/.test(fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8")));
+  ok("and reachable from the main navigation",
+     /naya-barsha-2026\.html/.test(fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8")) &&
+     /dashain-2024\.html/.test(fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8")));
+  /* The plate flips sides visually; the DOM order must stay picture-then-text
+     so a screen reader and a phone both read it the right way round. */
+  const plateCss = fs.readFileSync(path.join(ROOT, "assets/css/main.css"), "utf8");
+  ok("the alternating plate turns around in CSS, not in the markup",
+     /\.plate:nth-child\(even\) > \.plate-frame \{ grid-column: 2; \}/.test(plateCss));
+  /* `order` alone handed the picture the narrow track on every second row. */
+  ok("and the picture keeps the wide track on whichever side it lands",
+     /\.plate:nth-child\(even\) \{ grid-template-columns: minmax\(0, 1fr\) minmax\(0, 1\.55fr\); \}/.test(plateCss));
 
   /* 67 MB of clips: nothing may download before the visitor asks for it. */
-  const clipRenderer = contentJs.slice(contentJs.indexOf("function renderClips"));
+  const clipRenderer = contentJs.slice(contentJs.indexOf("function renderClipEssay"));
   /* Anchored on the emitted markup, not on any mention of the word: an earlier
      version of this check also matched the explanatory comment above it. */
   ok("clips never preload — the page costs a visitor nothing until they press play",
      /<video controls playsinline preload="none"/.test(clipRenderer));
-  const eagerVideo = (galleryPage.match(/<video(?![^>]*preload="none")[^>]*>/g) || []);
-  eq("no video on the page preloads either", eagerVideo, []);
+  const eagerVideo = pages
+    .map(f => [f, (read(f).match(/<video(?![^>]*preload="none")[^>]*>/g) || [])])
+    .filter(([, hits]) => hits.length)
+    .map(([f]) => f);
+  eq("no video written into a page preloads either", eagerVideo, []);
 
-  /* Portrait frames must not be cropped into a landscape box. */
+  /* Nothing is cropped: a plate frame shows the whole photograph and the
+     portraits are held to a width that does not swamp their own caption. */
   const albumCss = fs.readFileSync(path.join(ROOT, "assets/css/main.css"), "utf8");
-  ok("landscape frames get the wide tile, portraits keep their own shape",
-     /g\.width >= g\.height/.test(contentJs) && /\.is-wide \{ aspect-ratio: 3 \/ 2; grid-column: span 2/.test(albumCss));
-  ok("a wide tile stops spanning two columns when only one column is left",
-     /@media \(max-width: 560px\) \{ \.gallery-mosaic \.shot\.is-wide \{ grid-column: auto/.test(albumCss));
+  ok("the renderer marks each frame by its real shape",
+     /g\.width >= g\.height \? " is-landscape" : " is-portrait"/.test(contentJs));
+  ok("a plate frame shows the whole photograph rather than cropping it",
+     /\.plate-frame img \{ display: block; width: 100%; height: auto;/.test(albumCss));
+  ok("a portrait frame is capped so it does not swamp its caption",
+     /\.plate\.is-portrait > \.plate-frame \{ max-width: 440px/.test(albumCss));
+  ok("both plates stack into one column on a phone",
+     /@media \(max-width: 860px\) \{\s*\.plate, \.plate:nth-child\(even\)/.test(albumCss));
 
   /* ------------------------------------------------------- image preview */
   group("The image preview actually shows the image");
@@ -186,12 +244,14 @@ module.exports = function run() {
   ok("the preview stacks above the consent banner", zLightbox > zConsent,
      "lightbox " + zLightbox + " vs consent " + zConsent);
 
-  /* Captions are white on a scrim laid over a photograph. The old ramp was
-     transparent until the very bottom, leaving glyphs at ~2.7:1 over a
-     brightly lit stage. */
-  const capRules = albumCss.match(/figcaption \{[^}]*linear-gradient\([^)]*\)[^}]*\}/g) || [];
-  const weakScrim = capRules.filter(r => !/rgba\(0, 0, 0, 0\.7[0-9]?\) 45%/.test(r));
-  eq("both photo grids darken the scrim where the text actually sits", weakScrim.length, 0);
+  /* The gallery index and both album heroes set white type straight over a
+     photograph. The scrim has to be dark where the text actually begins, not
+     only at the very bottom edge — over a brightly lit frame the earlier ramp
+     left glyphs at about 2.7:1. */
+  const scrimRules = albumCss.match(/(\.album-hero|\.album-feature)::after \{[\s\S]*?\}/g) || [];
+  eq("both scrims exist", scrimRules.length, 2);
+  const weakScrim = scrimRules.filter(r => !/rgba\(6, 7, 11, 0\.[5-9][0-9]?\) 4[0-9]%/.test(r));
+  eq("each darkens where the first line of text sits", weakScrim.length, 0);
 
 
 

@@ -58,8 +58,15 @@
       id: "news", href: "news.html", de: "Aktuelles", en: "News",
       children: [
         { href: "news.html", de: "News & Berichte", en: "News & reports", subDe: "Neues aus Verein und Projekten", subEn: "From the association and projects" },
-        { href: "veranstaltungen.html", de: "Veranstaltungen", en: "Events", subDe: "Termine, Kalender, Anmeldung", subEn: "Dates, calendar, registration" },
-        { href: "galerie.html", de: "Galerie", en: "Gallery", subDe: "Eindrücke aus unserer Arbeit", subEn: "Impressions of our work" }
+        { href: "veranstaltungen.html", de: "Veranstaltungen", en: "Events", subDe: "Termine, Kalender, Anmeldung", subEn: "Dates, calendar, registration" }
+      ]
+    },
+    {
+      id: "gallery", href: "galerie.html", de: "Galerie", en: "Gallery",
+      children: [
+        { href: "galerie.html", de: "Alle Alben", en: "All albums", subDe: "Alle Alben auf einen Blick", subEn: "All albums at a glance" },
+        { href: "naya-barsha-2026.html", de: "Neujahr 2026", en: "New Year 2026", subDe: "10. April 2026 · Darmstadt · 10 Fotos, 11 Videos", subEn: "10 April 2026 · Darmstadt · 10 photos, 11 videos" },
+        { href: "dashain-2024.html", de: "Dashain-Feier 2024", en: "Dashain 2024", subDe: "5. Oktober 2024 · 16 Fotos, 1 Video", subEn: "5 October 2024 · 16 photos, 1 video" }
       ]
     },
     { id: "faq", href: "faq.html", de: "FAQ", en: "FAQ" },
@@ -173,6 +180,8 @@
             '<li><a href="one-euro-for-nation.html">One Euro for Nation</a></li>' +
             '<li><a href="veranstaltungen.html">' + bi("Veranstaltungen", "Events") + "</a></li>" +
             '<li><a href="galerie.html">' + bi("Galerie", "Gallery") + "</a></li>" +
+            '<li><a href="naya-barsha-2026.html">' + bi("Neujahr 2026", "New Year 2026") + "</a></li>" +
+            '<li><a href="dashain-2024.html">' + bi("Dashain-Feier 2024", "Dashain 2024") + "</a></li>" +
           "</ul></div>" +
           "<div><h5>" + bi("Mitmachen", "Get involved") + "</h5><ul>" +
             '<li><a href="mitmachen.html">' + bi("Alle vier Wege", "All four routes") + "</a></li>" +

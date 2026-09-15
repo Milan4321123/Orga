@@ -1581,25 +1581,11 @@ h2.t-h4, h3.t-h4, h4.t-h4 { font-size: var(--fs-xl); letter-spacing: -0.014em; }
 h3.t-h5, h4.t-h5, h5.t-h5 { font-size: var(--fs-lg); letter-spacing: -0.012em; }
 
 /* ==========================================================================
-   39. Event albums — story block, photo mosaic and video wall
-       The plain .gallery grid crops every frame into one 3:2 box, which is
-       fine for a uniform set. An event album is not uniform: portrait phone
-       shots sit beside wide stage photographs, so this variant lets each
-       frame keep its own shape and gives the landscape ones a double tile.
+   39. Event albums — story block and video wall
+       Shared by the two album pages: the account of the evening beside its
+       key facts, and the wall of clips underneath. The photographs themselves
+       are laid out by section 40.
    ========================================================================== */
-
-/* --- jump strip: one card per album, at the top of the gallery page ------- */
-.album-index { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
-.album-card {
-  display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 1rem; align-items: center;
-  padding: 0.8rem; border: 1px solid var(--line); border-radius: var(--radius-lg);
-  background: var(--surface); color: inherit; text-decoration: none;
-  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
-}
-.album-card:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow); }
-.album-card img { width: 92px; height: 92px; object-fit: cover; border-radius: var(--radius-sm); display: block; }
-.album-card strong { display: block; font-size: var(--fs-base); line-height: 1.3; }
-.album-card span { display: block; font-size: var(--fs-xs); color: var(--ink-3); margin-top: 0.25rem; }
 
 /* --- the account of the ceremony, beside its key facts ------------------- */
 .story { display: grid; gap: clamp(1.6rem, 4vw, 3rem); align-items: start;
@@ -1620,31 +1606,6 @@ h3.t-h5, h4.t-h5, h5.t-h5 { font-size: var(--fs-lg); letter-spacing: -0.012em; }
 .highlight em { display: block; font-size: var(--fs-xs); color: var(--ink-3);
                 margin-top: 0.3rem; font-style: normal; line-height: 1.45; }
 
-/* --- photo mosaic -------------------------------------------------------- */
-.gallery-mosaic { display: grid; gap: 0.85rem; grid-auto-flow: dense;
-                  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
-.gallery-mosaic .shot {
-  margin: 0; position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 3 / 4;
-  border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-alt);
-}
-.gallery-mosaic .shot.is-wide { aspect-ratio: 3 / 2; grid-column: span 2; }
-/* With a single column left, `span 2` would invent a second track and push
-   the grid off-screen — so wide frames drop back to one column on a phone. */
-@media (max-width: 560px) { .gallery-mosaic .shot.is-wide { grid-column: auto; } }
-.gallery-mosaic .shot img { display: block; width: 100%; height: 100%; object-fit: cover;
-                            transition: scale 0.45s var(--ease); }
-.gallery-mosaic .shot:hover img { scale: 1.05; }
-.gallery-mosaic .shot:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
-.gallery-mosaic figcaption {
-  position: absolute; inset: auto 0 0 0; padding: 2.2rem 0.85rem 0.7rem;
-  /* The glyphs sit in the lower third, so the scrim has to be dark THERE, not
-     only at the very bottom edge — over a brightly lit stage the old ramp left
-     white text at about 2.7:1. */
-  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 45%, rgba(0, 0, 0, 0.93) 100%);
-  color: #fff; font-size: var(--fs-xs); font-weight: 600; line-height: 1.35;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
-}
-
 /* --- video wall ---------------------------------------------------------- */
 .clip-grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
 .clip { margin: 0; display: flex; flex-direction: column; overflow: hidden;
@@ -1658,8 +1619,180 @@ h3.t-h5, h4.t-h5, h5.t-h5 { font-size: var(--fs-lg); letter-spacing: -0.012em; }
 .clip-len { flex: none; font-size: var(--fs-xs); color: var(--ink-3); font-variant-numeric: tabular-nums;
             border: 1px solid var(--line); border-radius: var(--radius-full); padding: 0.1rem 0.5rem; }
 
+
+
+/* ==========================================================================
+   40. Album pages — one page per event
+       The gallery used to hold both events on a single scroll, which meant
+       the account of each evening was compressed into a caption. Each album
+       now has its own page: a full-bleed opening frame, the facts of the
+       evening on a hairline rule, and then the photographs as plates — every
+       frame beside the paragraph that says what is happening in it.
+   ========================================================================== */
+
+/* --- the opening frame --------------------------------------------------- */
+.album-hero { position: relative; isolation: isolate; background: #06070b; color: #fff; overflow: hidden; }
+.album-hero-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: -2;
+  /* The picture is backdrop, not subject: held back so the display type on
+     top of it keeps its contrast whatever the frame happens to contain. */
+  filter: saturate(0.92) brightness(0.62);
+}
+.album-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(rgba(6, 7, 11, 0.25) 0%, rgba(6, 7, 11, 0.55) 48%, rgba(6, 7, 11, 0.92) 100%),
+    radial-gradient(900px 520px at 78% -10%, rgba(200, 16, 46, 0.32), transparent 62%);
+}
+.album-hero .container { position: relative; padding-block: clamp(4.5rem, 13vw, 9.5rem) clamp(2.25rem, 5vw, 3.5rem); }
+.album-hero .breadcrumb, .album-hero .breadcrumb a { color: rgba(255, 255, 255, 0.72); }
+.album-hero .breadcrumb a:hover { color: #fff; }
+.album-hero .eyebrow { color: rgba(255, 255, 255, 0.86); }
+.album-hero h1 {
+  margin: 0.7rem 0 0; color: #fff; max-width: 17ch;
+  font-size: var(--fs-4xl); letter-spacing: -0.035em; line-height: 1.03; font-weight: 680;
+}
+.album-hero .album-native { display: block; font-size: 0.42em; font-weight: 500; letter-spacing: -0.01em;
+                            color: rgba(255, 255, 255, 0.66); margin-top: 0.5rem; }
+.album-hero .lead { color: rgba(255, 255, 255, 0.84); max-width: 58ch; margin-top: 1.15rem; }
+
+/* Facts of the evening, set on one hairline rule under the opening frame. */
+.album-facts {
+  display: grid; gap: 0.25rem 2.5rem; margin-top: clamp(2rem, 4vw, 3rem);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.22); padding-top: 1.4rem;
+}
+.album-fact dt { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em;
+                 color: rgba(255, 255, 255, 0.6); font-weight: 600; }
+.album-fact dd { margin: 0.3rem 0 0; font-size: var(--fs-lg); font-weight: 620; letter-spacing: -0.02em; color: #fff; }
+@media (max-width: 620px) { .album-facts { gap: 1.1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* --- in-page rail -------------------------------------------------------- */
+.album-rail {
+  position: sticky; top: var(--header-h, 64px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+.album-rail ul { display: flex; gap: 1.6rem; list-style: none; margin: 0; padding: 0.9rem 0;
+                 overflow-x: auto; scrollbar-width: none; }
+.album-rail ul::-webkit-scrollbar { display: none; }
+.album-rail a { font-size: var(--fs-sm); font-weight: 580; color: var(--ink-3); text-decoration: none; white-space: nowrap; }
+.album-rail a:hover, .album-rail a.is-active { color: var(--brand); }
+
+/* --- photographs as plates ---------------------------------------------- */
+.photo-essay { display: grid; gap: clamp(2.75rem, 6vw, 5.5rem); padding-top: clamp(1rem, 3vw, 2.25rem); }
+.plate {
+  margin: 0; display: grid; gap: clamp(1.1rem, 3vw, 2.75rem); align-items: center;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  cursor: pointer;
+}
+/* Every second plate turns around, so the eye is walked down the page rather
+   than down a single column. The sides are swapped by assigning columns, not
+   by `order`: order alone would have handed the picture the narrow track on
+   every second row and shrunk it by a third. The DOM keeps picture-then-text
+   either way, which is what a keyboard and a screen reader follow. */
+/* Both children are pinned to row 1. Without that, placing the picture in
+   column 2 on an even plate leaves the caption nowhere to go: sparse
+   auto-placement never moves the cursor backwards, so it dropped onto a
+   second row and the text ended up under the photograph instead of beside
+   it. */
+.plate > .plate-frame { grid-column: 1; grid-row: 1; }
+.plate > .plate-copy { grid-column: 2; grid-row: 1; }
+.plate:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr); }
+.plate:nth-child(even) > .plate-frame { grid-column: 2; }
+.plate:nth-child(even) > .plate-copy { grid-column: 1; }
+/* A portrait frame given the wide track is over 700px tall and swamps the
+   paragraph beside it, so portraits split the row evenly and the frame is
+   held to a sensible width, pulled towards its own text. */
+.plate.is-portrait, .plate.is-portrait:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.plate.is-portrait > .plate-frame { max-width: 440px; margin-inline-start: auto; }
+.plate.is-portrait:nth-child(even) > .plate-frame { margin-inline: 0 auto; }
+.plate-frame {
+  display: block; overflow: hidden; border-radius: var(--radius-lg);
+  background: var(--bg-alt); box-shadow: var(--shadow-lg);
+}
+.plate-frame img { display: block; width: 100%; height: auto; transition: scale 0.6s var(--ease); }
+.plate:hover .plate-frame img { scale: 1.03; }
+.plate:focus-visible { outline: 3px solid var(--brand); outline-offset: 6px; border-radius: var(--radius-lg); }
+.plate-copy { display: block; }
+.plate-no {
+  display: block; font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.16em;
+  color: var(--brand); font-variant-numeric: tabular-nums;
+}
+.plate-title { display: block; margin-top: 0.6rem; font-family: var(--font-display);
+               font-size: var(--fs-xl); font-weight: 640; letter-spacing: -0.022em; line-height: 1.22; }
+.plate-note { display: block; margin-top: 0.75rem; font-size: var(--fs-base); line-height: 1.6; color: var(--ink-2); max-width: 46ch; }
+@media (max-width: 860px) {
+  .plate, .plate:nth-child(even),
+  .plate.is-portrait, .plate.is-portrait:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .plate > .plate-frame, .plate > .plate-copy,
+  .plate:nth-child(even) > .plate-frame, .plate:nth-child(even) > .plate-copy { grid-column: 1; grid-row: auto; }
+  .plate.is-portrait > .plate-frame,
+  .plate.is-portrait:nth-child(even) > .plate-frame { max-width: 460px; margin-inline: 0; }
+}
+
+/* --- video wall with its own commentary ---------------------------------- */
+.clip-told figcaption { display: block; }
+.clip-told .clip-head { display: flex; gap: 0.75rem; align-items: baseline; justify-content: space-between; }
+.clip-told .clip-note { display: block; margin-top: 0.45rem; font-size: var(--fs-sm);
+                        line-height: 1.55; color: var(--ink-3); }
+
+/* --- album tiles on the gallery index ------------------------------------ */
+.album-features { display: grid; gap: clamp(1.25rem, 3vw, 2rem); }
+.album-feature {
+  position: relative; display: grid; align-content: end; isolation: isolate;
+  min-height: clamp(360px, 46vw, 520px); overflow: hidden;
+  padding: clamp(1.6rem, 4vw, 3rem); border-radius: var(--radius-lg);
+  background: #06070b; color: #fff; text-decoration: none;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.album-feature img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;
+  filter: saturate(0.95) brightness(0.55); transition: scale 0.7s var(--ease);
+}
+.album-feature::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  /* The copy sits over a photograph that may be brightly lit anywhere in the
+     lower half, so the scrim is already dark where the first line of text
+     begins — not only at the very bottom edge. */
+  background: linear-gradient(rgba(6, 7, 11, 0.15) 0%, rgba(6, 7, 11, 0.58) 42%, rgba(6, 7, 11, 0.9) 82%, rgba(6, 7, 11, 0.96) 100%);
+}
+.album-feature:hover { transform: translateY(-3px); box-shadow: var(--shadow-xl); }
+.album-feature:hover img { scale: 1.05; }
+.album-feature .eyebrow { color: rgba(255, 255, 255, 0.85); }
+.album-feature h2 {
+  margin: 0.6rem 0 0; color: #fff; font-size: var(--fs-3xl);
+  letter-spacing: -0.03em; line-height: 1.08; font-weight: 660;
+}
+.album-feature p { margin-top: 0.7rem; color: rgba(255, 255, 255, 0.82); max-width: 52ch; font-size: var(--fs-base); }
+.album-feature .album-feature-meta {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin-top: 1.15rem;
+  font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.72); font-weight: 560;
+}
+.album-feature .album-feature-go {
+  display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem;
+  font-weight: 620; color: #fff;
+}
+.album-feature:hover .album-feature-go { color: var(--saffron); }
+
+/* --- move on to the next album ------------------------------------------- */
+.album-pager { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.album-pager a {
+  display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 1.1rem; align-items: center;
+  padding: 0.85rem; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  background: var(--surface); color: inherit; text-decoration: none;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.album-pager a:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow); }
+.album-pager img { width: 84px; height: 84px; object-fit: cover; border-radius: var(--radius-sm); display: block; }
+.album-pager small { display: block; font-size: var(--fs-xs); color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 640; }
+.album-pager strong { display: block; margin-top: 0.3rem; font-size: var(--fs-base); line-height: 1.3; }
+.album-pager span { display: block; font-size: var(--fs-xs); color: var(--ink-3); margin-top: 0.2rem; }
+
 @media (prefers-reduced-motion: reduce) {
-  .album-card, .gallery-mosaic .shot img { transition: none; }
-  .album-card:hover { transform: none; }
-  .gallery-mosaic .shot:hover img { scale: 1; }
+  .plate-frame img, .album-feature, .album-feature img, .album-pager a { transition: none; }
+  .plate:hover .plate-frame img, .album-feature:hover img { scale: 1; }
+  .album-feature:hover, .album-pager a:hover { transform: none; }
 }

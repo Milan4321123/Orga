@@ -262,12 +262,12 @@
       en: "Dashain celebration 2024: culture, connection and community",
       exDe: "Am 5. Oktober 2024 kamen Mitglieder, Freund:innen und Gäste zu einem gemeinsamen Dashain-Fest mit Bühnenprogramm, Ehrungen und nepalesischem Essen zusammen.",
       exEn: "On 5 October 2024, members, friends and guests came together for a Dashain celebration with a stage programme, presentations and Nepali food.",
-      bodyDe: "Die Fotodokumentation zeigt den Empfang und die Anmeldung, Beiträge auf der Bühne, die Pokal- und Medaillenübergabe sowie viele Begegnungen beim gemeinsamen Essen. Alle 16 Bilder und ein kurzer Videoclip sind in der Galerie zu sehen.",
-      bodyEn: "The photo story covers reception and registration, contributions on stage, the trophy and medal presentation, and community moments over a shared meal. All 16 photographs and a short video clip are available in the gallery.",
+      bodyDe: "Die Fotodokumentation zeigt den Empfang und die Anmeldung, Beiträge auf der Bühne, die Pokal- und Medaillenübergabe sowie viele Begegnungen beim gemeinsamen Essen. Alle 16 Bilder und ein kurzer Videoclip sind — jeweils mit Erklärung — im Album zur Dashain-Feier zu sehen.",
+      bodyEn: "The photo story covers reception and registration, contributions on stage, the trophy and medal presentation, and community moments over a shared meal. All 16 photographs and a short video clip, each with an explanation, are in the Dashain album.",
       image: "assets/media/dashain-2024/trophy-presentation.jpg",
       imageAltDe: "Pokalübergabe bei der Dashain-Feier der NPJOE am 5. Oktober 2024",
       imageAltEn: "Trophy presentation at the NPJOE Dashain celebration on 5 October 2024",
-      href: "galerie.html#dashain-2024"
+      href: "dashain-2024.html"
     },
     {
       id: "n13", date: "2026-04-10", tag: "kultur",
@@ -275,12 +275,12 @@
       en: "Nepali New Year 2026: more than 150 guests celebrate Naya Barsha in Darmstadt",
       exDe: "Am 10. April 2026 feierte die NPJOE in der Knabenschule Darmstadt das nepalesische Neujahr — mit nepalesischer Küche, Livekonzert, Tanzaufführungen und kulturellen Darbietungen.",
       exEn: "On 10 April 2026 the NPJOE celebrated the Nepali New Year at the Knabenschule in Darmstadt — with Nepali cuisine, a live concert, dance performances and cultural presentations.",
-      bodyDe: "Das Naya Barsha markiert den Beginn eines neuen Jahres nach dem nepalesischen Kalender und ist ein Fest der Hoffnung, des Neuanfangs und der Gemeinschaft. Mit über 150 Besucherinnen und Besuchern war der Abend eine der größten und lebendigsten Veranstaltungen des Vereins bisher. Interkulturelle Feste, die der gesamten Öffentlichkeit offenstehen, sind nach § 3c der Satzung ausdrücklich Vereinszweck. Zehn Fotos und elf Videoaufnahmen des Abends sind in der Galerie zu sehen.",
-      bodyEn: "Naya Barsha marks the beginning of a new year in the Nepali calendar and is a festival of hope, of new beginnings and of community. With more than 150 visitors, the evening was one of the largest and liveliest events the association has held. Intercultural festivals open to the general public are an express purpose of the association under § 3c of the statutes. Ten photographs and eleven video recordings from the evening are available in the gallery.",
+      bodyDe: "Das Naya Barsha markiert den Beginn eines neuen Jahres nach dem nepalesischen Kalender und ist ein Fest der Hoffnung, des Neuanfangs und der Gemeinschaft. Mit über 150 Besucherinnen und Besuchern war der Abend eine der größten und lebendigsten Veranstaltungen des Vereins bisher. Interkulturelle Feste, die der gesamten Öffentlichkeit offenstehen, sind nach § 3c der Satzung ausdrücklich Vereinszweck. Zehn Fotos und elf Videoaufnahmen des Abends sind — jeweils mit Erklärung — im Album zur Neujahrsfeier zu sehen.",
+      bodyEn: "Naya Barsha marks the beginning of a new year in the Nepali calendar and is a festival of hope, of new beginnings and of community. With more than 150 visitors, the evening was one of the largest and liveliest events the association has held. Intercultural festivals open to the general public are an express purpose of the association under § 3c of the statutes. Ten photographs and eleven video recordings from the evening, each with an explanation, are in the New Year album.",
       image: "assets/media/naya-barsha-2026/live-concert.jpg",
       imageAltDe: "Livekonzert bei der Neujahrsfeier der NPJOE am 10. April 2026 in Darmstadt",
       imageAltEn: "Live concert at the NPJOE New Year celebration on 10 April 2026 in Darmstadt",
-      href: "galerie.html#naya-barsha-2026"
+      href: "naya-barsha-2026.html"
     }
   ];
 
@@ -412,22 +412,70 @@
 
   /* -------------------------------------------------------------- Gallery */
   var GALLERY = [
-    { tag: "dashain kultur ehrung", src: "assets/media/dashain-2024/trophy-and-medals.jpg", width: 1920, height: 1280, de: "Pokal und Medaillen vor Beginn der Feier", en: "Trophy and medals before the celebration begins" },
-    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/welcome-team.jpg", width: 1920, height: 1280, de: "Das Empfangsteam bereitet die Anmeldung vor", en: "The welcome team prepares registration" },
-    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/opening-address.jpg", width: 1920, height: 1280, de: "Begrüßung und Eröffnung des Dashain-Programms", en: "Welcome and opening of the Dashain programme" },
-    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/event-team.jpg", width: 1920, height: 1280, de: "Mitglieder des Veranstaltungsteams", en: "Members of the event team" },
-    { tag: "dashain kultur deko", src: "assets/media/dashain-2024/dashain-banner.jpg", width: 1920, height: 1280, de: "Festbanner der NPJOE zur Dashain-Feier", en: "NPJOE celebration banner for Dashain" },
-    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/guest-speech.jpg", width: 1920, height: 1280, de: "Ein Beitrag aus dem Kreis der Gäste", en: "A contribution from one of the guests" },
-    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/community-meal.jpg", width: 1920, height: 1280, de: "Begegnung und Gespräche beim gemeinsamen Essen", en: "Connection and conversation over a shared meal" },
-    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/welcome-address.jpg", width: 1920, height: 1280, de: "Ansprache des Moderationsteams", en: "Address by the hosting team" },
-    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/guest-registration.jpg", width: 1920, height: 1280, de: "Gäste tragen sich am Empfang ein", en: "Guests sign in at reception" },
-    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/friends-at-meal.jpg", width: 1920, height: 1280, de: "Freund:innen und Mitglieder beim Festessen", en: "Friends and members enjoying the festival meal" },
-    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/stage-programme.jpg", width: 1920, height: 1280, de: "Das Bühnenprogramm der Dashain-Feier", en: "The Dashain celebration stage programme" },
-    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/sel-roti-moment.jpg", width: 1920, height: 1280, de: "Gemeinsamer Moment am Buffet mit Sel Roti", en: "A shared moment at the buffet with sel roti" },
-    { tag: "dashain kultur ehrung buehne", src: "assets/media/dashain-2024/honour-presentation.jpg", width: 1920, height: 1280, de: "Ehrung im Rahmen des Festprogramms", en: "A presentation during the festival programme" },
-    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/evening-welcome-desk.jpg", width: 1920, height: 1283, de: "Anmeldung und Organisation am Empfangstisch", en: "Registration and organisation at the welcome desk" },
-    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/festival-food.jpg", width: 1920, height: 1280, de: "Nepalesische Speisen und Sel Roti für die Gäste", en: "Nepali food and sel roti for the guests" },
-    { tag: "dashain kultur ehrung buehne", src: "assets/media/dashain-2024/trophy-presentation.jpg", width: 1920, height: 1280, de: "Übergabe des Pokals zum Abschluss des Programmpunkts", en: "Trophy presentation concluding a programme segment" }
+    { tag: "dashain kultur ehrung", src: "assets/media/dashain-2024/trophy-and-medals.jpg", width: 1920, height: 1280,
+      de: "Pokal und Medaillen vor Beginn der Feier", en: "Trophy and medals before the celebration begins",
+      nDe: "Pokal und Medaillen, bereitgelegt vor dem Beginn des Programms. Geehrt werden bei der Dashain-Feier diejenigen, die im zurückliegenden Jahr Zeit für den Verein aufgewendet haben.",
+      nEn: "The trophy and medals, laid out before the programme began. The Dashain celebration honours those who have given their time to the association over the past year." },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/welcome-team.jpg", width: 1920, height: 1280,
+      de: "Das Empfangsteam bereitet die Anmeldung vor", en: "The welcome team prepares registration",
+      nDe: "Das Empfangsteam richtet den Anmeldetisch ein. Der Empfang ist der erste Eindruck, den ein Gast von einem Verein bekommt — entsprechend früh wird er aufgebaut.",
+      nEn: "The welcome team setting up the registration desk. Reception is the first impression a guest gets of an association — which is why it is built up well before the doors open." },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/opening-address.jpg", width: 1920, height: 1280,
+      de: "Begrüßung und Eröffnung des Dashain-Programms", en: "Welcome and opening of the Dashain programme",
+      nDe: "Die Eröffnung des Programms. Traditionell beginnt eine Dashain-Feier mit einer Begrüßung, die den Anwesenden Glück und Segen für das kommende Jahr wünscht.",
+      nEn: "The opening of the programme. A Dashain celebration traditionally begins with a welcome that wishes those present good fortune and blessings for the year ahead." },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/event-team.jpg", width: 1920, height: 1280,
+      de: "Mitglieder des Veranstaltungsteams", en: "Members of the event team",
+      nDe: "Mitglieder des Veranstaltungsteams. Jede Feier der NPJOE wird von einem wechselnden Team getragen, damit die Arbeit nicht immer an denselben Personen hängen bleibt.",
+      nEn: "Members of the event team. Every NPJOE celebration is carried by a changing team, so that the work does not always fall to the same people." },
+    { tag: "dashain kultur deko", src: "assets/media/dashain-2024/dashain-banner.jpg", width: 1920, height: 1280,
+      de: "Festbanner der NPJOE zur Dashain-Feier", en: "NPJOE celebration banner for Dashain",
+      nDe: "Das Festbanner des Vereins. Es benennt Anlass, Datum und Veranstalter — und wird bei jeder Feier wiederverwendet.",
+      nEn: "The association's celebration banner. It names the occasion, the date and the host — and is reused at every celebration." },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/guest-speech.jpg", width: 1920, height: 1280,
+      de: "Ein Beitrag aus dem Kreis der Gäste", en: "A contribution from one of the guests",
+      nDe: "Ein Beitrag aus dem Kreis der Gäste. Das Mikrofon steht bei den Feiern bewusst nicht nur dem Vorstand offen.",
+      nEn: "A contribution from one of the guests. At these celebrations the microphone is deliberately not reserved for the board." },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/community-meal.jpg", width: 1920, height: 1280,
+      de: "Begegnung und Gespräche beim gemeinsamen Essen", en: "Connection and conversation over a shared meal",
+      nDe: "Das gemeinsame Essen ist bei Dashain kein Beiwerk, sondern der eigentliche Anlass: Familien und Freunde kommen zusammen, essen miteinander und holen nach, was im Alltag zu kurz kommt.",
+      nEn: "At Dashain the shared meal is not an extra but the actual occasion: families and friends come together, eat with one another and catch up on what everyday life leaves no room for." },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/welcome-address.jpg", width: 1920, height: 1280,
+      de: "Ansprache des Moderationsteams", en: "Address by the hosting team",
+      nDe: "Das Moderationsteam führt durch den Abend — zweisprachig, damit auch Gäste ohne Nepali-Kenntnisse dem Programm folgen können.",
+      nEn: "The hosting team guides the evening — bilingually, so that guests with no Nepali can follow the programme too." },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/guest-registration.jpg", width: 1920, height: 1280,
+      de: "Gäste tragen sich am Empfang ein", en: "Guests sign in at reception",
+      nDe: "Gäste tragen sich am Empfang ein. Die Feier stand Mitgliedern ebenso offen wie Freundinnen, Freunden und Nachbarn aus Darmstadt und Umgebung.",
+      nEn: "Guests signing in at reception. The celebration was open to members as much as to friends and neighbours from Darmstadt and the surrounding area." },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/friends-at-meal.jpg", width: 1920, height: 1280,
+      de: "Freund:innen und Mitglieder beim Festessen", en: "Friends and members enjoying the festival meal",
+      nDe: "Freundinnen, Freunde und Mitglieder am Tisch. Für viele junge Nepalesinnen und Nepalesen in Deutschland ist so ein Abend der Ersatz für das Familienfest, das zu Hause stattfindet.",
+      nEn: "Friends and members at the table. For many young Nepalis in Germany an evening like this stands in for the family celebration taking place back home." },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/stage-programme.jpg", width: 1920, height: 1280,
+      de: "Das Bühnenprogramm der Dashain-Feier", en: "The Dashain celebration stage programme",
+      nDe: "Das Bühnenprogramm mischt Ansprachen, Musik- und Tanzbeiträge. Die Auftretenden sind Mitglieder und Gäste, keine gebuchten Ensembles.",
+      nEn: "The stage programme mixes addresses with music and dance contributions. Those performing are members and guests, not booked ensembles." },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/sel-roti-moment.jpg", width: 1920, height: 1280,
+      de: "Gemeinsamer Moment am Buffet mit Sel Roti", en: "A shared moment at the buffet with sel roti",
+      nDe: "Sel Roti am Buffet — ein süßes, ringförmiges Reisgebäck, das in Nepal zu Dashain und Tihar in fast jedem Haushalt gebacken wird.",
+      nEn: "Sel roti at the buffet — a sweet, ring-shaped rice bread baked in almost every Nepali household for Dashain and Tihar." },
+    { tag: "dashain kultur ehrung buehne", src: "assets/media/dashain-2024/honour-presentation.jpg", width: 1920, height: 1280,
+      de: "Ehrung im Rahmen des Festprogramms", en: "A presentation during the festival programme",
+      nDe: "Eine Ehrung im Festprogramm. Der Verein arbeitet ausschließlich ehrenamtlich — die Anerkennung auf der Bühne ist die Währung, in der er bezahlt.",
+      nEn: "A presentation during the festival programme. The association runs entirely on volunteers — recognition on stage is the currency in which it pays." },
+    { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/evening-welcome-desk.jpg", width: 1920, height: 1283,
+      de: "Anmeldung und Organisation am Empfangstisch", en: "Registration and organisation at the welcome desk",
+      nDe: "Am Empfangstisch laufen Anmeldung, Fragen und Organisation zusammen. Er bleibt den ganzen Abend besetzt, auch während des Programms.",
+      nEn: "Registration, questions and organisation all come together at the welcome desk. It stays staffed all evening, including during the programme." },
+    { tag: "dashain kultur gemeinschaft essen", src: "assets/media/dashain-2024/festival-food.jpg", width: 1920, height: 1280,
+      de: "Nepalesische Speisen und Sel Roti für die Gäste", en: "Nepali food and sel roti for the guests",
+      nDe: "Nepalesische Speisen für die Gäste. Gekocht wird von Mitgliedern selbst — das hält den Abend bezahlbar und schmeckt näher an zu Hause als jede Catering-Lösung.",
+      nEn: "Nepali food for the guests. Members do the cooking themselves — which keeps the evening affordable and tastes closer to home than any catering could." },
+    { tag: "dashain kultur ehrung buehne", src: "assets/media/dashain-2024/trophy-presentation.jpg", width: 1920, height: 1280,
+      de: "Übergabe des Pokals zum Abschluss des Programmpunkts", en: "Trophy presentation concluding a programme segment",
+      nDe: "Die Übergabe des Pokals beschließt den Ehrungsteil des Programms — der Moment, auf den die Aufstellung aus dem ersten Bild hinauslief.",
+      nEn: "The trophy presentation closes the honours section of the programme — the moment the arrangement in the first photograph was leading up to." }
   ];
 
   /* ------------------------------- Naya Barsha 2026 — Neujahrsfeier album */
@@ -438,34 +486,54 @@
   var NAYA_BARSHA = [
     { tag: "neujahr buehne musik", src: "assets/media/naya-barsha-2026/live-concert.jpg", width: 1600, height: 1200,
       de: "Livekonzert mit traditionellen und modernen nepalesischen Liedern",
-      en: "Live concert with traditional and modern Nepali songs" },
+      en: "Live concert with traditional and modern Nepali songs",
+      nDe: "Das Konzert war der musikalische Kern des Abends: traditionelle Lieder, wie sie in Nepal zum Neujahr gehören, neben modernen nepalesischen Stücken. Vor der Bühne blieb bald kaum jemand mehr sitzen.",
+      nEn: "The concert was the musical heart of the evening: traditional songs of the kind that belong to New Year in Nepal, alongside modern Nepali material. Before long, almost nobody in front of the stage was still sitting down." },
     { tag: "neujahr empfang", src: "assets/media/naya-barsha-2026/arriving-guests.jpg", width: 1600, height: 1069,
       de: "Ankommende Gäste am Eingang der Knabenschule Darmstadt",
-      en: "Arriving guests at the entrance of the Knabenschule in Darmstadt" },
+      en: "Arriving guests at the entrance of the Knabenschule in Darmstadt",
+      nDe: "Gäste treffen am Eingang der Knabenschule ein. Zum Naya Barsha kleidet man sich festlich, und man kommt als Familie — Großeltern, Eltern und Kinder zusammen.",
+      nEn: "Guests arriving at the entrance of the Knabenschule. People dress up for Naya Barsha, and they come as a family — grandparents, parents and children together." },
     { tag: "neujahr empfang", src: "assets/media/naya-barsha-2026/guest-registration.jpg", width: 1600, height: 1069,
       de: "Gäste tragen sich am Anmeldetisch in die Teilnehmerliste ein",
-      en: "Guests sign the attendance list at the registration desk" },
+      en: "Guests sign the attendance list at the registration desk",
+      nDe: "Am Anmeldetisch trugen sich die Besucherinnen und Besucher in die Teilnehmerliste ein. So lässt sich später belegen, wie viele Menschen eine Veranstaltung tatsächlich erreicht hat.",
+      nEn: "Visitors signed the attendance list at the registration desk. That is what makes it possible to show afterwards how many people an event actually reached." },
     { tag: "neujahr gemeinschaft team", src: "assets/media/naya-barsha-2026/president-with-members.jpg", width: 1200, height: 1600,
       de: "Der Vorsitzende der NPJOE (rechts) mit Mitgliedern des Vereins",
-      en: "The chairperson of the NPJOE (right) with members of the association" },
+      en: "The chairperson of the NPJOE (right) with members of the association",
+      nDe: "Der Vorsitzende im Gespräch mit Mitgliedern. Ein Fest wie dieses ist zugleich die Gelegenheit, bei der Vorstand und Mitglieder einander außerhalb von Sitzungen begegnen.",
+      nEn: "The chairperson in conversation with members. A celebration like this is also the occasion on which board and members meet each other outside of formal meetings." },
     { tag: "neujahr gemeinschaft", src: "assets/media/naya-barsha-2026/guests-at-table.jpg", width: 1600, height: 1069,
       de: "Gäste und Familien an den Tischen im Saal",
-      en: "Guests and families at the tables in the hall" },
+      en: "Guests and families at the tables in the hall",
+      nDe: "Der Saal war durchgehend bestuhlt, damit auch ältere Gäste und Familien mit kleinen Kindern den ganzen Abend bleiben konnten. Gegessen wurde an den Tischen, während auf der Bühne das Programm weiterlief.",
+      nEn: "The hall was seated throughout so that older guests and families with small children could stay for the whole evening. People ate at their tables while the programme carried on on stage." },
     { tag: "neujahr gemeinschaft musik", src: "assets/media/naya-barsha-2026/members-at-concert.jpg", width: 1200, height: 1600,
       de: "Mitglieder vor der Bühne während des Livekonzerts",
-      en: "Members in front of the stage during the live concert" },
+      en: "Members in front of the stage during the live concert",
+      nDe: "Mitglieder direkt an der Bühne. Die NPJOE ist eine Jugendorganisation, und das war dem Publikum an diesem Abend deutlich anzusehen.",
+      nEn: "Members right at the stage. The NPJOE is a youth organisation, and it showed in the audience that evening." },
     { tag: "neujahr buehne musik", src: "assets/media/naya-barsha-2026/band-with-team.jpg", width: 1600, height: 1200,
       de: "Band und Veranstaltungsteam nach dem Konzert auf der Bühne",
-      en: "Band and event team on stage after the concert" },
+      en: "Band and event team on stage after the concert",
+      nDe: "Band und Veranstaltungsteam nach dem letzten Stück. Musik und Organisation kamen an diesem Abend aus derselben Gemeinschaft.",
+      nEn: "The band and the event team after the final number. The music and the organisation came from the same community that evening." },
     { tag: "neujahr team buehne", src: "assets/media/naya-barsha-2026/organising-team.jpg", width: 1600, height: 900,
       de: "Das Organisationsteam der Neujahrsfeier auf der Bühne",
-      en: "The organising team of the New Year celebration on stage" },
+      en: "The organising team of the New Year celebration on stage",
+      nDe: "Das Organisationsteam auf der Bühne. Saal, Technik, Küche, Einlass und Abbau liegen bei ehrenamtlichen Mitgliedern — ein Abend dieser Größe ist mehrere Wochen Vorbereitung.",
+      nEn: "The organising team on stage. The hall, the technology, the kitchen, admissions and the get-out are all in the hands of volunteer members — an evening of this size means several weeks of preparation." },
     { tag: "neujahr team buehne", src: "assets/media/naya-barsha-2026/team-portrait-stage.jpg", width: 1600, height: 1130,
       de: "Mitglieder des Vereins nach dem Programm auf der Bühne",
-      en: "Members of the association on stage after the programme" },
+      en: "Members of the association on stage after the programme",
+      nDe: "Gruppenbild nach dem offiziellen Teil des Programms — bevor die Bühne für den Tanzabend frei gemacht wurde.",
+      nEn: "A group photograph after the official part of the programme — before the stage was cleared for the dancing." },
     { tag: "neujahr empfang team", src: "assets/media/naya-barsha-2026/welcome-desk-team.jpg", width: 900, height: 1600,
       de: "Das Organisationsteam am Empfangs- und Kassentisch",
-      en: "The organising team at the reception and cash desk" }
+      en: "The organising team at the reception and cash desk",
+      nDe: "Empfangs- und Kassentisch am Eingang: die erste Station für jeden Gast und für den ganzen Abend besetzt.",
+      nEn: "The reception and cash desk at the entrance: the first stop for every guest, and staffed for the whole evening." }
   ];
 
   /* Eleven clips from the same evening. `secs` is the real running time and is
@@ -474,36 +542,68 @@
   var NAYA_BARSHA_CLIPS = [
     { tag: "musik", base: "assets/media/naya-barsha-2026/live-concert-crowd", secs: 85,
       de: "Livekonzert vor der Bühne, das Publikum feiert mit",
-      en: "Live concert at the stage, with the audience joining in" },
+      en: "Live concert at the stage, with the audience joining in",
+      nDe: "Die längste Konzertaufnahme des Abends. Gut zu hören ist, dass das Publikum die Texte mitsingt — die Lieder sind hier allen bekannt.",
+      nEn: "The longest concert recording of the evening. You can hear the audience singing along — these songs are known to everyone in the room." },
     { tag: "musik", base: "assets/media/naya-barsha-2026/vocal-duet", secs: 103,
-      de: "Gesangsduett auf der Bühne", en: "A vocal duet on stage" },
+      de: "Gesangsduett auf der Bühne", en: "A vocal duet on stage",
+      nDe: "Ein Duett aus dem Bühnenprogramm. Gesang zu zweit ist in der nepalesischen Volksmusik eine eigene Form — die beiden Stimmen antworten einander Strophe um Strophe.",
+      nEn: "A duet from the stage programme. Two-part singing is a form of its own in Nepali folk music — the two voices answer one another verse by verse." },
     { tag: "musik", base: "assets/media/naya-barsha-2026/acoustic-set", secs: 70,
       de: "Akustisches Set der Band vor der Bühne",
-      en: "The band's acoustic set in front of the stage" },
+      en: "The band's acoustic set in front of the stage",
+      nDe: "Ein ruhigeres, akustisches Set direkt vor der Bühne — der Teil des Abends, in dem im Saal tatsächlich zugehört statt getanzt wird.",
+      nEn: "A quieter, acoustic set right in front of the stage — the part of the evening where the hall listens rather than dances." },
     { tag: "tanz", base: "assets/media/naya-barsha-2026/dancefloor-celebration", secs: 110,
       de: "Tanzfläche: Gäste feiern das neue Jahr",
-      en: "Dance floor: guests celebrate the new year" },
+      en: "Dance floor: guests celebrate the new year",
+      nDe: "Die Tanzfläche im vollen Gang. Getanzt wird bei nepalesischen Festen nicht paarweise, sondern im offenen Kreis — wer dazukommt, macht einfach mit.",
+      nEn: "The dance floor in full swing. At Nepali celebrations people do not dance in pairs but in an open circle — whoever arrives simply joins in." },
     { tag: "tanz", base: "assets/media/naya-barsha-2026/finale-dancefloor", secs: 12,
       de: "Ausgelassenes Finale auf der Tanzfläche",
-      en: "The exuberant finale on the dance floor" },
+      en: "The exuberant finale on the dance floor",
+      nDe: "Zwölf Sekunden vom Schluss des Abends — der Moment, an dem Bühne und Tanzfläche endgültig verschmolzen sind.",
+      nEn: "Twelve seconds from the end of the night — the point at which stage and dance floor had finally merged into one." },
     { tag: "buehne", base: "assets/media/naya-barsha-2026/stage-performance", secs: 172,
       de: "Auftritt auf der Bühne während des Abendprogramms",
-      en: "A performance on stage during the evening programme" },
+      en: "A performance on stage during the evening programme",
+      nDe: "Die längste Aufnahme der Sammlung: ein vollständiger Auftritt aus dem Abendprogramm, von der Ansage bis zum Applaus.",
+      nEn: "The longest recording in the set: a complete performance from the evening programme, from the announcement through to the applause." },
     { tag: "buehne", base: "assets/media/naya-barsha-2026/evening-programme", secs: 70,
       de: "Abendprogramm vor vollem Saal",
-      en: "The evening programme in front of a full hall" },
+      en: "The evening programme in front of a full hall",
+      nDe: "Ein Ausschnitt aus dem moderierten Abendprogramm, aufgenommen aus dem Saal heraus.",
+      nEn: "An excerpt from the hosted evening programme, filmed from the floor of the hall." },
     { tag: "buehne", base: "assets/media/naya-barsha-2026/hall-during-programme", secs: 90,
       de: "Blick in den Saal während des Bühnenprogramms",
-      en: "A view of the hall during the stage programme" },
+      en: "A view of the hall during the stage programme",
+      nDe: "Ein Schwenk durch den Saal. Diese Aufnahme gibt den besten Eindruck davon, wie voll der Abend tatsächlich war.",
+      nEn: "A pan across the hall. This recording gives the best sense of how full the evening actually was." },
     { tag: "buehne musik", base: "assets/media/naya-barsha-2026/solo-vocal-performance", secs: 157,
       de: "Solo-Gesangsauftritt im Abendprogramm",
-      en: "A solo vocal performance during the evening programme" },
+      en: "A solo vocal performance during the evening programme",
+      nDe: "Ein Solo-Gesangsauftritt, fast zweieinhalb Minuten lang und ohne Schnitt — der Saal wird dabei hörbar still.",
+      nEn: "A solo vocal performance, almost two and a half minutes long and unedited — the hall audibly falls quiet for it." },
     { tag: "essen", base: "assets/media/naya-barsha-2026/shared-meal", secs: 64,
       de: "Nepalesische Spezialitäten am Tisch der Gäste",
-      en: "Nepali specialities at the guests' table" },
+      en: "Nepali specialities at the guests' table",
+      nDe: "Das Essen am Tisch der Gäste. Zum Neujahr kommen dieselben Gerichte auf den Tisch wie in Nepal — der Abend sollte auch kulinarisch vollständig sein.",
+      nEn: "The food at the guests' table. The same dishes are served at New Year as in Nepal — the evening was meant to be complete on the plate as well." },
     { tag: "team", base: "assets/media/naya-barsha-2026/organising-team-desk", secs: 14,
       de: "Kurzer Gruß des Organisationsteams am Empfangstisch",
-      en: "A short greeting from the organising team at the reception desk" }
+      en: "A short greeting from the organising team at the reception desk",
+      nDe: "Ein kurzer Gruß des Organisationsteams vom Empfangstisch aus — vierzehn Sekunden, mitten im Betrieb aufgenommen.",
+      nEn: "A short greeting from the organising team at the reception desk — fourteen seconds, filmed in the middle of the rush." }
+  ];
+
+  /* The single clip from the Dashain evening. Same shape as the Naya Barsha
+     clips so both albums can use one renderer. */
+  var DASHAIN_CLIPS = [
+    { tag: "essen gemeinschaft", base: "assets/media/dashain-2024/community-meal-video", secs: 24,
+      de: "Gemeinsames Festessen bei der Dashain-Feier",
+      en: "The shared celebration meal at the Dashain evening",
+      nDe: "Vierundzwanzig Sekunden vom gemeinsamen Essen. Sie zeigen den Teil des Abends, den Fotos am schlechtesten wiedergeben: den Geräuschpegel eines Saals, in dem alle gleichzeitig reden.",
+      nEn: "Twenty-four seconds of the shared meal. They capture the part of the evening photographs convey worst: the sound of a hall in which everyone is talking at once." }
   ];
 
   /* ------------------------------------------------------- Donation tiers */
@@ -659,60 +759,59 @@
     }).join("");
   }
 
-  function renderGallery(sel) {
+  /* Editorial plate layout for the dedicated album pages. Every frame gets a
+     numbered caption and a paragraph explaining what is actually happening in
+     it — on the album pages the photographs carry the report, so a four-word
+     caption under a thumbnail is not enough. The plate alternates sides in CSS;
+     the markup order stays picture-then-text, so it reads correctly on a phone
+     and in a screen reader. */
+  function renderEssay(sel, list) {
     var host = document.querySelector(sel);
     if (!host) return;
     var lang = window.npjoeLang ? window.npjoeLang() : "de";
-    host.innerHTML = GALLERY.map(function (g) {
+    host.innerHTML = list.map(function (g, i) {
       var current = lang === "en" ? g.en : g.de;
       var openDe = "Bild vergrößern: " + g.de;
       var openEn = "Enlarge image: " + g.en;
-      var img = '<img src="' + esc(g.src) + '" width="' + g.width + '" height="' + g.height + '" loading="lazy" decoding="async" alt="' + esc(current) + '" data-de-alt="' + esc(g.de) + '" data-en-alt="' + esc(g.en) + '">';
-      return '<figure data-lightbox data-tags="' + g.tag + '" role="button" tabindex="0" aria-label="' + esc(lang === "en" ? openEn : openDe) + '" data-de-aria-label="' + esc(openDe) + '" data-en-aria-label="' + esc(openEn) + '">' + img +
-        "<figcaption>" + bi(esc(g.de), esc(g.en)) + "</figcaption></figure>";
-    }).join("");
-  }
-
-  /* Album grid. Landscape frames take a double-width tile and portraits keep
-     their own shape, so nothing is cropped into a uniform 3:2 box the way the
-     plain .gallery grid does. */
-  function renderAlbum(sel, list) {
-    var host = document.querySelector(sel);
-    if (!host) return;
-    var lang = window.npjoeLang ? window.npjoeLang() : "de";
-    host.innerHTML = list.map(function (g) {
-      var current = lang === "en" ? g.en : g.de;
-      var openDe = "Bild vergrößern: " + g.de;
-      var openEn = "Enlarge image: " + g.en;
-      var wide = g.width >= g.height ? " is-wide" : "";
-      return '<figure class="shot' + wide + '" data-lightbox data-tags="' + g.tag + '" role="button" tabindex="0"' +
+      var no = (i + 1 < 10 ? "0" : "") + (i + 1);
+      var shape = g.width >= g.height ? " is-landscape" : " is-portrait";
+      return '<figure class="plate' + shape + '" data-lightbox data-tags="' + g.tag + '" role="button" tabindex="0"' +
         ' aria-label="' + esc(lang === "en" ? openEn : openDe) + '"' +
         ' data-de-aria-label="' + esc(openDe) + '" data-en-aria-label="' + esc(openEn) + '">' +
+        '<span class="plate-frame">' +
         '<img src="' + esc(g.src) + '" width="' + g.width + '" height="' + g.height + '" loading="lazy" decoding="async"' +
         ' alt="' + esc(current) + '" data-de-alt="' + esc(g.de) + '" data-en-alt="' + esc(g.en) + '">' +
-        "<figcaption>" + bi(esc(g.de), esc(g.en)) + "</figcaption></figure>";
+        "</span>" +
+        '<figcaption class="plate-copy">' +
+        '<span class="plate-no" aria-hidden="true">' + no + "</span>" +
+        '<b class="plate-title">' + bi(esc(g.de), esc(g.en)) + "</b>" +
+        '<span class="plate-note">' + bi(esc(g.nDe || g.de), esc(g.nEn || g.en)) + "</span>" +
+        "</figcaption></figure>";
     }).join("");
   }
 
-  /* Video wall. preload="none" is deliberate: eleven clips are 67 MB between
-     them, so a visitor pays for the poster image only and downloads a clip
-     when — and only when — they press play. */
-  function renderClips(sel, list) {
+  /* Same idea for the video wall: the clip keeps its running-time badge, and
+     the sentence underneath says what the visitor is about to spend that time
+     on — before they press play and start the download. */
+  function renderClipEssay(sel, list) {
     var host = document.querySelector(sel);
     if (!host) return;
     host.innerHTML = list.map(function (c) {
       var mp4 = esc(c.base + ".mp4");
       var len = Math.floor(c.secs / 60) + ":" + (c.secs % 60 < 10 ? "0" : "") + (c.secs % 60);
-      return '<figure class="clip" data-tags="' + c.tag + '">' +
+      return '<figure class="clip clip-told" data-tags="' + c.tag + '">' +
         '<video controls playsinline preload="none" poster="' + esc(c.base + "-poster.jpg") + '"' +
         ' aria-label="' + esc(c.de) + '" data-de-aria-label="' + esc(c.de) + '" data-en-aria-label="' + esc(c.en) + '">' +
         '<source src="' + mp4 + '" type="video/mp4">' +
         bi('Ihr Browser kann das Video nicht wiedergeben. <a href="' + mp4 + '">Video herunterladen</a>.',
            'Your browser cannot play this video. <a href="' + mp4 + '">Download the video</a>.') +
         "</video>" +
-        '<figcaption><span class="clip-title">' + bi(esc(c.de), esc(c.en)) + "</span>" +
-        '<span class="clip-len"><span class="sr-only">' +
-        bi("Laufzeit ", "Running time ") + "</span>" + len + "</span></figcaption></figure>";
+        '<figcaption><span class="clip-head">' +
+        '<span class="clip-title">' + bi(esc(c.de), esc(c.en)) + "</span>" +
+        '<span class="clip-len"><span class="sr-only">' + bi("Laufzeit ", "Running time ") + "</span>" + len + "</span>" +
+        "</span>" +
+        '<span class="clip-note">' + bi(esc(c.nDe || ""), esc(c.nEn || "")) + "</span>" +
+        "</figcaption></figure>";
     }).join("");
   }
 
@@ -776,16 +875,15 @@
   window.NPJOEContent = {
     ready: ready,
     FIELDS: FIELDS, EVENTS: EVENTS, NEWS: NEWS, FAQ: FAQ, GALLERY: GALLERY, TIERS: TIERS,
-    NAYA_BARSHA: NAYA_BARSHA, NAYA_BARSHA_CLIPS: NAYA_BARSHA_CLIPS,
+    NAYA_BARSHA: NAYA_BARSHA, NAYA_BARSHA_CLIPS: NAYA_BARSHA_CLIPS, DASHAIN_CLIPS: DASHAIN_CLIPS,
     renderFields: renderFields,
     renderFieldOptions: renderFieldOptions,
     renderEvents: renderEvents,
     renderNews: renderNews,
     renderFieldsRail: renderFieldsRail,
     renderFaq: renderFaq,
-    renderGallery: renderGallery,
-    renderAlbum: renderAlbum,
-    renderClips: renderClips,
+    renderEssay: renderEssay,
+    renderClipEssay: renderClipEssay,
     renderTiers: renderTiers,
     renderTierCards: renderTierCards
   };
