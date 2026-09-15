@@ -79,7 +79,7 @@ module.exports = function run() {
     "community-meal-video-poster.jpg", "community-meal-video.mp4", "community-meal.jpg",
     "dashain-banner.jpg", "evening-welcome-desk.jpg", "event-team.jpg", "festival-food.jpg",
     "friends-at-meal.jpg", "guest-registration.jpg", "guest-speech.jpg", "honour-presentation.jpg",
-    "opening-address.jpg", "sel-roti-moment.jpg", "stage-programme.jpg", "trophy-and-medals.jpg",
+    "guest-contribution.jpg", "sel-roti-moment.jpg", "stage-programme.jpg", "trophy-and-medals.jpg",
     "trophy-presentation.jpg", "welcome-address.jpg", "welcome-team.jpg"
   ];
   const dashainFiles = fs.existsSync(dashainDir) ? fs.readdirSync(dashainDir).sort() : [];
@@ -92,6 +92,7 @@ module.exports = function run() {
   const galleryPage = read("galerie.html");
   const dashainPage = read("dashain-2024.html");
   const nayaPage = read("naya-barsha-2026.html");
+  const naya25Page = read("naya-barsha-2025.html");
   /* The album lives on its own page now; the gallery is the index in front of
      both. The video is rendered from DASHAIN_CLIPS, so the reference to it is
      in the content module rather than in the page. */
@@ -108,23 +109,33 @@ module.exports = function run() {
   const nayaDir = path.join(ROOT, "assets/media/naya-barsha-2026");
   const nayaFiles = fs.existsSync(nayaDir) ? fs.readdirSync(nayaDir).sort() : [];
   const nayaPhotos = nayaFiles.filter(f => f.endsWith(".jpg") && !f.endsWith("-poster.jpg"));
-  const nayaClips = nayaFiles.filter(f => f.endsWith(".mp4"));
-  eq("all 10 photographs are on disk", nayaPhotos.length, 10);
+  eq("all 9 photographs are on disk", nayaPhotos.length, 9);
+  eq("the 2026 album holds no video — the clips are from 11 April 2025",
+     nayaFiles.filter(f => f.endsWith(".mp4")), []);
+
+  /* ----------------------------------------- Naya Barsha 2025 event media */
+  const naya25Dir = path.join(ROOT, "assets/media/naya-barsha-2025");
+  const naya25Files = fs.existsSync(naya25Dir) ? fs.readdirSync(naya25Dir).sort() : [];
+  const naya25Photos = naya25Files.filter(f => f.endsWith(".jpg") && !f.endsWith("-poster.jpg"));
+  const nayaClips = naya25Files.filter(f => f.endsWith(".mp4"));
+  eq("the single 2025 photograph is on disk", naya25Photos, ["president-with-members.jpg"]);
   eq("all 11 videos are on disk", nayaClips.length, 11);
 
   /* A video without its poster shows a black rectangle until it is played —
      with preload="none" the poster is the only thing the visitor ever sees. */
   const missingPosters = nayaClips
     .map(f => f.replace(/\.mp4$/, "-poster.jpg"))
-    .filter(p => !nayaFiles.includes(p));
+    .filter(p => !naya25Files.includes(p));
   eq("every video has its poster frame", missingPosters, []);
 
   const unreferencedNaya = nayaPhotos.filter(f => !contentJs.includes("assets/media/naya-barsha-2026/" + f));
   eq("every photograph is referenced in the album data", unreferencedNaya, []);
   const unreferencedClips = nayaClips
     .map(f => f.replace(/\.mp4$/, ""))
-    .filter(b => !contentJs.includes("assets/media/naya-barsha-2026/" + b));
+    .filter(b => !contentJs.includes("assets/media/naya-barsha-2025/" + b));
   eq("every video is referenced in the album data", unreferencedClips, []);
+  const unreferenced25 = naya25Photos.filter(f => !contentJs.includes("assets/media/naya-barsha-2025/" + f));
+  eq("the 2025 photograph is referenced in the album data", unreferenced25, []);
 
   /* The whole point of the story block: the ceremony is explained, not just shown. */
   ok("the album page explains what Naya Barsha is", /Bikram[- ]Sambat/.test(nayaPage));
@@ -132,12 +143,45 @@ module.exports = function run() {
      /10\. April 2026/.test(nayaPage) && /Knabenschule/.test(nayaPage) && /150/.test(nayaPage));
   ok("the Dashain page explains what Dashain is",
      /Vijaya Dashami/.test(dashainPage) && /Durga/.test(dashainPage) && /[Jj]amara/.test(dashainPage));
-  ok("both albums are reachable from the gallery index",
-     /href="naya-barsha-2026\.html"/.test(galleryPage) && /href="dashain-2024\.html"/.test(galleryPage));
+  ok("all three albums are reachable from the gallery index",
+     /href="naya-barsha-2026\.html"/.test(galleryPage) &&
+     /href="naya-barsha-2025\.html"/.test(galleryPage) &&
+     /href="dashain-2024\.html"/.test(galleryPage));
   ok("each album is rendered from the shared content module",
      /renderEssay\("#nayaPhotos", C\.NAYA_BARSHA\)/.test(nayaPage) &&
-     /renderClipEssay\("#nayaClips", C\.NAYA_BARSHA_CLIPS\)/.test(nayaPage) &&
+     /renderClipEssay\("#naya25Clips", C\.NAYA_BARSHA_2025_CLIPS\)/.test(naya25Page) &&
+     /renderEssay\("#naya25Photos", C\.NAYA_BARSHA_2025\)/.test(naya25Page) &&
      /renderEssay\("#dashainPhotos", C\.GALLERY\)/.test(dashainPage));
+  /* The 2025 evening is a separate event with a separate date — the resolution
+     of the general meeting names 11 April 2025 and the Knabenschule Halle. */
+  ok("the 2025 album states its own date and venue",
+     /11\. April 2025/.test(naya25Page) && /Knabenschule Halle/.test(naya25Page));
+  /* The pager still links forward to the 2025 album, so "11 Videos" legitimately
+     appears there. What must be gone is the album's own video section. */
+  ok("the 2026 album no longer claims the 2025 videos",
+     !/nayaClips/.test(nayaPage) && !/id="videos"/.test(nayaPage) &&
+     !/9 Fotos · 11 Videos/.test(nayaPage));
+
+  /* ------------------------------- Medical camp at the NRNA Cup, Stuttgart */
+  group("The NRNA Cup medical camp is documented and playable");
+  const campDir = path.join(ROOT, "assets/media/erste-hilfe-nrna-cup");
+  const campFiles = fs.existsSync(campDir) ? fs.readdirSync(campDir).sort() : [];
+  eq("the clip and its poster are on disk", campFiles, ["medical-camp-poster.jpg", "medical-camp.mp4"]);
+  const campPage = read("erste-hilfe-kampagne.html");
+  ok("the first-aid page renders the clip from the shared content module",
+     /renderClipEssay\("#medicalCampClips", C\.MEDICAL_CAMP_CLIPS\)/.test(campPage));
+  ok("it names the tournament, the doctors and the host club",
+     /NRNA/.test(campPage) && /Sagar Raju Kharel/.test(campPage) &&
+     /Saurav/.test(campPage) && /NFC Stuttgart/.test(campPage));
+
+  /* The association's real Facebook and TikTok profiles, not the placeholders. */
+  group("Social profiles point at the real accounts");
+  const siteSrc = fs.readFileSync(path.join(ROOT, "assets/js/site.js"), "utf8");
+  ok("Facebook and TikTok carry the association's own URLs",
+     /facebook\.com\/share\/1FpT4ZvjFC/.test(siteSrc) &&
+     /tiktok\.com\/@progressive_youth023/.test(siteSrc));
+  ok("the footer renders a TikTok icon alongside the others",
+     /soc\(s\.tiktok, "TikTok"/.test(fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8")));
 
   /* --------------------------------------------- one album, one page, explained */
   group("Each album has its own page, and every frame is explained");
@@ -146,7 +190,8 @@ module.exports = function run() {
     const from = contentSrc.indexOf("var " + name + " = [");
     return contentSrc.slice(from, contentSrc.indexOf("\n  ];", from));
   }
-  [["NAYA_BARSHA", 10], ["GALLERY", 16], ["NAYA_BARSHA_CLIPS", 11], ["DASHAIN_CLIPS", 1]].forEach(([name, count]) => {
+  [["NAYA_BARSHA", 9], ["NAYA_BARSHA_2025", 1], ["GALLERY", 16],
+   ["NAYA_BARSHA_2025_CLIPS", 11], ["DASHAIN_CLIPS", 1], ["MEDICAL_CAMP_CLIPS", 1]].forEach(([name, count]) => {
     const block = album(name);
     eq(name + ": every entry carries a German explanation", (block.match(/nDe:/g) || []).length, count);
     eq(name + ": and an English one", (block.match(/nEn:/g) || []).length, count);
@@ -156,18 +201,20 @@ module.exports = function run() {
   ok("the clip renderer prints one too", /clip-note/.test(contentSrc));
 
   /* Both album pages must stand on their own: hero, facts, in-page rail. */
-  [["naya-barsha-2026.html", nayaPage], ["dashain-2024.html", dashainPage]].forEach(([name, src]) => {
+  [["naya-barsha-2026.html", nayaPage], ["naya-barsha-2025.html", naya25Page], ["dashain-2024.html", dashainPage]].forEach(([name, src]) => {
     ok(name + " opens with its own full-bleed frame", /class="album-hero"/.test(src));
     ok(name + " states the facts of the evening", /class="album-facts"/.test(src));
     ok(name + " carries an in-page rail", /class="album-rail no-print" data-toc/.test(src));
     ok(name + " links back to the gallery index", /href="galerie\.html"/.test(src));
   });
+  const sitemapSrc = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
+  const layoutSrc = fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8");
   ok("the album pages are in the sitemap",
-     /naya-barsha-2026\.html<\/loc>/.test(fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8")) &&
-     /dashain-2024\.html<\/loc>/.test(fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8")));
+     ["naya-barsha-2026", "naya-barsha-2025", "dashain-2024"]
+       .every(n => sitemapSrc.includes("/" + n + ".html</loc>")));
   ok("and reachable from the main navigation",
-     /naya-barsha-2026\.html/.test(fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8")) &&
-     /dashain-2024\.html/.test(fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8")));
+     ["naya-barsha-2026", "naya-barsha-2025", "dashain-2024"]
+       .every(n => layoutSrc.includes(n + ".html")));
   /* The plate flips sides visually; the DOM order must stay picture-then-text
      so a screen reader and a phone both read it the right way round. */
   const plateCss = fs.readFileSync(path.join(ROOT, "assets/css/main.css"), "utf8");

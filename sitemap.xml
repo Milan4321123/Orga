@@ -121,6 +121,14 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.progressive-youth.de/naya-barsha-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.progressive-youth.de/naya-barsha-2025.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.progressive-youth.de/naya-barsha-2025.html?lang=en"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.progressive-youth.de/dashain-2024.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.progressive-youth.de/dashain-2024.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.progressive-youth.de/dashain-2024.html?lang=en"/>

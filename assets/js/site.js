@@ -46,11 +46,11 @@ window.NPJOE = {
     },
     fee: { monthly: 5, currency: "EUR" },
     social: {
-      facebook: "https://facebook.com/",
+      facebook: "https://www.facebook.com/share/1FpT4ZvjFC/",
       instagram: "https://instagram.com/",
       youtube: "https://youtube.com/",
       linkedin: "https://linkedin.com/",
-      tiktok: "https://tiktok.com/"
+      tiktok: "https://www.tiktok.com/@progressive_youth023"
     }
   },
 

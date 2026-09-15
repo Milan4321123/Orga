@@ -191,7 +191,7 @@ module.exports = async function run(port, password) {
   /* Safari refuses to play a video at all unless its Range request comes back
      as a 206, and without ranges every seek re-fetches the whole clip. The
      gallery carries eleven of them, so this is not academic. */
-  const clip = "/assets/media/naya-barsha-2026/finale-dancefloor.mp4";
+  const clip = "/assets/media/naya-barsha-2025/finale-dancefloor.mp4";
   const whole = await request("GET", clip);
   eq("a plain request still returns the whole file", whole.status, 200);
   eq("mp4 is served as video, not as a download", whole.headers["content-type"], "video/mp4");

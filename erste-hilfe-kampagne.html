@@ -332,6 +332,53 @@
     </div>
   </section>
 
+  <!-- ============================================ medical camp, NRNA Cup Stuttgart -->
+  <section class="section section-alt" id="medical-camp">
+    <div class="container">
+      <span class="eyebrow"><span data-lang="de">Einsatz vor Ort · Stuttgart</span><span data-lang="en">In the field · Stuttgart</span></span>
+      <h2><span data-lang="de">Medical Camp beim 9. NRNA-Fußballpokal</span><span data-lang="en">Medical camp at the NRNA 9th Football Cup</span></h2>
+      <p class="lead mt-2">
+        <span data-lang="de">Erste Hilfe ist bei uns nicht nur Unterrichtsstoff für Schulen in Nepal — unser medizinisches Team ist auch bei Veranstaltungen der nepalesischen Gemeinschaft in Deutschland im Einsatz. Beim 9. NRNA-Fußballpokal in Stuttgart hat es über das gesamte Turnier hinweg Erste Hilfe und medizinische Unterstützung geleistet.</span>
+        <span data-lang="en">For us first aid is not only a syllabus for schools in Nepal — our medical team is also deployed at events of the Nepali community in Germany. At the NRNA 9th Football Cup in Stuttgart it provided first aid and medical support throughout the tournament.</span>
+      </p>
+
+      <div class="story mt-6">
+        <div class="story-body">
+          <p>
+            <span data-lang="de">Ein herzlicher Dank gilt unserem engagierten medizinischen Team für seine wertvolle Unterstützung und seinen Einsatz während des Turniers. Mit Teamgeist, Verantwortungsbewusstsein und Mitgefühl war das Team immer dann zur Stelle, wenn Erste Hilfe und medizinische Betreuung gebraucht wurden.</span>
+            <span data-lang="en">A heartfelt thank-you to our dedicated medical team for its valuable support and commitment during the tournament. With teamwork, responsibility and compassion, the team was there whenever first aid and medical support were needed.</span>
+          </p>
+          <p>
+            <span data-lang="de">Als Nepalesische Progressive Jugendorganisation e.V. setzen wir uns dafür ein, die nepalesische Gemeinschaft zusammenzubringen und das Engagement junger Menschen zu fördern — in den Bereichen Gesundheit, Aufklärung, Bildung, soziale Verantwortung und gegenseitige Unterstützung.</span>
+            <span data-lang="en">As the Nepalese Progressive Youth Organisation e.V. we are committed to bringing the Nepali community together and promoting youth engagement — in health, awareness, education, social responsibility and community support.</span>
+          </p>
+          <p>
+            <span data-lang="de">Ein besonderer Dank geht an <strong>Dr. Sagar Raju Kharel</strong> und <strong>Dr. Saurav</strong> für ihren wertvollen Beitrag, ihre fachliche Begleitung und ihren Einsatz. Ihre Anwesenheit und Unterstützung haben einen spürbaren Unterschied gemacht. Unser Dank gilt ebenso <strong>NFC Stuttgart</strong> für die Ausrichtung und Organisation der Veranstaltung — und dafür, die nepalesische Gemeinschaft durch Sport, Teamgeist und Solidarität zusammenzubringen.</span>
+            <span data-lang="en">Special thanks go to <strong>Dr Sagar Raju Kharel</strong> and <strong>Dr Saurav</strong> for their valuable contribution, their guidance and their dedication. Their presence and support made a meaningful difference. Our thanks also go to <strong>NFC Stuttgart</strong> for hosting and organising the event — and for bringing the Nepali community together through sport, teamwork and solidarity.</span>
+          </p>
+        </div>
+
+        <aside class="story-aside">
+          <div class="card card-pad-lg">
+            <h3 class="t-h4"><span data-lang="de">Was das Team geleistet hat</span><span data-lang="en">What the team provided</span></h3>
+            <ul class="text-sm text-muted mt-2">
+              <li><span data-lang="de">Erste Hilfe während des gesamten Turniers</span><span data-lang="en">First aid throughout the tournament</span></li>
+              <li><span data-lang="de">Medizinische Betreuung von Spielern und Gästen</span><span data-lang="en">Medical care for players and guests</span></li>
+              <li><span data-lang="de">Ärztliche Begleitung durch Dr. Sagar Raju Kharel und Dr. Saurav</span><span data-lang="en">Medical supervision by Dr Sagar Raju Kharel and Dr Saurav</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <h3 class="mt-6"><span data-lang="de">Video vom Medical Camp</span><span data-lang="en">Video from the medical camp</span></h3>
+      <p class="text-sm text-muted mt-2">
+        <span data-lang="de">Ein Einblick in unser Medical Camp und die Teamarbeit dahinter. Das Video lädt erst, wenn Sie auf Play drücken — die Laufzeit steht vorher dabei.</span>
+        <span data-lang="en">A glimpse of our medical camp and the teamwork behind it. The video loads only when you press play — the running time is shown beforehand.</span>
+      </p>
+      <div class="clip-grid mt-4" id="medicalCampClips"></div>
+    </div>
+  </section>
+
   <section class="section section-alt">
     <div class="container">
       <div class="cta-band center">
@@ -348,5 +395,13 @@
 </main>
 
 <div id="siteFooterMount"></div>
+
+<script>
+  document.addEventListener("npjoe:layout-ready", function () {
+    var C = window.NPJOEContent;
+    if (!C) return;
+    C.renderClipEssay("#medicalCampClips", C.MEDICAL_CAMP_CLIPS);
+  });
+</script>
 </body>
 </html>

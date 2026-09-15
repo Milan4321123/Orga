@@ -420,10 +420,10 @@
       de: "Das Empfangsteam bereitet die Anmeldung vor", en: "The welcome team prepares registration",
       nDe: "Das Empfangsteam richtet den Anmeldetisch ein. Der Empfang ist der erste Eindruck, den ein Gast von einem Verein bekommt — entsprechend früh wird er aufgebaut.",
       nEn: "The welcome team setting up the registration desk. Reception is the first impression a guest gets of an association — which is why it is built up well before the doors open." },
-    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/opening-address.jpg", width: 1920, height: 1280,
-      de: "Begrüßung und Eröffnung des Dashain-Programms", en: "Welcome and opening of the Dashain programme",
-      nDe: "Die Eröffnung des Programms. Traditionell beginnt eine Dashain-Feier mit einer Begrüßung, die den Anwesenden Glück und Segen für das kommende Jahr wünscht.",
-      nEn: "The opening of the programme. A Dashain celebration traditionally begins with a welcome that wishes those present good fortune and blessings for the year ahead." },
+    { tag: "dashain kultur buehne", src: "assets/media/dashain-2024/guest-contribution.jpg", width: 1920, height: 1280,
+      de: "Grußwort eines Gastes am Mikrofon", en: "A guest's address at the microphone",
+      nDe: "Ein Grußwort aus dem Kreis der Gäste — keine Eröffnungsrede des Vorstands, sondern ein Beitrag von jemandem, der eingeladen war. Bei den Feiern der NPJOE steht das Mikrofon bewusst auch den Gästen offen.",
+      nEn: "An address from among the guests — not an opening speech by the board, but a contribution from someone who had been invited. At NPJOE celebrations the microphone is deliberately open to guests as well." },
     { tag: "dashain kultur empfang", src: "assets/media/dashain-2024/event-team.jpg", width: 1920, height: 1280,
       de: "Mitglieder des Veranstaltungsteams", en: "Members of the event team",
       nDe: "Mitglieder des Veranstaltungsteams. Jede Feier der NPJOE wird von einem wechselnden Team getragen, damit die Arbeit nicht immer an denselben Personen hängen bleibt.",
@@ -499,11 +499,6 @@
       en: "Guests sign the attendance list at the registration desk",
       nDe: "Am Anmeldetisch trugen sich die Besucherinnen und Besucher in die Teilnehmerliste ein. So lässt sich später belegen, wie viele Menschen eine Veranstaltung tatsächlich erreicht hat.",
       nEn: "Visitors signed the attendance list at the registration desk. That is what makes it possible to show afterwards how many people an event actually reached." },
-    { tag: "neujahr gemeinschaft team", src: "assets/media/naya-barsha-2026/president-with-members.jpg", width: 1200, height: 1600,
-      de: "Der Vorsitzende der NPJOE (rechts) mit Mitgliedern des Vereins",
-      en: "The chairperson of the NPJOE (right) with members of the association",
-      nDe: "Der Vorsitzende im Gespräch mit Mitgliedern. Ein Fest wie dieses ist zugleich die Gelegenheit, bei der Vorstand und Mitglieder einander außerhalb von Sitzungen begegnen.",
-      nEn: "The chairperson in conversation with members. A celebration like this is also the occasion on which board and members meet each other outside of formal meetings." },
     { tag: "neujahr gemeinschaft", src: "assets/media/naya-barsha-2026/guests-at-table.jpg", width: 1600, height: 1069,
       de: "Gäste und Familien an den Tischen im Saal",
       en: "Guests and families at the tables in the hall",
@@ -536,60 +531,72 @@
       nEn: "The reception and cash desk at the entrance: the first stop for every guest, and staffed for the whole evening." }
   ];
 
-  /* Eleven clips from the same evening. `secs` is the real running time and is
+  /* -------------------------- Naya Barsha 2025 — Neujahrsfeier, 11.04.2025 */
+  /* The Nepali New Year celebration of 11 April 2025 in the Knabenschule
+     Halle, resolved unanimously by the general meeting. The evening is
+     documented almost entirely on video — one photograph and eleven clips. */
+  var NAYA_BARSHA_2025 = [
+    { tag: "neujahr gemeinschaft team", src: "assets/media/naya-barsha-2025/president-with-members.jpg", width: 1200, height: 1600,
+      de: "Der Vorsitzende der NPJOE (rechts) mit Mitgliedern des Vereins",
+      en: "The chairperson of the NPJOE (right) with members of the association",
+      nDe: "Der Vorsitzende im Gespräch mit Mitgliedern. Ein Fest wie dieses ist zugleich die Gelegenheit, bei der Vorstand und Mitglieder einander außerhalb von Sitzungen begegnen.",
+      nEn: "The chairperson in conversation with members. A celebration like this is also the occasion on which board and members meet each other outside of formal meetings." }
+  ];
+
+  /* Eleven clips from the same evening, 11 April 2025. `secs` is the real running time and is
      rendered as a badge, so nobody starts a three-minute download by accident;
      the players themselves load nothing until they are pressed. */
-  var NAYA_BARSHA_CLIPS = [
-    { tag: "musik", base: "assets/media/naya-barsha-2026/live-concert-crowd", secs: 85,
+  var NAYA_BARSHA_2025_CLIPS = [
+    { tag: "musik", base: "assets/media/naya-barsha-2025/live-concert-crowd", secs: 85,
       de: "Livekonzert vor der Bühne, das Publikum feiert mit",
       en: "Live concert at the stage, with the audience joining in",
       nDe: "Die längste Konzertaufnahme des Abends. Gut zu hören ist, dass das Publikum die Texte mitsingt — die Lieder sind hier allen bekannt.",
       nEn: "The longest concert recording of the evening. You can hear the audience singing along — these songs are known to everyone in the room." },
-    { tag: "musik", base: "assets/media/naya-barsha-2026/vocal-duet", secs: 103,
+    { tag: "musik", base: "assets/media/naya-barsha-2025/vocal-duet", secs: 103,
       de: "Gesangsduett auf der Bühne", en: "A vocal duet on stage",
       nDe: "Ein Duett aus dem Bühnenprogramm. Gesang zu zweit ist in der nepalesischen Volksmusik eine eigene Form — die beiden Stimmen antworten einander Strophe um Strophe.",
       nEn: "A duet from the stage programme. Two-part singing is a form of its own in Nepali folk music — the two voices answer one another verse by verse." },
-    { tag: "musik", base: "assets/media/naya-barsha-2026/acoustic-set", secs: 70,
+    { tag: "musik", base: "assets/media/naya-barsha-2025/acoustic-set", secs: 70,
       de: "Akustisches Set der Band vor der Bühne",
       en: "The band's acoustic set in front of the stage",
       nDe: "Ein ruhigeres, akustisches Set direkt vor der Bühne — der Teil des Abends, in dem im Saal tatsächlich zugehört statt getanzt wird.",
       nEn: "A quieter, acoustic set right in front of the stage — the part of the evening where the hall listens rather than dances." },
-    { tag: "tanz", base: "assets/media/naya-barsha-2026/dancefloor-celebration", secs: 110,
+    { tag: "tanz", base: "assets/media/naya-barsha-2025/dancefloor-celebration", secs: 110,
       de: "Tanzfläche: Gäste feiern das neue Jahr",
       en: "Dance floor: guests celebrate the new year",
       nDe: "Die Tanzfläche im vollen Gang. Getanzt wird bei nepalesischen Festen nicht paarweise, sondern im offenen Kreis — wer dazukommt, macht einfach mit.",
       nEn: "The dance floor in full swing. At Nepali celebrations people do not dance in pairs but in an open circle — whoever arrives simply joins in." },
-    { tag: "tanz", base: "assets/media/naya-barsha-2026/finale-dancefloor", secs: 12,
+    { tag: "tanz", base: "assets/media/naya-barsha-2025/finale-dancefloor", secs: 12,
       de: "Ausgelassenes Finale auf der Tanzfläche",
       en: "The exuberant finale on the dance floor",
       nDe: "Zwölf Sekunden vom Schluss des Abends — der Moment, an dem Bühne und Tanzfläche endgültig verschmolzen sind.",
       nEn: "Twelve seconds from the end of the night — the point at which stage and dance floor had finally merged into one." },
-    { tag: "buehne", base: "assets/media/naya-barsha-2026/stage-performance", secs: 172,
+    { tag: "buehne", base: "assets/media/naya-barsha-2025/stage-performance", secs: 172,
       de: "Auftritt auf der Bühne während des Abendprogramms",
       en: "A performance on stage during the evening programme",
       nDe: "Die längste Aufnahme der Sammlung: ein vollständiger Auftritt aus dem Abendprogramm, von der Ansage bis zum Applaus.",
       nEn: "The longest recording in the set: a complete performance from the evening programme, from the announcement through to the applause." },
-    { tag: "buehne", base: "assets/media/naya-barsha-2026/evening-programme", secs: 70,
+    { tag: "buehne", base: "assets/media/naya-barsha-2025/evening-programme", secs: 70,
       de: "Abendprogramm vor vollem Saal",
       en: "The evening programme in front of a full hall",
       nDe: "Ein Ausschnitt aus dem moderierten Abendprogramm, aufgenommen aus dem Saal heraus.",
       nEn: "An excerpt from the hosted evening programme, filmed from the floor of the hall." },
-    { tag: "buehne", base: "assets/media/naya-barsha-2026/hall-during-programme", secs: 90,
+    { tag: "buehne", base: "assets/media/naya-barsha-2025/hall-during-programme", secs: 90,
       de: "Blick in den Saal während des Bühnenprogramms",
       en: "A view of the hall during the stage programme",
       nDe: "Ein Schwenk durch den Saal. Diese Aufnahme gibt den besten Eindruck davon, wie voll der Abend tatsächlich war.",
       nEn: "A pan across the hall. This recording gives the best sense of how full the evening actually was." },
-    { tag: "buehne musik", base: "assets/media/naya-barsha-2026/solo-vocal-performance", secs: 157,
+    { tag: "buehne musik", base: "assets/media/naya-barsha-2025/solo-vocal-performance", secs: 157,
       de: "Solo-Gesangsauftritt im Abendprogramm",
       en: "A solo vocal performance during the evening programme",
       nDe: "Ein Solo-Gesangsauftritt, fast zweieinhalb Minuten lang und ohne Schnitt — der Saal wird dabei hörbar still.",
       nEn: "A solo vocal performance, almost two and a half minutes long and unedited — the hall audibly falls quiet for it." },
-    { tag: "essen", base: "assets/media/naya-barsha-2026/shared-meal", secs: 64,
+    { tag: "essen", base: "assets/media/naya-barsha-2025/shared-meal", secs: 64,
       de: "Nepalesische Spezialitäten am Tisch der Gäste",
       en: "Nepali specialities at the guests' table",
       nDe: "Das Essen am Tisch der Gäste. Zum Neujahr kommen dieselben Gerichte auf den Tisch wie in Nepal — der Abend sollte auch kulinarisch vollständig sein.",
       nEn: "The food at the guests' table. The same dishes are served at New Year as in Nepal — the evening was meant to be complete on the plate as well." },
-    { tag: "team", base: "assets/media/naya-barsha-2026/organising-team-desk", secs: 14,
+    { tag: "team", base: "assets/media/naya-barsha-2025/organising-team-desk", secs: 14,
       de: "Kurzer Gruß des Organisationsteams am Empfangstisch",
       en: "A short greeting from the organising team at the reception desk",
       nDe: "Ein kurzer Gruß des Organisationsteams vom Empfangstisch aus — vierzehn Sekunden, mitten im Betrieb aufgenommen.",
@@ -604,6 +611,17 @@
       en: "The shared celebration meal at the Dashain evening",
       nDe: "Vierundzwanzig Sekunden vom gemeinsamen Essen. Sie zeigen den Teil des Abends, den Fotos am schlechtesten wiedergeben: den Geräuschpegel eines Saals, in dem alle gleichzeitig reden.",
       nEn: "Twenty-four seconds of the shared meal. They capture the part of the evening photographs convey worst: the sound of a hall in which everyone is talking at once." }
+  ];
+
+  /* ------------------------- Medical camp at the NRNA 9th Football Cup */
+  /* First-aid cover provided by our medical team at the NRNA football
+     tournament in Stuttgart, hosted by NFC Stuttgart. One clip. */
+  var MEDICAL_CAMP_CLIPS = [
+    { tag: "erstehilfe gemeinschaft", base: "assets/media/erste-hilfe-nrna-cup/medical-camp", secs: 220,
+      de: "Erste-Hilfe-Betreuung beim NRNA-Fußballturnier in Stuttgart",
+      en: "First-aid cover at the NRNA football tournament in Stuttgart",
+      nDe: "Ein Einblick in unser Medical Camp beim 9. NRNA-Fußballpokal in Stuttgart: Unser Team war über das gesamte Turnier hinweg für Erste Hilfe und medizinische Unterstützung ansprechbar.",
+      nEn: "A glimpse of our medical camp at the NRNA 9th Football Cup in Stuttgart: our team was on hand for first aid and medical support throughout the tournament." }
   ];
 
   /* ------------------------------------------------------- Donation tiers */
@@ -875,7 +893,9 @@
   window.NPJOEContent = {
     ready: ready,
     FIELDS: FIELDS, EVENTS: EVENTS, NEWS: NEWS, FAQ: FAQ, GALLERY: GALLERY, TIERS: TIERS,
-    NAYA_BARSHA: NAYA_BARSHA, NAYA_BARSHA_CLIPS: NAYA_BARSHA_CLIPS, DASHAIN_CLIPS: DASHAIN_CLIPS,
+    NAYA_BARSHA: NAYA_BARSHA, NAYA_BARSHA_2025: NAYA_BARSHA_2025,
+    NAYA_BARSHA_2025_CLIPS: NAYA_BARSHA_2025_CLIPS, DASHAIN_CLIPS: DASHAIN_CLIPS,
+    MEDICAL_CAMP_CLIPS: MEDICAL_CAMP_CLIPS,
     renderFields: renderFields,
     renderFieldOptions: renderFieldOptions,
     renderEvents: renderEvents,

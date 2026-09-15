@@ -65,7 +65,8 @@
       id: "gallery", href: "galerie.html", de: "Galerie", en: "Gallery",
       children: [
         { href: "galerie.html", de: "Alle Alben", en: "All albums", subDe: "Alle Alben auf einen Blick", subEn: "All albums at a glance" },
-        { href: "naya-barsha-2026.html", de: "Neujahr 2026", en: "New Year 2026", subDe: "10. April 2026 · Darmstadt · 10 Fotos, 11 Videos", subEn: "10 April 2026 · Darmstadt · 10 photos, 11 videos" },
+        { href: "naya-barsha-2026.html", de: "Neujahr 2026", en: "New Year 2026", subDe: "10. April 2026 · Darmstadt · 9 Fotos", subEn: "10 April 2026 · Darmstadt · 9 photos" },
+        { href: "naya-barsha-2025.html", de: "Neujahr 2025", en: "New Year 2025", subDe: "11. April 2025 · Knabenschule Halle · 1 Foto, 11 Videos", subEn: "11 April 2025 · Knabenschule Halle · 1 photo, 11 videos" },
         { href: "dashain-2024.html", de: "Dashain-Feier 2024", en: "Dashain 2024", subDe: "5. Oktober 2024 · 16 Fotos, 1 Video", subEn: "5 October 2024 · 16 photos, 1 video" }
       ]
     },
@@ -161,6 +162,7 @@
             ) + "</p>" +
             '<div class="social mt-3">' +
               soc(s.facebook, "Facebook", '<path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H16.7V4.6c-.3 0-1.3-.13-2.47-.13-2.44 0-4.11 1.49-4.11 4.23v2.36H7.4V14h2.72v8h3.38z"/>') +
+              soc(s.tiktok, "TikTok", '<path d="M16.6 5.82A4.28 4.28 0 0115.54 3h-3.09v12.4a2.59 2.59 0 01-2.59 2.5 2.6 2.6 0 01-2.6-2.6 2.6 2.6 0 013.36-2.48v-3.1a5.7 5.7 0 00-.76-.05A5.69 5.69 0 004.17 15.3 5.69 5.69 0 009.86 21a5.69 5.69 0 005.69-5.7V9.01a7.35 7.35 0 004.3 1.38v-3.1a4.28 4.28 0 01-3.25-1.47z"/>') +
               soc(s.instagram, "Instagram", '<path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 100 8.32 4.16 4.16 0 000-8.32zm0 6.86a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4zm4.34-7.03a.97.97 0 11.001-1.941.97.97 0 01-.001 1.941z"/>') +
               soc(s.youtube, "YouTube", '<path d="M21.6 7.2s-.2-1.4-.8-2c-.75-.8-1.6-.8-2-.85C16 4.2 12 4.2 12 4.2h-.01s-4 0-6.8.15c-.4.05-1.25.05-2 .85-.6.6-.8 2-.8 2S2.2 8.8 2.2 10.4v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.75.8 1.75.78 2.2.86 1.6.15 6.8.2 6.8.2s4 0 6.8-.16c.4-.05 1.25-.05 2-.85.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5c0-1.6-.2-3.25-.2-3.25zM9.9 14.1V8.5l5.15 2.8-5.15 2.8z"/>') +
               soc(s.linkedin, "LinkedIn", '<path d="M6.94 5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 0zM3.2 8.4h3.5V21H3.2V8.4zm5.8 0h3.35v1.72h.05c.47-.85 1.6-1.75 3.3-1.75 3.53 0 4.18 2.2 4.18 5.07V21h-3.5v-6.05c0-1.44-.03-3.3-2.03-3.3-2.03 0-2.34 1.57-2.34 3.2V21H9V8.4z"/>') +
@@ -181,6 +183,7 @@
             '<li><a href="veranstaltungen.html">' + bi("Veranstaltungen", "Events") + "</a></li>" +
             '<li><a href="galerie.html">' + bi("Galerie", "Gallery") + "</a></li>" +
             '<li><a href="naya-barsha-2026.html">' + bi("Neujahr 2026", "New Year 2026") + "</a></li>" +
+            '<li><a href="naya-barsha-2025.html">' + bi("Neujahr 2025", "New Year 2025") + "</a></li>" +
             '<li><a href="dashain-2024.html">' + bi("Dashain-Feier 2024", "Dashain 2024") + "</a></li>" +
           "</ul></div>" +
           "<div><h5>" + bi("Mitmachen", "Get involved") + "</h5><ul>" +
