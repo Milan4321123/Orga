@@ -91,9 +91,25 @@
       email: o.email || "",
       taxNumber: o.taxNumber || "",
       charitableSinceIso: o.charitableSinceIso || "",
-      chair: (o.board && o.board.chair) || "",
-      secretary: (o.board && o.board.secretary) || ""
+      /* The board is a list now, not a pair of fields. A donation receipt is
+         signed by whoever currently holds the office, so the name is looked up
+         by role rather than hard-coded — and an older {chair, secretary}
+         object still works, because a receipt must never lose its signature
+         line over a change of shape in a config file. */
+      chair: boardMember(o.board, "chair"),
+      secretary: boardMember(o.board, "secretary")
     };
+  }
+
+  /* which: "chair" or "secretary" */
+  function boardMember(board, which) {
+    if (!board) return "";
+    if (!Array.isArray(board)) return board[which] || "";
+    var wanted = which === "chair" ? /^Vorsitzende/ : /^Schriftf/;
+    for (var i = 0; i < board.length; i++) {
+      if (wanted.test(board[i].roleDe || "")) return board[i].name || "";
+    }
+    return "";
   }
 
   function letterhead() {

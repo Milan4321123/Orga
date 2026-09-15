@@ -842,6 +842,42 @@
   /* Same idea for the video wall: the clip keeps its running-time badge, and
      the sentence underneath says what the visitor is about to spend that time
      on — before they press play and start the download. */
+  /* The board, from site.js. Every page that shows it reads the same list, so
+     an election changes one file and not five pages. */
+  function renderBoard(sel, opts) {
+    var host = document.querySelector(sel);
+    if (!host) return;
+    var o = (window.NPJOE && window.NPJOE.org) || {};
+    var board = o.board;
+    if (!Array.isArray(board) || !board.length) return;
+    var lang = window.npjoeLang ? window.npjoeLang() : "de";
+    var showPhone = !opts || opts.phone !== false;
+
+    host.innerHTML = board.map(function (m) {
+      var role = lang === "en" ? (m.roleEn || m.roleDe) : (m.roleDe || m.roleEn);
+      /* tel: wants no spaces; the printed form keeps them so it can be read
+         aloud and dialled by hand. */
+      var dial = String(m.phone || "").replace(/[^\d+]/g, "");
+      return '<div class="board-member">' +
+        '<div class="board-name">' + esc(m.name) +
+          (m.alias ? ' <span class="board-alias">(' + esc(m.alias) + ")</span>" : "") +
+        "</div>" +
+        '<div class="board-role">' + esc(role || "") +
+          (m.signing
+            ? ' <span class="board-signing" title="' +
+              esc(bi("Vertretungsberechtigt nach § 26 BGB", "Authorised to represent under § 26 BGB")) +
+              '">§ 26</span>'
+            : "") +
+        "</div>" +
+        (showPhone && m.phone
+          ? '<a class="board-phone" href="tel:' + esc(dial) + '">' +
+            (window.NPJOEIcons ? window.NPJOEIcons.icon("phone") : "") +
+            esc(m.phone) + "</a>"
+          : "") +
+        "</div>";
+    }).join("");
+  }
+
   function renderClipEssay(sel, list) {
     var host = document.querySelector(sel);
     if (!host) return;
@@ -936,6 +972,7 @@
     renderFaq: renderFaq,
     renderEssay: renderEssay,
     renderClipEssay: renderClipEssay,
+    renderBoard: renderBoard,
     renderTiers: renderTiers,
     renderTierCards: renderTierCards
   };

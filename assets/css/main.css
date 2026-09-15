@@ -9,159 +9,183 @@
 :root {
   color-scheme: light;
 
-  /* Brand — Nepal crimson. Used sparingly and on purpose: a call to action, a
-     live link, a number that matters. Everything else is ink on paper. The
-     fastest way to make a page look cheap is to colour things that carry no
-     meaning. */
-  --brand: #c8102e;
-  --brand-600: #ad0c27;
-  --brand-700: #8d0a1f;
-  --brand-tint: #fdf2f4;
+  /* Accent — Apple's system blue. One interactive colour: links, focus, the
+     eyebrow above a headline, the primary button. Nepal crimson stays in the
+     logo and in --crimson for the rare moment that is about Nepal itself; two
+     competing accents on one page is how a site stops looking designed. */
+  --brand: #0071e3;
+  --brand-600: #0062c4;
+  --brand-700: #0051a3;
+  --brand-tint: rgba(0, 113, 227, 0.10);
   --brand-fg: #ffffff;
+  --crimson: #c8102e;
 
-  /* Supporting hues, for charts, badges and states — never for decoration. */
+  /* Supporting hues, for badges and states — never for decoration. */
   --navy: #1d4ed8;
-  --navy-soft: #eef2ff;
+  --navy-soft: rgba(29, 78, 216, 0.10);
   --saffron: #b45309;
-  --saffron-soft: #fef6ec;
+  --saffron-soft: rgba(180, 83, 9, 0.10);
   --teal: #0f766e;
-  --teal-soft: #eaf5f4;
+  --teal-soft: rgba(15, 118, 110, 0.10);
 
-  /* Neutrals — a greyscale with a trace of warmth, so white does not glare
-     and grey does not go blue. */
-  --bg: #ffffff;
-  --bg-alt: #f5f5f7;
-  --bg-elev: #ffffff;
-  --surface: #ffffff;
-  --surface-2: #f5f5f7;
-  --line: #e3e3e6;
-  --line-strong: #c9c9ce;
-  --ink: #1d1d1f;
-  --ink-2: #4b4b52;
-  --ink-3: #78787f;
+  /* Canvas — a pale, cool blue rather than white. Glass needs something behind
+     it to refract; on flat white a blurred panel is indistinguishable from an
+     opaque one, and the whole effect evaporates. The orbs live on body::before. */
+  --bg: #eef3fb;
+  --bg-alt: #e6edf8;
+  --bg-elev: rgba(255, 255, 255, 0.82);
+  --surface: rgba(255, 255, 255, 0.62);
+  --surface-2: rgba(255, 255, 255, 0.42);
+  --line: rgba(20, 40, 80, 0.10);
+  --line-strong: rgba(20, 40, 80, 0.18);
+  --ink: #0f172a;
+  --ink-2: #3b4658;
+  --ink-3: #6b7689;
   --ink-inv: #ffffff;
 
-  /* Tiles: the black panels that carry a headline and nothing else. */
-  --parchment: #f5f5f7;
-  --tile-dark: #000000;
-  --tile-dark-2: #1d1d1f;
-  --tile-ink: #f5f5f7;
-  --tile-ink-2: #a1a1a8;
-  --hairline: rgba(0, 0, 0, 0.09);
-  --render-shadow: rgba(0, 0, 0, 0.14) 0 18px 40px -12px;
-  /* Always-dark band used by the top bar, toasts and the skip link, so their
-     white text keeps its contrast in both themes. */
-  --band: #1d1d1f;
-  --band-fg: #f5f5f7;
-  --band-fg-dim: #9a9aa2;
+  /* Ambient light: the three soft orbs behind everything. */
+  --orb-1: rgba(120, 178, 255, 0.55);
+  --orb-2: rgba(170, 214, 255, 0.50);
+  --orb-3: rgba(200, 190, 255, 0.35);
 
-  /* Glass: the header sits on top of content, so it borrows its colour. */
-  --glass: rgba(255, 255, 255, 0.72);
-  --glass-line: rgba(0, 0, 0, 0.08);
+  /* Glass — the material. Fill, blur amount, the bright top edge that says
+     "this is a pane and light is hitting it", and the tinted shadow beneath. */
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-strong: rgba(255, 255, 255, 0.72);
+  --glass-blur: 22px;
+  --glass-line: rgba(255, 255, 255, 0.75);
+  --glass-edge: rgba(20, 40, 80, 0.10);
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset, 0 -1px 0 rgba(20, 40, 80, 0.04) inset,
+                  0 10px 30px -14px rgba(30, 60, 120, 0.25), 0 2px 6px rgba(30, 60, 120, 0.06);
+  --glass-shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 -1px 0 rgba(20, 40, 80, 0.05) inset,
+                     0 24px 60px -20px rgba(30, 60, 120, 0.35), 0 4px 12px rgba(30, 60, 120, 0.08);
+
+  /* Tiles: the deep panels that carry a headline and nothing else. Navy-black
+     rather than pure black, so they sit inside the blue world instead of
+     punching a hole in it. */
+  --parchment: rgba(255, 255, 255, 0.5);
+  --tile-dark: #070c18;
+  --tile-dark-2: #0e1628;
+  --tile-ink: #f5f8ff;
+  --tile-ink-2: #9aa7c2;
+  --hairline: rgba(20, 40, 80, 0.10);
+  --render-shadow: rgba(30, 60, 120, 0.2) 0 18px 40px -12px;
+  --band: #0e1628;
+  --band-fg: #f5f8ff;
+  --band-fg-dim: #9aa7c2;
 
   /* Status */
   --ok: #067647;
-  --ok-soft: #e8f6ee;
+  --ok-soft: rgba(6, 118, 71, 0.10);
   --warn: #b45309;
-  --warn-soft: #fef6ec;
+  --warn-soft: rgba(180, 83, 9, 0.10);
   --err: #b42318;
-  --err-soft: #fdeded;
+  --err-soft: rgba(180, 35, 24, 0.10);
 
   /* Typography — 17px body, display weights at 600, tracking tightening as the
-     size grows. Large text set at default tracking is the clearest signal that
-     a page was not drawn by anyone in particular. */
+     size grows. */
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-  --fs-xs: 0.75rem;      /* 12px  fine print */
-  --fs-sm: 0.875rem;     /* 14px  caption */
-  --fs-base: 1.0625rem;  /* 17px  body */
-  --fs-lg: 1.3125rem;    /* 21px  tagline */
-  --fs-xl: 1.5rem;       /* 24px  airy lead */
-  --fs-2xl: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);   /* → 40px section head */
-  --fs-3xl: clamp(2.1rem, 1.5rem + 2.7vw, 3.25rem);    /* → 52px tile headline */
-  --fs-4xl: clamp(2.75rem, 1.6rem + 5vw, 5rem);        /* → 80px hero */
-  --fs-5xl: clamp(3.25rem, 1.7rem + 6.8vw, 6.5rem);    /* → 104px statement */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1.0625rem;
+  --fs-lg: 1.3125rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
+  --fs-3xl: clamp(2.1rem, 1.5rem + 2.7vw, 3.25rem);
+  --fs-4xl: clamp(2.75rem, 1.6rem + 5vw, 5rem);
+  --fs-5xl: clamp(3.25rem, 1.7rem + 6.8vw, 6.5rem);
 
-  /* Space & shape. Radii step up with the size of the thing they wrap — a
-     22px radius on a small chip looks like a mistake, on a tile it looks
-     considered. */
+  /* Space & shape. Glass wants rounder corners than paper does — the highlight
+     along the edge needs a curve to travel around. */
   --sp: 1rem;
-  --radius-sm: 10px;
-  --radius: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 34px;
+  --radius-sm: 12px;
+  --radius: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 36px;
   --radius-full: 999px;
   --maxw: 1180px;
   --maxw-narrow: 720px;
   --section-y: clamp(4.5rem, 3rem + 6vw, 8.5rem);
 
-  /* Elevation — diffuse and almost colourless. A card should look lifted, not
-     outlined; on light backgrounds a visible border does the opposite. */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.03);
-  --shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 8px 20px -12px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.05), 0 18px 44px -18px rgba(0, 0, 0, 0.16);
-  --shadow-xl: 0 8px 20px rgba(0, 0, 0, 0.06), 0 34px 70px -24px rgba(0, 0, 0, 0.2);
+  /* Elevation — blue-tinted, because the light in this world is blue. */
+  --shadow-sm: 0 1px 2px rgba(30, 60, 120, 0.06);
+  --shadow: var(--glass-shadow);
+  --shadow-lg: var(--glass-shadow-lg);
+  --shadow-xl: 0 8px 20px rgba(30, 60, 120, 0.08), 0 34px 70px -24px rgba(30, 60, 120, 0.35);
 
-  --header-h: 68px;
+  --header-h: 64px;
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Dark is the second citizen here, not an afterthought: true black as the page
-   so OLED screens go quiet, and surfaces that lift by getting lighter rather
-   than by drawing a line around themselves. */
+/* Dark: the same material at night. A deep navy canvas with the orbs turned
+   down, glass that is a tinted darkening rather than a lightening, and the
+   same bright hairline along the top edge — that edge is what makes glass
+   read as glass in the dark. */
 html[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg: #000000;
-  --bg-alt: #0a0a0c;
-  --bg-elev: #161618;
-  --surface: #161618;
-  --surface-2: #1d1d1f;
-  --line: #2a2a2d;
-  --line-strong: #3d3d42;
-  --ink: #f5f5f7;
-  --ink-2: #b8b8bf;
-  --ink-3: #8a8a91;
-  --ink-inv: #1d1d1f;
+  --bg: #060a14;
+  --bg-alt: #0a1020;
+  --bg-elev: rgba(22, 30, 50, 0.85);
+  --surface: rgba(30, 40, 66, 0.48);
+  --surface-2: rgba(30, 40, 66, 0.32);
+  --line: rgba(160, 190, 255, 0.12);
+  --line-strong: rgba(160, 190, 255, 0.22);
+  --ink: #f2f6ff;
+  --ink-2: #b7c2d9;
+  --ink-3: #8592ab;
+  --ink-inv: #0f172a;
 
-  --brand: #ff4d63;
-  --brand-600: #ff6b7d;
-  --brand-700: #ff8494;
-  --brand-tint: #1f0d11;
-  --brand-fg: #ffffff;
+  --brand: #4da3ff;
+  --brand-600: #6db4ff;
+  --brand-700: #8cc4ff;
+  --brand-tint: rgba(77, 163, 255, 0.14);
+  --brand-fg: #06101f;
+  --crimson: #ff5c73;
 
-  --navy: #5b8cff;
-  --navy-soft: #111a2e;
+  --navy: #7ea6ff;
+  --navy-soft: rgba(126, 166, 255, 0.14);
   --saffron: #f0a44a;
-  --saffron-soft: #241a0e;
+  --saffron-soft: rgba(240, 164, 74, 0.14);
   --teal: #47bdae;
-  --teal-soft: #0d211f;
+  --teal-soft: rgba(71, 189, 174, 0.14);
   --ok: #4cc98a;
-  --ok-soft: #0e2418;
+  --ok-soft: rgba(76, 201, 138, 0.14);
   --warn: #f0a44a;
-  --warn-soft: #241a0e;
+  --warn-soft: rgba(240, 164, 74, 0.14);
   --err: #ff6b60;
-  --err-soft: #2a1210;
+  --err-soft: rgba(255, 107, 96, 0.14);
 
-  --parchment: #0a0a0c;
-  --tile-dark: #0a0a0c;
-  --tile-dark-2: #161618;
-  --tile-ink: #f5f5f7;
-  --tile-ink-2: #a1a1a8;
-  --hairline: rgba(255, 255, 255, 0.11);
+  --orb-1: rgba(40, 90, 200, 0.40);
+  --orb-2: rgba(60, 130, 230, 0.28);
+  --orb-3: rgba(110, 80, 200, 0.22);
+
+  --glass: rgba(24, 32, 54, 0.55);
+  --glass-strong: rgba(24, 32, 54, 0.75);
+  --glass-line: rgba(255, 255, 255, 0.14);
+  --glass-edge: rgba(0, 0, 0, 0.35);
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset,
+                  0 12px 34px -14px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --glass-shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.16) inset, 0 -1px 0 rgba(0, 0, 0, 0.35) inset,
+                     0 28px 70px -22px rgba(0, 0, 0, 0.85), 0 4px 12px rgba(0, 0, 0, 0.35);
+
+  --parchment: rgba(30, 40, 66, 0.4);
+  --tile-dark: #03060e;
+  --tile-dark-2: rgba(30, 40, 66, 0.6);
+  --tile-ink: #f2f6ff;
+  --tile-ink-2: #9aa7c2;
+  --hairline: rgba(160, 190, 255, 0.12);
   --render-shadow: rgba(0, 0, 0, 0.8) 0 18px 44px -12px;
-  --band: #161618;
-  --band-fg: #f5f5f7;
-  --band-fg-dim: #9a9aa2;
-
-  --glass: rgba(18, 18, 20, 0.72);
-  --glass-line: rgba(255, 255, 255, 0.1);
+  --band: #0a1020;
+  --band-fg: #f2f6ff;
+  --band-fg-dim: #8592ab;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 18px 44px -14px rgba(0, 0, 0, 0.72);
-  --shadow-xl: 0 34px 70px -22px rgba(0, 0, 0, 0.8);
+  --shadow: var(--glass-shadow);
+  --shadow-lg: var(--glass-shadow-lg);
+  --shadow-xl: 0 34px 70px -22px rgba(0, 0, 0, 0.85);
 }
 
 /* --------------------------------------------------------------------------
@@ -176,13 +200,16 @@ html {
   scroll-padding-top: calc(var(--header-h) + 16px);
 }
 
+html { background: var(--bg); }
 body {
   font-family: var(--font);
   letter-spacing: -0.011em;
   font-size: var(--fs-base);
   line-height: 1.65;
   color: var(--ink-2);
-  background: var(--bg);
+  /* No background here on purpose: html carries the colour, body::before
+     carries the light, and a body background would paint over the light. */
+  position: relative;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   /* clip, not hidden: `overflow-x: hidden` makes the body a scroll container,
@@ -192,6 +219,46 @@ body {
 }
 @supports not (overflow: clip) {
   body { overflow-x: hidden; }
+}
+/* The light source. Three soft orbs, fixed to the viewport so the glass has
+   something to refract as the page scrolls past. They are decoration and
+   nothing else: no pointer events, behind everything, and far too diffuse
+   to compete with a line of text. */
+body::before {
+  content: ""; position: fixed; inset: -20vh -10vw; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(42vw 42vw at 12% 8%, var(--orb-1), transparent 70%),
+    radial-gradient(48vw 40vw at 92% 22%, var(--orb-2), transparent 70%),
+    radial-gradient(40vw 40vw at 55% 100%, var(--orb-3), transparent 70%);
+  filter: blur(18px);
+}
+
+/* --- The material -----------------------------------------------------------
+   One definition of glass, applied to every raised surface. Fill + blur is
+   the pane; the inset bright line at the top is the light catching its edge;
+   the tinted shadow is what it casts. Change it here and the whole site
+   changes together — that is the point of calling it a material. */
+.card, .rail-card, .tile-pane, .hero-card, .hero-float, .consent, .modal-box,
+.field-card, .review-card, .callout, .accordion-item, .event-card, .news-card {
+  background: var(--glass);
+  -webkit-backdrop-filter: saturate(160%) blur(var(--glass-blur));
+  backdrop-filter: saturate(160%) blur(var(--glass-blur));
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-shadow);
+}
+/* Without backdrop-filter a translucent pane just shows the orbs through it
+   as a smear. Go opaque and keep the edge light. Same for anyone who has
+   asked their system to reduce transparency. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .card, .rail-card, .tile-pane, .hero-card, .hero-float, .consent, .modal-box,
+  .field-card, .review-card, .callout, .accordion-item, .event-card, .news-card,
+  .site-header { background: var(--glass-strong); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .card, .rail-card, .tile-pane, .hero-card, .hero-float, .consent, .modal-box,
+  .field-card, .review-card, .callout, .accordion-item, .event-card, .news-card,
+  .site-header { background: var(--glass-strong); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  body::before { display: none; }
 }
 
 img, svg, video { display: block; max-width: 100%; height: auto; }
@@ -232,7 +299,7 @@ code, kbd {
   border-radius: 4px;
 }
 
-::selection { background: var(--brand); color: #fff; }
+::selection { background: var(--brand); color: var(--brand-fg); }
 
 /* --------------------------------------------------------------------------
    3. Bilingual switching (DE / EN)
@@ -249,17 +316,20 @@ html[data-lang="en"] [data-lang="de"] { display: none !important; }
 
 .section { padding-block: var(--section-y); }
 .section-sm { padding-block: clamp(2.5rem, 4vw, 4rem); }
-.section-alt { background: var(--bg-alt); }
+/* A faint veil rather than a flat grey: enough to mark a change of section,
+   not enough to hide the light behind it. */
+.section-alt { background: var(--surface-2); }
 /* A flat black panel, not a blue gradient. The gradient was doing the work
    the headline should be doing. */
 /* Crimson #c8102e on black fails contrast badly — it was legible on white and
    simply carried over. Inside any black panel the brand steps up to its light
    variant, so links and eyebrows stay readable without a second class on every
    element. */
-.section-dark, .tile-pane.dark {
-  --brand: #ff4d63;
-  --brand-600: #ff6b7d;
-  --brand-700: #ff8494;
+.section-dark, .tile-pane.dark, .tile-dark, .tile-dark-2 {
+  --brand: #6db4ff;
+  --brand-600: #8cc4ff;
+  --brand-700: #aad3ff;
+  --brand-fg: #06101f;
   --line: rgba(255, 255, 255, 0.16);
   --line-strong: rgba(255, 255, 255, 0.28);
   --ink: var(--tile-ink);
@@ -328,8 +398,13 @@ html[data-lang="en"] [data-lang="de"] { display: none !important; }
   font-weight: 500; font-size: var(--fs-base); line-height: 1.2;
   letter-spacing: -0.011em;
   border: 1px solid transparent; cursor: pointer; text-align: center;
+  /* A thin band of light across the top third: the button is a small pane
+     of the same glass, lit from above. Kept faint enough to read as finish,
+     not as a gradient. */
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 55%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.35) inset, 0 6px 16px -8px color-mix(in srgb, var(--btn-bg) 60%, transparent);
   transition: background 0.22s var(--ease), color 0.22s var(--ease),
-              border-color 0.22s var(--ease), opacity 0.22s var(--ease);
+              border-color 0.22s var(--ease), opacity 0.22s var(--ease), box-shadow 0.22s var(--ease);
 }
 /* A filled button that jumps and casts a shadow on hover reads as a web
    template. Apple's darken instead — the button stays exactly where it is. */
@@ -343,10 +418,12 @@ html[data-lang="en"] [data-lang="de"] { display: none !important; }
 /* The quiet sibling: a soft grey fill rather than an outline. An outlined
    button beside a filled one reads as two competing weights. */
 .btn-ghost {
-  --btn-bg: var(--bg-alt); --btn-fg: var(--ink);
-  border-color: transparent;
+  --btn-bg: var(--glass); --btn-fg: var(--ink);
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--glass-shadow);
 }
-.btn-ghost:hover { background: var(--line); --btn-fg: var(--ink); }
+.btn-ghost:hover { background: var(--glass-strong); --btn-fg: var(--brand); }
 .btn-white { --btn-bg: #fff; --btn-fg: #1d1d1f; }
 .btn-white:hover { background: #fff; opacity: 0.9; }
 .btn-outline-white { --btn-bg: transparent; --btn-fg: #fff; border-color: rgba(255,255,255,0.35); }
@@ -393,16 +470,11 @@ html[data-theme="dark"] .badge-saffron { color: var(--saffron); }
    separates it; the hairline is there only for dark mode, where a fill of the
    same family would otherwise dissolve into the page. */
 .card {
-  background: var(--surface); border: 1px solid transparent;
   border-radius: var(--radius-lg); padding: 1.75rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), background 0.3s var(--ease-out);
 }
-html[data-theme="dark"] .card { border-color: var(--line); box-shadow: none; }
-.card-hover:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-html[data-theme="dark"] .card-hover:hover { border-color: var(--line-strong); }
-.card-flat { box-shadow: none; background: var(--bg-alt); }
-html[data-theme="dark"] .card-flat { border-color: transparent; }
+.card-hover:hover { transform: translateY(-3px); box-shadow: var(--glass-shadow-lg); background: var(--glass-strong); }
+.card-flat { box-shadow: none; background: var(--surface-2); }
 .card-pad-lg { padding: 2.5rem; }
 .card-accent { box-shadow: inset 0 3px 0 var(--brand), var(--shadow); }
 .card-icon {
@@ -465,12 +537,13 @@ html[data-theme="dark"] .card-flat { border-color: transparent; }
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: var(--glass);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--glass-line);
-  transition: border-color 0.2s var(--ease);
+  backdrop-filter: saturate(180%) blur(28px);
+  -webkit-backdrop-filter: saturate(180%) blur(28px);
+  border-bottom: 1px solid var(--glass-edge);
+  box-shadow: 0 1px 0 var(--glass-line) inset;
+  transition: background 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
-.site-header.is-stuck { border-bottom-color: var(--line-strong); }
+.site-header.is-stuck { background: var(--glass-strong); box-shadow: 0 1px 0 var(--glass-line) inset, 0 8px 24px -16px rgba(30, 60, 120, 0.25); }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; min-height: var(--header-h);
@@ -525,7 +598,7 @@ html[data-theme="dark"] .card-flat { border-color: transparent; }
   font-size: var(--fs-xs); font-weight: 750; color: var(--ink-3); cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
-.lang-switch button[aria-pressed="true"] { background: var(--brand); color: #fff; }
+.lang-switch button[aria-pressed="true"] { background: var(--brand); color: var(--brand-fg); }
 
 .icon-btn {
   width: 40px; height: 40px; display: grid; place-items: center;
@@ -546,6 +619,10 @@ html[data-theme="dark"] .card-flat { border-color: transparent; }
      position:fixed descendant. With it on the header, the drawer was sized
      against the header instead of the screen — 84px tall, one item visible.
      The blur is a desktop nicety; the menu working is not optional. */
+  /* Without the blur the bar has to be opaque, so the inverted state needs an
+     opaque colour of its own — otherwise the light text lands on the light
+     canvas colour and the brand disappears. */
+  .site-header.over-media { background: rgba(8, 14, 28, 0.94); }
   .site-header {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
@@ -607,7 +684,7 @@ html[data-theme="dark"] .card-flat { border-color: transparent; }
    headline set as large as it can honestly go. */
 .hero {
   position: relative; overflow: hidden;
-  background: var(--bg);
+  background: transparent;
   padding-block: clamp(4rem, 9vw, 8rem);
 }
 .hero > * { position: relative; }
@@ -622,7 +699,7 @@ html[data-theme="dark"] .card-flat { border-color: transparent; }
 
 .page-hero {
   position: relative;
-  background: var(--bg-alt);
+  background: transparent;
   padding-block: clamp(3rem, 6vw, 5.5rem);
   border-bottom: 0;
 }
@@ -637,15 +714,11 @@ html[data-theme="dark"] .card-flat { border-color: transparent; }
 
 /* Hero visual collage */
 .hero-visual { position: relative; }
-.hero-card {
-  background: var(--surface); border: 1px solid transparent;
-  border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-lg);
-}
-html[data-theme="dark"] .hero-card { border-color: var(--line); }
+.hero-card { border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--glass-shadow-lg); }
 .hero-card + .hero-card { margin-top: 1rem; }
 .hero-float {
-  position: absolute; background: var(--surface); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 0.8rem 1.05rem; box-shadow: var(--shadow-xl);
+  position: absolute;
+  border-radius: var(--radius); padding: 0.8rem 1.05rem;
   display: flex; align-items: center; gap: 0.7rem; font-size: var(--fs-sm); font-weight: 620;
   color: var(--ink);
 }
@@ -1154,15 +1227,15 @@ html[data-theme="dark"] .site-footer { background: #080c14; }
 .modal { position: fixed; inset: 0; z-index: 350; display: none; place-items: center; padding: 1.5rem; background: rgba(16,24,40,0.6); backdrop-filter: blur(4px); }
 .modal.is-open { display: grid; }
 .modal-box {
-  background: var(--surface); border-radius: var(--radius-lg); padding: 2rem;
+  border-radius: var(--radius-lg); padding: 2rem;
   max-width: min(560px, 94vw); max-height: 88vh; overflow-y: auto; box-shadow: var(--shadow-xl);
 }
 
 /* Cookie / consent banner */
 .consent {
   position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 320;
-  background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-lg);
-  padding: 1.25rem 1.4rem; box-shadow: var(--shadow-xl); max-width: 620px; margin-inline: auto;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem; box-shadow: var(--glass-shadow-lg); max-width: 620px; margin-inline: auto;
   display: none; animation: fadeUp 0.35s var(--ease);
 }
 .consent.is-open { display: block; }
@@ -1264,16 +1337,16 @@ html[data-theme="dark"] .site-footer { background: #080c14; }
   --tile-fg: var(--ink);
   --tile-fg-dim: var(--ink-3);
   padding-block: clamp(4rem, 9vw, 7.5rem);
-  background: var(--bg);
+  background: transparent;
   color: var(--tile-fg);
   position: relative;
   overflow: hidden;
 }
-.tile-parchment { background: var(--parchment); }
+.tile-parchment { background: var(--surface-2); }
 .tile-dark {
   background: var(--tile-dark);
-  --tile-fg: #f5f5f7;
-  --tile-fg-dim: #a1a1a6;
+  --tile-fg: var(--tile-ink);
+  --tile-fg-dim: var(--tile-ink-2);
   color: var(--tile-fg);
 }
 .tile-dark-2 { background: var(--tile-dark-2); --tile-fg: #f5f5f7; --tile-fg-dim: #a1a1a6; color: var(--tile-fg); }
@@ -1299,7 +1372,7 @@ html[data-theme="dark"] .site-footer { background: #080c14; }
   color: var(--brand);
   margin-bottom: 0.4rem;
 }
-.tile-dark .tile-eyebrow, .tile-dark-2 .tile-eyebrow { color: #ff7a8f; }
+.tile-dark .tile-eyebrow, .tile-dark-2 .tile-eyebrow { color: var(--brand); }
 .tile-title {
   font-size: var(--fs-3xl);
   font-weight: 600;
@@ -1346,7 +1419,7 @@ html[data-theme="dark"] .site-footer { background: #080c14; }
 }
 .clink:hover::after { translate: 3px 0; }
 .clink-sm { font-size: var(--fs-base); }
-.tile-dark .clink, .tile-dark-2 .clink { color: #ff8fa1; }
+.tile-dark .clink, .tile-dark-2 .clink { color: var(--brand); }
 
 /* Split tile — two half-width canvases side by side */
 .tile-split {
@@ -1358,16 +1431,20 @@ html[data-theme="dark"] .site-footer { background: #080c14; }
 .tile-pane {
   border-radius: var(--radius-xl);
   padding: clamp(2.25rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.75rem);
-  background: var(--parchment);
   text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 26rem;
 }
-.tile-pane.dark { background: var(--tile-dark-2); color: #f5f5f7; }
-.tile-pane.dark h2, .tile-pane.dark h3 { color: #f5f5f7; }
-.tile-pane.dark .tile-sub { color: #a1a1a6; }
-.tile-pane.dark .clink { color: #ff8fa1; }
+.tile-pane.dark {
+  background: linear-gradient(160deg, rgba(14, 22, 40, 0.92), rgba(7, 12, 24, 0.96));
+  color: var(--tile-ink-2);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.14) inset, 0 24px 60px -20px rgba(7, 12, 24, 0.7);
+}
+.tile-pane.dark h2, .tile-pane.dark h3 { color: var(--tile-ink); }
+.tile-pane.dark .tile-sub { color: var(--tile-ink-2); }
+.tile-pane.dark .clink { color: var(--brand); }
 /* The emoji hung at the foot of the tile like a signature. A line icon reads
    as a label, so it belongs at the head of the card — before the words it
    labels. `order` moves it there without disturbing the reading order. */
@@ -1437,19 +1514,14 @@ html[data-theme="dark"] .site-footer { background: #080c14; }
    they were the same value and the whole rail read as loose text. White
    against the grey, lifted rather than outlined. */
 .rail-card {
-  background: var(--surface);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   padding: 1.85rem;
   min-height: 21rem;
   display: flex;
   flex-direction: column;
-  border: 1px solid transparent;
-  box-shadow: var(--shadow);
-  transition: transform 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out);
+  transition: transform 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out), background 0.28s var(--ease-out);
 }
-html[data-theme="dark"] .rail-card { border-color: var(--line); box-shadow: none; }
-.rail-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-html[data-theme="dark"] .rail-card:hover { border-color: var(--line-strong); }
+.rail-card:hover { transform: translateY(-3px); box-shadow: var(--glass-shadow-lg); background: var(--glass-strong); }
 .rail-card .rail-icon { display: block; color: var(--brand); margin-bottom: 1.1rem; }
 .rail-card .rail-icon svg { width: 30px; height: 30px; }
 .rail-card h3, .rail-card h4 { font-size: var(--fs-lg); margin-bottom: 0.5rem; letter-spacing: -0.014em; }
@@ -1587,7 +1659,7 @@ html[data-theme="dark"] .rail-card:hover { border-color: var(--line-strong); }
   font-size: var(--fs-sm); font-weight: 600; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--brand); display: block; margin-bottom: 0.5rem;
 }
-.tile-dark .stage-step .step-index { color: #ff8fa1; }
+.tile-dark .stage-step .step-index { color: var(--brand); }
 .stage-step h3 { font-size: var(--fs-2xl); margin-bottom: 0.6rem; }
 .stage-step p { font-size: var(--fs-base); color: var(--ink-3); line-height: 1.55; }
 .tile-dark .stage-step p { color: #a1a1a6; }
@@ -1906,3 +1978,137 @@ h3.t-h5, h4.t-h5, h5.t-h5 { font-size: var(--fs-lg); letter-spacing: -0.012em; }
 /* An icon set beside a line of text sits on the text's baseline, not above it. */
 .event-meta svg { width: 16px; height: 16px; vertical-align: -0.2em; margin-right: 0.35rem; }
 .event-meta span { display: inline-flex; align-items: center; }
+
+/* --------------------------------------------------------------------------
+   Board roster
+   A name, the office held, and a way to reach them — separated by rules
+   rather than boxed, so four people read as one list and not four cards.
+   -------------------------------------------------------------------------- */
+.board-list { display: grid; gap: 0; }
+.board-member {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.15rem 1rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--line);
+}
+.board-member:first-child { border-top: 0; padding-top: 0; }
+.board-name {
+  grid-column: 1;
+  font-weight: 600; color: var(--ink); letter-spacing: -0.014em;
+}
+.board-alias { font-weight: 400; color: var(--ink-3); }
+.board-role {
+  grid-column: 1; grid-row: 2;
+  font-size: var(--fs-sm); color: var(--ink-3);
+}
+/* The § 26 marker is a fact about the office, not an ornament — it stays
+   quiet until someone is looking for it. */
+.board-signing {
+  display: inline-block; margin-left: 0.35rem;
+  font-size: var(--fs-xs); font-variant-numeric: tabular-nums;
+  color: var(--brand); border: 1px solid currentColor;
+  border-radius: var(--radius-full); padding: 0.05rem 0.45rem;
+  cursor: help;
+}
+.board-phone {
+  grid-column: 2; grid-row: 1 / span 2;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: var(--fs-sm); color: var(--ink-2);
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+.board-phone:hover { color: var(--brand); }
+.board-phone svg { width: 15px; height: 15px; }
+@media (max-width: 480px) {
+  .board-member { grid-template-columns: minmax(0, 1fr); }
+  .board-phone { grid-column: 1; grid-row: auto; margin-top: 0.35rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Cinematic hero
+   A looping film behind the opening statement. Everything here exists to keep
+   the sentence readable on top of moving pictures: a fixed aspect the video
+   crops into, a two-part scrim, and a header that inverts while it is over
+   the film. The video itself is decoration — muted, silent, aria-hidden, and
+   replaced by its own poster frame for anyone who has asked for less motion.
+   -------------------------------------------------------------------------- */
+.hero-cinema {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  /* minmax(0, 1fr), not the implicit `auto`: a grid item refuses to shrink
+     below its content by default, which pushed the headline off the right of
+     a phone and took the menu button with it. */
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  min-height: min(78vh, 720px);
+  padding-block: clamp(4rem, 9vw, 7rem);
+}
+.hero-cinema > .container { position: relative; z-index: 1; min-width: 0; }
+
+.hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-media-video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  /* The film was graded warm in places; a touch of desaturation keeps it from
+     fighting the blue the rest of the page is built from. */
+  filter: saturate(0.9) contrast(1.05);
+}
+/* Two scrims, not one. The linear pass darkens the top and bottom edges so the
+   header and the fold both have something solid to sit against; the radial
+   pass sinks the middle just enough for the headline without flattening the
+   picture into a grey rectangle. */
+.hero-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      rgba(3, 7, 16, 0.82) 0%,
+      rgba(3, 7, 16, 0.38) 26%,
+      rgba(3, 7, 16, 0.40) 68%,
+      rgba(3, 7, 16, 0.86) 100%),
+    radial-gradient(90% 70% at 50% 50%, rgba(3, 7, 16, 0.18), rgba(3, 7, 16, 0.62));
+}
+
+/* The headline carries a shadow as well as a scrim. A bright frame can still
+   drift under a word, and one frame of illegibility is enough to notice. */
+.hero-cinema .tile-title-lg,
+.hero-cinema .tile-eyebrow,
+.hero-cinema .tile-sub { text-shadow: 0 1px 24px rgba(3, 7, 16, 0.55); }
+.hero-cinema .tile-sub { color: #dbe3f4; }
+.hero-cinema .clink { color: #ffffff; }
+.hero-cinema .clink:hover { color: var(--brand); }
+
+/* Motion is the whole point of the effect, so when it is unwanted the film is
+   removed rather than merely paused — the poster frame says the same thing. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-media-video { display: none; }
+  .hero-media {
+    background-image: url("../media/hero/connect-poster.jpg");
+    background-size: cover; background-position: center;
+  }
+}
+
+/* --- The header while it is over the film -----------------------------------
+   Dark ink on a bright glass pane stops working the moment the pane is over a
+   night scene. Rather than restyle every control, the header redefines the
+   tokens its children already read, so the whole bar inverts at once. */
+.site-header.over-media {
+  --ink: #f5f8ff;
+  --ink-2: #dae1f0;
+  --ink-3: #a9b5cd;
+  --line: rgba(255, 255, 255, 0.18);
+  --line-strong: rgba(255, 255, 255, 0.3);
+  --surface: rgba(255, 255, 255, 0.1);
+  --bg-alt: rgba(255, 255, 255, 0.12);
+  --brand: #7cc0ff;
+  --brand-600: #9ccfff;
+  --brand-fg: #06101f;
+  --glass: rgba(6, 12, 24, 0.42);
+  --glass-strong: rgba(6, 12, 24, 0.66);
+  --glass-line: rgba(255, 255, 255, 0.16);
+  --glass-edge: rgba(255, 255, 255, 0.1);
+  color: #f5f8ff;
+}
+/* The dropdown panel is its own surface and does not inherit the bar's glass. */
+.site-header.over-media .dropdown { --bg-elev: rgba(10, 16, 30, 0.92); }

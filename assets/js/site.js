@@ -34,10 +34,25 @@ window.NPJOE = {
       city: "Darmstadt",
       country: "Deutschland"
     },
-    board: {
-      chair: "Kesilal Sunchauri",
-      secretary: "Durga Sunchauri"
-    },
+    /* The elected board. Order is the order of office under § 8 of the statutes,
+       and it is the order every page shows them in. `signing` marks the two who
+       represent the association jointly under § 26 BGB — the Impressum and the
+       About page both read that flag rather than repeating the two names.
+       `phone` is optional: leave it out and nothing on the page breaks. */
+    board: [
+      { name: "Kesilal Sunchauri", alias: "Rikesh",
+        roleDe: "Vorsitzender", roleEn: "Chairperson",
+        phone: "+49 1573 1313742", signing: true },
+      { name: "Sushma Bishwokarma",
+        roleDe: "Stellvertretende Vorsitzende", roleEn: "Deputy chairperson",
+        phone: "+49 152 53068775" },
+      { name: "Durga Sunchauri", alias: "Ritesh",
+        roleDe: "Schriftführer", roleEn: "Secretary",
+        phone: "+49 176 34601709", signing: true },
+      { name: "Trishna Sunuwar",
+        roleDe: "Schatzmeisterin", roleEn: "Treasurer",
+        phone: "+49 174 2594522" }
+    ],
     bank: {
       holder: "Nepalesische Progressive Jugendorganisation e.V.",
       iban: "DE00 0000 0000 0000 0000 00",

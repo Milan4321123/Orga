@@ -54,7 +54,7 @@
     document.documentElement.setAttribute("data-theme", theme);
     if (persist) LS.set(THEME_KEY, theme);
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#000000" : "#ffffff");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#060a14" : "#eef3fb");
   }
 
   /* The site is dark by default. A visitor's own choice is remembered and
@@ -141,8 +141,19 @@
 
     var header = document.getElementById("siteHeader");
     if (header) {
-      var onScroll = function () { header.classList.toggle("is-stuck", window.scrollY > 8); };
+      /* A page may open with a film behind the header. While the bar overlaps
+         that film it inverts to light text on dark glass — measured against
+         the hero's actual bottom edge rather than a guessed scroll distance,
+         because the hero is a different height on every viewport. */
+      var media = document.querySelector(".hero-media");
+      var onScroll = function () {
+        header.classList.toggle("is-stuck", window.scrollY > 8);
+        if (!media) return;
+        var headerBottom = header.getBoundingClientRect().bottom;
+        header.classList.toggle("over-media", media.getBoundingClientRect().bottom > headerBottom);
+      };
       window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
       onScroll();
     }
   }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Über uns | NPJOE</title>
 <meta name="description" content="Über die 2024 gegründete Nepalesische Progressive Jugendorganisation e.V. in Darmstadt: gemeinnützige Ziele, rechtlicher Status, Satzung, Vorstand und Partnerschaft mit NPYS-N.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#eef3fb">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
@@ -197,9 +197,12 @@
           </ul>
           <hr>
           <p class="text-sm">
-            <strong><span data-lang="de">Derzeit unterzeichnungsberechtigt</span><span data-lang="en">Currently signing for the association</span></strong><br>
-            Kesilal Sunchauri — <span data-lang="de">Vorsitzende:r</span><span data-lang="en">chairperson</span><br>
-            Durga Sunchauri — <span data-lang="de">Schriftführer:in</span><span data-lang="en">secretary</span>
+            <strong><span data-lang="de">Der amtierende Vorstand</span><span data-lang="en">The board in office</span></strong>
+          </p>
+          <div class="board-list mt-3" id="boardList"></div>
+          <p class="text-xs text-muted mt-3">
+            <span data-lang="de">Mit „§ 26“ gekennzeichnete Mitglieder vertreten den Verein gemeinsam gerichtlich und außergerichtlich.</span>
+            <span data-lang="en">Members marked “§ 26” jointly represent the association in and out of court.</span>
           </p>
         </div>
 
@@ -341,5 +344,12 @@
 </main>
 
 <div id="siteFooterMount"></div>
+
+<script>
+  /* The board comes from assets/js/site.js, so an election is one edit there. */
+  document.addEventListener("npjoe:layout-ready", function () {
+    if (window.NPJOEContent) window.NPJOEContent.renderBoard("#boardList");
+  });
+</script>
 </body>
 </html>
