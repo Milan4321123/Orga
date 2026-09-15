@@ -20,7 +20,7 @@ Danach im Browser öffnen:
 | Adresse | Inhalt |
 | --- | --- |
 | http://localhost:4173 | Website |
-| http://localhost:4173/admin.html | Vorstandsbereich (Passwort: `npjoe-admin`) |
+| http://localhost:4173/admin | Vorstandsbereich (Passwort lokal: `npjoe-admin`) |
 
 > **Vor dem Livegang unbedingt das Admin-Passwort ändern** (siehe „Konfiguration“).
 
@@ -281,10 +281,42 @@ Der Eintrag ist gespeichert, bevor die erste Zeile SMTP gesprochen wird.
 der Ihren Mail-Hoster als Absender erlaubt, und DKIM, das Ihr Hoster im Kundenbereich
 anbietet. Beides wird bei der Domain `progressive-youth.de` eingetragen, nicht hier im Code.
 
-### Anmeldung
+### Zugang zum Vorstandsbereich
 
-Die Anmeldung nutzt ein serverseitiges Passwort, eine HttpOnly-Session (8 Stunden) und ein
-Limit von 8 Versuchen pro 5 Minuten.
+Drei Schichten, in dieser Reihenfolge wichtig:
+
+**1. Das Passwort.** Es ist der eigentliche Schutz. `npjoe-admin` ist die eingebaute
+Voreinstellung und steht in dieser README — also öffentlich. Auf einem Live-Server
+**verweigert der Server die Anmeldung mit diesem Passwort** und antwortet stattdessen mit
+einem Hinweis. Der Vorstandsbereich ist damit gesperrt, bis `NPJOE_ADMIN_PASSWORD` gesetzt
+ist. Das ist Absicht: eine vergessene Umgebungsvariable soll nicht die Anschriften,
+Geburtsdaten und Unterschriften aller Mitglieder freigeben.
+
+**2. Der geheime Pfad.** `NPJOE_ADMIN_PATH` bestimmt, unter welcher Adresse die Seite
+antwortet:
+
+```bash
+NPJOE_ADMIN_PATH='vorstand-9f2c71a4b8' node server/server.js
+# → https://www.progressive-youth.de/vorstand-9f2c71a4b8
+```
+
+`/admin.html` liefert dann nichts mehr — und zwar dieselbe 404-Seite wie jede andere
+nicht vorhandene Adresse, Byte für Byte. Ein „403 Verboten“ würde verraten, dass dort etwas
+ist. Die Seite wird nicht gecacht, nicht indexiert und gibt den Pfad nicht als Referrer an
+andere Websites weiter. Der Pfad steht **nur** in der Umgebungsvariable, nie im Code.
+
+Das ist ausdrücklich **kein Ersatz für das Passwort**: Das Repository ist öffentlich, der
+Quelltext von `admin.html` also für jeden lesbar. Der geheime Pfad hält Scanner,
+Suchmaschinen und Neugierige fern — mehr nicht.
+
+**3. Die Sitzung.** HttpOnly-Cookie, 8 Stunden gültig, 8 Anmeldeversuche pro 5 Minuten.
+
+Im Footer der Website steht **kein Link** auf den Vorstandsbereich. Der Vorstand erreicht ihn
+über ein Lesezeichen; in der Benachrichtigungs-E-Mail bei neuen Eingängen steht die
+vollständige Adresse.
+
+**Pfad vergessen?** Er steht bei Ihrem Hoster unter den Umgebungsvariablen — bei Render unter
+*Environment* — und beim Serverstart im Log.
 
 ---
 
@@ -299,7 +331,7 @@ Wirkungszahlen. Änderungen dort wirken auf allen Seiten (Kopf- und Fußzeile, F
 ### Inhalte
 
 Termine, News, FAQ, Wirkungszahlen und Kontaktdaten pflegt der Vorstand im Browser unter
-`admin.html` → **Inhalte pflegen**. Ein Eingriff in den Code ist dafür nicht nötig.
+dem Vorstandsbereich → **Inhalte pflegen**. Ein Eingriff in den Code ist dafür nicht nötig.
 
 **`assets/js/content.js`** enthält die Ausgangsfassung dieser Inhalte sowie die Dinge, die
 nur im Code stehen: die zwölf Berufsfelder, die Galerie und die Spendenstufen — jeweils
@@ -315,7 +347,8 @@ NPJOE_ADMIN_PASSWORD='ein-langes-eigenes-passwort' PORT=8080 node server/server.
 | Variable | Standard | Bedeutung |
 | --- | --- | --- |
 | `PORT` | `4173` | Port des Servers |
-| `NPJOE_ADMIN_PASSWORD` | `npjoe-admin` | Passwort für den Vorstandsbereich |
+| `NPJOE_ADMIN_PASSWORD` | `npjoe-admin` | Passwort für den Vorstandsbereich — die Voreinstellung wird im Produktivbetrieb abgelehnt |
+| `NPJOE_ADMIN_PATH` | `admin` | Geheimer Pfad des Vorstandsbereichs |
 | `NPJOE_DATA_DIR` | `server/data` | Ablage der Einsendungen — auf einem Plattform-Host **zwingend** außerhalb des Anwendungsordners |
 | `NPJOE_WEBHOOK_URL` | leer | Meldung bei neuen Eingängen |
 | `NPJOE_SMTP_HOST` u. a. | leer | E-Mail-Versand — siehe „E-Mail-Bestätigungen“ |
@@ -343,6 +376,8 @@ Diese Stellen sind bewusst als Platzhalter markiert, weil sie amtliche Angaben b
 7. **E-Mail-Versand** — SMTP-Zugangsdaten des Postfachs `info@` setzen, sonst erhält niemand
    eine Eingangsbestätigung und Newsletter-Anmeldungen bleiben unbestätigt (siehe
    „E-Mail-Bestätigungen“); dazu SPF- und DKIM-Einträge der Domain setzen
+8. **Vorstandsbereich** — `NPJOE_ADMIN_PASSWORD` und `NPJOE_ADMIN_PATH` setzen; ohne das
+   Passwort bleibt der Bereich gesperrt (siehe „Zugang zum Vorstandsbereich“)
 
 Eine anwaltliche Prüfung von Impressum und Datenschutzerklärung ist empfehlenswert.
 

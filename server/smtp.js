@@ -140,7 +140,16 @@ function conversation(cfg, envelope, data) {
       resolve(result);
     };
     const fail = (error, code) => finish({ ok: false, error: error, code: code || null });
-    const timer = setTimeout(() => fail("timeout"), cfg.timeout);
+    /* Which step we are on, so a timeout can say something useful. A hosting
+       platform that blocks outbound SMTP — Render does this on free instances
+       — drops the packets silently rather than refusing the connection, so the
+       symptom is a hang before the greeting and nothing else. Reported as a
+       bare "timeout" it looks like a wrong password, and the search starts in
+       the wrong place. */
+    let phase = "connect";
+    const timer = setTimeout(() => fail(
+      phase === "connect" ? "no_reply_from_server_port_blocked_or_unreachable" : "timeout_during_" + phase
+    ), cfg.timeout);
 
     function deliver(reply) {
       const w = waiting.shift();
@@ -193,11 +202,13 @@ function conversation(cfg, envelope, data) {
           : net.connect(opts));
 
         await expect([220]);
+        phase = "greeting";
         const me = (os.hostname() || "localhost").replace(/[^\w.-]/g, "") || "localhost";
         let hello = await expect([250], "EHLO " + me);
         let encrypted = cfg.secure;
 
         if (!encrypted && /STARTTLS/i.test(hello.text)) {
+          phase = "starttls";
           await expect([220], "STARTTLS");
           socket.removeListener("data", onData);
           const plain = socket;
@@ -216,6 +227,7 @@ function conversation(cfg, envelope, data) {
         }
 
         if (cfg.user) {
+          phase = "auth";
           if (!encrypted && !cfg.allowPlaintextAuth) return fail("refused_plaintext_auth");
           if (/AUTH[^\n]*PLAIN/i.test(hello.text)) {
             const token = Buffer.from(["", cfg.user, cfg.pass].join("\0"), "utf8").toString("base64");
@@ -227,8 +239,10 @@ function conversation(cfg, envelope, data) {
           }
         }
 
+        phase = "envelope";
         await expect([250], "MAIL FROM:<" + envelope.from + ">");
         for (const rcpt of envelope.to) await expect([250, 251], "RCPT TO:<" + rcpt + ">");
+        phase = "data";
         await expect([354], "DATA");
         /* A line consisting of a single dot would end the message early. */
         socket.write(data.replace(/\r\n\./g, "\r\n..") + "\r\n.\r\n");

@@ -347,7 +347,7 @@ function boardNotice(type, row, ctx) {
       (row.email ? "E-Mail: " + row.email + "\n" : "") +
       "Eingegangen: " + new Date(row._receivedAt || Date.now()).toLocaleString("de-DE", { timeZone: "Europe/Berlin" }) + "\n\n" +
       "Die vollständigen Angaben stehen im Vorstandsbereich" +
-      (base ? ":\n" + base.replace(/\/$/, "") + "/admin.html" : " unter /admin.html") + "\n\n" +
+      (base && ctx && ctx.adminPath ? ":\n" + base.replace(/\/$/, "") + "/" + ctx.adminPath : "") + "\n\n" +
       "Die Website sagt eine Antwort in ein bis drei Werktagen zu.\n" +
       (type === "membership"
         ? "\nÜber die Aufnahme entscheidet der Vorstand nach § 5 der Satzung. " +

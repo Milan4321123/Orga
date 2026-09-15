@@ -218,7 +218,10 @@
             '<a href="impressum.html">Impressum</a>' +
             '<a href="datenschutz.html">' + bi("Datenschutz", "Privacy") + "</a>" +
             '<a href="datenschutz.html#dsgvo-rechte">' + bi("Ihre Rechte (DSGVO)", "Your rights (GDPR)") + "</a>" +
-            '<a href="admin.html">' + bi("Vorstandsbereich", "Board area") + "</a>" +
+            /* No link to the board area. It is for two people, it holds the
+               members' addresses and signatures, and a link in the footer of
+               every page tells the whole internet it is there. The board
+               reaches it by bookmark, at the path NPJOE_ADMIN_PATH names. */
           "</span>" +
         "</div>" +
       "</div></footer>";

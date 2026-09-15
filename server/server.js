@@ -17,6 +17,7 @@
        NPJOE_MAIL_BOARD      where the board copy goes, default: the from address
        NPJOE_MAIL_ACK        "0" switches the acknowledgements off
        NPJOE_MAIL_BOARD_COPY "0" switches the board copy off
+       NPJOE_ADMIN_PATH      secret word the board area answers on, default "admin"
    ========================================================================== */
 
 "use strict";
@@ -51,6 +52,14 @@ const MAIL = smtp.config(process.env);
 const MAIL_BOARD = (process.env.NPJOE_MAIL_BOARD || MAIL.from || "").trim();
 const MAIL_ACK = !/^(0|false|no|off)$/i.test(process.env.NPJOE_MAIL_ACK || "1");
 const MAIL_BOARD_COPY = !/^(0|false|no|off)$/i.test(process.env.NPJOE_MAIL_BOARD_COPY || "1");
+/* Where the board area answers. "admin" is the documented default and is the
+   first thing any scanner tries, so a live site should set its own secret
+   word here. This is not a lock — the password is the lock — but it keeps the
+   page out of crawlers, out of link previews and away from anyone who simply
+   guesses. Note the page's own source is public on GitHub; the secret is this
+   path, which lives only in the environment. */
+const ADMIN_PATH = String(process.env.NPJOE_ADMIN_PATH || "admin")
+  .trim().replace(/^\/+|\/+$/g, "").replace(/\.html$/i, "");
 
 const FORM_TYPES = ["membership", "volunteer", "contact", "newsletter", "donation", "partner"];
 
@@ -305,7 +314,9 @@ function sendAcknowledgement(type, record, base) {
 
 function sendBoardCopy(type, record, base) {
   if (!MAIL_BOARD_COPY || !MAIL.configured || !MAIL_BOARD) return Promise.resolve({ skipped: "disabled" });
-  const notice = letters.boardNotice(type, record, { org: contentOrg(), baseUrl: base });
+  const notice = letters.boardNotice(type, record, {
+    org: contentOrg(), baseUrl: base, adminPath: ADMIN_PATH
+  });
   return deliver("board", type, record._ref, {
     to: MAIL_BOARD, subject: notice.subject, text: notice.text, replyTo: notice.replyTo
   });
@@ -637,6 +648,14 @@ async function handleApi(req, res, pathname, query) {
   if (parts[0] === "admin") {
     if (parts[1] === "login" && req.method === "POST") {
       if (rateLimited("login:" + ip, 8, 5 * 60 * 1000)) return json(res, 429, { error: "too_many_attempts" });
+      /* "npjoe-admin" is printed in the README, which is public on GitHub. On
+         a live site it is not a password, it is an open door, so we refuse it
+         rather than let one forgotten environment variable expose every
+         member's address, date of birth and signature. */
+      if (IS_PRODUCTION && ADMIN_PASSWORD === "npjoe-admin") {
+        console.error("[" + new Date().toISOString() + "] login refused — NPJOE_ADMIN_PASSWORD is still the default");
+        return json(res, 503, { error: "default_password_refused" });
+      }
       const body = JSON.parse((await readBody(req)) || "{}");
       if (!safeEqual(body.password || "", ADMIN_PASSWORD)) return json(res, 401, { error: "invalid_password" });
       const token = newSession();
@@ -901,16 +920,20 @@ function serveStatic(req, res, pathname) {
     relFromRoot.some((seg) => seg.startsWith("."));
   if (blocked) return send(res, 403, "Forbidden", { "Content-Type": "text/plain" });
 
+  /* The board area is handed out by the route below, and only there. Serving
+     it from here too would put it back at /admin.html whatever the secret
+     path is set to — and answering 403 would confirm it exists, so this looks
+     exactly like any other page that is not there. */
+  if (relFromRoot.length === 1 && relFromRoot[0].toLowerCase() === "admin.html") {
+    return notFound(req, res);
+  }
+
   fs.stat(filePath, (err, stat) => {
     if (err || !stat.isFile()) {
       /* try .html extension, then 404 page */
       const withHtml = filePath + ".html";
       if (fs.existsSync(withHtml)) return stream(withHtml);
-      const notFound = path.join(ROOT, "404.html");
-      if (fs.existsSync(notFound)) {
-        return send(res, 404, fs.readFileSync(notFound), { "Content-Type": MIME[".html"] });
-      }
-      return send(res, 404, "Not found", { "Content-Type": "text/plain" });
+      return notFound(req, res);
     }
     stream(filePath, stat);
   });
@@ -963,6 +986,19 @@ function serveStatic(req, res, pathname) {
     if (req.method === "HEAD") return res.end();
     fs.createReadStream(file, { start, end }).pipe(res);
   }
+}
+
+/* The one 404 the whole server uses. A page that is deliberately hidden must
+   answer exactly like a page that was never there — a different status, or a
+   different body, would confirm the guess. */
+function notFound(req, res) {
+  const page = path.join(ROOT, "404.html");
+  if (fs.existsSync(page)) {
+    return send(res, 404, req.method === "HEAD" ? "" : fs.readFileSync(page), {
+      "Content-Type": MIME[".html"]
+    });
+  }
+  return send(res, 404, "Not found", { "Content-Type": "text/plain" });
 }
 
 /* ---------------------------------------------- newsletter opt-in landing
@@ -1031,6 +1067,24 @@ const server = http.createServer((req, res) => {
     }, { "Cache-Control": "no-store" });
   }
 
+  /* The board area, at whatever secret word NPJOE_ADMIN_PATH names. Both the
+     bare path and the .html form answer, because a browser's address bar and
+     a bookmark disagree about which one they keep. */
+  const asked = decodeURIComponent(pathname).replace(/^\/+|\/+$/g, "").replace(/\.html$/i, "");
+  if (asked && asked === ADMIN_PATH) {
+    if (req.method !== "GET" && req.method !== "HEAD") return notFound(req, res);
+    const page = path.join(ROOT, "admin.html");
+    if (!fs.existsSync(page)) return notFound(req, res);
+    return send(res, 200, req.method === "HEAD" ? "" : fs.readFileSync(page), {
+      "Content-Type": MIME[".html"],
+      /* Never cached anywhere, never indexed, and never leaked as a referrer
+         to another site — the path is the secret, so it must not travel. */
+      "Cache-Control": "no-store, no-cache, must-revalidate, private",
+      "X-Robots-Tag": "noindex, nofollow, noarchive",
+      "Referrer-Policy": "no-referrer"
+    });
+  }
+
   /* The link in the first newsletter mail. A plain URL without .html, because
      it is typed into mail clients and read aloud over the phone. */
   if (pathname === "/newsletter-bestaetigen" || pathname === "/newsletter-confirm") {
@@ -1058,7 +1112,8 @@ server.listen(PORT, HOST, () => {
   console.log("\n  NPJOE website running");
   console.log("  ──────────────────────────────────────────");
   console.log("  Site      " + base);
-  console.log("  Admin     " + base + "/admin.html");
+  console.log("  Admin     " + base + "/" + ADMIN_PATH +
+              (ADMIN_PATH === "admin" ? "  \x1b[33m(Standardpfad — NPJOE_ADMIN_PATH setzen)\x1b[0m" : ""));
   console.log("  Data      " + DATA_DIR);
 
   /* On a platform host the working directory is wiped on every deploy. If the
@@ -1072,7 +1127,11 @@ server.listen(PORT, HOST, () => {
     console.log("  Abhilfe: In Render einen Disk anlegen (Mount-Pfad /var/data)");
     console.log("  und NPJOE_DATA_DIR=/var/data setzen.\x1b[0m\n");
   }
-  console.log("  Password  " + (process.env.NPJOE_ADMIN_PASSWORD ? "(from NPJOE_ADMIN_PASSWORD)" : '"npjoe-admin" — change before deploying!'));
+  console.log("  Password  " + (process.env.NPJOE_ADMIN_PASSWORD
+    ? "(from NPJOE_ADMIN_PASSWORD)"
+    : IS_PRODUCTION
+      ? '\x1b[31mnot set — the board area is LOCKED until NPJOE_ADMIN_PASSWORD is set\x1b[0m'
+      : '"npjoe-admin" — change before deploying!'));
   console.log("  Limit     " + RATE_LIMIT + " submissions per IP per 10 minutes");
   console.log("  Alerts    " + (WEBHOOK_URL ? "on → " + (function () { try { return new URL(WEBHOOK_URL).host; } catch (e) { return "invalid URL"; } })() : "off (set NPJOE_WEBHOOK_URL)"));
   console.log("  E-Mail    " + (MAIL.configured

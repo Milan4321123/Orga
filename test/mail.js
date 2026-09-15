@@ -17,6 +17,7 @@ const ROOT = path.resolve(__dirname, "..");
 const USER = "info@progressive-youth.de";
 const PASS = "mailbox-secret";
 const BOARD = "vorstand@progressive-youth.de";
+const ADMIN_PATH = "vorstand-3e91c7";
 
 /* ------------------------------------------------------------ fake mailbox */
 function smtpServer(port) {
@@ -147,7 +148,8 @@ module.exports = async function run(sitePort, mailPort) {
       NPJOE_SMTP_HOST: "127.0.0.1", NPJOE_SMTP_PORT: String(mailPort),
       NPJOE_SMTP_USER: USER, NPJOE_SMTP_PASS: PASS,
       NPJOE_MAIL_FROM: USER, NPJOE_MAIL_BOARD: BOARD,
-      NPJOE_PUBLIC_URL: "http://127.0.0.1:" + sitePort
+      NPJOE_PUBLIC_URL: "http://127.0.0.1:" + sitePort,
+      NPJOE_ADMIN_PATH: ADMIN_PATH
     })
   });
 
@@ -191,7 +193,9 @@ module.exports = async function run(sitePort, mailPort) {
     }
     if (copy) {
       ok("the board copy names the form type", /Beitrittserklärung/.test(copy.subject), copy.subject);
-      ok("it points at the protected area, not at the data", /admin\.html/.test(copy.body));
+      ok("it points at the protected area, not at the data",
+         /Vorstandsbereich/.test(copy.body) && copy.body.indexOf("/" + ADMIN_PATH) !== -1,
+         copy.body.slice(0, 200));
       ok("replying to it writes to the applicant",
          (copy.headers["reply-to"] || "").indexOf("anisha.gurung@example.com") !== -1);
     }
@@ -228,7 +232,12 @@ module.exports = async function run(sitePort, mailPort) {
 
     if (link) {
       const url = link[1].replace(/^http:\/\/127\.0\.0\.1:\d+/, "");
-      const wrong = await get(sitePort, url.replace(/token=./, "token=0"));
+      /* Change one character to something it certainly is not — overwriting it
+         with a fixed digit silently does nothing when it already is that digit,
+         which made this check pass by luck one run in sixteen. */
+      const token = /token=([a-f0-9]+)/.exec(url)[1];
+      const tampered = (token[0] === "a" ? "b" : "a") + token.slice(1);
+      const wrong = await get(sitePort, url.replace(token, tampered));
       eq("a tampered link is refused", wrong.status, 400);
       eq("and the entry is still pending", stored()[0].status, "pending");
 
@@ -267,7 +276,8 @@ module.exports = async function run(sitePort, mailPort) {
         NPJOE_SMTP_HOST: "127.0.0.1", NPJOE_SMTP_PORT: String(mailPort),
         NPJOE_SMTP_USER: USER, NPJOE_SMTP_PASS: PASS,
         NPJOE_MAIL_FROM: USER, NPJOE_MAIL_BOARD: BOARD,
-        NPJOE_PUBLIC_URL: "http://127.0.0.1:" + sitePort
+        NPJOE_PUBLIC_URL: "http://127.0.0.1:" + sitePort,
+        NPJOE_ADMIN_PATH: ADMIN_PATH
       })
     });
     extra.push(restarted);

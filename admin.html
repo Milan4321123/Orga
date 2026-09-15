@@ -466,14 +466,19 @@ document.addEventListener("npjoe:layout-ready", function () {
       body: JSON.stringify({ password: pw })
     }).then(function (r) {
       if (r.status === 429) throw new Error("rate");
+      if (r.status === 503) throw new Error("default");
       if (!r.ok) throw new Error("bad");
       return r.json();
     }).then(function () {
       el("adminPw").value = "";
       showDash();
     }).catch(function (err) {
-      el("loginError").textContent = err.message === "rate"
-        ? T("Zu viele Versuche. Bitte in einigen Minuten erneut versuchen.", "Too many attempts. Please try again in a few minutes.")
+      el("loginError").textContent =
+        err.message === "rate"
+          ? T("Zu viele Versuche. Bitte in einigen Minuten erneut versuchen.", "Too many attempts. Please try again in a few minutes.")
+        : err.message === "default"
+          ? T("Der Vorstandsbereich ist gesperrt, solange das voreingestellte Passwort gilt — es steht öffentlich in der README. Setzen Sie beim Hoster NPJOE_ADMIN_PASSWORD auf ein eigenes langes Passwort.",
+              "The board area is locked while the built-in default password applies — it is published in the README. Set NPJOE_ADMIN_PASSWORD at your host to your own long password.")
         : T("Anmeldung fehlgeschlagen. Läuft der Server und stimmt das Passwort?", "Sign-in failed. Is the server running and the password correct?");
     });
   });

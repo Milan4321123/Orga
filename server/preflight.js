@@ -37,6 +37,24 @@ function checks(env) {
       "Server mit NPJOE_ADMIN_PASSWORD='ein langes eigenes Passwort' starten.");
   }
 
+  /* Obscurity is not security, but the documented default path is the first
+     thing every scanner tries, and the board area holds signatures. */
+  const adminPath = (env.NPJOE_ADMIN_PATH || "admin").trim().replace(/^\/+|\/+$/g, "");
+  if (!env.NPJOE_ADMIN_PATH || adminPath === "admin") {
+    add("warning", "admin-path",
+      "Der Vorstandsbereich liegt auf dem bekannten Standardpfad",
+      "/admin.html ist die erste Adresse, die automatische Scanner ausprobieren — und der Pfad " +
+      "steht in der öffentlichen README. Ein eigener, nicht zu erratender Pfad hält Scanner und " +
+      "Suchmaschinen fern. Das Passwort bleibt trotzdem der eigentliche Schutz.",
+      "NPJOE_ADMIN_PATH auf ein eigenes Wort setzen, z. B. NPJOE_ADMIN_PATH='vorstand-9f2c71a4'.");
+  }
+  if (adminPath.length < 12 && env.NPJOE_ADMIN_PATH) {
+    add("note", "admin-path-short",
+      "Der Pfad des Vorstandsbereichs ist kurz",
+      "Ein kurzer Pfad wie „intern“ ist schnell durchprobiert und bringt gegenüber dem Standard wenig.",
+      "Mindestens zwölf Zeichen verwenden, am besten mit einer Zufallsfolge.");
+  }
+
   const ibanMatch = /iban:\s*"([^"]*)"/.exec(site);
   const iban = ibanMatch ? ibanMatch[1].replace(/\s+/g, "") : "";
   if (!iban || /^DE0{2}0+$/.test(iban) || /^DE000000/.test(iban)) {

@@ -52,9 +52,10 @@ function waitForServer(PORT, timeoutMs) {
 }
 
 (async function main() {
-  const [PORT, RL_PORT, HOOK_SITE_PORT, HOOK_PORT, DEPLOY_PORT, MAIL_SITE_PORT, MAIL_PORT] = process.env.TEST_PORT
-    ? [0, 1, 2, 3, 4, 5, 6].map(n => Number(process.env.TEST_PORT) + n)
-    : await freePorts(7);
+  const [PORT, RL_PORT, HOOK_SITE_PORT, HOOK_PORT, DEPLOY_PORT, MAIL_SITE_PORT, MAIL_PORT,
+         ADMIN_PATH_PORT] = process.env.TEST_PORT
+    ? [0, 1, 2, 3, 4, 5, 6, 7].map(n => Number(process.env.TEST_PORT) + n)
+    : await freePorts(8);
 
   console.log("\n\x1b[1mNPJOE test suite\x1b[0m");
   console.log("port " + PORT + " · data " + DATA_DIR + "\n");
@@ -98,6 +99,7 @@ function waitForServer(PORT, timeoutMs) {
       await require("./ratelimit")(RL_PORT);
       await require("./notify")(HOOK_SITE_PORT, HOOK_PORT);
       await require("./mail")(MAIL_SITE_PORT, MAIL_PORT);
+      await require("./admin-path")(ADMIN_PATH_PORT);
       await require("./deploy")(DEPLOY_PORT);
     } catch (e) {
       lib.group("Server");

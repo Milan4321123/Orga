@@ -74,6 +74,7 @@ module.exports = function run() {
   const cleanCheck = require(path.join(tmp, "server", "preflight.js"));
   const clean = cleanCheck.checks({
     NPJOE_ADMIN_PASSWORD: "ein-langes-eigenes-passwort-2026",
+    NPJOE_ADMIN_PATH: "vorstand-9f2c71a4b8",
     NPJOE_WEBHOOK_URL: "https://hooks.example.com/npjoe",
     NPJOE_SMTP_HOST: "smtp.example.com",
     NPJOE_SMTP_USER: "vorstand@npjoe-verein.de",
