@@ -525,8 +525,8 @@ function securityHeaders() {
     "Referrer-Policy": "strict-origin-when-cross-origin",
     /* The site loads nothing from anywhere else: no CDN, no fonts, no
        analytics. Saying so blocks an injected <script src> outright.
-       'unsafe-inline' is still needed for the small inline theme/language
-       script in every page head and for inline style attributes. */
+       'unsafe-inline' is still needed for the small inline language script
+       in every page head and for inline style attributes. */
     "Content-Security-Policy": [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline'",
@@ -1033,8 +1033,7 @@ function newsletterPage(result) {
     '<meta name="robots" content="noindex">\n' +
     '<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">\n' +
     '<link rel="stylesheet" href="assets/css/main.css">\n' +
-    '<script>(function(){try{var t=localStorage.getItem("npjoe.theme")||"dark";document.documentElement.setAttribute("data-theme",t);' +
-    'var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");' +
+    '<script>(function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");' +
     'document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();</script>\n' +
     '<script src="assets/js/site.js" defer></script>\n<script src="assets/js/layout.js" defer></script>\n' +
     '<script src="assets/js/main.js" defer></script>\n</head>\n<body data-page="">\n' +

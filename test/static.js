@@ -388,24 +388,21 @@ module.exports = function run() {
   ok("and stay hidden until then", /\.dropdown \{[^}]*visibility: hidden/.test(outsideMobile));
 
   /* ------------------------------------------------------------- theming */
-  group("Light is the default, and the choice is the visitor's");
-  const notLight = pages.filter(f => !/<html lang="de" data-lang="de" data-theme="light">/.test(read(f)));
-  eq("every page starts light before any script runs", notLight, []);
-  const darkChrome = pages.filter(f => /<meta name="theme-color" content="#0d1117">/.test(read(f)));
-  eq("browser chrome matches the light default", darkChrome, []);
+  group("One theme only — the dark navy one");
+  const notDark = pages.filter(f => !/<html lang="de" data-lang="de" data-theme="dark">/.test(read(f)));
+  eq("every page is dark before any script runs", notDark, []);
+  const wrongChrome = pages.filter(f => !/<meta name="theme-color" content="#060a14">/.test(read(f)));
+  eq("browser chrome matches the canvas", wrongChrome, []);
   const osKeyed = pages.filter(f => /prefers-color-scheme: dark\)"\)\.matches/.test(read(f)));
   eq("no page falls back to the operating system setting", osKeyed, []);
-  const noSaved = pages.filter(f => !/localStorage\.getItem\("npjoe\.theme"\)/.test(read(f)));
-  eq("every page still honours a saved choice", noSaved, []);
+  const stillStores = pages.filter(f => /npjoe\.theme/.test(read(f)));
+  eq("no page reads or writes a stored theme any more", stillStores, []);
 
   const mainJs = fs.readFileSync(path.join(ROOT, "assets/js/main.js"), "utf8");
-  ok("the default is stated once, in one place", /var DEFAULT_THEME = "light"/.test(mainJs));
-  ok("a saved choice overrides the default", /saved === "dark" \|\| saved === "light" \? saved : DEFAULT_THEME/.test(mainJs));
-  ok("the toggle writes the choice back",
-     /applyTheme\([\s\S]{0,80}"dark" \? "light" : "dark", true\)/.test(mainJs));
-  ok("a first visit stores nothing — the default stays changeable",
-     /if \(persist\) LS\.set\(THEME_KEY, theme\)/.test(mainJs));
-  ok("switching updates the browser chrome colour", /meta\.setAttribute\("content", theme === "dark"/.test(mainJs));
+  ok("the script carries no theme switching", !/THEME|applyTheme/.test(mainJs));
+  const layoutJs = fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8");
+  ok("the header has no theme toggle", !/themeToggle/.test(layoutJs));
+  ok("the tokens are defined once, on :root", !/data-theme=/.test(css));
 
   /* Printed paper is white regardless of what the board sees on screen. */
   ok("printed documents stay on white paper",

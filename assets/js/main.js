@@ -1,6 +1,6 @@
 /* ==========================================================================
    NPJOE — Global behaviour
-   Language switch · theme · navigation · reveal · counters · tabs · lightbox
+   Language switch · navigation · reveal · counters · tabs · lightbox
    ========================================================================== */
 (function () {
   "use strict";
@@ -43,28 +43,6 @@
 
   window.npjoeLang = function () { return document.documentElement.getAttribute("data-lang") || "de"; };
   window.npjoeT = function (de, en) { return window.npjoeLang() === "en" ? en : de; };
-
-  /* ------------------------------------------------------------------ Theme */
-  var THEME_KEY = "npjoe.theme";
-
-  /* persist = only when the visitor actually chose. Writing the default on a
-     first visit would store a preference nobody expressed and would freeze
-     that default for everyone who ever loaded the page. */
-  function applyTheme(theme, persist) {
-    document.documentElement.setAttribute("data-theme", theme);
-    if (persist) LS.set(THEME_KEY, theme);
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#060a14" : "#eef3fb");
-  }
-
-  /* The site is dark by default. A visitor's own choice is remembered and
-     always wins; the toggle in the header switches and stores it. */
-  var DEFAULT_THEME = "light";
-
-  function initTheme() {
-    var saved = LS.get(THEME_KEY, "");
-    applyTheme(saved === "dark" || saved === "light" ? saved : DEFAULT_THEME);
-  }
 
   /* -------------------------------------------------------------- Toast API */
   window.npjoeToast = function (message, kind) {
@@ -536,10 +514,6 @@
     document.querySelectorAll("[data-set-lang]").forEach(function (b) {
       b.addEventListener("click", function () { applyLang(b.getAttribute("data-set-lang")); });
     });
-    var themeBtn = document.getElementById("themeToggle");
-    if (themeBtn) themeBtn.addEventListener("click", function () {
-      applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
-    });
     initNav();
     initReveal();
     initCounters();
@@ -566,7 +540,6 @@
      so a browser without JS still shows every section. */
   document.documentElement.classList.add("js");
 
-  initTheme();
   if (window.__npjoeLayoutReady) bootOnce();
   else document.addEventListener("npjoe:layout-ready", bootOnce);
   /* Safety net for pages without the shared layout. It must not fire on a

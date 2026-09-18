@@ -4,7 +4,7 @@ Website der **Nepalesischen Progressiven Jugendorganisation e.V.** (VR 84826, Am
 Darmstadt) mit Online-Beitrittserklärung, Volunteer-Registrierung, Spendenformular,
 Kontaktformularen und einem internen Vorstandsbereich zur Verwaltung aller Eingänge.
 
-Zweisprachig **Deutsch / Englisch**, hell/dunkel, ohne Build-Schritt, ohne externe
+Zweisprachig **Deutsch / Englisch**, durchgehend dunkles Design, ohne Build-Schritt, ohne externe
 Abhängigkeiten — weder im Frontend noch im Server.
 
 ---
@@ -497,7 +497,7 @@ Dateianfang anpassbar.
 │   ├── css/main.css             Designsystem: Tokens, Komponenten, Dark Mode, Druck
 │   ├── js/site.js               Vereinsdaten & Formular-Modus  ← hier anpassen
 │   ├── js/layout.js             Kopfzeile, Navigation, Fußzeile (an einer Stelle gepflegt)
-│   ├── js/main.js               Sprache, Theme, Navigation, Filter, Animationen
+│   ├── js/main.js               Sprache, Navigation, Filter, Animationen
 │   ├── js/forms.js              Validierung, Assistent, Entwürfe, Unterschrift, Versand
 │   ├── js/content.js            Ausgangsinhalte + Berufsfelder, Galerie, Spendenstufen
 │   ├── js/admin-content.js      Inhaltseditor des Vorstandsbereichs
@@ -530,7 +530,7 @@ im Array `NAV` ergänzt und erscheint auf allen 21 Seiten.
 - **Barrierefreiheit**: Sprunglink, Fokusrahmen, `aria`-Auszeichnungen an Navigation und
   Formularen, Fehlermeldungen mit `aria-invalid`, Bedienung per Tastatur, `prefers-reduced-motion`.
 - **Datenschutz**: keine Tracking-Cookies, keine externen Schriften, keine Analysedienste,
-  keine Social-Media-Plugins. Lokal gespeichert werden nur Sprache, Theme und Formularentwürfe.
+  keine Social-Media-Plugins. Lokal gespeichert werden nur Sprache und Formularentwürfe.
 - **Sicherheit**: Honeypot, Rate-Limits (12 Einsendungen / 10 Min., 8 Login-Versuche / 5 Min.),
   Längenbegrenzung der Felder, Pseudonymisierung der IP-Adresse, Schutz gegen
   Verzeichniswechsel beim Dateiausliefern und gegen Formelinjektion im CSV-Export.
@@ -573,7 +573,7 @@ die eigene Herkunft. Unter `NODE_ENV=production` kommt HSTS hinzu.
 - Fehlermeldungen werden mit `aria-invalid` markiert, in einer Live-Region angesagt und der
   Fokus springt auf das erste beanstandete Feld.
 - Sichtbarer Fokusrahmen, Sprunglink, keine positiven `tabindex`-Werte.
-- Beide Themes erfüllen WCAG AA (schlechtester gemessener Wert 4,57:1).
+- Das Design erfüllt WCAG AA (schlechtester gemessener Wert 4,57:1).
 - Bewegung respektiert `prefers-reduced-motion`.
 
 Nicht automatisch prüfbar und daher offen: ein Durchgang mit einem echten Screenreader

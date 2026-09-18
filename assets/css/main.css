@@ -6,81 +6,82 @@
 /* --------------------------------------------------------------------------
    1. Tokens
    -------------------------------------------------------------------------- */
+/* The site has one theme: a deep navy canvas with the orbs turned down, glass
+   that is a tinted darkening rather than a lightening, and a bright hairline
+   along the top edge — that edge is what makes glass read as glass. */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  /* Accent — Apple's system blue. One interactive colour: links, focus, the
-     eyebrow above a headline, the primary button. Nepal crimson stays in the
-     logo and in --crimson for the rare moment that is about Nepal itself; two
-     competing accents on one page is how a site stops looking designed. */
-  --brand: #0071e3;
-  --brand-600: #0062c4;
-  --brand-700: #0051a3;
-  --brand-tint: rgba(0, 113, 227, 0.10);
-  --brand-fg: #ffffff;
-  --crimson: #c8102e;
+  /* Accent — one interactive colour: links, focus, the eyebrow above a
+     headline, the primary button. Nepal crimson stays in the logo and in
+     --crimson for the rare moment that is about Nepal itself; two competing
+     accents on one page is how a site stops looking designed. */
+  --brand: #4da3ff;
+  --brand-600: #6db4ff;
+  --brand-700: #8cc4ff;
+  --brand-tint: rgba(77, 163, 255, 0.14);
+  --brand-fg: #06101f;
+  --crimson: #ff5c73;
 
   /* Supporting hues, for badges and states — never for decoration. */
-  --navy: #1d4ed8;
-  --navy-soft: rgba(29, 78, 216, 0.10);
-  --saffron: #b45309;
-  --saffron-soft: rgba(180, 83, 9, 0.10);
-  --teal: #0f766e;
-  --teal-soft: rgba(15, 118, 110, 0.10);
+  --navy: #7ea6ff;
+  --navy-soft: rgba(126, 166, 255, 0.14);
+  --saffron: #f0a44a;
+  --saffron-soft: rgba(240, 164, 74, 0.14);
+  --teal: #47bdae;
+  --teal-soft: rgba(71, 189, 174, 0.14);
 
-  /* Canvas — a pale, cool blue rather than white. Glass needs something behind
-     it to refract; on flat white a blurred panel is indistinguishable from an
-     opaque one, and the whole effect evaporates. The orbs live on body::before. */
-  --bg: #eef3fb;
-  --bg-alt: #e6edf8;
-  --bg-elev: rgba(255, 255, 255, 0.82);
-  --surface: rgba(255, 255, 255, 0.62);
-  --surface-2: rgba(255, 255, 255, 0.42);
-  --line: rgba(20, 40, 80, 0.10);
-  --line-strong: rgba(20, 40, 80, 0.18);
-  --ink: #0f172a;
-  --ink-2: #3b4658;
-  --ink-3: #6b7689;
-  --ink-inv: #ffffff;
+  /* Canvas — deep navy rather than pure black, so the glass has something to
+     refract and the whole page still reads as blue. The orbs live on
+     body::before. */
+  --bg: #060a14;
+  --bg-alt: #0a1020;
+  --bg-elev: rgba(22, 30, 50, 0.85);
+  --surface: rgba(30, 40, 66, 0.48);
+  --surface-2: rgba(30, 40, 66, 0.32);
+  --line: rgba(160, 190, 255, 0.12);
+  --line-strong: rgba(160, 190, 255, 0.22);
+  --ink: #f2f6ff;
+  --ink-2: #b7c2d9;
+  --ink-3: #8592ab;
+  --ink-inv: #0f172a;
 
   /* Ambient light: the three soft orbs behind everything. */
-  --orb-1: rgba(120, 178, 255, 0.55);
-  --orb-2: rgba(170, 214, 255, 0.50);
-  --orb-3: rgba(200, 190, 255, 0.35);
+  --orb-1: rgba(40, 90, 200, 0.40);
+  --orb-2: rgba(60, 130, 230, 0.28);
+  --orb-3: rgba(110, 80, 200, 0.22);
 
   /* Glass — the material. Fill, blur amount, the bright top edge that says
-     "this is a pane and light is hitting it", and the tinted shadow beneath. */
-  --glass: rgba(255, 255, 255, 0.55);
-  --glass-strong: rgba(255, 255, 255, 0.72);
+     "this is a pane and light is hitting it", and the shadow beneath. */
+  --glass: rgba(24, 32, 54, 0.55);
+  --glass-strong: rgba(24, 32, 54, 0.75);
   --glass-blur: 22px;
-  --glass-line: rgba(255, 255, 255, 0.75);
-  --glass-edge: rgba(20, 40, 80, 0.10);
-  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset, 0 -1px 0 rgba(20, 40, 80, 0.04) inset,
-                  0 10px 30px -14px rgba(30, 60, 120, 0.25), 0 2px 6px rgba(30, 60, 120, 0.06);
-  --glass-shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 -1px 0 rgba(20, 40, 80, 0.05) inset,
-                     0 24px 60px -20px rgba(30, 60, 120, 0.35), 0 4px 12px rgba(30, 60, 120, 0.08);
+  --glass-line: rgba(255, 255, 255, 0.14);
+  --glass-edge: rgba(0, 0, 0, 0.35);
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset,
+                  0 12px 34px -14px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --glass-shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.16) inset, 0 -1px 0 rgba(0, 0, 0, 0.35) inset,
+                     0 28px 70px -22px rgba(0, 0, 0, 0.85), 0 4px 12px rgba(0, 0, 0, 0.35);
 
-  /* Tiles: the deep panels that carry a headline and nothing else. Navy-black
-     rather than pure black, so they sit inside the blue world instead of
-     punching a hole in it. */
-  --parchment: rgba(255, 255, 255, 0.5);
-  --tile-dark: #070c18;
-  --tile-dark-2: #0e1628;
-  --tile-ink: #f5f8ff;
+  /* Tiles: the deep panels that carry a headline and nothing else. */
+  --parchment: rgba(30, 40, 66, 0.4);
+  --tile-dark: #03060e;
+  --tile-dark-2: rgba(30, 40, 66, 0.6);
+  --tile-ink: #f2f6ff;
   --tile-ink-2: #9aa7c2;
-  --hairline: rgba(20, 40, 80, 0.10);
-  --render-shadow: rgba(30, 60, 120, 0.2) 0 18px 40px -12px;
-  --band: #0e1628;
-  --band-fg: #f5f8ff;
-  --band-fg-dim: #9aa7c2;
+  --hairline: rgba(160, 190, 255, 0.12);
+  --render-shadow: rgba(0, 0, 0, 0.8) 0 18px 44px -12px;
+  --band: #0a1020;
+  --band-fg: #f2f6ff;
+  --band-fg-dim: #8592ab;
 
   /* Status */
-  --ok: #067647;
-  --ok-soft: rgba(6, 118, 71, 0.10);
-  --warn: #b45309;
-  --warn-soft: rgba(180, 83, 9, 0.10);
-  --err: #b42318;
-  --err-soft: rgba(180, 35, 24, 0.10);
+  --ok: #4cc98a;
+  --ok-soft: rgba(76, 201, 138, 0.14);
+  --warn: #f0a44a;
+  --warn-soft: rgba(240, 164, 74, 0.14);
+  --err: #ff6b60;
+  --err-soft: rgba(255, 107, 96, 0.14);
 
   /* Typography — 17px body, display weights at 600, tracking tightening as the
      size grows. */
@@ -108,84 +109,15 @@
   --maxw-narrow: 720px;
   --section-y: clamp(4.5rem, 3rem + 6vw, 8.5rem);
 
-  /* Elevation — blue-tinted, because the light in this world is blue. */
-  --shadow-sm: 0 1px 2px rgba(30, 60, 120, 0.06);
-  --shadow: var(--glass-shadow);
-  --shadow-lg: var(--glass-shadow-lg);
-  --shadow-xl: 0 8px 20px rgba(30, 60, 120, 0.08), 0 34px 70px -24px rgba(30, 60, 120, 0.35);
-
-  --header-h: 64px;
-  --ease: cubic-bezier(0.32, 0.72, 0, 1);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Dark: the same material at night. A deep navy canvas with the orbs turned
-   down, glass that is a tinted darkening rather than a lightening, and the
-   same bright hairline along the top edge — that edge is what makes glass
-   read as glass in the dark. */
-html[data-theme="dark"] {
-  color-scheme: dark;
-
-  --bg: #060a14;
-  --bg-alt: #0a1020;
-  --bg-elev: rgba(22, 30, 50, 0.85);
-  --surface: rgba(30, 40, 66, 0.48);
-  --surface-2: rgba(30, 40, 66, 0.32);
-  --line: rgba(160, 190, 255, 0.12);
-  --line-strong: rgba(160, 190, 255, 0.22);
-  --ink: #f2f6ff;
-  --ink-2: #b7c2d9;
-  --ink-3: #8592ab;
-  --ink-inv: #0f172a;
-
-  --brand: #4da3ff;
-  --brand-600: #6db4ff;
-  --brand-700: #8cc4ff;
-  --brand-tint: rgba(77, 163, 255, 0.14);
-  --brand-fg: #06101f;
-  --crimson: #ff5c73;
-
-  --navy: #7ea6ff;
-  --navy-soft: rgba(126, 166, 255, 0.14);
-  --saffron: #f0a44a;
-  --saffron-soft: rgba(240, 164, 74, 0.14);
-  --teal: #47bdae;
-  --teal-soft: rgba(71, 189, 174, 0.14);
-  --ok: #4cc98a;
-  --ok-soft: rgba(76, 201, 138, 0.14);
-  --warn: #f0a44a;
-  --warn-soft: rgba(240, 164, 74, 0.14);
-  --err: #ff6b60;
-  --err-soft: rgba(255, 107, 96, 0.14);
-
-  --orb-1: rgba(40, 90, 200, 0.40);
-  --orb-2: rgba(60, 130, 230, 0.28);
-  --orb-3: rgba(110, 80, 200, 0.22);
-
-  --glass: rgba(24, 32, 54, 0.55);
-  --glass-strong: rgba(24, 32, 54, 0.75);
-  --glass-line: rgba(255, 255, 255, 0.14);
-  --glass-edge: rgba(0, 0, 0, 0.35);
-  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset,
-                  0 12px 34px -14px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.3);
-  --glass-shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.16) inset, 0 -1px 0 rgba(0, 0, 0, 0.35) inset,
-                     0 28px 70px -22px rgba(0, 0, 0, 0.85), 0 4px 12px rgba(0, 0, 0, 0.35);
-
-  --parchment: rgba(30, 40, 66, 0.4);
-  --tile-dark: #03060e;
-  --tile-dark-2: rgba(30, 40, 66, 0.6);
-  --tile-ink: #f2f6ff;
-  --tile-ink-2: #9aa7c2;
-  --hairline: rgba(160, 190, 255, 0.12);
-  --render-shadow: rgba(0, 0, 0, 0.8) 0 18px 44px -12px;
-  --band: #0a1020;
-  --band-fg: #f2f6ff;
-  --band-fg-dim: #8592ab;
-
+  /* Elevation */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
   --shadow: var(--glass-shadow);
   --shadow-lg: var(--glass-shadow-lg);
   --shadow-xl: 0 34px 70px -22px rgba(0, 0, 0, 0.85);
+
+  --header-h: 64px;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* --------------------------------------------------------------------------
@@ -443,13 +375,12 @@ html[data-lang="en"] [data-lang="de"] { display: none !important; }
   background: var(--brand-tint); color: var(--brand-600); border: 1px solid transparent;
 }
 .badge-navy { background: var(--navy-soft); color: var(--navy); }
-.badge-saffron { background: var(--saffron-soft); color: #9a5f06; }
+.badge-saffron { background: var(--saffron-soft); color: var(--saffron); }
 .badge-teal { background: var(--teal-soft); color: var(--teal); }
 .badge-ok { background: var(--ok-soft); color: var(--ok); }
 .badge-warn { background: var(--warn-soft); color: var(--warn); }
 .badge-err { background: var(--err-soft); color: var(--err); }
 .badge-outline { background: transparent; border-color: var(--line-strong); color: var(--ink-3); }
-html[data-theme="dark"] .badge-saffron { color: var(--saffron); }
 
 .chip {
   display: inline-flex; align-items: center; gap: 0.4rem;
@@ -1181,8 +1112,7 @@ table.data td strong { color: var(--ink); }
 /* --------------------------------------------------------------------------
    23. Footer
    -------------------------------------------------------------------------- */
-.site-footer { background: #0c111c; color: #97a3b8; padding-block: 3.5rem 1.75rem; margin-top: 0; }
-html[data-theme="dark"] .site-footer { background: #080c14; }
+.site-footer { background: #080c14; color: #97a3b8; padding-block: 3.5rem 1.75rem; margin-top: 0; }
 .footer-grid { display: grid; gap: 2.25rem; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
 .footer-grid > div:first-child { grid-column: span 1; min-width: 240px; }
 @media (min-width: 900px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr 1.2fr; } }

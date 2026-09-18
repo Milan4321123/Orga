@@ -129,9 +129,6 @@
               '<button type="button" data-set-lang="de" aria-pressed="false">DE</button>' +
               '<button type="button" data-set-lang="en" aria-pressed="false">EN</button>' +
             "</div>" +
-            '<button class="icon-btn" id="themeToggle" type="button" aria-label="Theme wechseln / Toggle theme">' +
-              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4" class="sun-core"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" class="sun-rays"/></svg>' +
-            "</button>" +
             '<a class="btn btn-sm nav-desktop-cta" href="mitglied-werden.html">' + bi("Mitglied werden", "Join us") + "</a>" +
             '<button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen / Open menu" aria-expanded="false" aria-controls="navLinks">' +
               '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
@@ -232,8 +229,8 @@
     return '<div class="consent no-print" id="consentBanner" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis">' +
       "<h4 style=\"font-size:1.05rem;margin-bottom:.4rem\">" + bi("Datenschutz auf dieser Seite", "Privacy on this site") + "</h4>" +
       '<p class="text-sm">' + bi(
-        "Diese Website setzt keine Tracking- oder Werbe-Cookies. Wir speichern lediglich lokal in Ihrem Browser, welche Sprache und welches Design Sie gewählt haben, sowie Zwischenstände Ihrer Formulare.",
-        "This website uses no tracking or advertising cookies. We only store your language and theme preference, plus form drafts, locally in your browser."
+        "Diese Website setzt keine Tracking- oder Werbe-Cookies. Wir speichern lediglich lokal in Ihrem Browser, welche Sprache Sie gewählt haben, sowie Zwischenstände Ihrer Formulare.",
+        "This website uses no tracking or advertising cookies. We only store your language preference, plus form drafts, locally in your browser."
       ) + "</p>" +
       '<div class="flex mt-3"><button class="btn btn-sm" id="consentOk" type="button">' + bi("Verstanden", "Understood") + "</button>" +
       '<a class="btn btn-sm btn-ghost" href="datenschutz.html">' + bi("Datenschutzerklärung", "Privacy policy") + "</a></div></div>";
