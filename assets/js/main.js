@@ -13,36 +13,71 @@
   /* ---------------------------------------------------------------- Language */
   var LANG_KEY = "npjoe.lang";
 
+  var LANGS = ["de", "en", "ne"];
+  function known(l) { return LANGS.indexOf(l) !== -1; }
+
   function detectLang() {
     var q = new URLSearchParams(location.search).get("lang");
-    if (q === "de" || q === "en") return q;
+    if (known(q)) return q;
     var saved = LS.get(LANG_KEY, "");
-    if (saved === "de" || saved === "en") return saved;
-    return (navigator.language || "de").toLowerCase().indexOf("de") === 0 ? "de" : "en";
+    if (known(saved)) return saved;
+    var nav = (navigator.language || "de").toLowerCase();
+    if (nav.indexOf("ne") === 0) return "ne";
+    return nav.indexOf("de") === 0 ? "de" : "en";
+  }
+
+  /* Nepali arrived after the German and English copy was already written, so a
+     block that nobody has translated yet would render as an empty gap. Rather
+     than let that happen, the English version is cloned into a Nepali sibling
+     on the way in. Clones are marked so a real translation, once written,
+     replaces them — and so nothing with an id is ever duplicated. */
+  function fillMissingNepali(root) {
+    (root || document).querySelectorAll('[data-lang="en"]').forEach(function (en) {
+      var next = en.nextElementSibling;
+      if (next && next.getAttribute("data-lang") === "ne") return;
+      var prev = en.previousElementSibling;
+      if (!prev || prev.getAttribute("data-lang") !== "de") return;
+      if (en.id || en.querySelector("[id]")) return;
+      var ne = en.cloneNode(true);
+      ne.setAttribute("data-lang", "ne");
+      ne.setAttribute("data-lang-fallback", "en");
+      en.parentNode.insertBefore(ne, en.nextSibling);
+    });
   }
 
   function applyLang(lang) {
+    fillMissingNepali(document);
     document.documentElement.setAttribute("data-lang", lang);
     document.documentElement.setAttribute("lang", lang);
     document.querySelectorAll("[data-set-lang]").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang));
     });
-    /* Swap bilingual attribute pairs, e.g. data-de-placeholder / data-en-placeholder */
+    /* Swap translated attribute sets, e.g. data-de-placeholder / data-en-placeholder
+       / data-ne-placeholder. An attribute with no Nepali version falls back to
+       English, so a placeholder never goes blank mid-translation. */
     ["placeholder", "title", "aria-label", "alt"].forEach(function (attr) {
-      document.querySelectorAll("[data-" + lang + "-" + attr + "]").forEach(function (el) {
-        el.setAttribute(attr, el.getAttribute("data-" + lang + "-" + attr));
+      document.querySelectorAll("[data-de-" + attr + "]").forEach(function (el) {
+        var v = el.getAttribute("data-" + lang + "-" + attr) || el.getAttribute("data-en-" + attr);
+        if (v) el.setAttribute(attr, v);
       });
     });
     /* <option> cannot hold markup, so its label is swapped by text */
     document.querySelectorAll("option[data-de][data-en]").forEach(function (o) {
-      o.textContent = o.getAttribute("data-" + lang);
+      o.textContent = o.getAttribute("data-" + lang) || o.getAttribute("data-en");
     });
     LS.set(LANG_KEY, lang);
     document.dispatchEvent(new CustomEvent("npjoe:lang", { detail: { lang: lang } }));
   }
 
   window.npjoeLang = function () { return document.documentElement.getAttribute("data-lang") || "de"; };
-  window.npjoeT = function (de, en) { return window.npjoeLang() === "en" ? en : de; };
+  /* ne is optional at every call site: a string nobody has translated yet
+     falls back to English rather than disappearing. */
+  window.npjoeT = function (de, en, ne) {
+    var l = window.npjoeLang();
+    if (l === "ne") return ne || en;
+    return l === "en" ? en : de;
+  };
+  window.npjoeFillNepali = fillMissingNepali;
 
   /* -------------------------------------------------------------- Toast API */
   window.npjoeToast = function (message, kind) {
@@ -476,7 +511,7 @@
     document.querySelectorAll("[data-copy]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var text = btn.getAttribute("data-copy");
-        var done = function () { window.npjoeToast(window.npjoeT("Kopiert.", "Copied."), "ok"); };
+        var done = function () { window.npjoeToast(window.npjoeT("Kopiert.", "Copied.", "प्रतिलिपि भयो।"), "ok"); };
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(done).catch(function () {});
         } else {
@@ -502,7 +537,7 @@
         if (navigator.share) { navigator.share(data).catch(function () {}); }
         else if (navigator.clipboard) {
           navigator.clipboard.writeText(location.href);
-          window.npjoeToast(window.npjoeT("Link kopiert.", "Link copied."), "ok");
+          window.npjoeToast(window.npjoeT("Link kopiert.", "Link copied.", "लिङ्क प्रतिलिपि भयो।"), "ok");
         }
       });
     });

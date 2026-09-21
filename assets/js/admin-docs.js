@@ -6,7 +6,7 @@
   "use strict";
 
   var API = (window.NPJOE && window.NPJOE.forms && window.NPJOE.forms.apiBase) || "/api";
-  var T = function (de, en) { return window.npjoeT ? window.npjoeT(de, en) : de; };
+  var T = function (de, en, ne) { return window.npjoeT ? window.npjoeT(de, en, ne) : de; };
   var state = { type: "membership", values: {}, source: [] };
 
   function esc(s) {
@@ -74,11 +74,11 @@
     warn.innerHTML = "";
     if (tpl.warning) {
       warn.innerHTML += '<div class="callout callout-saffron mb-2"><strong>' +
-        T("Vor dem Versand prüfen: ", "Check before sending: ") + "</strong>" + esc(tpl.warning) + "</div>";
+        T("Vor dem Versand prüfen: ", "Check before sending: ", "पठाउनुअघि जाँच्नुहोस्: ") + "</strong>" + esc(tpl.warning) + "</div>";
     }
     if (missing.length) {
       warn.innerHTML += '<div class="callout mb-2">' +
-        T("Noch auszufüllen: ", "Still to fill in: ") +
+        T("Noch auszufüllen: ", "Still to fill in: ", "अझै भर्न बाँकी: ") +
         missing.map(function (f) { return esc(f.label); }).join(", ") + "</div>";
     }
     document.getElementById("docSheet").innerHTML = tpl.render(state.values);
@@ -90,7 +90,7 @@
     var type = SOURCE[state.type];
     var picker = document.getElementById("docSource");
     if (!type) {
-      picker.innerHTML = '<option value="">' + T("— keine Vorlage aus Eingängen —", "— no stored source —") + "</option>";
+      picker.innerHTML = '<option value="">' + T("— keine Vorlage aus Eingängen —", "— no stored source —", "— भण्डारित स्रोत छैन —") + "</option>";
       picker.disabled = true;
       return Promise.resolve();
     }
@@ -99,7 +99,7 @@
       .then(function (r) { return r.ok ? r.json() : { items: [] }; })
       .then(function (res) {
         state.source = res.items || [];
-        picker.innerHTML = '<option value="">' + T("— leer beginnen —", "— start blank —") + "</option>" +
+        picker.innerHTML = '<option value="">' + T("— leer beginnen —", "— start blank —", "— खाली सुरु गर्नुहोस् —") + "</option>" +
           state.source.map(function (row, i) {
             var name = [row.vorname, row.nachname].filter(Boolean).join(" ") || row.name || row.email || row._ref;
             return '<option value="' + i + '">' + esc(name) +

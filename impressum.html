@@ -10,7 +10,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -27,11 +27,11 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
         <li>Impressum</li>
       </ol>
       <h1>Impressum</h1>
-      <p class="lead"><span data-lang="de">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</span><span data-lang="en">Information pursuant to § 5 of the German Digital Services Act (DDG)</span></p>
+      <p class="lead"><span data-lang="de">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</span><span data-lang="en">Information pursuant to § 5 of the German Digital Services Act (DDG)</span><span data-lang="ne">जर्मन डिजिटल सेवा ऐन (DDG) को § ५ अनुसारको विवरण</span></p>
     </div>
   </section>
 
@@ -39,90 +39,90 @@
     <div class="container container-narrow prose">
 
       <div class="callout callout-saffron">
-        <strong><span data-lang="de">Bitte vor Veröffentlichung vervollständigen:</span><span data-lang="en">Please complete before publishing:</span></strong>
+        <strong><span data-lang="de">Bitte vor Veröffentlichung vervollständigen:</span><span data-lang="en">Please complete before publishing:</span><span data-lang="ne">प्रकाशन गर्नुअघि कृपया पूरा गर्नुहोस्:</span></strong>
         <span data-lang="de"> Die mit „—“ markierten Felder (Anschrift, Telefon und Bankverbindung) müssen vom Vorstand mit den amtlichen Angaben gefüllt werden. Ein unvollständiges Impressum ist abmahnfähig.</span>
-        <span data-lang="en"> The fields marked '—' (address, phone and bank details) must be filled in by the board with the official data. An incomplete imprint can incur legal warnings in Germany.</span>
+        <span data-lang="en"> The fields marked '—' (address, phone and bank details) must be filled in by the board with the official data. An incomplete imprint can incur legal warnings in Germany.</span><span data-lang="ne"> '—' चिन्ह लगाइएका महल (ठेगाना, फोन र बैङ्क विवरण) कार्यसमितिले आधिकारिक विवरणसहित भर्नुपर्छ। अपूर्ण इम्प्रिन्टका कारण जर्मनीमा कानुनी चेतावनी आउन सक्छ।</span>
       </div>
 
-      <h2><span data-lang="de">Diensteanbieter</span><span data-lang="en">Service provider</span></h2>
+      <h2><span data-lang="de">Diensteanbieter</span><span data-lang="en">Service provider</span><span data-lang="ne">सेवा प्रदायक</span></h2>
       <p>
         <strong>Nepalesische Progressive Jugendorganisation e.V.</strong><br>
-        <span data-lang="de">— Straße und Hausnummer —</span><span data-lang="en">— street and number —</span><br>
+        <span data-lang="de">— Straße und Hausnummer —</span><span data-lang="en">— street and number —</span><span data-lang="ne">— सडक र घर नम्बर —</span><br>
         64283 Darmstadt<br>
-        <span data-lang="de">Deutschland</span><span data-lang="en">Germany</span>
+        <span data-lang="de">Deutschland</span><span data-lang="en">Germany</span><span data-lang="ne">जर्मनी</span>
       </p>
 
-      <h2><span data-lang="de">Vertretungsberechtigter Vorstand</span><span data-lang="en">Authorised board</span></h2>
+      <h2><span data-lang="de">Vertretungsberechtigter Vorstand</span><span data-lang="en">Authorised board</span><span data-lang="ne">प्रतिनिधित्व गर्न अधिकारप्राप्त कार्यसमिति</span></h2>
       <p>
         <span data-lang="de">Der Verein wird gemäß § 26 BGB gerichtlich und außergerichtlich durch zwei Mitglieder des Vorstands gemeinsam vertreten.</span>
-        <span data-lang="en">Pursuant to § 26 BGB the association is represented in and out of court by two board members jointly.</span>
+        <span data-lang="en">Pursuant to § 26 BGB the association is represented in and out of court by two board members jointly.</span><span data-lang="ne">BGB को § २६ अनुसार संगठनको प्रतिनिधित्व अदालतभित्र र बाहिर दुई जना कार्यसमिति सदस्यले संयुक्त रूपमा गर्छन्।</span>
       </p>
       <ul>
-        <li>Kesilal Sunchauri (Rikesh) — <span data-lang="de">Vorsitzender</span><span data-lang="en">chairperson</span></li>
-        <li>Sushma Bishwokarma — <span data-lang="de">Stellvertretende Vorsitzende</span><span data-lang="en">deputy chairperson</span></li>
-        <li>Durga Sunchauri (Ritesh) — <span data-lang="de">Schriftführer</span><span data-lang="en">secretary</span></li>
-        <li>Trishna Sunuwar — <span data-lang="de">Schatzmeisterin</span><span data-lang="en">treasurer</span></li>
+        <li>Kesilal Sunchauri (Rikesh) — <span data-lang="de">Vorsitzender</span><span data-lang="en">chairperson</span><span data-lang="ne">अध्यक्ष</span></li>
+        <li>Sushma Bishwokarma — <span data-lang="de">Stellvertretende Vorsitzende</span><span data-lang="en">deputy chairperson</span><span data-lang="ne">उपाध्यक्ष</span></li>
+        <li>Durga Sunchauri (Ritesh) — <span data-lang="de">Schriftführer</span><span data-lang="en">secretary</span><span data-lang="ne">सचिव</span></li>
+        <li>Trishna Sunuwar — <span data-lang="de">Schatzmeisterin</span><span data-lang="en">treasurer</span><span data-lang="ne">कोषाध्यक्ष</span></li>
       </ul>
       <p class="text-sm text-muted">
         <span data-lang="de">Vertretungsberechtigt im Sinne des § 26 BGB sind der Vorsitzende und der Schriftführer.</span>
-        <span data-lang="en">Authorised to represent the association within the meaning of § 26 BGB are the chairperson and the secretary.</span>
+        <span data-lang="en">Authorised to represent the association within the meaning of § 26 BGB are the chairperson and the secretary.</span><span data-lang="ne">BGB को § २६ को अर्थमा संगठनको प्रतिनिधित्व गर्न अध्यक्ष र सचिव अधिकारप्राप्त छन्।</span>
       </p>
 
-      <h2><span data-lang="de">Registereintrag</span><span data-lang="en">Register entry</span></h2>
+      <h2><span data-lang="de">Registereintrag</span><span data-lang="en">Register entry</span><span data-lang="ne">दर्ता विवरण</span></h2>
       <p>
-        <span data-lang="de">Eingetragen im Vereinsregister</span><span data-lang="en">Entered in the register of associations</span><br>
-        <span data-lang="de">Registergericht: Amtsgericht Darmstadt</span><span data-lang="en">Registering court: Darmstadt district court</span><br>
-        <span data-lang="de">Registernummer: VR 84826</span><span data-lang="en">Register number: VR 84826</span>
+        <span data-lang="de">Eingetragen im Vereinsregister</span><span data-lang="en">Entered in the register of associations</span><span data-lang="ne">संस्था दर्ता किताबमा दर्ता</span><br>
+        <span data-lang="de">Registergericht: Amtsgericht Darmstadt</span><span data-lang="en">Registering court: Darmstadt district court</span><span data-lang="ne">दर्ता अदालत: डार्मस्टाट जिल्ला अदालत</span><br>
+        <span data-lang="de">Registernummer: VR 84826</span><span data-lang="en">Register number: VR 84826</span><span data-lang="ne">दर्ता नम्बर: VR 84826</span>
       </p>
 
-      <h2><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></h2>
+      <h2><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span><span data-lang="ne">सम्पर्क</span></h2>
       <p>
-        <span data-lang="de">E-Mail:</span><span data-lang="en">E-mail:</span> <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a><br>
-        <span data-lang="de">Telefon: — bitte ergänzen —</span><span data-lang="en">Phone: — to be added —</span><br>
-        <span data-lang="de">Website:</span><span data-lang="en">Website:</span> www.progressive-youth.de
+        <span data-lang="de">E-Mail:</span><span data-lang="en">E-mail:</span><span data-lang="ne">इमेल:</span> <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a><br>
+        <span data-lang="de">Telefon: — bitte ergänzen —</span><span data-lang="en">Phone: — to be added —</span><span data-lang="ne">फोन: — थप्न बाँकी —</span><br>
+        <span data-lang="de">Website:</span><span data-lang="en">Website:</span><span data-lang="ne">वेबसाइट:</span> www.progressive-youth.de
       </p>
 
-      <h2><span data-lang="de">Umsatzsteuer &amp; Gemeinnützigkeit</span><span data-lang="en">VAT &amp; charitable status</span></h2>
+      <h2><span data-lang="de">Umsatzsteuer &amp; Gemeinnützigkeit</span><span data-lang="en">VAT &amp; charitable status</span><span data-lang="ne">मूल्य अभिवृद्धि कर र गैरनाफामूलक मान्यता</span></h2>
       <p>
         <span data-lang="de">Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige und mildtätige Zwecke im Sinne der §§ 52, 53 der Abgabenordnung und ist seit dem 12. August 2026 als gemeinnützig anerkannt. Steuernummer: 007 250 5414 7. Spenden sind steuerlich absetzbar; der Verein stellt Spendenbescheinigungen aus.</span>
-        <span data-lang="en">The association exclusively and directly pursues charitable and benevolent purposes within the meaning of §§ 52 and 53 of the German Fiscal Code and has been recognised as charitable since 12 August 2026. Tax number: 007 250 5414 7. Donations are tax-deductible in Germany; the association issues donation receipts.</span>
+        <span data-lang="en">The association exclusively and directly pursues charitable and benevolent purposes within the meaning of §§ 52 and 53 of the German Fiscal Code and has been recognised as charitable since 12 August 2026. Tax number: 007 250 5414 7. Donations are tax-deductible in Germany; the association issues donation receipts.</span><span data-lang="ne">संगठनले जर्मन कर संहिताका §§ ५२ र ५३ को अर्थमा पूर्ण रूपमा र प्रत्यक्ष रूपमा परोपकारी तथा जनहितकारी उद्देश्य मात्र पछ्याउँछ र १२ अगस्ट २०२६ देखि गैरनाफामूलक संस्थाका रूपमा मान्यता पाएको छ। कर नम्बर: 007 250 5414 7। जर्मनीमा दानमा करछुट पाइन्छ; संगठनले दान रसिद जारी गर्छ।</span>
       </p>
 
-      <h2><span data-lang="de">Verantwortlich für den Inhalt</span><span data-lang="en">Responsible for content</span></h2>
+      <h2><span data-lang="de">Verantwortlich für den Inhalt</span><span data-lang="en">Responsible for content</span><span data-lang="ne">सामग्रीका लागि जिम्मेवार</span></h2>
       <p>
         <span data-lang="de">Verantwortlich im Sinne des § 18 Abs. 2 Medienstaatsvertrag (MStV):</span>
-        <span data-lang="en">Responsible under § 18 (2) of the German Interstate Media Treaty (MStV):</span><br>
-        Kesilal Sunchauri, <span data-lang="de">Anschrift wie oben</span><span data-lang="en">address as above</span>
+        <span data-lang="en">Responsible under § 18 (2) of the German Interstate Media Treaty (MStV):</span><span data-lang="ne">जर्मन अन्तरराज्य सञ्चार सन्धि (MStV) को § १८ (२) अनुसार जिम्मेवार:</span><br>
+        Kesilal Sunchauri, <span data-lang="de">Anschrift wie oben</span><span data-lang="en">address as above</span><span data-lang="ne">ठेगाना माथिकै</span>
       </p>
 
-      <h2><span data-lang="de">Streitbeilegung</span><span data-lang="en">Dispute resolution</span></h2>
+      <h2><span data-lang="de">Streitbeilegung</span><span data-lang="en">Dispute resolution</span><span data-lang="ne">विवाद समाधान</span></h2>
       <p>
         <span data-lang="de">Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</span>
-        <span data-lang="en">We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.</span>
+        <span data-lang="en">We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.</span><span data-lang="ne">उपभोक्ता मध्यस्थता निकायसमक्ष हुने विवाद समाधान प्रक्रियामा सहभागी हुन हामी न इच्छुक छौँ, न बाध्य।</span>
       </p>
 
-      <h2><span data-lang="de">Haftung für Inhalte</span><span data-lang="en">Liability for content</span></h2>
+      <h2><span data-lang="de">Haftung für Inhalte</span><span data-lang="en">Liability for content</span><span data-lang="ne">सामग्रीप्रतिको दायित्व</span></h2>
       <p>
         <span data-lang="de">Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</span>
-        <span data-lang="en">As a service provider we are responsible for our own content on these pages under general law. However, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general law remain unaffected.</span>
+        <span data-lang="en">As a service provider we are responsible for our own content on these pages under general law. However, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general law remain unaffected.</span><span data-lang="ne">सेवा प्रदायकका रूपमा यी पृष्ठमा रहेको आफ्नै सामग्रीका लागि हामी सामान्य कानुनअनुसार जिम्मेवार छौँ। तर प्रसारित वा भण्डारण गरिएका तेस्रो पक्षका सूचनाको निगरानी गर्न वा गैरकानुनी गतिविधि देखाउने परिस्थिति खोज्न हामी बाध्य छैनौँ। सामान्य कानुनअनुसार सूचना हटाउने वा प्रयोग रोक्ने दायित्वमा यसले असर पार्दैन।</span>
       </p>
 
-      <h2><span data-lang="de">Haftung für Links</span><span data-lang="en">Liability for links</span></h2>
+      <h2><span data-lang="de">Haftung für Links</span><span data-lang="en">Liability for links</span><span data-lang="ne">लिङ्कप्रतिको दायित्व</span></h2>
       <p>
         <span data-lang="de">Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Links umgehend.</span>
-        <span data-lang="en">Our website contains links to external third-party websites over whose content we have no influence. The respective provider is always responsible for the content of linked pages. If we become aware of legal violations, we will remove such links immediately.</span>
+        <span data-lang="en">Our website contains links to external third-party websites over whose content we have no influence. The respective provider is always responsible for the content of linked pages. If we become aware of legal violations, we will remove such links immediately.</span><span data-lang="ne">हाम्रो वेबसाइटमा बाह्य तेस्रो पक्षका वेबसाइटका लिङ्क छन्, जसको सामग्रीमा हाम्रो नियन्त्रण हुँदैन। लिङ्क गरिएका पृष्ठको सामग्रीका लागि सधैँ सम्बन्धित प्रदायक नै जिम्मेवार हुन्छ। कानुन उल्लङ्घनको जानकारी पाएमा हामी त्यस्ता लिङ्क तुरुन्तै हटाउँछौँ।</span>
       </p>
 
-      <h2><span data-lang="de">Urheberrecht</span><span data-lang="en">Copyright</span></h2>
+      <h2><span data-lang="de">Urheberrecht</span><span data-lang="en">Copyright</span><span data-lang="ne">प्रतिलिपि अधिकार</span></h2>
       <p>
         <span data-lang="de">Die durch den Verein erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</span>
-        <span data-lang="en">Content and works created by the association on these pages are subject to German copyright law. Third-party contributions are marked as such. Downloads and copies of this site are permitted for private, non-commercial use only.</span>
+        <span data-lang="en">Content and works created by the association on these pages are subject to German copyright law. Third-party contributions are marked as such. Downloads and copies of this site are permitted for private, non-commercial use only.</span><span data-lang="ne">यी पृष्ठमा संगठनले तयार पारेका सामग्री र कृति जर्मन प्रतिलिपि अधिकार कानुनअन्तर्गत पर्छन्। तेस्रो पक्षका योगदानलाई त्यसै गरी चिनाइएको छ। यस साइटको डाउनलोड र प्रतिलिपि निजी, गैरव्यावसायिक प्रयोगका लागि मात्र अनुमति छ।</span>
       </p>
 
-      <h2><span data-lang="de">Bildnachweise</span><span data-lang="en">Image credits</span></h2>
+      <h2><span data-lang="de">Bildnachweise</span><span data-lang="en">Image credits</span><span data-lang="ne">तस्बिर श्रेय</span></h2>
       <p>
         <span data-lang="de">Die derzeit verwendeten Grafiken und Illustrationen wurden für diese Website erstellt. Fotos von Vereinsveranstaltungen werden nur mit Einwilligung der abgebildeten Personen verwendet.</span>
-        <span data-lang="en">The graphics and illustrations currently used were created for this website. Photos from association events are only used with the consent of the people depicted.</span>
+        <span data-lang="en">The graphics and illustrations currently used were created for this website. Photos from association events are only used with the consent of the people depicted.</span><span data-lang="ne">हाल प्रयोग गरिएका ग्राफिक र चित्र यसै वेबसाइटका लागि बनाइएका हुन्। संगठनका कार्यक्रमका तस्बिर तस्बिरमा देखिने व्यक्तिहरूको सहमतिमा मात्र प्रयोग गरिन्छ।</span>
       </p>
     </div>
   </section>

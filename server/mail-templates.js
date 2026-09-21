@@ -30,9 +30,9 @@ const FALLBACK_ORG = {
   nameEn: "Nepalese Progressive Youth Organisation (Germany)",
   website: "www.progressive-youth.de",
   email: "info@progressive-youth.de",
-  emailMembership: "mitglied@progressive-youth.de",
-  emailVolunteer: "volunteer@progressive-youth.de",
-  emailDonation: "spenden@progressive-youth.de",
+  emailMembership: "info@progressive-youth.de",
+  emailVolunteer: "info@progressive-youth.de",
+  emailDonation: "info@progressive-youth.de",
   register: "VR 84826 – Amtsgericht Darmstadt",
   fee: { monthly: 5, currency: "EUR" },
   bank: {}
@@ -72,25 +72,30 @@ function nameOf(row) {
 }
 
 /* The person's explicit wish wins over the language they were browsing in.
-   Nepali speakers are answered in German — we have no Nepali letters yet, and
-   promising one we cannot write would be worse than the honest default. */
+   All three languages of the site have their own letters. */
 function langOf(row) {
   if (row.antwortsprache === "englisch") return "en";
-  if (row.antwortsprache === "deutsch" || row.antwortsprache === "nepali") return "de";
-  return row._lang === "en" ? "en" : "de";
+  if (row.antwortsprache === "nepali") return "ne";
+  if (row.antwortsprache === "deutsch") return "de";
+  if (row._lang === "en") return "en";
+  if (row._lang === "ne") return "ne";
+  return "de";
 }
 
 function greeting(row, lang) {
   const n = nameOf(row);
+  if (lang === "ne") return n ? "आदरणीय " + n + "," : "नमस्ते,";
   if (lang === "en") return n ? "Dear " + n + "," : "Hello,";
   return n ? "Liebe:r " + n + "," : "Hallo,";
 }
 
 function bankBlock(o, reference, lang) {
   if (!o.bank || !o.bank.iban) return "";
-  const label = lang === "en"
-    ? ["Account holder", "IBAN", "BIC", "Reference"]
-    : ["Kontoinhaber", "IBAN", "BIC", "Verwendungszweck"];
+  const label = lang === "ne"
+    ? ["खातावाला", "IBAN", "BIC", "भुक्तानी सन्दर्भ"]
+    : lang === "en"
+      ? ["Account holder", "IBAN", "BIC", "Reference"]
+      : ["Kontoinhaber", "IBAN", "BIC", "Verwendungszweck"];
   return label[0] + ": " + (o.bank.holder || o.nameDe) + "\n" +
     label[1] + ": " + o.bank.iban + "\n" +
     (o.bank.bic ? label[2] + ": " + o.bank.bic + "\n" : "") +
@@ -99,7 +104,8 @@ function bankBlock(o, reference, lang) {
 
 function signature(o, lang, mailbox) {
   const site = "https://" + String(o.website || "").replace(/^https?:\/\//, "");
-  return (lang === "en" ? "Kind regards\nThe board\n" : "Herzliche Grüße\nDer Vorstand\n") +
+  return (lang === "ne" ? "हार्दिक शुभकामना\nकार्यसमिति\n"
+    : lang === "en" ? "Kind regards\nThe board\n" : "Herzliche Grüße\nDer Vorstand\n") +
     o.nameDe + "\n" + (mailbox || o.email) + "\n" + site +
     (o.register ? "\n" + o.register : "");
 }
@@ -108,6 +114,12 @@ function signature(o, lang, mailbox) {
    is often the only piece of the privacy policy a person actually reads. */
 function footer(o, lang) {
   const site = "https://" + String(o.website || "").replace(/^https?:\/\//, "");
+  if (lang === "ne") {
+    return "\n\n—\n" + o.website + " मा एउटा फारम पठाइएकाले तपाईंले यो सन्देश पाउनुभएको हो।\n" +
+      "तपाईं यसै इमेलमा सिधै जवाफ दिन सक्नुहुन्छ।\n" +
+      "तपाईंको कुन विवरण हामीसँग छ भनी जुनसुकै बेला सोध्न र त्यो मेटाउन अनुरोध गर्न सक्नुहुन्छ: " + o.email + "\n" +
+      "गोपनीयता नीति: " + site + "/datenschutz.html\n";
+  }
   if (lang === "en") {
     return "\n\n—\nYou are receiving this message because a form was submitted on " + o.website + ".\n" +
       "You may reply to this e-mail directly.\n" +
@@ -126,6 +138,22 @@ function footer(o, lang) {
 const LETTERS = {
   membership: function (row, lang, o, ctx) {
     const fee = (o.fee && o.fee.monthly) || 5;
+    if (lang === "ne") {
+      return {
+        subject: "तपाईंको सदस्यता आवेदन प्राप्त भयो — " + row._ref,
+        text: greeting(row, lang) + "\n\n" +
+          o.nameDe + " मा सदस्यताका लागि आवेदन दिनुभएकामा धन्यवाद — यो हामीकहाँ आइपुगेको र दर्ता भएको छ।\n\n" +
+          "सन्दर्भ: " + row._ref + "\n" +
+          (row.membershipNo ? "अस्थायी सदस्यता नम्बर: " + row.membershipNo + "\n" : "") +
+          "\nअब के हुन्छ: सदस्यता स्वीकृतिको निर्णय हाम्रो विधानको § ५ अनुसार कार्यसमितिले गर्छ। " +
+          "हामी एकदेखि तीन कार्यदिनभित्र तपाईंलाई जानकारी गराउनेछौँ — र जुनसुकै अवस्थामा कुनै भुक्तानी तिर्नुअघि नै।\n\n" +
+          "कृपया अहिले नै स्थायी भुक्तानी आदेश नराख्नुहोस्। मासिक " + fee + ".00 " +
+          ((o.fee && o.fee.currency) || "EUR") + " शुल्क कार्यसमितिले सदस्यता स्वीकृत गरेपछि मात्र सुरु हुन्छ; " +
+          "स्वीकृति पत्रमै खाता विवरण र भुक्तानी सन्दर्भ हुनेछ।\n\n" +
+          "तपाईंको आवेदनमा केही गलत भएको भए सन्दर्भ नम्बर उल्लेख गरी यसै सन्देशमा जवाफ दिनुहोस्।\n\n" +
+          signature(o, lang, o.emailMembership) + footer(o, lang)
+      };
+    }
     if (lang === "en") {
       return {
         subject: "Your membership application has arrived — " + row._ref,
@@ -159,6 +187,19 @@ const LETTERS = {
   },
 
   volunteer: function (row, lang, o) {
+    if (lang === "ne") {
+      return {
+        subject: "तपाईंको स्वयंसेवक दर्ता प्राप्त भयो — " + row._ref,
+        text: greeting(row, lang) + "\n\n" +
+          "One Day for Nation मा दर्ता गर्नुभएकामा धन्यवाद। तपाईंको दर्ता हामीकहाँ आइपुगेको छ।\n\n" +
+          "सन्दर्भ: " + row._ref + "\n" +
+          "\nदर्ता निःशुल्क र बाध्यकारी हुँदैन। नेपालमा रहेको हाम्रो साझेदार संस्था NPYS-N ले कहाँ सहयोग चाहिएको छ भन्ने जानकारी दिन्छ; " +
+          "तपाईंको क्षेत्रसँग मिल्ने केही आएमा हामी ठोस परिचालनसहित तपाईंलाई लेख्नेछौँ। " +
+          "सहभागी हुने कि नहुने भन्ने निर्णय त्यसपछि मात्र तपाईंले गर्नुहुन्छ।\n\n" +
+          "हामी एकदेखि तीन कार्यदिनभित्र सम्पर्क गर्नेछौँ।\n\n" +
+          signature(o, lang, o.emailVolunteer) + footer(o, lang)
+      };
+    }
     if (lang === "en") {
       return {
         subject: "Your volunteer registration has arrived — " + row._ref,
@@ -186,6 +227,17 @@ const LETTERS = {
   },
 
   contact: function (row, lang, o) {
+    if (lang === "ne") {
+      return {
+        subject: "हामीले तपाईंको सन्देश पायौँ — " + row._ref,
+        text: greeting(row, lang) + "\n\n" +
+          "हामीलाई लेख्नुभएकामा धन्यवाद। तपाईंको सन्देश आइपुगेको छ र कार्यसमितिका कसैले यो पढ्नेछन्।\n\n" +
+          "सन्दर्भ: " + row._ref + "\n" +
+          "\nहामी एकदेखि तीन कार्यदिनभित्र जवाफ दिन्छौँ। तपाईंको विषय जरुरी छ भने यसै इमेलमा जवाफ दिएर त्यो उल्लेख गर्नुहोस् — " +
+          "त्यो उही मेलबक्समै पुग्छ।\n\n" +
+          signature(o, lang) + footer(o, lang)
+      };
+    }
     if (lang === "en") {
       return {
         subject: "We have received your message — " + row._ref,
@@ -209,6 +261,17 @@ const LETTERS = {
   },
 
   partner: function (row, lang, o) {
+    if (lang === "ne") {
+      return {
+        subject: "तपाईंको सहकार्य जिज्ञासा प्राप्त भयो — " + row._ref,
+        text: greeting(row, lang) + "\n\n" +
+          "हामीसँग सहकार्य गर्न चासो देखाउनुभएकामा धन्यवाद। तपाईंको जिज्ञासा आइपुगेको छ।\n\n" +
+          "सन्दर्भ: " + row._ref + "\n" +
+          "\nसहकार्यसम्बन्धी निर्णय कार्यसमितिले गर्ने भएकाले हाम्रो जवाफ सामान्य जिज्ञासाभन्दा केही दिन ढिलो हुन सक्छ। " +
+          "निर्णय आफैँलाई बढी समय लागे पनि हामी एकदेखि तीन कार्यदिनभित्र अर्को चरणबारे जानकारी गराउनेछौँ।\n\n" +
+          signature(o, lang) + footer(o, lang)
+      };
+    }
     if (lang === "en") {
       return {
         subject: "Your cooperation enquiry has arrived — " + row._ref,
@@ -236,6 +299,25 @@ const LETTERS = {
   donation: function (row, lang, o) {
     const amount = row.betrag === "custom" ? row.betragCustom : row.betrag;
     const receipt = row.zuwendungsbestaetigung === true || row.zuwendungsbestaetigung === "on";
+    if (lang === "ne") {
+      return {
+        subject: "तपाईंको दान प्रतिबद्धताका लागि धन्यवाद — " + row._ref,
+        text: greeting(row, lang) + "\n\n" +
+          "One Euro for Nation का लागि" + (amount ? " " + amount + " EUR को" : "") +
+          " दान प्रतिबद्धता जनाउनुभएकामा धन्यवाद। यो हामीकहाँ आइपुगेको छ।\n\n" +
+          "सन्दर्भ: " + row._ref + "\n\n" +
+          (bankBlock(o, row._ref, lang)
+            ? bankBlock(o, row._ref, lang) + "\nरकम पठाउँदा कृपया यही सन्दर्भ उल्लेख गर्नुहोस्, ताकि हामीले तपाईंको दान छुट्याउन सकौँ।\n\n"
+            : "खाता विवरण हामी छुट्टै पठाउनेछौँ।\n\n") +
+          (receipt
+            ? "तपाईंले दान रसिद माग्नुभएको छ। रकम प्राप्त भएपछि हामी त्यो जारी गर्नेछौँ — " +
+              "त्यसका लागि तपाईंको हुलाक ठेगाना चाहिन्छ, त्यसैले अझै दिनुभएको छैन भने जवाफमा पठाइदिनुहोस्।\n\n"
+            : "") +
+          "तपाईंको योगदानले प्रमाणित प्राथमिक उपचार किट, नेपाली भाषाका तालिम सामग्री, " +
+          "शैक्षिक सामग्री र सरसफाइ किटमा खर्च जुटाउँछ।\n\n" +
+          signature(o, lang, o.emailDonation) + footer(o, lang)
+      };
+    }
     if (lang === "en") {
       return {
         subject: "Thank you for your donation pledge — " + row._ref,
@@ -282,6 +364,18 @@ const LETTERS = {
      to this address until the link below is clicked. */
   newsletter: function (row, lang, o, ctx) {
     const link = (ctx && ctx.confirmUrl) || "";
+    if (lang === "ne") {
+      return {
+        subject: "कृपया आफ्नो न्यूजलेटर सदस्यता पुष्टि गर्नुहोस्",
+        text: greeting(row, lang) + "\n\n" +
+          "यो ठेगाना NPJOE न्यूजलेटरका लागि दर्ता गरिएको छ। यो तपाईं नै हो भनी कृपया पुष्टि गर्नुहोस्:\n\n" +
+          (link ? link + "\n\n" : "— पुष्टि लिङ्क छैन, कृपया यसै इमेलमा जवाफ दिनुहोस् —\n\n") +
+          "त्यससम्म हामी तपाईंलाई केही पनि पठाउँदैनौँ। तपाईं नभएको भए यो सन्देश बेवास्ता गरे पुग्छ — " +
+          "पुष्टि नभएको प्रविष्टि मेटाइन्छ।\n\n" +
+          "न्यूजलेटर वर्षमा केही पटक निस्कन्छ र हरेक अङ्कबाटै सदस्यता हटाउन सकिन्छ।\n\n" +
+          signature(o, lang) + footer(o, lang)
+      };
+    }
     if (lang === "en") {
       return {
         subject: "Please confirm your newsletter subscription",

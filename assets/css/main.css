@@ -234,10 +234,20 @@ code, kbd {
 ::selection { background: var(--brand); color: var(--brand-fg); }
 
 /* --------------------------------------------------------------------------
-   3. Bilingual switching (DE / EN)
+   3. Language switching (DE / EN / NE)
    -------------------------------------------------------------------------- */
-html[data-lang="de"] [data-lang="en"] { display: none !important; }
-html[data-lang="en"] [data-lang="de"] { display: none !important; }
+html[data-lang="de"] [data-lang="en"],
+html[data-lang="de"] [data-lang="ne"],
+html[data-lang="en"] [data-lang="de"],
+html[data-lang="en"] [data-lang="ne"],
+html[data-lang="ne"] [data-lang="de"],
+html[data-lang="ne"] [data-lang="en"] { display: none !important; }
+
+/* Devanagari sits lower and taller in its em box than Latin does; without a
+   touch more leading the lines of a Nepali paragraph collide. */
+html[data-lang="ne"] body { line-height: 1.75; }
+html[data-lang="ne"] h1, html[data-lang="ne"] h2,
+html[data-lang="ne"] h3, html[data-lang="ne"] h4 { line-height: 1.32; letter-spacing: 0; }
 
 /* --------------------------------------------------------------------------
    4. Layout primitives

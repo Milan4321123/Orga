@@ -19,7 +19,10 @@
   (function () {
     try {
       var l = localStorage.getItem("npjoe.lang");
-      if (!l) l = (navigator.language || "de").toLowerCase().indexOf("de") === 0 ? "de" : "en";
+      if (l !== "de" && l !== "en" && l !== "ne") {
+        var n = (navigator.language || "de").toLowerCase();
+        l = n.indexOf("ne") === 0 ? "ne" : (n.indexOf("de") === 0 ? "de" : "en");
+      }
       document.documentElement.setAttribute("data-lang", l);
       document.documentElement.setAttribute("lang", l);
     } catch (e) {}
@@ -68,19 +71,19 @@
       <div class="tile-head wide">
         <span class="tile-eyebrow">
           <span data-lang="de">Nepalesische Progressive Jugendorganisation e.V.</span>
-          <span data-lang="en">Nepalese Progressive Youth Organisation e.V.</span>
+          <span data-lang="en">Nepalese Progressive Youth Organisation e.V.</span><span data-lang="ne">नेपाली प्रगतिशील युवा संगठन e.V.</span>
         </span>
         <h1 class="tile-title-lg">
           <span data-lang="de">Jugend verbinden.<br>Nepal stärken.</span>
-          <span data-lang="en">Connecting youth.<br>Strengthening Nepal.</span>
+          <span data-lang="en">Connecting youth.<br>Strengthening Nepal.</span><span data-lang="ne">युवालाई जोड्ने।<br>नेपाललाई बलियो बनाउने।</span>
         </h1>
         <p class="tile-sub">
           <span data-lang="de">Jede:r Nepali im Ausland kann etwas beitragen — mit Fähigkeiten, Zeit, Beruf oder einem einzigen Euro.</span>
-          <span data-lang="en">Every Nepali abroad can contribute something — with skills, time, profession or a single euro.</span>
+          <span data-lang="en">Every Nepali abroad can contribute something — with skills, time, profession or a single euro.</span><span data-lang="ne">विदेशमा रहेका हरेक नेपालीले केही न केही योगदान दिन सक्नुहुन्छ — सीप, समय, पेसा वा एउटै युरोबाट।</span>
         </p>
         <div class="tile-actions">
-          <a class="clink" href="mitmachen.html"><span data-lang="de">Mitmachen</span><span data-lang="en">Get involved</span></a>
-          <a class="clink" href="programme.html"><span data-lang="de">Programme ansehen</span><span data-lang="en">See the programmes</span></a>
+          <a class="clink" href="mitmachen.html"><span data-lang="de">Mitmachen</span><span data-lang="en">Get involved</span><span data-lang="ne">सहभागी हुनुहोस्</span></a>
+          <a class="clink" href="programme.html"><span data-lang="de">Programme ansehen</span><span data-lang="en">See the programmes</span><span data-lang="ne">कार्यक्रमहरू हेर्नुहोस्</span></a>
         </div>
       </div>
     </div>
@@ -90,34 +93,34 @@
   <section class="tile tile-dark">
     <div class="container">
       <div class="tile-head wide reveal-scale">
-        <span class="tile-eyebrow"><span data-lang="de">Flaggschiffprogramm</span><span data-lang="en">Flagship programme</span></span>
-        <h2 class="tile-title-lg"><span data-lang="de">Nationale<br>Erste-Hilfe-Kampagne</span><span data-lang="en">National<br>First Aid Campaign</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Flaggschiffprogramm</span><span data-lang="en">Flagship programme</span><span data-lang="ne">प्रमुख कार्यक्रम</span></span>
+        <h2 class="tile-title-lg"><span data-lang="de">Nationale<br>Erste-Hilfe-Kampagne</span><span data-lang="en">National<br>First Aid Campaign</span><span data-lang="ne">राष्ट्रिय<br>प्राथमिक उपचार अभियान</span></h2>
         <p class="tile-sub">
           <span data-lang="de">Lebensrettende Fähigkeiten für die Klassen 9–12. Wir kommen, wir bilden aus — und die Schule macht weiter, weil wir Lehrkräfte zu Trainer:innen ausbilden.</span>
-          <span data-lang="en">Life-saving skills for grades 9–12. We come, we train — and the school carries on, because we train teachers to become trainers.</span>
+          <span data-lang="en">Life-saving skills for grades 9–12. We come, we train — and the school carries on, because we train teachers to become trainers.</span><span data-lang="ne">कक्षा ९–१२ का विद्यार्थीका लागि जीवनरक्षक सीप। हामी आउँछौँ, तालिम दिन्छौँ — र विद्यालयले आफैँ निरन्तरता दिन्छ, किनभने हामी शिक्षकहरूलाई नै प्रशिक्षक बनाउँछौँ।</span>
         </p>
         <div class="tile-actions">
-          <a class="clink" href="erste-hilfe-kampagne.html"><span data-lang="de">Mehr erfahren</span><span data-lang="en">Learn more</span></a>
-          <a class="clink" href="spenden.html"><span data-lang="de">Ein Kit finanzieren</span><span data-lang="en">Fund a kit</span></a>
+          <a class="clink" href="erste-hilfe-kampagne.html"><span data-lang="de">Mehr erfahren</span><span data-lang="en">Learn more</span><span data-lang="ne">थप जान्नुहोस्</span></a>
+          <a class="clink" href="spenden.html"><span data-lang="de">Ein Kit finanzieren</span><span data-lang="en">Fund a kit</span><span data-lang="ne">एउटा किट सहयोग गर्नुहोस्</span></a>
         </div>
       </div>
 
       <div class="stats mt-6 reveal" style="max-width:900px;margin-inline:auto">
         <div class="stat">
           <div class="stat-num" data-count="1450" data-figure="studentsTrained" data-suffix="+"></div>
-          <div class="stat-label"><span data-lang="de">Geschulte Schüler:innen</span><span data-lang="en">Students trained</span></div>
+          <div class="stat-label"><span data-lang="de">Geschulte Schüler:innen</span><span data-lang="en">Students trained</span><span data-lang="ne">तालिम पाएका विद्यार्थी</span></div>
         </div>
         <div class="stat">
           <div class="stat-num" data-count="68" data-figure="teachersCertified"></div>
-          <div class="stat-label"><span data-lang="de">Lehrkräfte als Trainer:innen</span><span data-lang="en">Teachers as trainers</span></div>
+          <div class="stat-label"><span data-lang="de">Lehrkräfte als Trainer:innen</span><span data-lang="en">Teachers as trainers</span><span data-lang="ne">प्रशिक्षक बनेका शिक्षक</span></div>
         </div>
         <div class="stat">
           <div class="stat-num" data-count="12" data-figure="schoolsReached"></div>
-          <div class="stat-label"><span data-lang="de">Partnerschulen</span><span data-lang="en">Partner schools</span></div>
+          <div class="stat-label"><span data-lang="de">Partnerschulen</span><span data-lang="en">Partner schools</span><span data-lang="ne">साझेदार विद्यालय</span></div>
         </div>
         <div class="stat">
           <div class="stat-num" data-count="100" data-figure="schoolsTarget"></div>
-          <div class="stat-label"><span data-lang="de">Schulen bis 2030</span><span data-lang="en">Schools by 2030</span></div>
+          <div class="stat-label"><span data-lang="de">Schulen bis 2030</span><span data-lang="en">Schools by 2030</span><span data-lang="ne">२०३० सम्ममा विद्यालय</span></div>
         </div>
       </div>
     </div>
@@ -128,29 +131,29 @@
     <div class="container">
       <div class="tile-split">
         <article class="tile-pane reveal-scale">
-          <span class="tile-eyebrow"><span data-lang="de">Programm 01</span><span data-lang="en">Programme 01</span></span>
+          <span class="tile-eyebrow"><span data-lang="de">Programm 01</span><span data-lang="en">Programme 01</span><span data-lang="ne">कार्यक्रम ०१</span></span>
           <h2 class="tile-title">One Day for Nation</h2>
           <p class="tile-sub">
             <span data-lang="de">Ein Tag. Ihre Fähigkeiten. Echte Wirkung. Einsatz nach Berufsfeld — zwölf Bereiche, kein Beruf ausgeschlossen.</span>
-            <span data-lang="en">One day. Your skills. Real impact. Deployment by professional field — twelve areas, no profession excluded.</span>
+            <span data-lang="en">One day. Your skills. Real impact. Deployment by professional field — twelve areas, no profession excluded.</span><span data-lang="ne">एक दिन। तपाईंको सीप। वास्तविक प्रभाव। पेसागत क्षेत्रअनुसार परिचालन — बाह्र क्षेत्र, कुनै पनि पेसा बाहिर छैन।</span>
           </p>
           <div class="tile-actions">
-            <a class="clink" href="one-day-for-nation.html"><span data-lang="de">Mehr erfahren</span><span data-lang="en">Learn more</span></a>
-            <a class="clink" href="volunteer.html"><span data-lang="de">Registrieren</span><span data-lang="en">Register</span></a>
+            <a class="clink" href="one-day-for-nation.html"><span data-lang="de">Mehr erfahren</span><span data-lang="en">Learn more</span><span data-lang="ne">थप जान्नुहोस्</span></a>
+            <a class="clink" href="volunteer.html"><span data-lang="de">Registrieren</span><span data-lang="en">Register</span><span data-lang="ne">दर्ता गर्नुहोस्</span></a>
           </div>
           <div data-icon="hands" class="pane-art" aria-hidden="true"></div>
         </article>
 
         <article class="tile-pane dark reveal-scale" data-delay="90">
-          <span class="tile-eyebrow"><span data-lang="de">Programm 03</span><span data-lang="en">Programme 03</span></span>
+          <span class="tile-eyebrow"><span data-lang="de">Programm 03</span><span data-lang="en">Programme 03</span><span data-lang="ne">कार्यक्रम ०३</span></span>
           <h2 class="tile-title">One Euro for Nation</h2>
           <p class="tile-sub">
             <span data-lang="de">Kleine Spende. Große Wirkung. Ab einem Euro — die Summe vieler Beiträge macht die Kampagne möglich.</span>
-            <span data-lang="en">Small donation. Big impact. From one euro — the sum of many contributions makes the campaign possible.</span>
+            <span data-lang="en">Small donation. Big impact. From one euro — the sum of many contributions makes the campaign possible.</span><span data-lang="ne">सानो दान। ठूलो प्रभाव। एक युरोबाट सुरु — धेरैको योगदान जोडिएर नै अभियान सम्भव हुन्छ।</span>
           </p>
           <div class="tile-actions">
-            <a class="clink" href="one-euro-for-nation.html"><span data-lang="de">Mehr erfahren</span><span data-lang="en">Learn more</span></a>
-            <a class="clink" href="spenden.html"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></a>
+            <a class="clink" href="one-euro-for-nation.html"><span data-lang="de">Mehr erfahren</span><span data-lang="en">Learn more</span><span data-lang="ne">थप जान्नुहोस्</span></a>
+            <a class="clink" href="spenden.html"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span><span data-lang="ne">दान गर्नुहोस्</span></a>
           </div>
           <div data-icon="heart" class="pane-art" aria-hidden="true"></div>
         </article>
@@ -163,10 +166,10 @@
     <div class="container">
       <div class="rail-head">
         <div>
-          <span class="tile-eyebrow"><span data-lang="de">Ihr Beruf ist Ihr Beitrag</span><span data-lang="en">Your profession is your contribution</span></span>
+          <span class="tile-eyebrow"><span data-lang="de">Ihr Beruf ist Ihr Beitrag</span><span data-lang="en">Your profession is your contribution</span><span data-lang="ne">तपाईंको पेसा नै तपाईंको योगदान हो</span></span>
           <h2 class="tile-title" style="max-width:22rem">
             <span data-lang="de">Zwölf Bereiche, in denen Nepal Sie braucht</span>
-            <span data-lang="en">Twelve fields where Nepal needs you</span>
+            <span data-lang="en">Twelve fields where Nepal needs you</span><span data-lang="ne">बाह्र क्षेत्र, जहाँ नेपाललाई तपाईंको खाँचो छ</span>
           </h2>
         </div>
         <div class="rail-nav">
@@ -179,7 +182,7 @@
       </div>
       <p class="tile-note">
         <span data-lang="de">Beispiele, keine Grenzen. <a class="clink clink-sm" href="one-day-for-nation.html#bereiche">Alle Bereiche im Detail</a></span>
-        <span data-lang="en">Examples, not limits. <a class="clink clink-sm" href="one-day-for-nation.html#bereiche">All fields in detail</a></span>
+        <span data-lang="en">Examples, not limits. <a class="clink clink-sm" href="one-day-for-nation.html#bereiche">All fields in detail</a></span><span data-lang="ne">यी उदाहरण मात्र हुन्, सीमा होइनन्। <a class="clink clink-sm" href="one-day-for-nation.html#bereiche">सबै क्षेत्र विस्तारमा</a></span>
       </p>
     </div>
   </section>
@@ -188,15 +191,15 @@
   <section class="tile">
     <div class="container">
       <div class="tile-head wide reveal-scale">
-        <span class="tile-eyebrow"><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span></span>
-        <h2 class="tile-title-lg"><span data-lang="de">5 € im Monat.<br>Eine Stimme im Verein.</span><span data-lang="en">€5 a month.<br>A voice in the association.</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span><span data-lang="ne">सदस्यता</span></span>
+        <h2 class="tile-title-lg"><span data-lang="de">5 € im Monat.<br>Eine Stimme im Verein.</span><span data-lang="en">€5 a month.<br>A voice in the association.</span><span data-lang="ne">मासिक ५ युरो।<br>संगठनमा एउटा आवाज।</span></h2>
         <p class="tile-sub">
           <span data-lang="de">Mitglieder wählen den Vorstand, beschließen den Haushalt und gestalten die Programme mit. Nach § 5 der Satzung kann jede natürliche Person Mitglied werden.</span>
-          <span data-lang="en">Members elect the board, adopt the budget and shape the programmes. Under § 5 of the statutes, any natural person may become a member.</span>
+          <span data-lang="en">Members elect the board, adopt the budget and shape the programmes. Under § 5 of the statutes, any natural person may become a member.</span><span data-lang="ne">सदस्यहरूले कार्यसमिति चुन्छन्, बजेट पारित गर्छन् र कार्यक्रमहरू निर्माणमा भूमिका खेल्छन्। विधानको § ५ अनुसार कुनै पनि प्राकृतिक व्यक्ति सदस्य बन्न सक्नुहुन्छ।</span>
         </p>
         <div class="tile-actions">
-          <a class="clink" href="mitglied-werden.html"><span data-lang="de">Beitrittserklärung ausfüllen</span><span data-lang="en">Fill in the application</span></a>
-          <a class="clink" href="mitmachen.html"><span data-lang="de">Alle Wege zu helfen</span><span data-lang="en">All ways to help</span></a>
+          <a class="clink" href="mitglied-werden.html"><span data-lang="de">Beitrittserklärung ausfüllen</span><span data-lang="en">Fill in the application</span><span data-lang="ne">सदस्यता फारम भर्नुहोस्</span></a>
+          <a class="clink" href="mitmachen.html"><span data-lang="de">Alle Wege zu helfen</span><span data-lang="en">All ways to help</span><span data-lang="ne">सहयोग गर्ने सबै उपाय</span></a>
         </div>
       </div>
     </div>
@@ -207,10 +210,10 @@
     <div class="container">
       <div class="rail-head">
         <div>
-          <span class="tile-eyebrow"><span data-lang="de">Aktuelles</span><span data-lang="en">Latest</span></span>
-          <h2 class="tile-title"><span data-lang="de">Neues aus dem Verein</span><span data-lang="en">News from the association</span></h2>
+          <span class="tile-eyebrow"><span data-lang="de">Aktuelles</span><span data-lang="en">Latest</span><span data-lang="ne">पछिल्लो</span></span>
+          <h2 class="tile-title"><span data-lang="de">Neues aus dem Verein</span><span data-lang="en">News from the association</span><span data-lang="ne">संगठनका नयाँ समाचार</span></h2>
         </div>
-        <a class="clink" href="news.html"><span data-lang="de">Alle Beiträge</span><span data-lang="en">All posts</span></a>
+        <a class="clink" href="news.html"><span data-lang="de">Alle Beiträge</span><span data-lang="en">All posts</span><span data-lang="ne">सबै समाचार</span></a>
       </div>
       <div class="grid grid-3" id="newsGrid"></div>
     </div>
@@ -220,38 +223,38 @@
   <section class="tile">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <h2 class="tile-title"><span data-lang="de">Weiter zu</span><span data-lang="en">Continue to</span></h2>
+        <h2 class="tile-title"><span data-lang="de">Weiter zu</span><span data-lang="en">Continue to</span><span data-lang="ne">अगाडि हेर्नुहोस्</span></h2>
       </div>
       <nav class="quicklinks reveal" aria-label="Weitere Seiten">
         <a class="quicklink" href="wirkung.html">
           <span data-icon="chart" class="ql-icon" aria-hidden="true"></span>
-          <strong><span data-lang="de">Wirkung</span><span data-lang="en">Impact</span></strong>
-          <span><span data-lang="de">Wie ein Einsatz abläuft und was er hinterlässt</span><span data-lang="en">How a deployment works and what it leaves behind</span></span>
+          <strong><span data-lang="de">Wirkung</span><span data-lang="en">Impact</span><span data-lang="ne">प्रभाव</span></strong>
+          <span><span data-lang="de">Wie ein Einsatz abläuft und was er hinterlässt</span><span data-lang="en">How a deployment works and what it leaves behind</span><span data-lang="ne">एउटा परिचालन कसरी हुन्छ र त्यसले के छोडेर जान्छ</span></span>
         </a>
         <a class="quicklink" href="veranstaltungen.html">
           <span data-icon="calendar" class="ql-icon" aria-hidden="true"></span>
-          <strong><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span></strong>
-          <span><span data-lang="de">Briefings, Schulungen, Kulturfeste, Turniere</span><span data-lang="en">Briefings, training, festivals, tournaments</span></span>
+          <strong><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span><span data-lang="ne">कार्यक्रम तथा गतिविधि</span></strong>
+          <span><span data-lang="de">Briefings, Schulungen, Kulturfeste, Turniere</span><span data-lang="en">Briefings, training, festivals, tournaments</span><span data-lang="ne">ब्रिफिङ, तालिम, सांस्कृतिक पर्व, प्रतियोगिता</span></span>
         </a>
         <a class="quicklink" href="transparenz.html">
           <span data-icon="search" class="ql-icon" aria-hidden="true"></span>
-          <strong><span data-lang="de">Transparenz</span><span data-lang="en">Transparency</span></strong>
-          <span><span data-lang="de">Woher die Mittel kommen und wohin sie gehen</span><span data-lang="en">Where funds come from and where they go</span></span>
+          <strong><span data-lang="de">Transparenz</span><span data-lang="en">Transparency</span><span data-lang="ne">पारदर्शिता</span></strong>
+          <span><span data-lang="de">Woher die Mittel kommen und wohin sie gehen</span><span data-lang="en">Where funds come from and where they go</span><span data-lang="ne">रकम कहाँबाट आउँछ र कहाँ जान्छ</span></span>
         </a>
         <a class="quicklink" href="faq.html">
           <span data-icon="chat" class="ql-icon" aria-hidden="true"></span>
           <strong>FAQ</strong>
-          <span><span data-lang="de">39 Fragen zu Mitgliedschaft, Einsätzen und Spenden</span><span data-lang="en">39 questions on membership, assignments and donations</span></span>
+          <span><span data-lang="de">39 Fragen zu Mitgliedschaft, Einsätzen und Spenden</span><span data-lang="en">39 questions on membership, assignments and donations</span><span data-lang="ne">सदस्यता, परिचालन र दानसम्बन्धी ३९ प्रश्न</span></span>
         </a>
         <a class="quicklink" href="ueber-uns.html">
           <span data-icon="bridge" class="ql-icon" aria-hidden="true"></span>
-          <strong><span data-lang="de">Über uns</span><span data-lang="en">About us</span></strong>
-          <span><span data-lang="de">Vision, Satzungszwecke, Vorstand, NPYS-N</span><span data-lang="en">Vision, statutory purposes, board, NPYS-N</span></span>
+          <strong><span data-lang="de">Über uns</span><span data-lang="en">About us</span><span data-lang="ne">हाम्रो बारेमा</span></strong>
+          <span><span data-lang="de">Vision, Satzungszwecke, Vorstand, NPYS-N</span><span data-lang="en">Vision, statutory purposes, board, NPYS-N</span><span data-lang="ne">परिकल्पना, विधानका उद्देश्य, कार्यसमिति, NPYS-N</span></span>
         </a>
         <a class="quicklink" href="kontakt.html">
           <span data-icon="mail" class="ql-icon" aria-hidden="true"></span>
-          <strong><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></strong>
-          <span><span data-lang="de">Deutsch, Englisch und Nepali — in 1–3 Werktagen</span><span data-lang="en">German, English and Nepali — within 1–3 working days</span></span>
+          <strong><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span><span data-lang="ne">सम्पर्क</span></strong>
+          <span><span data-lang="de">Deutsch, Englisch und Nepali — in 1–3 Werktagen</span><span data-lang="en">German, English and Nepali — within 1–3 working days</span><span data-lang="ne">जर्मन, अङ्ग्रेजी र नेपाली — १–३ कार्यदिनभित्र</span></span>
         </a>
       </nav>
     </div>

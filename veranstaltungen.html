@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,14 +26,14 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span><span data-lang="ne">कार्यक्रम तथा गतिविधि</span></li>
       </ol>
-      <span class="eyebrow"><span data-lang="de">Termine</span><span data-lang="en">Dates</span></span>
-      <h1><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span></h1>
+      <span class="eyebrow"><span data-lang="de">Termine</span><span data-lang="en">Dates</span><span data-lang="ne">मितिहरू</span></span>
+      <h1><span data-lang="de">Veranstaltungen</span><span data-lang="en">Events</span><span data-lang="ne">कार्यक्रम तथा गतिविधि</span></h1>
       <p class="lead">
         <span data-lang="de">Briefings, Schulungen, Kulturfeste, Turniere und Versammlungen — vor Ort in Hessen und online. Anmeldung über das Kontaktformular, Termine als .ics für Ihren Kalender.</span>
-        <span data-lang="en">Briefings, training sessions, cultural festivals, tournaments and meetings — on site in Hesse and online. Register via the contact form, add dates to your calendar as .ics.</span>
+        <span data-lang="en">Briefings, training sessions, cultural festivals, tournaments and meetings — on site in Hesse and online. Register via the contact form, add dates to your calendar as .ics.</span><span data-lang="ne">ब्रिफिङ, तालिम, सांस्कृतिक पर्व, प्रतियोगिता र बैठक — हेसेनमा प्रत्यक्ष र अनलाइन दुवै। सम्पर्क फारमबाट दर्ता गर्नुहोस्, मितिहरू .ics मार्फत आफ्नो पात्रोमा थप्नुहोस्।</span>
       </p>
     </div>
   </section>
@@ -45,16 +45,17 @@
           <img src="assets/media/naya-barsha-2026/live-concert.jpg" width="1600" height="1200" loading="lazy" decoding="async"
                alt="Livekonzert bei der Neujahrsfeier der NPJOE am 10. April 2026 in Darmstadt"
                data-de-alt="Livekonzert bei der Neujahrsfeier der NPJOE am 10. April 2026 in Darmstadt"
-               data-en-alt="Live concert at the NPJOE New Year celebration on 10 April 2026 in Darmstadt">
+               data-en-alt="Live concert at the NPJOE New Year celebration on 10 April 2026 in Darmstadt"
+               data-ne-alt="डार्मस्टाटमा १० अप्रिल २०२६ मा भएको NPJOE नयाँ वर्ष उत्सवमा प्रत्यक्ष कन्सर्ट">
         </a>
         <div class="event-recap-copy">
-          <span class="badge badge-outline"><span data-lang="de">Rückblick · 10.04.2026</span><span data-lang="en">Recap · 10/04/2026</span></span>
-          <h2 id="naya-barsha-recap-title" class="mt-3"><span data-lang="de">Nepalesisches Neujahr 2026</span><span data-lang="en">Nepali New Year 2026</span></h2>
+          <span class="badge badge-outline"><span data-lang="de">Rückblick · 10.04.2026</span><span data-lang="en">Recap · 10/04/2026</span><span data-lang="ne">फर्केर हेर्दा · १०/०४/२०२६</span></span>
+          <h2 id="naya-barsha-recap-title" class="mt-3"><span data-lang="de">Nepalesisches Neujahr 2026</span><span data-lang="en">Nepali New Year 2026</span><span data-lang="ne">नेपाली नयाँ वर्ष २०२६</span></h2>
           <p class="lead mt-2">
             <span data-lang="de">Über 150 Gäste feierten in der Knabenschule Darmstadt das Naya Barsha — mit nepalesischer Küche, einem Livekonzert, Tanzaufführungen und kulturellen Darbietungen. Eine der größten Veranstaltungen des Vereins bisher.</span>
-            <span data-lang="en">More than 150 guests celebrated Naya Barsha at the Knabenschule in Darmstadt — with Nepali cuisine, a live concert, dance performances and cultural presentations. One of the association's largest events to date.</span>
+            <span data-lang="en">More than 150 guests celebrated Naya Barsha at the Knabenschule in Darmstadt — with Nepali cuisine, a live concert, dance performances and cultural presentations. One of the association's largest events to date.</span><span data-lang="ne">डार्मस्टाटको क्नाबेनशुलेमा १५० भन्दा बढी पाहुनाले नयाँ वर्ष मनाए — नेपाली परिकार, लाइभ कन्सर्ट, नृत्य प्रस्तुति र सांस्कृतिक कार्यक्रमसहित। यो संगठनका अहिलेसम्मका सबैभन्दा ठूला कार्यक्रममध्ये एक हो।</span>
           </p>
-          <p class="mt-4"><a class="btn btn-sm" href="naya-barsha-2026.html"><span data-lang="de">Album mit 9 Fotos</span><span data-lang="en">Album with 9 photos</span></a></p>
+          <p class="mt-4"><a class="btn btn-sm" href="naya-barsha-2026.html"><span data-lang="de">Album mit 9 Fotos</span><span data-lang="en">Album with 9 photos</span><span data-lang="ne">९ तस्बिर भएको एल्बम</span></a></p>
         </div>
       </article>
     </div>
@@ -67,16 +68,17 @@
           <img src="assets/media/dashain-2024/trophy-presentation.jpg" width="1920" height="1280" loading="lazy" decoding="async"
                alt="Pokalübergabe bei der Dashain-Feier der NPJOE am 5. Oktober 2024"
                data-de-alt="Pokalübergabe bei der Dashain-Feier der NPJOE am 5. Oktober 2024"
-               data-en-alt="Trophy presentation at the NPJOE Dashain celebration on 5 October 2024">
+               data-en-alt="Trophy presentation at the NPJOE Dashain celebration on 5 October 2024"
+               data-ne-alt="५ अक्टोबर २०२४ को NPJOE दसैँ उत्सवमा पुरस्कार वितरण">
         </a>
         <div class="event-recap-copy">
-          <span class="badge badge-outline"><span data-lang="de">Rückblick · 05.10.2024</span><span data-lang="en">Recap · 05/10/2024</span></span>
-          <h2 id="dashain-recap-title" class="mt-3"><span data-lang="de">Dashain-Feier 2024</span><span data-lang="en">Dashain celebration 2024</span></h2>
+          <span class="badge badge-outline"><span data-lang="de">Rückblick · 05.10.2024</span><span data-lang="en">Recap · 05/10/2024</span><span data-lang="ne">फर्केर हेर्दा · ०५/१०/२०२४</span></span>
+          <h2 id="dashain-recap-title" class="mt-3"><span data-lang="de">Dashain-Feier 2024</span><span data-lang="en">Dashain celebration 2024</span><span data-lang="ne">दसैँ उत्सव २०२४</span></h2>
           <p class="lead mt-2">
             <span data-lang="de">Mitglieder, Freund:innen und Gäste feierten gemeinsam mit Bühnenbeiträgen, Ehrungen, Pokal- und Medaillenübergabe sowie nepalesischem Essen.</span>
-            <span data-lang="en">Members, friends and guests celebrated together with stage contributions, presentations, a trophy and medal ceremony, and Nepali food.</span>
+            <span data-lang="en">Members, friends and guests celebrated together with stage contributions, presentations, a trophy and medal ceremony, and Nepali food.</span><span data-lang="ne">सदस्य, साथीभाइ र पाहुनाहरूले मञ्चीय प्रस्तुति, सम्मान, कप तथा पदक वितरण र नेपाली खानासहित सँगै उत्सव मनाए।</span>
           </p>
-          <p class="mt-4"><a class="btn btn-sm" href="dashain-2024.html"><span data-lang="de">Album mit 16 Fotos und einem Video</span><span data-lang="en">Album with 16 photos and one video</span></a></p>
+          <p class="mt-4"><a class="btn btn-sm" href="dashain-2024.html"><span data-lang="de">Album mit 16 Fotos und einem Video</span><span data-lang="en">Album with 16 photos and one video</span><span data-lang="ne">१६ तस्बिर र एक भिडियो भएको एल्बम</span></a></p>
         </div>
       </article>
     </div>
@@ -84,32 +86,32 @@
 
   <section class="section">
     <div class="container">
-      <h2 class="mb-4"><span data-lang="de">Kommende Termine</span><span data-lang="en">Upcoming events</span></h2>
+      <h2 class="mb-4"><span data-lang="de">Kommende Termine</span><span data-lang="en">Upcoming events</span><span data-lang="ne">आउँदा कार्यक्रमहरू</span></h2>
       <div class="flex-between mb-4">
         <div class="flex" data-filter-group data-filter-target="#eventsAll .event-row" data-filter-empty="#eventsEmpty">
-          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span></button>
+          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span><span data-lang="ne">सबै</span></button>
           <button class="chip" type="button" data-filter="volunteer" aria-pressed="false">Volunteer</button>
-          <button class="chip" type="button" data-filter="erste-hilfe" aria-pressed="false"><span data-lang="de">Erste Hilfe</span><span data-lang="en">First aid</span></button>
-          <button class="chip" type="button" data-filter="bildung" aria-pressed="false"><span data-lang="de">Bildung</span><span data-lang="en">Education</span></button>
-          <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span></button>
+          <button class="chip" type="button" data-filter="erste-hilfe" aria-pressed="false"><span data-lang="de">Erste Hilfe</span><span data-lang="en">First aid</span><span data-lang="ne">प्राथमिक उपचार</span></button>
+          <button class="chip" type="button" data-filter="bildung" aria-pressed="false"><span data-lang="de">Bildung</span><span data-lang="en">Education</span><span data-lang="ne">शिक्षा</span></button>
+          <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span><span data-lang="ne">संस्कृति</span></button>
           <button class="chip" type="button" data-filter="sport" aria-pressed="false">Sport</button>
           <button class="chip" type="button" data-filter="online" aria-pressed="false">Online</button>
-          <button class="chip" type="button" data-filter="mitglieder" aria-pressed="false"><span data-lang="de">Mitglieder</span><span data-lang="en">Members</span></button>
+          <button class="chip" type="button" data-filter="mitglieder" aria-pressed="false"><span data-lang="de">Mitglieder</span><span data-lang="en">Members</span><span data-lang="ne">सदस्यहरू</span></button>
         </div>
         <input class="input" type="search" style="max-width:260px" data-search-target="#eventsAll .event-row" data-search-empty="#eventsEmpty"
-               data-de-placeholder="Termine durchsuchen …" data-en-placeholder="Search events …" aria-label="Suche / Search">
+               data-de-placeholder="Termine durchsuchen …" data-en-placeholder="Search events …" data-ne-placeholder="कार्यक्रम खोज्नुहोस् …" aria-label="Suche / Search">
       </div>
 
       <div class="stack" id="eventsAll"></div>
       <p class="center text-muted mt-4 hide" id="eventsEmpty">
         <span data-lang="de">Keine Termine gefunden. Andere Filter probieren?</span>
-        <span data-lang="en">No events found. Try different filters?</span>
+        <span data-lang="en">No events found. Try different filters?</span><span data-lang="ne">कुनै कार्यक्रम भेटिएन। अर्को फिल्टर प्रयोग गर्ने हो?</span>
       </p>
 
       <div class="callout callout-navy mt-6">
-        <strong><span data-lang="de">Mitgliederversammlung:</span><span data-lang="en">General meeting:</span></strong>
+        <strong><span data-lang="de">Mitgliederversammlung:</span><span data-lang="en">General meeting:</span><span data-lang="ne">साधारण सभा:</span></strong>
         <span data-lang="de"> Nach § 9 der Satzung findet mindestens einmal jährlich eine ordentliche Mitgliederversammlung statt. Die Einladung erfolgt schriftlich mit zwei Wochen Frist und Tagesordnung. Anträge müssen eine Woche vor Beginn schriftlich beim Vorstand eingegangen sein.</span>
-        <span data-lang="en"> Under § 9 of the statutes, an ordinary general meeting is held at least once a year. Invitations are sent in writing with two weeks' notice and an agenda. Motions must reach the board in writing one week before it begins.</span>
+        <span data-lang="en"> Under § 9 of the statutes, an ordinary general meeting is held at least once a year. Invitations are sent in writing with two weeks' notice and an agenda. Motions must reach the board in writing one week before it begins.</span><span data-lang="ne"> विधानको § ९ अनुसार वर्षमा कम्तीमा एकपटक नियमित साधारण सभा हुन्छ। निमन्त्रणा दुई हप्ता अगावै कार्यसूचीसहित लिखित रूपमा पठाइन्छ। प्रस्तावहरू सभा सुरु हुनुभन्दा एक हप्ता अगाडि लिखित रूपमा कार्यसमितिमा पुग्नुपर्छ।</span>
       </div>
     </div>
   </section>
@@ -118,21 +120,21 @@
     <div class="container">
       <div class="grid grid-2" style="gap:2.5rem;align-items:center">
         <div>
-          <h2><span data-lang="de">Eigene Veranstaltung vorschlagen</span><span data-lang="en">Propose your own event</span></h2>
+          <h2><span data-lang="de">Eigene Veranstaltung vorschlagen</span><span data-lang="en">Propose your own event</span><span data-lang="ne">आफ्नै कार्यक्रम प्रस्ताव गर्नुहोस्</span></h2>
           <p class="lead mt-2">
             <span data-lang="de">Sie möchten in Ihrer Stadt ein Kulturfest, ein Sportturnier oder ein Informationsseminar organisieren? Wir unterstützen mit Erfahrung, Reichweite und Vernetzung.</span>
-            <span data-lang="en">Would you like to organise a cultural festival, a sports tournament or an information seminar in your city? We support with experience, reach and networking.</span>
+            <span data-lang="en">Would you like to organise a cultural festival, a sports tournament or an information seminar in your city? We support with experience, reach and networking.</span><span data-lang="ne">तपाईंको सहरमा सांस्कृतिक पर्व, खेलकुद प्रतियोगिता वा सूचनामूलक सेमिनार आयोजना गर्न चाहनुहुन्छ? हामी अनुभव, पहुँच र सञ्जालमार्फत सहयोग गर्छौं।</span>
           </p>
-          <p class="mt-3"><a class="btn" href="kontakt.html?thema=veranstaltung"><span data-lang="de">Veranstaltung vorschlagen</span><span data-lang="en">Propose an event</span></a></p>
+          <p class="mt-3"><a class="btn" href="kontakt.html?thema=veranstaltung"><span data-lang="de">Veranstaltung vorschlagen</span><span data-lang="en">Propose an event</span><span data-lang="ne">कार्यक्रम प्रस्ताव गर्नुहोस्</span></a></p>
         </div>
         <div class="card card-pad-lg">
-          <h3 class="t-h4"><span data-lang="de">Was wir typischerweise veranstalten</span><span data-lang="en">What we typically host</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Was wir typischerweise veranstalten</span><span data-lang="en">What we typically host</span><span data-lang="ne">हामी प्रायः के आयोजना गर्छौं</span></h3>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick">✓</span><span data-lang="de">Interkulturelle Feste, offen für die gesamte Öffentlichkeit (§ 3c)</span><span data-lang="en">Intercultural festivals, open to the general public (§ 3c)</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Fußball- und Cricketturniere für Jugendteams (§ 3a, § 3g)</span><span data-lang="en">Football and cricket tournaments for youth teams (§ 3a, § 3g)</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Seminare zu Visum, Ausbildung, Studium und Integration (§ 3b)</span><span data-lang="en">Seminars on visas, training, study and integration (§ 3b)</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Erste-Hilfe-Trainer:innen-Schulungen (§ 3e)</span><span data-lang="en">First aid train-the-trainer sessions (§ 3e)</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Spendenabende für One Euro for Nation (§ 3i)</span><span data-lang="en">Fundraising evenings for One Euro for Nation (§ 3i)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Interkulturelle Feste, offen für die gesamte Öffentlichkeit (§ 3c)</span><span data-lang="en">Intercultural festivals, open to the general public (§ 3c)</span><span data-lang="ne">अन्तरसांस्कृतिक पर्व, सर्वसाधारणका लागि खुला (§ ३ग)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Fußball- und Cricketturniere für Jugendteams (§ 3a, § 3g)</span><span data-lang="en">Football and cricket tournaments for youth teams (§ 3a, § 3g)</span><span data-lang="ne">युवा टोलीका लागि फुटबल र क्रिकेट प्रतियोगिता (§ ३क, § ३छ)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Seminare zu Visum, Ausbildung, Studium und Integration (§ 3b)</span><span data-lang="en">Seminars on visas, training, study and integration (§ 3b)</span><span data-lang="ne">भिसा, तालिम, अध्ययन र एकीकरणसम्बन्धी सेमिनार (§ ३ख)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Erste-Hilfe-Trainer:innen-Schulungen (§ 3e)</span><span data-lang="en">First aid train-the-trainer sessions (§ 3e)</span><span data-lang="ne">प्राथमिक उपचार प्रशिक्षक तालिम (§ ३ङ)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Spendenabende für One Euro for Nation (§ 3i)</span><span data-lang="en">Fundraising evenings for One Euro for Nation (§ 3i)</span><span data-lang="ne">One Euro for Nation का लागि दान सङ्कलन साँझ (§ ३झ)</span></li>
           </ul>
         </div>
       </div>

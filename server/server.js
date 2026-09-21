@@ -1009,19 +1009,23 @@ function newsletterPage(result) {
   const messages = {
     ok: {
       de: ["Anmeldung bestätigt", "Vielen Dank — Ihre E-Mail-Adresse ist jetzt für den Newsletter bestätigt. Sie können ihn in jeder Ausgabe wieder abbestellen."],
-      en: ["Subscription confirmed", "Thank you — your e-mail address is now confirmed for the newsletter. You can cancel it in every issue."]
+      en: ["Subscription confirmed", "Thank you — your e-mail address is now confirmed for the newsletter. You can cancel it in every issue."],
+      ne: ["सदस्यता पुष्टि भयो", "धन्यवाद — तपाईंको इमेल ठेगाना अब न्यूजलेटरका लागि पुष्टि भएको छ। हरेक अङ्कबाटै सदस्यता हटाउन सकिन्छ।"]
     },
     already: {
       de: ["Bereits bestätigt", "Diese Anmeldung war schon bestätigt. Sie müssen nichts weiter tun."],
-      en: ["Already confirmed", "This subscription was already confirmed. There is nothing else to do."]
+      en: ["Already confirmed", "This subscription was already confirmed. There is nothing else to do."],
+      ne: ["पहिल्यै पुष्टि भइसकेको", "यो सदस्यता पहिल्यै पुष्टि भइसकेको थियो। अब केही गर्नु पर्दैन।"]
     },
     expired: {
       de: ["Der Link ist abgelaufen", "Bestätigungslinks gelten 30 Tage. Bitte melden Sie sich erneut an — Sie erhalten dann einen neuen Link."],
-      en: ["This link has expired", "Confirmation links are valid for 30 days. Please sign up again to receive a new one."]
+      en: ["This link has expired", "Confirmation links are valid for 30 days. Please sign up again to receive a new one."],
+      ne: ["लिङ्कको म्याद सकियो", "पुष्टि लिङ्क ३० दिनसम्म मान्य हुन्छ। कृपया फेरि दर्ता गर्नुहोस् — नयाँ लिङ्क पाउनुहुनेछ।"]
     },
     error: {
       de: ["Der Link ist ungültig", "Vielleicht wurde er beim Kopieren abgeschnitten. Bitte melden Sie sich erneut an oder schreiben Sie uns."],
-      en: ["This link is not valid", "It may have been cut short when copying. Please sign up again or write to us."]
+      en: ["This link is not valid", "It may have been cut short when copying. Please sign up again or write to us."],
+      ne: ["लिङ्क मान्य छैन", "सायद प्रतिलिपि गर्दा यो अधुरो भयो। कृपया फेरि दर्ता गर्नुहोस् वा हामीलाई लेख्नुहोस्।"]
     }
   };
   const key = result.ok ? (result.already ? "already" : "ok") : (result.error === "expired" ? "expired" : "error");
@@ -1033,17 +1037,21 @@ function newsletterPage(result) {
     '<meta name="robots" content="noindex">\n' +
     '<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">\n' +
     '<link rel="stylesheet" href="assets/css/main.css">\n' +
-    '<script>(function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");' +
+    '<script>(function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){' +
+    'var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}' +
     'document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();</script>\n' +
     '<script src="assets/js/site.js" defer></script>\n<script src="assets/js/layout.js" defer></script>\n' +
     '<script src="assets/js/main.js" defer></script>\n</head>\n<body data-page="">\n' +
     '<div id="siteHeaderMount"></div>\n<main id="main">\n<section class="section">\n' +
     '<div class="container container-narrow center" style="padding-block:3rem">\n' +
     '<div style="font-size:3rem">' + (good ? "✓" : "!") + "</div>\n" +
-    '<h1 class="mt-2"><span data-lang="de">' + m.de[0] + '</span><span data-lang="en">' + m.en[0] + "</span></h1>\n" +
-    '<p class="lead mt-3"><span data-lang="de">' + m.de[1] + '</span><span data-lang="en">' + m.en[1] + "</span></p>\n" +
+    '<h1 class="mt-2"><span data-lang="de">' + m.de[0] + '</span><span data-lang="en">' + m.en[0] +
+    '</span><span data-lang="ne">' + m.ne[0] + "</span></h1>\n" +
+    '<p class="lead mt-3"><span data-lang="de">' + m.de[1] + '</span><span data-lang="en">' + m.en[1] +
+    '</span><span data-lang="ne">' + m.ne[1] + "</span></p>\n" +
     '<p class="mt-4"><a class="btn btn-lg" href="index.html"><span data-lang="de">Zur Startseite</span>' +
-    '<span data-lang="en">Back to the home page</span></a></p>\n' +
+    '<span data-lang="en">Back to the home page</span>' +
+    '<span data-lang="ne">गृहपृष्ठमा जानुहोस्</span></a></p>\n' +
     "</div>\n</section>\n</main>\n<div id=\"siteFooterMount\"></div>\n</body>\n</html>\n";
 }
 

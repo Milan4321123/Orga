@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,19 +26,19 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><a href="programme.html"><span data-lang="de">Programme</span><span data-lang="en">Programmes</span></a></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><a href="programme.html"><span data-lang="de">Programme</span><span data-lang="en">Programmes</span><span data-lang="ne">कार्यक्रमहरू</span></a></li>
         <li>One Day for Nation</li>
       </ol>
-      <span class="eyebrow"><span data-lang="de">Programm 01 · Volunteering</span><span data-lang="en">Programme 01 · Volunteering</span></span>
+      <span class="eyebrow"><span data-lang="de">Programm 01 · Volunteering</span><span data-lang="en">Programme 01 · Volunteering</span><span data-lang="ne">कार्यक्रम ०१ · स्वयंसेवा</span></span>
       <h1>One Day for Nation</h1>
       <p class="lead">
         <span data-lang="de">Ein Tag. Ihre Fähigkeiten. Echte Wirkung. Das Programm ermöglicht es jeder und jedem Nepali im Ausland, die eigene berufliche Qualifikation direkt in den Dienst von Schulen, NGOs und Gemeinden in Nepal zu stellen. Wer einen Tag Zeit hat, kann etwas bewegen. Wer länger bleiben kann, hinterlässt bleibende Wirkung.</span>
-        <span data-lang="en">One day. Your skills. Real impact. The programme enables every Nepali abroad to put their professional qualifications directly at the service of schools, NGOs and communities in Nepal. Those with one day to spare can make a difference. Those who can stay longer leave a lasting impact.</span>
+        <span data-lang="en">One day. Your skills. Real impact. The programme enables every Nepali abroad to put their professional qualifications directly at the service of schools, NGOs and communities in Nepal. Those with one day to spare can make a difference. Those who can stay longer leave a lasting impact.</span><span data-lang="ne">एक दिन। तपाईंको सीप। वास्तविक प्रभाव। यस कार्यक्रमले विदेशमा रहेका हरेक नेपालीलाई आफ्नो पेसागत दक्षता नेपालका विद्यालय, गैरसरकारी संस्था र समुदायका लागि सिधै लगाउने अवसर दिन्छ। एक दिन समय भएकाले पनि फरक पार्न सक्नुहुन्छ। लामो समय दिन सक्नेले दिगो छाप छाड्नुहुन्छ।</span>
       </p>
       <div class="flex mt-4">
-        <a class="btn" href="volunteer.html"><span data-lang="de">Jetzt registrieren</span><span data-lang="en">Register now</span></a>
-        <a class="btn btn-ghost" href="#bereiche"><span data-lang="de">Berufsfelder ansehen</span><span data-lang="en">See the fields</span></a>
+        <a class="btn" href="volunteer.html"><span data-lang="de">Jetzt registrieren</span><span data-lang="en">Register now</span><span data-lang="ne">अहिले नै दर्ता गर्नुहोस्</span></a>
+        <a class="btn btn-ghost" href="#bereiche"><span data-lang="de">Berufsfelder ansehen</span><span data-lang="en">See the fields</span><span data-lang="ne">क्षेत्रहरू हेर्नुहोस्</span></a>
       </div>
     </div>
   </section>
@@ -47,19 +47,19 @@
   <section class="section-sm">
     <div class="container">
       <dl class="deflist reveal">
-        <div><dt><span data-lang="de">Wer kann teilnehmen</span><span data-lang="en">Who can participate</span></dt><dd><span data-lang="de">Alle Nepalis ab 18 Jahren, die im Ausland leben — unabhängig vom Wohnland</span><span data-lang="en">All Nepalis aged 18+ living abroad — regardless of country of residence</span></dd></div>
-        <div><dt><span data-lang="de">Einsatzdauer</span><span data-lang="en">Duration</span></dt><dd><span data-lang="de">Mindestens 1 Tag; längere Einsätze sehr willkommen</span><span data-lang="en">At least 1 day; longer assignments very welcome</span></dd></div>
-        <div><dt><span data-lang="de">Bereiche</span><span data-lang="en">Fields</span></dt><dd><span data-lang="de">Gesundheit, Bildung, Technologie, Ingenieurwesen, Recht, Kunst, Sport, Umwelt und Wirtschaft</span><span data-lang="en">Health, education, technology, engineering, law, arts, sports, environment and business</span></dd></div>
-        <div><dt><span data-lang="de">Koordination</span><span data-lang="en">Coordination</span></dt><dd><span data-lang="de">NPYS-N — Matching, Briefing und Vor-Ort-Begleitung</span><span data-lang="en">NPYS-N — matching, briefing and on-site support</span></dd></div>
-        <div><dt><span data-lang="de">Zertifizierung</span><span data-lang="en">Certification</span></dt><dd><span data-lang="de">Offizielles NPJOE-Zertifikat nach jedem Einsatz</span><span data-lang="en">Official NPJOE certificate after each assignment</span></dd></div>
-        <div><dt><span data-lang="de">Kosten</span><span data-lang="en">Cost</span></dt><dd><span data-lang="de">Registrierung kostenlos; Reise und Unterkunft tragen Volunteers selbst</span><span data-lang="en">Registration free; volunteers cover their own travel and accommodation</span></dd></div>
+        <div><dt><span data-lang="de">Wer kann teilnehmen</span><span data-lang="en">Who can participate</span><span data-lang="ne">कसले सहभागी हुन सक्छ</span></dt><dd><span data-lang="de">Alle Nepalis ab 18 Jahren, die im Ausland leben — unabhängig vom Wohnland</span><span data-lang="en">All Nepalis aged 18+ living abroad — regardless of country of residence</span><span data-lang="ne">विदेशमा बस्ने १८ वर्षमाथिका सबै नेपाली — जुनसुकै देशमा भए पनि</span></dd></div>
+        <div><dt><span data-lang="de">Einsatzdauer</span><span data-lang="en">Duration</span><span data-lang="ne">अवधि</span></dt><dd><span data-lang="de">Mindestens 1 Tag; längere Einsätze sehr willkommen</span><span data-lang="en">At least 1 day; longer assignments very welcome</span><span data-lang="ne">कम्तीमा १ दिन; लामो अवधिको परिचालन झनै स्वागतयोग्य</span></dd></div>
+        <div><dt><span data-lang="de">Bereiche</span><span data-lang="en">Fields</span><span data-lang="ne">क्षेत्रहरू</span></dt><dd><span data-lang="de">Gesundheit, Bildung, Technologie, Ingenieurwesen, Recht, Kunst, Sport, Umwelt und Wirtschaft</span><span data-lang="en">Health, education, technology, engineering, law, arts, sports, environment and business</span><span data-lang="ne">स्वास्थ्य, शिक्षा, प्रविधि, इन्जिनियरिङ, कानुन, कला, खेलकुद, वातावरण र व्यवसाय</span></dd></div>
+        <div><dt><span data-lang="de">Koordination</span><span data-lang="en">Coordination</span><span data-lang="ne">समन्वय</span></dt><dd><span data-lang="de">NPYS-N — Matching, Briefing und Vor-Ort-Begleitung</span><span data-lang="en">NPYS-N — matching, briefing and on-site support</span><span data-lang="ne">NPYS-N — मिलान, ब्रिफिङ र स्थलगत सहयोग</span></dd></div>
+        <div><dt><span data-lang="de">Zertifizierung</span><span data-lang="en">Certification</span><span data-lang="ne">प्रमाणीकरण</span></dt><dd><span data-lang="de">Offizielles NPJOE-Zertifikat nach jedem Einsatz</span><span data-lang="en">Official NPJOE certificate after each assignment</span><span data-lang="ne">हरेक परिचालनपछि NPJOE को आधिकारिक प्रमाणपत्र</span></dd></div>
+        <div><dt><span data-lang="de">Kosten</span><span data-lang="en">Cost</span><span data-lang="ne">खर्च</span></dt><dd><span data-lang="de">Registrierung kostenlos; Reise und Unterkunft tragen Volunteers selbst</span><span data-lang="en">Registration free; volunteers cover their own travel and accommodation</span><span data-lang="ne">दर्ता निःशुल्क; यात्रा र बसोबासको खर्च स्वयंसेवक आफैँले व्यहोर्नुहुन्छ</span></dd></div>
       </dl>
       <p class="legal-basis mt-3">
-        <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span></strong>
-        § 3(b) <span data-lang="de">Durchführung von Freiwilligenprogrammen zur Unterstützung sozialer, bildungsbezogener und gesundheitlicher Projekte in Nepal</span><span data-lang="en">carrying out volunteer programmes supporting social, educational and health projects in Nepal</span> ·
-        § 3(d) <span data-lang="de">Völkerverständigung und Austausch</span><span data-lang="en">international understanding and exchange</span> ·
-        § 3(h) <span data-lang="de">Koordination und Vernetzung von Freiwilligen</span><span data-lang="en">coordination and networking of volunteers</span> ·
-        § 3(f) <span data-lang="de">Kooperation mit lokalen Partnerorganisationen</span><span data-lang="en">cooperation with local partner organisations</span>
+        <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span><span data-lang="ne">विधानसम्मत आधार:</span></strong>
+        § 3(b) <span data-lang="de">Durchführung von Freiwilligenprogrammen zur Unterstützung sozialer, bildungsbezogener und gesundheitlicher Projekte in Nepal</span><span data-lang="en">carrying out volunteer programmes supporting social, educational and health projects in Nepal</span><span data-lang="ne">नेपालका सामाजिक, शैक्षिक र स्वास्थ्य परियोजनालाई सहयोग गर्ने स्वयंसेवा कार्यक्रम सञ्चालन</span> ·
+        § 3(d) <span data-lang="de">Völkerverständigung und Austausch</span><span data-lang="en">international understanding and exchange</span><span data-lang="ne">अन्तर्राष्ट्रिय समझदारी र आदानप्रदान</span> ·
+        § 3(h) <span data-lang="de">Koordination und Vernetzung von Freiwilligen</span><span data-lang="en">coordination and networking of volunteers</span><span data-lang="ne">स्वयंसेवकको समन्वय र सञ्जाल निर्माण</span> ·
+        § 3(f) <span data-lang="de">Kooperation mit lokalen Partnerorganisationen</span><span data-lang="en">cooperation with local partner organisations</span><span data-lang="ne">स्थानीय साझेदार संस्थासँग सहकार्य</span>
       </p>
     </div>
   </section>
@@ -68,33 +68,33 @@
   <section class="section section-alt" id="bereiche">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow"><span data-lang="de">Volunteer-Bereiche nach Berufsfeld</span><span data-lang="en">Volunteer fields by profession</span></span>
-        <h2><span data-lang="de">Zwölf Bereiche — und kein Beruf ist ausgeschlossen</span><span data-lang="en">Twelve fields — and no profession is excluded</span></h2>
+        <span class="eyebrow"><span data-lang="de">Volunteer-Bereiche nach Berufsfeld</span><span data-lang="en">Volunteer fields by profession</span><span data-lang="ne">पेसाअनुसारका स्वयंसेवा क्षेत्र</span></span>
+        <h2><span data-lang="de">Zwölf Bereiche — und kein Beruf ist ausgeschlossen</span><span data-lang="en">Twelve fields — and no profession is excluded</span><span data-lang="ne">बाह्र क्षेत्र — र कुनै पनि पेसा बाहिर छैन</span></h2>
         <p class="lead">
           <span data-lang="de">Jede:r Volunteer wird entsprechend Beruf und Qualifikation eingesetzt. Die folgenden Bereiche sind Beispiele.</span>
-          <span data-lang="en">Every volunteer is deployed according to their profession and qualification. The following fields are examples.</span>
+          <span data-lang="en">Every volunteer is deployed according to their profession and qualification. The following fields are examples.</span><span data-lang="ne">हरेक स्वयंसेवक आफ्नो पेसा र योग्यताअनुसार परिचालित हुनुहुन्छ। तलका क्षेत्र उदाहरण मात्र हुन्।</span>
         </p>
       </div>
 
       <div class="flex mb-4" data-filter-group data-filter-target="#fieldsGrid .field-card">
-        <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span></button>
-        <button class="chip" type="button" data-filter="gesundheit" aria-pressed="false"><span data-lang="de">Gesundheit</span><span data-lang="en">Health</span></button>
-        <button class="chip" type="button" data-filter="bildung" aria-pressed="false"><span data-lang="de">Bildung</span><span data-lang="en">Education</span></button>
-        <button class="chip" type="button" data-filter="technik" aria-pressed="false"><span data-lang="de">Technik &amp; Bau</span><span data-lang="en">Tech &amp; construction</span></button>
-        <button class="chip" type="button" data-filter="soziales" aria-pressed="false"><span data-lang="de">Recht &amp; Soziales</span><span data-lang="en">Law &amp; social</span></button>
-        <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span></button>
+        <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span><span data-lang="ne">सबै</span></button>
+        <button class="chip" type="button" data-filter="gesundheit" aria-pressed="false"><span data-lang="de">Gesundheit</span><span data-lang="en">Health</span><span data-lang="ne">स्वास्थ्य</span></button>
+        <button class="chip" type="button" data-filter="bildung" aria-pressed="false"><span data-lang="de">Bildung</span><span data-lang="en">Education</span><span data-lang="ne">शिक्षा</span></button>
+        <button class="chip" type="button" data-filter="technik" aria-pressed="false"><span data-lang="de">Technik &amp; Bau</span><span data-lang="en">Tech &amp; construction</span><span data-lang="ne">प्रविधि र निर्माण</span></button>
+        <button class="chip" type="button" data-filter="soziales" aria-pressed="false"><span data-lang="de">Recht &amp; Soziales</span><span data-lang="en">Law &amp; social</span><span data-lang="ne">कानुन र सामाजिक</span></button>
+        <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span><span data-lang="ne">संस्कृति</span></button>
         <button class="chip" type="button" data-filter="sport" aria-pressed="false">Sport</button>
-        <button class="chip" type="button" data-filter="umwelt" aria-pressed="false"><span data-lang="de">Umwelt</span><span data-lang="en">Environment</span></button>
-        <button class="chip" type="button" data-filter="wirtschaft" aria-pressed="false"><span data-lang="de">Wirtschaft</span><span data-lang="en">Business</span></button>
-        <button class="chip" type="button" data-filter="medien" aria-pressed="false"><span data-lang="de">Medien</span><span data-lang="en">Media</span></button>
+        <button class="chip" type="button" data-filter="umwelt" aria-pressed="false"><span data-lang="de">Umwelt</span><span data-lang="en">Environment</span><span data-lang="ne">वातावरण</span></button>
+        <button class="chip" type="button" data-filter="wirtschaft" aria-pressed="false"><span data-lang="de">Wirtschaft</span><span data-lang="en">Business</span><span data-lang="ne">व्यवसाय</span></button>
+        <button class="chip" type="button" data-filter="medien" aria-pressed="false"><span data-lang="de">Medien</span><span data-lang="en">Media</span><span data-lang="ne">सञ्चार</span></button>
       </div>
 
       <div class="grid grid-3" id="fieldsGrid"></div>
 
       <div class="callout mt-4">
-        <strong>⭐ <span data-lang="de">Hinweis:</span><span data-lang="en">Note:</span></strong>
+        <strong>⭐ <span data-lang="de">Hinweis:</span><span data-lang="en">Note:</span><span data-lang="ne">सूचना:</span></strong>
         <span data-lang="de">Dies sind Beispiele — nicht Grenzen. Jeder Beruf und jede Qualifikation ist willkommen. Wenn Ihr Bereich nicht aufgelistet ist, <a href="kontakt.html">kontaktieren Sie uns</a>!</span>
-        <span data-lang="en">These are examples — not limits. Every profession and qualification is welcome. If your field is not listed, <a href="kontakt.html">contact us</a>!</span>
+        <span data-lang="en">These are examples — not limits. Every profession and qualification is welcome. If your field is not listed, <a href="kontakt.html">contact us</a>!</span><span data-lang="ne">यी उदाहरण मात्र हुन् — सीमा होइनन्। हरेक पेसा र योग्यताको स्वागत छ। तपाईंको क्षेत्र सूचीमा छैन भने <a href="kontakt.html">हामीलाई सम्पर्क गर्नुहोस्</a>!</span>
       </div>
     </div>
   </section>
@@ -103,36 +103,36 @@
   <section class="section">
     <div class="container grid grid-2" style="gap:3rem;align-items:start">
       <div>
-        <span class="eyebrow"><span data-lang="de">Ablauf</span><span data-lang="en">How it works</span></span>
-        <h2><span data-lang="de">In fünf Schritten zum Einsatz</span><span data-lang="en">Five steps to your assignment</span></h2>
+        <span class="eyebrow"><span data-lang="de">Ablauf</span><span data-lang="en">How it works</span><span data-lang="ne">यो कसरी चल्छ</span></span>
+        <h2><span data-lang="de">In fünf Schritten zum Einsatz</span><span data-lang="en">Five steps to your assignment</span><span data-lang="ne">तपाईंको परिचालनसम्मका पाँच चरण</span></h2>
         <ol class="steps mt-4">
-          <li><h3 class="t-h4"><span data-lang="de">Online-Registrierung</span><span data-lang="en">Online registration</span></h3><p><span data-lang="de">Auf der NPJOE-Plattform mit Angabe von Berufsfeld, Qualifikation und Verfügbarkeit.</span><span data-lang="en">On the NPJOE platform, stating your field, qualification and availability.</span></p></li>
-          <li><h3 class="t-h4"><span data-lang="de">Matching durch NPYS-N</span><span data-lang="en">Matching by NPYS-N</span></h3><p><span data-lang="de">Zuweisung zu einer Schule oder einem Projekt, das zu Ihrem Profil passt.</span><span data-lang="en">Assignment to a school or project matching your profile.</span></p></li>
-          <li><h3 class="t-h4"><span data-lang="de">Briefing ca. zwei Wochen vorher</span><span data-lang="en">Briefing about two weeks ahead</span></h3><p><span data-lang="de">Inhalte, Erwartungen, Material und Sicherheitshinweise.</span><span data-lang="en">Content, expectations, materials and safety guidance.</span></p></li>
-          <li><h3 class="t-h4"><span data-lang="de">Freiwilligeneinsatz vor Ort</span><span data-lang="en">Volunteer service on site</span></h3><p><span data-lang="de">In Nepal — mindestens ein Tag.</span><span data-lang="en">In Nepal — at least one day.</span></p></li>
-          <li><h3 class="t-h4"><span data-lang="de">Abschlussbericht &amp; Zertifikat</span><span data-lang="en">Final report &amp; certificate</span></h3><p><span data-lang="de">Ihr Bericht fließt in den Transparenzbericht ein; Sie erhalten Ihr offizielles NPJOE-Zertifikat.</span><span data-lang="en">Your report feeds the transparency report; you receive your official NPJOE certificate.</span></p></li>
+          <li><h3 class="t-h4"><span data-lang="de">Online-Registrierung</span><span data-lang="en">Online registration</span><span data-lang="ne">अनलाइन दर्ता</span></h3><p><span data-lang="de">Auf der NPJOE-Plattform mit Angabe von Berufsfeld, Qualifikation und Verfügbarkeit.</span><span data-lang="en">On the NPJOE platform, stating your field, qualification and availability.</span><span data-lang="ne">NPJOE प्लेटफर्ममा, आफ्नो क्षेत्र, योग्यता र उपलब्धता उल्लेख गर्दै।</span></p></li>
+          <li><h3 class="t-h4"><span data-lang="de">Matching durch NPYS-N</span><span data-lang="en">Matching by NPYS-N</span><span data-lang="ne">NPYS-N द्वारा मिलान</span></h3><p><span data-lang="de">Zuweisung zu einer Schule oder einem Projekt, das zu Ihrem Profil passt.</span><span data-lang="en">Assignment to a school or project matching your profile.</span><span data-lang="ne">तपाईंको प्रोफाइलसँग मिल्ने विद्यालय वा परियोजनामा नियुक्ति।</span></p></li>
+          <li><h3 class="t-h4"><span data-lang="de">Briefing ca. zwei Wochen vorher</span><span data-lang="en">Briefing about two weeks ahead</span><span data-lang="ne">करिब दुई हप्ता अगाडि ब्रिफिङ</span></h3><p><span data-lang="de">Inhalte, Erwartungen, Material und Sicherheitshinweise.</span><span data-lang="en">Content, expectations, materials and safety guidance.</span><span data-lang="ne">विषयवस्तु, अपेक्षा, सामग्री र सुरक्षा निर्देशन।</span></p></li>
+          <li><h3 class="t-h4"><span data-lang="de">Freiwilligeneinsatz vor Ort</span><span data-lang="en">Volunteer service on site</span><span data-lang="ne">स्थलगत स्वयंसेवा</span></h3><p><span data-lang="de">In Nepal — mindestens ein Tag.</span><span data-lang="en">In Nepal — at least one day.</span><span data-lang="ne">नेपालमा — कम्तीमा एक दिन।</span></p></li>
+          <li><h3 class="t-h4"><span data-lang="de">Abschlussbericht &amp; Zertifikat</span><span data-lang="en">Final report &amp; certificate</span><span data-lang="ne">अन्तिम प्रतिवेदन र प्रमाणपत्र</span></h3><p><span data-lang="de">Ihr Bericht fließt in den Transparenzbericht ein; Sie erhalten Ihr offizielles NPJOE-Zertifikat.</span><span data-lang="en">Your report feeds the transparency report; you receive your official NPJOE certificate.</span><span data-lang="ne">तपाईंको प्रतिवेदन पारदर्शिता प्रतिवेदनमा समावेश हुन्छ; तपाईंले NPJOE को आधिकारिक प्रमाणपत्र पाउनुहुन्छ।</span></p></li>
         </ol>
-        <p class="mt-4"><a class="btn" href="volunteer.html"><span data-lang="de">Jetzt registrieren</span><span data-lang="en">Register now</span></a></p>
+        <p class="mt-4"><a class="btn" href="volunteer.html"><span data-lang="de">Jetzt registrieren</span><span data-lang="en">Register now</span><span data-lang="ne">अहिले नै दर्ता गर्नुहोस्</span></a></p>
       </div>
 
       <div class="stack">
         <div class="card card-pad-lg">
-          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Wer macht was?</span><span data-lang="en">Who does what?</span></h3>
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Wer macht was?</span><span data-lang="en">Who does what?</span><span data-lang="ne">कसले के गर्छ?</span></h3>
           <dl class="review-list mt-3">
-            <div class="review-row"><dt>NPJOE e.V. 🇩🇪</dt><dd><span data-lang="de">Rekrutierung, Spendenmanagement, Öffentlichkeitsarbeit, Programmsteuerung, Zertifizierung</span><span data-lang="en">Recruitment, donation management, public relations, programme steering, certification</span></dd></div>
-            <div class="review-row"><dt>NPYS-N 🇳🇵</dt><dd><span data-lang="de">Schulauswahl, Einsatzkoordination, Materialverteilung, Gemeindekontakt, Impactberichte</span><span data-lang="en">School selection, deployment coordination, material distribution, community liaison, impact reports</span></dd></div>
-            <div class="review-row"><dt><span data-lang="de">Sie</span><span data-lang="en">You</span></dt><dd><span data-lang="de">Beruf, Wissen und Zeit — plus Reise und Unterkunft in eigener Verantwortung</span><span data-lang="en">Profession, knowledge and time — plus travel and accommodation at your own responsibility</span></dd></div>
+            <div class="review-row"><dt>NPJOE e.V. 🇩🇪</dt><dd><span data-lang="de">Rekrutierung, Spendenmanagement, Öffentlichkeitsarbeit, Programmsteuerung, Zertifizierung</span><span data-lang="en">Recruitment, donation management, public relations, programme steering, certification</span><span data-lang="ne">भर्ना, दान व्यवस्थापन, जनसम्पर्क, कार्यक्रम सञ्चालन नेतृत्व, प्रमाणीकरण</span></dd></div>
+            <div class="review-row"><dt>NPYS-N 🇳🇵</dt><dd><span data-lang="de">Schulauswahl, Einsatzkoordination, Materialverteilung, Gemeindekontakt, Impactberichte</span><span data-lang="en">School selection, deployment coordination, material distribution, community liaison, impact reports</span><span data-lang="ne">विद्यालय छनोट, परिचालन समन्वय, सामग्री वितरण, समुदायसँग सम्पर्क, प्रभाव प्रतिवेदन</span></dd></div>
+            <div class="review-row"><dt><span data-lang="de">Sie</span><span data-lang="en">You</span><span data-lang="ne">तपाईं</span></dt><dd><span data-lang="de">Beruf, Wissen und Zeit — plus Reise und Unterkunft in eigener Verantwortung</span><span data-lang="en">Profession, knowledge and time — plus travel and accommodation at your own responsibility</span><span data-lang="ne">पेसा, ज्ञान र समय — साथै आफ्नै जिम्मामा यात्रा र बसोबास</span></dd></div>
           </dl>
         </div>
         <div class="card card-pad-lg" style="background:var(--brand-soft);border-color:var(--brand)">
-          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Auch aus der Ferne möglich</span><span data-lang="en">Remote work is possible too</span></h3>
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Auch aus der Ferne möglich</span><span data-lang="en">Remote work is possible too</span><span data-lang="ne">टाढैबाट पनि सहयोग गर्न सकिन्छ</span></h3>
           <p class="text-sm mt-2">
             <span data-lang="de">Nicht jede:r kann reisen. Übersetzungen, Website-Entwicklung für NGOs, Online-Nachhilfe, Grafikdesign, Fördermittelanträge und Lehrerfortbildung per Video sind ebenso wertvoll. Wählen Sie bei der Registrierung „Remote-Unterstützung“.</span>
-            <span data-lang="en">Not everyone can travel. Translations, website development for NGOs, online tutoring, graphic design, grant applications and teacher training by video are just as valuable. Choose 'remote support' when registering.</span>
+            <span data-lang="en">Not everyone can travel. Translations, website development for NGOs, online tutoring, graphic design, grant applications and teacher training by video are just as valuable. Choose 'remote support' when registering.</span><span data-lang="ne">सबैले यात्रा गर्न सक्नुहुन्न। अनुवाद, गैरसरकारी संस्थाका लागि वेबसाइट निर्माण, अनलाइन ट्युसन, ग्राफिक डिजाइन, अनुदान आवेदन र भिडियोमार्फत शिक्षक तालिम पनि त्यत्तिकै मूल्यवान् छन्। दर्ता गर्दा 'टाढैबाट सहयोग' छान्नुहोस्।</span>
           </p>
         </div>
         <div class="card card-pad-lg">
-          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Häufige Fragen</span><span data-lang="en">Common questions</span></h3>
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Häufige Fragen</span><span data-lang="en">Common questions</span><span data-lang="ne">सामान्य प्रश्न</span></h3>
           <div class="accordion mt-3" id="faqVolunteer"></div>
         </div>
       </div>
@@ -142,11 +142,11 @@
   <section class="section section-alt">
     <div class="container">
       <div class="cta-band center">
-        <h2><span data-lang="de">Ein Tag genügt, um anzufangen</span><span data-lang="en">One day is enough to start</span></h2>
-        <p style="margin-inline:auto"><span data-lang="de">Die Registrierung dauert wenige Minuten und ist kostenlos.</span><span data-lang="en">Registration takes a few minutes and is free of charge.</span></p>
+        <h2><span data-lang="de">Ein Tag genügt, um anzufangen</span><span data-lang="en">One day is enough to start</span><span data-lang="ne">सुरु गर्न एक दिन नै काफी छ</span></h2>
+        <p style="margin-inline:auto"><span data-lang="de">Die Registrierung dauert wenige Minuten und ist kostenlos.</span><span data-lang="en">Registration takes a few minutes and is free of charge.</span><span data-lang="ne">दर्ता गर्न केही मिनेट लाग्छ र यो निःशुल्क छ।</span></p>
         <div class="flex mt-4" style="justify-content:center">
-          <a class="btn btn-white btn-lg" href="volunteer.html"><span data-lang="de">Volunteer werden</span><span data-lang="en">Become a volunteer</span></a>
-          <a class="btn btn-outline-white btn-lg" href="erste-hilfe-kampagne.html"><span data-lang="de">Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign</span></a>
+          <a class="btn btn-white btn-lg" href="volunteer.html"><span data-lang="de">Volunteer werden</span><span data-lang="en">Become a volunteer</span><span data-lang="ne">स्वयंसेवक बन्नुहोस्</span></a>
+          <a class="btn btn-outline-white btn-lg" href="erste-hilfe-kampagne.html"><span data-lang="de">Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign</span><span data-lang="ne">प्राथमिक उपचार अभियान</span></a>
         </div>
       </div>
     </div>

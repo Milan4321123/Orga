@@ -25,17 +25,46 @@ module.exports = function run() {
   eq("all pages mount header and footer", missingMount, []);
   eq("all pages declare the language", missingLang, []);
 
-  /* ------------------------------------------------------- bilingual text */
-  group("German and English are kept in balance");
+  /* ---------------------------------------------------- three-language text */
+  group("German, English and Nepali are kept in balance");
   const unbalanced = [];
   pages.forEach(f => {
     const s = read(f);
     const de = (s.match(/data-lang="de"/g) || []).length;
     const en = (s.match(/data-lang="en"/g) || []).length;
+    const ne = (s.match(/data-lang="ne"/g) || []).length;
     /* the <html> element itself carries data-lang="de", hence the extra one */
-    if (de - en !== 1) unbalanced.push(f + " (de=" + de + " en=" + en + ")");
+    if (de - en !== 1 || en !== ne) {
+      unbalanced.push(f + " (de=" + de + " en=" + en + " ne=" + ne + ")");
+    }
   });
-  eq("each page has a matching English span for every German one", unbalanced, []);
+  eq("each page has an English and a Nepali span for every German one", unbalanced, []);
+
+  /* A <select> cannot hold markup, so its labels travel as attributes; the
+     same goes for placeholders. Those need the third language too. */
+  const attrGaps = [];
+  pages.forEach(f => {
+    const s = read(f);
+    [["data-de=", "data-ne="], ["data-de-placeholder=", "data-ne-placeholder="]].forEach(([a, b]) => {
+      const x = (s.match(new RegExp(a, "g")) || []).length;
+      const y = (s.match(new RegExp(b, "g")) || []).length;
+      if (x !== y) attrGaps.push(f + " " + a + x + " vs " + b + y);
+    });
+  });
+  eq("option labels and placeholders carry Nepali as well", attrGaps, []);
+
+  group("The language switch offers all three");
+  const layoutJsLang = fs.readFileSync(path.join(ROOT, "assets/js/layout.js"), "utf8");
+  ok("the header has a Nepali button", /data-set-lang="ne"/.test(layoutJsLang));
+  const mainJsLang = fs.readFileSync(path.join(ROOT, "assets/js/main.js"), "utf8");
+  ok("Nepali is an accepted choice", /var LANGS = \["de", "en", "ne"\]/.test(mainJsLang));
+  ok("a saved or requested Nepali wins", /if \(known\(q\)\) return q/.test(mainJsLang));
+  ok("an untranslated block falls back to English rather than going blank",
+     /function fillMissingNepali/.test(mainJsLang));
+  ok("npjoeT takes a Nepali argument and falls back",
+     /function \(de, en, ne\) \{[\s\S]{0,120}return ne \|\| en/.test(mainJsLang));
+  const noNeBoot = pages.filter(f => !/indexOf\("ne"\) === 0|indexOf\("ne"\)===0/.test(read(f)));
+  eq("every page picks the language up before first paint", noNeBoot, []);
 
   /* ----------------------------------------------------------- unique ids */
   group("Markup integrity");

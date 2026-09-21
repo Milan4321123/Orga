@@ -10,7 +10,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,18 +26,18 @@
   <section class="section">
     <div class="container container-narrow center" style="padding-block:3rem">
       <div class="stat-num" style="font-size:5rem">404</div>
-      <h1 class="mt-2"><span data-lang="de">Diese Seite gibt es nicht</span><span data-lang="en">This page doesn't exist</span></h1>
+      <h1 class="mt-2"><span data-lang="de">Diese Seite gibt es nicht</span><span data-lang="en">This page doesn't exist</span><span data-lang="ne">यो पृष्ठ अस्तित्वमा छैन</span></h1>
       <p class="lead mt-3">
         <span data-lang="de">Vielleicht wurde sie verschoben oder der Link enthält einen Tippfehler. Hier sind die wichtigsten Seiten:</span>
-        <span data-lang="en">It may have moved, or the link contains a typo. Here are the most important pages:</span>
+        <span data-lang="en">It may have moved, or the link contains a typo. Here are the most important pages:</span><span data-lang="ne">सायद यो सारिएको छ, वा लिङ्कमा टाइपिङ त्रुटि छ। मुख्य पृष्ठहरू यहाँ छन्:</span>
       </p>
       <div class="grid grid-3 mt-4" style="text-align:left">
-        <a class="card card-hover card-link" href="index.html"><h2 class="t-h4"><span data-lang="de">Startseite</span><span data-lang="en">Home</span></h2><p class="text-sm text-muted"><span data-lang="de">Überblick über Verein und Programme</span><span data-lang="en">Overview of the association and programmes</span></p></a>
-        <a class="card card-hover card-link" href="mitglied-werden.html"><h2 class="t-h4"><span data-lang="de">Mitglied werden</span><span data-lang="en">Become a member</span></h2><p class="text-sm text-muted"><span data-lang="de">Beitrittserklärung online ausfüllen</span><span data-lang="en">Complete the application online</span></p></a>
-        <a class="card card-hover card-link" href="volunteer.html"><h2 class="t-h4">Volunteer</h2><p class="text-sm text-muted"><span data-lang="de">One Day for Nation — Registrierung</span><span data-lang="en">One Day for Nation — registration</span></p></a>
-        <a class="card card-hover card-link" href="spenden.html"><h2 class="t-h4"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></h2><p class="text-sm text-muted"><span data-lang="de">One Euro for Nation, ab 1 €</span><span data-lang="en">One Euro for Nation, from €1</span></p></a>
-        <a class="card card-hover card-link" href="faq.html"><h2 class="t-h4">FAQ</h2><p class="text-sm text-muted"><span data-lang="de">Antworten auf häufige Fragen</span><span data-lang="en">Answers to common questions</span></p></a>
-        <a class="card card-hover card-link" href="kontakt.html"><h2 class="t-h4"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></h2><p class="text-sm text-muted"><span data-lang="de">Wir antworten in 1–3 Werktagen</span><span data-lang="en">We reply within 1–3 working days</span></p></a>
+        <a class="card card-hover card-link" href="index.html"><h2 class="t-h4"><span data-lang="de">Startseite</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></h2><p class="text-sm text-muted"><span data-lang="de">Überblick über Verein und Programme</span><span data-lang="en">Overview of the association and programmes</span><span data-lang="ne">संगठन र कार्यक्रमहरूको सिंहावलोकन</span></p></a>
+        <a class="card card-hover card-link" href="mitglied-werden.html"><h2 class="t-h4"><span data-lang="de">Mitglied werden</span><span data-lang="en">Become a member</span><span data-lang="ne">सदस्य बन्नुहोस्</span></h2><p class="text-sm text-muted"><span data-lang="de">Beitrittserklärung online ausfüllen</span><span data-lang="en">Complete the application online</span><span data-lang="ne">सदस्यता फारम अनलाइन भर्नुहोस्</span></p></a>
+        <a class="card card-hover card-link" href="volunteer.html"><h2 class="t-h4">Volunteer</h2><p class="text-sm text-muted"><span data-lang="de">One Day for Nation — Registrierung</span><span data-lang="en">One Day for Nation — registration</span><span data-lang="ne">One Day for Nation — दर्ता</span></p></a>
+        <a class="card card-hover card-link" href="spenden.html"><h2 class="t-h4"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span><span data-lang="ne">दान गर्नुहोस्</span></h2><p class="text-sm text-muted"><span data-lang="de">One Euro for Nation, ab 1 €</span><span data-lang="en">One Euro for Nation, from €1</span><span data-lang="ne">One Euro for Nation, १ युरोदेखि</span></p></a>
+        <a class="card card-hover card-link" href="faq.html"><h2 class="t-h4">FAQ</h2><p class="text-sm text-muted"><span data-lang="de">Antworten auf häufige Fragen</span><span data-lang="en">Answers to common questions</span><span data-lang="ne">सामान्य प्रश्नका उत्तर</span></p></a>
+        <a class="card card-hover card-link" href="kontakt.html"><h2 class="t-h4"><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span><span data-lang="ne">सम्पर्क</span></h2><p class="text-sm text-muted"><span data-lang="de">Wir antworten in 1–3 Werktagen</span><span data-lang="en">We reply within 1–3 working days</span><span data-lang="ne">हामी १–३ कार्यदिनभित्र जवाफ दिन्छौँ</span></p></a>
       </div>
     </div>
   </section>

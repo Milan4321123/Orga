@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -27,15 +27,15 @@
   <section class="tile" style="padding-block:clamp(2.5rem,5vw,4.5rem)">
     <div class="container">
       <ol class="breadcrumb" style="justify-content:center">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><span data-lang="de">Mitmachen</span><span data-lang="en">Get involved</span></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><span data-lang="de">Mitmachen</span><span data-lang="en">Get involved</span><span data-lang="ne">सहभागी हुनुहोस्</span></li>
       </ol>
       <div class="tile-head wide">
-        <span class="tile-eyebrow"><span data-lang="de">Vier Wege</span><span data-lang="en">Four ways</span></span>
-        <h1 class="tile-title-lg"><span data-lang="de">Jeder Beitrag zählt.<br>Suchen Sie sich einen aus.</span><span data-lang="en">Every contribution counts.<br>Pick the one that fits.</span></h1>
+        <span class="tile-eyebrow"><span data-lang="de">Vier Wege</span><span data-lang="en">Four ways</span><span data-lang="ne">चार बाटो</span></span>
+        <h1 class="tile-title-lg"><span data-lang="de">Jeder Beitrag zählt.<br>Suchen Sie sich einen aus.</span><span data-lang="en">Every contribution counts.<br>Pick the one that fits.</span><span data-lang="ne">हरेक योगदान महत्त्वपूर्ण छ।<br>तपाईंलाई सुहाउने बाटो छान्नुहोस्।</span></h1>
         <p class="tile-sub">
           <span data-lang="de">Ob Sie fünf Euro im Monat geben, einen Tag in Nepal unterrichten oder Ihre Schule ins Programm holen — hier steht, was jeder Weg von Ihnen verlangt und was er bewirkt.</span>
-          <span data-lang="en">Whether you give five euros a month, teach for a day in Nepal or bring your school into the programme — here is what each route asks of you and what it achieves.</span>
+          <span data-lang="en">Whether you give five euros a month, teach for a day in Nepal or bring your school into the programme — here is what each route asks of you and what it achieves.</span><span data-lang="ne">मासिक पाँच युरो दिनुहोस्, नेपालमा एक दिन पढाउनुहोस् वा आफ्नो विद्यालयलाई कार्यक्रममा जोड्नुहोस् — हरेक बाटोले तपाईंबाट के माग्छ र त्यसले के हासिल गर्छ, यहाँ छ।</span>
         </p>
       </div>
     </div>
@@ -44,14 +44,14 @@
   <!-- Sticky sub-navigation -->
   <nav class="subnav" aria-label="Abschnitte">
     <div class="container subnav-inner">
-      <span class="subnav-title"><span data-lang="de">Mitmachen</span><span data-lang="en">Get involved</span></span>
+      <span class="subnav-title"><span data-lang="de">Mitmachen</span><span data-lang="en">Get involved</span><span data-lang="ne">सहभागी हुनुहोस्</span></span>
       <ul class="subnav-links">
-        <li><a href="#vergleich"><span data-lang="de">Vergleich</span><span data-lang="en">Compare</span></a></li>
-        <li><a href="#mitglied"><span data-lang="de">Mitglied</span><span data-lang="en">Member</span></a></li>
+        <li><a href="#vergleich"><span data-lang="de">Vergleich</span><span data-lang="en">Compare</span><span data-lang="ne">तुलना</span></a></li>
+        <li><a href="#mitglied"><span data-lang="de">Mitglied</span><span data-lang="en">Member</span><span data-lang="ne">सदस्य</span></a></li>
         <li><a href="#volunteer">Volunteer</a></li>
-        <li><a href="#spenden"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></a></li>
+        <li><a href="#spenden"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span><span data-lang="ne">दान गर्नुहोस्</span></a></li>
         <li><a href="#partner">Partner</a></li>
-        <li><a href="#ziele"><span data-lang="de">Ziele</span><span data-lang="en">Objectives</span></a></li>
+        <li><a href="#ziele"><span data-lang="de">Ziele</span><span data-lang="en">Objectives</span><span data-lang="ne">उद्देश्य</span></a></li>
       </ul>
     </div>
   </nav>
@@ -60,48 +60,48 @@
   <section class="tile tile-parchment" id="vergleich">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <h2 class="tile-title"><span data-lang="de">Die vier Wege im Vergleich</span><span data-lang="en">The four routes compared</span></h2>
-        <p class="tile-sub"><span data-lang="de">Sie schließen sich nicht aus — viele Mitglieder sind zugleich Volunteers und Spender:innen.</span><span data-lang="en">They are not mutually exclusive — many members are volunteers and donors at the same time.</span></p>
+        <h2 class="tile-title"><span data-lang="de">Die vier Wege im Vergleich</span><span data-lang="en">The four routes compared</span><span data-lang="ne">चार बाटोको तुलना</span></h2>
+        <p class="tile-sub"><span data-lang="de">Sie schließen sich nicht aus — viele Mitglieder sind zugleich Volunteers und Spender:innen.</span><span data-lang="en">They are not mutually exclusive — many members are volunteers and donors at the same time.</span><span data-lang="ne">यी एकआपसमा बाझिने होइनन् — धेरै सदस्य एकै समयमा स्वयंसेवक र दाता दुवै हुनुहुन्छ।</span></p>
       </div>
       <div class="table-wrap reveal">
         <table class="data">
           <thead>
             <tr>
-              <th><span data-lang="de">Weg</span><span data-lang="en">Route</span></th>
-              <th><span data-lang="de">Wer kann</span><span data-lang="en">Who can</span></th>
-              <th><span data-lang="de">Aufwand</span><span data-lang="en">Commitment</span></th>
-              <th><span data-lang="de">Kosten</span><span data-lang="en">Cost</span></th>
-              <th><span data-lang="de">Sie erhalten</span><span data-lang="en">You receive</span></th>
+              <th><span data-lang="de">Weg</span><span data-lang="en">Route</span><span data-lang="ne">बाटो</span></th>
+              <th><span data-lang="de">Wer kann</span><span data-lang="en">Who can</span><span data-lang="ne">कसले सक्छ</span></th>
+              <th><span data-lang="de">Aufwand</span><span data-lang="en">Commitment</span><span data-lang="ne">प्रतिबद्धता</span></th>
+              <th><span data-lang="de">Kosten</span><span data-lang="en">Cost</span><span data-lang="ne">खर्च</span></th>
+              <th><span data-lang="de">Sie erhalten</span><span data-lang="en">You receive</span><span data-lang="ne">तपाईंले पाउनुहुन्छ</span></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span></strong></td>
-              <td><span data-lang="de">Jede natürliche Person, weltweit (§ 5)</span><span data-lang="en">Any natural person, worldwide (§ 5)</span></td>
-              <td><span data-lang="de">So viel Sie möchten</span><span data-lang="en">As much as you like</span></td>
-              <td><span data-lang="de">5 € / Monat, Ermäßigung möglich</span><span data-lang="en">€5 / month, reduction possible</span></td>
-              <td><span data-lang="de">Stimmrecht, Einladungen, Mitgestaltung</span><span data-lang="en">Voting rights, invitations, a say</span></td>
+              <td><strong><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span><span data-lang="ne">सदस्यता</span></strong></td>
+              <td><span data-lang="de">Jede natürliche Person, weltweit (§ 5)</span><span data-lang="en">Any natural person, worldwide (§ 5)</span><span data-lang="ne">विश्वका कुनै पनि प्राकृतिक व्यक्ति (§ ५)</span></td>
+              <td><span data-lang="de">So viel Sie möchten</span><span data-lang="en">As much as you like</span><span data-lang="ne">तपाईंले चाहेजति</span></td>
+              <td><span data-lang="de">5 € / Monat, Ermäßigung möglich</span><span data-lang="en">€5 / month, reduction possible</span><span data-lang="ne">मासिक ५ युरो, छुट सम्भव</span></td>
+              <td><span data-lang="de">Stimmrecht, Einladungen, Mitgestaltung</span><span data-lang="en">Voting rights, invitations, a say</span><span data-lang="ne">मताधिकार, निमन्त्रणा, निर्णयमा सहभागिता</span></td>
             </tr>
             <tr>
               <td><strong>Volunteering</strong></td>
-              <td><span data-lang="de">Nepalis ab 18 Jahren im Ausland</span><span data-lang="en">Nepalis aged 18+ living abroad</span></td>
-              <td><span data-lang="de">Ab 1 Tag; auch remote</span><span data-lang="en">From 1 day; remote possible</span></td>
-              <td><span data-lang="de">Registrierung frei; Reise selbst</span><span data-lang="en">Registration free; own travel</span></td>
-              <td><span data-lang="de">NPJOE-Zertifikat nach jedem Einsatz</span><span data-lang="en">NPJOE certificate after each assignment</span></td>
+              <td><span data-lang="de">Nepalis ab 18 Jahren im Ausland</span><span data-lang="en">Nepalis aged 18+ living abroad</span><span data-lang="ne">विदेशमा रहेका १८ वर्षमाथिका नेपाली</span></td>
+              <td><span data-lang="de">Ab 1 Tag; auch remote</span><span data-lang="en">From 1 day; remote possible</span><span data-lang="ne">१ दिनदेखि; टाढैबाट पनि सम्भव</span></td>
+              <td><span data-lang="de">Registrierung frei; Reise selbst</span><span data-lang="en">Registration free; own travel</span><span data-lang="ne">दर्ता निःशुल्क; यात्रा आफ्नै</span></td>
+              <td><span data-lang="de">NPJOE-Zertifikat nach jedem Einsatz</span><span data-lang="en">NPJOE certificate after each assignment</span><span data-lang="ne">हरेक परिचालनपछि NPJOE प्रमाणपत्र</span></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Spenden</span><span data-lang="en">Donating</span></strong></td>
-              <td><span data-lang="de">Alle, auch Unternehmen</span><span data-lang="en">Anyone, companies included</span></td>
-              <td><span data-lang="de">Einmalig oder regelmäßig</span><span data-lang="en">One-off or regular</span></td>
-              <td><span data-lang="de">Ab 1 €</span><span data-lang="en">From €1</span></td>
-              <td><span data-lang="de">Zuwendungsbestätigung, Projektbericht</span><span data-lang="en">Donation receipt, project report</span></td>
+              <td><strong><span data-lang="de">Spenden</span><span data-lang="en">Donating</span><span data-lang="ne">दान</span></strong></td>
+              <td><span data-lang="de">Alle, auch Unternehmen</span><span data-lang="en">Anyone, companies included</span><span data-lang="ne">जोसुकै, कम्पनीसमेत</span></td>
+              <td><span data-lang="de">Einmalig oder regelmäßig</span><span data-lang="en">One-off or regular</span><span data-lang="ne">एकपटक वा नियमित</span></td>
+              <td><span data-lang="de">Ab 1 €</span><span data-lang="en">From €1</span><span data-lang="ne">१ युरोदेखि</span></td>
+              <td><span data-lang="de">Zuwendungsbestätigung, Projektbericht</span><span data-lang="en">Donation receipt, project report</span><span data-lang="ne">दान रसिद, परियोजना प्रतिवेदन</span></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Partnerschaft</span><span data-lang="en">Partnership</span></strong></td>
-              <td><span data-lang="de">Schulen, NGOs, Firmen, Stiftungen</span><span data-lang="en">Schools, NGOs, companies, foundations</span></td>
-              <td><span data-lang="de">Projektbezogen</span><span data-lang="en">Project-based</span></td>
-              <td><span data-lang="de">Nach Vereinbarung</span><span data-lang="en">By agreement</span></td>
-              <td><span data-lang="de">Kooperation, Sichtbarkeit, Berichte</span><span data-lang="en">Cooperation, visibility, reports</span></td>
+              <td><strong><span data-lang="de">Partnerschaft</span><span data-lang="en">Partnership</span><span data-lang="ne">साझेदारी</span></strong></td>
+              <td><span data-lang="de">Schulen, NGOs, Firmen, Stiftungen</span><span data-lang="en">Schools, NGOs, companies, foundations</span><span data-lang="ne">विद्यालय, गैरसरकारी संस्था, कम्पनी, प्रतिष्ठान</span></td>
+              <td><span data-lang="de">Projektbezogen</span><span data-lang="en">Project-based</span><span data-lang="ne">परियोजनाका आधारमा</span></td>
+              <td><span data-lang="de">Nach Vereinbarung</span><span data-lang="en">By agreement</span><span data-lang="ne">सहमतिअनुसार</span></td>
+              <td><span data-lang="de">Kooperation, Sichtbarkeit, Berichte</span><span data-lang="en">Cooperation, visibility, reports</span><span data-lang="ne">सहकार्य, पहिचान, प्रतिवेदन</span></td>
             </tr>
           </tbody>
         </table>
@@ -113,37 +113,37 @@
   <section class="tile" id="mitglied">
     <div class="container grid grid-2" style="gap:3.5rem;align-items:start">
       <div>
-        <span class="tile-eyebrow"><span data-lang="de">Weg 01</span><span data-lang="en">Route 01</span></span>
-        <h2 class="tile-title"><span data-lang="de">Mitglied werden</span><span data-lang="en">Become a member</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Weg 01</span><span data-lang="en">Route 01</span><span data-lang="ne">बाटो ०१</span></span>
+        <h2 class="tile-title"><span data-lang="de">Mitglied werden</span><span data-lang="en">Become a member</span><span data-lang="ne">सदस्य बन्नुहोस्</span></h2>
         <p class="lead mt-3">
           <span data-lang="de">Die Mitgliedschaft ist der stabilste Beitrag: Sie trägt die laufende Arbeit und gibt Ihnen eine Stimme darin, wohin der Verein geht. Fünf Euro im Monat klingen klein — zwölf Mitglieder finanzieren gemeinsam ein zertifiziertes Erste-Hilfe-Kit für eine ganze Schule.</span>
-          <span data-lang="en">Membership is the steadiest contribution: it carries the ongoing work and gives you a say in where the association goes. Five euros a month sounds small — twelve members together finance a certified First Aid kit for an entire school.</span>
+          <span data-lang="en">Membership is the steadiest contribution: it carries the ongoing work and gives you a say in where the association goes. Five euros a month sounds small — twelve members together finance a certified First Aid kit for an entire school.</span><span data-lang="ne">सदस्यता सबैभन्दा स्थिर योगदान हो: यसले निरन्तर चलिरहेको कामलाई धान्छ र संस्था कुन दिशामा जान्छ भन्नेमा तपाईंको आवाज दिन्छ। मासिक पाँच युरो सानो सुनिन्छ — तर बाह्र सदस्य मिल्दा सिंगो विद्यालयका लागि एउटा प्रमाणित प्राथमिक उपचार किटको खर्च जुट्छ।</span>
         </p>
-        <h3 class="mt-4" style="font-size:var(--fs-lg)"><span data-lang="de">Was die Satzung regelt</span><span data-lang="en">What the statutes provide</span></h3>
+        <h3 class="mt-4" style="font-size:var(--fs-lg)"><span data-lang="de">Was die Satzung regelt</span><span data-lang="en">What the statutes provide</span><span data-lang="ne">विधानले के भन्छ</span></h3>
         <ul class="feature-list mt-3">
-          <li><span class="tick">§ 5</span><span data-lang="de">Mitglied kann jede natürliche Person werden. Über die Aufnahme entscheidet der Vorstand; die Mitgliedschaft beginnt mit diesem Beschluss.</span><span data-lang="en">Any natural person may become a member. The board decides on admission; membership begins with that resolution.</span></li>
-          <li><span class="tick">§ 7</span><span data-lang="de">Die Beitragshöhe legt die Mitgliederversammlung fest und regelt sie in einer Beitragsordnung — derzeit 5,00 € monatlich.</span><span data-lang="en">The general meeting sets the fee and regulates it in a fee schedule — currently €5.00 per month.</span></li>
-          <li><span class="tick">§ 6</span><span data-lang="de">Der Austritt erfolgt durch schriftliche Erklärung an den Vorstand mit einer Frist von einem Monat.</span><span data-lang="en">Withdrawal is by written notice to the board with one month's notice.</span></li>
-          <li><span class="tick">§ 9</span><span data-lang="de">Die Mitgliederversammlung wählt den Vorstand, beschließt den Haushalt und entscheidet über Satzungsänderungen.</span><span data-lang="en">The general meeting elects the board, adopts the budget and decides on amendments to the statutes.</span></li>
+          <li><span class="tick">§ 5</span><span data-lang="de">Mitglied kann jede natürliche Person werden. Über die Aufnahme entscheidet der Vorstand; die Mitgliedschaft beginnt mit diesem Beschluss.</span><span data-lang="en">Any natural person may become a member. The board decides on admission; membership begins with that resolution.</span><span data-lang="ne">कुनै पनि प्राकृतिक व्यक्ति सदस्य बन्न सक्छन्। सदस्यता स्वीकृतिको निर्णय कार्यसमितिले गर्छ; सोही निर्णयसँगै सदस्यता सुरु हुन्छ।</span></li>
+          <li><span class="tick">§ 7</span><span data-lang="de">Die Beitragshöhe legt die Mitgliederversammlung fest und regelt sie in einer Beitragsordnung — derzeit 5,00 € monatlich.</span><span data-lang="en">The general meeting sets the fee and regulates it in a fee schedule — currently €5.00 per month.</span><span data-lang="ne">साधारण सभाले शुल्क तोक्छ र शुल्क नियमावलीमा व्यवस्था गर्छ — हाल मासिक ५.०० युरो।</span></li>
+          <li><span class="tick">§ 6</span><span data-lang="de">Der Austritt erfolgt durch schriftliche Erklärung an den Vorstand mit einer Frist von einem Monat.</span><span data-lang="en">Withdrawal is by written notice to the board with one month's notice.</span><span data-lang="ne">सदस्यता त्याग्न एक महिनाको सूचनासहित कार्यसमितिलाई लिखित जानकारी दिनुपर्छ।</span></li>
+          <li><span class="tick">§ 9</span><span data-lang="de">Die Mitgliederversammlung wählt den Vorstand, beschließt den Haushalt und entscheidet über Satzungsänderungen.</span><span data-lang="en">The general meeting elects the board, adopts the budget and decides on amendments to the statutes.</span><span data-lang="ne">साधारण सभाले कार्यसमिति चुन्छ, बजेट पारित गर्छ र विधान संशोधनबारे निर्णय गर्छ।</span></li>
         </ul>
-        <p class="mt-4"><a class="btn" href="mitglied-werden.html"><span data-lang="de">Beitrittserklärung ausfüllen</span><span data-lang="en">Fill in the application</span></a></p>
+        <p class="mt-4"><a class="btn" href="mitglied-werden.html"><span data-lang="de">Beitrittserklärung ausfüllen</span><span data-lang="en">Fill in the application</span><span data-lang="ne">सदस्यता फारम भर्नुहोस्</span></a></p>
       </div>
       <div class="stack">
         <div class="card card-pad-lg">
-          <h4><span data-lang="de">Ihre Rechte als Mitglied</span><span data-lang="en">Your rights as a member</span></h4>
+          <h4><span data-lang="de">Ihre Rechte als Mitglied</span><span data-lang="en">Your rights as a member</span><span data-lang="ne">सदस्यका रूपमा तपाईंका अधिकार</span></h4>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick">✓</span><span data-lang="de">Stimmrecht bei Vorstandswahlen und Entlastung</span><span data-lang="en">Vote on board elections and discharge</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Anträge an die Mitgliederversammlung stellen</span><span data-lang="en">Submit motions to the general meeting</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Wahl der Kassenprüfer:innen</span><span data-lang="en">Elect the auditors</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Ein Fünftel der Mitglieder kann eine außerordentliche Versammlung verlangen</span><span data-lang="en">One fifth of members can demand an extraordinary meeting</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Einladung zu allen Veranstaltungen und Seminaren</span><span data-lang="en">Invitations to all events and seminars</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Stimmrecht bei Vorstandswahlen und Entlastung</span><span data-lang="en">Vote on board elections and discharge</span><span data-lang="ne">कार्यसमितिको निर्वाचन र जिम्मेवारी मुक्तिमा मतदान</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Anträge an die Mitgliederversammlung stellen</span><span data-lang="en">Submit motions to the general meeting</span><span data-lang="ne">साधारण सभामा प्रस्ताव पेस गर्ने</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Wahl der Kassenprüfer:innen</span><span data-lang="en">Elect the auditors</span><span data-lang="ne">लेखापरीक्षक चुन्ने</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Ein Fünftel der Mitglieder kann eine außerordentliche Versammlung verlangen</span><span data-lang="en">One fifth of members can demand an extraordinary meeting</span><span data-lang="ne">एक-पाँचौँ सदस्यले विशेष सभाको माग गर्न सक्छन्</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Einladung zu allen Veranstaltungen und Seminaren</span><span data-lang="en">Invitations to all events and seminars</span><span data-lang="ne">सबै कार्यक्रम र सेमिनारको निमन्त्रणा</span></li>
           </ul>
         </div>
         <div class="card card-pad-lg" style="background:var(--parchment);border-color:transparent">
-          <h4><span data-lang="de">Beitrag zu hoch?</span><span data-lang="en">Fee too high?</span></h4>
+          <h4><span data-lang="de">Beitrag zu hoch?</span><span data-lang="en">Fee too high?</span><span data-lang="ne">शुल्क बढी भयो?</span></h4>
           <p class="text-sm mt-2">
             <span data-lang="de">Für Schüler:innen, Studierende und Personen ohne Einkommen kann der Vorstand den Beitrag reduzieren oder erlassen. Kreuzen Sie das im Formular einfach an — auf Aufnahme und Stimmrecht hat das keinerlei Einfluss.</span>
-            <span data-lang="en">For pupils, students and people without income the board can reduce or waive the fee. Simply tick the box in the form — it has no effect whatsoever on admission or voting rights.</span>
+            <span data-lang="en">For pupils, students and people without income the board can reduce or waive the fee. Simply tick the box in the form — it has no effect whatsoever on admission or voting rights.</span><span data-lang="ne">विद्यार्थी, अध्ययनरत व्यक्ति र आय नभएकाका लागि कार्यसमितिले शुल्क घटाउन वा छुट दिन सक्छ। फारममा बाकस चिन्ह लगाए पुग्छ — यसले सदस्यता स्वीकृति वा मताधिकारमा कुनै असर पार्दैन।</span>
           </p>
         </div>
       </div>
@@ -154,38 +154,38 @@
   <section class="tile tile-parchment" id="volunteer">
     <div class="container grid grid-2" style="gap:3.5rem;align-items:start">
       <div>
-        <span class="tile-eyebrow"><span data-lang="de">Weg 02</span><span data-lang="en">Route 02</span></span>
-        <h2 class="tile-title"><span data-lang="de">Volunteer werden</span><span data-lang="en">Become a volunteer</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Weg 02</span><span data-lang="en">Route 02</span><span data-lang="ne">बाटो ०२</span></span>
+        <h2 class="tile-title"><span data-lang="de">Volunteer werden</span><span data-lang="en">Become a volunteer</span><span data-lang="ne">स्वयंसेवक बन्नुहोस्</span></h2>
         <p class="lead mt-3">
           <span data-lang="de">Freiwilligenarbeit ist keine Einheitsgröße. Jede:r Nepali im Ausland bringt eigene Fähigkeiten, Ausbildungen und Erfahrungen mit. One Day for Nation ermöglicht es, genau im eigenen Fachgebiet zu helfen — egal ob Ärztin, Lehrer, Ingenieurin, Künstler oder Studentin.</span>
-          <span data-lang="en">Volunteering is not one-size-fits-all. Every Nepali abroad brings their own skills, qualifications and experience. One Day for Nation lets you help in exactly your field of expertise — whether doctor, teacher, engineer, artist or student.</span>
+          <span data-lang="en">Volunteering is not one-size-fits-all. Every Nepali abroad brings their own skills, qualifications and experience. One Day for Nation lets you help in exactly your field of expertise — whether doctor, teacher, engineer, artist or student.</span><span data-lang="ne">स्वयंसेवा सबैका लागि एउटै ढाँचामा हुँदैन। विदेशमा रहेका हरेक नेपालीसँग आफ्नै सीप, योग्यता र अनुभव हुन्छ। One Day for Nation ले तपाईंलाई ठ्याक्कै आफ्नै विशेषज्ञताको क्षेत्रमा सहयोग गर्ने अवसर दिन्छ — चिकित्सक, शिक्षक, इन्जिनियर, कलाकार वा विद्यार्थी जो भए पनि।</span>
         </p>
-        <h3 class="mt-4" style="font-size:var(--fs-lg)"><span data-lang="de">Voraussetzungen</span><span data-lang="en">Requirements</span></h3>
+        <h3 class="mt-4" style="font-size:var(--fs-lg)"><span data-lang="de">Voraussetzungen</span><span data-lang="en">Requirements</span><span data-lang="ne">आवश्यकता</span></h3>
         <dl class="review-list mt-3">
-          <div class="review-row"><dt><span data-lang="de">Alter</span><span data-lang="en">Age</span></dt><dd><span data-lang="de">Ab 18 Jahren</span><span data-lang="en">18 and over</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Wohnort</span><span data-lang="en">Residence</span></dt><dd><span data-lang="de">Im Ausland, unabhängig vom Land</span><span data-lang="en">Abroad, regardless of country</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Dauer</span><span data-lang="en">Duration</span></dt><dd><span data-lang="de">Mindestens ein Tag, gern länger</span><span data-lang="en">At least one day, longer welcome</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Sprache</span><span data-lang="en">Language</span></dt><dd><span data-lang="de">Nepali hilfreich, nicht zwingend</span><span data-lang="en">Nepali helpful, not required</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Reise</span><span data-lang="en">Travel</span></dt><dd><span data-lang="de">In eigener Verantwortung; NPYS-N hilft bei der Planung</span><span data-lang="en">Your own responsibility; NPYS-N helps with planning</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Alter</span><span data-lang="en">Age</span><span data-lang="ne">उमेर</span></dt><dd><span data-lang="de">Ab 18 Jahren</span><span data-lang="en">18 and over</span><span data-lang="ne">१८ वर्ष वा माथि</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Wohnort</span><span data-lang="en">Residence</span><span data-lang="ne">बसोबास</span></dt><dd><span data-lang="de">Im Ausland, unabhängig vom Land</span><span data-lang="en">Abroad, regardless of country</span><span data-lang="ne">विदेशमा, जुनसुकै देश भए पनि</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Dauer</span><span data-lang="en">Duration</span><span data-lang="ne">अवधि</span></dt><dd><span data-lang="de">Mindestens ein Tag, gern länger</span><span data-lang="en">At least one day, longer welcome</span><span data-lang="ne">कम्तीमा एक दिन, लामो भए झनै राम्रो</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Sprache</span><span data-lang="en">Language</span><span data-lang="ne">भाषा</span></dt><dd><span data-lang="de">Nepali hilfreich, nicht zwingend</span><span data-lang="en">Nepali helpful, not required</span><span data-lang="ne">नेपाली जाने राम्रो, अनिवार्य होइन</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Reise</span><span data-lang="en">Travel</span><span data-lang="ne">यात्रा</span></dt><dd><span data-lang="de">In eigener Verantwortung; NPYS-N hilft bei der Planung</span><span data-lang="en">Your own responsibility; NPYS-N helps with planning</span><span data-lang="ne">तपाईंकै जिम्मेवारी; योजनामा NPYS-N ले सघाउँछ</span></dd></div>
         </dl>
-        <p class="mt-4"><a class="btn" href="volunteer.html"><span data-lang="de">Als Volunteer registrieren</span><span data-lang="en">Register as a volunteer</span></a></p>
+        <p class="mt-4"><a class="btn" href="volunteer.html"><span data-lang="de">Als Volunteer registrieren</span><span data-lang="en">Register as a volunteer</span><span data-lang="ne">स्वयंसेवकका रूपमा दर्ता गर्नुहोस्</span></a></p>
       </div>
       <div class="stack">
         <div class="card card-pad-lg">
-          <h4><span data-lang="de">Auch ohne Reise nach Nepal</span><span data-lang="en">Without travelling to Nepal</span></h4>
+          <h4><span data-lang="de">Auch ohne Reise nach Nepal</span><span data-lang="en">Without travelling to Nepal</span><span data-lang="ne">नेपाल नगई पनि</span></h4>
           <p class="text-sm mt-2">
             <span data-lang="de">Nicht alle können reisen. Ebenso wertvoll sind Übersetzungen, Websites für Partnerorganisationen, Online-Nachhilfe, Grafikdesign, Fördermittelanträge und Lehrerfortbildung per Video. Wählen Sie bei der Registrierung „Remote-Unterstützung“.</span>
-            <span data-lang="en">Not everyone can travel. Equally valuable are translations, websites for partner organisations, online tutoring, graphic design, grant applications and teacher training by video. Choose 'remote support' when registering.</span>
+            <span data-lang="en">Not everyone can travel. Equally valuable are translations, websites for partner organisations, online tutoring, graphic design, grant applications and teacher training by video. Choose 'remote support' when registering.</span><span data-lang="ne">सबैले यात्रा गर्न सक्नुहुन्न। अनुवाद, साझेदार संस्थाका लागि वेबसाइट, अनलाइन ट्युसन, ग्राफिक डिजाइन, अनुदान आवेदन र भिडियोमार्फत शिक्षक तालिम पनि उत्तिकै मूल्यवान् छन्। दर्ता गर्दा 'टाढैबाट सहयोग' छान्नुहोस्।</span>
           </p>
         </div>
         <div class="card card-pad-lg">
-          <h4><span data-lang="de">Derzeit besonders gesucht</span><span data-lang="en">Currently most needed</span></h4>
+          <h4><span data-lang="de">Derzeit besonders gesucht</span><span data-lang="en">Currently most needed</span><span data-lang="ne">अहिले सबैभन्दा बढी खाँचो</span></h4>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick brand" data-icon="ambulance"></span><span data-lang="de">Sanitäter:innen, Ärzt:innen, Pflegekräfte, Erste-Hilfe-Trainer:innen</span><span data-lang="en">Paramedics, doctors, nurses, first aid trainers</span></li>
-            <li><span class="tick brand" data-icon="education"></span><span data-lang="de">Lehrkräfte für Englisch, Mathematik und Naturwissenschaften</span><span data-lang="en">Teachers of English, mathematics and science</span></li>
-            <li><span class="tick brand" data-icon="tech"></span><span data-lang="de">IT-Fachleute für Computer-Grundkenntnisse an Schulen</span><span data-lang="en">IT specialists for basic computer skills in schools</span></li>
+            <li><span class="tick brand" data-icon="ambulance"></span><span data-lang="de">Sanitäter:innen, Ärzt:innen, Pflegekräfte, Erste-Hilfe-Trainer:innen</span><span data-lang="en">Paramedics, doctors, nurses, first aid trainers</span><span data-lang="ne">स्वास्थ्यकर्मी, चिकित्सक, नर्स, प्राथमिक उपचार प्रशिक्षक</span></li>
+            <li><span class="tick brand" data-icon="education"></span><span data-lang="de">Lehrkräfte für Englisch, Mathematik und Naturwissenschaften</span><span data-lang="en">Teachers of English, mathematics and science</span><span data-lang="ne">अङ्ग्रेजी, गणित र विज्ञान शिक्षक</span></li>
+            <li><span class="tick brand" data-icon="tech"></span><span data-lang="de">IT-Fachleute für Computer-Grundkenntnisse an Schulen</span><span data-lang="en">IT specialists for basic computer skills in schools</span><span data-lang="ne">विद्यालयमा आधारभूत कम्प्युटर सीपका लागि आईटी विशेषज्ञ</span></li>
           </ul>
-          <p class="mt-3"><a class="clink clink-sm" href="one-day-for-nation.html#bereiche"><span data-lang="de">Alle zwölf Bereiche</span><span data-lang="en">All twelve fields</span></a></p>
+          <p class="mt-3"><a class="clink clink-sm" href="one-day-for-nation.html#bereiche"><span data-lang="de">Alle zwölf Bereiche</span><span data-lang="en">All twelve fields</span><span data-lang="ne">सबै बाह्र क्षेत्र</span></a></p>
         </div>
       </div>
     </div>
@@ -195,29 +195,29 @@
   <section class="tile" id="spenden">
     <div class="container grid grid-2" style="gap:3.5rem;align-items:start">
       <div>
-        <span class="tile-eyebrow"><span data-lang="de">Weg 03</span><span data-lang="en">Route 03</span></span>
-        <h2 class="tile-title"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Weg 03</span><span data-lang="en">Route 03</span><span data-lang="ne">बाटो ०३</span></span>
+        <h2 class="tile-title"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span><span data-lang="ne">दान गर्नुहोस्</span></h2>
         <p class="lead mt-3">
           <span data-lang="de">One Euro for Nation ist bewusst niedrigschwellig: Wer einen Euro gibt, ist genauso Teil der Kampagne wie wer hundert gibt. Die Summe aller kleinen Beiträge finanziert Erste-Hilfe-Kits, Trainingsmaterial auf Nepali, Schulmaterial, Hygienekits und den Transport zu abgelegenen Schulen.</span>
-          <span data-lang="en">One Euro for Nation is deliberately low-threshold: whoever gives one euro is as much part of the campaign as whoever gives a hundred. The sum of all small contributions finances First Aid kits, Nepali training material, school supplies, hygiene kits and transport to remote schools.</span>
+          <span data-lang="en">One Euro for Nation is deliberately low-threshold: whoever gives one euro is as much part of the campaign as whoever gives a hundred. The sum of all small contributions finances First Aid kits, Nepali training material, school supplies, hygiene kits and transport to remote schools.</span><span data-lang="ne">One Euro for Nation जानाजान सजिलो बनाइएको छ: एक युरो दिने व्यक्ति पनि सय युरो दिनेजत्तिकै अभियानको हिस्सा हुनुहुन्छ। साना योगदानको जोडले प्राथमिक उपचार किट, नेपाली तालिम सामग्री, शैक्षिक सामग्री, सरसफाइ किट र दुर्गम विद्यालयसम्मको ढुवानीमा खर्च जुटाउँछ।</span>
         </p>
         <div class="grid grid-4 mt-4" id="tierCards"></div>
-        <p class="mt-4"><a class="btn" href="spenden.html"><span data-lang="de">Betrag wählen</span><span data-lang="en">Choose an amount</span></a></p>
+        <p class="mt-4"><a class="btn" href="spenden.html"><span data-lang="de">Betrag wählen</span><span data-lang="en">Choose an amount</span><span data-lang="ne">रकम छान्नुहोस्</span></a></p>
       </div>
       <div class="stack">
         <div class="card card-pad-lg">
-          <h3 class="t-h4"><span data-lang="de">Steuerlich absetzbar</span><span data-lang="en">Tax-deductible</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Steuerlich absetzbar</span><span data-lang="en">Tax-deductible</span><span data-lang="ne">करछुट योग्य</span></h3>
           <p class="text-sm mt-2">
             <span data-lang="de">Spenden werden über NPJOE e.V. in Deutschland verwaltet und sind hier steuerlich absetzbar. Eine Zuwendungsbestätigung stellen wir auf Wunsch aus — dafür brauchen wir Ihren Namen und Ihre Anschrift.</span>
-            <span data-lang="en">Donations are managed by NPJOE e.V. in Germany and are tax-deductible here. We issue a donation receipt on request — for that we need your name and address.</span>
+            <span data-lang="en">Donations are managed by NPJOE e.V. in Germany and are tax-deductible here. We issue a donation receipt on request — for that we need your name and address.</span><span data-lang="ne">दान जर्मनीमा NPJOE e.V. ले व्यवस्थापन गर्छ र यहाँ करछुट पाइन्छ। अनुरोध गरेमा हामी दान रसिद जारी गर्छौं — त्यसका लागि तपाईंको नाम र ठेगाना चाहिन्छ।</span>
           </p>
         </div>
         <div class="card card-pad-lg">
-          <h3 class="t-h4"><span data-lang="de">Andere Formen der Unterstützung</span><span data-lang="en">Other forms of support</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Andere Formen der Unterstützung</span><span data-lang="en">Other forms of support</span><span data-lang="ne">सहयोगका अन्य रूप</span></h3>
           <div class="stack-sm mt-2 text-sm">
-            <p><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung (§ 3i)</span><span data-lang="en">materials, books, medical equipment (§ 3i)</span></p>
-            <p><span class="field-icon-sm" data-icon="party" aria-hidden="true"></span><strong><span data-lang="de">Eigene Spendenaktion</span><span data-lang="en">Your own fundraiser</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span></p>
-            <p><span class="field-icon-sm" data-icon="building" aria-hidden="true"></span><strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span></p>
+            <p><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span><span data-lang="ne">वस्तुगत सहयोग</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung (§ 3i)</span><span data-lang="en">materials, books, medical equipment (§ 3i)</span><span data-lang="ne">सामग्री, पुस्तक, स्वास्थ्य उपकरण (§ ३झ)</span></p>
+            <p><span class="field-icon-sm" data-icon="party" aria-hidden="true"></span><strong><span data-lang="de">Eigene Spendenaktion</span><span data-lang="en">Your own fundraiser</span><span data-lang="ne">आफ्नै रकम सङ्कलन कार्यक्रम</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span><span data-lang="ne">जन्मदिन, विवाह, कम्पनीको कार्यक्रम</span></p>
+            <p><span class="field-icon-sm" data-icon="building" aria-hidden="true"></span><strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span><span data-lang="ne">कम्पनीबाट सहयोग</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span><span data-lang="ne">म्याचिङ कार्यक्रम, प्रायोजन</span></p>
           </div>
         </div>
       </div>
@@ -228,42 +228,42 @@
   <section class="tile tile-dark" id="partner">
     <div class="container">
       <div class="tile-head wide">
-        <span class="tile-eyebrow"><span data-lang="de">Weg 04</span><span data-lang="en">Route 04</span></span>
-        <h2 class="tile-title"><span data-lang="de">Partner, Schule oder Förderer werden</span><span data-lang="en">Become a partner, school or funder</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Weg 04</span><span data-lang="en">Route 04</span><span data-lang="ne">बाटो ०४</span></span>
+        <h2 class="tile-title"><span data-lang="de">Partner, Schule oder Förderer werden</span><span data-lang="en">Become a partner, school or funder</span><span data-lang="ne">साझेदार, विद्यालय वा सहयोगी बन्नुहोस्</span></h2>
         <p class="tile-sub">
           <span data-lang="de">Schulen in Nepal, NGOs, Unternehmen, Stiftungen und Diaspora-Vereine: Erzählen Sie uns, was Sie vorhaben. NPYS-N prüft jeden Schulvorschlag.</span>
-          <span data-lang="en">Schools in Nepal, NGOs, companies, foundations and diaspora associations: tell us what you have in mind. NPYS-N reviews every school proposal.</span>
+          <span data-lang="en">Schools in Nepal, NGOs, companies, foundations and diaspora associations: tell us what you have in mind. NPYS-N reviews every school proposal.</span><span data-lang="ne">नेपालका विद्यालय, गैरसरकारी संस्था, कम्पनी, प्रतिष्ठान र प्रवासी संघसंस्था: तपाईंको सोच हामीलाई बताउनुहोस्। NPYS-N ले हरेक विद्यालय प्रस्ताव हेर्छ।</span>
         </p>
       </div>
       <div class="grid grid-3 mt-6">
         <div class="card reveal">
           <div data-icon="school" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Schulen in Nepal</span><span data-lang="en">Schools in Nepal</span></h3>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Schulen in Nepal</span><span data-lang="en">Schools in Nepal</span><span data-lang="ne">नेपालका विद्यालय</span></h3>
           <p class="text-sm" style="color:#a1a1a6">
             <span data-lang="de">Auswahlkriterien sind Erreichbarkeit, die Bereitschaft, eine Lehrkraft dauerhaft als Trainer:in freizustellen, und der Anteil benachteiligter Schüler:innen.</span>
-            <span data-lang="en">Selection criteria are accessibility, willingness to permanently release a teacher as trainer, and the share of disadvantaged students.</span>
+            <span data-lang="en">Selection criteria are accessibility, willingness to permanently release a teacher as trainer, and the share of disadvantaged students.</span><span data-lang="ne">छनोटका आधार हुन्: पहुँच, एक शिक्षकलाई स्थायी प्रशिक्षकका रूपमा दिन तयार हुनु, र विपन्न विद्यार्थीको अनुपात।</span>
           </p>
         </div>
         <div class="card reveal" data-delay="80">
           <div data-icon="hands" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">NGOs &amp; Vereine</span><span data-lang="en">NGOs &amp; associations</span></h3>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">NGOs &amp; Vereine</span><span data-lang="en">NGOs &amp; associations</span><span data-lang="ne">गैरसरकारी संस्था र संघहरू</span></h3>
           <p class="text-sm" style="color:#a1a1a6">
             <span data-lang="de">Gemeinsame Projekte, Vermittlung von Ehrenamtlichen und Schulungen — § 3(h) verpflichtet uns zur Förderung des Ehrenamts unabhängig von eigenen Interessen.</span>
-            <span data-lang="en">Joint projects, placing volunteers and training — § 3(h) commits us to promoting volunteering independently of our own interests.</span>
+            <span data-lang="en">Joint projects, placing volunteers and training — § 3(h) commits us to promoting volunteering independently of our own interests.</span><span data-lang="ne">साझा परियोजना, स्वयंसेवक परिचालन र तालिम — § ३(ज) ले हामीलाई आफ्नै स्वार्थभन्दा माथि उठेर स्वयंसेवाको प्रवर्धन गर्न प्रतिबद्ध गराउँछ।</span>
           </p>
         </div>
         <div class="card reveal" data-delay="160">
           <div data-icon="building" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Unternehmen &amp; Stiftungen</span><span data-lang="en">Companies &amp; foundations</span></h3>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Unternehmen &amp; Stiftungen</span><span data-lang="en">Companies &amp; foundations</span><span data-lang="ne">कम्पनी र प्रतिष्ठान</span></h3>
           <p class="text-sm" style="color:#a1a1a6">
             <span data-lang="de">Förderung, Sachspenden, Matching-Programme und Expertise. Der Projektbeschluss NPJOE-2026-001 ist die Grundlage für Förderanträge.</span>
-            <span data-lang="en">Funding, in-kind donations, matching programmes and expertise. Project resolution NPJOE-2026-001 is the basis for funding applications.</span>
+            <span data-lang="en">Funding, in-kind donations, matching programmes and expertise. Project resolution NPJOE-2026-001 is the basis for funding applications.</span><span data-lang="ne">आर्थिक सहयोग, वस्तुगत दान, म्याचिङ कार्यक्रम र विशेषज्ञता। परियोजना निर्णय NPJOE-2026-001 अनुदान आवेदनको आधार हो।</span>
           </p>
         </div>
       </div>
       <div class="tile-actions mt-6">
-        <a class="clink" href="kontakt.html#partner-werden"><span data-lang="de">Kooperation anfragen</span><span data-lang="en">Request a cooperation</span></a>
-        <a class="clink" href="kontakt.html?thema=schule"><span data-lang="de">Schule vorschlagen</span><span data-lang="en">Propose a school</span></a>
+        <a class="clink" href="kontakt.html#partner-werden"><span data-lang="de">Kooperation anfragen</span><span data-lang="en">Request a cooperation</span><span data-lang="ne">सहकार्यका लागि अनुरोध</span></a>
+        <a class="clink" href="kontakt.html?thema=schule"><span data-lang="de">Schule vorschlagen</span><span data-lang="en">Propose a school</span><span data-lang="ne">विद्यालय प्रस्ताव गर्नुहोस्</span></a>
       </div>
     </div>
   </section>
@@ -272,30 +272,30 @@
   <section class="tile tile-parchment" id="ziele">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <span class="tile-eyebrow">§ 2 <span data-lang="de">des Projektbeschlusses</span><span data-lang="en">of the project resolution</span></span>
-        <h2 class="tile-title"><span data-lang="de">Worauf Ihr Beitrag einzahlt</span><span data-lang="en">What your contribution feeds into</span></h2>
-        <p class="tile-sub"><span data-lang="de">Der Beschluss NPJOE-2026-001 nennt fünf Kernziele für 2026 bis 2030.</span><span data-lang="en">Resolution NPJOE-2026-001 names five core objectives for 2026 to 2030.</span></p>
+        <span class="tile-eyebrow">§ 2 <span data-lang="de">des Projektbeschlusses</span><span data-lang="en">of the project resolution</span><span data-lang="ne">परियोजना निर्णयको</span></span>
+        <h2 class="tile-title"><span data-lang="de">Worauf Ihr Beitrag einzahlt</span><span data-lang="en">What your contribution feeds into</span><span data-lang="ne">तपाईंको योगदान कहाँ जोडिन्छ</span></h2>
+        <p class="tile-sub"><span data-lang="de">Der Beschluss NPJOE-2026-001 nennt fünf Kernziele für 2026 bis 2030.</span><span data-lang="en">Resolution NPJOE-2026-001 names five core objectives for 2026 to 2030.</span><span data-lang="ne">निर्णय NPJOE-2026-001 ले २०२६ देखि २०३० सम्मका पाँच मुख्य उद्देश्य तोकेको छ।</span></p>
       </div>
       <ol class="steps" style="max-width:52rem;margin-inline:auto">
         <li>
-          <h3 class="t-h4"><span data-lang="de">Eine nachhaltige Volunteer-Plattform aufbauen</span><span data-lang="en">Build a sustainable volunteer platform</span></h3>
-          <p><span data-lang="de">Für die weltweite nepalesische Diaspora — nicht nur für die Gemeinschaft in Deutschland.</span><span data-lang="en">For the worldwide Nepali diaspora — not only the community in Germany.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Eine nachhaltige Volunteer-Plattform aufbauen</span><span data-lang="en">Build a sustainable volunteer platform</span><span data-lang="ne">दिगो स्वयंसेवा प्लेटफर्म निर्माण</span></h3>
+          <p><span data-lang="de">Für die weltweite nepalesische Diaspora — nicht nur für die Gemeinschaft in Deutschland.</span><span data-lang="en">For the worldwide Nepali diaspora — not only the community in Germany.</span><span data-lang="ne">विश्वभरका प्रवासी नेपालीका लागि — जर्मनीको समुदायका लागि मात्र होइन।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Schulen in Nepal stärken</span><span data-lang="en">Strengthen schools in Nepal</span></h3>
-          <p><span data-lang="de">Durch professionelle Freiwilligenarbeit je nach Berufsfeld statt allgemeiner Hilfe.</span><span data-lang="en">Through professional volunteering by field of expertise rather than generic help.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Schulen in Nepal stärken</span><span data-lang="en">Strengthen schools in Nepal</span><span data-lang="ne">नेपालका विद्यालयलाई बलियो बनाउने</span></h3>
+          <p><span data-lang="de">Durch professionelle Freiwilligenarbeit je nach Berufsfeld statt allgemeiner Hilfe.</span><span data-lang="en">Through professional volunteering by field of expertise rather than generic help.</span><span data-lang="ne">सामान्य सहयोगभन्दा विशेषज्ञताको क्षेत्रअनुसारको पेसागत स्वयंसेवामार्फत।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Die nationale Erste-Hilfe-Kampagne durchführen</span><span data-lang="en">Run the national First Aid Campaign</span></h3>
-          <p><span data-lang="de">In Schulen der Klassen 9–12, getragen von qualifizierten Volunteers.</span><span data-lang="en">In schools for grades 9–12, delivered by qualified volunteers.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Die nationale Erste-Hilfe-Kampagne durchführen</span><span data-lang="en">Run the national First Aid Campaign</span><span data-lang="ne">राष्ट्रिय प्राथमिक उपचार अभियान सञ्चालन</span></h3>
+          <p><span data-lang="de">In Schulen der Klassen 9–12, getragen von qualifizierten Volunteers.</span><span data-lang="en">In schools for grades 9–12, delivered by qualified volunteers.</span><span data-lang="ne">कक्षा ९–१२ मा, योग्य स्वयंसेवकद्वारा।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Kleine, wirkungsvolle Spenden ermöglichen</span><span data-lang="en">Enable small but impactful donations</span></h3>
-          <p><span data-lang="de">Ab einem Euro für Schulmaterialien und Gesundheitskits.</span><span data-lang="en">From one euro for school materials and health kits.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Kleine, wirkungsvolle Spenden ermöglichen</span><span data-lang="en">Enable small but impactful donations</span><span data-lang="ne">सानो तर प्रभावकारी दान सम्भव बनाउने</span></h3>
+          <p><span data-lang="de">Ab einem Euro für Schulmaterialien und Gesundheitskits.</span><span data-lang="en">From one euro for school materials and health kits.</span><span data-lang="ne">शैक्षिक सामग्री र स्वास्थ्य किटका लागि एक युरोदेखि।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Ein dauerhaftes Netzwerk knüpfen</span><span data-lang="en">Build a lasting network</span></h3>
-          <p><span data-lang="de">Zwischen Diaspora und Nepal, mit NPYS-N als lokalem Partner.</span><span data-lang="en">Between the diaspora and Nepal, with NPYS-N as local partner.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Ein dauerhaftes Netzwerk knüpfen</span><span data-lang="en">Build a lasting network</span><span data-lang="ne">दिगो सञ्जाल निर्माण</span></h3>
+          <p><span data-lang="de">Zwischen Diaspora und Nepal, mit NPYS-N als lokalem Partner.</span><span data-lang="en">Between the diaspora and Nepal, with NPYS-N as local partner.</span><span data-lang="ne">प्रवासी समुदाय र नेपालबीच, NPYS-N स्थानीय साझेदारका रूपमा।</span></p>
         </li>
       </ol>
     </div>
@@ -305,10 +305,10 @@
   <section class="tile">
     <div class="container container-narrow">
       <div class="tile-head wide mb-4">
-        <h2 class="tile-title"><span data-lang="de">Häufige Fragen zum Mitmachen</span><span data-lang="en">Common questions about taking part</span></h2>
+        <h2 class="tile-title"><span data-lang="de">Häufige Fragen zum Mitmachen</span><span data-lang="en">Common questions about taking part</span><span data-lang="ne">सहभागिताबारे सामान्य प्रश्न</span></h2>
       </div>
       <div class="accordion" id="faqJoin"></div>
-      <p class="tile-note"><a class="clink clink-sm" href="faq.html"><span data-lang="de">Alle 39 Fragen und Antworten</span><span data-lang="en">All 39 questions and answers</span></a></p>
+      <p class="tile-note"><a class="clink clink-sm" href="faq.html"><span data-lang="de">Alle 39 Fragen und Antworten</span><span data-lang="en">All 39 questions and answers</span><span data-lang="ne">सबै ३९ प्रश्न र उत्तर</span></a></p>
     </div>
   </section>
 

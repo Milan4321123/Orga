@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,14 +26,14 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><span data-lang="de">Galerie</span><span data-lang="en">Gallery</span></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><span data-lang="de">Galerie</span><span data-lang="en">Gallery</span><span data-lang="ne">ग्यालरी</span></li>
       </ol>
-      <span class="eyebrow"><span data-lang="de">Eindrücke</span><span data-lang="en">Impressions</span></span>
-      <h1><span data-lang="de">Galerie</span><span data-lang="en">Gallery</span></h1>
+      <span class="eyebrow"><span data-lang="de">Eindrücke</span><span data-lang="en">Impressions</span><span data-lang="ne">झलकहरू</span></span>
+      <h1><span data-lang="de">Galerie</span><span data-lang="en">Gallery</span><span data-lang="ne">ग्यालरी</span></h1>
       <p class="lead">
         <span data-lang="de">Drei Feste, drei Alben — und jedes hat seine eigene Seite. Dort steht zu jedem Foto und jedem Video, worum es sich handelt, wann es aufgenommen wurde und was im Bild gerade passiert.</span>
-        <span data-lang="en">Three celebrations, three albums — and each has a page of its own. There you will find, for every photograph and every video, what it is, when it was taken and what is happening in the frame.</span>
+        <span data-lang="en">Three celebrations, three albums — and each has a page of its own. There you will find, for every photograph and every video, what it is, when it was taken and what is happening in the frame.</span><span data-lang="ne">तीन उत्सव, तीन एल्बम — र हरेकको आफ्नै पृष्ठ छ। त्यहाँ हरेक तस्बिर र भिडियोबारे त्यो के हो, कहिले खिचिएको हो र फ्रेमभित्र के भइरहेको छ भन्ने उल्लेख छ।</span>
       </p>
     </div>
   </section>
@@ -47,56 +47,59 @@
           <img src="assets/media/naya-barsha-2026/live-concert.jpg" width="1600" height="1200" decoding="async"
                alt="Livekonzert bei der Neujahrsfeier der NPJOE am 10. April 2026 in Darmstadt"
                data-de-alt="Livekonzert bei der Neujahrsfeier der NPJOE am 10. April 2026 in Darmstadt"
-               data-en-alt="Live concert at the NPJOE New Year celebration on 10 April 2026 in Darmstadt">
-          <span class="eyebrow"><span data-lang="de">Album · 10. April 2026</span><span data-lang="en">Album · 10 April 2026</span></span>
-          <h2><span data-lang="de">Nepalesisches Neujahr 2026</span><span data-lang="en">Nepali New Year 2026</span></h2>
+               data-en-alt="Live concert at the NPJOE New Year celebration on 10 April 2026 in Darmstadt"
+               data-ne-alt="डार्मस्टाटमा १० अप्रिल २०२६ मा भएको NPJOE नयाँ वर्ष उत्सवमा प्रत्यक्ष कन्सर्ट">
+          <span class="eyebrow"><span data-lang="de">Album · 10. April 2026</span><span data-lang="en">Album · 10 April 2026</span><span data-lang="ne">एल्बम · १० अप्रिल २०२६</span></span>
+          <h2><span data-lang="de">Nepalesisches Neujahr 2026</span><span data-lang="en">Nepali New Year 2026</span><span data-lang="ne">नेपाली नयाँ वर्ष २०२६</span></h2>
           <p>
             <span data-lang="de">Über 150 Gäste in der Knabenschule Darmstadt: nepalesische Küche, ein Livekonzert, Tanzaufführungen und kulturelle Darbietungen — eine der größten Veranstaltungen des Vereins bisher.</span>
-            <span data-lang="en">More than 150 guests at the Knabenschule in Darmstadt: Nepali cuisine, a live concert, dance performances and cultural presentations — one of the association's largest events to date.</span>
+            <span data-lang="en">More than 150 guests at the Knabenschule in Darmstadt: Nepali cuisine, a live concert, dance performances and cultural presentations — one of the association's largest events to date.</span><span data-lang="ne">डार्मस्टाटको क्नाबेनशुलेमा १५० भन्दा बढी पाहुना: नेपाली परिकार, लाइभ कन्सर्ट, नृत्य प्रस्तुति र सांस्कृतिक कार्यक्रम — संगठनका अहिलेसम्मका सबैभन्दा ठूला कार्यक्रममध्ये एक।</span>
           </p>
           <span class="album-feature-meta">
-            <span><span data-lang="de">9 Fotos</span><span data-lang="en">9 photos</span></span>
-            <span><span data-lang="de">Darmstadt</span><span data-lang="en">Darmstadt</span></span>
+            <span><span data-lang="de">9 Fotos</span><span data-lang="en">9 photos</span><span data-lang="ne">९ तस्बिर</span></span>
+            <span><span data-lang="de">Darmstadt</span><span data-lang="en">Darmstadt</span><span data-lang="ne">डार्मस्टाट</span></span>
           </span>
-          <span class="album-feature-go"><span data-lang="de">Album ansehen →</span><span data-lang="en">View the album →</span></span>
+          <span class="album-feature-go"><span data-lang="de">Album ansehen →</span><span data-lang="en">View the album →</span><span data-lang="ne">एल्बम हेर्नुहोस् →</span></span>
         </a>
 
         <a class="album-feature" href="naya-barsha-2025.html">
           <img src="assets/media/naya-barsha-2025/president-with-members.jpg" width="1200" height="1600" decoding="async"
                alt="Der Vorsitzende der NPJOE mit Mitgliedern bei der Neujahrsfeier am 11. April 2025"
                data-de-alt="Der Vorsitzende der NPJOE mit Mitgliedern bei der Neujahrsfeier am 11. April 2025"
-               data-en-alt="The chairperson of the NPJOE with members at the New Year celebration on 11 April 2025">
-          <span class="eyebrow"><span data-lang="de">Album · 11. April 2025</span><span data-lang="en">Album · 11 April 2025</span></span>
-          <h2><span data-lang="de">Nepalesisches Neujahr 2025</span><span data-lang="en">Nepali New Year 2025</span></h2>
+               data-en-alt="The chairperson of the NPJOE with members at the New Year celebration on 11 April 2025"
+               data-ne-alt="NPJOE का अध्यक्ष ११ अप्रिल २०२५ को नयाँ वर्ष उत्सवमा सदस्यहरूसँग">
+          <span class="eyebrow"><span data-lang="de">Album · 11. April 2025</span><span data-lang="en">Album · 11 April 2025</span><span data-lang="ne">एल्बम · ११ अप्रिल २०२५</span></span>
+          <h2><span data-lang="de">Nepalesisches Neujahr 2025</span><span data-lang="en">Nepali New Year 2025</span><span data-lang="ne">नेपाली नयाँ वर्ष २०२५</span></h2>
           <p>
             <span data-lang="de">Die Neujahrsfeier in der Knabenschule Halle, beschlossen von der Mitgliederversammlung: Nepali-Konzert, Tanz und Gesang — ein Abend, der fast vollständig auf Video festgehalten ist.</span>
-            <span data-lang="en">The New Year celebration at the Knabenschule Halle, resolved by the general meeting: a Nepali concert, dance and singing — an evening documented almost entirely on video.</span>
+            <span data-lang="en">The New Year celebration at the Knabenschule Halle, resolved by the general meeting: a Nepali concert, dance and singing — an evening documented almost entirely on video.</span><span data-lang="ne">साधारण सभाको निर्णयअनुसार क्नाबेनशुले हालेमा भएको नयाँ वर्ष उत्सव: नेपाली कन्सर्ट, नृत्य र गीत — झन्डै पूरै साँझ भिडियोमा कैद भएको छ।</span>
           </p>
           <span class="album-feature-meta">
-            <span><span data-lang="de">1 Foto</span><span data-lang="en">1 photo</span></span>
-            <span><span data-lang="de">11 Videos</span><span data-lang="en">11 videos</span></span>
-            <span><span data-lang="de">Knabenschule Halle</span><span data-lang="en">Knabenschule Halle</span></span>
+            <span><span data-lang="de">1 Foto</span><span data-lang="en">1 photo</span><span data-lang="ne">१ तस्बिर</span></span>
+            <span><span data-lang="de">11 Videos</span><span data-lang="en">11 videos</span><span data-lang="ne">११ भिडियो</span></span>
+            <span><span data-lang="de">Knabenschule Halle</span><span data-lang="en">Knabenschule Halle</span><span data-lang="ne">क्नाबेनशुले हाले</span></span>
           </span>
-          <span class="album-feature-go"><span data-lang="de">Album ansehen →</span><span data-lang="en">View the album →</span></span>
+          <span class="album-feature-go"><span data-lang="de">Album ansehen →</span><span data-lang="en">View the album →</span><span data-lang="ne">एल्बम हेर्नुहोस् →</span></span>
         </a>
 
         <a class="album-feature" href="dashain-2024.html">
           <img src="assets/media/dashain-2024/trophy-presentation.jpg" width="1920" height="1280" decoding="async"
                alt="Pokalübergabe bei der Dashain-Feier der NPJOE am 5. Oktober 2024"
                data-de-alt="Pokalübergabe bei der Dashain-Feier der NPJOE am 5. Oktober 2024"
-               data-en-alt="Trophy presentation at the NPJOE Dashain celebration on 5 October 2024">
-          <span class="eyebrow"><span data-lang="de">Album · 5. Oktober 2024</span><span data-lang="en">Album · 5 October 2024</span></span>
-          <h2><span data-lang="de">Dashain-Feier 2024</span><span data-lang="en">Dashain celebration 2024</span></h2>
+               data-en-alt="Trophy presentation at the NPJOE Dashain celebration on 5 October 2024"
+               data-ne-alt="५ अक्टोबर २०२४ को NPJOE दसैँ उत्सवमा पुरस्कार वितरण">
+          <span class="eyebrow"><span data-lang="de">Album · 5. Oktober 2024</span><span data-lang="en">Album · 5 October 2024</span><span data-lang="ne">एल्बम · ५ अक्टोबर २०२४</span></span>
+          <h2><span data-lang="de">Dashain-Feier 2024</span><span data-lang="en">Dashain celebration 2024</span><span data-lang="ne">दसैँ उत्सव २०२४</span></h2>
           <p>
             <span data-lang="de">Das wichtigste Fest Nepals, gefeiert in Deutschland: Empfang und Anmeldung, Beiträge auf der Bühne, Ehrungen mit Pokal und Medaillen und ein gemeinsames nepalesisches Festessen.</span>
-            <span data-lang="en">Nepal's most important festival, celebrated in Germany: reception and registration, contributions on stage, presentations with a trophy and medals, and a shared Nepali meal.</span>
+            <span data-lang="en">Nepal's most important festival, celebrated in Germany: reception and registration, contributions on stage, presentations with a trophy and medals, and a shared Nepali meal.</span><span data-lang="ne">नेपालको सबैभन्दा महत्त्वपूर्ण चाड जर्मनीमा: स्वागत र दर्ता, मञ्चीय प्रस्तुति, कप र पदकसहितको सम्मान, अनि सामूहिक नेपाली भोज।</span>
           </p>
           <span class="album-feature-meta">
-            <span><span data-lang="de">16 Fotos</span><span data-lang="en">16 photos</span></span>
-            <span><span data-lang="de">1 Video</span><span data-lang="en">1 video</span></span>
-            <span><span data-lang="de">Vijaya Dashami</span><span data-lang="en">Vijaya Dashami</span></span>
+            <span><span data-lang="de">16 Fotos</span><span data-lang="en">16 photos</span><span data-lang="ne">१६ तस्बिर</span></span>
+            <span><span data-lang="de">1 Video</span><span data-lang="en">1 video</span><span data-lang="ne">१ भिडियो</span></span>
+            <span><span data-lang="de">Vijaya Dashami</span><span data-lang="en">Vijaya Dashami</span><span data-lang="ne">विजया दशमी</span></span>
           </span>
-          <span class="album-feature-go"><span data-lang="de">Album ansehen →</span><span data-lang="en">View the album →</span></span>
+          <span class="album-feature-go"><span data-lang="de">Album ansehen →</span><span data-lang="en">View the album →</span><span data-lang="ne">एल्बम हेर्नुहोस् →</span></span>
         </a>
 
       </div>
@@ -106,32 +109,32 @@
   <!-- ============================================================== what's in it -->
   <section class="section section-alt">
     <div class="container">
-      <span class="eyebrow"><span data-lang="de">Wie die Alben aufgebaut sind</span><span data-lang="en">How the albums are built</span></span>
-      <h2><span data-lang="de">Bilder, die erklärt werden</span><span data-lang="en">Pictures that are explained</span></h2>
+      <span class="eyebrow"><span data-lang="de">Wie die Alben aufgebaut sind</span><span data-lang="en">How the albums are built</span><span data-lang="ne">एल्बमहरू कसरी बनेका छन्</span></span>
+      <h2><span data-lang="de">Bilder, die erklärt werden</span><span data-lang="en">Pictures that are explained</span><span data-lang="ne">व्याख्यासहितका तस्बिर</span></h2>
       <p class="lead mt-2">
         <span data-lang="de">Ein Foto ohne Erklärung ist für Außenstehende nur ein Raum mit Menschen darin. Deshalb steht in beiden Alben neben jeder Aufnahme, was gerade geschieht — und warum dieser Teil des Abends zu einem nepalesischen Fest gehört.</span>
-        <span data-lang="en">A photograph without an explanation is, to an outsider, just a room with people in it. That is why both albums set out, beside every frame, what is happening — and why that part of the evening belongs to a Nepali celebration.</span>
+        <span data-lang="en">A photograph without an explanation is, to an outsider, just a room with people in it. That is why both albums set out, beside every frame, what is happening — and why that part of the evening belongs to a Nepali celebration.</span><span data-lang="ne">व्याख्याबिनाको तस्बिर बाहिरका मान्छेका लागि मानिसहरू भएको एउटा कोठा मात्र हो। त्यसैले दुवै एल्बममा हरेक तस्बिरको छेउमा के भइरहेको छ — र साँझको त्यो अंश नेपाली उत्सवको किन हिस्सा हो — लेखिएको छ।</span>
       </p>
       <div class="grid grid-3 mt-6">
         <div class="card card-pad-lg">
-          <h3 class="t-h4"><span data-lang="de">Jedes Bild mit Kontext</span><span data-lang="en">Every picture in context</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Jedes Bild mit Kontext</span><span data-lang="en">Every picture in context</span><span data-lang="ne">हरेक तस्बिर सन्दर्भसहित</span></h3>
           <p class="text-sm text-muted mt-2">
             <span data-lang="de">Kurztitel, laufende Nummer und ein Absatz, der die Szene einordnet — statt einer Bildunterschrift aus vier Wörtern.</span>
-            <span data-lang="en">A short title, a running number and a paragraph that places the scene — instead of a four-word caption.</span>
+            <span data-lang="en">A short title, a running number and a paragraph that places the scene — instead of a four-word caption.</span><span data-lang="ne">चार शब्दको क्याप्सनको सट्टा छोटो शीर्षक, क्रम संख्या र दृश्यलाई सन्दर्भमा राख्ने एउटा अनुच्छेद।</span>
           </p>
         </div>
         <div class="card card-pad-lg">
-          <h3 class="t-h4"><span data-lang="de">Nach Themen filterbar</span><span data-lang="en">Filterable by theme</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Nach Themen filterbar</span><span data-lang="en">Filterable by theme</span><span data-lang="ne">विषयअनुसार छान्न मिल्ने</span></h3>
           <p class="text-sm text-muted mt-2">
             <span data-lang="de">Empfang, Bühne, Musik, Gemeinschaft, Ehrungen: Wer nur einen Teil des Abends sucht, blendet den Rest aus.</span>
-            <span data-lang="en">Welcome, stage, music, community, honours: if you are looking for one part of the evening, the rest can be hidden.</span>
+            <span data-lang="en">Welcome, stage, music, community, honours: if you are looking for one part of the evening, the rest can be hidden.</span><span data-lang="ne">स्वागत, मञ्च, सङ्गीत, समुदाय, सम्मान: साँझको कुनै एक अंश मात्र हेर्न चाहनुहुन्छ भने बाँकी लुकाउन सकिन्छ।</span>
           </p>
         </div>
         <div class="card card-pad-lg">
-          <h3 class="t-h4"><span data-lang="de">Videos laden erst auf Klick</span><span data-lang="en">Videos load only on click</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Videos laden erst auf Klick</span><span data-lang="en">Videos load only on click</span><span data-lang="ne">भिडियो क्लिक गरेपछि मात्र लोड हुन्छ</span></h3>
           <p class="text-sm text-muted mt-2">
             <span data-lang="de">Zwölf Clips liegen in den Alben. Geladen wird keiner davon, bevor Sie auf Play drücken — Laufzeit steht vorher dabei.</span>
-            <span data-lang="en">Twelve clips sit in the albums. None of them downloads before you press play — the running time is shown beforehand.</span>
+            <span data-lang="en">Twelve clips sit in the albums. None of them downloads before you press play — the running time is shown beforehand.</span><span data-lang="ne">एल्बमहरूमा बाह्र क्लिप छन्। तपाईंले प्ले नथिच्दासम्म कुनै पनि डाउनलोड हुँदैन — अवधि पहिल्यै देखिन्छ।</span>
           </p>
         </div>
       </div>
@@ -143,18 +146,18 @@
     <div class="container">
       <div class="grid grid-2" style="gap:2.5rem;align-items:center">
         <div>
-          <h2><span data-lang="de">Sie haben Fotos von einer Veranstaltung?</span><span data-lang="en">Do you have photos from an event?</span></h2>
+          <h2><span data-lang="de">Sie haben Fotos von einer Veranstaltung?</span><span data-lang="en">Do you have photos from an event?</span><span data-lang="ne">तपाईंसँग कुनै कार्यक्रमका तस्बिर छन्?</span></h2>
           <p class="lead mt-2">
             <span data-lang="de">Mitglieder, Volunteers und Partnerschulen können uns Bildmaterial senden. Bitte nur Fotos, für die alle abgebildeten Personen eingewilligt haben — bei Minderjährigen mit Zustimmung der Erziehungsberechtigten.</span>
-            <span data-lang="en">Members, volunteers and partner schools can send us image material. Please only photos for which everyone shown has consented — for minors, with the consent of their guardians.</span>
+            <span data-lang="en">Members, volunteers and partner schools can send us image material. Please only photos for which everyone shown has consented — for minors, with the consent of their guardians.</span><span data-lang="ne">सदस्य, स्वयंसेवक र साझेदार विद्यालयले हामीलाई तस्बिर पठाउन सक्नुहुन्छ। कृपया तस्बिरमा देखिने सबैको सहमति भएका तस्बिर मात्र पठाउनुहोस् — नाबालकको हकमा संरक्षकको सहमतिसहित।</span>
           </p>
-          <p class="mt-3"><a class="btn" href="kontakt.html?thema=presse"><span data-lang="de">Bilder einsenden</span><span data-lang="en">Submit images</span></a></p>
+          <p class="mt-3"><a class="btn" href="kontakt.html?thema=presse"><span data-lang="de">Bilder einsenden</span><span data-lang="en">Submit images</span><span data-lang="ne">तस्बिर पठाउनुहोस्</span></a></p>
         </div>
         <div class="card card-pad-lg">
-          <h3 class="t-h4"><span data-lang="de">Für Presse und Medien</span><span data-lang="en">For press and media</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Für Presse und Medien</span><span data-lang="en">For press and media</span><span data-lang="ne">प्रेस र सञ्चारमाध्यमका लागि</span></h3>
           <p class="text-sm text-muted mt-2">
             <span data-lang="de">Journalist:innen erhalten auf Anfrage Bildmaterial in Druckauflösung, Hintergrundinformationen zu den Programmen und Interviewtermine mit dem Vorstand.</span>
-            <span data-lang="en">Journalists can request print-resolution image material, background information on the programmes and interview appointments with the board.</span>
+            <span data-lang="en">Journalists can request print-resolution image material, background information on the programmes and interview appointments with the board.</span><span data-lang="ne">पत्रकारहरूले अनुरोध गरेमा छपाइ गुणस्तरका तस्बिर, कार्यक्रमबारे पृष्ठभूमि जानकारी र कार्यसमितिसँग अन्तर्वार्ताको समय उपलब्ध गराइन्छ।</span>
           </p>
           <p class="mt-3 text-sm"><a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a></p>
         </div>

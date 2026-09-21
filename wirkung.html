@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,15 +26,15 @@
   <section class="tile" style="padding-block:clamp(2.5rem,5vw,4.5rem)">
     <div class="container">
       <ol class="breadcrumb" style="justify-content:center">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><span data-lang="de">Wirkung</span><span data-lang="en">Impact</span></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><span data-lang="de">Wirkung</span><span data-lang="en">Impact</span><span data-lang="ne">प्रभाव</span></li>
       </ol>
       <div class="tile-head wide">
-        <span class="tile-eyebrow"><span data-lang="de">Wie wir arbeiten</span><span data-lang="en">How we work</span></span>
-        <h1 class="tile-title-lg"><span data-lang="de">Wir kommen, wir bilden aus —<br>und die Schule macht weiter.</span><span data-lang="en">We come, we train —<br>and the school carries on.</span></h1>
+        <span class="tile-eyebrow"><span data-lang="de">Wie wir arbeiten</span><span data-lang="en">How we work</span><span data-lang="ne">हामी कसरी काम गर्छौं</span></span>
+        <h1 class="tile-title-lg"><span data-lang="de">Wir kommen, wir bilden aus —<br>und die Schule macht weiter.</span><span data-lang="en">We come, we train —<br>and the school carries on.</span><span data-lang="ne">हामी आउँछौँ, तालिम दिन्छौँ —<br>र विद्यालयले निरन्तरता दिन्छ।</span></h1>
         <p class="tile-sub">
           <span data-lang="de">Nachhaltigkeit ist bei uns kein Zusatz, sondern eingebaut. Diese Seite zeigt den vollständigen Weg: von Ihrer Registrierung über das Matching und den Einsatz bis zu dem, was Jahre später noch an der Schule wirkt.</span>
-          <span data-lang="en">Sustainability is not an add-on for us but built in. This page shows the full path: from your registration through matching and deployment to what still works at the school years later.</span>
+          <span data-lang="en">Sustainability is not an add-on for us but built in. This page shows the full path: from your registration through matching and deployment to what still works at the school years later.</span><span data-lang="ne">हाम्रा लागि दिगोपन थपिएको कुरा होइन, सुरुदेखि नै भित्र गाँसिएको हो। यो पृष्ठले पूरा यात्रा देखाउँछ: तपाईंको दर्तादेखि मिलान र परिचालन हुँदै वर्षौँपछि पनि विद्यालयमा के काम गरिरहेको छ भन्नेसम्म।</span>
         </p>
       </div>
     </div>
@@ -42,14 +42,14 @@
 
   <nav class="subnav" aria-label="Abschnitte">
     <div class="container subnav-inner">
-      <span class="subnav-title"><span data-lang="de">Wirkung</span><span data-lang="en">Impact</span></span>
+      <span class="subnav-title"><span data-lang="de">Wirkung</span><span data-lang="en">Impact</span><span data-lang="ne">प्रभाव</span></span>
       <ul class="subnav-links">
-        <li><a href="#ablauf"><span data-lang="de">Ablauf</span><span data-lang="en">Process</span></a></li>
-        <li><a href="#rollen"><span data-lang="de">Wer macht was</span><span data-lang="en">Who does what</span></a></li>
-        <li><a href="#inhalte"><span data-lang="de">Trainingsinhalte</span><span data-lang="en">Training</span></a></li>
-        <li><a href="#zielgruppen"><span data-lang="de">Zielgruppen</span><span data-lang="en">Target groups</span></a></li>
-        <li><a href="#nachhaltigkeit"><span data-lang="de">Nachhaltigkeit</span><span data-lang="en">Sustainability</span></a></li>
-        <li><a href="#zahlen"><span data-lang="de">Zahlen</span><span data-lang="en">Figures</span></a></li>
+        <li><a href="#ablauf"><span data-lang="de">Ablauf</span><span data-lang="en">Process</span><span data-lang="ne">प्रक्रिया</span></a></li>
+        <li><a href="#rollen"><span data-lang="de">Wer macht was</span><span data-lang="en">Who does what</span><span data-lang="ne">कसले के गर्छ</span></a></li>
+        <li><a href="#inhalte"><span data-lang="de">Trainingsinhalte</span><span data-lang="en">Training</span><span data-lang="ne">तालिम</span></a></li>
+        <li><a href="#zielgruppen"><span data-lang="de">Zielgruppen</span><span data-lang="en">Target groups</span><span data-lang="ne">लक्षित समूह</span></a></li>
+        <li><a href="#nachhaltigkeit"><span data-lang="de">Nachhaltigkeit</span><span data-lang="en">Sustainability</span><span data-lang="ne">दिगोपन</span></a></li>
+        <li><a href="#zahlen"><span data-lang="de">Zahlen</span><span data-lang="en">Figures</span><span data-lang="ne">तथ्याङ्क</span></a></li>
       </ul>
     </div>
   </nav>
@@ -58,38 +58,38 @@
   <section class="tile tile-parchment" id="ablauf">
     <div class="container grid grid-2" style="gap:3.5rem;align-items:start">
       <div>
-        <span class="tile-eyebrow"><span data-lang="de">Ablauf</span><span data-lang="en">Process</span></span>
-        <h2 class="tile-title"><span data-lang="de">Von der Registrierung bis zum Zertifikat</span><span data-lang="en">From registration to certificate</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Ablauf</span><span data-lang="en">Process</span><span data-lang="ne">प्रक्रिया</span></span>
+        <h2 class="tile-title"><span data-lang="de">Von der Registrierung bis zum Zertifikat</span><span data-lang="en">From registration to certificate</span><span data-lang="ne">दर्तादेखि प्रमाणपत्रसम्म</span></h2>
         <p class="lead mt-3">
           <span data-lang="de">Fünf Schritte, klar verteilte Verantwortung. Die Registrierung ist kostenlos und unverbindlich — erst beim Matching entscheiden Sie und NPYS-N gemeinsam, ob ein Einsatz zustande kommt.</span>
-          <span data-lang="en">Five steps with clearly divided responsibility. Registration is free and non-binding — only at the matching stage do you and NPYS-N jointly decide whether an assignment goes ahead.</span>
+          <span data-lang="en">Five steps with clearly divided responsibility. Registration is free and non-binding — only at the matching stage do you and NPYS-N jointly decide whether an assignment goes ahead.</span><span data-lang="ne">जिम्मेवारी स्पष्ट बाँडिएका पाँच चरण। दर्ता निःशुल्क र बाध्यकारी हुँदैन — परिचालन हुने कि नहुने भन्ने निर्णय मिलान चरणमा तपाईं र NPYS-N ले संयुक्त रूपमा गर्नुहुन्छ।</span>
         </p>
       </div>
       <ol class="steps">
         <li>
-          <h3 class="t-h4"><span data-lang="de">Online-Registrierung</span><span data-lang="en">Online registration</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Online-Registrierung</span><span data-lang="en">Online registration</span><span data-lang="ne">अनलाइन दर्ता</span></h3>
           <p><span data-lang="de">Sie geben Berufsfeld, Qualifikation, Zertifikate und Verfügbarkeit an. Dauer: wenige Minuten. Kosten: keine. Ein angefangenes Formular wird lokal gespeichert, Sie können jederzeit weitermachen.</span>
-          <span data-lang="en">You state your professional field, qualification, certificates and availability. Duration: a few minutes. Cost: none. A started form is saved locally so you can continue at any time.</span></p>
+          <span data-lang="en">You state your professional field, qualification, certificates and availability. Duration: a few minutes. Cost: none. A started form is saved locally so you can continue at any time.</span><span data-lang="ne">तपाईं आफ्नो पेसागत क्षेत्र, योग्यता, प्रमाणपत्र र उपलब्धता उल्लेख गर्नुहुन्छ। समय: केही मिनेट। खर्च: छैन। सुरु गरिएको फारम स्थानीय रूपमा सुरक्षित हुन्छ, त्यसैले जुनसुकै बेला निरन्तरता दिन सकिन्छ।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Matching durch NPYS-N</span><span data-lang="en">Matching by NPYS-N</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Matching durch NPYS-N</span><span data-lang="en">Matching by NPYS-N</span><span data-lang="ne">NPYS-N द्वारा मिलान</span></h3>
           <p><span data-lang="de">Unser Partner vor Ort kennt den Bedarf der Schulen und ordnet Sie einem Projekt zu, das zu Ihrem Profil passt. Dafür übermitteln wir mit Ihrer Einwilligung die für das Matching nötigen Angaben.</span>
-          <span data-lang="en">Our partner on the ground knows what the schools need and assigns you to a project fitting your profile. With your consent we transmit the details required for matching.</span></p>
+          <span data-lang="en">Our partner on the ground knows what the schools need and assigns you to a project fitting your profile. With your consent we transmit the details required for matching.</span><span data-lang="ne">नेपालमा रहेको हाम्रो साझेदारलाई विद्यालयको आवश्यकता थाहा हुन्छ र उसले तपाईंको प्रोफाइलसँग मिल्ने परियोजनामा तपाईंलाई राख्छ। तपाईंको सहमतिमा हामी मिलानका लागि आवश्यक विवरण पठाउँछौँ।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Briefing rund zwei Wochen vorher</span><span data-lang="en">Briefing about two weeks ahead</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Briefing rund zwei Wochen vorher</span><span data-lang="en">Briefing about two weeks ahead</span><span data-lang="ne">करिब दुई हप्ता अगाडि ब्रिफिङ</span></h3>
           <p><span data-lang="de">Inhalte, Erwartungen, bereitgestelltes Material, Sicherheitshinweise und der Kontakt vor Ort — online oder telefonisch.</span>
-          <span data-lang="en">Content, expectations, materials provided, safety guidance and your local contact — online or by phone.</span></p>
+          <span data-lang="en">Content, expectations, materials provided, safety guidance and your local contact — online or by phone.</span><span data-lang="ne">विषयवस्तु, अपेक्षा, उपलब्ध सामग्री, सुरक्षा निर्देशन र स्थानीय सम्पर्क व्यक्ति — अनलाइन वा फोनमार्फत।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Einsatz vor Ort in Nepal</span><span data-lang="en">Deployment on site in Nepal</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Einsatz vor Ort in Nepal</span><span data-lang="en">Deployment on site in Nepal</span><span data-lang="ne">नेपालमा स्थलगत परिचालन</span></h3>
           <p><span data-lang="de">Mindestens ein Tag. NPYS-N begleitet vor Ort, stellt bei Bedarf Übersetzung und hält den Kontakt zur Gemeinde. Reise und Unterkunft organisieren Volunteers grundsätzlich selbst.</span>
-          <span data-lang="en">At least one day. NPYS-N accompanies you locally, provides translation where needed and maintains contact with the community. Volunteers generally arrange travel and accommodation themselves.</span></p>
+          <span data-lang="en">At least one day. NPYS-N accompanies you locally, provides translation where needed and maintains contact with the community. Volunteers generally arrange travel and accommodation themselves.</span><span data-lang="ne">कम्तीमा एक दिन। NPYS-N ले स्थानीय रूपमा साथ दिन्छ, आवश्यक परे अनुवाद गर्छ र समुदायसँग सम्पर्क राख्छ। यात्रा र बसोबासको व्यवस्था सामान्यतया स्वयंसेवक आफैँले गर्नुहुन्छ।</span></p>
         </li>
         <li>
-          <h3 class="t-h4"><span data-lang="de">Abschlussbericht &amp; Zertifikat</span><span data-lang="en">Final report &amp; certificate</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Abschlussbericht &amp; Zertifikat</span><span data-lang="en">Final report &amp; certificate</span><span data-lang="ne">अन्तिम प्रतिवेदन र प्रमाणपत्र</span></h3>
           <p><span data-lang="de">Ihr Bericht fließt in den jährlichen Transparenzbericht ein. Sie erhalten ein offizielles NPJOE-Zertifikat, das Sie auch für Bewerbungen nutzen können.</span>
-          <span data-lang="en">Your report feeds the annual transparency report. You receive an official NPJOE certificate, which you can also use for job applications.</span></p>
+          <span data-lang="en">Your report feeds the annual transparency report. You receive an official NPJOE certificate, which you can also use for job applications.</span><span data-lang="ne">तपाईंको प्रतिवेदन वार्षिक पारदर्शिता प्रतिवेदनमा समावेश हुन्छ। तपाईंले NPJOE को आधिकारिक प्रमाणपत्र पाउनुहुन्छ, जुन जागिरको आवेदनमा पनि प्रयोग गर्न सक्नुहुन्छ।</span></p>
         </li>
       </ol>
     </div>
@@ -99,48 +99,48 @@
   <section class="tile" id="rollen">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <span class="tile-eyebrow"><span data-lang="de">Partnerschaft auf Augenhöhe</span><span data-lang="en">An equal partnership</span></span>
-        <h2 class="tile-title"><span data-lang="de">Wer macht was</span><span data-lang="en">Who does what</span></h2>
-        <p class="tile-sub"><span data-lang="de">NPJOE mobilisiert und verwaltet; NPYS-N koordiniert und liefert vor Ort. Programmentwicklung, jährliche Evaluation und öffentliche Berichterstattung verantworten beide gemeinsam.</span><span data-lang="en">NPJOE mobilises and manages; NPYS-N coordinates and delivers on the ground. Programme development, annual evaluation and public reporting are jointly owned.</span></p>
+        <span class="tile-eyebrow"><span data-lang="de">Partnerschaft auf Augenhöhe</span><span data-lang="en">An equal partnership</span><span data-lang="ne">समान हैसियतको साझेदारी</span></span>
+        <h2 class="tile-title"><span data-lang="de">Wer macht was</span><span data-lang="en">Who does what</span><span data-lang="ne">कसले के गर्छ</span></h2>
+        <p class="tile-sub"><span data-lang="de">NPJOE mobilisiert und verwaltet; NPYS-N koordiniert und liefert vor Ort. Programmentwicklung, jährliche Evaluation und öffentliche Berichterstattung verantworten beide gemeinsam.</span><span data-lang="en">NPJOE mobilises and manages; NPYS-N coordinates and delivers on the ground. Programme development, annual evaluation and public reporting are jointly owned.</span><span data-lang="ne">NPJOE ले परिचालन र व्यवस्थापन गर्छ; NPYS-N ले स्थलगत समन्वय र कार्यान्वयन गर्छ। कार्यक्रम विकास, वार्षिक मूल्याङ्कन र सार्वजनिक प्रतिवेदन संयुक्त जिम्मेवारी हुन्।</span></p>
       </div>
       <div class="grid grid-3">
         <div class="card card-pad-lg reveal">
           <span class="badge badge-navy mb-2">Deutschland 🇩🇪</span>
           <h3 class="t-h4">NPJOE e.V.</h3>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick">✓</span><span data-lang="de">Volunteer-Rekrutierung weltweit</span><span data-lang="en">Volunteer recruitment worldwide</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Spendenmanagement über das Vereinskonto</span><span data-lang="en">Donation management via the association account</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Öffentlichkeitsarbeit und Förderanträge</span><span data-lang="en">Public relations and funding applications</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Programmsteuerung</span><span data-lang="en">Programme steering</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Zertifizierung der Volunteers</span><span data-lang="en">Certification of volunteers</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Volunteer-Rekrutierung weltweit</span><span data-lang="en">Volunteer recruitment worldwide</span><span data-lang="ne">विश्वभर स्वयंसेवक भर्ना</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Spendenmanagement über das Vereinskonto</span><span data-lang="en">Donation management via the association account</span><span data-lang="ne">संस्थाको खातामार्फत दान व्यवस्थापन</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Öffentlichkeitsarbeit und Förderanträge</span><span data-lang="en">Public relations and funding applications</span><span data-lang="ne">जनसम्पर्क र अनुदान आवेदन</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Programmsteuerung</span><span data-lang="en">Programme steering</span><span data-lang="ne">कार्यक्रम सञ्चालन नेतृत्व</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Zertifizierung der Volunteers</span><span data-lang="en">Certification of volunteers</span><span data-lang="ne">स्वयंसेवकको प्रमाणीकरण</span></li>
           </ul>
         </div>
         <div class="card card-pad-lg reveal" data-delay="80">
           <span class="badge badge-saffron mb-2">Nepal 🇳🇵</span>
           <h3 class="t-h4">NPYS-N</h3>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick">✓</span><span data-lang="de">Auswahl der Schulen</span><span data-lang="en">Selection of schools</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Einsatzkoordination und Begleitung</span><span data-lang="en">Deployment coordination and support</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Verteilung der Materialien</span><span data-lang="en">Distribution of materials</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Kontakt zu Gemeinden und Behörden</span><span data-lang="en">Contact with communities and authorities</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Impactberichte mit Belegen</span><span data-lang="en">Impact reports with documentation</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Auswahl der Schulen</span><span data-lang="en">Selection of schools</span><span data-lang="ne">विद्यालयको छनोट</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Einsatzkoordination und Begleitung</span><span data-lang="en">Deployment coordination and support</span><span data-lang="ne">परिचालन समन्वय र सहयोग</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Verteilung der Materialien</span><span data-lang="en">Distribution of materials</span><span data-lang="ne">सामग्री वितरण</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Kontakt zu Gemeinden und Behörden</span><span data-lang="en">Contact with communities and authorities</span><span data-lang="ne">समुदाय र अधिकारीसँग सम्पर्क</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Impactberichte mit Belegen</span><span data-lang="en">Impact reports with documentation</span><span data-lang="ne">प्रमाणसहितका प्रभाव प्रतिवेदन</span></li>
           </ul>
         </div>
         <div class="card card-pad-lg reveal" data-delay="160">
-          <span class="badge badge-teal mb-2"><span data-lang="de">Sie</span><span data-lang="en">You</span></span>
-          <h3 class="t-h4"><span data-lang="de">Volunteers &amp; Spender:innen</span><span data-lang="en">Volunteers &amp; donors</span></h3>
+          <span class="badge badge-teal mb-2"><span data-lang="de">Sie</span><span data-lang="en">You</span><span data-lang="ne">तपाईं</span></span>
+          <h3 class="t-h4"><span data-lang="de">Volunteers &amp; Spender:innen</span><span data-lang="en">Volunteers &amp; donors</span><span data-lang="ne">स्वयंसेवक र दाता</span></h3>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick">✓</span><span data-lang="de">Beruf, Wissen und Zeit</span><span data-lang="en">Profession, knowledge and time</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Reise, Unterkunft und Versicherung</span><span data-lang="en">Travel, accommodation and insurance</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Abschlussbericht nach dem Einsatz</span><span data-lang="en">Final report after the assignment</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Beiträge und Spenden, die Material finanzieren</span><span data-lang="en">Fees and donations that finance materials</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Beruf, Wissen und Zeit</span><span data-lang="en">Profession, knowledge and time</span><span data-lang="ne">पेसा, ज्ञान र समय</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Reise, Unterkunft und Versicherung</span><span data-lang="en">Travel, accommodation and insurance</span><span data-lang="ne">यात्रा, बसोबास र बिमा</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Abschlussbericht nach dem Einsatz</span><span data-lang="en">Final report after the assignment</span><span data-lang="ne">परिचालनपछिको अन्तिम प्रतिवेदन</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Beiträge und Spenden, die Material finanzieren</span><span data-lang="en">Fees and donations that finance materials</span><span data-lang="ne">सामग्रीमा खर्च जुटाउने शुल्क र दान</span></li>
           </ul>
         </div>
       </div>
       <p class="legal-basis mt-4" style="max-width:52rem;margin-inline:auto">
-        <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span></strong>
-        § 3(f) <span data-lang="de">Kooperation mit lokalen Partnerorganisationen zur Umsetzung von Entwicklungsmaßnahmen</span><span data-lang="en">cooperation with local partner organisations to implement development measures</span> ·
-        § 3(h) <span data-lang="de">Koordination und Vernetzung von Freiwilligen mit gemeinnützigen Einrichtungen</span><span data-lang="en">coordinating and connecting volunteers with charitable institutions</span>
+        <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span><span data-lang="ne">विधानसम्मत आधार:</span></strong>
+        § 3(f) <span data-lang="de">Kooperation mit lokalen Partnerorganisationen zur Umsetzung von Entwicklungsmaßnahmen</span><span data-lang="en">cooperation with local partner organisations to implement development measures</span><span data-lang="ne">विकास कार्यक्रम कार्यान्वयन गर्न स्थानीय साझेदार संस्थासँग सहकार्य</span> ·
+        § 3(h) <span data-lang="de">Koordination und Vernetzung von Freiwilligen mit gemeinnützigen Einrichtungen</span><span data-lang="en">coordinating and connecting volunteers with charitable institutions</span><span data-lang="ne">स्वयंसेवक र परोपकारी संस्थाबीच समन्वय र सम्पर्क</span>
       </p>
     </div>
   </section>
@@ -149,40 +149,40 @@
   <section class="tile tile-dark" id="inhalte">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <span class="tile-eyebrow"><span data-lang="de">Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign</span></span>
-        <h2 class="tile-title"><span data-lang="de">Was in den Kursen gelehrt wird</span><span data-lang="en">What the courses teach</span></h2>
-        <p class="tile-sub"><span data-lang="de">Das Curriculum deckt die Notfälle ab, die in nepalesischen Schulen und Gemeinden tatsächlich auftreten — von der Alltagsverletzung bis zum Erdbeben.</span><span data-lang="en">The curriculum covers the emergencies that actually occur in Nepali schools and communities — from everyday injuries to earthquakes.</span></p>
+        <span class="tile-eyebrow"><span data-lang="de">Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign</span><span data-lang="ne">प्राथमिक उपचार अभियान</span></span>
+        <h2 class="tile-title"><span data-lang="de">Was in den Kursen gelehrt wird</span><span data-lang="en">What the courses teach</span><span data-lang="ne">कक्षाहरूले के सिकाउँछन्</span></h2>
+        <p class="tile-sub"><span data-lang="de">Das Curriculum deckt die Notfälle ab, die in nepalesischen Schulen und Gemeinden tatsächlich auftreten — von der Alltagsverletzung bis zum Erdbeben.</span><span data-lang="en">The curriculum covers the emergencies that actually occur in Nepali schools and communities — from everyday injuries to earthquakes.</span><span data-lang="ne">पाठ्यक्रमले नेपालका विद्यालय र समुदायमा साँच्चै हुने आपत्कालीन अवस्था समेट्छ — दैनिक चोटपटकदेखि भूकम्पसम्म।</span></p>
       </div>
       <div class="grid grid-3">
         <div class="card reveal">
           <div data-icon="bandage" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Wunden &amp; Verbände</span><span data-lang="en">Wounds &amp; bandaging</span></h3>
-          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Grundversorgung von Wunden und Verbandstechniken für den Schulalltag.</span><span data-lang="en">Basic wound care and bandaging techniques for everyday school life.</span></p>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Wunden &amp; Verbände</span><span data-lang="en">Wounds &amp; bandaging</span><span data-lang="ne">घाउ र पट्टी</span></h3>
+          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Grundversorgung von Wunden und Verbandstechniken für den Schulalltag.</span><span data-lang="en">Basic wound care and bandaging techniques for everyday school life.</span><span data-lang="ne">विद्यालयको दैनिक जीवनका लागि आधारभूत घाउ हेरचाह र पट्टी बाँध्ने तरिका।</span></p>
         </div>
         <div class="card reveal" data-delay="60">
           <div class="card-icon" style="background:rgba(255,255,255,.1);color:#fff">❤️</div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">CPR</span><span data-lang="en">CPR</span></h3>
-          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Herz-Lungen-Wiederbelebung für Erwachsene und für Kinder.</span><span data-lang="en">Cardiopulmonary resuscitation for adults and for children.</span></p>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">CPR</span><span data-lang="en">CPR</span><span data-lang="ne">CPR</span></h3>
+          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Herz-Lungen-Wiederbelebung für Erwachsene und für Kinder.</span><span data-lang="en">Cardiopulmonary resuscitation for adults and for children.</span><span data-lang="ne">वयस्क र बालबालिकाका लागि मुटु-फोक्सो पुनर्जीवन।</span></p>
         </div>
         <div class="card reveal" data-delay="120">
           <div data-icon="lungs" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Ersticken</span><span data-lang="en">Choking</span></h3>
-          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Reaktion auf Ersticken und Sicherung der Atemwege.</span><span data-lang="en">Choking response and securing the airway.</span></p>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Ersticken</span><span data-lang="en">Choking</span><span data-lang="ne">घाँटीमा अड्किएको अवस्था</span></h3>
+          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Reaktion auf Ersticken und Sicherung der Atemwege.</span><span data-lang="en">Choking response and securing the airway.</span><span data-lang="ne">घाँटीमा अड्किएको अवस्थाको उपचार र श्वासनली सुरक्षित पार्ने तरिका।</span></p>
         </div>
         <div class="card reveal" data-delay="180">
           <div data-icon="bone" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Verbrennungen &amp; Frakturen</span><span data-lang="en">Burns &amp; fractures</span></h3>
-          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Versorgung und Notfallstabilisierung bis Hilfe eintrifft.</span><span data-lang="en">Care and emergency stabilisation until help arrives.</span></p>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Verbrennungen &amp; Frakturen</span><span data-lang="en">Burns &amp; fractures</span><span data-lang="ne">पोलेको र हाड भाँचिएको</span></h3>
+          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Versorgung und Notfallstabilisierung bis Hilfe eintrifft.</span><span data-lang="en">Care and emergency stabilisation until help arrives.</span><span data-lang="ne">सहयोग नआउँदासम्म हेरचाह र आपत्कालीन स्थिरीकरण।</span></p>
         </div>
         <div class="card reveal" data-delay="240">
           <div data-icon="globe" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Naturkatastrophen</span><span data-lang="en">Natural disasters</span></h3>
-          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Verhalten bei Erdbeben und Überschwemmungen — für Nepal besonders relevant.</span><span data-lang="en">Behaviour during earthquakes and floods — particularly relevant for Nepal.</span></p>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Naturkatastrophen</span><span data-lang="en">Natural disasters</span><span data-lang="ne">प्राकृतिक विपद्</span></h3>
+          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Verhalten bei Erdbeben und Überschwemmungen — für Nepal besonders relevant.</span><span data-lang="en">Behaviour during earthquakes and floods — particularly relevant for Nepal.</span><span data-lang="ne">भूकम्प र बाढीका बेला कसरी व्यवहार गर्ने — नेपालका लागि विशेष महत्त्वपूर्ण।</span></p>
         </div>
         <div class="card reveal" data-delay="300">
           <div data-icon="brain" class="card-icon" style="background:rgba(255,255,255,.1);color:#fff"></div>
-          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Psychologische Erste Hilfe</span><span data-lang="en">Psychological first aid</span></h3>
-          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Beruhigung und Krisenunterstützung — oft der erste und wichtigste Schritt.</span><span data-lang="en">Calming and crisis support — often the first and most important step.</span></p>
+          <h3 class="t-h4" style="color:#f5f5f7"><span data-lang="de">Psychologische Erste Hilfe</span><span data-lang="en">Psychological first aid</span><span data-lang="ne">मनोवैज्ञानिक प्राथमिक उपचार</span></h3>
+          <p class="text-sm" style="color:#a1a1a6"><span data-lang="de">Beruhigung und Krisenunterstützung — oft der erste und wichtigste Schritt.</span><span data-lang="en">Calming and crisis support — often the first and most important step.</span><span data-lang="ne">शान्त पार्ने र सङ्कटमा साथ दिने — प्रायः पहिलो र सबैभन्दा महत्त्वपूर्ण पाइला।</span></p>
         </div>
       </div>
     </div>
@@ -192,29 +192,29 @@
   <section class="tile" id="zielgruppen">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <h2 class="tile-title"><span data-lang="de">Wen die Programme erreichen</span><span data-lang="en">Who the programmes reach</span></h2>
+        <h2 class="tile-title"><span data-lang="de">Wen die Programme erreichen</span><span data-lang="en">Who the programmes reach</span><span data-lang="ne">कार्यक्रमहरू कसकहाँ पुग्छन्</span></h2>
       </div>
       <div class="table-wrap reveal">
         <table class="data">
           <thead>
             <tr>
-              <th><span data-lang="de">Zielgruppe</span><span data-lang="en">Target group</span></th>
-              <th><span data-lang="de">Was sie erhalten</span><span data-lang="en">What they receive</span></th>
+              <th><span data-lang="de">Zielgruppe</span><span data-lang="en">Target group</span><span data-lang="ne">लक्षित समूह</span></th>
+              <th><span data-lang="de">Was sie erhalten</span><span data-lang="en">What they receive</span><span data-lang="ne">उहाँहरूले के पाउनुहुन्छ</span></th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong><span data-lang="de">Schüler:innen Klassen 9–12</span><span data-lang="en">Students grades 9–12</span></strong></td>
-                <td><span data-lang="de">Zertifizierte Erste-Hilfe-Ausbildung; sie werden zu Ersthelfer:innen ihrer Schule und Gemeinde und später zu Mentor:innen für die nächste Klasse.</span><span data-lang="en">Certified first aid training; they become first responders for their school and community and later mentors for the next class.</span></td></tr>
-            <tr><td><strong><span data-lang="de">Lehrpersonal</span><span data-lang="en">Teaching staff</span></strong></td>
-                <td><span data-lang="de">Train-the-Trainer-Ausbildung — sie führen die Kurse künftig eigenständig durch, auch wenn kein Volunteer-Team vor Ort ist.</span><span data-lang="en">Train-the-trainer qualification — they run the courses independently in future, even when no volunteer team is present.</span></td></tr>
-            <tr><td><strong><span data-lang="de">Schulpersonal allgemein</span><span data-lang="en">School staff generally</span></strong></td>
-                <td><span data-lang="de">Grundkenntnisse der Ersten Hilfe für alle Mitarbeitenden der Schule.</span><span data-lang="en">Basic first aid knowledge for all school employees.</span></td></tr>
-            <tr><td><strong><span data-lang="de">Gemeinde</span><span data-lang="en">Community</span></strong></td>
-                <td><span data-lang="de">Kostenfreie Gesundheitscamps mit Grunduntersuchungen, wenn medizinische Volunteers verfügbar sind (§ 3e).</span><span data-lang="en">Free health camps with basic check-ups when medical volunteers are available (§ 3e).</span></td></tr>
-            <tr><td><strong><span data-lang="de">Jugendliche in Deutschland</span><span data-lang="en">Young people in Germany</span></strong></td>
-                <td><span data-lang="de">Seminare zu Visum, Ausbildung, Studium, Sprache und Integration; Sport-, Freizeit- und Kulturangebote (§ 3a, § 3b, § 3g).</span><span data-lang="en">Seminars on visas, training, study, language and integration; sports, leisure and cultural activities (§ 3a, § 3b, § 3g).</span></td></tr>
-            <tr><td><strong><span data-lang="de">Bedürftige Personen</span><span data-lang="en">People in need</span></strong></td>
-                <td><span data-lang="de">Hilfs- und Unterrichtsmaterialien, Hygienekits und medizinische Sachspenden; die Hilfsbedürftigkeit wird durch geeignete Nachweise dokumentiert (§ 3i, § 53 AO).</span><span data-lang="en">Aid and teaching materials, hygiene kits and medical in-kind donations; neediness is documented by suitable evidence (§ 3i, § 53 AO).</span></td></tr>
+            <tr><td><strong><span data-lang="de">Schüler:innen Klassen 9–12</span><span data-lang="en">Students grades 9–12</span><span data-lang="ne">कक्षा ९–१२ का विद्यार्थी</span></strong></td>
+                <td><span data-lang="de">Zertifizierte Erste-Hilfe-Ausbildung; sie werden zu Ersthelfer:innen ihrer Schule und Gemeinde und später zu Mentor:innen für die nächste Klasse.</span><span data-lang="en">Certified first aid training; they become first responders for their school and community and later mentors for the next class.</span><span data-lang="ne">प्रमाणित प्राथमिक उपचार तालिम; उनीहरू आफ्नो विद्यालय र समुदायका प्रथम उद्धारकर्ता र पछि अर्को कक्षाका मार्गदर्शक बन्छन्।</span></td></tr>
+            <tr><td><strong><span data-lang="de">Lehrpersonal</span><span data-lang="en">Teaching staff</span><span data-lang="ne">शिक्षक</span></strong></td>
+                <td><span data-lang="de">Train-the-Trainer-Ausbildung — sie führen die Kurse künftig eigenständig durch, auch wenn kein Volunteer-Team vor Ort ist.</span><span data-lang="en">Train-the-trainer qualification — they run the courses independently in future, even when no volunteer team is present.</span><span data-lang="ne">प्रशिक्षक तयार पार्ने योग्यता — भविष्यमा स्वयंसेवक टोली नभए पनि उनीहरू आफैँ कक्षा सञ्चालन गर्छन्।</span></td></tr>
+            <tr><td><strong><span data-lang="de">Schulpersonal allgemein</span><span data-lang="en">School staff generally</span><span data-lang="ne">विद्यालयका अन्य कर्मचारी</span></strong></td>
+                <td><span data-lang="de">Grundkenntnisse der Ersten Hilfe für alle Mitarbeitenden der Schule.</span><span data-lang="en">Basic first aid knowledge for all school employees.</span><span data-lang="ne">विद्यालयका सबै कर्मचारीका लागि आधारभूत प्राथमिक उपचार ज्ञान।</span></td></tr>
+            <tr><td><strong><span data-lang="de">Gemeinde</span><span data-lang="en">Community</span><span data-lang="ne">समुदाय</span></strong></td>
+                <td><span data-lang="de">Kostenfreie Gesundheitscamps mit Grunduntersuchungen, wenn medizinische Volunteers verfügbar sind (§ 3e).</span><span data-lang="en">Free health camps with basic check-ups when medical volunteers are available (§ 3e).</span><span data-lang="ne">स्वास्थ्यकर्मी स्वयंसेवक उपलब्ध हुँदा आधारभूत जाँचसहितका निःशुल्क स्वास्थ्य शिविर (§ ३ङ)।</span></td></tr>
+            <tr><td><strong><span data-lang="de">Jugendliche in Deutschland</span><span data-lang="en">Young people in Germany</span><span data-lang="ne">जर्मनीमा रहेका युवा</span></strong></td>
+                <td><span data-lang="de">Seminare zu Visum, Ausbildung, Studium, Sprache und Integration; Sport-, Freizeit- und Kulturangebote (§ 3a, § 3b, § 3g).</span><span data-lang="en">Seminars on visas, training, study, language and integration; sports, leisure and cultural activities (§ 3a, § 3b, § 3g).</span><span data-lang="ne">भिसा, तालिम, अध्ययन, भाषा र एकीकरणसम्बन्धी सेमिनार; खेलकुद, मनोरञ्जन र सांस्कृतिक गतिविधि (§ ३क, § ३ख, § ३छ)।</span></td></tr>
+            <tr><td><strong><span data-lang="de">Bedürftige Personen</span><span data-lang="en">People in need</span><span data-lang="ne">खाँचोमा परेका व्यक्ति</span></strong></td>
+                <td><span data-lang="de">Hilfs- und Unterrichtsmaterialien, Hygienekits und medizinische Sachspenden; die Hilfsbedürftigkeit wird durch geeignete Nachweise dokumentiert (§ 3i, § 53 AO).</span><span data-lang="en">Aid and teaching materials, hygiene kits and medical in-kind donations; neediness is documented by suitable evidence (§ 3i, § 53 AO).</span><span data-lang="ne">राहत तथा शैक्षिक सामग्री, सरसफाइ किट र स्वास्थ्यसम्बन्धी वस्तुगत सहयोग; आवश्यकता उपयुक्त प्रमाणबाट पुष्टि गरिन्छ (§ ३झ, AO § ५३)।</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -225,16 +225,16 @@
   <section class="tile tile-parchment" id="nachhaltigkeit">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <span class="tile-eyebrow"><span data-lang="de">Nachhaltigkeit</span><span data-lang="en">Sustainability</span></span>
-        <h2 class="tile-title"><span data-lang="de">Sechs Mechanismen, die nach dem Einsatz weiterwirken</span><span data-lang="en">Six mechanisms that keep working after the assignment</span></h2>
+        <span class="tile-eyebrow"><span data-lang="de">Nachhaltigkeit</span><span data-lang="en">Sustainability</span><span data-lang="ne">दिगोपन</span></span>
+        <h2 class="tile-title"><span data-lang="de">Sechs Mechanismen, die nach dem Einsatz weiterwirken</span><span data-lang="en">Six mechanisms that keep working after the assignment</span><span data-lang="ne">परिचालनपछि पनि काम गरिरहने छ संयन्त्र</span></h2>
       </div>
       <div class="grid grid-3">
-        <div class="card card-hover reveal"><div data-icon="education" class="card-icon"></div><h3 class="t-h4"><span data-lang="de">Train-the-Trainer</span><span data-lang="en">Train-the-trainer</span></h3><p class="text-sm text-muted"><span data-lang="de">Lehrkräfte werden zu zertifizierten Erste-Hilfe-Trainer:innen ausgebildet.</span><span data-lang="en">Teachers are trained as certified first aid instructors.</span></p></div>
-        <div class="card card-hover reveal" data-delay="60"><div class="card-icon navy">🇳🇵</div><h3 class="t-h4"><span data-lang="de">Lokale Eigenverantwortung</span><span data-lang="en">Local ownership</span></h3><p class="text-sm text-muted"><span data-lang="de">NPYS-N führt die Programme eigenständig weiter.</span><span data-lang="en">NPYS-N continues the programmes independently.</span></p></div>
-        <div class="card card-hover reveal" data-delay="120"><div data-icon="cycle" class="card-icon saffron"></div><h3 class="t-h4"><span data-lang="de">Jährliche Auffrischung</span><span data-lang="en">Annual refreshers</span></h3><p class="text-sm text-muted"><span data-lang="de">Jede Schule wird jährlich zur Nachschulung besucht.</span><span data-lang="en">Every school is revisited annually for refresher training.</span></p></div>
-        <div class="card card-hover reveal" data-delay="180"><div data-icon="book" class="card-icon teal"></div><h3 class="t-h4"><span data-lang="de">Alles auf Nepali</span><span data-lang="en">Everything in Nepali</span></h3><p class="text-sm text-muted"><span data-lang="de">Sämtliche Materialien liegen auf Nepali vor — keine Sprachbarriere.</span><span data-lang="en">All materials exist in Nepali — no language barrier.</span></p></div>
-        <div class="card card-hover reveal" data-delay="240"><div data-icon="chart" class="card-icon"></div><h3 class="t-h4"><span data-lang="de">Impact-Berichte</span><span data-lang="en">Impact reports</span></h3><p class="text-sm text-muted"><span data-lang="de">Jährliche öffentliche Berichte über Wirkung und Mittelverwendung.</span><span data-lang="en">Annual public reports on outcomes and use of funds.</span></p></div>
-        <div class="card card-hover reveal" data-delay="300"><div data-icon="environment" class="card-icon navy"></div><h3 class="t-h4"><span data-lang="de">Mentor:innen-Netzwerk</span><span data-lang="en">Mentor network</span></h3><p class="text-sm text-muted"><span data-lang="de">Ausgebildete Schüler:innen begleiten die nächste Generation.</span><span data-lang="en">Trained students accompany the next generation.</span></p></div>
+        <div class="card card-hover reveal"><div data-icon="education" class="card-icon"></div><h3 class="t-h4"><span data-lang="de">Train-the-Trainer</span><span data-lang="en">Train-the-trainer</span><span data-lang="ne">प्रशिक्षक तयार पार्ने प्रणाली</span></h3><p class="text-sm text-muted"><span data-lang="de">Lehrkräfte werden zu zertifizierten Erste-Hilfe-Trainer:innen ausgebildet.</span><span data-lang="en">Teachers are trained as certified first aid instructors.</span><span data-lang="ne">शिक्षकलाई प्रमाणित प्राथमिक उपचार प्रशिक्षकका रूपमा तालिम दिइन्छ।</span></p></div>
+        <div class="card card-hover reveal" data-delay="60"><div class="card-icon navy">🇳🇵</div><h3 class="t-h4"><span data-lang="de">Lokale Eigenverantwortung</span><span data-lang="en">Local ownership</span><span data-lang="ne">स्थानीय अपनत्व</span></h3><p class="text-sm text-muted"><span data-lang="de">NPYS-N führt die Programme eigenständig weiter.</span><span data-lang="en">NPYS-N continues the programmes independently.</span><span data-lang="ne">NPYS-N ले कार्यक्रम स्वतन्त्र रूपमा निरन्तर चलाउँछ।</span></p></div>
+        <div class="card card-hover reveal" data-delay="120"><div data-icon="cycle" class="card-icon saffron"></div><h3 class="t-h4"><span data-lang="de">Jährliche Auffrischung</span><span data-lang="en">Annual refreshers</span><span data-lang="ne">वार्षिक पुनर्ताजगी</span></h3><p class="text-sm text-muted"><span data-lang="de">Jede Schule wird jährlich zur Nachschulung besucht.</span><span data-lang="en">Every school is revisited annually for refresher training.</span><span data-lang="ne">पुनर्ताजगी तालिमका लागि हरेक विद्यालयमा वार्षिक रूपमा फेरि जाइन्छ।</span></p></div>
+        <div class="card card-hover reveal" data-delay="180"><div data-icon="book" class="card-icon teal"></div><h3 class="t-h4"><span data-lang="de">Alles auf Nepali</span><span data-lang="en">Everything in Nepali</span><span data-lang="ne">सबै कुरा नेपालीमा</span></h3><p class="text-sm text-muted"><span data-lang="de">Sämtliche Materialien liegen auf Nepali vor — keine Sprachbarriere.</span><span data-lang="en">All materials exist in Nepali — no language barrier.</span><span data-lang="ne">सबै सामग्री नेपालीमा उपलब्ध छन् — भाषाको अवरोध छैन।</span></p></div>
+        <div class="card card-hover reveal" data-delay="240"><div data-icon="chart" class="card-icon"></div><h3 class="t-h4"><span data-lang="de">Impact-Berichte</span><span data-lang="en">Impact reports</span><span data-lang="ne">प्रभाव प्रतिवेदन</span></h3><p class="text-sm text-muted"><span data-lang="de">Jährliche öffentliche Berichte über Wirkung und Mittelverwendung.</span><span data-lang="en">Annual public reports on outcomes and use of funds.</span><span data-lang="ne">नतिजा र रकमको प्रयोगबारे वार्षिक सार्वजनिक प्रतिवेदन।</span></p></div>
+        <div class="card card-hover reveal" data-delay="300"><div data-icon="environment" class="card-icon navy"></div><h3 class="t-h4"><span data-lang="de">Mentor:innen-Netzwerk</span><span data-lang="en">Mentor network</span><span data-lang="ne">मार्गदर्शक सञ्जाल</span></h3><p class="text-sm text-muted"><span data-lang="de">Ausgebildete Schüler:innen begleiten die nächste Generation.</span><span data-lang="en">Trained students accompany the next generation.</span><span data-lang="ne">तालिम पाएका विद्यार्थीले अर्को पुस्तालाई साथ दिन्छन्।</span></p></div>
       </div>
     </div>
   </section>
@@ -243,20 +243,20 @@
   <section class="tile" id="zahlen">
     <div class="container">
       <div class="tile-head wide mb-4">
-        <h2 class="tile-title"><span data-lang="de">Der Stand heute</span><span data-lang="en">Where we stand today</span></h2>
-        <p class="tile-sub"><span data-lang="de">Stand August 2026. Verbindlich sind die geprüften Berichte, die der Mitgliederversammlung vorgelegt werden.</span><span data-lang="en">As of August 2026. Binding are the audited reports presented to the general meeting.</span></p>
+        <h2 class="tile-title"><span data-lang="de">Der Stand heute</span><span data-lang="en">Where we stand today</span><span data-lang="ne">हामी आज कहाँ छौँ</span></h2>
+        <p class="tile-sub"><span data-lang="de">Stand August 2026. Verbindlich sind die geprüften Berichte, die der Mitgliederversammlung vorgelegt werden.</span><span data-lang="en">As of August 2026. Binding are the audited reports presented to the general meeting.</span><span data-lang="ne">अगस्ट २०२६ सम्मको अवस्था। बाध्यकारी भने साधारण सभामा पेस गरिएका लेखापरीक्षित प्रतिवेदन नै हुन्।</span></p>
       </div>
       <div class="stats">
-        <div class="stat reveal"><div class="stat-num" data-count="12" data-figure="schoolsReached"></div><div class="stat-label"><span data-lang="de">Partnerschulen</span><span data-lang="en">Partner schools</span></div></div>
-        <div class="stat reveal" data-delay="70"><div class="stat-num" data-count="1450" data-figure="studentsTrained" data-suffix="+"></div><div class="stat-label"><span data-lang="de">Geschulte Schüler:innen</span><span data-lang="en">Students trained</span></div></div>
-        <div class="stat reveal" data-delay="140"><div class="stat-num" data-count="68" data-figure="teachersCertified"></div><div class="stat-label"><span data-lang="de">Zertifizierte Lehrkräfte</span><span data-lang="en">Certified teachers</span></div></div>
-        <div class="stat reveal" data-delay="210"><div class="stat-num" data-count="214" data-figure="volunteers"></div><div class="stat-label"><span data-lang="de">Registrierte Volunteers</span><span data-lang="en">Registered volunteers</span></div></div>
-        <div class="stat reveal" data-delay="280"><div class="stat-num" data-count="17" data-figure="countries"></div><div class="stat-label"><span data-lang="de">Länder</span><span data-lang="en">Countries</span></div></div>
-        <div class="stat reveal" data-delay="350"><div class="stat-num" data-count="341"></div><div class="stat-label"><span data-lang="de">Spender:innen</span><span data-lang="en">Donors</span></div></div>
+        <div class="stat reveal"><div class="stat-num" data-count="12" data-figure="schoolsReached"></div><div class="stat-label"><span data-lang="de">Partnerschulen</span><span data-lang="en">Partner schools</span><span data-lang="ne">साझेदार विद्यालय</span></div></div>
+        <div class="stat reveal" data-delay="70"><div class="stat-num" data-count="1450" data-figure="studentsTrained" data-suffix="+"></div><div class="stat-label"><span data-lang="de">Geschulte Schüler:innen</span><span data-lang="en">Students trained</span><span data-lang="ne">तालिम पाएका विद्यार्थी</span></div></div>
+        <div class="stat reveal" data-delay="140"><div class="stat-num" data-count="68" data-figure="teachersCertified"></div><div class="stat-label"><span data-lang="de">Zertifizierte Lehrkräfte</span><span data-lang="en">Certified teachers</span><span data-lang="ne">प्रमाणित शिक्षक</span></div></div>
+        <div class="stat reveal" data-delay="210"><div class="stat-num" data-count="214" data-figure="volunteers"></div><div class="stat-label"><span data-lang="de">Registrierte Volunteers</span><span data-lang="en">Registered volunteers</span><span data-lang="ne">दर्ता भएका स्वयंसेवक</span></div></div>
+        <div class="stat reveal" data-delay="280"><div class="stat-num" data-count="17" data-figure="countries"></div><div class="stat-label"><span data-lang="de">Länder</span><span data-lang="en">Countries</span><span data-lang="ne">देश</span></div></div>
+        <div class="stat reveal" data-delay="350"><div class="stat-num" data-count="341"></div><div class="stat-label"><span data-lang="de">Spender:innen</span><span data-lang="en">Donors</span><span data-lang="ne">दाता</span></div></div>
       </div>
       <div class="tile-actions mt-6">
-        <a class="clink" href="transparenz.html"><span data-lang="de">Mittelherkunft und -verwendung</span><span data-lang="en">Where funds come from and go</span></a>
-        <a class="clink" href="volunteer.html"><span data-lang="de">Als Volunteer registrieren</span><span data-lang="en">Register as a volunteer</span></a>
+        <a class="clink" href="transparenz.html"><span data-lang="de">Mittelherkunft und -verwendung</span><span data-lang="en">Where funds come from and go</span><span data-lang="ne">रकम कहाँबाट आउँछ र कहाँ जान्छ</span></a>
+        <a class="clink" href="volunteer.html"><span data-lang="de">Als Volunteer registrieren</span><span data-lang="en">Register as a volunteer</span><span data-lang="ne">स्वयंसेवकका रूपमा दर्ता गर्नुहोस्</span></a>
       </div>
     </div>
   </section>

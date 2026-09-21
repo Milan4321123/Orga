@@ -8,25 +8,25 @@
 
   var CFG = (window.NPJOE && window.NPJOE.forms) || { mode: "auto", apiBase: "/api" };
   var ORG = (window.NPJOE && window.NPJOE.org) || {};
-  var T = function (de, en) { return (window.npjoeT ? window.npjoeT(de, en) : de); };
+  var T = function (de, en, ne) { return (window.npjoeT ? window.npjoeT(de, en, ne) : de); };
 
   /* ------------------------------------------------------------ Validation */
   var RULES = {
     email: {
       test: function (v) { return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(v); },
-      msg: ["Bitte eine gültige E-Mail-Adresse angeben.", "Please enter a valid e-mail address."]
+      msg: ["Bitte eine gültige E-Mail-Adresse angeben.", "Please enter a valid e-mail address.", "कृपया मान्य इमेल ठेगाना लेख्नुहोस्।"]
     },
     tel: {
       test: function (v) { return /^[+0-9()\/.\-\s]{6,25}$/.test(v); },
-      msg: ["Bitte eine gültige Telefonnummer angeben.", "Please enter a valid phone number."]
+      msg: ["Bitte eine gültige Telefonnummer angeben.", "Please enter a valid phone number.", "कृपया मान्य फोन नम्बर लेख्नुहोस्।"]
     },
     zip: {
       test: function (v) { return /^[0-9A-Za-z\- ]{3,10}$/.test(v); },
-      msg: ["Bitte eine gültige Postleitzahl angeben.", "Please enter a valid postal code."]
+      msg: ["Bitte eine gültige Postleitzahl angeben.", "Please enter a valid postal code.", "कृपया मान्य हुलाक कोड लेख्नुहोस्।"]
     },
     iban: {
       test: function (v) { return !v || /^[A-Z]{2}[0-9]{2}[A-Z0-9 ]{8,32}$/.test(v.toUpperCase().replace(/\s+/g, " ").trim()); },
-      msg: ["Bitte eine gültige IBAN angeben.", "Please enter a valid IBAN."]
+      msg: ["Bitte eine gültige IBAN angeben.", "Please enter a valid IBAN.", "कृपया मान्य IBAN लेख्नुहोस्।"]
     },
     minage: {
       test: function (v, el) {
@@ -40,7 +40,7 @@
         if (m < 0 || (m === 0 && now.getDate() < b.getDate())) age--;
         return age >= min && age < 120;
       },
-      msg: ["Bitte ein gültiges Geburtsdatum angeben (Mindestalter beachten).", "Please enter a valid date of birth (note the minimum age)."]
+      msg: ["Bitte ein gültiges Geburtsdatum angeben (Mindestalter beachten).", "Please enter a valid date of birth (note the minimum age).", "कृपया मान्य जन्ममिति लेख्नुहोस् (न्यूनतम उमेर ध्यान दिनुहोस्)।"]
     }
   };
 
@@ -73,13 +73,13 @@
     var required = field.hasAttribute("required");
 
     if (field.type === "checkbox" && required && !field.checked) {
-      setError(field, T("Bitte bestätigen, um fortzufahren.", "Please confirm to continue."));
+      setError(field, T("Bitte bestätigen, um fortzufahren.", "Please confirm to continue.", "अगाडि बढ्न कृपया पुष्टि गर्नुहोस्।"));
       return false;
     }
     if (field.type === "checkbox") { setError(field, ""); return true; }
 
     if (required && !val) {
-      setError(field, T("Dieses Feld ist erforderlich.", "This field is required."));
+      setError(field, T("Dieses Feld ist erforderlich.", "This field is required.", "यो महल अनिवार्य छ।"));
       return false;
     }
     if (!val) { setError(field, ""); return true; }
@@ -88,12 +88,12 @@
     if (!rule && field.type === "email") rule = "email";
     if (!rule && field.type === "tel") rule = "tel";
     if (rule && RULES[rule] && !RULES[rule].test(val, field)) {
-      setError(field, T(RULES[rule].msg[0], RULES[rule].msg[1]));
+      setError(field, T(RULES[rule].msg[0], RULES[rule].msg[1], RULES[rule].msg[2]));
       return false;
     }
     var min = parseInt(field.getAttribute("minlength") || "0", 10);
     if (min && val.length < min) {
-      setError(field, T("Bitte mindestens " + min + " Zeichen eingeben.", "Please enter at least " + min + " characters."));
+      setError(field, T("Bitte mindestens " + min + " Zeichen eingeben.", "Please enter at least " + min + " characters.", "कृपया कम्तीमा " + min + " अक्षर लेख्नुहोस्।"));
       return false;
     }
     setError(field, "");
@@ -117,7 +117,7 @@
       })();
       if (checked < min) {
         ok = false;
-        node.textContent = T("Bitte mindestens " + min + " Option auswählen.", "Please select at least " + min + " option.");
+        node.textContent = T("Bitte mindestens " + min + " Option auswählen.", "Please select at least " + min + " option.", "कृपया कम्तीमा " + min + " विकल्प छान्नुहोस्।");
         if (!first) first = group;
       } else { node.textContent = ""; }
     });
@@ -168,10 +168,10 @@
       if (k.charAt(0) === "_") return;
       var v = data[k];
       if (Array.isArray(v)) v = v.join(", ");
-      if (v === true) v = T("Ja", "Yes");
-      if (v === false) v = T("Nein", "No");
+      if (v === true) v = T("Ja", "Yes", "हो");
+      if (v === false) v = T("Nein", "No", "होइन");
       if (v === "" || v === undefined || v === null) return;
-      if (String(v).indexOf("data:image") === 0) v = T("[Unterschrift erfasst]", "[signature captured]");
+      if (String(v).indexOf("data:image") === 0) v = T("[Unterschrift erfasst]", "[signature captured]", "[हस्ताक्षर लिइयो]");
       lines.push(labelFor(form, k) + ": " + v);
     });
     return lines.join("\n");
@@ -356,11 +356,11 @@
       if (k.charAt(0) === "_" || k === "signature") return;
       var v = data[k];
       if (Array.isArray(v)) v = v.join(", ");
-      if (v === true) v = T("Ja", "Yes");
+      if (v === true) v = T("Ja", "Yes", "हो");
       if (v === false || v === "" || v === undefined) return;
       html += '<div class="review-row"><dt>' + labelFor(form, k) + "</dt><dd>" + String(v).replace(/[<>]/g, "") + "</dd></div>";
     });
-    target.innerHTML = html || '<p class="text-muted">' + T("Noch keine Angaben.", "No entries yet.") + "</p>";
+    target.innerHTML = html || '<p class="text-muted">' + T("Noch keine Angaben.", "No entries yet.", "अहिलेसम्म कुनै विवरण छैन।") + "</p>";
   }
 
   /* ------------------------------------------------------------- Submitting */
@@ -388,10 +388,11 @@
     /* The server says whether it really posted a confirmation. Promising an
        e-mail that was never sent is worse than promising nothing. */
     var mailed = !!(res && res.acknowledged);
-    var arrived = T("Ihre Angaben sind bei uns eingegangen.", "Your details have reached us.") +
+    var arrived = T("Ihre Angaben sind bei uns eingegangen.", "Your details have reached us.", "तपाईंको विवरण हामीकहाँ आइपुग्यो।") +
       (mailed
         ? " " + T("Eine Eingangsbestätigung mit Ihrer Referenz ist unterwegs an Ihre E-Mail-Adresse — bitte sehen Sie auch im Spam-Ordner nach.",
-                  "A confirmation carrying your reference is on its way to your e-mail address — please also check your spam folder.")
+                  "A confirmation carrying your reference is on its way to your e-mail address — please also check your spam folder.",
+      "तपाईंको सन्दर्भ नम्बरसहितको पुष्टि तपाईंको इमेल ठेगानामा आउँदै छ — कृपया स्प्याम फोल्डर पनि हेर्नुहोस्।")
         : "");
     if (panel) {
       var refSlot = panel.querySelector("[data-ref]");
@@ -401,7 +402,8 @@
         note.innerHTML = viaApi
           ? arrived
           : T("Ihre Angaben wurden als Datei gespeichert und Ihr E-Mail-Programm geöffnet — bitte die E-Mail noch absenden.",
-              "Your details were saved as a file and your mail client opened — please still send the e-mail.");
+              "Your details were saved as a file and your mail client opened — please still send the e-mail.",
+      "तपाईंको विवरण फाइलका रूपमा सुरक्षित भयो र मेल क्लाइन्ट खुल्यो — कृपया इमेल पठाउन नबिर्सनुहोस्।");
       }
       form.classList.add("hide");
       panel.classList.remove("hide");
@@ -410,8 +412,8 @@
       try { panel.focus({ preventScroll: true }); } catch (e) {}
     } else if (status) {
       status.className = "form-status ok is-visible";
-      status.textContent = T("Vielen Dank! Ihre Nachricht ist eingegangen. Referenz: ", "Thank you! Your message was received. Reference: ") + ref +
-        (mailed ? " · " + T("Eine Bestätigung ist per E-Mail unterwegs.", "A confirmation is on its way by e-mail.") : "");
+      status.textContent = T("Vielen Dank! Ihre Nachricht ist eingegangen. Referenz: ", "Thank you! Your message was received. Reference: ", "धन्यवाद! तपाईंको सन्देश प्राप्त भयो। सन्दर्भ: ") + ref +
+        (mailed ? " · " + T("Eine Bestätigung ist per E-Mail unterwegs.", "A confirmation is on its way by e-mail.", "पुष्टि इमेलबाट आउँदै छ।") : "");
     }
   }
 
@@ -428,7 +430,7 @@
     function showFieldError() {
       if (status) {
         status.className = "form-status err is-visible";
-        status.textContent = T("Bitte prüfen Sie die markierten Felder.", "Please check the highlighted fields.");
+        status.textContent = T("Bitte prüfen Sie die markierten Felder.", "Please check the highlighted fields.", "कृपया चिन्ह लगाइएका महल जाँच्नुहोस्।");
       }
     }
 
@@ -459,7 +461,7 @@
 
     saveLocal(type, payload);
 
-    var busyLabel = T("Wird gesendet …", "Sending …");
+    var busyLabel = T("Wird gesendet …", "Sending …", "पठाउँदै …");
     var original = submitBtn ? submitBtn.innerHTML : "";
     if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = busyLabel; }
     if (status) { status.className = "form-status info is-visible"; status.textContent = busyLabel; }
@@ -496,21 +498,24 @@
               var fields = (err.body && err.body.fields) || [];
               fields.forEach(function (name) {
                 var f = form.querySelector('[name="' + name + '"]');
-                if (f) setError(f, T("Bitte prüfen Sie diese Angabe.", "Please check this entry."));
+                if (f) setError(f, T("Bitte prüfen Sie diese Angabe.", "Please check this entry.", "कृपया यो विवरण जाँच्नुहोस्।"));
               });
               status.textContent = T(
                 "Einige Angaben konnten nicht angenommen werden: ",
-                "Some entries could not be accepted: "
+                "Some entries could not be accepted: ",
+      "केही प्रविष्टि स्वीकार गर्न सकिएन: "
               ) + fields.map(function (n) { return labelFor(form, n); }).join(", ");
             } else if (err && err.status === 429) {
               status.textContent = T(
                 "Zu viele Einsendungen in kurzer Zeit. Bitte versuchen Sie es später erneut.",
-                "Too many submissions in a short time. Please try again later."
+                "Too many submissions in a short time. Please try again later.",
+      "छोटो समयमा धेरै पटक पठाइयो। कृपया पछि फेरि प्रयास गर्नुहोस्।"
               );
             } else {
               status.textContent = T(
                 "Senden fehlgeschlagen. Bitte später erneut versuchen oder schreiben Sie an " + (ORG.email || ""),
-                "Sending failed. Please try again later or write to " + (ORG.email || "")
+                "Sending failed. Please try again later or write to " + (ORG.email || ""),
+                "पठाउन सकिएन। कृपया पछि फेरि प्रयास गर्नुहोस् वा यहाँ लेख्नुहोस्: " + (ORG.email || "")
               );
             }
           }
@@ -526,7 +531,7 @@
       e.preventDefault();
       var input = form.querySelector('input[type="email"]');
       if (!input || !RULES.email.test(input.value.trim())) {
-        window.npjoeToast(T("Bitte eine gültige E-Mail-Adresse eingeben.", "Please enter a valid e-mail address."), "err");
+        window.npjoeToast(T("Bitte eine gültige E-Mail-Adresse eingeben.", "Please enter a valid e-mail address.", "कृपया मान्य इमेल ठेगाना लेख्नुहोस्।"), "err");
         return;
       }
       var payload = {
@@ -542,8 +547,9 @@
         window.npjoeToast(
           res && res.acknowledged
             ? T("Fast geschafft: Bitte bestätigen Sie die Anmeldung über den Link in unserer E-Mail.",
-                "Almost done: please confirm your subscription using the link in our e-mail.")
-            : T("Danke! Sie sind für den Newsletter vorgemerkt.", "Thank you! You are signed up for the newsletter."),
+                "Almost done: please confirm your subscription using the link in our e-mail.",
+      "झन्डै सकियो: कृपया हाम्रो इमेलको लिङ्कबाट आफ्नो सदस्यता पुष्टि गर्नुहोस्।")
+            : T("Danke! Sie sind für den Newsletter vorgemerkt.", "Thank you! You are signed up for the newsletter.", "धन्यवाद! तपाईं न्यूजलेटरका लागि दर्ता हुनुभयो।"),
           "ok");
         form.reset();
       };
@@ -601,7 +607,7 @@
         var discard = note.querySelector("[data-draft-discard]");
         if (discard) discard.addEventListener("click", function () {
           clearDraft(form); form.reset(); note.classList.add("hide");
-          window.npjoeToast(T("Entwurf verworfen.", "Draft discarded."), "ok");
+          window.npjoeToast(T("Entwurf verworfen.", "Draft discarded.", "अधुरो विवरण हटाइयो।"), "ok");
         });
       }
     }

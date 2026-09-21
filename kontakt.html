@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,14 +26,14 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span><span data-lang="ne">सम्पर्क</span></li>
       </ol>
-      <span class="eyebrow"><span data-lang="de">Wir hören zu</span><span data-lang="en">We're listening</span></span>
-      <h1><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span></h1>
+      <span class="eyebrow"><span data-lang="de">Wir hören zu</span><span data-lang="en">We're listening</span><span data-lang="ne">हामी सुनिरहेका छौँ</span></span>
+      <h1><span data-lang="de">Kontakt</span><span data-lang="en">Contact</span><span data-lang="ne">सम्पर्क</span></h1>
       <p class="lead">
         <span data-lang="de">Ob Frage, Idee, Kooperationsangebot oder Kritik — schreiben Sie uns. Wir antworten auf Deutsch, Englisch und Nepali, in der Regel innerhalb von drei Werktagen.</span>
-        <span data-lang="en">Whether a question, an idea, a cooperation offer or criticism — write to us. We answer in German, English and Nepali, usually within three working days.</span>
+        <span data-lang="en">Whether a question, an idea, a cooperation offer or criticism — write to us. We answer in German, English and Nepali, usually within three working days.</span><span data-lang="ne">प्रश्न, सुझाव, सहकार्यको प्रस्ताव वा आलोचना — जे भए पनि हामीलाई लेख्नुहोस्। हामी जर्मन, अङ्ग्रेजी र नेपालीमा जवाफ दिन्छौँ, प्रायः तीन कार्यदिनभित्र।</span>
       </p>
     </div>
   </section>
@@ -44,26 +44,26 @@
       <div class="grid grid-4">
         <div class="card card-hover reveal">
           <div data-icon="users" class="card-icon"></div>
-          <h2 class="t-h4"><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span></h2>
-          <p class="text-sm text-muted"><span data-lang="de">Beitritt, Beiträge, Austritt, Mitgliederversammlung</span><span data-lang="en">Joining, fees, leaving, general meeting</span></p>
-          <p class="mt-2 text-sm"><a href="mailto:mitglied@progressive-youth.de">mitglied@progressive-youth.de</a></p>
+          <h2 class="t-h4"><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span><span data-lang="ne">सदस्यता</span></h2>
+          <p class="text-sm text-muted"><span data-lang="de">Beitritt, Beiträge, Austritt, Mitgliederversammlung</span><span data-lang="en">Joining, fees, leaving, general meeting</span><span data-lang="ne">सदस्यता, शुल्क, बाहिरिने प्रक्रिया, साधारण सभा</span></p>
+          <p class="mt-2 text-sm"><a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a></p>
         </div>
         <div class="card card-hover reveal" data-delay="80">
           <div data-icon="hands" class="card-icon navy"></div>
           <h2 class="t-h4">Volunteering</h2>
-          <p class="text-sm text-muted"><span data-lang="de">Einsätze, Matching, Zertifikate, Briefings</span><span data-lang="en">Assignments, matching, certificates, briefings</span></p>
-          <p class="mt-2 text-sm"><a href="mailto:volunteer@progressive-youth.de">volunteer@progressive-youth.de</a></p>
+          <p class="text-sm text-muted"><span data-lang="de">Einsätze, Matching, Zertifikate, Briefings</span><span data-lang="en">Assignments, matching, certificates, briefings</span><span data-lang="ne">परिचालन, मिलान, प्रमाणपत्र, ब्रिफिङ</span></p>
+          <p class="mt-2 text-sm"><a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a></p>
         </div>
         <div class="card card-hover reveal" data-delay="160">
           <div data-icon="heart" class="card-icon saffron"></div>
-          <h2 class="t-h4"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span></h2>
-          <p class="text-sm text-muted"><span data-lang="de">Zuwendungsbestätigungen, Projektberichte, Sachspenden</span><span data-lang="en">Donation receipts, project reports, in-kind gifts</span></p>
-          <p class="mt-2 text-sm"><a href="mailto:spenden@progressive-youth.de">spenden@progressive-youth.de</a></p>
+          <h2 class="t-h4"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span><span data-lang="ne">दान</span></h2>
+          <p class="text-sm text-muted"><span data-lang="de">Zuwendungsbestätigungen, Projektberichte, Sachspenden</span><span data-lang="en">Donation receipts, project reports, in-kind gifts</span><span data-lang="ne">दान रसिद, परियोजना प्रतिवेदन, वस्तुगत सहयोग</span></p>
+          <p class="mt-2 text-sm"><a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a></p>
         </div>
         <div class="card card-hover reveal" data-delay="240">
           <div data-icon="news" class="card-icon teal"></div>
-          <h2 class="t-h4"><span data-lang="de">Presse &amp; Allgemeines</span><span data-lang="en">Press &amp; general</span></h2>
-          <p class="text-sm text-muted"><span data-lang="de">Interviews, Bildmaterial, alles Weitere</span><span data-lang="en">Interviews, image material, everything else</span></p>
+          <h2 class="t-h4"><span data-lang="de">Presse &amp; Allgemeines</span><span data-lang="en">Press &amp; general</span><span data-lang="ne">प्रेस र सामान्य</span></h2>
+          <p class="text-sm text-muted"><span data-lang="de">Interviews, Bildmaterial, alles Weitere</span><span data-lang="en">Interviews, image material, everything else</span><span data-lang="ne">अन्तर्वार्ता, तस्बिर सामग्री, अन्य सबै</span></p>
           <p class="mt-2 text-sm"><a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a></p>
         </div>
       </div>
@@ -75,43 +75,43 @@
     <div class="container grid grid-sidebar">
       <div>
         <div class="form-card">
-          <h2><span data-lang="de">Nachricht senden</span><span data-lang="en">Send a message</span></h2>
+          <h2><span data-lang="de">Nachricht senden</span><span data-lang="en">Send a message</span><span data-lang="ne">सन्देश पठाउनुहोस्</span></h2>
           <p class="lead mt-2 mb-4" style="font-size:var(--fs-base)">
             <span data-lang="de">Alle mit <span class="req">*</span> markierten Felder sind Pflichtfelder.</span>
-            <span data-lang="en">All fields marked <span class="req">*</span> are required.</span>
+            <span data-lang="en">All fields marked <span class="req">*</span><span data-lang="ne">चिन्ह लगाइएका सबै महल <span class="req">*</span> are required.</span>
           </p>
 
           <form data-form="contact" data-ref-prefix="KON" data-subject="Kontaktanfrage über die Website" novalidate>
             <div class="callout callout-navy hide mb-3" data-draft-note>
               <span data-lang="de">Ein gespeicherter Entwurf wurde wiederhergestellt.</span>
-              <span data-lang="en">A saved draft was restored.</span>
+              <span data-lang="en">A saved draft was restored.</span><span data-lang="ne">सुरक्षित गरिएको अधुरो विवरण फेरि ल्याइयो।</span>
               <button type="button" class="btn btn-sm btn-ghost" data-draft-discard style="margin-left:.5rem">
-                <span data-lang="de">Verwerfen</span><span data-lang="en">Discard</span>
+                <span data-lang="de">Verwerfen</span><span data-lang="en">Discard</span><span data-lang="ne">हटाउनुहोस्</span>
               </button>
             </div>
 
             <fieldset class="fieldset">
-              <legend><span data-lang="de">Ihr Anliegen</span><span data-lang="en">Your enquiry</span></legend>
+              <legend><span data-lang="de">Ihr Anliegen</span><span data-lang="en">Your enquiry</span><span data-lang="ne">तपाईंको जिज्ञासा</span></legend>
               <div class="form-grid">
                 <div class="field span-2">
-                  <label for="k-thema"><span data-lang="de">Worum geht es?</span><span data-lang="en">What is it about?</span> <span class="req">*</span></label>
+                  <label for="k-thema"><span data-lang="de">Worum geht es?</span><span data-lang="en">What is it about?</span><span data-lang="ne">कुन विषयमा हो?</span> <span class="req">*</span></label>
                   <select class="select" id="k-thema" name="thema" required>
-                    <option value="" data-de="Bitte wählen …" data-en="Please choose …">Bitte wählen …</option>
-                    <option value="mitgliedschaft" data-de="Mitgliedschaft" data-en="Membership">Mitgliedschaft</option>
-                    <option value="volunteering" data-de="Volunteering / One Day for Nation" data-en="Volunteering / One Day for Nation">Volunteering / One Day for Nation</option>
-                    <option value="erste-hilfe" data-de="Erste-Hilfe-Kampagne" data-en="First Aid Campaign">Erste-Hilfe-Kampagne</option>
-                    <option value="spende" data-de="Spenden / One Euro for Nation" data-en="Donations / One Euro for Nation">Spenden / One Euro for Nation</option>
-                    <option value="kooperation" data-de="Kooperation / Partnerschaft" data-en="Cooperation / partnership">Kooperation / Partnerschaft</option>
-                    <option value="schule" data-de="Schule in Nepal vorschlagen" data-en="Propose a school in Nepal">Schule in Nepal vorschlagen</option>
-                    <option value="veranstaltung" data-de="Veranstaltung / Anmeldung" data-en="Event / registration">Veranstaltung / Anmeldung</option>
-                    <option value="presse" data-de="Presse &amp; Medien" data-en="Press &amp; media">Presse &amp; Medien</option>
-                    <option value="zweigstelle" data-de="Zweigstelle in meiner Stadt gründen" data-en="Start a branch in my city">Zweigstelle in meiner Stadt gründen</option>
-                    <option value="datenschutz" data-de="Datenschutz / DSGVO-Anfrage" data-en="Data protection / GDPR request">Datenschutz / DSGVO-Anfrage</option>
-                    <option value="sonstiges" data-de="Sonstiges" data-en="Something else">Sonstiges</option>
+                    <option value="" data-de="Bitte wählen …" data-en="Please choose …" data-ne="कृपया छान्नुहोस् …">Bitte wählen …</option>
+                    <option value="mitgliedschaft" data-de="Mitgliedschaft" data-en="Membership" data-ne="सदस्यता">Mitgliedschaft</option>
+                    <option value="volunteering" data-de="Volunteering / One Day for Nation" data-en="Volunteering / One Day for Nation" data-ne="स्वयंसेवा / One Day for Nation">Volunteering / One Day for Nation</option>
+                    <option value="erste-hilfe" data-de="Erste-Hilfe-Kampagne" data-en="First Aid Campaign" data-ne="प्राथमिक उपचार अभियान">Erste-Hilfe-Kampagne</option>
+                    <option value="spende" data-de="Spenden / One Euro for Nation" data-en="Donations / One Euro for Nation" data-ne="दान / One Euro for Nation">Spenden / One Euro for Nation</option>
+                    <option value="kooperation" data-de="Kooperation / Partnerschaft" data-en="Cooperation / partnership" data-ne="सहकार्य / साझेदारी">Kooperation / Partnerschaft</option>
+                    <option value="schule" data-de="Schule in Nepal vorschlagen" data-en="Propose a school in Nepal" data-ne="नेपालको विद्यालय प्रस्ताव गर्नुहोस्">Schule in Nepal vorschlagen</option>
+                    <option value="veranstaltung" data-de="Veranstaltung / Anmeldung" data-en="Event / registration" data-ne="कार्यक्रम / दर्ता">Veranstaltung / Anmeldung</option>
+                    <option value="presse" data-de="Presse &amp; Medien" data-en="Press &amp; media" data-ne="प्रेस र सञ्चारमाध्यम">Presse &amp; Medien</option>
+                    <option value="zweigstelle" data-de="Zweigstelle in meiner Stadt gründen" data-en="Start a branch in my city" data-ne="मेरो सहरमा शाखा खोल्नुहोस्">Zweigstelle in meiner Stadt gründen</option>
+                    <option value="datenschutz" data-de="Datenschutz / DSGVO-Anfrage" data-en="Data protection / GDPR request" data-ne="गोपनीयता / GDPR अनुरोध">Datenschutz / DSGVO-Anfrage</option>
+                    <option value="sonstiges" data-de="Sonstiges" data-en="Something else" data-ne="अन्य केही">Sonstiges</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="k-name"><span data-lang="de">Name</span><span data-lang="en">Name</span> <span class="req">*</span></label>
+                  <label for="k-name"><span data-lang="de">Name</span><span data-lang="en">Name</span><span data-lang="ne">नाम</span> <span class="req">*</span></label>
                   <input class="input" id="k-name" name="name" type="text" required autocomplete="name">
                 </div>
                 <div class="field">
@@ -119,36 +119,37 @@
                   <input class="input" id="k-email" name="email" type="email" required autocomplete="email">
                 </div>
                 <div class="field">
-                  <label for="k-tel"><span data-lang="de">Telefon (optional)</span><span data-lang="en">Phone (optional)</span></label>
+                  <label for="k-tel"><span data-lang="de">Telefon (optional)</span><span data-lang="en">Phone (optional)</span><span data-lang="ne">फोन (ऐच्छिक)</span></label>
                   <input class="input" id="k-tel" name="telefon" type="tel" autocomplete="tel">
                 </div>
                 <div class="field">
-                  <label for="k-org"><span data-lang="de">Organisation (optional)</span><span data-lang="en">Organisation (optional)</span></label>
+                  <label for="k-org"><span data-lang="de">Organisation (optional)</span><span data-lang="en">Organisation (optional)</span><span data-lang="ne">संस्था (ऐच्छिक)</span></label>
                   <input class="input" id="k-org" name="organisation" type="text">
                 </div>
                 <div class="field span-2">
-                  <label for="k-betreff"><span data-lang="de">Betreff</span><span data-lang="en">Subject</span></label>
+                  <label for="k-betreff"><span data-lang="de">Betreff</span><span data-lang="en">Subject</span><span data-lang="ne">विषय</span></label>
                   <input class="input" id="k-betreff" name="betreff" type="text">
                 </div>
                 <div class="field span-2">
-                  <label for="k-nachricht"><span data-lang="de">Nachricht</span><span data-lang="en">Message</span> <span class="req">*</span></label>
+                  <label for="k-nachricht"><span data-lang="de">Nachricht</span><span data-lang="en">Message</span><span data-lang="ne">सन्देश</span> <span class="req">*</span></label>
                   <textarea class="textarea" id="k-nachricht" name="nachricht" rows="7" required minlength="10"
                     data-de-placeholder="Beschreiben Sie Ihr Anliegen — je konkreter, desto schneller können wir helfen."
-                    data-en-placeholder="Describe your enquiry — the more specific, the faster we can help."></textarea>
+                    data-en-placeholder="Describe your enquiry — the more specific, the faster we can help."
+                    data-ne-placeholder="आफ्नो जिज्ञासा लेख्नुहोस् — जति स्पष्ट हुन्छ, हामी त्यति छिटो सहयोग गर्न सक्छौँ।"></textarea>
                 </div>
                 <div class="field">
-                  <label for="k-sprache"><span data-lang="de">Antwort bitte auf</span><span data-lang="en">Please reply in</span></label>
+                  <label for="k-sprache"><span data-lang="de">Antwort bitte auf</span><span data-lang="en">Please reply in</span><span data-lang="ne">कुन भाषामा जवाफ चाहनुहुन्छ</span></label>
                   <select class="select" id="k-sprache" name="antwortsprache">
-                    <option value="deutsch" data-de="Deutsch" data-en="German">Deutsch</option>
-                    <option value="englisch" data-de="Englisch" data-en="English">Englisch</option>
-                    <option value="nepali" data-de="Nepali" data-en="Nepali">Nepali</option>
+                    <option value="deutsch" data-de="Deutsch" data-en="German" data-ne="जर्मन">Deutsch</option>
+                    <option value="englisch" data-de="Englisch" data-en="English" data-ne="अङ्ग्रेजी">Englisch</option>
+                    <option value="nepali" data-de="Nepali" data-en="Nepali" data-ne="नेपाली">Nepali</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="k-kanal"><span data-lang="de">Bevorzugter Kontaktweg</span><span data-lang="en">Preferred channel</span></label>
+                  <label for="k-kanal"><span data-lang="de">Bevorzugter Kontaktweg</span><span data-lang="en">Preferred channel</span><span data-lang="ne">रुचाइएको माध्यम</span></label>
                   <select class="select" id="k-kanal" name="kanal">
-                    <option value="email" data-de="E-Mail" data-en="E-mail">E-Mail</option>
-                    <option value="telefon" data-de="Telefon" data-en="Phone">Telefon</option>
+                    <option value="email" data-de="E-Mail" data-en="E-mail" data-ne="इमेल">E-Mail</option>
+                    <option value="telefon" data-de="Telefon" data-en="Phone" data-ne="फोन">Telefon</option>
                     <option value="whatsapp">WhatsApp</option>
                   </select>
                 </div>
@@ -158,32 +159,32 @@
             <fieldset class="fieldset">
               <div class="stack-sm">
                 <label class="check"><input type="checkbox" name="dsgvo" required data-track>
-                  <span><strong><span data-lang="de">Datenschutz <span class="req">*</span></span><span data-lang="en">Data protection <span class="req">*</span></span></strong>
-                  <span class="hint"><span data-lang="de">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Siehe <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span><span data-lang="en">I agree that my details may be stored and processed to handle my enquiry. See the <a href="datenschutz.html" target="_blank">privacy policy</a>.</span></span></span></label>
+                  <span><strong><span data-lang="de">Datenschutz <span class="req">*</span></span><span data-lang="en">Data protection <span class="req">*</span><span data-lang="ne">डेटा संरक्षण <span class="req">*</span></span></strong>
+                  <span class="hint"><span data-lang="de">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Siehe <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span><span data-lang="en">I agree that my details may be stored and processed to handle my enquiry. See the <a href="datenschutz.html" target="_blank">privacy policy</a>.</span><span data-lang="ne">मेरो जिज्ञासाको व्यवस्थापनका लागि मेरो विवरण राख्न र प्रशोधन गर्न म सहमत छु। <a href="datenschutz.html" target="_blank">गोपनीयता नीति</a> हेर्नुहोस्।</span></span></span></label>
                 <label class="check"><input type="checkbox" name="newsletter" data-track>
-                  <span><strong><span data-lang="de">Newsletter abonnieren (freiwillig)</span><span data-lang="en">Subscribe to the newsletter (optional)</span></strong></span></label>
+                  <span><strong><span data-lang="de">Newsletter abonnieren (freiwillig)</span><span data-lang="en">Subscribe to the newsletter (optional)</span><span data-lang="ne">न्यूजलेटरको सदस्यता लिनुहोस् (ऐच्छिक)</span></strong></span></label>
               </div>
             </fieldset>
 
             <div class="form-status"></div>
             <div class="form-nav">
-              <span class="hint"><span data-lang="de">Wir antworten in der Regel innerhalb von drei Werktagen.</span><span data-lang="en">We usually reply within three working days.</span></span>
-              <button class="btn btn-lg" type="submit"><span data-lang="de">Nachricht senden</span><span data-lang="en">Send message</span></button>
+              <span class="hint"><span data-lang="de">Wir antworten in der Regel innerhalb von drei Werktagen.</span><span data-lang="en">We usually reply within three working days.</span><span data-lang="ne">हामी प्रायः तीन कार्यदिनभित्र जवाफ दिन्छौँ।</span></span>
+              <button class="btn btn-lg" type="submit"><span data-lang="de">Nachricht senden</span><span data-lang="en">Send message</span><span data-lang="ne">सन्देश पठाउनुहोस्</span></button>
             </div>
           </form>
 
           <div class="hide" data-success>
             <div class="center" style="padding:2rem 0">
               <div class="card-icon mx-auto" style="background:var(--ok-soft);color:var(--ok);font-size:1.8rem">✓</div>
-              <h2><span data-lang="de">Nachricht angekommen</span><span data-lang="en">Message received</span></h2>
+              <h2><span data-lang="de">Nachricht angekommen</span><span data-lang="en">Message received</span><span data-lang="ne">सन्देश प्राप्त भयो</span></h2>
               <p class="lead mt-2" data-delivery></p>
-              <p class="mt-3"><span data-lang="de">Referenznummer:</span><span data-lang="en">Reference number:</span> <strong data-ref></strong></p>
+              <p class="mt-3"><span data-lang="de">Referenznummer:</span><span data-lang="en">Reference number:</span><span data-lang="ne">सन्दर्भ नम्बर:</span> <strong data-ref></strong></p>
               <p class="text-sm text-muted mt-2">
                 <span data-lang="de">Bitte notieren Sie diese Nummer, wenn Sie nachfragen möchten.</span>
-                <span data-lang="en">Please note this number if you want to follow up.</span>
+                <span data-lang="en">Please note this number if you want to follow up.</span><span data-lang="ne">थप जानकारी लिन चाहनुहुन्छ भने कृपया यो नम्बर टिपेर राख्नुहोस्।</span>
               </p>
               <div class="flex mt-4" style="justify-content:center">
-                <a class="btn btn-sm" href="index.html"><span data-lang="de">Zur Startseite</span><span data-lang="en">Back to home</span></a>
+                <a class="btn btn-sm" href="index.html"><span data-lang="de">Zur Startseite</span><span data-lang="en">Back to home</span><span data-lang="ne">गृहपृष्ठमा फर्कनुहोस्</span></a>
                 <a class="btn btn-sm btn-ghost" href="faq.html">FAQ</a>
               </div>
             </div>
@@ -192,34 +193,34 @@
 
         <!-- Partner / school cooperation -->
         <div class="form-card mt-4" id="partner-werden">
-          <span class="eyebrow"><span data-lang="de">Für Organisationen</span><span data-lang="en">For organisations</span></span>
-          <h2><span data-lang="de">Partner, Schule oder Förderer werden</span><span data-lang="en">Become a partner, school or funder</span></h2>
+          <span class="eyebrow"><span data-lang="de">Für Organisationen</span><span data-lang="en">For organisations</span><span data-lang="ne">संस्थाहरूका लागि</span></span>
+          <h2><span data-lang="de">Partner, Schule oder Förderer werden</span><span data-lang="en">Become a partner, school or funder</span><span data-lang="ne">साझेदार, विद्यालय वा सहयोगी बन्नुहोस्</span></h2>
           <p class="lead mt-2 mb-4" style="font-size:var(--fs-base)">
             <span data-lang="de">Schulen in Nepal, NGOs, Unternehmen, Stiftungen und Diaspora-Vereine: Erzählen Sie uns, was Sie vorhaben.</span>
-            <span data-lang="en">Schools in Nepal, NGOs, companies, foundations and diaspora associations: tell us what you have in mind.</span>
+            <span data-lang="en">Schools in Nepal, NGOs, companies, foundations and diaspora associations: tell us what you have in mind.</span><span data-lang="ne">नेपालका विद्यालय, गैरसरकारी संस्था, कम्पनी, प्रतिष्ठान र प्रवासी संघसंस्था: तपाईंको सोच हामीलाई बताउनुहोस्।</span>
           </p>
 
           <form data-form="partner" data-ref-prefix="PAR" data-subject="Kooperationsanfrage" novalidate>
             <fieldset class="fieldset">
               <div class="form-grid">
                 <div class="field">
-                  <label for="p-org"><span data-lang="de">Organisation</span><span data-lang="en">Organisation</span> <span class="req">*</span></label>
+                  <label for="p-org"><span data-lang="de">Organisation</span><span data-lang="en">Organisation</span><span data-lang="ne">संस्था</span> <span class="req">*</span></label>
                   <input class="input" id="p-org" name="organisation" type="text" required>
                 </div>
                 <div class="field">
-                  <label for="p-art"><span data-lang="de">Art der Organisation</span><span data-lang="en">Type of organisation</span></label>
+                  <label for="p-art"><span data-lang="de">Art der Organisation</span><span data-lang="en">Type of organisation</span><span data-lang="ne">संस्थाको प्रकार</span></label>
                   <select class="select" id="p-art" name="artDerOrganisation">
-                    <option value="schule" data-de="Schule in Nepal" data-en="School in Nepal">Schule in Nepal</option>
-                    <option value="ngo" data-de="NGO / gemeinnützige Organisation" data-en="NGO / non-profit">NGO / gemeinnützige Organisation</option>
-                    <option value="unternehmen" data-de="Unternehmen" data-en="Company">Unternehmen</option>
-                    <option value="stiftung" data-de="Stiftung / Förderprogramm" data-en="Foundation / funding programme">Stiftung / Förderprogramm</option>
-                    <option value="verein" data-de="Diaspora-Verein" data-en="Diaspora association">Diaspora-Verein</option>
-                    <option value="behoerde" data-de="Behörde / öffentliche Stelle" data-en="Authority / public body">Behörde / öffentliche Stelle</option>
-                    <option value="andere" data-de="Andere" data-en="Other">Andere</option>
+                    <option value="schule" data-de="Schule in Nepal" data-en="School in Nepal" data-ne="नेपालको विद्यालय">Schule in Nepal</option>
+                    <option value="ngo" data-de="NGO / gemeinnützige Organisation" data-en="NGO / non-profit" data-ne="गैरसरकारी / गैरनाफामूलक संस्था">NGO / gemeinnützige Organisation</option>
+                    <option value="unternehmen" data-de="Unternehmen" data-en="Company" data-ne="कम्पनी">Unternehmen</option>
+                    <option value="stiftung" data-de="Stiftung / Förderprogramm" data-en="Foundation / funding programme" data-ne="प्रतिष्ठान / अनुदान कार्यक्रम">Stiftung / Förderprogramm</option>
+                    <option value="verein" data-de="Diaspora-Verein" data-en="Diaspora association" data-ne="प्रवासी संघ">Diaspora-Verein</option>
+                    <option value="behoerde" data-de="Behörde / öffentliche Stelle" data-en="Authority / public body" data-ne="सरकारी निकाय / सार्वजनिक संस्था">Behörde / öffentliche Stelle</option>
+                    <option value="andere" data-de="Andere" data-en="Other" data-ne="अन्य">Andere</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="p-name"><span data-lang="de">Ansprechperson</span><span data-lang="en">Contact person</span> <span class="req">*</span></label>
+                  <label for="p-name"><span data-lang="de">Ansprechperson</span><span data-lang="en">Contact person</span><span data-lang="ne">सम्पर्क व्यक्ति</span> <span class="req">*</span></label>
                   <input class="input" id="p-name" name="name" type="text" required>
                 </div>
                 <div class="field">
@@ -227,7 +228,7 @@
                   <input class="input" id="p-email" name="email" type="email" required>
                 </div>
                 <div class="field">
-                  <label for="p-land"><span data-lang="de">Land</span><span data-lang="en">Country</span></label>
+                  <label for="p-land"><span data-lang="de">Land</span><span data-lang="en">Country</span><span data-lang="ne">देश</span></label>
                   <input class="input" id="p-land" name="land" type="text">
                 </div>
                 <div class="field">
@@ -235,38 +236,38 @@
                   <input class="input" id="p-web" name="website" type="text" placeholder="https://">
                 </div>
                 <div class="field span-2">
-                  <span class="label"><span data-lang="de">Woran haben Sie Interesse?</span><span data-lang="en">What are you interested in?</span></span>
+                  <span class="label"><span data-lang="de">Woran haben Sie Interesse?</span><span data-lang="en">What are you interested in?</span><span data-lang="ne">तपाईंलाई केमा चासो छ?</span></span>
                   <div class="check-grid-2">
-                    <label class="check"><input type="checkbox" name="interesse" value="schule-aufnehmen"><span><strong><span class="field-icon-sm" data-icon="school" aria-hidden="true"></span><span data-lang="de">Unsere Schule aufnehmen</span><span data-lang="en">Include our school</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="sachspende"><span><strong><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><span data-lang="de">Sachspende / Material</span><span data-lang="en">In-kind donation / material</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="foerderung"><span><strong><span class="field-icon-sm" data-icon="euro" aria-hidden="true"></span><span data-lang="de">Förderung / Finanzierung</span><span data-lang="en">Funding / financing</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="gemeinsames-projekt"><span><strong><span class="field-icon-sm" data-icon="hands" aria-hidden="true"></span><span data-lang="de">Gemeinsames Projekt</span><span data-lang="en">Joint project</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="raum"><span><strong><span class="field-icon-sm" data-icon="pin" aria-hidden="true"></span><span data-lang="de">Räume / Infrastruktur</span><span data-lang="en">Venue / infrastructure</span></strong></span></label>
-                    <label class="check"><input type="checkbox" name="interesse" value="expertise"><span><strong><span class="field-icon-sm" data-icon="education" aria-hidden="true"></span><span data-lang="de">Expertise / Referent:innen</span><span data-lang="en">Expertise / speakers</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="schule-aufnehmen"><span><strong><span class="field-icon-sm" data-icon="school" aria-hidden="true"></span><span data-lang="de">Unsere Schule aufnehmen</span><span data-lang="en">Include our school</span><span data-lang="ne">हाम्रो विद्यालय समावेश गर्नुहोस्</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="sachspende"><span><strong><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><span data-lang="de">Sachspende / Material</span><span data-lang="en">In-kind donation / material</span><span data-lang="ne">वस्तुगत सहयोग / सामग्री</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="foerderung"><span><strong><span class="field-icon-sm" data-icon="euro" aria-hidden="true"></span><span data-lang="de">Förderung / Finanzierung</span><span data-lang="en">Funding / financing</span><span data-lang="ne">अनुदान / आर्थिक सहयोग</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="gemeinsames-projekt"><span><strong><span class="field-icon-sm" data-icon="hands" aria-hidden="true"></span><span data-lang="de">Gemeinsames Projekt</span><span data-lang="en">Joint project</span><span data-lang="ne">साझा परियोजना</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="raum"><span><strong><span class="field-icon-sm" data-icon="pin" aria-hidden="true"></span><span data-lang="de">Räume / Infrastruktur</span><span data-lang="en">Venue / infrastructure</span><span data-lang="ne">स्थान / पूर्वाधार</span></strong></span></label>
+                    <label class="check"><input type="checkbox" name="interesse" value="expertise"><span><strong><span class="field-icon-sm" data-icon="education" aria-hidden="true"></span><span data-lang="de">Expertise / Referent:innen</span><span data-lang="en">Expertise / speakers</span><span data-lang="ne">विशेषज्ञता / वक्ता</span></strong></span></label>
                   </div>
                 </div>
                 <div class="field span-2">
-                  <label for="p-nachricht"><span data-lang="de">Ihr Vorhaben</span><span data-lang="en">Your proposal</span> <span class="req">*</span></label>
+                  <label for="p-nachricht"><span data-lang="de">Ihr Vorhaben</span><span data-lang="en">Your proposal</span><span data-lang="ne">तपाईंको प्रस्ताव</span> <span class="req">*</span></label>
                   <textarea class="textarea" id="p-nachricht" name="nachricht" rows="5" required minlength="10"></textarea>
                 </div>
               </div>
               <label class="check mt-3"><input type="checkbox" name="dsgvo" required data-track>
-                <span><strong><span data-lang="de">Datenschutz <span class="req">*</span></span><span data-lang="en">Data protection <span class="req">*</span></span></strong>
-                <span class="hint"><span data-lang="de">Angaben dürfen zur Bearbeitung gespeichert werden.</span><span data-lang="en">Details may be stored to process this enquiry.</span></span></span></label>
+                <span><strong><span data-lang="de">Datenschutz <span class="req">*</span></span><span data-lang="en">Data protection <span class="req">*</span><span data-lang="ne">डेटा संरक्षण <span class="req">*</span></span></strong>
+                <span class="hint"><span data-lang="de">Angaben dürfen zur Bearbeitung gespeichert werden.</span><span data-lang="en">Details may be stored to process this enquiry.</span><span data-lang="ne">यो जिज्ञासाको व्यवस्थापनका लागि विवरण राख्न सकिन्छ।</span></span></span></label>
             </fieldset>
             <div class="form-status"></div>
             <div class="form-nav">
               <span></span>
-              <button class="btn" type="submit"><span data-lang="de">Anfrage senden</span><span data-lang="en">Send enquiry</span></button>
+              <button class="btn" type="submit"><span data-lang="de">Anfrage senden</span><span data-lang="en">Send enquiry</span><span data-lang="ne">जिज्ञासा पठाउनुहोस्</span></button>
             </div>
           </form>
 
           <div class="hide" data-success>
             <div class="center" style="padding:2rem 0">
               <div class="card-icon mx-auto" style="background:var(--ok-soft);color:var(--ok);font-size:1.8rem">✓</div>
-              <h3><span data-lang="de">Danke für Ihr Interesse</span><span data-lang="en">Thank you for your interest</span></h3>
+              <h3><span data-lang="de">Danke für Ihr Interesse</span><span data-lang="en">Thank you for your interest</span><span data-lang="ne">तपाईंको चासोका लागि धन्यवाद</span></h3>
               <p class="mt-2" data-delivery></p>
-              <p class="mt-2"><span data-lang="de">Referenz:</span><span data-lang="en">Reference:</span> <strong data-ref></strong></p>
+              <p class="mt-2"><span data-lang="de">Referenz:</span><span data-lang="en">Reference:</span><span data-lang="ne">सन्दर्भ:</span> <strong data-ref></strong></p>
             </div>
           </div>
         </div>
@@ -275,44 +276,44 @@
       <!-- Sidebar -->
       <aside class="stack">
         <div class="card">
-          <h4><span data-lang="de">Postanschrift</span><span data-lang="en">Postal address</span></h4>
+          <h4><span data-lang="de">Postanschrift</span><span data-lang="en">Postal address</span><span data-lang="ne">हुलाक ठेगाना</span></h4>
           <p class="text-sm mt-2">
             Nepalesische Progressive<br>
             Jugendorganisation e.V.<br>
-            <span data-lang="de">— Anschrift bitte ergänzen —</span><span data-lang="en">— address to be added —</span><br>
+            <span data-lang="de">— Anschrift bitte ergänzen —</span><span data-lang="en">— address to be added —</span><span data-lang="ne">— ठेगाना थप्न बाँकी —</span><br>
             64283 Darmstadt<br>
-            <span data-lang="de">Deutschland</span><span data-lang="en">Germany</span>
+            <span data-lang="de">Deutschland</span><span data-lang="en">Germany</span><span data-lang="ne">जर्मनी</span>
           </p>
           <hr>
           <p class="text-sm">
-            <strong><span data-lang="de">Vereinsregister</span><span data-lang="en">Register of associations</span></strong><br>
-            VR 84826 — <span data-lang="de">Amtsgericht Darmstadt</span><span data-lang="en">Darmstadt district court</span>
+            <strong><span data-lang="de">Vereinsregister</span><span data-lang="en">Register of associations</span><span data-lang="ne">संस्था दर्ता किताब</span></strong><br>
+            VR 84826 — <span data-lang="de">Amtsgericht Darmstadt</span><span data-lang="en">Darmstadt district court</span><span data-lang="ne">डार्मस्टाट जिल्ला अदालत</span>
           </p>
         </div>
 
         <div class="card">
-          <h4><span data-lang="de">Antwortzeiten</span><span data-lang="en">Response times</span></h4>
+          <h4><span data-lang="de">Antwortzeiten</span><span data-lang="en">Response times</span><span data-lang="ne">जवाफ आउने समय</span></h4>
           <dl class="review-list mt-2 text-sm">
-            <div class="review-row"><dt><span data-lang="de">Allgemein</span><span data-lang="en">General</span></dt><dd><span data-lang="de">1–3 Werktage</span><span data-lang="en">1–3 working days</span></dd></div>
-            <div class="review-row"><dt><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span></dt><dd><span data-lang="de">bis 2 Wochen</span><span data-lang="en">up to 2 weeks</span></dd></div>
-            <div class="review-row"><dt>Volunteer-Matching</dt><dd><span data-lang="de">2–4 Wochen</span><span data-lang="en">2–4 weeks</span></dd></div>
-            <div class="review-row"><dt><span data-lang="de">Presse</span><span data-lang="en">Press</span></dt><dd><span data-lang="de">24 Stunden</span><span data-lang="en">24 hours</span></dd></div>
+            <div class="review-row"><dt><span data-lang="de">Allgemein</span><span data-lang="en">General</span><span data-lang="ne">सामान्य</span></dt><dd><span data-lang="de">1–3 Werktage</span><span data-lang="en">1–3 working days</span><span data-lang="ne">१–३ कार्यदिन</span></dd></div>
+            <div class="review-row"><dt><span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span><span data-lang="ne">सदस्यता</span></dt><dd><span data-lang="de">bis 2 Wochen</span><span data-lang="en">up to 2 weeks</span><span data-lang="ne">२ हप्तासम्म</span></dd></div>
+            <div class="review-row"><dt>Volunteer-Matching</dt><dd><span data-lang="de">2–4 Wochen</span><span data-lang="en">2–4 weeks</span><span data-lang="ne">२–४ हप्ता</span></dd></div>
+            <div class="review-row"><dt><span data-lang="de">Presse</span><span data-lang="en">Press</span><span data-lang="ne">प्रेस</span></dt><dd><span data-lang="de">24 Stunden</span><span data-lang="en">24 hours</span><span data-lang="ne">२४ घण्टा</span></dd></div>
           </dl>
         </div>
 
         <div class="card" style="background:var(--navy-soft);border-color:var(--navy)">
-          <h4><span data-lang="de">Zweigstelle gründen</span><span data-lang="en">Start a branch</span></h4>
+          <h4><span data-lang="de">Zweigstelle gründen</span><span data-lang="en">Start a branch</span><span data-lang="ne">शाखा सुरु गर्नुहोस्</span></h4>
           <p class="text-sm mt-1">
             <span data-lang="de">§ 11 der Satzung erlaubt Zweigstellen im gesamten Bundesgebiet. Sie möchten in Ihrer Stadt eine aufbauen? Wählen Sie oben das Thema „Zweigstelle gründen“.</span>
-            <span data-lang="en">§ 11 of the statutes allows branches throughout Germany. Want to build one in your city? Choose the topic 'Start a branch' above.</span>
+            <span data-lang="en">§ 11 of the statutes allows branches throughout Germany. Want to build one in your city? Choose the topic 'Start a branch' above.</span><span data-lang="ne">विधानको § ११ ले जर्मनीभर शाखा खोल्न अनुमति दिन्छ। आफ्नो सहरमा एउटा बनाउन चाहनुहुन्छ? माथि 'शाखा सुरु गर्नुहोस्' विषय छान्नुहोस्।</span>
           </p>
         </div>
 
         <div class="card">
-          <h4><span data-lang="de">Häufige Fragen zuerst</span><span data-lang="en">Try the FAQ first</span></h4>
+          <h4><span data-lang="de">Häufige Fragen zuerst</span><span data-lang="en">Try the FAQ first</span><span data-lang="ne">पहिले जिज्ञासा खण्ड हेर्नुहोस्</span></h4>
           <p class="text-sm mt-1">
             <span data-lang="de">Viele Fragen zu Mitgliedschaft, Einsätzen und Spenden sind dort schon beantwortet.</span>
-            <span data-lang="en">Many questions on membership, assignments and donations are already answered there.</span>
+            <span data-lang="en">Many questions on membership, assignments and donations are already answered there.</span><span data-lang="ne">सदस्यता, परिचालन र दानसम्बन्धी धेरै प्रश्नको उत्तर त्यहीँ छ।</span>
           </p>
           <p class="mt-3"><a class="btn btn-sm btn-ghost" href="faq.html">FAQ</a></p>
         </div>

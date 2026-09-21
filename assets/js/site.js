@@ -24,9 +24,9 @@ window.NPJOE = {
     mouEnd: "31. Dezember 2030",
     website: "www.progressive-youth.de",
     email: "info@progressive-youth.de",
-    emailMembership: "mitglied@progressive-youth.de",
-    emailVolunteer: "volunteer@progressive-youth.de",
-    emailDonation: "spenden@progressive-youth.de",
+    emailMembership: "info@progressive-youth.de",
+    emailVolunteer: "info@progressive-youth.de",
+    emailDonation: "info@progressive-youth.de",
     phone: "+49 (0) 6151 000000",
     address: {
       street: "— Vereinsanschrift bitte ergänzen —",

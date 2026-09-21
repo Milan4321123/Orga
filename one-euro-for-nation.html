@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,19 +26,19 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><a href="programme.html"><span data-lang="de">Programme</span><span data-lang="en">Programmes</span></a></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><a href="programme.html"><span data-lang="de">Programme</span><span data-lang="en">Programmes</span><span data-lang="ne">कार्यक्रमहरू</span></a></li>
         <li>One Euro for Nation</li>
       </ol>
-      <span class="eyebrow"><span data-lang="de">Programm 03 · Spendeninitiative</span><span data-lang="en">Programme 03 · Donation initiative</span></span>
+      <span class="eyebrow"><span data-lang="de">Programm 03 · Spendeninitiative</span><span data-lang="en">Programme 03 · Donation initiative</span><span data-lang="ne">कार्यक्रम ०३ · दान अभियान</span></span>
       <h1>One Euro for Nation</h1>
       <p class="lead">
         <span data-lang="de">Unsere Spendeninitiative finanziert gezielt die Nationale Erste-Hilfe-Kampagne und den allgemeinen Schulbedarf in Nepal. Jede und jeder — ob Nepali in Deutschland, in Europa, in Amerika oder anderswo — kann ab einem Euro beitragen. Die Summe aller kleinen Beiträge macht unsere Kampagne möglich.</span>
-        <span data-lang="en">Our donation initiative specifically finances the National First Aid Campaign and general school needs in Nepal. Anyone — whether Nepali in Germany, Europe, America or anywhere else — can contribute from one euro. The sum of all small contributions makes our campaign possible.</span>
+        <span data-lang="en">Our donation initiative specifically finances the National First Aid Campaign and general school needs in Nepal. Anyone — whether Nepali in Germany, Europe, America or anywhere else — can contribute from one euro. The sum of all small contributions makes our campaign possible.</span><span data-lang="ne">हाम्रो दान अभियानले विशेष गरी राष्ट्रिय प्राथमिक उपचार अभियान र नेपालका विद्यालयका सामान्य आवश्यकतामा खर्च जुटाउँछ। जर्मनी, युरोप, अमेरिका वा जहाँसुकै रहेका नेपाली — जोसुकैले एक युरोबाट योगदान दिन सक्नुहुन्छ। साना योगदानको जोडले नै हाम्रो अभियान सम्भव बनाउँछ।</span>
       </p>
       <div class="flex mt-4">
-        <a class="btn btn-lg" href="spenden.html"><span data-lang="de">Jetzt spenden</span><span data-lang="en">Donate now</span></a>
-        <a class="btn btn-lg btn-ghost" href="transparenz.html"><span data-lang="de">Mittelverwendung</span><span data-lang="en">Use of funds</span></a>
+        <a class="btn btn-lg" href="spenden.html"><span data-lang="de">Jetzt spenden</span><span data-lang="en">Donate now</span><span data-lang="ne">अहिले दान गर्नुहोस्</span></a>
+        <a class="btn btn-lg btn-ghost" href="transparenz.html"><span data-lang="de">Mittelverwendung</span><span data-lang="en">Use of funds</span><span data-lang="ne">रकमको प्रयोग</span></a>
       </div>
     </div>
   </section>
@@ -47,11 +47,11 @@
   <section class="section">
     <div class="container">
       <div class="section-head center mx-auto">
-        <span class="eyebrow eyebrow-center"><span data-lang="de">Spendenstufen</span><span data-lang="en">Donation levels</span></span>
-        <h2><span data-lang="de">Was Ihr Beitrag konkret bewirkt</span><span data-lang="en">What your contribution achieves</span></h2>
+        <span class="eyebrow eyebrow-center"><span data-lang="de">Spendenstufen</span><span data-lang="en">Donation levels</span><span data-lang="ne">दानका तह</span></span>
+        <h2><span data-lang="de">Was Ihr Beitrag konkret bewirkt</span><span data-lang="en">What your contribution achieves</span><span data-lang="ne">तपाईंको योगदानले के गर्छ</span></h2>
       </div>
       <div class="grid grid-4" id="tierCards"></div>
-      <p class="center mt-4"><a class="btn" href="spenden.html"><span data-lang="de">Betrag wählen und spenden</span><span data-lang="en">Choose an amount and donate</span></a></p>
+      <p class="center mt-4"><a class="btn" href="spenden.html"><span data-lang="de">Betrag wählen und spenden</span><span data-lang="en">Choose an amount and donate</span><span data-lang="ne">रकम छानेर दान गर्नुहोस्</span></a></p>
     </div>
   </section>
 
@@ -59,42 +59,42 @@
   <section class="section section-alt">
     <div class="container grid grid-2" style="gap:3rem;align-items:start">
       <div>
-        <span class="eyebrow"><span data-lang="de">Verwendung der Spenden</span><span data-lang="en">Use of donations</span></span>
-        <h2><span data-lang="de">Alle Spenden fließen direkt in fünf Bereiche</span><span data-lang="en">All donations flow directly into five areas</span></h2>
+        <span class="eyebrow"><span data-lang="de">Verwendung der Spenden</span><span data-lang="en">Use of donations</span><span data-lang="ne">दानको प्रयोग</span></span>
+        <h2><span data-lang="de">Alle Spenden fließen direkt in fünf Bereiche</span><span data-lang="en">All donations flow directly into five areas</span><span data-lang="ne">सबै दान सिधै पाँच क्षेत्रमा जान्छ</span></h2>
         <dl class="review-list mt-4">
-          <div class="review-row"><dt><span data-lang="de">Erste-Hilfe-Kits</span><span data-lang="en">First Aid kits</span></dt><dd><span data-lang="de">Zertifizierte Kits für jede Schule der Kampagne — Grundausstattung für den Einsatz</span><span data-lang="en">Certified kits for every school in the campaign — basic equipment for deployment</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Trainingsmaterialien</span><span data-lang="en">Training materials</span></dt><dd><span data-lang="de">Handbücher, Poster und Übungsmaterial auf Nepali für Schüler:innen und Lehrkräfte</span><span data-lang="en">Manuals, posters and practice materials in Nepali for students and teachers</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Schulmaterialien</span><span data-lang="en">School materials</span></dt><dd><span data-lang="de">Hefte, Stifte und Bücher für Schüler:innen aus benachteiligten Familien</span><span data-lang="en">Notebooks, pens and books for students from disadvantaged families</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Hygienekits</span><span data-lang="en">Hygiene kits</span></dt><dd><span data-lang="de">Seife, Sanitärbedarf und Handwaschstationen für Schulen</span><span data-lang="en">Soap, sanitary supplies and handwashing stations for schools</span></dd></div>
-          <div class="review-row"><dt><span data-lang="de">Transportkosten</span><span data-lang="en">Transport costs</span></dt><dd><span data-lang="de">Reisekosten für NPYS-N-Mitarbeitende zu abgelegenen Schulen</span><span data-lang="en">Travel costs for NPYS-N staff to remote schools</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Erste-Hilfe-Kits</span><span data-lang="en">First Aid kits</span><span data-lang="ne">प्राथमिक उपचार किट</span></dt><dd><span data-lang="de">Zertifizierte Kits für jede Schule der Kampagne — Grundausstattung für den Einsatz</span><span data-lang="en">Certified kits for every school in the campaign — basic equipment for deployment</span><span data-lang="ne">अभियानका हरेक विद्यालयका लागि प्रमाणित किट — परिचालनका लागि आधारभूत सामग्री</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Trainingsmaterialien</span><span data-lang="en">Training materials</span><span data-lang="ne">तालिम सामग्री</span></dt><dd><span data-lang="de">Handbücher, Poster und Übungsmaterial auf Nepali für Schüler:innen und Lehrkräfte</span><span data-lang="en">Manuals, posters and practice materials in Nepali for students and teachers</span><span data-lang="ne">विद्यार्थी र शिक्षकका लागि नेपाली भाषाका पुस्तिका, पोस्टर र अभ्यास सामग्री</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Schulmaterialien</span><span data-lang="en">School materials</span><span data-lang="ne">शैक्षिक सामग्री</span></dt><dd><span data-lang="de">Hefte, Stifte und Bücher für Schüler:innen aus benachteiligten Familien</span><span data-lang="en">Notebooks, pens and books for students from disadvantaged families</span><span data-lang="ne">विपन्न परिवारका विद्यार्थीका लागि कापी, कलम र पुस्तक</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Hygienekits</span><span data-lang="en">Hygiene kits</span><span data-lang="ne">सरसफाइ किट</span></dt><dd><span data-lang="de">Seife, Sanitärbedarf und Handwaschstationen für Schulen</span><span data-lang="en">Soap, sanitary supplies and handwashing stations for schools</span><span data-lang="ne">विद्यालयका लागि साबुन, सरसफाइ सामग्री र हात धुने ठाउँ</span></dd></div>
+          <div class="review-row"><dt><span data-lang="de">Transportkosten</span><span data-lang="en">Transport costs</span><span data-lang="ne">ढुवानी खर्च</span></dt><dd><span data-lang="de">Reisekosten für NPYS-N-Mitarbeitende zu abgelegenen Schulen</span><span data-lang="en">Travel costs for NPYS-N staff to remote schools</span><span data-lang="ne">दुर्गम विद्यालयसम्म पुग्न NPYS-N का कर्मचारीको यात्रा खर्च</span></dd></div>
         </dl>
         <p class="legal-basis mt-4">
-          <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span></strong>
-          § 3(i) <span data-lang="de">Spendenaktionen zur Finanzierung von Schulmaterialien und Bildungsprojekten für bedürftige Kinder · Beschaffung und Verteilung von Hygienekits und medizinischen Sachspenden</span><span data-lang="en">donation drives to finance school materials and education projects for children in need · procurement and distribution of hygiene kits and medical in-kind donations</span> ·
-          § 3(e) <span data-lang="de">Förderung des öffentlichen Gesundheitswesens</span><span data-lang="en">promotion of public health</span> ·
-          § 10 <span data-lang="de">Spenden als wirtschaftliche Einnahmequelle</span><span data-lang="en">donations as an economic source of income</span>
+          <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span><span data-lang="ne">विधानसम्मत आधार:</span></strong>
+          § 3(i) <span data-lang="de">Spendenaktionen zur Finanzierung von Schulmaterialien und Bildungsprojekten für bedürftige Kinder · Beschaffung und Verteilung von Hygienekits und medizinischen Sachspenden</span><span data-lang="en">donation drives to finance school materials and education projects for children in need · procurement and distribution of hygiene kits and medical in-kind donations</span><span data-lang="ne">खाँचोमा परेका बालबालिकाका लागि शैक्षिक सामग्री र शिक्षा परियोजनामा रकम जुटाउन दान अभियान · सरसफाइ किट र स्वास्थ्यसम्बन्धी वस्तुगत सहयोगको खरिद तथा वितरण</span> ·
+          § 3(e) <span data-lang="de">Förderung des öffentlichen Gesundheitswesens</span><span data-lang="en">promotion of public health</span><span data-lang="ne">जनस्वास्थ्यको प्रवर्धन</span> ·
+          § 10 <span data-lang="de">Spenden als wirtschaftliche Einnahmequelle</span><span data-lang="en">donations as an economic source of income</span><span data-lang="ne">आर्थिक स्रोतका रूपमा दान</span>
         </p>
       </div>
 
       <div class="stack">
         <div class="card card-pad-lg">
-          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Transparenz &amp; Verwaltung</span><span data-lang="en">Transparency &amp; management</span></h3>
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Transparenz &amp; Verwaltung</span><span data-lang="en">Transparency &amp; management</span><span data-lang="ne">पारदर्शिता र व्यवस्थापन</span></h3>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick">✓</span><span data-lang="de">Spenden werden durch NPJOE e.V. (Deutschland) verwaltet — steuerlich absetzbar in Deutschland</span><span data-lang="en">Donations are managed by NPJOE e.V. (Germany) — tax-deductible in Germany</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">NPYS-N ist verantwortlich für die Vor-Ort-Verteilung aller Materialien</span><span data-lang="en">NPYS-N is responsible for on-site distribution of all materials</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Jährlicher öffentlicher Bericht: Wie viele Schulen? Was wurde gekauft? Wie viele Schüler:innen erreicht?</span><span data-lang="en">Annual public report: how many schools? What was purchased? How many students reached?</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Jede:r Spender:in kann auf Wunsch einen Projektbericht erhalten</span><span data-lang="en">Every donor can receive a project report on request</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Die Kasse wird jährlich von zwei gewählten Kassenprüfer:innen geprüft (§ 8)</span><span data-lang="en">Accounts are audited annually by two elected auditors (§ 8)</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Mittelübertragung nur nach schriftlichem Projektvorschlag, detailliertem Budget und Vorstandsgenehmigung</span><span data-lang="en">Funds transferred only after a written project proposal, detailed budget and board approval</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Einzelverwendungsnachweis mit Belegen innerhalb von 30 Tagen; jährlicher Prüfbericht</span><span data-lang="en">Itemised expense report with receipts within 30 days; annual audit report</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Nicht verbrauchte Mittel werden zurückgezahlt oder abgestimmt übertragen</span><span data-lang="en">Unspent funds are returned or rolled over by agreement</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Spenden werden durch NPJOE e.V. (Deutschland) verwaltet — steuerlich absetzbar in Deutschland</span><span data-lang="en">Donations are managed by NPJOE e.V. (Germany) — tax-deductible in Germany</span><span data-lang="ne">दान NPJOE e.V. (जर्मनी) ले व्यवस्थापन गर्छ — जर्मनीमा करछुट पाइन्छ</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">NPYS-N ist verantwortlich für die Vor-Ort-Verteilung aller Materialien</span><span data-lang="en">NPYS-N is responsible for on-site distribution of all materials</span><span data-lang="ne">सबै सामग्रीको स्थलगत वितरणको जिम्मेवारी NPYS-N को हुन्छ</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Jährlicher öffentlicher Bericht: Wie viele Schulen? Was wurde gekauft? Wie viele Schüler:innen erreicht?</span><span data-lang="en">Annual public report: how many schools? What was purchased? How many students reached?</span><span data-lang="ne">वार्षिक सार्वजनिक प्रतिवेदन: कति विद्यालय? के किनियो? कति विद्यार्थीसम्म पुगियो?</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Jede:r Spender:in kann auf Wunsch einen Projektbericht erhalten</span><span data-lang="en">Every donor can receive a project report on request</span><span data-lang="ne">अनुरोध गरेमा हरेक दाताले परियोजना प्रतिवेदन पाउन सक्नुहुन्छ</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Die Kasse wird jährlich von zwei gewählten Kassenprüfer:innen geprüft (§ 8)</span><span data-lang="en">Accounts are audited annually by two elected auditors (§ 8)</span><span data-lang="ne">हिसाबकिताबको वार्षिक लेखापरीक्षण दुई निर्वाचित लेखापरीक्षकले गर्छन् (§ ८)</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Mittelübertragung nur nach schriftlichem Projektvorschlag, detailliertem Budget und Vorstandsgenehmigung</span><span data-lang="en">Funds transferred only after a written project proposal, detailed budget and board approval</span><span data-lang="ne">लिखित परियोजना प्रस्ताव, विस्तृत बजेट र कार्यसमितिको स्वीकृतिपछि मात्र रकम पठाइन्छ</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Einzelverwendungsnachweis mit Belegen innerhalb von 30 Tagen; jährlicher Prüfbericht</span><span data-lang="en">Itemised expense report with receipts within 30 days; annual audit report</span><span data-lang="ne">३० दिनभित्र रसिदसहितको विस्तृत खर्च विवरण; वार्षिक लेखापरीक्षण प्रतिवेदन</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Nicht verbrauchte Mittel werden zurückgezahlt oder abgestimmt übertragen</span><span data-lang="en">Unspent funds are returned or rolled over by agreement</span><span data-lang="ne">खर्च नभएको रकम फिर्ता गरिन्छ वा सहमतिअनुसार अर्को परियोजनामा सारिन्छ</span></li>
           </ul>
         </div>
         <div class="card card-pad-lg" style="background:var(--saffron-soft);border-color:var(--saffron)">
-          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Warum ein Euro?</span><span data-lang="en">Why one euro?</span></h3>
+          <h3 style="font-size:var(--fs-xl)"><span data-lang="de">Warum ein Euro?</span><span data-lang="en">Why one euro?</span><span data-lang="ne">किन एक युरो?</span></h3>
           <p class="text-sm mt-2">
             <span data-lang="de">Weil niemand ausgeschlossen sein soll. Studierende, Auszubildende, Rentner:innen — ein Euro tut niemandem weh und wird gemeinsam zu einer Kampagne, die ganze Schulen sicherer macht. Wer mehr geben kann, gibt mehr; wer weniger hat, ist genauso Teil davon.</span>
-            <span data-lang="en">Because nobody should be excluded. Students, apprentices, pensioners — one euro hurts nobody and together becomes a campaign that makes entire schools safer. Those who can give more, give more; those with less are just as much part of it.</span>
+            <span data-lang="en">Because nobody should be excluded. Students, apprentices, pensioners — one euro hurts nobody and together becomes a campaign that makes entire schools safer. Those who can give more, give more; those with less are just as much part of it.</span><span data-lang="ne">किनभने कोही पनि बाहिर पर्नु हुँदैन। विद्यार्थी, तालिमार्थी, पेन्सनभोगी — एक युरोले कसैलाई भार पर्दैन र सबै जोडिँदा त्यो सिंगो विद्यालयलाई सुरक्षित बनाउने अभियान बन्छ। बढी दिन सक्नेले बढी दिनुहोस्; कम हुनेहरू पनि उत्तिकै हिस्सा हुनुहुन्छ।</span>
           </p>
         </div>
       </div>
@@ -105,15 +105,15 @@
   <section class="section">
     <div class="container">
       <div class="section-head center mx-auto">
-        <span class="eyebrow eyebrow-center"><span data-lang="de">Der Weg Ihrer Spende</span><span data-lang="en">The path of your donation</span></span>
-        <h2><span data-lang="de">Von Ihrem Konto bis in die Schule</span><span data-lang="en">From your account into the school</span></h2>
+        <span class="eyebrow eyebrow-center"><span data-lang="de">Der Weg Ihrer Spende</span><span data-lang="en">The path of your donation</span><span data-lang="ne">तपाईंको दानको बाटो</span></span>
+        <h2><span data-lang="de">Von Ihrem Konto bis in die Schule</span><span data-lang="en">From your account into the school</span><span data-lang="ne">तपाईंको खाताबाट विद्यालयसम्म</span></h2>
       </div>
       <ol class="steps" style="max-width:760px;margin-inline:auto">
-        <li><h3 class="t-h4"><span data-lang="de">Ihre Spende geht auf das Vereinskonto</span><span data-lang="en">Your donation reaches the association account</span></h3><p><span data-lang="de">Über das einheitliche Vereinskonto, über das Schatzmeister:in und Vorsitz nur gemeinsam verfügen dürfen (§ 10 der Satzung).</span><span data-lang="en">Into the single association account, over which the treasurer and chair may only dispose jointly (§ 10 of the statutes).</span></p></li>
-        <li><h3 class="t-h4"><span data-lang="de">Projektvorschlag, Budget und Freigabe</span><span data-lang="en">Project proposal, budget and approval</span></h3><p><span data-lang="de">NPYS-N legt einen geprüften schriftlichen Projektvorschlag mit detailliertem Budget vor; der NPJOE-Vorstand genehmigt ihn vor jeder Übertragung.</span><span data-lang="en">NPYS-N submits a verified written project proposal with a detailed budget; the NPJOE board approves it before every transfer.</span></p></li>
-        <li><h3 class="t-h4"><span data-lang="de">Material wird beschafft und transportiert</span><span data-lang="en">Materials are procured and transported</span></h3><p><span data-lang="de">Wo möglich lokal in Nepal — das stärkt die regionale Wirtschaft und senkt Transportkosten.</span><span data-lang="en">Locally in Nepal where possible — this strengthens the regional economy and lowers transport costs.</span></p></li>
-        <li><h3 class="t-h4"><span data-lang="de">NPYS-N verteilt und dokumentiert</span><span data-lang="en">NPYS-N distributes and documents</span></h3><p><span data-lang="de">Welche Schule, welches Material, wie viele Begünstigte und welche Mittel eingesetzt wurden; Belege folgen innerhalb von 30 Tagen nach Projektabschluss.</span><span data-lang="en">Which school, which materials, how many beneficiaries and which funds were used; receipts follow within 30 days of project completion.</span></p></li>
-        <li><h3 class="t-h4"><span data-lang="de">Prüfung und öffentlicher Impactbericht</span><span data-lang="en">Audit and public impact report</span></h3><p><span data-lang="de">NPYS-N legt einen jährlichen Prüfbericht vor; NPJOE veröffentlicht jährlich einen Impactbericht für Spender:innen.</span><span data-lang="en">NPYS-N provides an annual audit report; NPJOE publishes an annual impact report for donors.</span></p></li>
+        <li><h3 class="t-h4"><span data-lang="de">Ihre Spende geht auf das Vereinskonto</span><span data-lang="en">Your donation reaches the association account</span><span data-lang="ne">तपाईंको दान संस्थाको खातामा पुग्छ</span></h3><p><span data-lang="de">Über das einheitliche Vereinskonto, über das Schatzmeister:in und Vorsitz nur gemeinsam verfügen dürfen (§ 10 der Satzung).</span><span data-lang="en">Into the single association account, over which the treasurer and chair may only dispose jointly (§ 10 of the statutes).</span><span data-lang="ne">एउटै संस्था खातामा, जसको सञ्चालन कोषाध्यक्ष र अध्यक्षले संयुक्त रूपमा मात्र गर्न सक्छन् (विधानको § १०)।</span></p></li>
+        <li><h3 class="t-h4"><span data-lang="de">Projektvorschlag, Budget und Freigabe</span><span data-lang="en">Project proposal, budget and approval</span><span data-lang="ne">परियोजना प्रस्ताव, बजेट र स्वीकृति</span></h3><p><span data-lang="de">NPYS-N legt einen geprüften schriftlichen Projektvorschlag mit detailliertem Budget vor; der NPJOE-Vorstand genehmigt ihn vor jeder Übertragung.</span><span data-lang="en">NPYS-N submits a verified written project proposal with a detailed budget; the NPJOE board approves it before every transfer.</span><span data-lang="ne">NPYS-N ले विस्तृत बजेटसहित प्रमाणित लिखित परियोजना प्रस्ताव पेस गर्छ; हरेक रकम पठाउनुअघि NPJOE कार्यसमितिले स्वीकृत गर्छ।</span></p></li>
+        <li><h3 class="t-h4"><span data-lang="de">Material wird beschafft und transportiert</span><span data-lang="en">Materials are procured and transported</span><span data-lang="ne">सामग्री खरिद र ढुवानी हुन्छ</span></h3><p><span data-lang="de">Wo möglich lokal in Nepal — das stärkt die regionale Wirtschaft und senkt Transportkosten.</span><span data-lang="en">Locally in Nepal where possible — this strengthens the regional economy and lowers transport costs.</span><span data-lang="ne">सकेसम्म नेपालमै स्थानीय रूपमा — यसले क्षेत्रीय अर्थतन्त्र बलियो बनाउँछ र ढुवानी खर्च घटाउँछ।</span></p></li>
+        <li><h3 class="t-h4"><span data-lang="de">NPYS-N verteilt und dokumentiert</span><span data-lang="en">NPYS-N distributes and documents</span><span data-lang="ne">NPYS-N ले वितरण र अभिलेखीकरण गर्छ</span></h3><p><span data-lang="de">Welche Schule, welches Material, wie viele Begünstigte und welche Mittel eingesetzt wurden; Belege folgen innerhalb von 30 Tagen nach Projektabschluss.</span><span data-lang="en">Which school, which materials, how many beneficiaries and which funds were used; receipts follow within 30 days of project completion.</span><span data-lang="ne">कुन विद्यालय, कुन सामग्री, कति लाभग्राही र कुन रकम खर्च भयो; परियोजना सकिएको ३० दिनभित्र रसिद आउँछ।</span></p></li>
+        <li><h3 class="t-h4"><span data-lang="de">Prüfung und öffentlicher Impactbericht</span><span data-lang="en">Audit and public impact report</span><span data-lang="ne">लेखापरीक्षण र सार्वजनिक प्रभाव प्रतिवेदन</span></h3><p><span data-lang="de">NPYS-N legt einen jährlichen Prüfbericht vor; NPJOE veröffentlicht jährlich einen Impactbericht für Spender:innen.</span><span data-lang="en">NPYS-N provides an annual audit report; NPJOE publishes an annual impact report for donors.</span><span data-lang="ne">NPYS-N ले वार्षिक लेखापरीक्षण प्रतिवेदन दिन्छ; NPJOE ले दाताका लागि वार्षिक प्रभाव प्रतिवेदन प्रकाशित गर्छ।</span></p></li>
       </ol>
     </div>
   </section>
@@ -121,11 +121,11 @@
   <section class="section section-alt">
     <div class="container">
       <div class="cta-band center">
-        <h2><span data-lang="de">Ein Euro. Ein Heft. Ein Anfang.</span><span data-lang="en">One euro. One notebook. One beginning.</span></h2>
-        <p style="margin-inline:auto"><span data-lang="de">Sie entscheiden über den Betrag — wir zeigen Ihnen, was daraus wird.</span><span data-lang="en">You decide the amount — we show you what it becomes.</span></p>
+        <h2><span data-lang="de">Ein Euro. Ein Heft. Ein Anfang.</span><span data-lang="en">One euro. One notebook. One beginning.</span><span data-lang="ne">एक युरो। एउटा कापी। एउटा सुरुवात।</span></h2>
+        <p style="margin-inline:auto"><span data-lang="de">Sie entscheiden über den Betrag — wir zeigen Ihnen, was daraus wird.</span><span data-lang="en">You decide the amount — we show you what it becomes.</span><span data-lang="ne">रकम तपाईं तय गर्नुहोस् — त्यो के बन्छ, हामी देखाउँछौँ।</span></p>
         <div class="flex mt-4" style="justify-content:center">
-          <a class="btn btn-white btn-lg" href="spenden.html"><span data-lang="de">Jetzt spenden</span><span data-lang="en">Donate now</span></a>
-          <a class="btn btn-outline-white btn-lg" href="kontakt.html#partner-werden"><span data-lang="de">Sachspende anbieten</span><span data-lang="en">Offer an in-kind donation</span></a>
+          <a class="btn btn-white btn-lg" href="spenden.html"><span data-lang="de">Jetzt spenden</span><span data-lang="en">Donate now</span><span data-lang="ne">अहिले दान गर्नुहोस्</span></a>
+          <a class="btn btn-outline-white btn-lg" href="kontakt.html#partner-werden"><span data-lang="de">Sachspende anbieten</span><span data-lang="en">Offer an in-kind donation</span><span data-lang="ne">वस्तुगत सहयोग दिनुहोस्</span></a>
         </div>
       </div>
     </div>

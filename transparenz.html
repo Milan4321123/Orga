@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,19 +26,19 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><a href="ueber-uns.html"><span data-lang="de">Über uns</span><span data-lang="en">About us</span></a></li>
-        <li><span data-lang="de">Transparenz</span><span data-lang="en">Transparency</span></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><a href="ueber-uns.html"><span data-lang="de">Über uns</span><span data-lang="en">About us</span><span data-lang="ne">हाम्रो बारेमा</span></a></li>
+        <li><span data-lang="de">Transparenz</span><span data-lang="en">Transparency</span><span data-lang="ne">पारदर्शिता</span></li>
       </ol>
-      <span class="eyebrow"><span data-lang="de">Rechenschaft</span><span data-lang="en">Accountability</span></span>
-      <h1><span data-lang="de">Transparenz &amp; Wirkung</span><span data-lang="en">Transparency &amp; impact</span></h1>
+      <span class="eyebrow"><span data-lang="de">Rechenschaft</span><span data-lang="en">Accountability</span><span data-lang="ne">जवाफदेहिता</span></span>
+      <h1><span data-lang="de">Transparenz &amp; Wirkung</span><span data-lang="en">Transparency &amp; impact</span><span data-lang="ne">पारदर्शिता र प्रभाव</span></h1>
       <p class="lead">
         <span data-lang="de">Wer spendet, hat ein Recht darauf zu erfahren, was mit dem Geld passiert. Der Verein hat sich in Beschluss 5 (NPJOE-2026-001) zur jährlichen Berichterstattung über alle Programmaktivitäten verpflichtet.</span>
-        <span data-lang="en">Anyone who donates has a right to know what happens to the money. In resolution 5 (NPJOE-2026-001) the association committed to annual reporting on all programme activities.</span>
+        <span data-lang="en">Anyone who donates has a right to know what happens to the money. In resolution 5 (NPJOE-2026-001) the association committed to annual reporting on all programme activities.</span><span data-lang="ne">दान दिने जोसुकैलाई त्यो रकम के भयो भन्ने थाहा पाउने अधिकार छ। निर्णय ५ (NPJOE-2026-001) मार्फत संगठनले सबै कार्यक्रम गतिविधिबारे वार्षिक प्रतिवेदन दिने प्रतिबद्धता जनाएको छ।</span>
       </p>
       <p class="text-sm text-muted mt-3">
         <span data-lang="de">Stand: August 2026 · Erstes vollständiges Geschäftsjahr: 2026 · Der geprüfte Jahresbericht folgt nach der Mitgliederversammlung.</span>
-        <span data-lang="en">As of August 2026 · first full financial year: 2026 · the audited annual report follows after the general meeting.</span>
+        <span data-lang="en">As of August 2026 · first full financial year: 2026 · the audited annual report follows after the general meeting.</span><span data-lang="ne">अगस्ट २०२६ सम्म · पहिलो पूर्ण आर्थिक वर्ष: २०२६ · लेखापरीक्षण भएको वार्षिक प्रतिवेदन साधारण सभापछि आउनेछ।</span>
       </p>
     </div>
   </section>
@@ -47,12 +47,12 @@
   <section class="section-sm">
     <div class="container">
       <div class="stats">
-        <div class="stat reveal"><div class="stat-num" data-count="12" data-figure="schoolsReached"></div><div class="stat-label"><span data-lang="de">Partnerschulen</span><span data-lang="en">Partner schools</span></div></div>
-        <div class="stat reveal" data-delay="70"><div class="stat-num" data-count="1450" data-figure="studentsTrained" data-suffix="+"></div><div class="stat-label"><span data-lang="de">Geschulte Schüler:innen</span><span data-lang="en">Students trained</span></div></div>
-        <div class="stat reveal" data-delay="140"><div class="stat-num" data-count="68" data-figure="teachersCertified"></div><div class="stat-label"><span data-lang="de">Zertifizierte Lehrkräfte</span><span data-lang="en">Certified teachers</span></div></div>
-        <div class="stat reveal" data-delay="210"><div class="stat-num" data-count="214" data-figure="volunteers"></div><div class="stat-label"><span data-lang="de">Registrierte Volunteers</span><span data-lang="en">Registered volunteers</span></div></div>
-        <div class="stat reveal" data-delay="280"><div class="stat-num" data-count="17" data-figure="countries"></div><div class="stat-label"><span data-lang="de">Länder</span><span data-lang="en">Countries</span></div></div>
-        <div class="stat reveal" data-delay="350"><div class="stat-num" data-count="341"></div><div class="stat-label"><span data-lang="de">Spender:innen</span><span data-lang="en">Donors</span></div></div>
+        <div class="stat reveal"><div class="stat-num" data-count="12" data-figure="schoolsReached"></div><div class="stat-label"><span data-lang="de">Partnerschulen</span><span data-lang="en">Partner schools</span><span data-lang="ne">साझेदार विद्यालय</span></div></div>
+        <div class="stat reveal" data-delay="70"><div class="stat-num" data-count="1450" data-figure="studentsTrained" data-suffix="+"></div><div class="stat-label"><span data-lang="de">Geschulte Schüler:innen</span><span data-lang="en">Students trained</span><span data-lang="ne">तालिम पाएका विद्यार्थी</span></div></div>
+        <div class="stat reveal" data-delay="140"><div class="stat-num" data-count="68" data-figure="teachersCertified"></div><div class="stat-label"><span data-lang="de">Zertifizierte Lehrkräfte</span><span data-lang="en">Certified teachers</span><span data-lang="ne">प्रमाणित शिक्षक</span></div></div>
+        <div class="stat reveal" data-delay="210"><div class="stat-num" data-count="214" data-figure="volunteers"></div><div class="stat-label"><span data-lang="de">Registrierte Volunteers</span><span data-lang="en">Registered volunteers</span><span data-lang="ne">दर्ता भएका स्वयंसेवक</span></div></div>
+        <div class="stat reveal" data-delay="280"><div class="stat-num" data-count="17" data-figure="countries"></div><div class="stat-label"><span data-lang="de">Länder</span><span data-lang="en">Countries</span><span data-lang="ne">देश</span></div></div>
+        <div class="stat reveal" data-delay="350"><div class="stat-num" data-count="341"></div><div class="stat-label"><span data-lang="de">Spender:innen</span><span data-lang="en">Donors</span><span data-lang="ne">दाता</span></div></div>
       </div>
     </div>
   </section>
@@ -61,62 +61,62 @@
   <section class="section">
     <div class="container grid grid-2" style="gap:3rem;align-items:start">
       <div>
-        <span class="eyebrow"><span data-lang="de">Mittelherkunft</span><span data-lang="en">Where funds come from</span></span>
-        <h2><span data-lang="de">Woher unsere Mittel stammen</span><span data-lang="en">Where our resources come from</span></h2>
+        <span class="eyebrow"><span data-lang="de">Mittelherkunft</span><span data-lang="en">Where funds come from</span><span data-lang="ne">रकम कहाँबाट आउँछ</span></span>
+        <h2><span data-lang="de">Woher unsere Mittel stammen</span><span data-lang="en">Where our resources come from</span><span data-lang="ne">हाम्रा स्रोत कहाँबाट आउँछन्</span></h2>
         <p class="text-muted mt-2">
           <span data-lang="de">Nach § 10 der Satzung: Mitgliedsbeiträge, Spenden, Zuschüsse, Einnahmen aus Veranstaltungen und sonstige Zuwendungen.</span>
-          <span data-lang="en">Under § 10 of the statutes: membership fees, donations, subsidies, income from events and other contributions.</span>
+          <span data-lang="en">Under § 10 of the statutes: membership fees, donations, subsidies, income from events and other contributions.</span><span data-lang="ne">विधानको § १० अनुसार: सदस्यता शुल्क, दान, अनुदान, कार्यक्रमबाट प्राप्त आय र अन्य योगदान।</span>
         </p>
         <div class="mt-4">
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Spenden (One Euro for Nation)</span><span data-lang="en">Donations (One Euro for Nation)</span></span><strong>62 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Spenden (One Euro for Nation)</span><span data-lang="en">Donations (One Euro for Nation)</span><span data-lang="ne">दान (One Euro for Nation)</span></span><strong>62 %</strong></div>
             <div class="bar b2"><span style="width:62%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Mitgliedsbeiträge</span><span data-lang="en">Membership fees</span></span><strong>21 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Mitgliedsbeiträge</span><span data-lang="en">Membership fees</span><span data-lang="ne">सदस्यता शुल्क</span></span><strong>21 %</strong></div>
             <div class="bar"><span style="width:21%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Einnahmen aus Veranstaltungen</span><span data-lang="en">Income from events</span></span><strong>12 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Einnahmen aus Veranstaltungen</span><span data-lang="en">Income from events</span><span data-lang="ne">कार्यक्रमबाट प्राप्त आय</span></span><strong>12 %</strong></div>
             <div class="bar b3"><span style="width:12%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Zuschüsse &amp; Sachspenden</span><span data-lang="en">Subsidies &amp; in-kind donations</span></span><strong>5 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Zuschüsse &amp; Sachspenden</span><span data-lang="en">Subsidies &amp; in-kind donations</span><span data-lang="ne">अनुदान र वस्तुगत दान</span></span><strong>5 %</strong></div>
             <div class="bar b4"><span style="width:5%"></span></div>
           </div>
         </div>
       </div>
 
       <div>
-        <span class="eyebrow"><span data-lang="de">Mittelverwendung</span><span data-lang="en">Where funds go</span></span>
-        <h2><span data-lang="de">Wofür wir die Mittel einsetzen</span><span data-lang="en">What we use the resources for</span></h2>
+        <span class="eyebrow"><span data-lang="de">Mittelverwendung</span><span data-lang="en">Where funds go</span><span data-lang="ne">रकम कहाँ जान्छ</span></span>
+        <h2><span data-lang="de">Wofür wir die Mittel einsetzen</span><span data-lang="en">What we use the resources for</span><span data-lang="ne">हामी स्रोत केमा प्रयोग गर्छौं</span></h2>
         <p class="text-muted mt-2">
           <span data-lang="de">Mittel dürfen ausschließlich für satzungsmäßige Zwecke verwendet werden (§ 4, § 10). Mitglieder erhalten keine Zuwendungen aus Vereinsmitteln.</span>
-          <span data-lang="en">Funds may only be used for statutory purposes (§ 4, § 10). Members receive no allocations from association funds.</span>
+          <span data-lang="en">Funds may only be used for statutory purposes (§ 4, § 10). Members receive no allocations from association funds.</span><span data-lang="ne">रकम विधानमा तोकिएका उद्देश्यमा मात्र प्रयोग गर्न पाइन्छ (§ ४, § १०)। सदस्यहरूले संगठनको कोषबाट कुनै रकम पाउँदैनन्।</span>
         </p>
         <div class="mt-4">
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Erste-Hilfe-Kits &amp; medizinisches Material</span><span data-lang="en">First Aid kits &amp; medical supplies</span></span><strong>38 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Erste-Hilfe-Kits &amp; medizinisches Material</span><span data-lang="en">First Aid kits &amp; medical supplies</span><span data-lang="ne">प्राथमिक उपचार किट र स्वास्थ्य सामग्री</span></span><strong>38 %</strong></div>
             <div class="bar b2"><span style="width:38%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Schulmaterialien &amp; Bücher</span><span data-lang="en">School materials &amp; books</span></span><strong>24 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Schulmaterialien &amp; Bücher</span><span data-lang="en">School materials &amp; books</span><span data-lang="ne">शैक्षिक सामग्री र पुस्तक</span></span><strong>24 %</strong></div>
             <div class="bar"><span style="width:24%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Trainingsmaterial auf Nepali</span><span data-lang="en">Nepali training materials</span></span><strong>15 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Trainingsmaterial auf Nepali</span><span data-lang="en">Nepali training materials</span><span data-lang="ne">नेपाली भाषामा तालिम सामग्री</span></span><strong>15 %</strong></div>
             <div class="bar b3"><span style="width:15%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Hygienekits</span><span data-lang="en">Hygiene kits</span></span><strong>11 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Hygienekits</span><span data-lang="en">Hygiene kits</span><span data-lang="ne">सरसफाइ किट</span></span><strong>11 %</strong></div>
             <div class="bar b4"><span style="width:11%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Transport zu abgelegenen Schulen</span><span data-lang="en">Transport to remote schools</span></span><strong>8 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Transport zu abgelegenen Schulen</span><span data-lang="en">Transport to remote schools</span><span data-lang="ne">दुर्गम विद्यालयसम्मको ढुवानी</span></span><strong>8 %</strong></div>
             <div class="bar b2"><span style="width:8%"></span></div>
           </div>
           <div class="bar-row">
-            <div class="flex-between"><span><span data-lang="de">Verwaltung (Porto, Gebühren, Software)</span><span data-lang="en">Administration (postage, fees, software)</span></span><strong>4 %</strong></div>
+            <div class="flex-between"><span><span data-lang="de">Verwaltung (Porto, Gebühren, Software)</span><span data-lang="en">Administration (postage, fees, software)</span><span data-lang="ne">प्रशासन (हुलाक, शुल्क, सफ्टवेयर)</span></span><strong>4 %</strong></div>
             <div class="bar"><span style="width:4%"></span></div>
           </div>
         </div>
@@ -128,54 +128,54 @@
   <section class="section section-alt">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow"><span data-lang="de">Kontrolle</span><span data-lang="en">Controls</span></span>
-        <h2><span data-lang="de">Wer prüft, dass alles stimmt</span><span data-lang="en">Who checks that everything is correct</span></h2>
+        <span class="eyebrow"><span data-lang="de">Kontrolle</span><span data-lang="en">Controls</span><span data-lang="ne">नियन्त्रण</span></span>
+        <h2><span data-lang="de">Wer prüft, dass alles stimmt</span><span data-lang="en">Who checks that everything is correct</span><span data-lang="ne">सबै ठीक छ भनी कसले जाँच्छ</span></h2>
       </div>
       <div class="grid grid-3">
         <div class="card card-hover reveal">
           <div data-icon="lock" class="card-icon navy"></div>
-          <h3 class="t-h4"><span data-lang="de">Vier-Augen-Prinzip</span><span data-lang="en">Four-eyes principle</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">Über das Vereinskonto sind Schatzmeister:in und Vorsitz nur gemeinsam verfügungsberechtigt (§ 10). Zweigstellen führen keine eigenen Kassen (§ 11).</span><span data-lang="en">Only the treasurer and chair jointly may dispose of the association account (§ 10). Branches keep no separate accounts (§ 11).</span></p>
+          <h3 class="t-h4"><span data-lang="de">Vier-Augen-Prinzip</span><span data-lang="en">Four-eyes principle</span><span data-lang="ne">दोहोरो स्वीकृति प्रणाली</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">Über das Vereinskonto sind Schatzmeister:in und Vorsitz nur gemeinsam verfügungsberechtigt (§ 10). Zweigstellen führen keine eigenen Kassen (§ 11).</span><span data-lang="en">Only the treasurer and chair jointly may dispose of the association account (§ 10). Branches keep no separate accounts (§ 11).</span><span data-lang="ne">संगठनको खाता सञ्चालन कोषाध्यक्ष र अध्यक्षले संयुक्त रूपमा मात्र गर्न सक्छन् (§ १०)। शाखाहरूले छुट्टै कोष राख्दैनन् (§ ११)।</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="80">
           <div data-icon="receipt" class="card-icon"></div>
-          <h3 class="t-h4"><span data-lang="de">Jährliche Kassenprüfung</span><span data-lang="en">Annual audit</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">Zwei von der Mitgliederversammlung gewählte Kassenprüfer:innen prüfen die Kasse und berichten schriftlich. Sie dürfen dem Vorstand nicht angehören (§ 8, § 9).</span><span data-lang="en">Two auditors elected by the general meeting review the accounts and report in writing. They may not belong to the board (§ 8, § 9).</span></p>
+          <h3 class="t-h4"><span data-lang="de">Jährliche Kassenprüfung</span><span data-lang="en">Annual audit</span><span data-lang="ne">वार्षिक लेखापरीक्षण</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">Zwei von der Mitgliederversammlung gewählte Kassenprüfer:innen prüfen die Kasse und berichten schriftlich. Sie dürfen dem Vorstand nicht angehören (§ 8, § 9).</span><span data-lang="en">Two auditors elected by the general meeting review the accounts and report in writing. They may not belong to the board (§ 8, § 9).</span><span data-lang="ne">साधारण सभाले चुनेका दुई लेखापरीक्षकले हिसाबकिताब जाँची लिखित प्रतिवेदन दिन्छन्। उनीहरू कार्यसमितिका सदस्य हुन पाउँदैनन् (§ ८, § ९)।</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="160">
           <div data-icon="calendar" class="card-icon saffron"></div>
-          <h3 class="t-h4"><span data-lang="de">Rechnungsabschluss bis 1. März</span><span data-lang="en">Accounts by 1 March</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">Die Schatzmeisterei legt dem Vorstand bis zum 1. März den Rechnungsabschluss des Vorjahres vor (§ 8).</span><span data-lang="en">The treasurer presents the previous year's financial statement to the board by 1 March (§ 8).</span></p>
+          <h3 class="t-h4"><span data-lang="de">Rechnungsabschluss bis 1. März</span><span data-lang="en">Accounts by 1 March</span><span data-lang="ne">१ मार्चभित्र हिसाब</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">Die Schatzmeisterei legt dem Vorstand bis zum 1. März den Rechnungsabschluss des Vorjahres vor (§ 8).</span><span data-lang="en">The treasurer presents the previous year's financial statement to the board by 1 March (§ 8).</span><span data-lang="ne">कोषाध्यक्षले अघिल्लो वर्षको वित्तीय विवरण १ मार्चभित्र कार्यसमितिसमक्ष पेस गर्छन् (§ ८)।</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="240">
           <div class="card-icon teal">🇳🇵</div>
-          <h3 class="t-h4"><span data-lang="de">Belege aus Nepal</span><span data-lang="en">Documentation from Nepal</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">NPYS-N dokumentiert jede Verteilung: welche Schule, welches Material, wie viele Schüler:innen. Die Hilfsbedürftigkeit unterstützter Personen wird durch geeignete Nachweise belegt (§ 3i).</span><span data-lang="en">NPYS-N documents every distribution: which school, which materials, how many students. The neediness of supported persons is evidenced by suitable proof (§ 3i).</span></p>
+          <h3 class="t-h4"><span data-lang="de">Belege aus Nepal</span><span data-lang="en">Documentation from Nepal</span><span data-lang="ne">नेपालबाट आउने प्रमाण</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">NPYS-N dokumentiert jede Verteilung: welche Schule, welches Material, wie viele Schüler:innen. Die Hilfsbedürftigkeit unterstützter Personen wird durch geeignete Nachweise belegt (§ 3i).</span><span data-lang="en">NPYS-N documents every distribution: which school, which materials, how many students. The neediness of supported persons is evidenced by suitable proof (§ 3i).</span><span data-lang="ne">NPYS-N ले हरेक वितरणको अभिलेख राख्छ: कुन विद्यालय, कुन सामग्री, कति विद्यार्थी। सहयोग पाउने व्यक्तिको आवश्यकता उपयुक्त प्रमाणबाट पुष्टि गरिन्छ (§ ३झ)।</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="320">
           <div data-icon="megaphone" class="card-icon"></div>
-          <h3 class="t-h4"><span data-lang="de">Öffentlicher Jahresbericht</span><span data-lang="en">Public annual report</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">Einmal jährlich veröffentlichen wir: Wie viele Schulen? Was wurde gekauft? Wie viele Schüler:innen erreicht?</span><span data-lang="en">Once a year we publish: how many schools? What was purchased? How many students reached?</span></p>
+          <h3 class="t-h4"><span data-lang="de">Öffentlicher Jahresbericht</span><span data-lang="en">Public annual report</span><span data-lang="ne">सार्वजनिक वार्षिक प्रतिवेदन</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">Einmal jährlich veröffentlichen wir: Wie viele Schulen? Was wurde gekauft? Wie viele Schüler:innen erreicht?</span><span data-lang="en">Once a year we publish: how many schools? What was purchased? How many students reached?</span><span data-lang="ne">वर्षमा एकपटक हामी प्रकाशित गर्छौं: कति विद्यालय? के किनियो? कति विद्यार्थीसम्म पुगियो?</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="400">
           <div class="card-icon navy">✉️</div>
-          <h3 class="t-h4"><span data-lang="de">Projektbericht auf Wunsch</span><span data-lang="en">Project report on request</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">Jede:r Spender:in kann individuell einen Bericht über die Verwendung anfordern.</span><span data-lang="en">Every donor can individually request a report on how funds were used.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Projektbericht auf Wunsch</span><span data-lang="en">Project report on request</span><span data-lang="ne">अनुरोधमा परियोजना प्रतिवेदन</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">Jede:r Spender:in kann individuell einen Bericht über die Verwendung anfordern.</span><span data-lang="en">Every donor can individually request a report on how funds were used.</span><span data-lang="ne">हरेक दाताले रकम कसरी प्रयोग भयो भन्ने प्रतिवेदन व्यक्तिगत रूपमा माग्न सक्नुहुन्छ।</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="480">
           <div class="card-icon teal">✅</div>
-          <h3 class="t-h4"><span data-lang="de">Freigabe vor Mitteltransfer</span><span data-lang="en">Approval before transfer</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">Nach dem MOU fließen Projektmittel erst nach einem schriftlichen Vorschlag, detailliertem Budget und Genehmigung durch den NPJOE-Vorstand.</span><span data-lang="en">Under the MOU, project funds are transferred only after a written proposal, detailed budget and approval by the NPJOE board.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Freigabe vor Mitteltransfer</span><span data-lang="en">Approval before transfer</span><span data-lang="ne">रकम पठाउनुअघि स्वीकृति</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">Nach dem MOU fließen Projektmittel erst nach einem schriftlichen Vorschlag, detailliertem Budget und Genehmigung durch den NPJOE-Vorstand.</span><span data-lang="en">Under the MOU, project funds are transferred only after a written proposal, detailed budget and approval by the NPJOE board.</span><span data-lang="ne">समझदारीपत्र अनुसार लिखित प्रस्ताव, विस्तृत बजेट र NPJOE कार्यसमितिको स्वीकृतिपछि मात्र परियोजना रकम पठाइन्छ।</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="560">
           <div data-icon="clipboard" class="card-icon"></div>
-          <h3 class="t-h4"><span data-lang="de">30-Tage- und Quartalsberichte</span><span data-lang="en">30-day and quarterly reporting</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">NPYS-N reicht innerhalb von 30 Tagen nach Projektabschluss einen Einzelverwendungsnachweis mit Belegen und nach jedem Quartal einen Fortschrittsbericht ein.</span><span data-lang="en">NPYS-N submits an itemised expense report with receipts within 30 days of project completion and a progress report after every quarter.</span></p>
+          <h3 class="t-h4"><span data-lang="de">30-Tage- und Quartalsberichte</span><span data-lang="en">30-day and quarterly reporting</span><span data-lang="ne">३० दिने र त्रैमासिक प्रतिवेदन</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">NPYS-N reicht innerhalb von 30 Tagen nach Projektabschluss einen Einzelverwendungsnachweis mit Belegen und nach jedem Quartal einen Fortschrittsbericht ein.</span><span data-lang="en">NPYS-N submits an itemised expense report with receipts within 30 days of project completion and a progress report after every quarter.</span><span data-lang="ne">NPYS-N ले परियोजना सकिएको ३० दिनभित्र रसिदसहितको विस्तृत खर्च विवरण र हरेक त्रैमासपछि प्रगति प्रतिवेदन बुझाउँछ।</span></p>
         </div>
         <div class="card card-hover reveal" data-delay="640">
           <div data-icon="archive" class="card-icon navy"></div>
-          <h3 class="t-h4"><span data-lang="de">Zehn Jahre Nachweisführung</span><span data-lang="en">Ten-year record retention</span></h3>
-          <p class="text-sm text-muted"><span data-lang="de">Beide Partner bewahren Finanzunterlagen mindestens zehn Jahre auf. Verwaltungskosten über 15 % des Projektbudgets brauchen eine vorherige schriftliche Genehmigung.</span><span data-lang="en">Both partners retain financial records for at least ten years. Administrative overhead above 15% of a project budget requires prior written approval.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Zehn Jahre Nachweisführung</span><span data-lang="en">Ten-year record retention</span><span data-lang="ne">दस वर्षसम्म अभिलेख सुरक्षा</span></h3>
+          <p class="text-sm text-muted"><span data-lang="de">Beide Partner bewahren Finanzunterlagen mindestens zehn Jahre auf. Verwaltungskosten über 15 % des Projektbudgets brauchen eine vorherige schriftliche Genehmigung.</span><span data-lang="en">Both partners retain financial records for at least ten years. Administrative overhead above 15% of a project budget requires prior written approval.</span><span data-lang="ne">दुवै साझेदारले वित्तीय अभिलेख कम्तीमा दस वर्षसम्म सुरक्षित राख्छन्। परियोजना बजेटको १५ प्रतिशतभन्दा बढी प्रशासनिक खर्चका लागि अग्रिम लिखित स्वीकृति चाहिन्छ।</span></p>
         </div>
       </div>
     </div>
@@ -185,60 +185,60 @@
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow"><span data-lang="de">Berichte</span><span data-lang="en">Reports</span></span>
-        <h2><span data-lang="de">Berichte und Dokumente</span><span data-lang="en">Reports and documents</span></h2>
+        <span class="eyebrow"><span data-lang="de">Berichte</span><span data-lang="en">Reports</span><span data-lang="ne">प्रतिवेदनहरू</span></span>
+        <h2><span data-lang="de">Berichte und Dokumente</span><span data-lang="en">Reports and documents</span><span data-lang="ne">प्रतिवेदन तथा कागजात</span></h2>
       </div>
       <div class="table-wrap">
         <table class="data">
           <thead>
             <tr>
-              <th><span data-lang="de">Dokument</span><span data-lang="en">Document</span></th>
-              <th><span data-lang="de">Zeitraum</span><span data-lang="en">Period</span></th>
+              <th><span data-lang="de">Dokument</span><span data-lang="en">Document</span><span data-lang="ne">कागजात</span></th>
+              <th><span data-lang="de">Zeitraum</span><span data-lang="en">Period</span><span data-lang="ne">अवधि</span></th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong><span data-lang="de">Satzung</span><span data-lang="en">Statutes</span></strong></td>
-              <td><span data-lang="de">Stand 10. Juni 2026</span><span data-lang="en">As of 10 June 2026</span></td>
-              <td><a href="satzung.html"><span data-lang="de">Online lesen</span><span data-lang="en">Read online</span></a></td>
+              <td><strong><span data-lang="de">Satzung</span><span data-lang="en">Statutes</span><span data-lang="ne">विधान</span></strong></td>
+              <td><span data-lang="de">Stand 10. Juni 2026</span><span data-lang="en">As of 10 June 2026</span><span data-lang="ne">१० जुन २०२६ सम्म</span></td>
+              <td><a href="satzung.html"><span data-lang="de">Online lesen</span><span data-lang="en">Read online</span><span data-lang="ne">अनलाइन पढ्नुहोस्</span></a></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Projektbeschluss NPJOE-2026-001</span><span data-lang="en">Project resolution NPJOE-2026-001</span></strong></td>
+              <td><strong><span data-lang="de">Projektbeschluss NPJOE-2026-001</span><span data-lang="en">Project resolution NPJOE-2026-001</span><span data-lang="ne">परियोजना निर्णय NPJOE-2026-001</span></strong></td>
               <td>2026–2030</td>
-              <td><a href="programme.html"><span data-lang="de">Online lesen</span><span data-lang="en">Read online</span></a></td>
+              <td><a href="programme.html"><span data-lang="de">Online lesen</span><span data-lang="en">Read online</span><span data-lang="ne">अनलाइन पढ्नुहोस्</span></a></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Unterzeichnetes Memorandum of Understanding NPJOE / NPYS-N</span><span data-lang="en">Signed Memorandum of Understanding NPJOE / NPYS-N</span></strong></td>
-              <td><span data-lang="de">15. August 2026 – 31. Dezember 2030</span><span data-lang="en">15 August 2026 – 31 December 2030</span></td>
-              <td><a href="assets/docs/mou-npjoe-npys-n-2026-2030.pdf" target="_blank" rel="noopener"><span data-lang="de">PDF öffnen</span><span data-lang="en">Open PDF</span></a></td>
+              <td><strong><span data-lang="de">Unterzeichnetes Memorandum of Understanding NPJOE / NPYS-N</span><span data-lang="en">Signed Memorandum of Understanding NPJOE / NPYS-N</span><span data-lang="ne">हस्ताक्षरित समझदारीपत्र NPJOE / NPYS-N</span></strong></td>
+              <td><span data-lang="de">15. August 2026 – 31. Dezember 2030</span><span data-lang="en">15 August 2026 – 31 December 2030</span><span data-lang="ne">१५ अगस्ट २०२६ – ३१ डिसेम्बर २०३०</span></td>
+              <td><a href="assets/docs/mou-npjoe-npys-n-2026-2030.pdf" target="_blank" rel="noopener"><span data-lang="de">PDF öffnen</span><span data-lang="en">Open PDF</span><span data-lang="ne">PDF खोल्नुहोस्</span></a></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Unterzeichnetes Protokoll zum MOU</span><span data-lang="en">Signed MOU minutes</span></strong></td>
+              <td><strong><span data-lang="de">Unterzeichnetes Protokoll zum MOU</span><span data-lang="en">Signed MOU minutes</span><span data-lang="ne">हस्ताक्षरित समझदारीपत्र माइन्युट</span></strong></td>
               <td>15. August 2026 / 15 August 2026</td>
-              <td><a href="assets/docs/mou-protokoll-15-august-2026.pdf" target="_blank" rel="noopener"><span data-lang="de">PDF öffnen</span><span data-lang="en">Open PDF</span></a></td>
+              <td><a href="assets/docs/mou-protokoll-15-august-2026.pdf" target="_blank" rel="noopener"><span data-lang="de">PDF öffnen</span><span data-lang="en">Open PDF</span><span data-lang="ne">PDF खोल्नुहोस्</span></a></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Jahresbericht &amp; Kassenprüfungsbericht</span><span data-lang="en">Annual report &amp; audit report</span></strong></td>
-              <td><span data-lang="de">Geschäftsjahr 2026</span><span data-lang="en">Financial year 2026</span></td>
-              <td><span class="badge badge-warn"><span data-lang="de">In Vorbereitung</span><span data-lang="en">In preparation</span></span></td>
+              <td><strong><span data-lang="de">Jahresbericht &amp; Kassenprüfungsbericht</span><span data-lang="en">Annual report &amp; audit report</span><span data-lang="ne">वार्षिक प्रतिवेदन र लेखापरीक्षण प्रतिवेदन</span></strong></td>
+              <td><span data-lang="de">Geschäftsjahr 2026</span><span data-lang="en">Financial year 2026</span><span data-lang="ne">आर्थिक वर्ष २०२६</span></td>
+              <td><span class="badge badge-warn"><span data-lang="de">In Vorbereitung</span><span data-lang="en">In preparation</span><span data-lang="ne">तयारीमा</span></span></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Impactbericht Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign impact report</span></strong></td>
+              <td><strong><span data-lang="de">Impactbericht Erste-Hilfe-Kampagne</span><span data-lang="en">First Aid Campaign impact report</span><span data-lang="ne">प्राथमिक उपचार अभियानको प्रभाव प्रतिवेदन</span></strong></td>
               <td>2026</td>
-              <td><span class="badge badge-warn"><span data-lang="de">In Vorbereitung</span><span data-lang="en">In preparation</span></span></td>
+              <td><span class="badge badge-warn"><span data-lang="de">In Vorbereitung</span><span data-lang="en">In preparation</span><span data-lang="ne">तयारीमा</span></span></td>
             </tr>
             <tr>
-              <td><strong><span data-lang="de">Beitragsordnung</span><span data-lang="en">Fee schedule</span></strong></td>
-              <td><span data-lang="de">Beschluss der Mitgliederversammlung</span><span data-lang="en">Resolution of the general meeting</span></td>
-              <td><span class="badge badge-warn"><span data-lang="de">In Vorbereitung</span><span data-lang="en">In preparation</span></span></td>
+              <td><strong><span data-lang="de">Beitragsordnung</span><span data-lang="en">Fee schedule</span><span data-lang="ne">शुल्क नियमावली</span></strong></td>
+              <td><span data-lang="de">Beschluss der Mitgliederversammlung</span><span data-lang="en">Resolution of the general meeting</span><span data-lang="ne">साधारण सभाको निर्णय</span></td>
+              <td><span class="badge badge-warn"><span data-lang="de">In Vorbereitung</span><span data-lang="en">In preparation</span><span data-lang="ne">तयारीमा</span></span></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="callout mt-4">
         <span data-lang="de">Die hier gezeigten Zahlen und Anteile sind Planungs- und Zwischenstände des laufenden Aufbaujahres. Verbindlich sind die von den Kassenprüfer:innen geprüften und von der Mitgliederversammlung entgegengenommenen Berichte. Fragen zur Mittelverwendung beantworten wir gerne einzeln.</span>
-        <span data-lang="en">The figures and shares shown here are planning and interim values from the current build-up year. Binding are the reports audited by the auditors and received by the general meeting. We are happy to answer individual questions about the use of funds.</span>
+        <span data-lang="en">The figures and shares shown here are planning and interim values from the current build-up year. Binding are the reports audited by the auditors and received by the general meeting. We are happy to answer individual questions about the use of funds.</span><span data-lang="ne">यहाँ देखाइएका अङ्क र हिस्सा हालको निर्माण वर्षका योजनागत तथा अन्तरिम आँकडा हुन्। बाध्यकारी भने लेखापरीक्षकले जाँचेका र साधारण सभाले स्वीकार गरेका प्रतिवेदन नै हुन्। रकमको प्रयोगबारे व्यक्तिगत प्रश्नको जवाफ दिन हामी सधैँ तयार छौँ।</span>
       </div>
     </div>
   </section>
@@ -246,11 +246,11 @@
   <section class="section section-alt">
     <div class="container">
       <div class="cta-band center">
-        <h2><span data-lang="de">Fragen zur Mittelverwendung?</span><span data-lang="en">Questions about the use of funds?</span></h2>
-        <p style="margin-inline:auto"><span data-lang="de">Wir legen offen, was wir wissen — und sagen, was wir noch nicht wissen.</span><span data-lang="en">We disclose what we know — and say what we don't yet know.</span></p>
+        <h2><span data-lang="de">Fragen zur Mittelverwendung?</span><span data-lang="en">Questions about the use of funds?</span><span data-lang="ne">रकमको प्रयोगबारे प्रश्न छ?</span></h2>
+        <p style="margin-inline:auto"><span data-lang="de">Wir legen offen, was wir wissen — und sagen, was wir noch nicht wissen.</span><span data-lang="en">We disclose what we know — and say what we don't yet know.</span><span data-lang="ne">हामीलाई थाहा भएको कुरा खुलाउँछौँ — र अझै थाहा नभएको कुरा पनि भन्छौँ।</span></p>
         <div class="flex mt-4" style="justify-content:center">
-          <a class="btn btn-white" href="kontakt.html?thema=spende"><span data-lang="de">Nachfragen</span><span data-lang="en">Ask us</span></a>
-          <a class="btn btn-outline-white" href="spenden.html"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></a>
+          <a class="btn btn-white" href="kontakt.html?thema=spende"><span data-lang="de">Nachfragen</span><span data-lang="en">Ask us</span><span data-lang="ne">सोध्नुहोस्</span></a>
+          <a class="btn btn-outline-white" href="spenden.html"><span data-lang="de">Spenden</span><span data-lang="en">Donate</span><span data-lang="ne">दान गर्नुहोस्</span></a>
         </div>
       </div>
     </div>

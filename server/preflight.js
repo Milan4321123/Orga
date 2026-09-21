@@ -146,10 +146,10 @@ function checks(env) {
   const org = /email:\s*"([^"]*)"/.exec(site);
   if (org && /@progressive-youth\.de$/.test(org[1])) {
     add("note", "mailboxes",
-      "Vier Postfächer müssen beim Hoster existieren",
-      "info@, mitglied@, volunteer@ und spenden@progressive-youth.de werden auf der Website genannt. " +
+      "Das Postfach muss beim Hoster existieren",
+      "info@progressive-youth.de wird auf der Website genannt. " +
       "Formulare im Offline-Modus schreiben dorthin.",
-      "Postfächer einrichten oder die Adressen in assets/js/site.js ändern.");
+      "Postfächer einrichten oder die Adresse in assets/js/site.js ändern.");
   }
 
   /* ---- outgoing mail ---- */

@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,14 +26,14 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
         <li>News</li>
       </ol>
-      <span class="eyebrow"><span data-lang="de">Aktuelles</span><span data-lang="en">Latest</span></span>
-      <h1><span data-lang="de">News &amp; Berichte</span><span data-lang="en">News &amp; reports</span></h1>
+      <span class="eyebrow"><span data-lang="de">Aktuelles</span><span data-lang="en">Latest</span><span data-lang="ne">पछिल्लो</span></span>
+      <h1><span data-lang="de">News &amp; Berichte</span><span data-lang="en">News &amp; reports</span><span data-lang="ne">समाचार र प्रतिवेदन</span></h1>
       <p class="lead">
         <span data-lang="de">Beschlüsse, Partnerschaften, Fortschritte in Nepal und Neues aus der Diaspora. Jeder Beitrag lässt sich direkt in der Karte aufklappen — vierteljährlich fassen wir alles im Newsletter zusammen.</span>
-        <span data-lang="en">Resolutions, partnerships, progress in Nepal and news from the diaspora. Every post expands right inside its card — and each quarter we summarise everything in the newsletter.</span>
+        <span data-lang="en">Resolutions, partnerships, progress in Nepal and news from the diaspora. Every post expands right inside its card — and each quarter we summarise everything in the newsletter.</span><span data-lang="ne">निर्णय, साझेदारी, नेपालमा भएका प्रगति र प्रवासी समुदायका समाचार। हरेक समाचार आफ्नै कार्डभित्रै खुल्छ — र हरेक त्रैमासमा हामी सबै कुरा न्यूजलेटरमा समेट्छौँ।</span>
       </p>
     </div>
   </section>
@@ -42,40 +42,40 @@
     <div class="container">
       <div class="flex-between mb-4">
         <div class="flex" data-filter-group data-filter-target="#newsAll article" data-filter-empty="#newsEmpty">
-          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span></button>
-          <button class="chip" type="button" data-filter="verein" aria-pressed="false"><span data-lang="de">Verein</span><span data-lang="en">Association</span></button>
+          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-lang="de">Alle</span><span data-lang="en">All</span><span data-lang="ne">सबै</span></button>
+          <button class="chip" type="button" data-filter="verein" aria-pressed="false"><span data-lang="de">Verein</span><span data-lang="en">Association</span><span data-lang="ne">संगठन</span></button>
           <button class="chip" type="button" data-filter="partner" aria-pressed="false">NPYS-N</button>
-          <button class="chip" type="button" data-filter="erste-hilfe" aria-pressed="false"><span data-lang="de">Erste Hilfe</span><span data-lang="en">First aid</span></button>
+          <button class="chip" type="button" data-filter="erste-hilfe" aria-pressed="false"><span data-lang="de">Erste Hilfe</span><span data-lang="en">First aid</span><span data-lang="ne">प्राथमिक उपचार</span></button>
           <button class="chip" type="button" data-filter="volunteer" aria-pressed="false">Volunteer</button>
-          <button class="chip" type="button" data-filter="spenden" aria-pressed="false"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span></button>
-          <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span></button>
+          <button class="chip" type="button" data-filter="spenden" aria-pressed="false"><span data-lang="de">Spenden</span><span data-lang="en">Donations</span><span data-lang="ne">दान</span></button>
+          <button class="chip" type="button" data-filter="kultur" aria-pressed="false"><span data-lang="de">Kultur</span><span data-lang="en">Culture</span><span data-lang="ne">संस्कृति</span></button>
         </div>
         <input class="input" type="search" style="max-width:260px" data-search-target="#newsAll article" data-search-empty="#newsEmpty"
-               data-de-placeholder="News durchsuchen …" data-en-placeholder="Search news …" aria-label="Suche / Search">
+               data-de-placeholder="News durchsuchen …" data-en-placeholder="Search news …" data-ne-placeholder="समाचार खोज्नुहोस् …" aria-label="Suche / Search">
       </div>
 
       <div class="grid grid-3" id="newsAll"></div>
       <p class="center text-muted mt-4 hide" id="newsEmpty">
-        <span data-lang="de">Keine Beiträge gefunden.</span><span data-lang="en">No posts found.</span>
+        <span data-lang="de">Keine Beiträge gefunden.</span><span data-lang="en">No posts found.</span><span data-lang="ne">कुनै समाचार भेटिएन।</span>
       </p>
     </div>
   </section>
 
   <section class="section section-alt">
     <div class="container container-narrow center">
-      <h2><span data-lang="de">Nichts verpassen</span><span data-lang="en">Don't miss anything</span></h2>
+      <h2><span data-lang="de">Nichts verpassen</span><span data-lang="en">Don't miss anything</span><span data-lang="ne">केही पनि नछुटोस्</span></h2>
       <p class="lead mt-2">
         <span data-lang="de">Ein kurzer Rückblick pro Quartal: Einsätze, Schulen, Zahlen — keine Werbung, jederzeit abbestellbar.</span>
-        <span data-lang="en">One short recap per quarter: deployments, schools, figures — no advertising, unsubscribe anytime.</span>
+        <span data-lang="en">One short recap per quarter: deployments, schools, figures — no advertising, unsubscribe anytime.</span><span data-lang="ne">हरेक त्रैमासमा एउटा छोटो सारांश: परिचालन, विद्यालय, तथ्याङ्क — कुनै विज्ञापन छैन, जुनसुकै बेला हटाउन सकिन्छ।</span>
       </p>
       <form class="flex mt-4" style="justify-content:center;max-width:460px;margin-inline:auto" data-form="newsletter" novalidate>
         <input class="input" type="email" name="email" required style="flex:1 1 240px"
-               data-de-placeholder="ihre@email.de" data-en-placeholder="your@email.com" aria-label="E-Mail">
-        <button class="btn" type="submit"><span data-lang="de">Abonnieren</span><span data-lang="en">Subscribe</span></button>
+               data-de-placeholder="ihre@email.de" data-en-placeholder="your@email.com" data-ne-placeholder="tapai@email.com" aria-label="E-Mail">
+        <button class="btn" type="submit"><span data-lang="de">Abonnieren</span><span data-lang="en">Subscribe</span><span data-lang="ne">सदस्यता लिनुहोस्</span></button>
       </form>
       <p class="text-xs text-muted mt-3">
         <span data-lang="de">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer E-Mail-Adresse zum Versand des Newsletters zu. Siehe <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
-        <span data-lang="en">By submitting you consent to the processing of your e-mail address for sending the newsletter. See our <a href="datenschutz.html">privacy policy</a>.</span>
+        <span data-lang="en">By submitting you consent to the processing of your e-mail address for sending the newsletter. See our <a href="datenschutz.html">privacy policy</a>.</span><span data-lang="ne">पठाउनुभयो भने न्यूजलेटर पठाउने प्रयोजनका लागि तपाईंको इमेल ठेगाना प्रशोधन गर्न सहमति दिनुभएको मानिन्छ। हाम्रो <a href="datenschutz.html">गोपनीयता नीति</a> हेर्नुहोस्।</span>
       </p>
     </div>
   </section>

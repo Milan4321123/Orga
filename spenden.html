@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,15 +26,15 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
         <li><a href="one-euro-for-nation.html">One Euro for Nation</a></li>
-        <li><span data-lang="de">Spenden</span><span data-lang="en">Donate</span></li>
+        <li><span data-lang="de">Spenden</span><span data-lang="en">Donate</span><span data-lang="ne">दान गर्नुहोस्</span></li>
       </ol>
       <span class="eyebrow">One Euro for Nation</span>
-      <h1><span data-lang="de">Kleine Spende. Große Wirkung.</span><span data-lang="en">Small donation. Big impact.</span></h1>
+      <h1><span data-lang="de">Kleine Spende. Große Wirkung.</span><span data-lang="en">Small donation. Big impact.</span><span data-lang="ne">सानो दान। ठूलो प्रभाव।</span></h1>
       <p class="lead">
         <span data-lang="de">Ab einem Euro finanzieren Sie Erste-Hilfe-Kits, Trainingsmaterialien auf Nepali, Schulmaterialien und Hygienekits. Spenden werden über NPJOE e.V. in Deutschland verwaltet — steuerlich absetzbar — und von NPYS-N vor Ort verteilt.</span>
-        <span data-lang="en">From one euro you finance First Aid kits, Nepali training materials, school supplies and hygiene kits. Donations are managed by NPJOE e.V. in Germany — tax-deductible — and distributed on site by NPYS-N.</span>
+        <span data-lang="en">From one euro you finance First Aid kits, Nepali training materials, school supplies and hygiene kits. Donations are managed by NPJOE e.V. in Germany — tax-deductible — and distributed on site by NPYS-N.</span><span data-lang="ne">एक युरोबाट तपाईंले प्राथमिक उपचार किट, नेपाली भाषाका तालिम सामग्री, शैक्षिक सामग्री र सरसफाइ किटमा सहयोग गर्नुहुन्छ। दान जर्मनीमा NPJOE e.V. ले व्यवस्थापन गर्छ — करछुट पाइन्छ — र NPYS-N ले स्थलगत रूपमा वितरण गर्छ।</span>
       </p>
     </div>
   </section>
@@ -45,20 +45,20 @@
       <div class="card card-pad-lg reveal">
         <div class="flex-between mb-3">
           <div>
-            <h2 class="t-h3" style="font-size:var(--fs-xl)"><span data-lang="de">Jahresziel 2026</span><span data-lang="en">2026 annual goal</span></h2>
-            <p class="text-sm text-muted"><span data-lang="de">Finanzierung der Nationalen Erste-Hilfe-Kampagne und des Schulbedarfs</span><span data-lang="en">Financing the National First Aid Campaign and school supplies</span></p>
+            <h2 class="t-h3" style="font-size:var(--fs-xl)"><span data-lang="de">Jahresziel 2026</span><span data-lang="en">2026 annual goal</span><span data-lang="ne">२०२६ को वार्षिक लक्ष्य</span></h2>
+            <p class="text-sm text-muted"><span data-lang="de">Finanzierung der Nationalen Erste-Hilfe-Kampagne und des Schulbedarfs</span><span data-lang="en">Financing the National First Aid Campaign and school supplies</span><span data-lang="ne">राष्ट्रिय प्राथमिक उपचार अभियान र शैक्षिक सामग्रीमा खर्च जुटाउने</span></p>
           </div>
           <div class="center">
             <div class="stat-num">8.420 €</div>
-            <div class="stat-label"><span data-lang="de">von 25.000 €</span><span data-lang="en">of €25,000</span></div>
+            <div class="stat-label"><span data-lang="de">von 25.000 €</span><span data-lang="en">of €25,000</span><span data-lang="ne">२५,००० युरोमध्ये</span></div>
           </div>
         </div>
         <div class="progress" data-progress="34"><span></span></div>
         <div class="grid grid-4 mt-4">
-          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="168"></div><div class="stat-label"><span data-lang="de">Erste-Hilfe-Kits finanziert</span><span data-lang="en">First Aid kits funded</span></div></div>
-          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="2400"></div><div class="stat-label"><span data-lang="de">Hefte &amp; Stifte verteilt</span><span data-lang="en">Notebooks &amp; pens distributed</span></div></div>
-          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="12"></div><div class="stat-label"><span data-lang="de">Schulen erreicht</span><span data-lang="en">Schools reached</span></div></div>
-          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="341"></div><div class="stat-label"><span data-lang="de">Spender:innen weltweit</span><span data-lang="en">Donors worldwide</span></div></div>
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="168"></div><div class="stat-label"><span data-lang="de">Erste-Hilfe-Kits finanziert</span><span data-lang="en">First Aid kits funded</span><span data-lang="ne">सहयोग जुटेका प्राथमिक उपचार किट</span></div></div>
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="2400"></div><div class="stat-label"><span data-lang="de">Hefte &amp; Stifte verteilt</span><span data-lang="en">Notebooks &amp; pens distributed</span><span data-lang="ne">वितरित कापी र कलम</span></div></div>
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="12"></div><div class="stat-label"><span data-lang="de">Schulen erreicht</span><span data-lang="en">Schools reached</span><span data-lang="ne">पुगिएका विद्यालय</span></div></div>
+          <div class="center"><div class="stat-num" style="font-size:1.5rem" data-count="341"></div><div class="stat-label"><span data-lang="de">Spender:innen weltweit</span><span data-lang="en">Donors worldwide</span><span data-lang="ne">विश्वभरका दाता</span></div></div>
         </div>
       </div>
     </div>
@@ -69,58 +69,58 @@
       <div>
         <!-- Donation form -->
         <div class="form-card">
-          <h2><span data-lang="de">Ich möchte spenden</span><span data-lang="en">I want to donate</span></h2>
+          <h2><span data-lang="de">Ich möchte spenden</span><span data-lang="en">I want to donate</span><span data-lang="ne">म दान गर्न चाहन्छु</span></h2>
           <p class="lead mt-2 mb-4" style="font-size:var(--fs-base)">
             <span data-lang="de">Wählen Sie einen Betrag — Sie sehen sofort, was daraus in Nepal wird. Anschließend erhalten Sie unsere Bankverbindung mit Ihrem persönlichen Verwendungszweck.</span>
-            <span data-lang="en">Choose an amount — you immediately see what it becomes in Nepal. You then receive our bank details with your personal reference.</span>
+            <span data-lang="en">Choose an amount — you immediately see what it becomes in Nepal. You then receive our bank details with your personal reference.</span><span data-lang="ne">रकम छान्नुहोस् — त्यो नेपालमा के बन्छ तुरुन्तै देखिन्छ। त्यसपछि तपाईंले आफ्नो व्यक्तिगत सन्दर्भ नम्बरसहित हाम्रो बैङ्क विवरण पाउनुहुन्छ।</span>
           </p>
 
           <form data-form="donation" data-ref-prefix="SPE" data-subject="Spendenzusage One Euro for Nation"
-                data-email="spenden@progressive-youth.de" novalidate>
+                data-email="info@progressive-youth.de" novalidate>
             <fieldset class="fieldset">
-              <legend><span data-lang="de">Betrag</span><span data-lang="en">Amount</span></legend>
+              <legend><span data-lang="de">Betrag</span><span data-lang="en">Amount</span><span data-lang="ne">रकम</span></legend>
               <div class="optgrid" id="tierTiles"></div>
               <div class="form-grid mt-3">
                 <div class="field" id="customWrap" style="display:none">
-                  <label for="s-custom"><span data-lang="de">Eigener Betrag in €</span><span data-lang="en">Custom amount in €</span></label>
+                  <label for="s-custom"><span data-lang="de">Eigener Betrag in €</span><span data-lang="en">Custom amount in €</span><span data-lang="ne">आफ्नै रकम (युरोमा)</span></label>
                   <input class="input" id="s-custom" name="betragCustom" type="number" min="1" max="100000" step="1" value="25">
                 </div>
                 <div class="field">
-                  <label for="s-intervall"><span data-lang="de">Häufigkeit</span><span data-lang="en">Frequency</span></label>
+                  <label for="s-intervall"><span data-lang="de">Häufigkeit</span><span data-lang="en">Frequency</span><span data-lang="ne">आवृत्ति</span></label>
                   <select class="select" id="s-intervall" name="intervall">
-                    <option value="einmalig" data-de="Einmalig" data-en="One-off">Einmalig</option>
-                    <option value="monatlich" data-de="Monatlich (Dauerauftrag)" data-en="Monthly (standing order)">Monatlich (Dauerauftrag)</option>
-                    <option value="jaehrlich" data-de="Jährlich" data-en="Annually">Jährlich</option>
+                    <option value="einmalig" data-de="Einmalig" data-en="One-off" data-ne="एकपटक">Einmalig</option>
+                    <option value="monatlich" data-de="Monatlich (Dauerauftrag)" data-en="Monthly (standing order)" data-ne="मासिक (स्थायी आदेश)">Monatlich (Dauerauftrag)</option>
+                    <option value="jaehrlich" data-de="Jährlich" data-en="Annually" data-ne="वार्षिक">Jährlich</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="s-zweck"><span data-lang="de">Verwendungszweck</span><span data-lang="en">Purpose</span></label>
+                  <label for="s-zweck"><span data-lang="de">Verwendungszweck</span><span data-lang="en">Purpose</span><span data-lang="ne">प्रयोजन</span></label>
                   <select class="select" id="s-zweck" name="zweck">
-                    <option value="wo-am-noetigsten" data-de="Wo es am nötigsten ist" data-en="Where it is needed most">Wo es am nötigsten ist</option>
-                    <option value="erste-hilfe" data-de="Erste-Hilfe-Kampagne" data-en="First Aid Campaign">Erste-Hilfe-Kampagne</option>
-                    <option value="schulmaterial" data-de="Schulmaterialien" data-en="School materials">Schulmaterialien</option>
-                    <option value="hygiene" data-de="Hygienekits" data-en="Hygiene kits">Hygienekits</option>
-                    <option value="transport" data-de="Transport zu abgelegenen Schulen" data-en="Transport to remote schools">Transport zu abgelegenen Schulen</option>
+                    <option value="wo-am-noetigsten" data-de="Wo es am nötigsten ist" data-en="Where it is needed most" data-ne="जहाँ सबैभन्दा बढी खाँचो छ">Wo es am nötigsten ist</option>
+                    <option value="erste-hilfe" data-de="Erste-Hilfe-Kampagne" data-en="First Aid Campaign" data-ne="प्राथमिक उपचार अभियान">Erste-Hilfe-Kampagne</option>
+                    <option value="schulmaterial" data-de="Schulmaterialien" data-en="School materials" data-ne="शैक्षिक सामग्री">Schulmaterialien</option>
+                    <option value="hygiene" data-de="Hygienekits" data-en="Hygiene kits" data-ne="सरसफाइ किट">Hygienekits</option>
+                    <option value="transport" data-de="Transport zu abgelegenen Schulen" data-en="Transport to remote schools" data-ne="दुर्गम विद्यालयसम्म ढुवानी">Transport zu abgelegenen Schulen</option>
                   </select>
                 </div>
               </div>
 
               <!-- Impact calculator -->
               <div class="callout callout-saffron mt-4" id="impactBox">
-                <strong><span data-lang="de">Ihre Wirkung:</span><span data-lang="en">Your impact:</span></strong>
+                <strong><span data-lang="de">Ihre Wirkung:</span><span data-lang="en">Your impact:</span><span data-lang="ne">तपाईंको प्रभाव:</span></strong>
                 <span id="impactText"></span>
               </div>
             </fieldset>
 
             <fieldset class="fieldset">
-              <legend><span data-lang="de">Ihre Angaben</span><span data-lang="en">Your details</span></legend>
+              <legend><span data-lang="de">Ihre Angaben</span><span data-lang="en">Your details</span><span data-lang="ne">तपाईंको विवरण</span></legend>
               <p class="fieldset-hint">
                 <span data-lang="de">Für die Zuwendungsbestätigung benötigen wir Name und Anschrift. Möchten Sie anonym spenden, genügt eine E-Mail-Adresse.</span>
-                <span data-lang="en">For the donation receipt we need your name and address. If you prefer to donate anonymously, an e-mail address is enough.</span>
+                <span data-lang="en">For the donation receipt we need your name and address. If you prefer to donate anonymously, an e-mail address is enough.</span><span data-lang="ne">दान रसिदका लागि हामीलाई तपाईंको नाम र ठेगाना चाहिन्छ। नाम नखुलाई दान गर्न चाहनुहुन्छ भने इमेल ठेगाना भए पुग्छ।</span>
               </p>
               <div class="form-grid">
                 <div class="field">
-                  <label for="s-name"><span data-lang="de">Name</span><span data-lang="en">Name</span></label>
+                  <label for="s-name"><span data-lang="de">Name</span><span data-lang="en">Name</span><span data-lang="ne">नाम</span></label>
                   <input class="input" id="s-name" name="name" type="text" autocomplete="name">
                 </div>
                 <div class="field">
@@ -128,69 +128,69 @@
                   <input class="input" id="s-email" name="email" type="email" required autocomplete="email">
                 </div>
                 <div class="field span-2">
-                  <label for="s-adresse"><span data-lang="de">Anschrift (für die Zuwendungsbestätigung)</span><span data-lang="en">Address (for the donation receipt)</span></label>
+                  <label for="s-adresse"><span data-lang="de">Anschrift (für die Zuwendungsbestätigung)</span><span data-lang="en">Address (for the donation receipt)</span><span data-lang="ne">ठेगाना (दान रसिदका लागि)</span></label>
                   <input class="input" id="s-adresse" name="adresse" type="text" autocomplete="street-address">
                 </div>
                 <div class="field">
-                  <label for="s-land"><span data-lang="de">Land</span><span data-lang="en">Country</span></label>
+                  <label for="s-land"><span data-lang="de">Land</span><span data-lang="en">Country</span><span data-lang="ne">देश</span></label>
                   <input class="input" id="s-land" name="land" type="text" value="Deutschland">
                 </div>
                 <div class="field">
-                  <label for="s-widmung"><span data-lang="de">Spende im Namen von (optional)</span><span data-lang="en">Donation in the name of (optional)</span></label>
-                  <input class="input" id="s-widmung" name="widmung" type="text" data-de-placeholder="z. B. als Geschenk oder zum Gedenken" data-en-placeholder="e.g. as a gift or in memory">
+                  <label for="s-widmung"><span data-lang="de">Spende im Namen von (optional)</span><span data-lang="en">Donation in the name of (optional)</span><span data-lang="ne">कसको नाममा दान (ऐच्छिक)</span></label>
+                  <input class="input" id="s-widmung" name="widmung" type="text" data-de-placeholder="z. B. als Geschenk oder zum Gedenken" data-en-placeholder="e.g. as a gift or in memory" data-ne-placeholder="जस्तै उपहारका रूपमा वा सम्झनामा">
                 </div>
                 <div class="field span-2">
-                  <label for="s-nachricht"><span data-lang="de">Nachricht an das Team (optional)</span><span data-lang="en">Message to the team (optional)</span></label>
+                  <label for="s-nachricht"><span data-lang="de">Nachricht an das Team (optional)</span><span data-lang="en">Message to the team (optional)</span><span data-lang="ne">टोलीलाई सन्देश (ऐच्छिक)</span></label>
                   <textarea class="textarea" id="s-nachricht" name="nachricht" rows="3" style="min-height:90px"></textarea>
                 </div>
               </div>
               <div class="stack-sm mt-3">
                 <label class="check"><input type="checkbox" name="zuwendungsbestaetigung" data-track>
-                  <span><strong><span data-lang="de">Ich möchte eine Zuwendungsbestätigung erhalten</span><span data-lang="en">I would like a donation receipt</span></strong>
-                  <span class="hint"><span data-lang="de">Steuerlich absetzbar in Deutschland. Wir senden sie im Folgejahr per E-Mail.</span><span data-lang="en">Tax-deductible in Germany. We send it by e-mail in the following year.</span></span></span></label>
+                  <span><strong><span data-lang="de">Ich möchte eine Zuwendungsbestätigung erhalten</span><span data-lang="en">I would like a donation receipt</span><span data-lang="ne">मलाई दान रसिद चाहिन्छ</span></strong>
+                  <span class="hint"><span data-lang="de">Steuerlich absetzbar in Deutschland. Wir senden sie im Folgejahr per E-Mail.</span><span data-lang="en">Tax-deductible in Germany. We send it by e-mail in the following year.</span><span data-lang="ne">जर्मनीमा करछुट पाइन्छ। हामी अर्को वर्ष इमेलबाट पठाउँछौँ।</span></span></span></label>
                 <label class="check"><input type="checkbox" name="projektbericht" data-track>
-                  <span><strong><span data-lang="de">Ich möchte einen Projektbericht erhalten</span><span data-lang="en">I would like a project report</span></strong>
-                  <span class="hint"><span data-lang="de">Wie viele Schulen, was wurde gekauft, wie viele Schüler:innen erreicht.</span><span data-lang="en">How many schools, what was purchased, how many students reached.</span></span></span></label>
+                  <span><strong><span data-lang="de">Ich möchte einen Projektbericht erhalten</span><span data-lang="en">I would like a project report</span><span data-lang="ne">मलाई परियोजना प्रतिवेदन चाहिन्छ</span></strong>
+                  <span class="hint"><span data-lang="de">Wie viele Schulen, was wurde gekauft, wie viele Schüler:innen erreicht.</span><span data-lang="en">How many schools, what was purchased, how many students reached.</span><span data-lang="ne">कति विद्यालय, के किनियो, कति विद्यार्थीसम्म पुगियो।</span></span></span></label>
                 <label class="check"><input type="checkbox" name="dsgvo" required data-track>
-                  <span><strong><span data-lang="de">Datenschutz <span class="req">*</span></span><span data-lang="en">Data protection <span class="req">*</span></span></strong>
-                  <span class="hint"><span data-lang="de">Meine Angaben dürfen zur Abwicklung der Spende gespeichert werden. Siehe <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span><span data-lang="en">My details may be stored to process the donation. See the <a href="datenschutz.html" target="_blank">privacy policy</a>.</span></span></span></label>
+                  <span><strong><span data-lang="de">Datenschutz <span class="req">*</span></span><span data-lang="en">Data protection <span class="req">*</span><span data-lang="ne">डेटा संरक्षण <span class="req">*</span></span></strong>
+                  <span class="hint"><span data-lang="de">Meine Angaben dürfen zur Abwicklung der Spende gespeichert werden. Siehe <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span><span data-lang="en">My details may be stored to process the donation. See the <a href="datenschutz.html" target="_blank">privacy policy</a>.</span><span data-lang="ne">दान प्रक्रिया पूरा गर्न मेरो विवरण राख्न सकिन्छ। <a href="datenschutz.html" target="_blank">गोपनीयता नीति</a> हेर्नुहोस्।</span></span></span></label>
               </div>
             </fieldset>
 
             <div class="callout mt-2">
               <span data-lang="de">Dieses Formular löst keine Zahlung aus. Sie erhalten anschließend die Bankverbindung mit Ihrem persönlichen Verwendungszweck, damit wir Ihre Spende zuordnen können.</span>
-              <span data-lang="en">This form does not trigger a payment. You will then receive our bank details with your personal reference so we can allocate your donation.</span>
+              <span data-lang="en">This form does not trigger a payment. You will then receive our bank details with your personal reference so we can allocate your donation.</span><span data-lang="ne">यो फारमले भुक्तानी गर्दैन। त्यसपछि तपाईंले आफ्नो व्यक्तिगत सन्दर्भ नम्बरसहित हाम्रो बैङ्क विवरण पाउनुहुन्छ, ताकि हामीले तपाईंको दान छुट्याउन सकौँ।</span>
             </div>
 
             <div class="form-status"></div>
             <div class="form-nav">
               <span></span>
-              <button class="btn btn-lg" type="submit"><span data-lang="de">Spendenzusage senden</span><span data-lang="en">Send donation pledge</span></button>
+              <button class="btn btn-lg" type="submit"><span data-lang="de">Spendenzusage senden</span><span data-lang="en">Send donation pledge</span><span data-lang="ne">दान प्रतिबद्धता पठाउनुहोस्</span></button>
             </div>
           </form>
 
           <div class="hide" data-success>
             <div class="center" style="padding:1rem 0 2rem">
               <div data-icon="heart" class="card-icon mx-auto" style="background:var(--ok-soft);color:var(--ok);font-size:1.8rem"></div>
-              <h2><span data-lang="de">Danke — von Herzen!</span><span data-lang="en">Thank you — sincerely!</span></h2>
+              <h2><span data-lang="de">Danke — von Herzen!</span><span data-lang="en">Thank you — sincerely!</span><span data-lang="ne">हार्दिक धन्यवाद!</span></h2>
               <p class="lead mt-2" data-delivery></p>
-              <p class="mt-3"><span data-lang="de">Ihr Verwendungszweck:</span><span data-lang="en">Your payment reference:</span> <strong data-ref style="font-size:1.15rem"></strong></p>
-              <p class="text-sm text-muted mt-1"><span data-lang="de">Bitte geben Sie diese Referenz bei der Überweisung an.</span><span data-lang="en">Please quote this reference with your transfer.</span></p>
+              <p class="mt-3"><span data-lang="de">Ihr Verwendungszweck:</span><span data-lang="en">Your payment reference:</span><span data-lang="ne">तपाईंको भुक्तानी सन्दर्भ:</span> <strong data-ref style="font-size:1.15rem"></strong></p>
+              <p class="text-sm text-muted mt-1"><span data-lang="de">Bitte geben Sie diese Referenz bei der Überweisung an.</span><span data-lang="en">Please quote this reference with your transfer.</span><span data-lang="ne">रकम पठाउँदा कृपया यही सन्दर्भ उल्लेख गर्नुहोस्।</span></p>
             </div>
             <div class="card" style="background:var(--bg-alt)">
-              <h3 class="t-h4"><span data-lang="de">Bankverbindung</span><span data-lang="en">Bank details</span></h3>
+              <h3 class="t-h4"><span data-lang="de">Bankverbindung</span><span data-lang="en">Bank details</span><span data-lang="ne">बैङ्क विवरण</span></h3>
               <div class="stack-sm mt-3">
-                <div class="copy-row"><span><span data-lang="de">Kontoinhaber</span><span data-lang="en">Account holder</span></span><code>Nepalesische Progressive Jugendorganisation e.V.</code></div>
-                <div class="copy-row"><span>IBAN</span><span class="flex" style="gap:.5rem"><code id="ibanText">DE00 0000 0000 0000 0000 00</code><button class="btn btn-sm btn-ghost" type="button" data-copy="DE00 0000 0000 0000 0000 00"><span data-lang="de">Kopieren</span><span data-lang="en">Copy</span></button></span></div>
+                <div class="copy-row"><span><span data-lang="de">Kontoinhaber</span><span data-lang="en">Account holder</span><span data-lang="ne">खातावाला</span></span><code>Nepalesische Progressive Jugendorganisation e.V.</code></div>
+                <div class="copy-row"><span>IBAN</span><span class="flex" style="gap:.5rem"><code id="ibanText">DE00 0000 0000 0000 0000 00</code><button class="btn btn-sm btn-ghost" type="button" data-copy="DE00 0000 0000 0000 0000 00"><span data-lang="de">Kopieren</span><span data-lang="en">Copy</span><span data-lang="ne">प्रतिलिपि गर्नुहोस्</span></button></span></div>
                 <div class="copy-row"><span>BIC</span><code>XXXXDEXXXXX</code></div>
               </div>
               <p class="text-xs text-muted mt-3">
                 <span data-lang="de">Die Bankverbindung wird vom Vorstand aktualisiert. Bitte prüfen Sie die Angaben in Ihrer Bestätigungs-E-Mail.</span>
-                <span data-lang="en">Bank details are maintained by the board. Please verify them in your confirmation e-mail.</span>
+                <span data-lang="en">Bank details are maintained by the board. Please verify them in your confirmation e-mail.</span><span data-lang="ne">बैङ्क विवरण कार्यसमितिले राख्छ। कृपया आफ्नो पुष्टि इमेलमा यो जाँच्नुहोस्।</span>
               </p>
               <div class="flex mt-4">
-                <a class="btn btn-sm" href="transparenz.html"><span data-lang="de">Mittelverwendung ansehen</span><span data-lang="en">See how funds are used</span></a>
-                <button class="btn btn-sm btn-ghost" type="button" data-share><span data-lang="de">Aktion teilen</span><span data-lang="en">Share the campaign</span></button>
+                <a class="btn btn-sm" href="transparenz.html"><span data-lang="de">Mittelverwendung ansehen</span><span data-lang="en">See how funds are used</span><span data-lang="ne">रकमको प्रयोग हेर्नुहोस्</span></a>
+                <button class="btn btn-sm btn-ghost" type="button" data-share><span data-lang="de">Aktion teilen</span><span data-lang="en">Share the campaign</span><span data-lang="ne">अभियान साझा गर्नुहोस्</span></button>
               </div>
             </div>
           </div>
@@ -198,33 +198,33 @@
 
         <!-- What donations buy -->
         <div class="mt-6">
-          <h2><span data-lang="de">Wofür Ihre Spende verwendet wird</span><span data-lang="en">What your donation is used for</span></h2>
+          <h2><span data-lang="de">Wofür Ihre Spende verwendet wird</span><span data-lang="en">What your donation is used for</span><span data-lang="ne">तपाईंको दान केमा प्रयोग हुन्छ</span></h2>
           <p class="lead mt-2 mb-4" style="font-size:var(--fs-base)">
             <span data-lang="de">Alle Spenden fließen direkt in die folgenden Bereiche — kein Geld verschwindet in Verwaltungsstrukturen.</span>
-            <span data-lang="en">All donations flow directly into the following areas — no money disappears into administrative structures.</span>
+            <span data-lang="en">All donations flow directly into the following areas — no money disappears into administrative structures.</span><span data-lang="ne">सबै दान सिधै तलका क्षेत्रमा जान्छ — कुनै पनि रकम प्रशासनिक संरचनामा हराउँदैन।</span>
           </p>
           <div class="table-wrap">
             <table class="data">
               <thead>
                 <tr>
-                  <th><span data-lang="de">Bereich</span><span data-lang="en">Area</span></th>
-                  <th><span data-lang="de">Was finanziert wird</span><span data-lang="en">What is financed</span></th>
+                  <th><span data-lang="de">Bereich</span><span data-lang="en">Area</span><span data-lang="ne">क्षेत्र</span></th>
+                  <th><span data-lang="de">Was finanziert wird</span><span data-lang="en">What is financed</span><span data-lang="ne">केमा खर्च हुन्छ</span></th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td><strong><span data-lang="de">Erste-Hilfe-Kits</span><span data-lang="en">First Aid kits</span></strong></td><td><span data-lang="de">Zertifizierte Kits für jede Schule der Kampagne — Grundausstattung für den Einsatz</span><span data-lang="en">Certified kits for every school in the campaign — basic equipment for deployment</span></td></tr>
-                <tr><td><strong><span data-lang="de">Trainingsmaterialien</span><span data-lang="en">Training materials</span></strong></td><td><span data-lang="de">Handbücher, Poster und Übungsmaterial auf Nepali für Schüler:innen und Lehrkräfte</span><span data-lang="en">Manuals, posters and practice materials in Nepali for students and teachers</span></td></tr>
-                <tr><td><strong><span data-lang="de">Schulmaterialien</span><span data-lang="en">School materials</span></strong></td><td><span data-lang="de">Hefte, Stifte und Bücher für Schüler:innen aus benachteiligten Familien</span><span data-lang="en">Notebooks, pens and books for students from disadvantaged families</span></td></tr>
-                <tr><td><strong><span data-lang="de">Hygienekits</span><span data-lang="en">Hygiene kits</span></strong></td><td><span data-lang="de">Seife, Sanitärbedarf und Handwaschstationen für Schulen</span><span data-lang="en">Soap, sanitary supplies and handwashing stations for schools</span></td></tr>
-                <tr><td><strong><span data-lang="de">Transportkosten</span><span data-lang="en">Transport costs</span></strong></td><td><span data-lang="de">Reisekosten für NPYS-N-Mitarbeitende zu abgelegenen Schulen</span><span data-lang="en">Travel costs for NPYS-N staff to reach remote schools</span></td></tr>
+                <tr><td><strong><span data-lang="de">Erste-Hilfe-Kits</span><span data-lang="en">First Aid kits</span><span data-lang="ne">प्राथमिक उपचार किट</span></strong></td><td><span data-lang="de">Zertifizierte Kits für jede Schule der Kampagne — Grundausstattung für den Einsatz</span><span data-lang="en">Certified kits for every school in the campaign — basic equipment for deployment</span><span data-lang="ne">अभियानका हरेक विद्यालयका लागि प्रमाणित किट — परिचालनका लागि आधारभूत सामग्री</span></td></tr>
+                <tr><td><strong><span data-lang="de">Trainingsmaterialien</span><span data-lang="en">Training materials</span><span data-lang="ne">तालिम सामग्री</span></strong></td><td><span data-lang="de">Handbücher, Poster und Übungsmaterial auf Nepali für Schüler:innen und Lehrkräfte</span><span data-lang="en">Manuals, posters and practice materials in Nepali for students and teachers</span><span data-lang="ne">विद्यार्थी र शिक्षकका लागि नेपाली भाषाका पुस्तिका, पोस्टर र अभ्यास सामग्री</span></td></tr>
+                <tr><td><strong><span data-lang="de">Schulmaterialien</span><span data-lang="en">School materials</span><span data-lang="ne">शैक्षिक सामग्री</span></strong></td><td><span data-lang="de">Hefte, Stifte und Bücher für Schüler:innen aus benachteiligten Familien</span><span data-lang="en">Notebooks, pens and books for students from disadvantaged families</span><span data-lang="ne">विपन्न परिवारका विद्यार्थीका लागि कापी, कलम र पुस्तक</span></td></tr>
+                <tr><td><strong><span data-lang="de">Hygienekits</span><span data-lang="en">Hygiene kits</span><span data-lang="ne">सरसफाइ किट</span></strong></td><td><span data-lang="de">Seife, Sanitärbedarf und Handwaschstationen für Schulen</span><span data-lang="en">Soap, sanitary supplies and handwashing stations for schools</span><span data-lang="ne">विद्यालयका लागि साबुन, सरसफाइ सामग्री र हात धुने ठाउँ</span></td></tr>
+                <tr><td><strong><span data-lang="de">Transportkosten</span><span data-lang="en">Transport costs</span><span data-lang="ne">ढुवानी खर्च</span></strong></td><td><span data-lang="de">Reisekosten für NPYS-N-Mitarbeitende zu abgelegenen Schulen</span><span data-lang="en">Travel costs for NPYS-N staff to reach remote schools</span><span data-lang="ne">दुर्गम विद्यालयसम्म पुग्न NPYS-N का कर्मचारीको यात्रा खर्च</span></td></tr>
               </tbody>
             </table>
           </div>
           <p class="legal-basis mt-3">
-            <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span></strong>
-            § 3(i) <span data-lang="de">Spendenaktionen für Schulmaterialien · Hygienekits und medizinische Sachspenden</span><span data-lang="en">donation drives for school materials · hygiene kits and medical in-kind donations</span> ·
-            § 3(e) <span data-lang="de">Förderung des öffentlichen Gesundheitswesens</span><span data-lang="en">promotion of public health</span> ·
-            § 10 <span data-lang="de">Spenden als wirtschaftliche Einnahmequelle</span><span data-lang="en">donations as a source of income</span>
+            <strong><span data-lang="de">Satzungsgrundlage:</span><span data-lang="en">Statutory basis:</span><span data-lang="ne">विधानसम्मत आधार:</span></strong>
+            § 3(i) <span data-lang="de">Spendenaktionen für Schulmaterialien · Hygienekits und medizinische Sachspenden</span><span data-lang="en">donation drives for school materials · hygiene kits and medical in-kind donations</span><span data-lang="ne">शैक्षिक सामग्रीका लागि दान अभियान · सरसफाइ किट र स्वास्थ्यसम्बन्धी वस्तुगत सहयोग</span> ·
+            § 3(e) <span data-lang="de">Förderung des öffentlichen Gesundheitswesens</span><span data-lang="en">promotion of public health</span><span data-lang="ne">जनस्वास्थ्यको प्रवर्धन</span> ·
+            § 10 <span data-lang="de">Spenden als wirtschaftliche Einnahmequelle</span><span data-lang="en">donations as a source of income</span><span data-lang="ne">आयको स्रोतका रूपमा दान</span>
           </p>
         </div>
       </div>
@@ -232,8 +232,8 @@
       <!-- Sidebar -->
       <aside class="stack">
         <div class="card" style="background:var(--brand-soft);border-color:var(--brand)">
-          <h3 class="t-h4"><span data-lang="de">Lieber direkt überweisen?</span><span data-lang="en">Prefer a direct transfer?</span></h3>
-          <p class="text-sm mt-1"><span data-lang="de">Verwendungszweck: „One Euro for Nation“ plus Ihr Name, wenn Sie eine Bestätigung wünschen.</span><span data-lang="en">Reference: 'One Euro for Nation' plus your name if you want a receipt.</span></p>
+          <h3 class="t-h4"><span data-lang="de">Lieber direkt überweisen?</span><span data-lang="en">Prefer a direct transfer?</span><span data-lang="ne">सिधै रकम पठाउन चाहनुहुन्छ?</span></h3>
+          <p class="text-sm mt-1"><span data-lang="de">Verwendungszweck: „One Euro for Nation“ plus Ihr Name, wenn Sie eine Bestätigung wünschen.</span><span data-lang="en">Reference: 'One Euro for Nation' plus your name if you want a receipt.</span><span data-lang="ne">सन्दर्भ: 'One Euro for Nation' र रसिद चाहिन्छ भने आफ्नो नाम पनि।</span></p>
           <div class="stack-sm mt-3 text-sm">
             <div class="copy-row"><span>IBAN</span><code>DE00 0000 0000 0000 0000 00</code></div>
             <div class="copy-row"><span>BIC</span><code>XXXXDEXXXXX</code></div>
@@ -241,25 +241,25 @@
         </div>
 
         <div class="card">
-          <h3 class="t-h4"><span data-lang="de">Transparenz</span><span data-lang="en">Transparency</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Transparenz</span><span data-lang="en">Transparency</span><span data-lang="ne">पारदर्शिता</span></h3>
           <ul class="feature-list mt-3 text-sm">
-            <li><span class="tick">✓</span><span data-lang="de">Verwaltung durch NPJOE e.V. in Deutschland</span><span data-lang="en">Managed by NPJOE e.V. in Germany</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Verteilung vor Ort durch NPYS-N</span><span data-lang="en">Distributed on site by NPYS-N</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Jährlicher öffentlicher Bericht</span><span data-lang="en">Annual public report</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Kassenprüfung durch zwei gewählte Prüfer:innen</span><span data-lang="en">Audited by two elected auditors</span></li>
-            <li><span class="tick">✓</span><span data-lang="de">Projektbericht auf Wunsch für jede Spende</span><span data-lang="en">Project report on request for every donation</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Verwaltung durch NPJOE e.V. in Deutschland</span><span data-lang="en">Managed by NPJOE e.V. in Germany</span><span data-lang="ne">जर्मनीमा NPJOE e.V. द्वारा व्यवस्थापित</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Verteilung vor Ort durch NPYS-N</span><span data-lang="en">Distributed on site by NPYS-N</span><span data-lang="ne">NPYS-N द्वारा स्थलगत वितरण</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Jährlicher öffentlicher Bericht</span><span data-lang="en">Annual public report</span><span data-lang="ne">वार्षिक सार्वजनिक प्रतिवेदन</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Kassenprüfung durch zwei gewählte Prüfer:innen</span><span data-lang="en">Audited by two elected auditors</span><span data-lang="ne">दुई निर्वाचित लेखापरीक्षकद्वारा लेखापरीक्षण</span></li>
+            <li><span class="tick">✓</span><span data-lang="de">Projektbericht auf Wunsch für jede Spende</span><span data-lang="en">Project report on request for every donation</span><span data-lang="ne">हरेक दानका लागि अनुरोधमा परियोजना प्रतिवेदन</span></li>
           </ul>
-          <p class="mt-3"><a class="text-sm" href="transparenz.html"><span data-lang="de">Zum Transparenzbericht →</span><span data-lang="en">To the transparency report →</span></a></p>
+          <p class="mt-3"><a class="text-sm" href="transparenz.html"><span data-lang="de">Zum Transparenzbericht →</span><span data-lang="en">To the transparency report →</span><span data-lang="ne">पारदर्शिता प्रतिवेदनमा जानुहोस् →</span></a></p>
         </div>
 
         <div class="card">
-          <h3 class="t-h4"><span data-lang="de">Andere Wege zu helfen</span><span data-lang="en">Other ways to help</span></h3>
+          <h3 class="t-h4"><span data-lang="de">Andere Wege zu helfen</span><span data-lang="en">Other ways to help</span><span data-lang="ne">सहयोग गर्ने अन्य उपाय</span></h3>
           <div class="stack-sm mt-2 text-sm">
-            <p><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung</span><span data-lang="en">materials, books, medical equipment</span></p>
-            <p><span class="field-icon-sm" data-icon="party" aria-hidden="true"></span><strong><span data-lang="de">Spendenaktion</span><span data-lang="en">Fundraiser</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span></p>
-            <p><span class="field-icon-sm" data-icon="building" aria-hidden="true"></span><strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span></p>
+            <p><span class="field-icon-sm" data-icon="box" aria-hidden="true"></span><strong><span data-lang="de">Sachspenden</span><span data-lang="en">In-kind donations</span><span data-lang="ne">वस्तुगत सहयोग</span></strong> — <span data-lang="de">Material, Bücher, medizinische Ausstattung</span><span data-lang="en">materials, books, medical equipment</span><span data-lang="ne">सामग्री, पुस्तक, स्वास्थ्य उपकरण</span></p>
+            <p><span class="field-icon-sm" data-icon="party" aria-hidden="true"></span><strong><span data-lang="de">Spendenaktion</span><span data-lang="en">Fundraiser</span><span data-lang="ne">रकम सङ्कलन कार्यक्रम</span></strong> — <span data-lang="de">Geburtstag, Hochzeit, Firmenfeier</span><span data-lang="en">birthday, wedding, company event</span><span data-lang="ne">जन्मदिन, विवाह, कम्पनीको कार्यक्रम</span></p>
+            <p><span class="field-icon-sm" data-icon="building" aria-hidden="true"></span><strong><span data-lang="de">Firmenspende</span><span data-lang="en">Corporate giving</span><span data-lang="ne">कम्पनीबाट सहयोग</span></strong> — <span data-lang="de">Matching-Programme, Sponsoring</span><span data-lang="en">matching programmes, sponsorship</span><span data-lang="ne">म्याचिङ कार्यक्रम, प्रायोजन</span></p>
           </div>
-          <p class="mt-3"><a class="btn btn-sm btn-ghost" href="kontakt.html#partner-werden"><span data-lang="de">Anfrage stellen</span><span data-lang="en">Make an enquiry</span></a></p>
+          <p class="mt-3"><a class="btn btn-sm btn-ghost" href="kontakt.html#partner-werden"><span data-lang="de">Anfrage stellen</span><span data-lang="en">Make an enquiry</span><span data-lang="ne">जिज्ञासा राख्नुहोस्</span></a></p>
         </div>
       </aside>
     </div>

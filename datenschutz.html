@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/main.css">
 <script>
-  (function(){try{var l=localStorage.getItem("npjoe.lang")||((navigator.language||"de").toLowerCase().indexOf("de")===0?"de":"en");document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
+  (function(){try{var l=localStorage.getItem("npjoe.lang");if(l!=="de"&&l!=="en"&&l!=="ne"){var n=(navigator.language||"de").toLowerCase();l=n.indexOf("ne")===0?"ne":(n.indexOf("de")===0?"de":"en");}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);}catch(e){}})();
 </script>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
@@ -26,15 +26,15 @@
   <section class="page-hero">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span></a></li>
-        <li><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span></li>
+        <li><a href="index.html"><span data-lang="de">Start</span><span data-lang="en">Home</span><span data-lang="ne">गृहपृष्ठ</span></a></li>
+        <li><span data-lang="de">Datenschutz</span><span data-lang="en">Privacy</span><span data-lang="ne">गोपनीयता</span></li>
       </ol>
-      <h1><span data-lang="de">Datenschutzerklärung</span><span data-lang="en">Privacy policy</span></h1>
+      <h1><span data-lang="de">Datenschutzerklärung</span><span data-lang="en">Privacy policy</span><span data-lang="ne">गोपनीयता नीति</span></h1>
       <p class="lead">
         <span data-lang="de">Wir verarbeiten personenbezogene Daten ausschließlich für Vereinszwecke und nach der Datenschutz-Grundverordnung (DSGVO). Diese Erklärung sagt Ihnen, welche Daten wir wofür verarbeiten und welche Rechte Sie haben.</span>
-        <span data-lang="en">We process personal data exclusively for association purposes and in accordance with the General Data Protection Regulation (GDPR). This policy tells you which data we process for what purpose and what rights you have.</span>
+        <span data-lang="en">We process personal data exclusively for association purposes and in accordance with the General Data Protection Regulation (GDPR). This policy tells you which data we process for what purpose and what rights you have.</span><span data-lang="ne">हामी व्यक्तिगत डेटा संगठनका प्रयोजनका लागि मात्र र सामान्य डेटा संरक्षण नियमावली (GDPR) अनुसार मात्र प्रशोधन गर्छौं। यस नीतिले हामी कुन डेटा कुन प्रयोजनका लागि प्रशोधन गर्छौं र तपाईंका के अधिकार छन् भन्ने बताउँछ।</span>
       </p>
-      <p class="text-sm text-muted mt-3"><span data-lang="de">Stand: August 2026</span><span data-lang="en">Last updated: August 2026</span></p>
+      <p class="text-sm text-muted mt-3"><span data-lang="de">Stand: August 2026</span><span data-lang="en">Last updated: August 2026</span><span data-lang="ne">पछिल्लो अद्यावधिक: अगस्ट २०२६</span></p>
     </div>
   </section>
 
@@ -43,213 +43,213 @@
       <article class="prose">
 
         <div class="callout callout-saffron">
-          <strong><span data-lang="de">Hinweis für den Vorstand:</span><span data-lang="en">Note for the board:</span></strong>
+          <strong><span data-lang="de">Hinweis für den Vorstand:</span><span data-lang="en">Note for the board:</span><span data-lang="ne">कार्यसमितिका लागि सूचना:</span></strong>
           <span data-lang="de"> Diese Erklärung ist eine sorgfältig vorbereitete Vorlage auf Basis der tatsächlichen Datenverarbeitung dieser Website. Bitte vor Veröffentlichung Anschrift und Kontaktdaten ergänzen und — falls ein Hosting-Anbieter, Newsletter-Dienst oder Zahlungsdienstleister eingesetzt wird — die entsprechenden Abschnitte anpassen. Eine rechtliche Prüfung wird empfohlen.</span>
-          <span data-lang="en"> This policy is a carefully prepared template based on the actual data processing of this website. Before publishing, please add the address and contact details and — if a hosting provider, newsletter service or payment provider is used — adapt the relevant sections. Legal review is recommended.</span>
+          <span data-lang="en"> This policy is a carefully prepared template based on the actual data processing of this website. Before publishing, please add the address and contact details and — if a hosting provider, newsletter service or payment provider is used — adapt the relevant sections. Legal review is recommended.</span><span data-lang="ne"> यो नीति यस वेबसाइटको वास्तविक डेटा प्रशोधनमा आधारित भई ध्यानपूर्वक तयार पारिएको ढाँचा हो। प्रकाशन गर्नुअघि कृपया ठेगाना र सम्पर्क विवरण थप्नुहोस् र — होस्टिङ प्रदायक, न्यूजलेटर सेवा वा भुक्तानी प्रदायक प्रयोग गरिएको छ भने — सम्बन्धित खण्ड मिलाउनुहोस्। कानुनी परीक्षण गराउन सिफारिस गरिन्छ।</span>
         </div>
 
-        <h2 id="verantwortlicher">1. <span data-lang="de">Verantwortlicher</span><span data-lang="en">Controller</span></h2>
+        <h2 id="verantwortlicher">1. <span data-lang="de">Verantwortlicher</span><span data-lang="en">Controller</span><span data-lang="ne">डेटा नियन्त्रक</span></h2>
         <p>
           Nepalesische Progressive Jugendorganisation e.V.<br>
-          <span data-lang="de">— Anschrift —</span><span data-lang="en">— address —</span>, 64283 Darmstadt<br>
-          VR 84826 — <span data-lang="de">Amtsgericht Darmstadt</span><span data-lang="en">Darmstadt district court</span><br>
-          <span data-lang="de">E-Mail:</span><span data-lang="en">E-mail:</span> <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a>
+          <span data-lang="de">— Anschrift —</span><span data-lang="en">— address —</span><span data-lang="ne">— ठेगाना —</span>, 64283 Darmstadt<br>
+          VR 84826 — <span data-lang="de">Amtsgericht Darmstadt</span><span data-lang="en">Darmstadt district court</span><span data-lang="ne">डार्मस्टाट जिल्ला अदालत</span><br>
+          <span data-lang="de">E-Mail:</span><span data-lang="en">E-mail:</span><span data-lang="ne">इमेल:</span> <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a>
         </p>
         <p>
           <span data-lang="de">Vertreten durch zwei Vorstandsmitglieder gemeinsam (§ 26 BGB). Ein:e Datenschutzbeauftragte:r ist gesetzlich nicht erforderlich; Anfragen richten Sie bitte an die oben genannte Adresse.</span>
-          <span data-lang="en">Represented by two board members jointly (§ 26 BGB). A data protection officer is not legally required; please direct enquiries to the address above.</span>
+          <span data-lang="en">Represented by two board members jointly (§ 26 BGB). A data protection officer is not legally required; please direct enquiries to the address above.</span><span data-lang="ne">दुई जना कार्यसमिति सदस्यले संयुक्त रूपमा प्रतिनिधित्व गर्छन् (§ २६ BGB)। कानुनतः डेटा संरक्षण अधिकृत अनिवार्य छैन; कृपया जिज्ञासा माथिको ठेगानामा पठाउनुहोस्।</span>
         </p>
 
-        <h2 id="grundsaetze">2. <span data-lang="de">Grundsätze</span><span data-lang="en">Principles</span></h2>
+        <h2 id="grundsaetze">2. <span data-lang="de">Grundsätze</span><span data-lang="en">Principles</span><span data-lang="ne">आधारभूत सिद्धान्त</span></h2>
         <ul>
-          <li><span data-lang="de">Wir erheben nur Daten, die wir für den jeweiligen Zweck wirklich brauchen (Datenminimierung).</span><span data-lang="en">We only collect data we genuinely need for the respective purpose (data minimisation).</span></li>
-          <li><span data-lang="de">Wir verkaufen keine Daten und geben sie nicht zu Werbezwecken weiter.</span><span data-lang="en">We do not sell data and do not pass it on for advertising purposes.</span></li>
-          <li><span data-lang="de">Diese Website setzt keine Tracking-, Analyse- oder Werbe-Cookies ein.</span><span data-lang="en">This website uses no tracking, analytics or advertising cookies.</span></li>
-          <li><span data-lang="de">Es sind keine Social-Media-Plugins, Schriftarten von Drittanbietern oder externe Analysedienste eingebunden.</span><span data-lang="en">No social media plugins, third-party fonts or external analytics services are embedded.</span></li>
+          <li><span data-lang="de">Wir erheben nur Daten, die wir für den jeweiligen Zweck wirklich brauchen (Datenminimierung).</span><span data-lang="en">We only collect data we genuinely need for the respective purpose (data minimisation).</span><span data-lang="ne">हामी सम्बन्धित प्रयोजनका लागि साँच्चै आवश्यक डेटा मात्र सङ्कलन गर्छौं (डेटा न्यूनीकरण)।</span></li>
+          <li><span data-lang="de">Wir verkaufen keine Daten und geben sie nicht zu Werbezwecken weiter.</span><span data-lang="en">We do not sell data and do not pass it on for advertising purposes.</span><span data-lang="ne">हामी डेटा बेच्दैनौँ र विज्ञापनका प्रयोजनका लागि अरूलाई दिँदैनौँ।</span></li>
+          <li><span data-lang="de">Diese Website setzt keine Tracking-, Analyse- oder Werbe-Cookies ein.</span><span data-lang="en">This website uses no tracking, analytics or advertising cookies.</span><span data-lang="ne">यस वेबसाइटले ट्र्याकिङ, विश्लेषण वा विज्ञापन कुकी प्रयोग गर्दैन।</span></li>
+          <li><span data-lang="de">Es sind keine Social-Media-Plugins, Schriftarten von Drittanbietern oder externe Analysedienste eingebunden.</span><span data-lang="en">No social media plugins, third-party fonts or external analytics services are embedded.</span><span data-lang="ne">कुनै पनि सामाजिक सञ्जाल प्लगइन, तेस्रो पक्षका फन्ट वा बाह्य विश्लेषण सेवा जडान गरिएको छैन।</span></li>
         </ul>
 
-        <h2 id="hosting">3. <span data-lang="de">Aufruf der Website (Server-Logs)</span><span data-lang="en">Visiting the website (server logs)</span></h2>
+        <h2 id="hosting">3. <span data-lang="de">Aufruf der Website (Server-Logs)</span><span data-lang="en">Visiting the website (server logs)</span><span data-lang="ne">वेबसाइट भ्रमण (सर्भर लग)</span></h2>
         <p>
           <span data-lang="de">Beim Aufruf der Website verarbeitet der Server technisch notwendige Daten wie IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browsertyp. Diese Verarbeitung ist zur Auslieferung der Seite und zur Abwehr von Missbrauch erforderlich.</span>
-          <span data-lang="en">When you visit the website, the server processes technically necessary data such as IP address, date and time, page requested and browser type. This processing is required to deliver the page and to prevent abuse.</span>
+          <span data-lang="en">When you visit the website, the server processes technically necessary data such as IP address, date and time, page requested and browser type. This processing is required to deliver the page and to prevent abuse.</span><span data-lang="ne">तपाईंले वेबसाइट हेर्दा सर्भरले IP ठेगाना, मिति र समय, माग गरिएको पृष्ठ र ब्राउजरको प्रकारजस्ता प्राविधिक रूपमा आवश्यक डेटा प्रशोधन गर्छ। पृष्ठ उपलब्ध गराउन र दुरुपयोग रोक्न यो प्रशोधन आवश्यक हुन्छ।</span>
         </p>
         <p>
-          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span></strong> Art. 6 Abs. 1 lit. f DSGVO
-          (<span data-lang="de">berechtigtes Interesse an sicherem Betrieb</span><span data-lang="en">legitimate interest in secure operation</span>).
-          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span></strong>
+          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span><span data-lang="ne">कानुनी आधार:</span></strong> Art. 6 Abs. 1 lit. f DSGVO
+          (<span data-lang="de">berechtigtes Interesse an sicherem Betrieb</span><span data-lang="en">legitimate interest in secure operation</span><span data-lang="ne">सुरक्षित सञ्चालनमा वैध सरोकार</span>).
+          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span><span data-lang="ne">भण्डारण अवधि:</span></strong>
           <span data-lang="de">Log-Einträge werden spätestens nach 7 Tagen gelöscht oder anonymisiert.</span>
-          <span data-lang="en">Log entries are deleted or anonymised after 7 days at the latest.</span>
+          <span data-lang="en">Log entries are deleted or anonymised after 7 days at the latest.</span><span data-lang="ne">लग प्रविष्टिहरू बढीमा ७ दिनपछि मेटाइन्छन् वा नामरहित बनाइन्छन्।</span>
         </p>
 
-        <h2 id="localstorage">4. <span data-lang="de">Lokale Speicherung im Browser</span><span data-lang="en">Local storage in your browser</span></h2>
+        <h2 id="localstorage">4. <span data-lang="de">Lokale Speicherung im Browser</span><span data-lang="en">Local storage in your browser</span><span data-lang="ne">तपाईंको ब्राउजरमा स्थानीय भण्डारण</span></h2>
         <p>
           <span data-lang="de">Wir speichern folgende Einstellungen lokal in Ihrem Browser (localStorage) — diese Daten verlassen Ihr Gerät nicht und werden nicht an uns übertragen:</span>
-          <span data-lang="en">We store the following settings locally in your browser (localStorage) — this data never leaves your device and is not transmitted to us:</span>
+          <span data-lang="en">We store the following settings locally in your browser (localStorage) — this data never leaves your device and is not transmitted to us:</span><span data-lang="ne">हामी निम्न सेटिङ तपाईंकै ब्राउजरमा (localStorage) स्थानीय रूपमा राख्छौँ — यो डेटा तपाईंको यन्त्रबाट कहिल्यै बाहिर जाँदैन र हामीकहाँ आउँदैन:</span>
         </p>
         <ul>
-          <li><code>npjoe.lang</code> — <span data-lang="de">Ihre Sprachwahl (DE/EN)</span><span data-lang="en">your language choice (DE/EN)</span></li>
-          <li><code>npjoe.consent</code> — <span data-lang="de">ob Sie den Datenschutzhinweis bestätigt haben</span><span data-lang="en">whether you acknowledged the privacy notice</span></li>
-          <li><code>npjoe.draft.*</code> — <span data-lang="de">Zwischenstände Ihrer Formulare, damit nichts verloren geht (automatische Löschung nach 30 Tagen)</span><span data-lang="en">drafts of your forms so nothing is lost (automatically deleted after 30 days)</span></li>
+          <li><code>npjoe.lang</code> — <span data-lang="de">Ihre Sprachwahl (DE/EN)</span><span data-lang="en">your language choice (DE/EN)</span><span data-lang="ne">तपाईंले रोज्नुभएको भाषा (DE/EN/NE)</span></li>
+          <li><code>npjoe.consent</code> — <span data-lang="de">ob Sie den Datenschutzhinweis bestätigt haben</span><span data-lang="en">whether you acknowledged the privacy notice</span><span data-lang="ne">तपाईंले गोपनीयता सूचना स्वीकार गर्नुभयो कि भएन</span></li>
+          <li><code>npjoe.draft.*</code> — <span data-lang="de">Zwischenstände Ihrer Formulare, damit nichts verloren geht (automatische Löschung nach 30 Tagen)</span><span data-lang="en">drafts of your forms so nothing is lost (automatically deleted after 30 days)</span><span data-lang="ne">तपाईंका फारमका अधुरा विवरण, केही नहराओस् भनेर (३० दिनपछि स्वतः मेटिन्छ)</span></li>
         </ul>
         <p>
           <span data-lang="de">Sie können diese Daten jederzeit über die Einstellungen Ihres Browsers löschen. Formularentwürfe können Sie direkt im Formular verwerfen.</span>
-          <span data-lang="en">You can delete this data at any time via your browser settings. Form drafts can be discarded directly in the form.</span>
+          <span data-lang="en">You can delete this data at any time via your browser settings. Form drafts can be discarded directly in the form.</span><span data-lang="ne">यो डेटा तपाईंले ब्राउजर सेटिङबाट जुनसुकै बेला मेटाउन सक्नुहुन्छ। फारमका अधुरा विवरण फारममै सिधै हटाउन सकिन्छ।</span>
         </p>
 
-        <h2 id="mitgliedschaft">5. <span data-lang="de">Beitrittserklärung und Mitgliedschaft</span><span data-lang="en">Membership application and membership</span></h2>
+        <h2 id="mitgliedschaft">5. <span data-lang="de">Beitrittserklärung und Mitgliedschaft</span><span data-lang="en">Membership application and membership</span><span data-lang="ne">सदस्यता आवेदन र सदस्यता</span></h2>
         <p>
           <span data-lang="de">Bei der Beitrittserklärung verarbeiten wir: Vor- und Nachname, Geburtsdatum, Nationalität, Anschrift, Telefonnummer, E-Mail-Adresse, angegebene Interessen, Beruf, Region, Angaben zur Beitragszahlung sowie Ihre Erklärungen und ggf. Ihre Unterschrift.</span>
-          <span data-lang="en">For the membership application we process: first and last name, date of birth, nationality, address, phone number, e-mail address, stated interests, profession, region, payment details as well as your declarations and, if applicable, your signature.</span>
+          <span data-lang="en">For the membership application we process: first and last name, date of birth, nationality, address, phone number, e-mail address, stated interests, profession, region, payment details as well as your declarations and, if applicable, your signature.</span><span data-lang="ne">सदस्यता आवेदनका लागि हामी यी विवरण प्रशोधन गर्छौं: नाम र थर, जन्ममिति, नागरिकता, ठेगाना, फोन नम्बर, इमेल ठेगाना, उल्लेख गरिएका चासो, पेसा, क्षेत्र, भुक्तानी विवरण तथा तपाईंका घोषणा र आवश्यक भएमा तपाईंको हस्ताक्षर।</span>
         </p>
         <p>
-          <strong><span data-lang="de">Zweck:</span><span data-lang="en">Purpose:</span></strong>
+          <strong><span data-lang="de">Zweck:</span><span data-lang="en">Purpose:</span><span data-lang="ne">प्रयोजन:</span></strong>
           <span data-lang="de">Entscheidung des Vorstands über die Aufnahme (§ 5 der Satzung), Führung der Mitgliederliste durch die Schriftführung (§ 8), Beitragseinzug, Einladungen zur Mitgliederversammlung.</span>
-          <span data-lang="en">The board's decision on admission (§ 5 of the statutes), maintenance of the membership list by the secretary (§ 8), fee collection, invitations to the general meeting.</span>
+          <span data-lang="en">The board's decision on admission (§ 5 of the statutes), maintenance of the membership list by the secretary (§ 8), fee collection, invitations to the general meeting.</span><span data-lang="ne">कार्यसमितिले सदस्यता स्वीकृत गर्ने निर्णय (विधानको § ५), सचिवले सदस्य नामावली राख्ने काम (§ ८), शुल्क सङ्कलन, साधारण सभाको निमन्त्रणा।</span>
         </p>
         <p>
-          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span></strong>
-          Art. 6 Abs. 1 lit. b DSGVO (<span data-lang="de">Mitgliedschaftsverhältnis</span><span data-lang="en">membership relationship</span>),
-          <span data-lang="de">für freiwillige Angaben und die Foto-/Videoeinwilligung</span><span data-lang="en">for optional details and photo/video consent</span> Art. 6 Abs. 1 lit. a DSGVO,
-          <span data-lang="de">für steuerliche Aufbewahrung</span><span data-lang="en">for tax retention</span> Art. 6 Abs. 1 lit. c DSGVO.
+          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span><span data-lang="ne">कानुनी आधार:</span></strong>
+          Art. 6 Abs. 1 lit. b DSGVO (<span data-lang="de">Mitgliedschaftsverhältnis</span><span data-lang="en">membership relationship</span><span data-lang="ne">सदस्यता सम्बन्ध</span>),
+          <span data-lang="de">für freiwillige Angaben und die Foto-/Videoeinwilligung</span><span data-lang="en">for optional details and photo/video consent</span><span data-lang="ne">ऐच्छिक विवरण र तस्बिर/भिडियो सहमतिका लागि</span> Art. 6 Abs. 1 lit. a DSGVO,
+          <span data-lang="de">für steuerliche Aufbewahrung</span><span data-lang="en">for tax retention</span><span data-lang="ne">कर प्रयोजनका लागि अभिलेख राख्न</span> Art. 6 Abs. 1 lit. c DSGVO.
         </p>
         <p>
-          <strong><span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span></strong>
+          <strong><span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span><span data-lang="ne">भण्डारण अवधि:</span></strong>
           <span data-lang="de">Für die Dauer der Mitgliedschaft. Nach Beendigung löschen wir die Daten, soweit keine gesetzlichen Aufbewahrungspflichten (insbesondere steuerrechtlich, in der Regel bis zu 10 Jahre) entgegenstehen.</span>
-          <span data-lang="en">For the duration of membership. After termination we delete the data unless statutory retention obligations (particularly tax law, usually up to 10 years) apply.</span>
+          <span data-lang="en">For the duration of membership. After termination we delete the data unless statutory retention obligations (particularly tax law, usually up to 10 years) apply.</span><span data-lang="ne">सदस्यता रहेसम्म। सदस्यता अन्त्य भएपछि कानुनी रूपमा अभिलेख राख्नुपर्ने बाध्यता (विशेषतः कर कानुन, सामान्यतया १० वर्षसम्म) नभएमा हामी डेटा मेटाउँछौँ।</span>
         </p>
 
-        <h2 id="volunteer">6. <span data-lang="de">Volunteer-Registrierung</span><span data-lang="en">Volunteer registration</span></h2>
+        <h2 id="volunteer">6. <span data-lang="de">Volunteer-Registrierung</span><span data-lang="en">Volunteer registration</span><span data-lang="ne">स्वयंसेवक दर्ता</span></h2>
         <p>
           <span data-lang="de">Für One Day for Nation verarbeiten wir: Name, Geburtsdatum, Kontaktdaten, Wohnland und -stadt, Sprachen, Berufsfeld, Qualifikation, Zertifikate, Verfügbarkeit, Wunschregion und Ihre Motivation.</span>
-          <span data-lang="en">For One Day for Nation we process: name, date of birth, contact details, country and city of residence, languages, professional field, qualification, certificates, availability, preferred region and your motivation.</span>
+          <span data-lang="en">For One Day for Nation we process: name, date of birth, contact details, country and city of residence, languages, professional field, qualification, certificates, availability, preferred region and your motivation.</span><span data-lang="ne">One Day for Nation का लागि हामी यी विवरण प्रशोधन गर्छौं: नाम, जन्ममिति, सम्पर्क विवरण, बसोबासको देश र सहर, भाषा, पेसागत क्षेत्र, योग्यता, प्रमाणपत्र, उपलब्धता, रुचाइएको क्षेत्र र तपाईंको प्रेरणा।</span>
         </p>
         <div class="callout callout-navy">
-          <strong><span data-lang="de">Weitergabe an NPYS-N:</span><span data-lang="en">Transfer to NPYS-N:</span></strong>
+          <strong><span data-lang="de">Weitergabe an NPYS-N:</span><span data-lang="en">Transfer to NPYS-N:</span><span data-lang="ne">NPYS-N लाई पठाइने विवरण:</span></strong>
           <span data-lang="de"> Zur Koordination Ihres Einsatzes übermitteln wir die für das Matching erforderlichen Daten an unsere Partnerorganisation Nepalese Progressive Youth Society - Nepal (NPYS-N). Nepal ist ein Drittland ohne Angemessenheitsbeschluss der EU-Kommission. Die Übermittlung erfolgt auf Grundlage Ihrer ausdrücklichen Einwilligung nach Art. 49 Abs. 1 lit. a DSGVO, die Sie im Registrierungsformular erteilen und jederzeit für die Zukunft widerrufen können. Ohne diese Einwilligung ist eine Einsatzvermittlung nicht möglich.</span>
-          <span data-lang="en"> To coordinate your assignment we transmit the data required for matching to our partner organisation Nepalese Progressive Youth Society - Nepal (NPYS-N). Nepal is a third country without an adequacy decision from the EU Commission. The transfer is based on your explicit consent under Art. 49 (1) (a) GDPR, which you give in the registration form and can withdraw at any time with future effect. Without this consent, placement in an assignment is not possible.</span>
+          <span data-lang="en"> To coordinate your assignment we transmit the data required for matching to our partner organisation Nepalese Progressive Youth Society - Nepal (NPYS-N). Nepal is a third country without an adequacy decision from the EU Commission. The transfer is based on your explicit consent under Art. 49 (1) (a) GDPR, which you give in the registration form and can withdraw at any time with future effect. Without this consent, placement in an assignment is not possible.</span><span data-lang="ne"> तपाईंको परिचालन मिलाउन हामी आवश्यक विवरण हाम्रो साझेदार संस्था Nepalese Progressive Youth Society - Nepal (NPYS-N) लाई पठाउँछौँ। नेपाल यस्तो तेस्रो देश हो, जसका लागि युरोपेली आयोगले पर्याप्तताको निर्णय गरेको छैन। यो हस्तान्तरण GDPR को धारा ४९ (१) (क) अनुसार तपाईंको स्पष्ट सहमतिमा आधारित छ, जुन तपाईं दर्ता फारममा दिनुहुन्छ र जुनसुकै बेला भविष्यका लागि फिर्ता लिन सक्नुहुन्छ। यो सहमतिबिना परिचालनमा राख्न सम्भव हुँदैन।</span>
         </div>
         <p>
-          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span></strong>
+          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span><span data-lang="ne">कानुनी आधार:</span></strong>
           Art. 6 Abs. 1 lit. a und lit. b DSGVO.
-          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span></strong>
+          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span><span data-lang="ne">भण्डारण अवधि:</span></strong>
           <span data-lang="de">Bis zum Widerruf, längstens drei Jahre nach dem letzten Einsatz oder Kontakt.</span>
-          <span data-lang="en">Until withdrawal, at most three years after your last assignment or contact.</span>
+          <span data-lang="en">Until withdrawal, at most three years after your last assignment or contact.</span><span data-lang="ne">सहमति फिर्ता नलिएसम्म, बढीमा तपाईंको अन्तिम परिचालन वा सम्पर्कको तीन वर्षसम्म।</span>
         </p>
 
-        <h2 id="spenden">7. <span data-lang="de">Spenden</span><span data-lang="en">Donations</span></h2>
+        <h2 id="spenden">7. <span data-lang="de">Spenden</span><span data-lang="en">Donations</span><span data-lang="ne">दान</span></h2>
         <p>
           <span data-lang="de">Bei Spendenzusagen verarbeiten wir Name, E-Mail-Adresse, Anschrift (für die Zuwendungsbestätigung), Betrag, Verwendungszweck und ggf. Ihre Nachricht. Das Formular auf dieser Website löst keine Zahlung aus; die Überweisung erfolgt über Ihre Bank.</span>
-          <span data-lang="en">For donation pledges we process name, e-mail address, address (for the donation receipt), amount, purpose and, where applicable, your message. The form on this website does not trigger a payment; the transfer is made through your bank.</span>
+          <span data-lang="en">For donation pledges we process name, e-mail address, address (for the donation receipt), amount, purpose and, where applicable, your message. The form on this website does not trigger a payment; the transfer is made through your bank.</span><span data-lang="ne">दान प्रतिबद्धताका लागि हामी नाम, इमेल ठेगाना, ठेगाना (दान रसिदका लागि), रकम, प्रयोजन र आवश्यक भएमा तपाईंको सन्देश प्रशोधन गर्छौं। यस वेबसाइटको फारमले भुक्तानी गर्दैन; रकम तपाईंकै बैङ्कबाट पठाउनुहुन्छ।</span>
         </p>
         <p>
-          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span></strong>
+          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span><span data-lang="ne">कानुनी आधार:</span></strong>
           Art. 6 Abs. 1 lit. b und lit. c DSGVO
-          (<span data-lang="de">Abwicklung und steuerliche Nachweispflichten</span><span data-lang="en">processing and tax documentation duties</span>).
-          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span></strong>
+          (<span data-lang="de">Abwicklung und steuerliche Nachweispflichten</span><span data-lang="en">processing and tax documentation duties</span><span data-lang="ne">प्रशोधन र कर अभिलेखसम्बन्धी दायित्व</span>).
+          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span><span data-lang="ne">भण्डारण अवधि:</span></strong>
           <span data-lang="de">Zuwendungsdaten unterliegen den steuerlichen Aufbewahrungsfristen (in der Regel 10 Jahre).</span>
-          <span data-lang="en">Donation records are subject to statutory tax retention periods (usually 10 years).</span>
+          <span data-lang="en">Donation records are subject to statutory tax retention periods (usually 10 years).</span><span data-lang="ne">दानका अभिलेख कानुनी कर अभिलेख अवधि (सामान्यतया १० वर्ष) अन्तर्गत पर्छन्।</span>
         </p>
 
-        <h2 id="kontakt">8. <span data-lang="de">Kontakt- und Kooperationsanfragen</span><span data-lang="en">Contact and cooperation enquiries</span></h2>
+        <h2 id="kontakt">8. <span data-lang="de">Kontakt- und Kooperationsanfragen</span><span data-lang="en">Contact and cooperation enquiries</span><span data-lang="ne">सम्पर्क र सहकार्यसम्बन्धी जिज्ञासा</span></h2>
         <p>
           <span data-lang="de">Wenn Sie uns über ein Formular oder per E-Mail schreiben, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage und für Anschlussfragen.</span>
-          <span data-lang="en">If you write to us via a form or by e-mail, we process your details to handle the enquiry and any follow-up questions.</span>
+          <span data-lang="en">If you write to us via a form or by e-mail, we process your details to handle the enquiry and any follow-up questions.</span><span data-lang="ne">तपाईंले फारम वा इमेलमार्फत हामीलाई लेख्नुभयो भने जिज्ञासा र त्यसपछिका प्रश्नको व्यवस्थापन गर्न हामी तपाईंको विवरण प्रशोधन गर्छौं।</span>
         </p>
         <p>
-          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span></strong>
+          <strong><span data-lang="de">Rechtsgrundlage:</span><span data-lang="en">Legal basis:</span><span data-lang="ne">कानुनी आधार:</span></strong>
           Art. 6 Abs. 1 lit. a und lit. f DSGVO.
-          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span></strong>
+          <strong> <span data-lang="de">Speicherdauer:</span><span data-lang="en">Retention:</span><span data-lang="ne">भण्डारण अवधि:</span></strong>
           <span data-lang="de">Bis zur abschließenden Bearbeitung, längstens 24 Monate, sofern keine gesetzlichen Pflichten entgegenstehen.</span>
-          <span data-lang="en">Until the enquiry is concluded, at most 24 months, unless legal obligations require otherwise.</span>
+          <span data-lang="en">Until the enquiry is concluded, at most 24 months, unless legal obligations require otherwise.</span><span data-lang="ne">जिज्ञासा टुङ्गिएसम्म, बढीमा २४ महिना, कानुनी दायित्वले अन्यथा नमागेसम्म।</span>
         </p>
 
-        <h2 id="bestaetigungen">9. <span data-lang="de">Eingangsbestätigungen per E-Mail</span><span data-lang="en">Acknowledgements by e-mail</span></h2>
+        <h2 id="bestaetigungen">9. <span data-lang="de">Eingangsbestätigungen per E-Mail</span><span data-lang="en">Acknowledgements by e-mail</span><span data-lang="ne">इमेलबाट पाइने प्राप्ति सूचना</span></h2>
         <p>
           <span data-lang="de">Wenn Sie ein Formular dieser Website absenden, senden wir Ihnen automatisch eine Eingangsbestätigung an die von Ihnen angegebene Adresse. Sie enthält Ihre Referenznummer und den Hinweis, wie es weitergeht; eine Kopie mit Formularart, Referenz und Ihrem Namen geht an das Vereinspostfach, damit Ihre Anfrage nicht liegen bleibt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Beitritt, Volunteer-Registrierung, Spendenzusage) bzw. Art. 6 Abs. 1 lit. f DSGVO — unser berechtigtes Interesse daran, dass Sie den Eingang Ihrer Nachricht nachvollziehen können.</span>
-          <span data-lang="en">When you submit a form on this website we automatically send an acknowledgement to the address you gave. It carries your reference number and explains what happens next; a copy naming the form type, the reference and your name goes to the association's mailbox so your enquiry does not sit unnoticed. The legal basis is Art. 6 (1) (b) GDPR (membership, volunteer registration, donation pledge) or Art. 6 (1) (f) GDPR — our legitimate interest in you being able to see that your message arrived.</span>
+          <span data-lang="en">When you submit a form on this website we automatically send an acknowledgement to the address you gave. It carries your reference number and explains what happens next; a copy naming the form type, the reference and your name goes to the association's mailbox so your enquiry does not sit unnoticed. The legal basis is Art. 6 (1) (b) GDPR (membership, volunteer registration, donation pledge) or Art. 6 (1) (f) GDPR — our legitimate interest in you being able to see that your message arrived.</span><span data-lang="ne">तपाईंले यस वेबसाइटमा फारम पठाउनुभएपछि हामी तपाईंले दिनुभएको ठेगानामा स्वतः प्राप्ति सूचना पठाउँछौँ। त्यसमा तपाईंको सन्दर्भ नम्बर हुन्छ र अब के हुन्छ भन्ने उल्लेख हुन्छ; फारमको प्रकार, सन्दर्भ नम्बर र तपाईंको नाम भएको एउटा प्रतिलिपि संगठनको मेलबक्समा जान्छ, ताकि तपाईंको जिज्ञासा नदेखिई नबसोस्। कानुनी आधार GDPR को धारा ६ (१) (ख) (सदस्यता, स्वयंसेवक दर्ता, दान प्रतिबद्धता) वा धारा ६ (१) (च) हो — तपाईंको सन्देश आइपुग्यो भन्ने कुरा तपाईंले थाहा पाउनुपर्छ भन्ने हाम्रो वैध सरोकार।</span>
         </p>
         <p>
           <span data-lang="de">Für den Versand nutzen wir das Postfach unseres E-Mail-Providers. Der Provider ist Auftragsverarbeiter nach Art. 28 DSGVO; der Versand erfolgt über eine verschlüsselte Verbindung (TLS). Eine vollständige Verschlüsselung bis zu Ihrem Postfach können wir nicht garantieren, da die Übertragung zwischen Mailservern außerhalb unseres Einflusses liegt — vertrauliche Angaben senden Sie uns daher besser auf dem Postweg.</span>
-          <span data-lang="en">We send from the mailbox of our e-mail provider. The provider is a processor under Art. 28 GDPR, and delivery to it uses an encrypted connection (TLS). We cannot guarantee end-to-end encryption all the way to your mailbox, because transport between mail servers is outside our control — for confidential matters, please write to us by post instead.</span>
+          <span data-lang="en">We send from the mailbox of our e-mail provider. The provider is a processor under Art. 28 GDPR, and delivery to it uses an encrypted connection (TLS). We cannot guarantee end-to-end encryption all the way to your mailbox, because transport between mail servers is outside our control — for confidential matters, please write to us by post instead.</span><span data-lang="ne">हामी आफ्नो इमेल प्रदायकको मेलबक्सबाट पठाउँछौँ। उक्त प्रदायक GDPR को धारा २८ अनुसार प्रशोधक हो र त्यहाँसम्मको सम्प्रेषण गुप्तीकृत जडान (TLS) मार्फत हुन्छ। तपाईंको मेलबक्ससम्मै एन्ड-टु-एन्ड गुप्तीकरणको ग्यारेन्टी हामी दिन सक्दैनौँ, किनभने मेल सर्भरहरूबीचको ढुवानी हाम्रो नियन्त्रणबाहिर हुन्छ — गोप्य विषयका लागि कृपया हुलाकबाट पत्र पठाउनुहोस्।</span>
         </p>
 
         <h2 id="newsletter">10. Newsletter</h2>
         <p>
           <span data-lang="de">Für den Newsletter verarbeiten wir Ihre E-Mail-Adresse auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Wir verwenden das Double-Opt-in-Verfahren: Nach der Anmeldung erhalten Sie eine E-Mail mit einem Bestätigungslink; erst wenn Sie diesen anklicken, nehmen wir Ihre Adresse in den Verteiler auf. Bis dahin bleibt der Eintrag unbestätigt, und Sie erhalten von uns keinen Newsletter. Wir speichern den Zeitpunkt der Anmeldung und der Bestätigung, um die Einwilligung nachweisen zu können (Art. 7 Abs. 1 DSGVO). Unbestätigte Anmeldungen löschen wir nach 30 Tagen. Sie können sich jederzeit abmelden — über den Abmeldelink oder formlos per E-Mail. Nach der Abmeldung löschen wir Ihre Adresse aus dem Verteiler.</span>
-          <span data-lang="en">For the newsletter we process your e-mail address on the basis of your consent (Art. 6 (1) (a) GDPR). We use double opt-in: after signing up you receive an e-mail with a confirmation link, and only once you follow it do we add your address to the distribution list. Until then the entry stays unconfirmed and you receive no newsletter from us. We store the time of the sign-up and of the confirmation in order to be able to prove consent (Art. 7 (1) GDPR). Unconfirmed sign-ups are deleted after 30 days. You can unsubscribe at any time — via the unsubscribe link or informally by e-mail. After unsubscribing we delete your address from the distribution list.</span>
+          <span data-lang="en">For the newsletter we process your e-mail address on the basis of your consent (Art. 6 (1) (a) GDPR). We use double opt-in: after signing up you receive an e-mail with a confirmation link, and only once you follow it do we add your address to the distribution list. Until then the entry stays unconfirmed and you receive no newsletter from us. We store the time of the sign-up and of the confirmation in order to be able to prove consent (Art. 7 (1) GDPR). Unconfirmed sign-ups are deleted after 30 days. You can unsubscribe at any time — via the unsubscribe link or informally by e-mail. After unsubscribing we delete your address from the distribution list.</span><span data-lang="ne">न्यूजलेटरका लागि हामी तपाईंको सहमतिका आधारमा (GDPR धारा ६ (१) (क)) तपाईंको इमेल ठेगाना प्रशोधन गर्छौं। हामी डबल अप्ट-इन प्रयोग गर्छौं: दर्ता गरेपछि तपाईंले पुष्टि लिङ्क भएको इमेल पाउनुहुन्छ, र त्यो लिङ्क थिचेपछि मात्र तपाईंको ठेगाना सूचीमा थपिन्छ। त्यसअघि प्रविष्टि अपुष्ट रहन्छ र तपाईंले हामीबाट कुनै न्यूजलेटर पाउनुहुन्न। सहमति प्रमाणित गर्न सकियोस् भनेर हामी दर्ता र पुष्टिको समय राख्छौँ (GDPR धारा ७ (१))। अपुष्ट दर्ता ३० दिनपछि मेटाइन्छ। तपाईं जुनसुकै बेला सदस्यता हटाउन सक्नुहुन्छ — इमेलको अनसब्स्क्राइब लिङ्कबाट वा सामान्य इमेल लेखेर। हटाएपछि हामी तपाईंको ठेगाना सूचीबाट मेटाउँछौँ।</span>
         </p>
 
-        <h2 id="fotos">11. <span data-lang="de">Fotos und Videos von Veranstaltungen</span><span data-lang="en">Photos and videos from events</span></h2>
+        <h2 id="fotos">11. <span data-lang="de">Fotos und Videos von Veranstaltungen</span><span data-lang="en">Photos and videos from events</span><span data-lang="ne">कार्यक्रमका तस्बिर र भिडियो</span></h2>
         <p>
           <span data-lang="de">Bild- und Videoaufnahmen von Vereinsveranstaltungen verwenden wir für Vereinsmedien und Öffentlichkeitsarbeit nur auf Grundlage einer freiwilligen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, §§ 22 f. KunstUrhG). Bei Minderjährigen holen wir zusätzlich die Einwilligung der Erziehungsberechtigten ein. Die Einwilligung ist jederzeit mit Wirkung für die Zukunft widerrufbar; wir entfernen betroffene Aufnahmen dann aus unseren Kanälen.</span>
-          <span data-lang="en">We use photo and video recordings from association events for association media and public relations only on the basis of voluntary consent (Art. 6 (1) (a) GDPR, §§ 22 f. KunstUrhG). For minors we additionally obtain the consent of their guardians. Consent can be withdrawn at any time with future effect; we then remove the relevant recordings from our channels.</span>
+          <span data-lang="en">We use photo and video recordings from association events for association media and public relations only on the basis of voluntary consent (Art. 6 (1) (a) GDPR, §§ 22 f. KunstUrhG). For minors we additionally obtain the consent of their guardians. Consent can be withdrawn at any time with future effect; we then remove the relevant recordings from our channels.</span><span data-lang="ne">संगठनका कार्यक्रमका तस्बिर र भिडियो हामी संगठनका माध्यम र जनसम्पर्कमा स्वैच्छिक सहमतिका आधारमा मात्र प्रयोग गर्छौं (GDPR धारा ६ (१) (क), KunstUrhG §§ २२ र पछिका)। नाबालकको हकमा संरक्षकको सहमति पनि लिन्छौँ। सहमति जुनसुकै बेला भविष्यका लागि फिर्ता लिन सकिन्छ; त्यसपछि हामी सम्बन्धित सामग्री आफ्ना च्यानलबाट हटाउँछौँ।</span>
         </p>
 
-        <h2 id="empfaenger">12. <span data-lang="de">Empfänger Ihrer Daten</span><span data-lang="en">Recipients of your data</span></h2>
+        <h2 id="empfaenger">12. <span data-lang="de">Empfänger Ihrer Daten</span><span data-lang="en">Recipients of your data</span><span data-lang="ne">तपाईंको डेटा कसले पाउँछ</span></h2>
         <ul>
-          <li><span data-lang="de"><strong>Vorstandsmitglieder</strong> im Rahmen ihrer satzungsgemäßen Aufgaben (§ 8)</span><span data-lang="en"><strong>Board members</strong> within their statutory duties (§ 8)</span></li>
-          <li><span data-lang="de"><strong>Kassenprüfer:innen</strong> im Rahmen der jährlichen Prüfung</span><span data-lang="en"><strong>Auditors</strong> in the course of the annual audit</span></li>
-          <li><span data-lang="de"><strong>NPYS-N</strong> — nur Volunteer-Daten, nur mit Ihrer Einwilligung (siehe Abschnitt 6)</span><span data-lang="en"><strong>NPYS-N</strong> — volunteer data only, only with your consent (see section 6)</span></li>
-          <li><span data-lang="de"><strong>Bank und Finanzamt</strong> im Rahmen gesetzlicher Pflichten</span><span data-lang="en"><strong>Bank and tax office</strong> within statutory obligations</span></li>
-          <li><span data-lang="de"><strong>Hosting-Dienstleister</strong> auf Grundlage eines Auftragsverarbeitungsvertrags nach Art. 28 DSGVO</span><span data-lang="en"><strong>Hosting provider</strong> on the basis of a data processing agreement under Art. 28 GDPR</span></li>
-          <li><span data-lang="de"><strong>E-Mail-Provider</strong> für den Versand der Eingangsbestätigungen, ebenfalls als Auftragsverarbeiter nach Art. 28 DSGVO (siehe Abschnitt 9)</span><span data-lang="en"><strong>E-mail provider</strong> for sending the acknowledgements, likewise as a processor under Art. 28 GDPR (see section 9)</span></li>
+          <li><span data-lang="de"><strong>Vorstandsmitglieder</strong> im Rahmen ihrer satzungsgemäßen Aufgaben (§ 8)</span><span data-lang="en"><strong>Board members</strong> within their statutory duties (§ 8)</span><span data-lang="ne"><strong>कार्यसमिति सदस्य</strong> आफ्नो विधानसम्मत जिम्मेवारीभित्र (§ ८)</span></li>
+          <li><span data-lang="de"><strong>Kassenprüfer:innen</strong> im Rahmen der jährlichen Prüfung</span><span data-lang="en"><strong>Auditors</strong> in the course of the annual audit</span><span data-lang="ne"><strong>लेखापरीक्षक</strong> वार्षिक लेखापरीक्षणका क्रममा</span></li>
+          <li><span data-lang="de"><strong>NPYS-N</strong> — nur Volunteer-Daten, nur mit Ihrer Einwilligung (siehe Abschnitt 6)</span><span data-lang="en"><strong>NPYS-N</strong> — volunteer data only, only with your consent (see section 6)</span><span data-lang="ne"><strong>NPYS-N</strong> — स्वयंसेवकको डेटा मात्र, तपाईंको सहमतिमा मात्र (खण्ड ६ हेर्नुहोस्)</span></li>
+          <li><span data-lang="de"><strong>Bank und Finanzamt</strong> im Rahmen gesetzlicher Pflichten</span><span data-lang="en"><strong>Bank and tax office</strong> within statutory obligations</span><span data-lang="ne"><strong>बैङ्क र कर कार्यालय</strong> कानुनी दायित्वभित्र</span></li>
+          <li><span data-lang="de"><strong>Hosting-Dienstleister</strong> auf Grundlage eines Auftragsverarbeitungsvertrags nach Art. 28 DSGVO</span><span data-lang="en"><strong>Hosting provider</strong> on the basis of a data processing agreement under Art. 28 GDPR</span><span data-lang="ne"><strong>होस्टिङ प्रदायक</strong> GDPR धारा २८ अनुसारको डेटा प्रशोधन सम्झौताका आधारमा</span></li>
+          <li><span data-lang="de"><strong>E-Mail-Provider</strong> für den Versand der Eingangsbestätigungen, ebenfalls als Auftragsverarbeiter nach Art. 28 DSGVO (siehe Abschnitt 9)</span><span data-lang="en"><strong>E-mail provider</strong> for sending the acknowledgements, likewise as a processor under Art. 28 GDPR (see section 9)</span><span data-lang="ne"><strong>इमेल प्रदायक</strong> प्राप्ति सूचना पठाउन, त्यसै गरी GDPR धारा २८ अनुसारको प्रशोधकका रूपमा (खण्ड ९ हेर्नुहोस्)</span></li>
         </ul>
 
-        <h2 id="dsgvo-rechte">13. <span data-lang="de">Ihre Rechte</span><span data-lang="en">Your rights</span></h2>
-        <p><span data-lang="de">Sie haben jederzeit das Recht auf:</span><span data-lang="en">You have the right at any time to:</span></p>
+        <h2 id="dsgvo-rechte">13. <span data-lang="de">Ihre Rechte</span><span data-lang="en">Your rights</span><span data-lang="ne">तपाईंका अधिकार</span></h2>
+        <p><span data-lang="de">Sie haben jederzeit das Recht auf:</span><span data-lang="en">You have the right at any time to:</span><span data-lang="ne">तपाईंलाई जुनसुकै बेला यी अधिकार छन्:</span></p>
         <ul>
-          <li><strong><span data-lang="de">Auskunft</span><span data-lang="en">Access</span></strong> (Art. 15 DSGVO) — <span data-lang="de">welche Daten wir über Sie gespeichert haben</span><span data-lang="en">what data we hold about you</span></li>
-          <li><strong><span data-lang="de">Berichtigung</span><span data-lang="en">Rectification</span></strong> (Art. 16 DSGVO)</li>
-          <li><strong><span data-lang="de">Löschung</span><span data-lang="en">Erasure</span></strong> (Art. 17 DSGVO)</li>
-          <li><strong><span data-lang="de">Einschränkung der Verarbeitung</span><span data-lang="en">Restriction of processing</span></strong> (Art. 18 DSGVO)</li>
-          <li><strong><span data-lang="de">Datenübertragbarkeit</span><span data-lang="en">Data portability</span></strong> (Art. 20 DSGVO)</li>
-          <li><strong><span data-lang="de">Widerspruch</span><span data-lang="en">Objection</span></strong> (Art. 21 DSGVO)</li>
-          <li><strong><span data-lang="de">Widerruf erteilter Einwilligungen</span><span data-lang="en">Withdrawal of consent</span></strong> (Art. 7 Abs. 3 DSGVO) — <span data-lang="de">mit Wirkung für die Zukunft</span><span data-lang="en">with effect for the future</span></li>
+          <li><strong><span data-lang="de">Auskunft</span><span data-lang="en">Access</span><span data-lang="ne">जानकारी पाउने अधिकार</span></strong> (Art. 15 DSGVO) — <span data-lang="de">welche Daten wir über Sie gespeichert haben</span><span data-lang="en">what data we hold about you</span><span data-lang="ne">तपाईंको कुन डेटा हामीसँग छ</span></li>
+          <li><strong><span data-lang="de">Berichtigung</span><span data-lang="en">Rectification</span><span data-lang="ne">सच्याउने अधिकार</span></strong> (Art. 16 DSGVO)</li>
+          <li><strong><span data-lang="de">Löschung</span><span data-lang="en">Erasure</span><span data-lang="ne">मेटाउने अधिकार</span></strong> (Art. 17 DSGVO)</li>
+          <li><strong><span data-lang="de">Einschränkung der Verarbeitung</span><span data-lang="en">Restriction of processing</span><span data-lang="ne">प्रशोधन सीमित गराउने अधिकार</span></strong> (Art. 18 DSGVO)</li>
+          <li><strong><span data-lang="de">Datenübertragbarkeit</span><span data-lang="en">Data portability</span><span data-lang="ne">डेटा सार्न पाउने अधिकार</span></strong> (Art. 20 DSGVO)</li>
+          <li><strong><span data-lang="de">Widerspruch</span><span data-lang="en">Objection</span><span data-lang="ne">आपत्ति जनाउने अधिकार</span></strong> (Art. 21 DSGVO)</li>
+          <li><strong><span data-lang="de">Widerruf erteilter Einwilligungen</span><span data-lang="en">Withdrawal of consent</span><span data-lang="ne">सहमति फिर्ता लिने अधिकार</span></strong> (Art. 7 Abs. 3 DSGVO) — <span data-lang="de">mit Wirkung für die Zukunft</span><span data-lang="en">with effect for the future</span><span data-lang="ne">भविष्यका लागि प्रभावकारी</span></li>
         </ul>
         <p>
           <span data-lang="de">Wenden Sie sich dazu formlos an <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a> oder nutzen Sie das <a href="kontakt.html?thema=datenschutz">Kontaktformular</a> mit dem Thema „Datenschutz“. Wir antworten innerhalb der gesetzlichen Frist von einem Monat.</span>
-          <span data-lang="en">Simply write to <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a> or use the <a href="kontakt.html?thema=datenschutz">contact form</a> with the topic 'data protection'. We respond within the statutory period of one month.</span>
+          <span data-lang="en">Simply write to <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a> or use the <a href="kontakt.html?thema=datenschutz">contact form</a> with the topic 'data protection'. We respond within the statutory period of one month.</span><span data-lang="ne">केवल <a href="mailto:info@progressive-youth.de">info@progressive-youth.de</a> मा लेख्नुहोस् वा 'डेटा संरक्षण' विषय छानेर <a href="kontakt.html?thema=datenschutz">सम्पर्क फारम</a> प्रयोग गर्नुहोस्। हामी कानुनले तोकेको एक महिनाभित्र जवाफ दिन्छौँ।</span>
         </p>
 
-        <h2 id="beschwerde">14. <span data-lang="de">Beschwerderecht</span><span data-lang="en">Right to complain</span></h2>
+        <h2 id="beschwerde">14. <span data-lang="de">Beschwerderecht</span><span data-lang="en">Right to complain</span><span data-lang="ne">उजुरी गर्ने अधिकार</span></h2>
         <p>
           <span data-lang="de">Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Für unseren Sitz zuständig ist der Hessische Beauftragte für Datenschutz und Informationsfreiheit, Postfach 3163, 65021 Wiesbaden.</span>
-          <span data-lang="en">You have the right to lodge a complaint with a data protection supervisory authority. The authority responsible for our seat is the Hessian Commissioner for Data Protection and Freedom of Information, Postfach 3163, 65021 Wiesbaden, Germany.</span>
+          <span data-lang="en">You have the right to lodge a complaint with a data protection supervisory authority. The authority responsible for our seat is the Hessian Commissioner for Data Protection and Freedom of Information, Postfach 3163, 65021 Wiesbaden, Germany.</span><span data-lang="ne">तपाईंलाई डेटा संरक्षण नियामक निकायमा उजुरी दिने अधिकार छ। हाम्रो कार्यालय रहेको क्षेत्रका लागि जिम्मेवार निकाय हो: Hessian Commissioner for Data Protection and Freedom of Information, Postfach 3163, 65021 Wiesbaden, जर्मनी।</span>
         </p>
 
-        <h2 id="sicherheit">15. <span data-lang="de">Datensicherheit</span><span data-lang="en">Data security</span></h2>
+        <h2 id="sicherheit">15. <span data-lang="de">Datensicherheit</span><span data-lang="en">Data security</span><span data-lang="ne">डेटा सुरक्षा</span></h2>
         <p>
           <span data-lang="de">Wir treffen angemessene technische und organisatorische Maßnahmen: verschlüsselte Übertragung (HTTPS), Zugriff auf Formulardaten nur für berechtigte Vorstandsmitglieder mit persönlichem Passwortschutz, pseudonymisierte Speicherung technischer Merkmale sowie Schutzmechanismen gegen automatisierten Missbrauch von Formularen.</span>
-          <span data-lang="en">We take appropriate technical and organisational measures: encrypted transmission (HTTPS), access to form data only for authorised board members with personal password protection, pseudonymised storage of technical attributes and protective mechanisms against automated abuse of forms.</span>
+          <span data-lang="en">We take appropriate technical and organisational measures: encrypted transmission (HTTPS), access to form data only for authorised board members with personal password protection, pseudonymised storage of technical attributes and protective mechanisms against automated abuse of forms.</span><span data-lang="ne">हामी उपयुक्त प्राविधिक र संगठनात्मक उपाय अपनाउँछौँ: गुप्तीकृत सम्प्रेषण (HTTPS), फारमको डेटामा व्यक्तिगत पासवर्डसहित अधिकारप्राप्त कार्यसमिति सदस्यको मात्र पहुँच, प्राविधिक विवरणको छद्मनामीकृत भण्डारण र फारमको स्वचालित दुरुपयोगविरुद्धका सुरक्षा उपाय।</span>
         </p>
 
-        <h2 id="aenderungen">16. <span data-lang="de">Änderungen dieser Erklärung</span><span data-lang="en">Changes to this policy</span></h2>
+        <h2 id="aenderungen">16. <span data-lang="de">Änderungen dieser Erklärung</span><span data-lang="en">Changes to this policy</span><span data-lang="ne">यस नीतिमा हुने परिवर्तन</span></h2>
         <p>
           <span data-lang="de">Wir passen diese Datenschutzerklärung an, wenn sich unsere Verarbeitung ändert oder neue rechtliche Anforderungen gelten. Es gilt jeweils die auf dieser Seite veröffentlichte Fassung.</span>
-          <span data-lang="en">We update this privacy policy when our processing changes or new legal requirements apply. The version published on this page applies at any given time.</span>
+          <span data-lang="en">We update this privacy policy when our processing changes or new legal requirements apply. The version published on this page applies at any given time.</span><span data-lang="ne">हाम्रो प्रशोधन प्रक्रिया बदलिँदा वा नयाँ कानुनी आवश्यकता लागू हुँदा हामी यो गोपनीयता नीति अद्यावधिक गर्छौं। जुनसुकै बेला यस पृष्ठमा प्रकाशित संस्करण नै लागू हुन्छ।</span>
         </p>
       </article>
 
       <aside>
         <nav class="toc" data-toc aria-label="Inhaltsverzeichnis">
-          <h3 class="t-h5"><span data-lang="de">Inhalt</span><span data-lang="en">Contents</span></h3>
+          <h3 class="t-h5"><span data-lang="de">Inhalt</span><span data-lang="en">Contents</span><span data-lang="ne">विषयसूची</span></h3>
           <ul>
-            <li><a href="#verantwortlicher">1. <span data-lang="de">Verantwortlicher</span><span data-lang="en">Controller</span></a></li>
-            <li><a href="#grundsaetze">2. <span data-lang="de">Grundsätze</span><span data-lang="en">Principles</span></a></li>
-            <li><a href="#hosting">3. <span data-lang="de">Server-Logs</span><span data-lang="en">Server logs</span></a></li>
-            <li><a href="#localstorage">4. <span data-lang="de">Lokale Speicherung</span><span data-lang="en">Local storage</span></a></li>
-            <li><a href="#mitgliedschaft">5. <span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span></a></li>
-            <li><a href="#volunteer">6. <span data-lang="de">Volunteer-Daten</span><span data-lang="en">Volunteer data</span></a></li>
-            <li><a href="#spenden">7. <span data-lang="de">Spenden</span><span data-lang="en">Donations</span></a></li>
-            <li><a href="#kontakt">8. <span data-lang="de">Kontaktanfragen</span><span data-lang="en">Enquiries</span></a></li>
-            <li><a href="#bestaetigungen">9. <span data-lang="de">Eingangsbestätigungen</span><span data-lang="en">Acknowledgements</span></a></li>
+            <li><a href="#verantwortlicher">1. <span data-lang="de">Verantwortlicher</span><span data-lang="en">Controller</span><span data-lang="ne">डेटा नियन्त्रक</span></a></li>
+            <li><a href="#grundsaetze">2. <span data-lang="de">Grundsätze</span><span data-lang="en">Principles</span><span data-lang="ne">आधारभूत सिद्धान्त</span></a></li>
+            <li><a href="#hosting">3. <span data-lang="de">Server-Logs</span><span data-lang="en">Server logs</span><span data-lang="ne">सर्भर लग</span></a></li>
+            <li><a href="#localstorage">4. <span data-lang="de">Lokale Speicherung</span><span data-lang="en">Local storage</span><span data-lang="ne">स्थानीय भण्डारण</span></a></li>
+            <li><a href="#mitgliedschaft">5. <span data-lang="de">Mitgliedschaft</span><span data-lang="en">Membership</span><span data-lang="ne">सदस्यता</span></a></li>
+            <li><a href="#volunteer">6. <span data-lang="de">Volunteer-Daten</span><span data-lang="en">Volunteer data</span><span data-lang="ne">स्वयंसेवकको डेटा</span></a></li>
+            <li><a href="#spenden">7. <span data-lang="de">Spenden</span><span data-lang="en">Donations</span><span data-lang="ne">दान</span></a></li>
+            <li><a href="#kontakt">8. <span data-lang="de">Kontaktanfragen</span><span data-lang="en">Enquiries</span><span data-lang="ne">जिज्ञासा</span></a></li>
+            <li><a href="#bestaetigungen">9. <span data-lang="de">Eingangsbestätigungen</span><span data-lang="en">Acknowledgements</span><span data-lang="ne">प्राप्ति सूचना</span></a></li>
             <li><a href="#newsletter">10. Newsletter</a></li>
-            <li><a href="#fotos">11. <span data-lang="de">Fotos &amp; Videos</span><span data-lang="en">Photos &amp; videos</span></a></li>
-            <li><a href="#empfaenger">12. <span data-lang="de">Empfänger</span><span data-lang="en">Recipients</span></a></li>
-            <li><a href="#dsgvo-rechte">13. <span data-lang="de">Ihre Rechte</span><span data-lang="en">Your rights</span></a></li>
-            <li><a href="#beschwerde">14. <span data-lang="de">Beschwerderecht</span><span data-lang="en">Complaints</span></a></li>
-            <li><a href="#sicherheit">15. <span data-lang="de">Datensicherheit</span><span data-lang="en">Security</span></a></li>
-            <li><a href="#aenderungen">16. <span data-lang="de">Änderungen</span><span data-lang="en">Changes</span></a></li>
+            <li><a href="#fotos">11. <span data-lang="de">Fotos &amp; Videos</span><span data-lang="en">Photos &amp; videos</span><span data-lang="ne">तस्बिर र भिडियो</span></a></li>
+            <li><a href="#empfaenger">12. <span data-lang="de">Empfänger</span><span data-lang="en">Recipients</span><span data-lang="ne">प्राप्तकर्ता</span></a></li>
+            <li><a href="#dsgvo-rechte">13. <span data-lang="de">Ihre Rechte</span><span data-lang="en">Your rights</span><span data-lang="ne">तपाईंका अधिकार</span></a></li>
+            <li><a href="#beschwerde">14. <span data-lang="de">Beschwerderecht</span><span data-lang="en">Complaints</span><span data-lang="ne">उजुरी</span></a></li>
+            <li><a href="#sicherheit">15. <span data-lang="de">Datensicherheit</span><span data-lang="en">Security</span><span data-lang="ne">सुरक्षा</span></a></li>
+            <li><a href="#aenderungen">16. <span data-lang="de">Änderungen</span><span data-lang="en">Changes</span><span data-lang="ne">परिवर्तन</span></a></li>
           </ul>
         </nav>
       </aside>

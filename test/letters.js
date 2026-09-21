@@ -47,7 +47,10 @@ module.exports = function run() {
      /Dear Anisha Gurung/.test(en.body) && /Membership number/.test(en.body), en.body.slice(0, 60));
   ok("and an English subject", /Welcome to NPJOE/.test(en.subject));
   const nep = L.build("membership-accepted", Object.assign({}, member, { antwortsprache: "nepali" }));
-  eq("Nepali speakers get the German letter, since no Nepali version exists yet", nep.lang, "de");
+  eq("a Nepali request produces a Nepali letter", nep.lang, "ne");
+  ok("with a Nepali greeting and body", /आदरणीय Anisha Gurung/.test(nep.body) && /सदस्यता नम्बर/.test(nep.body),
+     nep.body.slice(0, 60));
+  ok("and a Nepali subject", /स्वागत छ/.test(nep.subject), nep.subject);
   const byBrowser = L.build("general-reply", { _ref: "X", _lang: "en", email: "a@b.de" });
   eq("otherwise the language they browsed in is used", byBrowser.lang, "en");
 
